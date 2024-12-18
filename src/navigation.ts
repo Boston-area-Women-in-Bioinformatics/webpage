@@ -2,6 +2,18 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
 export const headerData = {
   links: [
+    {
+      text: 'About us',
+      href: getPermalink('/about')
+    },
+    {
+      text: 'Team',
+      href: getPermalink('/team')
+    },
+    {
+      text: 'Contact',
+      href: getPermalink('/contact')
+    },
     // {
     //   text: 'Homes',
     //   links: [
@@ -23,9 +35,9 @@ export const headerData = {
     //     // },
     //   ],
     // },
-    {
-      text: 'Community',
-      links: [
+    //{
+    //  text: 'Community',
+    //  links: [
         // {
         //   text: 'Features (Anchor Link)',
         //   href: getPermalink('/#features'),
@@ -38,14 +50,10 @@ export const headerData = {
         //   text: 'Pricing',
         //   href: getPermalink('/pricing'),
         // },
-        {
-          text: 'About us',
-          href: getPermalink('/about'),
-        },
-        // {
-        //   text: 'Contact',
-        //   href: getPermalink('/contact'),
-        // },
+        //{
+        //  text: 'About us',
+        //  href: getPermalink('/about'),
+        //},
         // {
         //   text: 'Terms',
         //   href: getPermalink('/terms'),
@@ -54,8 +62,8 @@ export const headerData = {
         //   text: 'Privacy policy',
         //   href: getPermalink('/privacy'),
         // },
-      ],
-    },
+    //  ],
+    //},
     // {
     //   text: 'Landing',
     //   links: [
@@ -85,9 +93,9 @@ export const headerData = {
     //     },
     //   ],
     // },
-    {
-      text: 'Blog',
-      href: getBlogPermalink()
+    //{
+      //text: 'Blog',
+      //href: getBlogPermalink()
       // links: [
       //   {
       //     text: 'Blog List',
@@ -110,7 +118,7 @@ export const headerData = {
         //   href: getPermalink('astro', 'tag'),
         // },
       // ],
-    },
+    //},
     // {
     //   text: 'Widgets',
     //   href: '#',
