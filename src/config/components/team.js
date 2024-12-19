@@ -14,21 +14,42 @@ const team = {
     members: [
       {
         // The name of the first member
-        name: 'Neil Sims',
+        name: 'Lorena Pantano',
         // Clickable link of the first member name
-        nameLink: '#',
+        nameLink: 'https://www.linkedin.com/in/lpantano/',
         // The job title of the first member
-        title: 'Vue.js Developer',
+        title: 'Co-organizer',
         // The avatar of the first member
-        avatar: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/neil-sims.png',
+        avatar: 'https://bioinformatics.sph.harvard.edu/sites/projects.iq.harvard.edu/files/styles/profile_full/public/chanbioinformatics/files/lpantano_headshot.png?m=1714588501&itok=XriOYRY4',
         // Social links of the first member
         social: {
-          website: '#',
-          // twitter: '#',
-          instagram: '#',
+          // website: '#',
+          // twitter: 'https://x.com/lopantano',
+          // instagram: '#',
           // facebook: '#',
-          linkedin: '#',
-          // github: '#',
+          linkedin: 'https://www.linkedin.com/in/lpantano/',
+          github: 'https://lpantano.github.io/',
+          //bluesky: 'https://bsky.app/profile/lpantano.bsky.social',
+        },
+      },
+      {
+        // The name of the first member
+        name: 'Samantha Klasfeld',
+        // Clickable link of the first member name
+        nameLink: 'https://www.linkedin.com/in/samantha-klasfeld/',
+        // The job title of the first member
+        title: 'Web Page Developer',
+        // The avatar of the first member
+        avatar: 'https://media.licdn.com/dms/image/v2/D4E35AQFW-y3Qb1cgYg/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1726663563286?e=1735182000&v=beta&t=im8O0NKSzLqnbJwhAJARUsMam-SjdlriZspIJXuHq98',
+        // Social links of the first member
+        social: {
+          // website: '#',
+          // twitter: '#',
+          // instagram: '#',
+          // facebook: '#',
+          linkedin: 'https://www.linkedin.com/in/samantha-klasfeld/',
+          github: 'https://github.com/sklasfeld',
+          bluesky: 'https://bsky.app/profile/sklasfeld.bsky.social',
         },
       },
       {
@@ -40,34 +61,6 @@ const team = {
           // website: '#',
           twitter: '#',
           // instagram: '#',
-          // facebook: '#',
-          linkedin: '#',
-          github: '#',
-        },
-      },
-      {
-        name: 'Jese Leos',
-        nameLink: null,
-        title: 'UI/UX Designer',
-        // avatar: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png',
-        social: {
-          // website: '#',
-          // twitter: '#',
-          instagram: '#',
-          facebook: '#',
-          // linkedin: '#',
-          github: '#',
-        },
-      },
-      {
-        name: 'Michael Gough',
-        nameLink: null,
-        title: 'Frontend Developer',
-        avatar: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png',
-        social: {
-          // website: '#',
-          // twitter: '#',
-          instagram: '#',
           // facebook: '#',
           linkedin: '#',
           github: '#',
