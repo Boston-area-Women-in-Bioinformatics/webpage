@@ -3,6 +3,10 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
+      text: 'Home',
+      href: getPermalink('')
+    },
+    {
       text: 'About us',
       href: getPermalink('/about')
     },
@@ -161,18 +165,18 @@ export const footerData = {
     //     { text: 'Status', href: '#' },
     //   ],
     // },
-    {
-      title: 'Company',
-      links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
+    //{
+    //  title: 'Company',
+    //  links: [
+    //    { text: 'About', href: '#' },
+    //    { text: 'Blog', href: '#' },
+    //    { text: 'Careers', href: '#' },
         // { text: 'Press', href: '#' },
         // { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
+    //    { text: 'Social Impact', href: '#' },
         // { text: 'Shop', href: '#' },
-      ],
-    },
+    //  ],
+    //},
   ],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },
