@@ -42,7 +42,7 @@ const team = {
       title: 'Web Page Developer',
       // The avatar of the first member
       avatar:
-        'https://media.licdn.com/dms/image/v2/D4E35AQFW-y3Qb1cgYg/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1726663563286?e=1735182000&v=beta&t=im8O0NKSzLqnbJwhAJARUsMam-SjdlriZspIJXuHq98',
+        'https://avatars.githubusercontent.com/u/7339712?v=4',
       // Social links of the first member
       social: {
         // website: '#',
