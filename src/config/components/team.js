@@ -41,8 +41,7 @@ const team = {
       // The job title of the first member
       title: 'Web Page Developer',
       // The avatar of the first member
-      avatar:
-        'https://avatars.githubusercontent.com/u/7339712?v=4',
+      avatar: 'https://avatars.githubusercontent.com/u/7339712?v=4',
       // Social links of the first member
       social: {
         // website: '#',
