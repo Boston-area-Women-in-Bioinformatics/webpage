@@ -1,9 +1,15 @@
 ---
 import { SITE } from 'astrowind:config';
+import { Image } from 'astro:assets';
+import logoname_light from '~/assets/favicons/logoname_lightbg.png';
+import logoname_dark from '~/assets/favicons/logoname_darkbg.png';
 ---
 
 <span
   class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
 >
-  🚀 {SITE?.name}
+<Image class="block dark:hidden" src={logoname_light} width="150" decoding="async" loading="lazy" alt="Boston Women in Bioinformatics" />
+<Image class="hidden dark:block" src={logoname_dark} width="150" decoding="async" loading="lazy" alt="Boston Women in Bioinformatics" />
+
 </span>
+

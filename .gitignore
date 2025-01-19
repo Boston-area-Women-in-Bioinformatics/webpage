@@ -22,3 +22,4 @@ pnpm-debug.log*
 pnpm-lock.yaml
 
 .astro
+src/content/meetups/meetup-event-export-20251201.json
