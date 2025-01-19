@@ -1,5 +1,5 @@
 site:
-  name: Women in Bioinformatics
+  name: Boston Women in Bioinformatics
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
