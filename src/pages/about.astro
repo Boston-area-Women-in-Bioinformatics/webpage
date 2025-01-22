@@ -4,7 +4,6 @@ import Hero from '~/components/widgets/Hero.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
-import meetup_photo from '/meetup_20240918.jpg';
 
 const metadata = {
   title: 'About us',
@@ -24,7 +23,7 @@ const metadata = {
     </Fragment>
   </Hero>
 
-  <center><Image src={meetup_photo} width="750" decoding="async" loading="lazy" alt="BWIB lunch meetup." /></center>
+  <center><Image src={"/photos/meetup_20240918.jpg"} width="750" height="537" decoding="async" loading="lazy" alt="BWIB lunch meetup." /></center>
 
   <!-- Features2 Widget ************** -->
 
