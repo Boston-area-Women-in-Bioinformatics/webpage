@@ -9,8 +9,8 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default:  'Boston-Area Women in Bioinformatics'
-  description: "The online presence of Women in Bioinformatics in the Boston Area"
+    default: 'Boston-Area Women in Bioinformatics'
+  description: 'The online presence of Women in Bioinformatics in the Boston Area'
   robots:
     index: true
     follow: true

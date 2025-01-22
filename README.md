@@ -74,7 +74,7 @@ Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page
 
 ### Website images
 
-Most images can be placed in the `public/` directory if they do not require any transformation. 
+Most images can be placed in the `public/` directory if they do not require any transformation.
 
 Team member photos/avatars for the team page should go in `public/team/`. To add a member to the team page, please modify `src/config/components/team.js` and set the "avatar" setting to the path of the member's photo. The path should be in the format `/team/{image_name}`. See other entries as examples. You can also use an image from another website as an avatar image.
 
@@ -160,7 +160,6 @@ In this version the template supports all the options in the `output` configurat
 > 🧑‍🚀 **Seasoned astronaut?** Delete/edit this file `README.md`. Update `src/config.yaml` and contents. Have fun!
 
 <br>
-
 
 ### Commands
 
