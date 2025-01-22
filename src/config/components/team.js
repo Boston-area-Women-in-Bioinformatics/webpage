@@ -13,11 +13,11 @@ const team = {
   // Members of the team
   members: [
     {
-      // The name of the first member
+      // Name: First and last name
       name: 'Lorena Pantano',
-      // Clickable link of the first member name
+      // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/lpantano/',
-      // The job title of the first member
+      // Job Title
       title: 'Co-organizer',
       // The avatar of the first member
       avatar:
@@ -41,7 +41,7 @@ const team = {
       // The job title of the first member
       title: 'Web Page Developer',
       // The avatar of the first member
-      avatar: 'https://avatars.githubusercontent.com/u/7339712?v=4',
+      avatar: '/team/samanthaklasfeld.jpeg',
       // Social links of the first member
       social: {
         // website: '#',
