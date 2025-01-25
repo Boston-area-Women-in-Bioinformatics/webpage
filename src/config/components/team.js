@@ -76,7 +76,7 @@ const team = {
       // Job title
       title: 'Web Page Developer',
       // The avatar of the first member
-      avatar: '/team/yaseswinineelamraju.jpg',
+      avatar: '/team/yaseswinineelamraju.jpeg',
       // Social links of the first member
       social: {
         // website: '#',
