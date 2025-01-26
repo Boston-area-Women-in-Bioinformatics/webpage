@@ -1,4 +1,88 @@
-# 🚀 AstroWind
+# Boston-Area Women in Bioinformatics Website
+
+<img src="src/assets/favicons/WIB_Logo.png" align="right"
+     alt="Logo for Boston-Area Women in Bioinformatics" width="100">
+
+### Project structure
+
+This project has the following folders and files:
+
+```
+/
+├── public/
+│   ├── decapcms/
+│   │   ├── config.yml
+│   │   ├── index.html
+│   ├── team/'
+│   │   │   └── ...
+│   ├── _headers
+│   └── robots.txt
+├── src/
+│   ├── assets/
+│   │   ├── favicons/
+│   │   ├── images/
+│   │   └── styles/
+│   │       └── tailwind.css
+│   ├── components/
+│   │   ├── blog/
+│   │   ├── common/
+│   │   ├── ui/
+│   │   ├── widgets/
+│   │   │   ├── Header.astro
+│   │   │   └── ...
+│   │   ├── CustomStyles.astro
+│   │   ├── Favicons.astro
+│   │   └── Logo.astro
+│   ├── config/
+│   │   ├── components/
+│   │   │   ├── team.js
+│   │   ├── site/
+│   │   │   ├── blog.js
+│   │   │   ├── config.js
+│   ├── content/
+│   │   ├── post/
+│   │   │   ├── post-slug-1.md
+│   │   │   ├── post-slug-2.mdx
+│   │   │   └── ...
+│   │   └-- config.ts
+│   ├── layouts/
+│   │   ├── LandingLayout.astro
+│   │   ├── Layout.astro
+│   │   ├── MarkdownLayout.astro
+│   │   └── PageLayout.astro
+│   ├── pages/
+│   │   ├── [...blog]/
+│   │   │   ├── [category]/
+│   │   │   ├── [tag]/
+│   │   │   ├── [...page].astro
+│   │   │   └── index.astro
+│   │   ├── index.astro
+│   │   ├── 404.astro
+│   │   ├-- rss.xml.ts
+│   │   └── ...
+│   ├── utils/
+│   ├── config.yaml
+│   └── env.d.ts
+│   ├── navigation.js
+│   └── types.d.ts
+├── package.json
+├── astro.config.ts
+└── ...
+```
+
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+
+### Website images
+
+Most images can be placed in the `public/` directory if they do not require any transformation.
+
+Team member photos/avatars for the team page should go in `public/team/`. To add a member to the team page, please modify `src/config/components/team.js` and set the "avatar" setting to the path of the member's photo. The path should be in the format `/team/{image_name}`. See other entries as examples. You can also use an image from another website as an avatar image.
+
+Logos are found in the `src/assets/favicons` directory.
+
+Icon images are found in the `src/assets/images` directory.
+
+## Website Template: 🚀 AstroWind
 
 <img src="https://raw.githubusercontent.com/onwidget/.github/main/resources/astrowind/lighthouse-score.png" align="right"
      alt="AstroWind Lighthouse Score" width="100" height="358">
@@ -49,13 +133,13 @@
 
 <br>
 
-## Demo
+### Demo
 
 📌 [https://astrowind.vercel.app/](https://astrowind.vercel.app/)
 
 <br>
 
-## 🔔 Upcoming: AstroWind 2.0 – We Need Your Vision!
+### 🔔 Upcoming: AstroWind 2.0 – We Need Your Vision!
 
 We're embarking on an exciting journey with **AstroWind 2.0**, and we want you to be a part of it! We're currently taking the first steps in developing this new version and your insights are invaluable. Join the discussion and share your feedback, ideas, and suggestions to help shape the future of **AstroWind**. Let's make **AstroWind 2.0** even better, together!
 
@@ -63,7 +147,7 @@ We're embarking on an exciting journey with **AstroWind 2.0**, and we want you t
 
 <br>
 
-## Getting started
+### Getting started with AstroWind
 
 **AstroWind** tries to give you quick access to creating a website using [Astro 4.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/). It's a free theme which focuses on simplicity, good practices and high performance.
 
@@ -71,68 +155,9 @@ Very little vanilla javascript is used only to provide basic functionality so th
 
 In this version the template supports all the options in the `output` configuration, `static`, `hybrid` and `server`, but the blog only works with `prerender = true`. We are working on the next version and aim to make it fully compatible with SSR.
 
-### Project structure
-
-Inside **AstroWind** template, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   ├── _headers
-│   └── robots.txt
-├── src/
-│   ├── assets/
-│   │   ├── favicons/
-│   │   ├── images/
-│   │   └── styles/
-│   │       └── tailwind.css
-│   ├── components/
-│   │   ├── blog/
-│   │   ├── common/
-│   │   ├── ui/
-│   │   ├── widgets/
-│   │   │   ├── Header.astro
-│   │   │   └── ...
-│   │   ├── CustomStyles.astro
-│   │   ├── Favicons.astro
-│   │   └── Logo.astro
-│   ├── content/
-│   │   ├── post/
-│   │   │   ├── post-slug-1.md
-│   │   │   ├── post-slug-2.mdx
-│   │   │   └── ...
-│   │   └-- config.ts
-│   ├── layouts/
-│   │   ├── Layout.astro
-│   │   ├── MarkdownLayout.astro
-│   │   └── PageLayout.astro
-│   ├── pages/
-│   │   ├── [...blog]/
-│   │   │   ├── [category]/
-│   │   │   ├── [tag]/
-│   │   │   ├── [...page].astro
-│   │   │   └── index.astro
-│   │   ├── index.astro
-│   │   ├── 404.astro
-│   │   ├-- rss.xml.ts
-│   │   └── ...
-│   ├── utils/
-│   ├── config.yaml
-│   └── navigation.js
-├── package.json
-├── astro.config.ts
-└── ...
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory if they do not require any transformation or in the `assets/` directory if they are imported directly.
-
 [![Edit AstroWind on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/onwidget/astrowind/tree/main) [![Open in Gitpod](https://svgshare.com/i/xdi.svg)](https://gitpod.io/?on=gitpod#https://github.com/onwidget/astrowind) [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/onwidget/astrowind)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file `README.md`. Update `src/config.yaml` and contents. Have fun!
+> 🧑‍🚀 **Seasoned astronaut?** Delete/edit this file `README.md`. Update `src/config.yaml` and contents. Have fun!
 
 <br>
 
@@ -268,28 +293,20 @@ Clone this repository on your own GitHub account and deploy to Vercel:
 
 <br>
 
-## Frequently Asked Questions
-
-- Why?
--
--
-
-<br>
-
-## Related projects
+### Related projects
 
 - [TailNext](https://tailnext.vercel.app/) - Free template using Next.js 14 and Tailwind CSS with the new App Router.
 - [Qwind](https://qwind.pages.dev/) - Free template to make your website using Qwik + Tailwind CSS.
 
-## Contributing
+### Contributing
 
 If you have any ideas, suggestions or find any bugs, feel free to open a discussion, an issue or create a pull request.
 That would be very useful for all of us and we would be happy to listen and take action.
 
-## Acknowledgements
+### Acknowledgements
 
 Initially created by [onWidget](https://onwidget.com) and maintained by a community of [contributors](https://github.com/onwidget/astrowind/graphs/contributors).
 
-## License
+### License
 
 **AstroWind** is licensed under the MIT license — see the [LICENSE](./LICENSE.md) file for details.

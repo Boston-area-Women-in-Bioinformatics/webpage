@@ -1,30 +1,29 @@
 site:
   name: Boston Women in Bioinformatics
-  site: 'https://astrowind.vercel.app'
+  site: 'https://astonishing-granita-2cb317.netlify.app/'
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: false
 
 # Default SEO metadata
 metadata:
   title:
-    default: WoiBio
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: 'Boston-Area Women in Bioinformatics'
+  description: 'The online presence of Women in Bioinformatics in the Boston Area'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: 'Boston-Area Women in Bioinformatics'
     images:
       - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
+        width: 300
+        height: 300
     type: website
   twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
+    handle: '@boston-area-womens-bioinformatics'
+    site: '@boston-area-womens-bioinformatics'
     cardType: summary_large_image
 
 i18n:
