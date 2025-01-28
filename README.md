@@ -5,8 +5,27 @@
 
 ## Add a team member
 
-Team member photos/avatars for the team page should go in `public/team/`. To add a member to the team page, please modify `src/config/components/team.js` and set the "avatar" setting to the path of the member's photo. The path should be in the format `/team/{image_name}`. See other entries as examples. You can also use an image from another website as an avatar image.
-
+```
+Clone the repository locally :
+git clone https://github.com/Boston-area-Women-in-Bioinformatics/webpage.git
+# List branches in a github repos :
+git branch
+# Be in main branch if not already
+git checkout main
+# Create a new branch :
+git checkout -b <new-branch-name>
+# Do the following to upload your image and edit team.js file
+## 1. Upload your image in this location of your cloned repo `/public/team/`
+## 2. Edit the team.js  file (src/config/components/team.js) to populate your information
+# Run 'npx --prettier' to fix any astro specific formatting issues
+npx prettier --write src/config/components/team.js
+# Stage the changes to commit :
+git add /public/team/<your_image_name>
+git add src/config/components/team.js
+#  Commit new changes
+git push -u origin <new-branch-name>
+Collapse
+```
 
 ### Project structure
 
