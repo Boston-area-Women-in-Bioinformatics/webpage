@@ -67,6 +67,22 @@ const team = {
         github: '#',
       },
     },
+    // Yaseswini Neelamraju
+    {
+      name: 'Yaseswini Neelamraju',
+      nameLink: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
+      title: 'Web Page Developer',
+      avatar: '/team/yaseswinineelamraju.jpeg',
+      social: {
+        // website: '#',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
+        github: 'https://github.com/Yaseswini',
+      },
+    },
+    // Next team member
   ],
 };
 
