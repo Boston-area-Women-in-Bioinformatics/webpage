@@ -3,6 +3,30 @@
 <img src="src/assets/favicons/WIB_Logo.png" align="right"
      alt="Logo for Boston-Area Women in Bioinformatics" width="100">
 
+## Add a team member
+
+```
+Clone the repository locally :
+git clone https://github.com/Boston-area-Women-in-Bioinformatics/webpage.git
+# List branches in a github repos :
+git branch
+# Be in main branch if not already
+git checkout main
+# Create a new branch :
+git checkout -b <new-branch-name>
+# Do the following to upload your image and edit team.js file
+## 1. Upload your image in this location of your cloned repo `/public/team/`
+## 2. Edit the team.js  file (src/config/components/team.js) to populate your information
+# Run 'npx --prettier' to fix any astro specific formatting issues
+npx prettier --write src/config/components/team.js
+# Stage the changes to commit :
+git add /public/team/<your_image_name>
+git add src/config/components/team.js
+#  Commit new changes
+git push -u origin <new-branch-name>
+Collapse
+```
+
 ### Project structure
 
 This project has the following folders and files:
