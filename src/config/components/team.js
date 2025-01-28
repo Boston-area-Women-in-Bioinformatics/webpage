@@ -67,7 +67,7 @@ const team = {
         github: '#',
       },
     },
-    // Yaseswini Neelamraju 
+    // Yaseswini Neelamraju
     {
       name: 'Yaseswini Neelamraju',
       nameLink: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
@@ -82,7 +82,7 @@ const team = {
         github: 'https://github.com/Yaseswini',
       },
     },
-    // Next team member 
+    // Next team member
   ],
 };
 
