@@ -1,7 +1,7 @@
 ---
-import { getFutureEvents } from '../lib/data'; // Import your event handling logic
+import { getFutureEvents } from '../utils/data'; // Import your event handling logic
 
-import { playlists } from "../lib/data";
+import { playlists } from "../utils/data";
 import Headline from '~/components/ui/Headline.astro';
 
 const futureEvents = getFutureEvents(playlists);
