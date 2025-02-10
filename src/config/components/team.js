@@ -82,6 +82,24 @@ const team = {
         github: 'https://github.com/Yaseswini',
       },
     },
+    {
+      // Name: First and last name
+      name: 'Diveena Becker',
+      // Namelink: Member's Personal Website
+      nameLink: 'https://www.linkedin.com/in/diveena-becker-5945a771/',
+      // Job Title
+      title: 'Co-chair of Event committee',
+      // The avatar of the first member
+      avatar: '/team/diveena.jpg',
+      // Social links of the first member
+      social: {
+        // website: '#',
+        // twitter: 'https://x.com/lopantano',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/diveena-becker-5945a771/',
+      },
+    },
     // Next team member
   ],
 };
