@@ -1,57 +1,87 @@
 ---
 import { getFutureEvents } from '../utils/data'; // Import your event handling logic
 
-import { playlists } from "../utils/data";
+import { playlists } from '../utils/data';
 import Headline from '~/components/ui/Headline.astro';
 
 const futureEvents = getFutureEvents(playlists);
 ---
 
-<div class="container mx-auto px-4 ">
-    <Headline title="Upcoming Events" />
-    
-        {futureEvents.length === 0 ? (
-            <div class='mb-8 md:mx-auto md:mb-12 text-center'>
-                <p>No upcoming events found.</p>
-            </div>
-          ) : (
-            playlists.filter(playlists => new Date(playlists.dateTime) > new Date()).map(event => (
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-gray-90 rounded-lg overflow-hidden shadow-md flex">
-                        <div class="relative w-1/3">
-                            <img src={event.cover} alt={event.title} class="object-fit" transition:name='playlist ${event.id} image' />
-                        </div>
-                        <div class="p-4 w-2/3">
-                            <h3 class="text-xl font-semibold mb-2" transition:name='playlist ${event.id} title'>{event.title}</h3>
-                            <div class="text-sm text-gray-500 mb-4">{event.eventDate}</div>
-                            <div class="text-sm text-gray-500 mb-4">{event.eventTime}</div>
-                            <div class="text-sm text-gray-500 mb-4">{event.artists}</div>
-                            <a href={`/event/${event.dateTime}`} class="bg-customYellow text-gray-900 font-bold py-2 px-4 rounded hover:bg-customYellowHover" transition:name='playlist ${event.id} box'>
-                                MORE INFO &rarr;
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            ))
-        )}
-    
-    <Headline title="Past Events" />
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {playlists.filter(playlists => new Date(playlists.dateTime) < new Date()).map(event => (
+<div class="container mx-auto px-4">
+  <Headline title="Upcoming Events" />
+
+  {
+    futureEvents.length === 0 ? (
+      <div class="mb-8 md:mx-auto md:mb-12 text-center">
+        <p>No upcoming events found.</p>
+      </div>
+    ) : (
+      playlists
+        .filter((playlists) => new Date(playlists.dateTime) > new Date())
+        .map((event) => (
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-gray-90 rounded-lg overflow-hidden shadow-md flex">
-                <div class="relative w-1/3">
-                    <img src={event.cover} alt={event.title} class="object-fit" transition:name='playlist ${event.id} image' />
-                </div>
-                <div class="p-4 w-2/3">
-                    <h3 class="text-xl font-semibold mb-2" transition:name='playlist ${event.id} title'>{event.title}</h3>
-                    <div class="text-sm text-gray-500 mb-4">{event.eventDate}</div>
-                    <div class="text-sm text-gray-500 mb-4">{event.eventTime}</div>
-                    <div class="text-sm text-gray-500 mb-4">{event.artists}</div>
-                    <a href={`/event/${event.dateTime}`} class="bg-customYellow text-gray-900 font-bold py-2 px-4 rounded hover:bg-customYellowHover" transition:name='playlist ${event.id} box'>
-                        MORE INFO &rarr;
-                    </a>
-                </div>
+              <div class="relative w-1/3">
+                <img
+                  src={event.cover}
+                  alt={event.title}
+                  class="object-fit"
+                  transition:name="playlist ${event.id} image"
+                />
+              </div>
+              <div class="p-4 w-2/3">
+                <h3 class="text-xl font-semibold mb-2" transition:name="playlist ${event.id} title">
+                  {event.title}
+                </h3>
+                <div class="text-sm text-gray-500 mb-4">{event.eventDate}</div>
+                <div class="text-sm text-gray-500 mb-4">{event.eventTime}</div>
+                <div class="text-sm text-gray-500 mb-4">{event.artists}</div>
+                <a
+                  href={`/event/${event.dateTime}`}
+                  class="bg-customYellow text-gray-900 font-bold py-2 px-4 rounded hover:bg-customYellowHover"
+                  transition:name="playlist ${event.id} box"
+                >
+                  MORE INFO &rarr;
+                </a>
+              </div>
             </div>
-        ))}
-    </div>
+          </div>
+        ))
+    )
+  }
+
+  <Headline title="Past Events" />
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {
+      playlists
+        .filter((playlists) => new Date(playlists.dateTime) < new Date())
+        .map((event) => (
+          <div class="bg-gray-90 rounded-lg overflow-hidden shadow-md flex">
+            <div class="relative w-1/3">
+              <img
+                src={event.cover}
+                alt={event.title}
+                class="object-fit"
+                transition:name="playlist ${event.id} image"
+              />
+            </div>
+            <div class="p-4 w-2/3">
+              <h3 class="text-xl font-semibold mb-2" transition:name="playlist ${event.id} title">
+                {event.title}
+              </h3>
+              <div class="text-sm text-gray-500 mb-4">{event.eventDate}</div>
+              <div class="text-sm text-gray-500 mb-4">{event.eventTime}</div>
+              <div class="text-sm text-gray-500 mb-4">{event.artists}</div>
+              <a
+                href={`/event/${event.dateTime}`}
+                class="bg-customYellow text-gray-900 font-bold py-2 px-4 rounded hover:bg-customYellowHover"
+                transition:name="playlist ${event.id} box"
+              >
+                MORE INFO &rarr;
+              </a>
+            </div>
+          </div>
+        ))
+    }
+  </div>
 </div>
