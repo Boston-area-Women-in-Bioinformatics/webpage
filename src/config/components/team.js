@@ -53,20 +53,6 @@ const team = {
         bluesky: 'https://bsky.app/profile/sklasfeld.bsky.social',
       },
     },
-    {
-      name: 'Bonnie Green',
-      nameLink: null,
-      title: 'CEO',
-      avatar: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png',
-      social: {
-        // website: '#',
-        twitter: '#',
-        // instagram: '#',
-        // facebook: '#',
-        linkedin: '#',
-        github: '#',
-      },
-    },
     // Yaseswini Neelamraju
     {
       name: 'Yaseswini Neelamraju',
