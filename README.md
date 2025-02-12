@@ -27,6 +27,30 @@ git push -u origin <new-branch-name>
 Collapse
 ```
 
+## Add a new event
+
+```
+Clone the repository locally :
+git clone https://github.com/Boston-area-Women-in-Bioinformatics/webpage.git
+# List branches in a github repos :
+git branch
+# Be in main branch if not already
+git checkout main
+# Create a new branch :
+git checkout -b <new-branch-name>
+# Do the following to upload your image and edit data.ts file (src/lib/data.ts)
+## 1. Upload your image in this location of your cloned repo `public/photos`
+#  2. Edit the data.ts file (src/lib/data.ts) to populate your information
+# Run 'npx --prettier' to fix any astro specific formatting issues
+npx prettier --write src/lib/data.ts
+# Stage the changes to commit :
+git add /public/photos/<your_image_name>
+git add src/lib/data.ts
+#  Commit new changes
+git push -u origin <new-branch-name>
+Collapse
+```
+
 ### Project structure
 
 This project has the following folders and files:

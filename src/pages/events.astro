@@ -1,0 +1,22 @@
+---
+import { SITE } from '~/config/site/config.js';
+import Layout from '~/layouts/PageLayout.astro';
+import EventsTable from '~/components/EventsTable.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+const metadata = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero>
+    <Fragment slot="title"> Events </Fragment>
+
+    <Fragment slot="subtitle"> Past and future events with Boston-Area Women in Bioinformatics. </Fragment>
+  </Hero>
+
+  <EventsTable />
+</Layout>

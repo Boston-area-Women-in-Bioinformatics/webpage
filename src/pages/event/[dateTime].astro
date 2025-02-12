@@ -1,0 +1,103 @@
+---
+import { SITE } from '~/config/site/config.js';
+const { dateTime } = Astro.params;
+import EventAddress from '~/components/EventAddress.astro';
+import Description from '~/components/Description.astro';
+import Agenda from '~/components/Agenda.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import { allPlaylists } from '~/utils/data';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+
+export function getStaticPaths() {
+  return allPlaylists.map((playlist) => ({
+    params: {
+      dateTime: playlist.dateTime,
+    },
+  }));
+}
+
+const playlist = allPlaylists.find((playlist) => playlist.dateTime === dateTime);
+
+const agendaTitle = playlist?.agenda ? 'Agenda:' : '';
+const moreinfoTitle = playlist?.agenda ? 'Additional Information:' : '';
+---
+
+<Layout metadata={metadata}>
+  <div class="relative min-h-full flex flex-col overflow-x-hidden" transition:name=`playlist ${playlist?.dateTime} box`>
+    <h1 class="title-clamp font-bold block">
+      {playlist?.title}
+      <span transition:name=`playlist ${playlist?.dateTime} title`></span>
+    </h1>
+    <div class="flex flex-col items-center md:flex-row md:items-stretch gap-8 px-6 mt-5">
+      <img
+        src={playlist?.cover}
+        alt={playlist?.title}
+        class="w-48 h-96 object-contain"
+        transition:name=`playlist ${playlist?.dateTime} image`
+      />
+      <div class="flex flex-col justify-between">
+        <div class="flex flex-1 items-end"></div>
+        <div>
+          <div class="flex-1 flex items-end mb-8">
+            <div class="text-lg">
+              <EventAddress artists={playlist?.artists || []} />
+              <div class="mt-1">
+                <span class="font-semibold"> {playlist?.eventDate} {playlist?.eventTime}</span>
+              </div>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="text-white bg-blue-700 hover:bg-blue-800 w-15 flex flex-col items-center focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          >
+            <a href="https://www.meetup.com/boston-area-womens-bioinformatics/events"
+              >Sign Up With Meetup
+              <Icon name="tabler:writing" class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" /></a
+            >
+          </button>
+          <div class="mb-2 mt-4">
+            <p>
+              <span class="font-semibold">Description: </span>
+              {playlist?.description}
+            </p>
+          </div>
+          <div class="mb-2">
+            <p>
+              <span class="font-semibold">{agendaTitle} </span>
+              <ul><Agenda timeblocks={playlist?.agenda || []} /></ul>
+            </p>
+          </div>
+        </div>
+
+        <div class="mb-2">
+          <p><span class="font-semibold">{moreinfoTitle} </span> <Description artists={playlist?.moreinfo || []} /></p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4 mb-4">
+      <p>
+        <span class="font-semibold">Code of Conduct: </span>
+        This event is dedicated to providing a harassment-free experience for everyone, regardless of gender, gender identity
+        and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or
+        lack thereof), or technology choices. We do not tolerate harassment in any form. Anyone violating these rules may
+        be sanctioned or banned from attending at the discretion of the conference organizers. Please contact the organizers
+        through meet-up messaging/Slack, if you feel someone has broken the code of conduct.\nOriginal source and credit:
+        <a href="http://2012.jsconf.us/#/about">http://2012.jsconf.us/#/about</a> &
+        <a href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy">The Ada Initiative</a>
+      </p>
+    </div>
+  </div>
+
+  <style>
+    .title-clamp {
+      font-size: clamp(20px, 6vw, 70px);
+      line-height: 1;
+    }
+  </style>
+</Layout>
