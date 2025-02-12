@@ -1,4 +1,5 @@
 import { z, defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 const metadataDefinition = () =>
   z
@@ -63,6 +64,22 @@ const postCollection = defineCollection({
   }),
 });
 
+const eventCollection = defineCollection({
+  // Load data from Markdown files on disk
+  loader: glob({ pattern: '**/*.md', base: 'src/content/meetups' }),
+  schema: z.object({
+    title: z.string(),
+    dateTime: z.coerce.date(),
+    location: z.array(z.string()),
+    image: z.object({
+      src: z.string(),
+      alt: z.string(),
+    }),
+    tags: z.array(z.string()),
+  }),
+});
+
 export const collections = {
   post: postCollection,
+  event: eventCollection,
 };

@@ -1,87 +1,96 @@
 ---
-import { getFutureEvents } from '../utils/data'; // Import your event handling logic
-
-import { playlists } from '../utils/data';
+//import { splitEvents } from '~/content/utils.js'; // Import your event handling logic
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+//import { playlists } from '../utils/data';
 import Headline from '~/components/ui/Headline.astro';
+import FormattedDate from '~/components/FormattedDate.astro';
+import EventAddress from 'src/components/EventAddress.astro';
+//import { Icon } from 'astro-icon/components';
 
-const futureEvents = getFutureEvents(playlists);
+const future_events = await getCollection(
+  'event',
+  ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) > new Date()
+);
+
+const past_events = await getCollection(
+  'event',
+  ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) < new Date()
+);
 ---
 
 <div class="container mx-auto px-4">
   <Headline title="Upcoming Events" />
-
-  {
-    futureEvents.length === 0 ? (
-      <div class="mb-8 md:mx-auto md:mb-12 text-center">
+  <div class="mb-8 md:mt-3 md:mb-12 text-center">
+    {
+      future_events.length === 0 ? (
         <p>No upcoming events found.</p>
-      </div>
-    ) : (
-      playlists
-        .filter((playlists) => new Date(playlists.dateTime) > new Date())
-        .map((event) => (
+      ) : (
+        future_events.map((event) => (
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-gray-90 rounded-lg overflow-hidden shadow-md flex">
               <div class="relative w-1/3">
                 <img
-                  src={event.cover}
-                  alt={event.title}
+                  src={event.data.image.src}
+                  alt={event.data.image.alt}
                   class="object-fit"
                   transition:name="playlist ${event.id} image"
                 />
               </div>
               <div class="p-4 w-2/3">
                 <h3 class="text-xl font-semibold mb-2" transition:name="playlist ${event.id} title">
-                  {event.title}
+                  {event.data.title}
                 </h3>
-                <div class="text-sm text-gray-500 mb-4">{event.eventDate}</div>
-                <div class="text-sm text-gray-500 mb-4">{event.eventTime}</div>
-                <div class="text-sm text-gray-500 mb-4">{event.artists}</div>
-                <a
-                  href={`/event/${event.dateTime}`}
-                  class="bg-customYellow text-gray-900 font-bold py-2 px-4 rounded hover:bg-customYellowHover"
-                  transition:name="playlist ${event.id} box"
+                <div class="text-sm mb-4">
+                  <FormattedDate date={event.data.dateTime} />
+                </div>
+                <div class="text-sm mb-4">
+                  <EventAddress artists={event.data.location || []} />
+                </div>
+                <button
+                  type="button"
+                  class="text-gray-900 border border-gray-300 dark:text-white dark:border-gray-600 w-15 flex flex-col items-center focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none"
                 >
-                  MORE INFO &rarr;
-                </a>
+                  <a href={`/events/${event.id}`}>MORE INFO</a>
+                </button>
               </div>
             </div>
           </div>
         ))
-    )
-  }
+      )
+    }
+  </div>
 
   <Headline title="Past Events" />
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 md:mt-3 md:mb-12 text-center">
     {
-      playlists
-        .filter((playlists) => new Date(playlists.dateTime) < new Date())
-        .map((event) => (
-          <div class="bg-gray-90 rounded-lg overflow-hidden shadow-md flex">
-            <div class="relative w-1/3">
-              <img
-                src={event.cover}
-                alt={event.title}
-                class="object-fit"
-                transition:name="playlist ${event.id} image"
-              />
-            </div>
-            <div class="p-4 w-2/3">
-              <h3 class="text-xl font-semibold mb-2" transition:name="playlist ${event.id} title">
-                {event.title}
-              </h3>
-              <div class="text-sm text-gray-500 mb-4">{event.eventDate}</div>
-              <div class="text-sm text-gray-500 mb-4">{event.eventTime}</div>
-              <div class="text-sm text-gray-500 mb-4">{event.artists}</div>
-              <a
-                href={`/event/${event.dateTime}`}
-                class="bg-customYellow text-gray-900 font-bold py-2 px-4 rounded hover:bg-customYellowHover"
-                transition:name="playlist ${event.id} box"
-              >
-                MORE INFO &rarr;
-              </a>
-            </div>
+      past_events.map((event) => (
+        <div class="bg-gray-90 rounded-lg overflow-hidden shadow-md flex">
+          <div class="relative w-1/3">
+            <img
+              src={event.data.image.src}
+              alt={event.data.image.alt}
+              class="object-fit"
+              transition:name="playlist ${event.id} image"
+            />
           </div>
-        ))
+          <div class="p-4 w-2/3">
+            <h3 class="text-xl font-semibold mb-2" transition:name="playlist ${event.id} title">
+              {event.data.title}
+            </h3>
+            <div class="text-sm mb-4">{event.data.dateTime}</div>
+            <div class="text-sm mb-4">
+              <EventAddress artists={event.data.location || []} />
+            </div>
+            <button
+              type="button"
+              class="text-gray-900 border border-gray-300 dark:text-white dark:border-gray-600 w-15 flex flex-col items-center focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none"
+            >
+              <a href={`/events/${event.id}`}>MORE INFO</a>
+            </button>
+          </div>
+        </div>
+      ))
     }
   </div>
 </div>
