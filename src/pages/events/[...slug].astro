@@ -1,0 +1,26 @@
+---
+import { getCollection, render } from 'astro:content';
+import EventLayout from '~/layouts/EventLayout.astro';
+
+export async function getStaticPaths() {
+  const events = await getCollection('event');
+  return events.map((meeting) => ({
+    params: { slug: meeting.id },
+    props: { meeting },
+  }));
+}
+
+const { meeting } = Astro.props;
+const { Content } = await render(meeting);
+---
+
+<EventLayout frontmatter={meeting.data} date={meeting.data.dateTime}>
+  <Content />
+</EventLayout>
+
+<style>
+  .title-clamp {
+    font-size: clamp(20px, 6vw, 70px);
+    line-height: 1;
+  }
+</style>
