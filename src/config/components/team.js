@@ -82,7 +82,22 @@ const team = {
         github: 'https://github.com/Yaseswini',
       },
     },
-    // Next team member
+    // Amulya Shastry
+    {
+      name: 'Amulya Shastry',
+      nameLink: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
+      title: 'Bioinformatics PhD Candidate, Boston University',
+      avatar: '/team/AmulyaShastry.jpeg',
+      social: {
+        website: 'https://ashastry2.github.io/',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/amulya-shastry/',
+        github: 'https://github.com/Ashastry2',
+      },
+    },
+    // Next Member
   ],
 };
 
