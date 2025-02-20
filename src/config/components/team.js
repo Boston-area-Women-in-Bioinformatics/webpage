@@ -86,6 +86,24 @@ const team = {
         linkedin: 'https://www.linkedin.com/in/diveena-becker-5945a771/',
       },
     },
+    {
+      // Name: First and last name
+      name: 'Amulya Shastry',
+      // Namelink: Member's Personal Website
+      nameLink: 'https://ashastry2.github.io/',
+      // Job Title
+      title: 'Co-chair of the Enabling Advocacy Committee',
+      // The avatar of the first member
+      avatar: '/team/AmulyaShastry.jpeg',
+      // Social links of the first member
+      social: {
+        website: 'https://ashastry2.github.io/',
+        github: 'https://github.com/Ashastry2',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/amulya-shastry/',
+      },
+    },
     // Next team member
   ],
 };
