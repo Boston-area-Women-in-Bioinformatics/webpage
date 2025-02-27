@@ -105,6 +105,25 @@ const team = {
       },
     },
     // Next team member
+     {
+      // Name: First and last name
+      name: 'Katie Hughes',
+      // Namelink: Member's Personal Website
+      nameLink: 'https://www.linkedin.com/in/hugheskj/',
+      // Job Title
+      title: 'Chair, Advisory Committee, Co-Chair, Enabling Advocacy Committee',
+      // The avatar of the first member
+      avatar: 'team/Katie.png',
+      // Social links of the first member
+      social: {
+        // website: '#',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+      },
+    },
+    // Next team member
+        
   ],
 };
 
