@@ -48,10 +48,11 @@ git checkout -b <new-branch-name>
 ## 2. Edit the team.js  file (src/config/components/team.js) to populate your information
 # Run 'npx --prettier' to fix any astro specific formatting issues
 npx prettier --write src/config/components/team.js
-# Stage the changes to commit :
-git add /public/team/<your_image_name>
-git add src/config/components/team.js
+# Stage the changes to commit (Assuming you are in the git folder)
+git add ./public/team/<your_image_name>
+git add ./src/config/components/team.js
 #  Commit new changes
+git commit -m "<Add committ message>"
 git push -u origin <new-branch-name>
 Collapse
 ```
