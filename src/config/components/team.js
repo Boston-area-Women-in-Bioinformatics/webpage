@@ -123,6 +123,24 @@ const team = {
       },
     },
     // Next team member
+    {
+      // Name: First and last name
+      name: 'Shreya Rajasekar',
+      // Namelink: Member's Personal Website
+      //nameLink: '',
+      // Job Title
+      title: 'Communications Committe Member',
+      // The avatar of the first member
+      avatar: 'team/shreya.jpg',
+      // Social links of the first member
+      social: {
+        // website: '#',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'www.linkedin.com/in/shreya-rajasekhar',
+      },
+    },
   ],
 };
 
