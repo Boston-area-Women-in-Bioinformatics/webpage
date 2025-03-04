@@ -29,14 +29,12 @@ const past_events = await getCollection(
         future_events.map((event) => (
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-gray-90 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md flex">
-              <div class="relative w-1/3">
-                <img
-                  src={event.data.image.src}
-                  alt={event.data.image.alt}
-                  class="h-52 w-full object contain"
-                  transition:name="playlist ${event.id} image"
-                />
-              </div>
+              <img
+                src={event.data.image.src}
+                alt={event.data.image.alt}
+                class="h-48 w-full object-cover"
+                transition:name="playlist ${event.id} image"
+              />
               <div class="p-4 w-2/3">
                 <h3 class="text-xl font-semibold mb-2" transition:name="playlist ${event.id} title">
                   {event.data.title}
@@ -65,15 +63,13 @@ const past_events = await getCollection(
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 md:mt-3 md:mb-12 text-center">
     {
       past_events.map((event) => (
-        <div class="bg-gray-90 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md flex">
-          <div class="relative w-1/3">
-            <img
-              src={event.data.image.src}
-              alt={event.data.image.alt}
-              class="h-52 object contain"
-              transition:name="playlist ${event.id} image"
-            />
-          </div>
+        <div class="bg-gray-90 dark:bg-gray-0 rounded-lg overflow-hidden shadow-md flex">
+          <img
+            src={event.data.image.src}
+            alt={event.data.image.alt}
+            class="h-48 w-full object-cover"
+            transition:name="playlist ${event.id} image"
+          />
           <div class="p-4 w-2/3">
             <h3 class="text-xl font-semibold mb-2" transition:name="playlist ${event.id} title">
               {event.data.title}
