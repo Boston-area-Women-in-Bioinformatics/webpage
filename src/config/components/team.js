@@ -37,7 +37,7 @@ const team = {
       // The name of the first member
       name: 'Samantha Klasfeld',
       // Clickable link of the first member name
-      nameLink: 'https://www.linkedin.com/in/samantha-klasfeld/',
+      nameLink: 'http://sklasfeld.github.io/',
       // The job title of the first member
       title: 'Web Page Developer',
       // The avatar of the first member
