@@ -26,11 +26,7 @@ const metadata: MetaData = {
 <Layout metadata={metadata}>
   <div class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-        <img
-          src={imgsrc}
-          alt={imgalt}
-          class="h-72 w-full object-cover object-top"
-        />
+      <img src={imgsrc} alt={imgalt} class="h-72 w-full object-cover object-top" />
       <div class="p-1">
         <h2 class="text-2xl font-bold mb-2 font-heading leading-tighter tracking-tighter">
           {frontmatter.title}
@@ -41,23 +37,22 @@ const metadata: MetaData = {
         <div class="text-lg mb-4">
           <EventAddress artists={location || []} />
         </div>
-        {date < new Date() ? ' ' : <Signup url={url}/>}
+        {date < new Date() ? ' ' : <Signup url={url} />}
       </div>
     </div>
   </div>
 
   <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
-      <slot />
-      
-      <span class="font-semibold">Code of Conduct: </span>
-      This event is dedicated to providing a harassment-free experience for everyone, regardless of gender, gender identity
-      and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or
-      lack thereof), or technology choices. We do not tolerate harassment in any form. Anyone violating these rules may be
-      sanctioned or banned from attending at the discretion of the conference organizers. Please contact the organizers through
-      meet-up messaging/Slack, if you feel someone has broken the code of conduct.
-      <br /><br />Original source and credit:
-      <a href="http://2012.jsconf.us/#/about">http://2012.jsconf.us/#/about</a> &
-      <a href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy">The Ada Initiative</a>
-    </div>
+    <slot />
+
+    <span class="font-semibold">Code of Conduct: </span>
+    This event is dedicated to providing a harassment-free experience for everyone, regardless of gender, gender identity
+    and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack
+    thereof), or technology choices. We do not tolerate harassment in any form. Anyone violating these rules may be sanctioned
+    or banned from attending at the discretion of the conference organizers. Please contact the organizers through meet-up
+    messaging/Slack, if you feel someone has broken the code of conduct.
+    <br /><br />Original source and credit:
+    <a href="http://2012.jsconf.us/#/about">http://2012.jsconf.us/#/about</a> &
+    <a href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy">The Ada Initiative</a>
   </section>
 </Layout>
