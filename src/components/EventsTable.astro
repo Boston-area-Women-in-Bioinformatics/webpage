@@ -32,7 +32,7 @@ const past_events = await getCollection(
               <img
                 src={event.data.image.src}
                 alt={event.data.image.alt}
-                class="h-48 w-full object-cover"
+                class="h-48 w-full object-cover object-top"
                 transition:name="playlist ${event.id} image"
               />
               <div class="p-4 w-2/3">
@@ -67,7 +67,7 @@ const past_events = await getCollection(
           <img
             src={event.data.image.src}
             alt={event.data.image.alt}
-            class="h-48 w-full object-cover"
+            class="h-48 w-full object-cover object-top"
             transition:name="playlist ${event.id} image"
           />
           <div class="p-4 w-2/3">
