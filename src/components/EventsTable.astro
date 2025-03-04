@@ -8,50 +8,48 @@ import FormattedDate from '~/components/FormattedDate.astro';
 import EventAddress from 'src/components/EventAddress.astro';
 //import { Icon } from 'astro-icon/components';
 
-const future_events = await getCollection(
-  'event',
-  ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) > new Date()
-);
+const future_events = (
+  await getCollection('event', ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) > new Date())
+).sort((b, a) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
 
-const past_events = await getCollection(
-  'event',
-  ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) < new Date()
-);
+const past_events = (
+  await getCollection('event', ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) < new Date())
+).sort((a, b) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
 ---
 
 <div class="container mx-auto px-4">
   <Headline title="Upcoming Events" />
-  <div class="mb-8 md:mt-3 md:mb-12 text-center">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 md:mt-3 md:mb-12 text-center">
     {
       future_events.length === 0 ? (
         <p>No upcoming events found.</p>
       ) : (
         future_events.map((event) => (
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-gray-90 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md flex">
+          <div class="bg-gray-90 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md flex">
+            <div class={event.data.imgpos}>
               <img
                 src={event.data.image.src}
                 alt={event.data.image.alt}
-                class="h-48 w-full object-cover object-top"
+                class="h-48 w-full object-cover"
                 transition:name="playlist ${event.id} image"
               />
-              <div class="p-4 w-2/3">
-                <h3 class="text-xl font-semibold mb-2" transition:name="playlist ${event.id} title">
-                  {event.data.title}
-                </h3>
-                <div class="text-sm mb-4">
-                  <FormattedDate date={event.data.dateTime} />
-                </div>
-                <div class="text-sm mb-4">
-                  <EventAddress artists={event.data.location || []} />
-                </div>
-                <button
-                  type="button"
-                  class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
-                >
-                  <a href={`/events/${event.id}`}>MORE INFO</a>
-                </button>
+            </div>
+            <div class="p-4 w-2/3">
+              <h3 class="text-xl font-semibold mb-2" transition:name="playlist ${event.id} title">
+                {event.data.title}
+              </h3>
+              <div class="text-sm mb-4">
+                <FormattedDate date={event.data.dateTime} />
               </div>
+              <div class="text-sm mb-4">
+                <EventAddress artists={event.data.location || []} />
+              </div>
+              <button
+                type="button"
+                class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+              >
+                <a href={`/events/${event.id}`}>MORE INFO</a>
+              </button>
             </div>
           </div>
         ))
@@ -64,12 +62,14 @@ const past_events = await getCollection(
     {
       past_events.map((event) => (
         <div class="bg-gray-90  dark:bg-gray-700 rounded-lg overflow-hidden shadow-md flex">
-          <img
-            src={event.data.image.src}
-            alt={event.data.image.alt}
-            class="h-48 w-full object-cover object-top"
-            transition:name="playlist ${event.id} image"
-          />
+          <div class={event.data.imgpos}>
+            <img
+              src={event.data.image.src}
+              alt={event.data.image.alt}
+              class="h-48 w-full object-cover"
+              transition:name="playlist ${event.id} image"
+            />
+          </div>
           <div class="p-4 w-2/3">
             <h3 class="text-xl font-semibold mb-2" transition:name="playlist ${event.id} title">
               {event.data.title}
