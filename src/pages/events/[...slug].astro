@@ -14,7 +14,8 @@ const { meeting } = Astro.props;
 const { Content } = await render(meeting);
 ---
 
-<EventLayout frontmatter={meeting.data} date={meeting.data.dateTime}>
+<EventLayout frontmatter={meeting.data} date={meeting.data.dateTime} location={meeting.data.location}
+  imgsrc={meeting.data.image.src} imgalt={meeting.data.image.alt} url={meeting.data.url}>
   <Content />
 </EventLayout>
 

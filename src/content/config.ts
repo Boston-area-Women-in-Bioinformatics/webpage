@@ -71,6 +71,7 @@ const eventCollection = defineCollection({
     title: z.string(),
     dateTime: z.coerce.date(),
     location: z.array(z.string()),
+    url: z.string().optional(),
     image: z.object({
       src: z.string(),
       alt: z.string(),
