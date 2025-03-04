@@ -14,9 +14,10 @@ export interface Props {
   location: string[];
   imgsrc: string;
   imgalt: string;
+  imgpos?: string;
   url?: string;
 }
-const { frontmatter, date, location, url, imgsrc, imgalt } = Astro.props;
+const { frontmatter, date, location, url, imgsrc, imgalt, imgpos = 'object-top' } = Astro.props;
 
 const metadata: MetaData = {
   title: frontmatter.title,
@@ -26,7 +27,9 @@ const metadata: MetaData = {
 <Layout metadata={metadata}>
   <div class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-      <img src={imgsrc} alt={imgalt} class="h-72 w-full object-cover object-top" />
+      <div class={imgpos}>
+        <img src={imgsrc} alt={imgalt} class="h-72 w-full object-cover" />
+      </div>
       <div class="p-1">
         <h2 class="text-2xl font-bold mb-2 font-heading leading-tighter tracking-tighter">
           {frontmatter.title}
@@ -42,10 +45,19 @@ const metadata: MetaData = {
     </div>
   </div>
 
-  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
-    <slot />
-
-    <span class="font-semibold">Code of Conduct: </span>
+  <section class="px-4 py-4 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <h3 class="font-semibold mb-4">Details:</h3>
+    <div
+      class="prose dark:prose-invert
+  prose-h1:font-bold prose-h1:text-xl dark:prose-a:text-white
+  prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
+  prose-headings:underline"
+    >
+      <slot />
+    </div>
+  </section>
+  <section class="px-4 py-4 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <h3 class="font-semibold mb-4">Code of Conduct:</h3>
     This event is dedicated to providing a harassment-free experience for everyone, regardless of gender, gender identity
     and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack
     thereof), or technology choices. We do not tolerate harassment in any form. Anyone violating these rules may be sanctioned
