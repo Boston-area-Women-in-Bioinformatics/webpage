@@ -59,7 +59,6 @@ const postCollection = defineCollection({
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
     author: z.string().optional(),
-
     metadata: metadataDefinition(),
   }),
 });
@@ -71,10 +70,12 @@ const eventCollection = defineCollection({
     title: z.string(),
     dateTime: z.coerce.date(),
     location: z.array(z.string()),
+    url: z.string().optional(),
     image: z.object({
       src: z.string(),
       alt: z.string(),
     }),
+    imgpos: z.string().optional(),
     tags: z.array(z.string()),
   }),
 });
