@@ -59,7 +59,6 @@ const postCollection = defineCollection({
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
     author: z.string().optional(),
-
     metadata: metadataDefinition(),
   }),
 });
@@ -76,6 +75,7 @@ const eventCollection = defineCollection({
       src: z.string(),
       alt: z.string(),
     }),
+    imgpos: z.string().optional(),
     tags: z.array(z.string()),
   }),
 });
