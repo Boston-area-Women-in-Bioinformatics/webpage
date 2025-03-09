@@ -87,6 +87,24 @@ const team = {
     },
     {
       // Name: First and last name
+      name: 'Sakina Saif',
+      // Namelink: Member's Personal Website
+      nameLink: 'https://www.linkedin.com/in/sakinasaif/',
+      // Job Title
+      title: 'Co-chair of Communication committee',
+      // The avatar of the first member
+      avatar: '/team/sakina_sq.jpg',
+      // Social links of the first member
+      social: {
+        // website: '#',
+        // twitter: 'https://x.com/lopantano',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/sakinasaif/',
+      },
+    },
+    {
+      // Name: First and last name
       name: 'Amulya Shastry',
       // Namelink: Member's Personal Website
       nameLink: 'https://ashastry2.github.io/',
