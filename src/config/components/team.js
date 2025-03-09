@@ -20,8 +20,7 @@ const team = {
       // Job Title
       title: 'Co-organizer',
       // The avatar of the first member
-      avatar:
-        'https://bioinformatics.sph.harvard.edu/sites/projects.iq.harvard.edu/files/styles/profile_full/public/chanbioinformatics/files/lpantano_headshot.png?m=1714588501&itok=XriOYRY4',
+      avatar: '/team/lpantano.jpg',
       // Social links of the first member
       social: {
         // website: '#',
@@ -58,7 +57,7 @@ const team = {
       name: 'Yaseswini Neelamraju',
       nameLink: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
       title: 'Web Page Developer',
-      avatar: '/team/yaseswinineelamraju.jpeg',
+      avatar: '/team/yaseswini.png',
       social: {
         // website: '#',
         // twitter: '#',
@@ -88,6 +87,24 @@ const team = {
     },
     {
       // Name: First and last name
+      name: 'Sakina Saif',
+      // Namelink: Member's Personal Website
+      nameLink: 'https://www.linkedin.com/in/sakinasaif/',
+      // Job Title
+      title: 'Co-chair of Communication committee',
+      // The avatar of the first member
+      avatar: '/team/sakina_sq.jpg',
+      // Social links of the first member
+      social: {
+        // website: '#',
+        // twitter: 'https://x.com/lopantano',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/sakinasaif/',
+      },
+    },
+    {
+      // Name: First and last name
       name: 'Amulya Shastry',
       // Namelink: Member's Personal Website
       nameLink: 'https://ashastry2.github.io/',
@@ -113,7 +130,7 @@ const team = {
       // Job Title
       title: 'Chair, Advisory Committee, Co-Chair, Enabling Advocacy Committee',
       // The avatar of the first member
-      avatar: 'team/Katie.png',
+      avatar: '/team/katie_sq.jpg',
       // Social links of the first member
       social: {
         // website: '#',
@@ -131,7 +148,7 @@ const team = {
       // Job Title
       title: 'Communications Committe Member',
       // The avatar of the first member
-      avatar: 'team/shreya.jpg',
+      avatar: 'team/shreya_sq.jpg',
       // Social links of the first member
       social: {
         // website: '#',
