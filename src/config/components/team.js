@@ -158,6 +158,25 @@ const team = {
         linkedin: 'www.linkedin.com/in/shreya-rajasekhar',
       },
     },
+    //Next team member
+    {
+      // Name: First and last name
+      name: 'Lina Faller',
+      // Namelink: Member's Personal Website
+      //nameLink: '',
+      // Job Title
+      title: 'Co-Chair of the Events Committee',
+      // The avatar of the first member
+      avatar: 'team/lina.jpg',
+      // Social links of the first member
+      social: {
+        // website: '#',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/linafaller/',
+      },
+    },
   ],
 };
 
