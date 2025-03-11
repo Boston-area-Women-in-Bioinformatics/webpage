@@ -14,7 +14,7 @@ export default function atcb(props: AddToCalendarButtonType) {
       endDate={props.endDate}
       startTime={props.startTime}
       endTime={props.endTime}
-      timeZone="America/Los_Angeles"
+      timeZone="America/New_York"
       options="'Apple','Google','iCal','Microsoft365','MicrosoftTeams'"
     ></AddToCalendarButton>
   );
