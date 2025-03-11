@@ -17,6 +17,16 @@ export const headerData = {
     {
       text: 'Events',
       href: getPermalink('/events'),
+      links: [
+        {
+          text: 'All Events',
+          href: getPermalink('/events'),
+        },
+        {
+          text: 'Ten Year Anniversary',
+          href: getPermalink('/events/tenyearanniversary'),
+        },
+      ],
     },
     {
       text: 'Contact',
