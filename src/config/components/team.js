@@ -158,6 +158,27 @@ const team = {
         linkedin: 'www.linkedin.com/in/shreya-rajasekhar',
       },
     },
+    // Next team member
+    {
+      // Name: First and last name
+      name: 'Aysheh Alrfooh',
+      // Namelink: Member's Personal Website
+      //nameLink: '',
+      // Job Title
+      title: 'Co-chair of the Sponsorship committee',
+      // The avatar of the first member
+      avatar: 'team/aysheh.jpg',
+      // Social links of the first member
+      social: {
+        // website: '#',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/aysheh-alrfooh/',
+        github: 'https://github.com/Alrfooh-Aysheh',
+      },
+    },
+    //Next team member
   ],
 };
 
