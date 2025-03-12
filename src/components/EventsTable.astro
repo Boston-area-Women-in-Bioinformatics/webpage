@@ -19,7 +19,7 @@ const past_events = (
 
 <div class="container mx-auto px-4">
   <Headline title="Upcoming Events" />
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 md:mt-3 md:mb-12 text-center">
+  <div class="grid grid-cols-1 gap-6 mb-8 md:mt-3 md:mb-12 text-center">
     {
       future_events.length === 0 ? (
         <p>No upcoming events found.</p>
@@ -58,7 +58,7 @@ const past_events = (
   </div>
 
   <Headline title="Past Events" />
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 md:mt-3 md:mb-12 text-center">
+  <div class="grid grid-cols-1 gap-6 mb-8 md:mt-3 md:mb-12 text-center">
     {
       past_events.map((event) => (
         <div class="bg-gray-90  dark:bg-gray-700 rounded-lg overflow-hidden shadow-md flex">
