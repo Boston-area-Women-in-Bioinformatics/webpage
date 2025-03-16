@@ -178,7 +178,7 @@ const team = {
       },
     },
     {
-    //Next team member
+      //Next team member
       name: 'Aysheh Alrfooh',
       // Namelink: Member's Personal Website
       //nameLink: '',
@@ -186,14 +186,13 @@ const team = {
       title: 'Co-chair of the Sponsorship committee',
       // The avatar of the first member
       avatar: 'team/aysheh.jpg',
-    // Social links of the first member
+      // Social links of the first member
       social: {
         linkedin: 'https://www.linkedin.com/in/aysheh-alrfooh/',
         github: 'https://github.com/Alrfooh-Aysheh',
       },
     },
     //Next team member
-
   ],
 };
 
