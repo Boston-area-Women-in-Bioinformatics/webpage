@@ -155,7 +155,7 @@ const team = {
         // twitter: '#',
         // instagram: '#',
         // facebook: '#',
-        linkedin: 'www.linkedin.com/in/shreya-rajasekhar',
+        linkedin: 'https://www.linkedin.com/in/shreya-rajasekar/',
       },
     },
     // Next team member
