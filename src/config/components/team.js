@@ -192,6 +192,21 @@ const team = {
         github: 'https://github.com/Alrfooh-Aysheh',
       },
     },
+    {
+      //Isha Parikh
+      name: 'Isha Parikh',
+      // Namelink: Member's Personal Website
+      //nameLink: '',
+      // Job Title
+      title: 'Events Committee Member',
+      // The avatar of the first member
+      avatar: 'team/isha.jpeg',
+      // Social links of the first member
+      social: {
+        linkedin: 'https://www.linkedin.com/in/isha2106/',
+        github: 'https://github.com/isha2106',
+      },
+    },
     //Next team member
   ],
 };
