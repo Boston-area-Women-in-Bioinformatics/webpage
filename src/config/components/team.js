@@ -177,8 +177,8 @@ const team = {
         linkedin: 'https://www.linkedin.com/in/linafaller/',
       },
     },
+    //Next team member
     {
-      //Next team member
       name: 'Aysheh Alrfooh',
       // Namelink: Member's Personal Website
       //nameLink: '',
@@ -193,6 +193,20 @@ const team = {
       },
     },
     //Next team member
+    {
+      name: 'Yevgenia Khodor Tolan',
+      // Namelink: Member's Personal Website
+      //nameLink: '',
+      // Job Title
+      title: 'Co-Chair',
+      // The avatar of the first member
+      avatar: 'team/Yevgenia.jpg',
+      // Social links of the first member
+      social: {
+        linkedin: 'https://www.linkedin.com/in/yevgenia-khodor/',
+        //github: 'https://github.com/Alrfooh-Aysheh',
+      },
+    },
   ],
 };
 
