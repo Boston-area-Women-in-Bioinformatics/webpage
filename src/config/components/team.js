@@ -193,6 +193,21 @@ const team = {
       },
     },
     //Next team member
+    {
+      //Next team member
+      name: 'Yevgenia Khodor',
+      // Namelink: Member's Personal Website
+      //nameLink: '',
+      // Job Title
+      title: 'Co-chair',
+      // The avatar of the first member
+      avatar: 'team/Yevgenia.jpg',
+      // Social links of the first member
+      social: {
+        linkedin: 'https://www.linkedin.com/in/yevgenia-khodor/',
+        // github: 'https://github.com/Alrfooh-Aysheh',
+      },
+    },
   ],
 };
 
