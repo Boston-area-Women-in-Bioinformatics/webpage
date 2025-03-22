@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://astonishing-granita-2cb317.netlify.app/sitemap-index.xml
