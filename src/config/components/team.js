@@ -221,29 +221,15 @@ const team = {
         github: 'https://github.com/Yaseswini',
       },
     },
+
     //Next team member
-    {
-      // Yevgenia Khodor
-      name: 'Yevgenia Khodor',
-      // Namelink: Member's Personal Website
-      //nameLink: '',
-      // Job Title
-      title: 'Co-chair',
-      // The avatar of the first member
-      avatar: 'team/Yevgenia.jpg',
-      // Social links of the first member
-      social: {
-        linkedin: 'https://www.linkedin.com/in/yevgenia-khodor/',
-        // github: 'https://github.com/Alrfooh-Aysheh',
-      },
-    },
     {
       //Isha Parikh
       name: 'Isha Parikh',
       // Namelink: Member's Personal Website
       //nameLink: '',
       // Job Title
-      title: 'Events Committee Member',
+      title: 'Member , Events Committee',
       // The avatar of the first member
       avatar: 'team/isha.jpeg',
       // Social links of the first member
