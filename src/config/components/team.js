@@ -236,7 +236,8 @@ const team = {
         linkedin: 'https://www.linkedin.com/in/yevgenia-khodor/',
         // github: 'https://github.com/Alrfooh-Aysheh',
       },
-      {
+    },
+    {
       //Isha Parikh
       name: 'Isha Parikh',
       // Namelink: Member's Personal Website
@@ -250,7 +251,6 @@ const team = {
         linkedin: 'https://www.linkedin.com/in/isha2106/',
         github: 'https://github.com/isha2106',
       },
-    },
     },
   ],
 };
