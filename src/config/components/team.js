@@ -56,7 +56,7 @@ const team = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/diveena-becker-5945a771/',
       // Job Title
-      title: 'Co-chair , Events committee',
+      title: 'Co-chair, Events committee',
       // The avatar of the first member
       avatar: '/team/diveena.jpg',
       // Social links of the first member
@@ -76,7 +76,7 @@ const team = {
       // Namelink: Member's Personal Website
       //nameLink: '',
       // Job Title
-      title: 'Co-Chair,Events Committee',
+      title: 'Co-Chair, Events Committee',
       // The avatar of the first member
       avatar: 'team/lina.jpg',
       // Social links of the first member
@@ -96,7 +96,7 @@ const team = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/hugheskj/',
       // Job Title
-      title: 'Chair, Advisory Committee, Co-Chair, Enabling Advocacy Committee',
+      title: `Chair, Advisory Committee,\n Co-Chair, Enabling Advocacy Committee`,
       // The avatar of the first member
       avatar: '/team/katie_sq.jpg',
       // Social links of the first member
@@ -115,7 +115,7 @@ const team = {
       // Namelink: Member's Personal Website
       nameLink: 'https://ashastry2.github.io/',
       // Job Title
-      title: 'Co-chair , Enabling Advocacy Committee',
+      title: 'Co-chair, Enabling Advocacy Committee',
       // The avatar of the first member
       avatar: '/team/AmulyaShastry.jpeg',
       // Social links of the first member
@@ -151,7 +151,7 @@ const team = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/sakinasaif/',
       // Job Title
-      title: 'Co-chair , Communication committee',
+      title: 'Co-chair, Communication committee',
       // The avatar of the first member
       avatar: '/team/sakina_sq.jpg',
       // Social links of the first member
