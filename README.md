@@ -57,6 +57,32 @@ git push -u origin <new-branch-name>
 Collapse
 ```
 
+
+## Add an ambassador
+
+```
+Clone the repository locally :
+git clone https://github.com/Boston-area-Women-in-Bioinformatics/webpage.git
+# List branches in a github repos :
+git branch
+# Be in main branch if not already
+git checkout main
+# Create a new branch :
+git checkout -b <new-branch-name>
+# Do the following to upload your image and edit ambassadors.js file
+## 1. Upload your image in this location of your cloned repo `/public/ambassadors/`
+## 2. Edit the ambassadors.js  file (src/config/components/ambassadors.js) to populate your information
+# Run 'npx --prettier' to fix any astro specific formatting issues
+npx prettier --write src/config/components/ambassadors.js
+# Stage the changes to commit (Assuming you are in the git folder)
+git add ./public/ambassadors/<your_image_name>
+git add ./src/config/components/ambassadors.js
+#  Commit new changes
+git commit -m "<Add committ message>"
+git push -u origin <new-branch-name>
+Collapse
+```
+
 ### Project structure
 
 This project has the following folders and files:
