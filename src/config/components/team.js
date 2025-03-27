@@ -1,16 +1,16 @@
-// Configuration for the team component / page
+// Configuration for the leadership team component / page
 
 const team = {
-  // Whether the team page is enabled or not
+  // Whether the leadership team page is enabled or not
   enabled: true,
 
-  // The title of the team section
-  title: 'Our Team',
+  // The title of the leadership team section
+  title: 'Our Leadership',
 
-  // The subtitle of the team section
-  description: 'Meet the team behind this organization',
+  // The subtitle of the leadership team section
+  description: 'Meet the leadership behind this organization',
 
-  // Members of the team
+  // Members of the leadership team
   members: [
     // Lorena Pantano
     {
@@ -20,7 +20,7 @@ const team = {
       nameLink: 'https://www.linkedin.com/in/lpantano/',
       // Job Title
       title: 'Co-chair & Founder',
-      // Team Member Photo
+      // Leadership Leadership team member Photo
       avatar: '/team/lpantano.jpg',
       // Social links
       social: {
@@ -41,7 +41,7 @@ const team = {
       //nameLink: '',
       // Job Title
       title: 'Co-Chair',
-      // Team Member Photo
+      // Leadership team member Photo
       avatar: 'team/Yevgenia.jpg',
       // Social links
       social: {
@@ -58,7 +58,7 @@ const team = {
       nameLink: 'https://www.linkedin.com/in/diveena-becker-5945a771/',
       // Job Title
       title: 'Co-chair, Events Committee',
-      // Team Member Photo
+      // Leadership team member Photo
       avatar: '/team/diveena.jpg',
       // Social links
       social: {
@@ -77,7 +77,7 @@ const team = {
       //nameLink: '',
       // Job Title
       title: 'Co-Chair, Events Committee',
-      // Team Member Photo
+      // Leadership team member Photo
       avatar: 'team/lina.jpg',
       // Social links
       social: {
@@ -96,7 +96,7 @@ const team = {
       nameLink: 'https://www.linkedin.com/in/hugheskj/',
       // Job Title
       title: `Chair, Advisory Committee,\n Co-Chair, Enabling Advocacy Committee`,
-      // Team Member Photo
+      // Leadership team member Photo
       avatar: '/team/katie_sq.jpg',
       // Social links
       social: {
@@ -115,7 +115,7 @@ const team = {
       nameLink: 'https://ashastry2.github.io/',
       // Job Title
       title: 'Co-chair, Enabling Advocacy Committee',
-      // Team Member Photo
+      // Leadership team member Photo
       avatar: '/team/AmulyaShastry.jpeg',
       // Social links
       social: {
@@ -133,7 +133,7 @@ const team = {
       //nameLink: '',
       // Job Title
       title: 'Co-chair, Sponsorship Committee',
-      // Team Member Photo
+      // Leadership team member Photo
       avatar: 'team/aysheh.jpg',
       // Social links
       social: {
@@ -149,7 +149,7 @@ const team = {
       nameLink: 'https://www.linkedin.com/in/sakinasaif/',
       // Job Title
       title: 'Co-chair, Communication Committee',
-      // Team Member Photo
+      // Leadership team member Photo
       avatar: '/team/sakina_sq.jpg',
       // Social links
       social: {
@@ -168,7 +168,7 @@ const team = {
       //nameLink: '',
       // Job Title
       title: 'Co-chair, Communication Committee',
-      // Team Member Photo
+      // Leadership team member Photo
       avatar: 'team/shreya_sq.jpg',
       // Social links
       social: {
@@ -187,7 +187,7 @@ const team = {
       nameLink: 'https://www.linkedin.com/in/samantha-klasfeld/',
       // Job Title
       title: 'Web Page Developer',
-      // Team Member Photo
+      // Leadership team member Photo
       avatar: '/team/samanthaklasfeld.jpeg',
       // Social links
       social: {
@@ -213,22 +213,6 @@ const team = {
         // facebook: '#',
         linkedin: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
         github: 'https://github.com/Yaseswini',
-      },
-    },
-    // Isha Parikh
-    {
-      // Name: First and last name
-      name: 'Isha Parikh',
-      // Namelink: Member's Personal Website
-      //nameLink: '',
-      // Job Title
-      title: 'Member, Events Committee',
-      // Team Member Photo
-      avatar: 'team/isha.jpeg',
-      // Social links
-      social: {
-        linkedin: 'https://www.linkedin.com/in/isha2106/',
-        github: 'https://github.com/isha2106',
       },
     },
   ],
