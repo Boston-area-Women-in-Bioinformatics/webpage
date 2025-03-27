@@ -21,7 +21,7 @@ const ambassadors = {
       // Job Title
       title: 'Founder and CEO, Diamond Age Data Science, LLC',
       // Ambassador Member Photo
-      avatar: 'ambassadors/eleanorahowe.jpeg',
+      avatar: 'team/eleanorahowe.jpeg',
       // Social links
       social: {
         // website: '#',
