@@ -82,7 +82,6 @@ git push -u origin <new-branch-name>
 Collapse
 ```
 
-
 ## Add an ambassador
 
 ```
