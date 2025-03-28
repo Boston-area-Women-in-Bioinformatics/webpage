@@ -75,7 +75,7 @@ const eventCollection = defineCollection({
       src: z.string(),
       alt: z.string(),
     }),
-    imgpos: z.string().optional(),
+    imgpos: z.string().optional().default('object-top object-cover'),
     tags: z.array(z.string()),
   }),
 });
