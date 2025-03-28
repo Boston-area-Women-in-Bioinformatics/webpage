@@ -4,7 +4,7 @@ import Headline from '~/components/ui/Headline.astro';
 const qrText = 'https://my.togetherplatform.com/login';
 ---
 
-<div class="container mx-aut px-6">
+<div class="container mx-auto px-6">
   <Headline title="Unlock Your Potential with Bioinformatics Sisters" />
 
   <p class="text-lg mt-8 mb-6">
@@ -12,6 +12,7 @@ const qrText = 'https://my.togetherplatform.com/login';
     women in bioinformatics. Whether you're looking to expand your professional network, find mentorship, or support
     others in their journey, this platform connects you with the right people.
   </p>
+
   <ul class="list-none text-lg text-gray-700 mb-6 max-w-3xl mx-auto text-left">
     <li><strong><em>Smart Pairing</em></strong> – Get matched based on your skills, goals, and preferences.</li>
     <li><strong><em>Seamless Scheduling</em></strong> – Easily set up in-person or virtual meetings.</li>
@@ -22,16 +23,18 @@ const qrText = 'https://my.togetherplatform.com/login';
   </ul>
 
   <p class="text-lg font-semibold mb-12">
-    Join a community that fosters collaboration, learning, and leadership—your next opportunity starts here! Sign up details coming soon.. 
+    Join a community that fosters collaboration, learning, and leadership—your next opportunity starts here! Sign up details coming soon..
   </p>
 
-  <!---
+  <!-- 
   <p class="text-lg font-semibold mb-12">
     Join a community that fosters collaboration, learning, and leadership—your next opportunity starts here! Sign up
     using the QR code below or
     <a href={qrText} class="text-blue-500 hover:underline">click here</a>
   </p>
-  <!-- QR Code  -->
+  -->
+
+  <!-- QR Code 
   <div class="flex justify-center items-center my-6 mb-10">
     <img
       src={`https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(qrText)}&size=200x200`}
@@ -39,5 +42,5 @@ const qrText = 'https://my.togetherplatform.com/login';
     />
   </div>
   -->
-
+  
 </div>
