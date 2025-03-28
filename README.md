@@ -136,7 +136,7 @@ Logos are found in the `src/assets/favicons` directory.
 
 Icon images are found in the `src/assets/images` directory.
 
-Note: To code generic icons/symbols for the site use this helpful link: [https://icon-sets.iconify.design/tabler/] 
+Note: To code generic icons/symbols for the site use this helpful link: [https://icon-sets.iconify.design/tabler/]
 
 ## Website Template: 🚀 AstroWind
 
