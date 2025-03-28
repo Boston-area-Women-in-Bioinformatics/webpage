@@ -2,7 +2,9 @@
 import Layout from '~/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
 import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 //import Image from '~/components/common/Image.astro';
+
 
 const metadata = {
   title: '10 Year Anniversary',
@@ -65,6 +67,24 @@ const metadata = {
           </div>
         </div>
       </div>
+      <CallToAction actions={[
+        {
+          variant: 'primary',
+          target: '_blank',
+          text: 'Contact',
+          href: 'https://www.linkedin.com/in/lpantano/',
+          icon: 'tabler:brand-linkedin',
+        },
+      ]}>
+      
+      <Fragment slot="title">Want to Sponsor Us?</Fragment>
+  
+      <Fragment slot="subtitle">
+        If you are interested in sponsoring this event, please contact Lorena Pantano on LinkedIn.
+      </Fragment>
+      </CallToAction>
     </div>
+
+    
   </section>
 </Layout>
