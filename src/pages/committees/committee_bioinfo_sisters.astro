@@ -1,6 +1,7 @@
 ---
 import { SITE } from '~/config/site/config.js';
 import Layout from '~/layouts/PageLayout.astro';
+import BioinformaticsSisters from '~/components/BioinformaticsSisters.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 const metadata = {
@@ -13,8 +14,8 @@ const metadata = {
 <Layout metadata={metadata}>
   <Hero>
     <Fragment slot="title"> Bioinformatics Sisters Committee </Fragment>
-    <Fragment slot="subtitle"> Goals & Activities </Fragment>
     <Fragment slot="content">
+      <BioinformaticsSisters />
     </Fragment>
   </Hero>
 </Layout>
