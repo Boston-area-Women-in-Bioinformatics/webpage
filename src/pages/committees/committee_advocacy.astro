@@ -1,0 +1,22 @@
+---
+import { SITE } from '~/config/site/config.js';
+import Layout from '~/layouts/PageLayout.astro';
+import EventsTable from '~/components/EventsTable.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+const metadata = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero>
+    <Fragment slot="title"> Advocacy Committee </Fragment>
+
+    <Fragment slot="subtitle"> Goals & Activities </Fragment>
+    <Fragment slot="content">
+    </Fragment>
+  </Hero>
+</Layout>
