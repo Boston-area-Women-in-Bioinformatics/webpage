@@ -32,18 +32,18 @@ const metadata = {
           <div class="text-lg mb-6">
             <span class="text-muted">
               <p>Date: Sept 23, 2025 @ 4PM ET</p>
-              <p>Location: Boynton Yards, Somverville, MA</p>
+              <p>Location: TBD, Somerville or Cambridge</p>
             </span>
           </div>
           <p class="mb-1 m-auto lg:items-center">
             <AddToCalendarButton
               client:only="react"
               name="Boston Women in Bioinformatics 10 Year Anniversary"
-              location="Boynton Yards, Somverville, MA"
+              location="TBD, Somerville or Cambridge"
               startDate="2025-09-23"
               endDate="2025-09-23"
               startTime="16:00"
-              endTime="18:00"
+              endTime="19:00"
             />
           </p>
         </div>
@@ -52,7 +52,7 @@ const metadata = {
             class="relative m-auto max-w-5xl intersect-once intercept-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
           >
             <Image
-              src={'/photos/scott-warman-rrYF1RfotSM-unsplash.jpg'}
+              src={'/photos/event.jpg'}
               alt="Celebration cheer"
               class="mx-auto rounded-md w-full"
               widths={[400, 768, 1024, 2040]}
@@ -66,5 +66,134 @@ const metadata = {
         </div>
       </div>
     </div>
+  </section>
+  <section>
+    <div class="sponsorship-tiers">
+      <div class="tier">
+        <h2>Tier 1: <span class="gold">DNA</span> Sponsor</h2>
+        <div class="contribution">
+          <strong>Contribution Amount:</strong> $1,000
+        </div>
+
+        <h3>Benefits:</h3>
+        <ul class="benefits">
+          <li>
+            🏆 <strong>Prominent Logo Placement:</strong> Sponsor's logo prominently displayed on all event marketing materials,
+            including banners, flyers, and digital media.
+          </li>
+          <li>
+            🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Genome Sponsor" during event opening and closing
+            speeches.
+          </li>
+          <li>
+            🏢 <strong>Booth Space:</strong> Complimentary booth space at the event for product display or promotional activity.
+          </li>
+          <li>
+            🌐 <strong>Website Recognition:</strong> Featured logo and hyperlink on the event website homepage or sponsor
+            page.
+          </li>
+          <li>
+            📣 <strong>Social Media Shoutouts:</strong> Multiple mentions across the event's social media channels before,
+            during, and after the event.
+          </li>
+          <li>
+            🎟️ <strong>Complimentary Tickets:</strong>
+            <span class="gold">Five</span> free tickets to the event for the sponsor's representatives or guests.
+          </li>
+        </ul>
+      </div>
+
+      <div class="tier">
+        <h2>Tier 2: <span class="silver">RNA</span> Sponsor</h2>
+        <div class="contribution">
+          <strong>Contribution Amount:</strong> $500
+        </div>
+
+        <h3>Benefits:</h3>
+        <ul class="benefits">
+          <li>
+            🏆 <strong>Prominent Logo Placement:</strong> Sponsor's logo prominently displayed on all event marketing materials,
+            including banners, flyers, and digital media.
+          </li>
+          <li>
+            🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Genome Sponsor" during event opening and closing
+            speeches.
+          </li>
+          <li>
+            🌐 <strong>Website Recognition:</strong> Featured logo and hyperlink on the event website homepage or sponsor
+            page.
+          </li>
+          <li>
+            📣 <strong>Social Media Shoutouts:</strong> Multiple mentions across the event's social media channels before,
+            during, and after the event.
+          </li>
+          <li>
+            🎟️ <strong>Complimentary Tickets:</strong>
+            <span class="silver">Three</span> free tickets to the event for the sponsor's representatives or guests.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <style>
+      .sponsorship-tiers {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .tier {
+        margin-bottom: 40px;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+      }
+
+      .tier h2 {
+        color: #2c3e50;
+        font-size: 24px;
+        margin-top: 0;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #3498db;
+      }
+
+      .contribution {
+        font-size: 18px;
+        margin: 15px 0;
+        color: #e74c3c;
+      }
+
+      .tier h3 {
+        margin-top: 25px;
+        font-size: 20px;
+        color: #2c3e50;
+      }
+
+      .benefits {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      .benefits li {
+        margin-bottom: 10px;
+        line-height: 1.5;
+        display: flex left;
+        align-items: baseline;
+      }
+
+      .benefits li strong {
+        margin-right: 5px;
+      }
+      /* Gold and Silver text colors */
+      .gold {
+        color: #d4af37;
+        font-weight: bold;
+      }
+
+      .silver {
+        color: #c0c0c0;
+        font-weight: bold;
+      }
+    </style>
   </section>
 </Layout>
