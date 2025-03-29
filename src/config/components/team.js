@@ -1,17 +1,18 @@
-// Configuration for the team component / page
+// Configuration for the leadership team component / page
 
 const team = {
-  // Whether the team page is enabled or not
+  // Whether the leadership team page is enabled or not
   enabled: true,
 
-  // The title of the team section
-  title: 'Our Team',
+  // The title of the leadership team section
+  title: 'Our Leadership',
 
-  // The subtitle of the team section
-  description: 'Meet the team behind this project',
+  // The subtitle of the leadership team section
+  description: 'Meet the leadership behind this organization',
 
-  // Members of the team
+  // Members of the leadership team
   members: [
+    // Lorena Pantano
     {
       // Name: First and last name
       name: 'Lorena Pantano',
@@ -19,12 +20,12 @@ const team = {
       nameLink: 'https://www.linkedin.com/in/lpantano/',
       // Job Title
       title: 'Co-chair & Founder',
-      // The avatar of the first member
+      // Leadership Leadership team member Photo
       avatar: '/team/lpantano.jpg',
-      // Social links of the first member
+      // Social links
       social: {
         // website: '#',
-        // twitter: 'https://x.com/lopantano',
+        // twitter: ''#'',
         // instagram: '#',
         // facebook: '#',
         linkedin: 'https://www.linkedin.com/in/lpantano/',
@@ -33,23 +34,23 @@ const team = {
       },
     },
 
-    //Next team member
+    // Yevgenia Khodor Tolan
     {
       name: 'Yevgenia Khodor Tolan',
       // Namelink: Member's Personal Website
       //nameLink: '',
       // Job Title
       title: 'Co-Chair',
-      // The avatar of the first member
+      // Leadership team member Photo
       avatar: 'team/Yevgenia.jpg',
-      // Social links of the first member
+      // Social links
       social: {
         linkedin: 'https://www.linkedin.com/in/yevgenia-khodor/',
-        //github: 'https://github.com/Alrfooh-Aysheh',
+        //github: '#',
       },
     },
 
-    //Next team member
+    // Diveena Becker
     {
       // Name: First and last name
       name: 'Diveena Becker',
@@ -57,19 +58,18 @@ const team = {
       nameLink: 'https://www.linkedin.com/in/diveena-becker-5945a771/',
       // Job Title
       title: 'Co-chair, Events Committee',
-      // The avatar of the first member
+      // Leadership team member Photo
       avatar: '/team/diveena.jpg',
-      // Social links of the first member
+      // Social links
       social: {
         // website: '#',
-        // twitter: 'https://x.com/lopantano',
+        // twitter: ''#'',
         // instagram: '#',
         // facebook: '#',
         linkedin: 'https://www.linkedin.com/in/diveena-becker-5945a771/',
       },
     },
-
-    //Next team member
+    // Lina Faller
     {
       // Name: First and last name
       name: 'Lina Faller',
@@ -77,9 +77,9 @@ const team = {
       //nameLink: '',
       // Job Title
       title: 'Co-Chair, Events Committee',
-      // The avatar of the first member
+      // Leadership team member Photo
       avatar: 'team/lina.jpg',
-      // Social links of the first member
+      // Social links
       social: {
         // website: '#',
         // twitter: '#',
@@ -88,8 +88,7 @@ const team = {
         linkedin: 'https://www.linkedin.com/in/linafaller/',
       },
     },
-
-    //Next team member
+    // Katie Hughes
     {
       // Name: First and last name
       name: 'Katie Hughes',
@@ -97,9 +96,9 @@ const team = {
       nameLink: 'https://www.linkedin.com/in/hugheskj/',
       // Job Title
       title: `Chair, Advisory Committee,\n Co-Chair, Enabling Advocacy Committee`,
-      // The avatar of the first member
+      // Leadership team member Photo
       avatar: '/team/katie_sq.jpg',
-      // Social links of the first member
+      // Social links
       social: {
         // website: '#',
         // twitter: '#',
@@ -108,7 +107,7 @@ const team = {
       },
     },
 
-    //Next team member
+    // Amulya Shastry
     {
       // Name: First and last name
       name: 'Amulya Shastry',
@@ -116,9 +115,9 @@ const team = {
       nameLink: 'https://ashastry2.github.io/',
       // Job Title
       title: 'Co-chair, Enabling Advocacy Committee',
-      // The avatar of the first member
+      // Leadership team member Photo
       avatar: '/team/AmulyaShastry.jpeg',
-      // Social links of the first member
+      // Social links
       social: {
         website: 'https://ashastry2.github.io/',
         github: 'https://github.com/Ashastry2',
@@ -127,24 +126,22 @@ const team = {
         linkedin: 'https://www.linkedin.com/in/amulya-shastry/',
       },
     },
-
-    //Next team member
+    // Aysheh Alrfooh
     {
       name: 'Aysheh Alrfooh',
       // Namelink: Member's Personal Website
       //nameLink: '',
       // Job Title
       title: 'Co-chair, Sponsorship Committee',
-      // The avatar of the first member
+      // Leadership team member Photo
       avatar: 'team/aysheh.jpg',
-      // Social links of the first member
+      // Social links
       social: {
         linkedin: 'https://www.linkedin.com/in/aysheh-alrfooh/',
         github: 'https://github.com/Alrfooh-Aysheh',
       },
     },
-
-    //Next team member
+    // Sakina Saif
     {
       // Name: First and last name
       name: 'Sakina Saif',
@@ -152,19 +149,18 @@ const team = {
       nameLink: 'https://www.linkedin.com/in/sakinasaif/',
       // Job Title
       title: 'Co-chair, Communication Committee',
-      // The avatar of the first member
+      // Leadership team member Photo
       avatar: '/team/sakina_sq.jpg',
-      // Social links of the first member
+      // Social links
       social: {
         // website: '#',
-        // twitter: 'https://x.com/lopantano',
+        // twitter: ''#'',
         // instagram: '#',
         // facebook: '#',
         linkedin: 'https://www.linkedin.com/in/sakinasaif/',
       },
     },
-
-    //Next team member
+    // Shreya Rajasekar
     {
       // Name: First and last name
       name: 'Shreya Rajasekar',
@@ -172,9 +168,9 @@ const team = {
       //nameLink: '',
       // Job Title
       title: 'Co-chair, Communication Committee',
-      // The avatar of the first member
+      // Leadership team member Photo
       avatar: 'team/shreya_sq.jpg',
-      // Social links of the first member
+      // Social links
       social: {
         // website: '#',
         // twitter: '#',
@@ -183,18 +179,17 @@ const team = {
         linkedin: 'https://www.linkedin.com/in/shreya-rajasekar/',
       },
     },
-
-    //Next team member
+    // Samantha Klasfeld
     {
-      // The name of the first member
+      // Name: First and last name
       name: 'Samantha Klasfeld',
-      // Clickable link of the first member name
+      // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/samantha-klasfeld/',
-      // The job title of the first member
+      // Job Title
       title: 'Web Page Developer',
-      // The avatar of the first member
+      // Leadership team member Photo
       avatar: '/team/samanthaklasfeld.jpeg',
-      // Social links of the first member
+      // Social links
       social: {
         website: 'http://sklasfeld.github.io/',
         // twitter: '#',
@@ -205,8 +200,7 @@ const team = {
         bluesky: 'https://bsky.app/profile/sklasfeld.bsky.social',
       },
     },
-
-    // Next team member
+    // Yaseswini Neelamraju
     {
       name: 'Yaseswini Neelamraju',
       nameLink: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
@@ -219,23 +213,6 @@ const team = {
         // facebook: '#',
         linkedin: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
         github: 'https://github.com/Yaseswini',
-      },
-    },
-
-    //Next team member
-    {
-      //Isha Parikh
-      name: 'Isha Parikh',
-      // Namelink: Member's Personal Website
-      //nameLink: '',
-      // Job Title
-      title: 'Member, Events Committee',
-      // The avatar of the first member
-      avatar: 'team/isha.jpeg',
-      // Social links of the first member
-      social: {
-        linkedin: 'https://www.linkedin.com/in/isha2106/',
-        github: 'https://github.com/isha2106',
       },
     },
   ],

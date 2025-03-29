@@ -3,6 +3,8 @@ import { SITE } from '~/config/site/config.js';
 import Layout from '~/layouts/PageLayout.astro';
 import TeamWidget from '~/components/widgets/Team.jsx';
 import team from '~/config/components/team';
+import ambassadors from '~/config/components/ambassadors';
+import members from '~/config/components/members';
 
 import { getHomePermalink } from '~/utils/permalinks';
 
@@ -25,10 +27,131 @@ if (team?.enabled === true) {
     teamColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3';
   }
 }
+
+var ambassadorColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4';
+
+if (ambassadors?.enabled === true) {
+  if (ambassadors.members.length === 1) {
+    ambassadorColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1';
+  } else if (ambassadors.members.length === 2) {
+    ambassadorColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2';
+  } else if (ambassadors.members.length === 3) {
+    ambassadorColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3';
+  }
+}
+
+var memberColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4';
+
+if (members?.enabled === true) {
+  if (members.members.length === 1) {
+    memberColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1';
+  } else if (members.members.length === 2) {
+    memberColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2';
+  } else if (members.members.length === 3) {
+    memberColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3';
+  }
+}
 ---
 
+<!-- Sections for Leadership Team, Ambassadors, and Members -->{
+  team?.enabled && ambassadors?.enabled && members?.enabled && (
+    <Layout {metadata}>
+      <section class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+          <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{team.title}</h2>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{team.description}</p>
+          </div>
+          <div class={teamColCss}>
+            <TeamWidget members={team.members} />
+          </div>
+        </div>
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+          <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+              {ambassadors.title}
+            </h2>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{ambassadors.description}</p>
+          </div>
+          <div class={ambassadorColCss}>
+            <TeamWidget members={ambassadors.members} />
+          </div>
+        </div>
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+          <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{members.title}</h2>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{members.description}</p>
+          </div>
+          <div class={memberColCss}>
+            <TeamWidget members={members.members} />
+          </div>
+        </div>
+      </section>
+    </Layout>
+  )
+}
+
+<!-- Sections for Leadership Team & Ambassadors -->
 {
-  team?.enabled && (
+  team?.enabled && ambassadors?.enabled && members?.enabled && (
+    <Layout {metadata}>
+      <section class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+          <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{team.title}</h2>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{team.description}</p>
+          </div>
+          <div class={teamColCss}>
+            <TeamWidget members={team.members} />
+          </div>
+        </div>
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+          <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+              {ambassadors.title}
+            </h2>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{ambassadors.description}</p>
+          </div>
+          <div class={ambassadorColCss}>
+            <TeamWidget members={ambassadors.members} />
+          </div>
+        </div>
+      </section>
+    </Layout>
+  )
+}
+
+<!-- Sections for Leadership Team & Members -->
+{
+  team?.enabled && ambassadors?.enabled && members?.enabled && (
+    <Layout {metadata}>
+      <section class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+          <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{team.title}</h2>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{team.description}</p>
+          </div>
+          <div class={teamColCss}>
+            <TeamWidget members={team.members} />
+          </div>
+        </div>
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+          <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{members.title}</h2>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{members.description}</p>
+          </div>
+          <div class={memberColCss}>
+            <TeamWidget members={members.members} />
+          </div>
+        </div>
+      </section>
+    </Layout>
+  )
+}
+
+<!-- Only show section for Leadership Team -->
+{
+  team?.enabled && !ambassadors?.enabled && !members?.enabled && (
     <Layout {metadata}>
       <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
@@ -45,6 +168,7 @@ if (team?.enabled === true) {
   )
 }
 
+<!-- Show Error Page -->
 {
   !team?.enabled && (
     <Layout metadata={{ title }}>
