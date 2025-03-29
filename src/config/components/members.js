@@ -2,7 +2,7 @@
 
 const members = {
   // Whether the members page is enabled or not
-  enabled: true,
+  enabled: false,
 
   // The title of the members section
   title: 'Our Members',

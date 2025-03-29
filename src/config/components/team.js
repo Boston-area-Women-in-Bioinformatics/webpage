@@ -5,10 +5,10 @@ const team = {
   enabled: true,
 
   // The title of the leadership team section
-  title: 'Our Leadership',
+  title: 'Our Organizers',
 
   // The subtitle of the leadership team section
-  description: 'Meet the leadership behind this organization',
+  description: 'Meet the organizers behind this organization',
 
   // Members of the leadership team
   members: [
@@ -215,6 +215,24 @@ const team = {
         github: 'https://github.com/Yaseswini',
       },
     },
+    // Isha Parikh
+    {
+      // Name: First and last name
+      name: 'Isha Parikh',
+      // Namelink: Member's Personal Website
+      //nameLink: '',
+      // Job Title
+      title: 'Member, Events Committee',
+      // Leadership team member Photo
+      avatar: 'team/isha.jpeg',
+      // Social links
+      social: {
+        linkedin: 'https://www.linkedin.com/in/isha2106/',
+        github: 'https://github.com/isha2106',
+      },
+    
+    },
+    
   ],
 };
 
