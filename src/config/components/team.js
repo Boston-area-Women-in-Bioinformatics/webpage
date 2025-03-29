@@ -230,9 +230,7 @@ const team = {
         linkedin: 'https://www.linkedin.com/in/isha2106/',
         github: 'https://github.com/isha2106',
       },
-    
     },
-    
   ],
 };
 
