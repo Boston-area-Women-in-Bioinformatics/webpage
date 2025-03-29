@@ -53,7 +53,7 @@ const CONFIG = {
   showRssFeed: false,
 
   // If the theme switcher should be displayed
-  showToggleTheme: true,
+  showToggleTheme: false,
 
   // If the header should be stick to the top of the page
   isSticky: true,
