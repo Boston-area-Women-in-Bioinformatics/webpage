@@ -1,0 +1,21 @@
+---
+import { SITE } from '~/config/site/config.js';
+import Layout from '~/layouts/PageLayout.astro';
+import BioinformaticsSisters from '~/components/BioinformaticsSisters.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+const metadata = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero>
+    <Fragment slot="title"> Bioinformatics Sisters Committee </Fragment>
+    <Fragment slot="content">
+      <BioinformaticsSisters />
+    </Fragment>
+  </Hero>
+</Layout>

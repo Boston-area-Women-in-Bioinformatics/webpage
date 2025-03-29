@@ -23,6 +23,19 @@ export const headerData = {
       href: getPermalink('/events/tenyearanniversary'),
     },
     {
+      text: 'Committees',
+      links: [
+        {
+          text: 'Boston-BWB advocacy',
+          href: getPermalink('/committees/committee_advocacy'),
+        },
+        {
+          text: 'Bioinformatics sisters program',
+          href: getPermalink('/committees/committee_bioinfo_sisters'),
+        },
+      ],
+    },
+    {
       text: 'Contact',
       href: getPermalink('/contact'),
     },
