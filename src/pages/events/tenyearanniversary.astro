@@ -10,10 +10,11 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <section class="relative md:-mt-[76px] not-prose">
+  
+  <section class="relative md:-mt-[0px] not-prose">
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-      <div class="py-12 md:py-20 lg:py-0 lg:flex lg:items-center lg:h-screen lg:gap-8">
+      <div class="pt-0 md:pt-[2px] pointer-events-none"></div>
+      <div class="py-2 md:py-2 lg:py-0 lg:flex lg:items-center lg:h-screen lg:gap-8">
         <div class="basis-1/2 text-center lg:text-left pb-10 md:pb-16 mx-auto">
           <p
             class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
@@ -29,13 +30,14 @@ const metadata = {
               set:html="Join us in celebrating 10 years of community"
             />
           </div>
-          <div class="text-lg mb-6">
-            <span class="text-muted">
+
+          <!-- wrapped the location & calendar button next to each other -->
+
+          <div class="flex items-center justify-start space-x-4 mb-6">
+            <div class="text-lg text-muted">
               <p>Date: Sept 23, 2025 @ 4PM ET</p>
               <p>Location: TBD, Somerville or Cambridge</p>
-            </span>
-          </div>
-          <p class="mb-1 m-auto lg:items-center">
+            </div>
             <AddToCalendarButton
               client:only="react"
               name="Boston Women in Bioinformatics 10 Year Anniversary"
@@ -45,8 +47,9 @@ const metadata = {
               startTime="16:00"
               endTime="19:00"
             />
-          </p>
+          </div>
         </div>
+
         <div class="basis-1/2">
           <div
             class="relative m-auto max-w-5xl intersect-once intercept-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
@@ -67,8 +70,16 @@ const metadata = {
       </div>
     </div>
   </section>
+
+  <!-- Sponsorship tiers --> 
+
   <section>
-    <div class="sponsorship-tiers">
+    <div class="sponsorship-intro text-center mb-8">
+      <p class="text-2xl font-bold mb-4">Become a Sponsor</p>
+      <br>
+      <p class="text-lg">Support the 10-year anniversary of Boston Women in Bioinformatics. Explore sponsorship opportunities below!</p>
+    </div>
+    <div class="sponsorship-tiers mt-0">
       <div class="tier">
         <h2>Tier 1: <span class="gold">DNA</span> Sponsor</h2>
         <div class="contribution">
@@ -135,18 +146,31 @@ const metadata = {
       </div>
     </div>
 
+    <!-- Styles --> 
+
     <style>
       .sponsorship-tiers {
-        max-width: 900px;
-        margin: 0 auto;
+        display: flex;
+        justify-content: space-around; 
+        flex-wrap: wrap;
+        gap: 20px;
+        max-width: 100%;
+        padding: 0 20px;
+        margin-top: 0;
       }
 
       .tier {
+        flex: 1;
         margin-bottom: 40px;
+        min-width: 300px;
+        max-width: 100%;
         padding: 25px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border: 2px solid #ddd;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+        border-radius: 20px; 
         background-color: #fff;
+        text-align: center;
+
       }
 
       .tier h2 {
@@ -196,4 +220,5 @@ const metadata = {
       }
     </style>
   </section>
+
 </Layout>
