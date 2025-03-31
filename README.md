@@ -14,7 +14,7 @@ git branch
 git checkout main
 # Create a new branch :
 git checkout -b <new-branch-name>
-# Do the following to upload your image and edit data.ts file (src/lib/data.ts)
+# Do the following to upload your image
 ## 1. Upload your image in this location of your cloned repo `public/photos`
 #  2. Create a markdown file at `src/content/meetups` with a .md suffix
 #     * The markdown file must have a specific format.
@@ -32,32 +32,7 @@ git push -u origin <new-branch-name>
 Collapse
 ```
 
-## Add a member of BWIB
-
-```
-Clone the repository locally :
-git clone https://github.com/Boston-area-Women-in-Bioinformatics/webpage.git
-# List branches in a github repos :
-git branch
-# Be in main branch if not already
-git checkout main
-# Create a new branch :
-git checkout -b <new-branch-name>
-# Do the following to upload your image and edit members.js file
-## 1. Upload your image in this location of your cloned repo `/public/team/`
-## 2. Edit the members.js  file (src/config/components/members.js) to populate your information
-# Run 'npx --prettier' to fix any astro specific formatting issues
-npx prettier --write src/config/components/members.js
-# Stage the changes to commit (Assuming you are in the git folder)
-git add ./public/team/<your_image_name>
-git add ./src/config/components/members.js
-#  Commit new changes
-git commit -m "<Add committ message>"
-git push -u origin <new-branch-name>
-Collapse
-```
-
-## Add a member of the leadership team
+## Add a team member
 
 ```
 Clone the repository locally :
@@ -76,31 +51,6 @@ npx prettier --write src/config/components/team.js
 # Stage the changes to commit (Assuming you are in the git folder)
 git add ./public/team/<your_image_name>
 git add ./src/config/components/team.js
-#  Commit new changes
-git commit -m "<Add committ message>"
-git push -u origin <new-branch-name>
-Collapse
-```
-
-## Add an ambassador
-
-```
-Clone the repository locally :
-git clone https://github.com/Boston-area-Women-in-Bioinformatics/webpage.git
-# List branches in a github repos :
-git branch
-# Be in main branch if not already
-git checkout main
-# Create a new branch :
-git checkout -b <new-branch-name>
-# Do the following to upload your image and edit ambassadors.js file
-## 1. Upload your image in this location of your cloned repo `/public/team/`
-## 2. Edit the ambassadors.js  file (src/config/components/ambassadors.js) to populate your information
-# Run 'npx --prettier' to fix any astro specific formatting issues
-npx prettier --write src/config/components/ambassadors.js
-# Stage the changes to commit (Assuming you are in the git folder)
-git add ./public/team/<your_image_name>
-git add ./src/config/components/ambassadors.js
 #  Commit new changes
 git commit -m "<Add committ message>"
 git push -u origin <new-branch-name>
