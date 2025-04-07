@@ -231,6 +231,21 @@ const team = {
         github: 'https://github.com/isha2106',
       },
     },
+    // Nishita Kalepalli
+    {
+      // Name: First and last name
+      name: 'Nishita Kalepalli',
+      // Namelink: Member's Personal Website
+      nameLink: 'https://www.linkedin.com/in/nishita-kalepalli/',
+      // Job Title
+      title: 'Member, Communication Committee',
+      // Leadership team member Photo
+      avatar: 'team/nishita-kalepalli.jpeg',
+      // Social links
+      social: {
+        linkedin: 'https://www.linkedin.com/in/nishita-kalepalli/',
+      },
+    },
   ],
 };
 
