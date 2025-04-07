@@ -240,7 +240,7 @@ const team = {
       // Job Title
       title: 'Member, Communication Committee',
       // Leadership team member Photo
-      avatar: 'team/nishita-kalepalli.jpeg',
+      avatar: 'team/nishita-kalepalli.png',
       // Social links
       social: {
         linkedin: 'https://www.linkedin.com/in/nishita-kalepalli/',
