@@ -4,7 +4,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import TeamWidget from '~/components/widgets/Team.jsx';
 import team from '~/config/components/team';
 import ambassadors from '~/config/components/ambassadors';
-import members from '~/config/components/members';
+import alumni from '~/config/components/alumni';
 
 import { getHomePermalink } from '~/utils/permalinks';
 
@@ -42,19 +42,19 @@ if (ambassadors?.enabled === true) {
 
 var memberColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4';
 
-if (members?.enabled === true) {
-  if (members.members.length === 1) {
+if (alumni?.enabled === true) {
+  if (alumni.members.length === 1) {
     memberColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1';
-  } else if (members.members.length === 2) {
+  } else if (alumni.members.length === 2) {
     memberColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2';
-  } else if (members.members.length === 3) {
+  } else if (alumni.members.length === 3) {
     memberColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3';
   }
 }
 ---
 
-<!-- Sections for Leadership Team, Ambassadors, and Members -->{
-  team?.enabled && ambassadors?.enabled && members?.enabled && (
+<!-- Sections for Leadership Team, Ambassadors, and Alumni -->{
+  team?.enabled && ambassadors?.enabled && alumni?.enabled && (
     <Layout {metadata}>
       <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
@@ -79,11 +79,11 @@ if (members?.enabled === true) {
         </div>
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
           <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{members.title}</h2>
-            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{members.description}</p>
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{alumni.title}</h2>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{alumni.description}</p>
           </div>
           <div class={memberColCss}>
-            <TeamWidget members={members.members} />
+            <TeamWidget members={alumni.members} />
           </div>
         </div>
       </section>
@@ -93,7 +93,7 @@ if (members?.enabled === true) {
 
 <!-- Sections for Leadership Team & Ambassadors -->
 {
-  team?.enabled && ambassadors?.enabled && (
+  team?.enabled && ambassadors?.enabled && !alumni?.enabled && (
     <Layout {metadata}>
       <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
@@ -121,9 +121,9 @@ if (members?.enabled === true) {
   )
 }
 
-<!-- Sections for Leadership Team & Members -->
+<!-- Sections for Leadership Team & Alumni -->
 {
-  team?.enabled && members?.enabled && (
+  team?.enabled && alumni?.enabled && !ambassadors?.enabled && (
     <Layout {metadata}>
       <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
@@ -137,11 +137,11 @@ if (members?.enabled === true) {
         </div>
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
           <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{members.title}</h2>
-            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{members.description}</p>
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{alumni.title}</h2>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{alumni.description}</p>
           </div>
           <div class={memberColCss}>
-            <TeamWidget members={members.members} />
+            <TeamWidget members={alumni.members} />
           </div>
         </div>
       </section>
@@ -151,7 +151,7 @@ if (members?.enabled === true) {
 
 <!-- Only show section for Leadership Team -->
 {
-  team?.enabled && !ambassadors?.enabled && !members?.enabled && (
+  team?.enabled && !ambassadors?.enabled && !alumni?.enabled && (
     <Layout {metadata}>
       <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
