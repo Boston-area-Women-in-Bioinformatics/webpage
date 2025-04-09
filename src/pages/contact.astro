@@ -44,6 +44,7 @@ const metadata = {
 
   <Features2
     title="We are here to support you!"
+    columns={2}
     items={[
       // {
       //   title: 'General support',
@@ -61,13 +62,33 @@ const metadata = {
       // },
       {
         title: 'Slack',
-        description: 'https://boston-women-bioinfo.slack.com',
-        icon: 'tabler:headset',
+        icon: 'tabler:brand-slack',
+        callToAction: {
+          target: '_blank',
+          text: 'https://boston-women-bioinfo.slack.com',
+          href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ',
+          variant: 'link',
+        },
       },
       {
         title: 'Email',
-        description: 'Bostonwomeninbioinformatics@gmail.com',
         icon: 'tabler:mail',
+        callToAction: {
+          target: '_blank',
+          text: 'Bostonwomeninbioinformatics@gmail.com',
+          href: 'mailto:Bostonwomeninbioinformatics@gmail.com',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Linked In',
+        icon: 'tabler:brand-linkedin',
+        callToAction: {
+          target: '_blank',
+          text: 'Boston-area Women in Bioinformatics',
+          href: 'https://www.linkedin.com/groups/13074137/',
+          variant: 'link',
+        },
       },
       {
         title: 'Location',
