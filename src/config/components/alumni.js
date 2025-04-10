@@ -1,14 +1,14 @@
 // Configuration for the member component / page
 
-const members = {
-  // Whether the members page is enabled or not
-  enabled: false,
+const alumni = {
+  // Whether the alumni page is enabled or not
+  enabled: true,
 
-  // The title of the members section
-  title: 'Our Members',
+  // The title of the alumni section
+  title: 'Our Alumni',
 
-  // The subtitle of the Members section
-  description: 'Meet the Members of the Boston Women in Bioinformatics',
+  // The subtitle of the Alumni section
+  description: 'Meet the Alumni of the Boston Women in Bioinformatics',
 
   // Member Profiles
   members: [
@@ -28,22 +28,24 @@ const members = {
         github: 'https://github.com/isha2106',
       },
     },
-    // Nishita Kalepalli
+    // Rachel Utama
+
     {
       // Name: First and last name
-      name: 'Nishita Kalepalli',
+      name: 'Rachel Utama',
       // Namelink: Member's Personal Website
-      nameLink: 'https://www.linkedin.com/in/nishita-kalepalli/',
+      nameLink: 'https://www.linkedin.com/in/rachel-utama/',
       // Job Title
-      title: 'Member, Communication Committee',
+      title: 'Member Events Committee',
       // Leadership team member Photo
-      avatar: 'team/nishita-kalepalli.jpeg',
+      avatar: 'team/RachelUtama.jpg',
       // Social links
       social: {
-        linkedin: 'https://www.linkedin.com/in/nishita-kalepalli/',
+        linkedin: 'https://www.linkedin.com/in/rachel-utama/',
+        github: 'https://github.com/rootma21',
       },
     },
   ],
 };
 
-export default members;
+export default alumni;
