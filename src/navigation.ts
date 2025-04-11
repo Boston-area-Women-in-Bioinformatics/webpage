@@ -213,5 +213,5 @@ export const footerData = {
       href: 'https://github.com/Boston-area-Women-in-Bioinformatics',
     },
   ],
-  footNote: `Logo Design by Siobhan Keegan and Meeta's sister`,
+  footNote: `Logos Designed by Siobhan Keegan and <a href="https://www.monikamistry.com/creative-design/">Monika Mistry</a>`,
 };
