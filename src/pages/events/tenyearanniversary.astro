@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
-// import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
+import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
 //import Image from '~/components/common/Image.astro';
 
 const metadata = {
@@ -34,19 +34,19 @@ const metadata = {
 
           <div class="flex flex-col md:flex-row items-center justify-start md:space-x-4 space-y-4 md:space-y-0 mb-6">
             <div class="text-lg text-muted">
-              <!-- <p>Date: Sept 23, 2025 @ 4PM ET</p> -->
-              <p>Date:Date: September, 2025</p>
-              <p>Location: TBD, Somerville or Cambridge</p>
+              <p>Date: Sept 30, 2025 @ 4PM ET</p>
+              <!-- <p>Date:Date: September, 2025</p> -->
+              <p>Location: Boynton Yards, Somerville</p>
             </div>
-            <!-- <AddToCalendarButton
+            <AddToCalendarButton
               client:only="react"
               name="Boston Women in Bioinformatics 10 Year Anniversary"
-              location="TBD, Somerville or Cambridge"
-              startDate="2025-09-23"
-              endDate="2025-09-23"
+              location="Boynton Yards, Somerville"
+              startDate="2025-09-30"
+              endDate="2025-09-30"
               startTime="16:00"
               endTime="19:00"
-            /> -->
+            />
           </div>
         </div>
 
