@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://astonishing-granita-2cb317.netlify.app/sitemap-index.xml
+Sitemap: https://boston-wib.org/sitemap-index.xml
