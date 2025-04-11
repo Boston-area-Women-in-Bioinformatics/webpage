@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
   title: 'Women in Bioinformatics',
@@ -34,6 +35,62 @@ const metadata = {
       networking, and professional growth.
     </Fragment>
   </Hero>
+
+  <Features2
+    title="We are here to support you!"
+    columns={2}
+    items={[
+      // {
+      //   title: 'General support',
+      //   description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
+      // },
+      // {
+      //   title: 'Contact sales',
+      //   description:
+      //     'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
+      // },
+      // {
+      //   title: 'Technical support',
+      //   description:
+      //     'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
+      // },
+      {
+        title: 'Slack',
+        icon: 'tabler:brand-slack',
+        callToAction: {
+          target: '_blank',
+          text: 'https://boston-women-bioinfo.slack.com',
+          href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Email',
+        icon: 'tabler:mail',
+        callToAction: {
+          target: '_blank',
+          text: 'Bostonwomeninbioinformatics@gmail.com',
+          href: 'mailto:Bostonwomeninbioinformatics@gmail.com',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Linked In',
+        icon: 'tabler:brand-linkedin',
+        callToAction: {
+          target: '_blank',
+          text: 'Boston-area Women in Bioinformatics',
+          href: 'https://www.linkedin.com/groups/13074137/',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Location',
+        description: 'Boston Area, Massachusetts',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
   <!-- <Fragment slot="image">
       <YouTube id="gxBkghlglTg" title="Astro just Launched.... Could it be the ultimate web framework?" />
       <style is:inline>

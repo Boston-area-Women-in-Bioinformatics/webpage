@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
-import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
+// import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
 //import Image from '~/components/common/Image.astro';
 
 const metadata = {
@@ -13,7 +13,7 @@ const metadata = {
   <section class="relative md:-mt-[0px] not-prose">
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
       <div class="pt-0 md:pt-[2px] pointer-events-none"></div>
-      <div class="py-2 md:py-2 lg:py-0 lg:flex lg:items-center lg:h-screen lg:gap-8">
+      <div class="py-2 md:py-2 lg:py-0 lg:flex lg:items-center lg:gap-8">
         <div class="basis-1/2 text-center lg:text-left pb-10 md:pb-16 mx-auto">
           <p
             class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
@@ -34,10 +34,11 @@ const metadata = {
 
           <div class="flex flex-col md:flex-row items-center justify-start md:space-x-4 space-y-4 md:space-y-0 mb-6">
             <div class="text-lg text-muted">
-              <p>Date: Sept 23, 2025 @ 4PM ET</p>
+              <!-- <p>Date: Sept 23, 2025 @ 4PM ET</p> -->
+              <p>Date:Date: September, 2025</p>
               <p>Location: TBD, Somerville or Cambridge</p>
             </div>
-            <AddToCalendarButton
+            <!-- <AddToCalendarButton
               client:only="react"
               name="Boston Women in Bioinformatics 10 Year Anniversary"
               location="TBD, Somerville or Cambridge"
@@ -45,7 +46,7 @@ const metadata = {
               endDate="2025-09-23"
               startTime="16:00"
               endTime="19:00"
-            />
+            /> -->
           </div>
         </div>
 
@@ -82,9 +83,9 @@ const metadata = {
     </div>
     <div class="sponsorship-tiers mt-0">
       <div class="tier">
-        <h2>Tier 1: <span class="gold">DNA</span> Sponsor</h2>
+        <h2>Tier 1: <span class="gold">Gold </span> RNA Sponsor</h2>
         <div class="contribution">
-          <strong>Contribution Amount:</strong> $1,000
+          <strong>Contribution Amount:</strong> $3,000
         </div>
 
         <h3>Benefits:</h3>
@@ -94,7 +95,7 @@ const metadata = {
             including banners, flyers, and digital media.
           </li>
           <li>
-            🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Genome Sponsor" during event opening and closing
+            🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Gold Sponsor" during event opening and closing
             speeches.
           </li>
           <li>
@@ -116,7 +117,7 @@ const metadata = {
       </div>
 
       <div class="tier">
-        <h2>Tier 2: <span class="silver">RNA</span> Sponsor</h2>
+        <h2>Tier 2: <span class="silver">Silver </span> DNA Sponsor</h2>
         <div class="contribution">
           <strong>Contribution Amount:</strong> $500
         </div>
@@ -128,7 +129,7 @@ const metadata = {
             including banners, flyers, and digital media.
           </li>
           <li>
-            🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Genome Sponsor" during event opening and closing
+            🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Silver Sponsor" during event opening and closing
             speeches.
           </li>
           <li>
