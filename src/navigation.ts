@@ -19,7 +19,7 @@ export const headerData = {
       href: getPermalink('/events'),
     },
     {
-      text: 'Ten Year Anniversary',
+      text: '10th Year Anniversary',
       href: getPermalink('/events/tenyearanniversary'),
     },
     {

@@ -1,6 +1,6 @@
 site:
   name: Boston Women in Bioinformatics
-  site: 'https://astonishing-granita-2cb317.netlify.app/'
+  site: 'https://boston-wib.org/'
   base: '/'
   trailingSlash: false
 
@@ -9,13 +9,13 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: 'Boston-Area Women in Bioinformatics'
+    default: 'Boston Women in Bioinformatics'
   description: 'The online presence of Women in Bioinformatics in the Boston Area'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: 'Boston-Area Women in Bioinformatics'
+    site_name: 'Boston Women in Bioinformatics'
     images:
       - url: '~/assets/images/default.png'
         width: 300
