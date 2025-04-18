@@ -10,25 +10,25 @@ const metadata = {
   title: '10th Year Anniversary',
 };
 
-var speakerColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4';
+var speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4';
 
 if (speakers?.enabled === true) {
   if (speakers.members.length === 1) {
-    speakerColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1';
+    speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1';
   } else if (speakers.members.length === 2) {
-    speakerColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2';
+    speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2';
   } else if (speakers.members.length === 3) {
-    speakerColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3';
+    speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3';
   }
 }
 ---
 
 <Layout metadata={metadata}>
-  <section class="bg-white dark:bg-gray-900 relative md:-mt-[0px] not-prose">
+  <section class="bg-white dark:bg-gray-900 relative md:-mt-[0px] not-prose mb-10">
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
       <div class="pt-0 sm:pt-[2px] pointer-events-none"></div>
       <div class="py-0 sm:py-2 lg:py-0 lg:flex lg:items-center lg:gap-8">
-        <div class="basis-1/2 text-center lg:text-left pb-0 md:pb-16 sm:pb-16 mx-auto">
+        <div class="basis-1/2 text-center lg:text-left pb-0 md:pb-16 mx-auto">
           <p
             class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
           >
@@ -64,9 +64,9 @@ if (speakers?.enabled === true) {
           </div>
         </div>
 
-        <div class="collapse sm:visible md:basis-1/2">
+        <div class="collapse md:visible md:basis-1/2">
           <div
-            class="relative sm:m-auto md:max-w-5xl intersect-once intercept-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
+            class="relative md:m-auto md:max-w-5xl intersect-once intercept-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
           >
             <Image
               src={'/photos/event.jpg'}
@@ -86,9 +86,11 @@ if (speakers?.enabled === true) {
 
     <!-- Keynote speakers -->
     <div>
-      <div class="py-1 px-4 mx-auto max-w-screen-xl text-center lg:py-2 lg:px-6">
+      <div class="px-4 mx-auto max-w-screen-xl text-center lg:py-2 lg:px-6">
         <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
-          <h2 class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Keynote Speakers</h2>
+          <h2 class="mt-1 mb-1 sm:mt-0 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+            Keynote Speakers
+          </h2>
         </div>
         <div class={speakerColCss}>
           <TeamWidget members={speakers.members} />
@@ -100,7 +102,7 @@ if (speakers?.enabled === true) {
   <!-- Sponsorship tiers -->
 
   <section class="bg-white dark:bg-gray-900">
-    <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+    <div class="py-8 px-4 mx-auto text-center lg:py-16 lg:px-6">
       <div class="sponsorship-intro text-center mb-8 mt-2">
         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Become a Sponsor</h2>
         <br />
