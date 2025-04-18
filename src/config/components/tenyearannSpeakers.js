@@ -55,6 +55,48 @@ const speakers = {
         //bluesky: '#',
       },
     },
+    // TBA
+    {
+      // Name: First and last name
+      name: 'TBA',
+      // Namelink: Member's Personal Website
+      //nameLink: 'https://www.linkedin.com/in/lpantano/',
+      // Job Title
+      //title: 'Co-chair & Founder of Women in Bioinformatics Boston Area',
+      // Leadership Leadership team member Photo
+      //avatar: '/team/lpantano.jpg',
+      // Social links
+      social: {
+        // website: '#',
+        // twitter: ''#'',
+        // instagram: '#',
+        // facebook: '#',
+        //linkedin: '#',
+        //github: '#',
+        //bluesky: '#',
+      },
+    },
+    // TBA
+    {
+      // Name: First and last name
+      name: 'TBA',
+      // Namelink: Member's Personal Website
+      //nameLink: 'https://www.linkedin.com/in/lpantano/',
+      // Job Title
+      //title: 'Co-chair & Founder of Women in Bioinformatics Boston Area',
+      // Leadership Leadership team member Photo
+      //avatar: '/team/lpantano.jpg',
+      // Social links
+      social: {
+        // website: '#',
+        // twitter: ''#'',
+        // instagram: '#',
+        // facebook: '#',
+        //linkedin: '#',
+        //github: '#',
+        //bluesky: '#',
+      },
+    },
   ],
 };
 
