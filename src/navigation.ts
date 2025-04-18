@@ -19,7 +19,7 @@ export const headerData = {
       href: getPermalink('/events'),
     },
     {
-      text: 'Ten Year Anniversary',
+      text: '10th Year Anniversary',
       href: getPermalink('/events/tenyearanniversary'),
     },
     {
@@ -213,8 +213,5 @@ export const footerData = {
       href: 'https://github.com/Boston-area-Women-in-Bioinformatics',
     },
   ],
-  footNote: `
-    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://onwidget.com/favicon/favicon-32x32.png" alt="onWidget logo" loading="lazy"></img>
-    
-  `,
+  footNote: `Logos Designed by Siobhan Keegan and <a href="https://www.monikamistry.com/creative-design/">Monika Mistry</a>`,
 };

@@ -215,20 +215,19 @@ const team = {
         github: 'https://github.com/Yaseswini',
       },
     },
-    // Isha Parikh
+    // Nishita Kalepalli
     {
       // Name: First and last name
-      name: 'Isha Parikh',
+      name: 'Nishita Kalepalli',
       // Namelink: Member's Personal Website
-      //nameLink: '',
+      nameLink: 'https://www.linkedin.com/in/nishita-kalepalli/',
       // Job Title
-      title: 'Member, Events Committee',
+      title: 'Member, Communication Committee',
       // Leadership team member Photo
-      avatar: 'team/isha.jpeg',
+      avatar: 'team/nishita-kalepalli.png',
       // Social links
       social: {
-        linkedin: 'https://www.linkedin.com/in/isha2106/',
-        github: 'https://github.com/isha2106',
+        linkedin: 'https://www.linkedin.com/in/nishita-kalepalli/',
       },
     },
   ],

@@ -5,7 +5,7 @@ import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
 //import Image from '~/components/common/Image.astro';
 
 const metadata = {
-  title: '10 Year Anniversary',
+  title: '10th Year Anniversary',
 };
 ---
 
@@ -13,7 +13,7 @@ const metadata = {
   <section class="relative md:-mt-[0px] not-prose">
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
       <div class="pt-0 md:pt-[2px] pointer-events-none"></div>
-      <div class="py-2 md:py-2 lg:py-0 lg:flex lg:items-center lg:h-screen lg:gap-8">
+      <div class="py-2 md:py-2 lg:py-0 lg:flex lg:items-center lg:gap-8">
         <div class="basis-1/2 text-center lg:text-left pb-10 md:pb-16 mx-auto">
           <p
             class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
@@ -21,7 +21,7 @@ const metadata = {
           />
           <h1
             class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
-            set:html={'Boston Women in Bioinformatics 10 Year Anniversary Event'}
+            set:html={'Boston Women in Bioinformatics 10th Year Anniversary Event'}
           />
           <div class="max-w-3xl mx-auto lg:max-w-none">
             <p
@@ -34,15 +34,16 @@ const metadata = {
 
           <div class="flex flex-col md:flex-row items-center justify-start md:space-x-4 space-y-4 md:space-y-0 mb-6">
             <div class="text-lg text-muted">
-              <p>Date: Sept 23, 2025 @ 4PM ET</p>
-              <p>Location: TBD, Somerville or Cambridge</p>
+              <p>Date: Sept 30, 2025 @ 4PM ET</p>
+              <!-- <p>Date:Date: September, 2025</p> -->
+              <p>Location: Boynton Yards, Somerville</p>
             </div>
             <AddToCalendarButton
               client:only="react"
               name="Boston Women in Bioinformatics 10 Year Anniversary"
-              location="TBD, Somerville or Cambridge"
-              startDate="2025-09-23"
-              endDate="2025-09-23"
+              location="Boynton Yards, Somerville"
+              startDate="2025-09-30"
+              endDate="2025-09-30"
               startTime="16:00"
               endTime="19:00"
             />
@@ -94,9 +95,9 @@ const metadata = {
     </div>
     <div class="sponsorship-tiers mt-0">
       <div class="tier">
-        <h2>Tier 1: <span class="gold">DNA</span> Sponsor</h2>
+        <h2>Tier 1: <span class="gold">Gold </span> RNA Sponsor</h2>
         <div class="contribution">
-          <strong>Contribution Amount:</strong> $1,000
+          <strong>Contribution Amount:</strong> $1,500
         </div>
 
         <h3>Benefits:</h3>
@@ -106,7 +107,7 @@ const metadata = {
             including banners, flyers, and digital media.
           </li>
           <li>
-            🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Genome Sponsor" during event opening and closing
+            🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Gold Sponsor" during event opening and closing
             speeches.
           </li>
           <li>
@@ -122,13 +123,13 @@ const metadata = {
           </li>
           <li>
             🎟️ <strong>Complimentary Tickets:</strong>
-            <span class="gold">Five</span> free tickets to the event for the sponsor's representatives or guests.
+            <span class="gold">Four</span> free tickets to the event for the sponsor's representatives or guests.
           </li>
         </ul>
       </div>
 
       <div class="tier">
-        <h2>Tier 2: <span class="silver">RNA</span> Sponsor</h2>
+        <h2>Tier 2: <span class="silver">Silver </span> DNA Sponsor</h2>
         <div class="contribution">
           <strong>Contribution Amount:</strong> $500
         </div>
@@ -140,7 +141,7 @@ const metadata = {
             including banners, flyers, and digital media.
           </li>
           <li>
-            🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Genome Sponsor" during event opening and closing
+            🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Silver Sponsor" during event opening and closing
             speeches.
           </li>
           <li>
@@ -153,7 +154,7 @@ const metadata = {
           </li>
           <li>
             🎟️ <strong>Complimentary Tickets:</strong>
-            <span class="silver">Three</span> free tickets to the event for the sponsor's representatives or guests.
+            <span class="silver">Two</span> free ticket to the event for the sponsor's representatives or guests.
           </li>
         </ul>
       </div>
@@ -215,6 +216,7 @@ const metadata = {
         line-height: 1.5;
         display: flex left;
         align-items: baseline;
+        color: #2c3e50;
       }
 
       .benefits li strong {

@@ -17,7 +17,11 @@ export interface Props {
   imgpos?: string;
   url?: string;
 }
-const { frontmatter, date, location, url, imgsrc, imgalt, imgpos = 'object-top' } = Astro.props;
+
+const { frontmatter, date, location, url, imgsrc, imgalt, imgpos = 'object-top object-cover' } = Astro.props;
+
+// Using template literals
+const imgcss = 'h-72 w-full' + { imgpos };
 
 const metadata: MetaData = {
   title: frontmatter.title,
@@ -27,9 +31,7 @@ const metadata: MetaData = {
 <Layout metadata={metadata}>
   <div class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-      <div class={imgpos}>
-        <img src={imgsrc} alt={imgalt} class="h-72 w-full object-cover" />
-      </div>
+      <img src={imgsrc} alt={imgalt} class={imgcss} />
       <div class="p-1">
         <h2 class="text-2xl font-bold mb-2 font-heading leading-tighter tracking-tighter">
           {frontmatter.title}
