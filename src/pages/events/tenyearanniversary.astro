@@ -97,160 +97,219 @@ if (speakers?.enabled === true) {
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Sponsorship tiers -->
-
-  <section class="bg-white dark:bg-gray-900">
-    <div class="py-8 px-4 mx-auto text-center lg:py-16 lg:px-6">
-      <div class="sponsorship-intro text-center mb-8 mt-2">
-        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Become a Sponsor</h2>
-        <br />
-        <p class="text-lg">
-          Support the 10-year anniversary of Boston Women in Bioinformatics. Explore sponsorship opportunities below!
-        </p>
-      </div>
-      <div class="sponsorship-tiers mt-0">
-        <div class="tier">
-          <h2>Tier 1: <span class="gold">Gold </span> RNA Sponsor</h2>
-          <div class="contribution">
-            <strong>Contribution Amount:</strong> $1,500
+    <!-- Email Sign-Up -->
+    <div class="mb-2">
+      <div
+        class="mx-auto max-w-screen-md dark:border dark:border-slate-600 dark:shadow-none p-6 rounded-md shadow-xl text-center"
+      >
+        <div class="text-center mb-0 md:mb-0 md:mx-auto">
+          <div class="mb-4 lg:mb-8">
+            <h2 class="font-bold font-heading leading-tighter mb-4 tracking-tighter md:text-4xl text-4xl text-heading">
+              Email Sign-Up
+            </h2>
           </div>
-
-          <h3>Benefits:</h3>
-          <ul class="benefits">
-            <li>
-              🏆 <strong>Prominent Logo Placement:</strong> Sponsor's logo prominently displayed on all event marketing materials,
-              including banners, flyers, and digital media.
-            </li>
-            <li>
-              🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Gold Sponsor" during event opening and closing
-              speeches.
-            </li>
-            <li>
-              🏢 <strong>Booth Space:</strong> Complimentary booth space at the event for product display or promotional
-              activity.
-            </li>
-            <li>
-              🌐 <strong>Website Recognition:</strong> Featured logo and hyperlink on the event website homepage or sponsor
-              page.
-            </li>
-            <li>
-              📣 <strong>Social Media Shoutouts:</strong> Multiple mentions across the event's social media channels before,
-              during, and after the event.
-            </li>
-            <li>
-              🎟️ <strong>Complimentary Tickets:</strong>
-              <span class="gold">Four</span> free tickets to the event for the sponsor's representatives or guests.
-            </li>
-          </ul>
-        </div>
-
-        <div class="tier">
-          <h2>Tier 2: <span class="silver">Silver </span> DNA Sponsor</h2>
-          <div class="contribution">
-            <strong>Contribution Amount:</strong> $500
-          </div>
-
-          <h3>Benefits:</h3>
-          <ul class="benefits">
-            <li>
-              🏆 <strong>Prominent Logo Placement:</strong> Sponsor's logo prominently displayed on all event marketing materials,
-              including banners, flyers, and digital media.
-            </li>
-            <li>
-              🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Silver Sponsor" during event opening and closing
-              speeches.
-            </li>
-            <li>
-              🌐 <strong>Website Recognition:</strong> Featured logo and hyperlink on the event website homepage or sponsor
-              page.
-            </li>
-            <li>
-              📣 <strong>Social Media Shoutouts:</strong> Multiple mentions across the event's social media channels before,
-              during, and after the event.
-            </li>
-            <li>
-              🎟️ <strong>Complimentary Tickets:</strong>
-              <span class="silver">Two</span> free ticket to the event for the sponsor's representatives or guests.
-            </li>
-          </ul>
+          <form id="emailForm">
+            <label>
+              <p class="text-muted text-xl dark:text-slate-400 my-4">
+                Don't want to miss out? Add your email here for updates:
+              </p>
+              <input
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                id="userEmail"
+                placeholder="Enter your email"
+                required
+              />
+            </label>
+            <button
+              type="submit"
+              class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+              >Submit</button
+            >
+          </form>
         </div>
       </div>
+
+      <script>
+        const form = document.getElementById('emailForm');
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const email = document.getElementById('userEmail').value;
+          const formUrl =
+            'https://docs.google.com/forms/d/e/1FAIpQLSfHST0fzrRqZO8zqq73QZEJIeKiN-WIdnkav-iaLzXWREF_SQ/formResponse';
+          const data = new FormData();
+
+          data.append('entry.193147904', email);
+
+          fetch(formUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: data,
+          })
+            .then(() => {
+              alert('Thanks! Your email was submitted.');
+              form.reset();
+            })
+            .catch((err) => {
+              alert('Oops! Something went wrong.');
+            });
+        });
+      </script>
     </div>
 
-    <!-- Styles -->
+    <!-- Sponsorship tiers -->
 
-    <style>
-      .sponsorship-tiers {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 20px;
-        max-width: 100%;
-        padding: 0 20px;
-        margin-top: 0;
-      }
+    <section class="bg-white dark:bg-gray-900">
+      <div class="py-8 px-4 mx-auto text-center lg:py-16 lg:px-6">
+        <div class="sponsorship-intro text-center mb-8 mt-2">
+          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Become a Sponsor</h2>
+          <br />
+          <p class="text-lg">
+            Support the 10-year anniversary of Boston Women in Bioinformatics. Explore sponsorship opportunities below!
+          </p>
+        </div>
+        <div class="sponsorship-tiers mt-0">
+          <div class="tier">
+            <h2>Tier 1: <span class="gold">Gold </span> RNA Sponsor</h2>
+            <div class="contribution">
+              <strong>Contribution Amount:</strong> $1,500
+            </div>
 
-      .tier {
-        flex: 1;
-        margin-bottom: 40px;
-        min-width: 300px;
-        max-width: 100%;
-        padding: 25px;
-        border: 2px solid #ddd;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        border-radius: 20px;
-        background-color: #fff;
-        text-align: center;
-      }
+            <h3>Benefits:</h3>
+            <ul class="benefits">
+              <li>
+                🏆 <strong>Prominent Logo Placement:</strong> Sponsor's logo prominently displayed on all event marketing
+                materials, including banners, flyers, and digital media.
+              </li>
+              <li>
+                🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Gold Sponsor" during event opening and closing
+                speeches.
+              </li>
+              <li>
+                🏢 <strong>Booth Space:</strong> Complimentary booth space at the event for product display or promotional
+                activity.
+              </li>
+              <li>
+                🌐 <strong>Website Recognition:</strong> Featured logo and hyperlink on the event website homepage or sponsor
+                page.
+              </li>
+              <li>
+                📣 <strong>Social Media Shoutouts:</strong> Multiple mentions across the event's social media channels before,
+                during, and after the event.
+              </li>
+              <li>
+                🎟️ <strong>Complimentary Tickets:</strong>
+                <span class="gold">Four</span> free tickets to the event for the sponsor's representatives or guests.
+              </li>
+            </ul>
+          </div>
 
-      .tier h2 {
-        color: #2c3e50;
-        font-size: 24px;
-        margin-top: 0;
-        padding-bottom: 10px;
-        border-bottom: 2px solid #3498db;
-      }
+          <div class="tier">
+            <h2>Tier 2: <span class="silver">Silver </span> DNA Sponsor</h2>
+            <div class="contribution">
+              <strong>Contribution Amount:</strong> $500
+            </div>
 
-      .contribution {
-        font-size: 18px;
-        margin: 15px 0;
-        color: #e74c3c;
-      }
+            <h3>Benefits:</h3>
+            <ul class="benefits">
+              <li>
+                🏆 <strong>Prominent Logo Placement:</strong> Sponsor's logo prominently displayed on all event marketing
+                materials, including banners, flyers, and digital media.
+              </li>
+              <li>
+                🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Silver Sponsor" during event opening and closing
+                speeches.
+              </li>
+              <li>
+                🌐 <strong>Website Recognition:</strong> Featured logo and hyperlink on the event website homepage or sponsor
+                page.
+              </li>
+              <li>
+                📣 <strong>Social Media Shoutouts:</strong> Multiple mentions across the event's social media channels before,
+                during, and after the event.
+              </li>
+              <li>
+                🎟️ <strong>Complimentary Tickets:</strong>
+                <span class="silver">Two</span> free ticket to the event for the sponsor's representatives or guests.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-      .tier h3 {
-        margin-top: 25px;
-        font-size: 20px;
-        color: #2c3e50;
-      }
+      <!-- Styles -->
 
-      .benefits {
-        list-style-type: none;
-        padding-left: 0;
-      }
+      <style>
+        .sponsorship-tiers {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          gap: 20px;
+          max-width: 100%;
+          padding: 0 20px;
+          margin-top: 0;
+        }
 
-      .benefits li {
-        margin-bottom: 10px;
-        line-height: 1.5;
-        display: flex left;
-        align-items: baseline;
-        color: #2c3e50;
-      }
+        .tier {
+          flex: 1;
+          margin-bottom: 40px;
+          min-width: 300px;
+          max-width: 100%;
+          padding: 25px;
+          border: 2px solid #ddd;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          border-radius: 20px;
+          background-color: #fff;
+          text-align: center;
+        }
 
-      .benefits li strong {
-        margin-right: 5px;
-      }
-      /* Gold and Silver text colors */
-      .gold {
-        color: #d4af37;
-        font-weight: bold;
-      }
+        .tier h2 {
+          color: #2c3e50;
+          font-size: 24px;
+          margin-top: 0;
+          padding-bottom: 10px;
+          border-bottom: 2px solid #3498db;
+        }
 
-      .silver {
-        color: #a3a3a3;
-        font-weight: bold;
-      }
-    </style>
+        .contribution {
+          font-size: 18px;
+          margin: 15px 0;
+          color: #e74c3c;
+        }
+
+        .tier h3 {
+          margin-top: 25px;
+          font-size: 20px;
+          color: #2c3e50;
+        }
+
+        .benefits {
+          list-style-type: none;
+          padding-left: 0;
+        }
+
+        .benefits li {
+          margin-bottom: 10px;
+          line-height: 1.5;
+          display: flex left;
+          align-items: baseline;
+          color: #2c3e50;
+        }
+
+        .benefits li strong {
+          margin-right: 5px;
+        }
+        /* Gold and Silver text colors */
+        .gold {
+          color: #d4af37;
+          font-weight: bold;
+        }
+
+        .silver {
+          color: #a3a3a3;
+          font-weight: bold;
+        }
+      </style>
+    </section>
   </section>
 </Layout>
