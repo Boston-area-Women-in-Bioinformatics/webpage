@@ -28,285 +28,284 @@ if (speakers?.enabled === true) {
     <h1
       class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter text-center"
     >
-      Boston Women in Bioinformatics 10th Year Anniversary Event
-    </h1>
-    <p
-      class="text-xl text-muted md:mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter text-center"
-    >
-      Join us in celebrating 10 years of community
-    </p>
-    <div class="text-center pb-0 mx-auto">
-      <!-- wrapped the location & calendar button next to each other -->
+      Boston Women in Bioinformatics
+    </h1>10th Year Anniversary Event
+  </section>
+  <p
+    class="text-xl text-muted md:mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter text-center"
+  >
+    Join us in celebrating 10 years of community
+  </p>
+  <div class="text-center pb-0 mx-auto">
+    <!-- wrapped the location & calendar button next to each other -->
 
-      <div class="grid sm:grid-cols-2 items-center justify-center">
-        <div class="text-lg text-muted py-4 text-center sm:text-right mr-8">
-          <p>Date: Sept 30, 2025 @ 4PM ET</p>
-          <!-- <p>Date:Date: September, 2025</p> -->
-          <p>Location: Boynton Yards, Somerville</p>
-        </div>
-        <AddToCalendarButton
-          client:only="react"
-          name="Boston Women in Bioinformatics 10 Year Anniversary"
-          location="Boynton Yards, Somerville"
-          startDate="2025-09-30"
-          endDate="2025-09-30"
-          startTime="16:00"
-          endTime="19:00"
+    <div class="grid sm:grid-cols-2 items-center justify-center">
+      <div class="text-lg text-muted py-4 text-center sm:text-right mr-8">
+        <p>Date: Sept 30, 2025 @ 4PM ET</p>
+        <!-- <p>Date:Date: September, 2025</p> -->
+        <p>Location: Boynton Yards, Somerville</p>
+      </div>
+      <AddToCalendarButton
+        client:only="react"
+        name="Boston Women in Bioinformatics 10 Year Anniversary"
+        location="Boynton Yards, Somerville"
+        startDate="2025-09-30"
+        endDate="2025-09-30"
+        startTime="16:00"
+        endTime="19:00"
+      />
+    </div>
+  </div>
+  <div class="py-4 relative items-center max-w-7xl mx-auto px-4 sm:px-6">
+    <div>
+      <div
+        class="relative md:m-auto md:max-w-5xl intersect-once intercept-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
+      >
+        <Image
+          src={'/photos/event.jpg'}
+          alt="Celebration cheer"
+          class="sm:mx-auto rounded-md w-full"
+          widths={[400, 768, 1024, 2040]}
+          sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+          width="500"
+          height="437"
+          decoding="async"
+          loading="lazy"
         />
       </div>
     </div>
-    <div class="py-4 relative items-center max-w-7xl mx-auto px-4 sm:px-6">
-      <div>
-        <div
-          class="relative md:m-auto md:max-w-5xl intersect-once intercept-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
+  </div>
+
+  <!-- Keynote speakers -->
+  <div>
+    <div class="px-4 mx-auto max-w-screen-xl text-center lg:py-2 lg:px-6">
+      <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+        <h2
+          class="mt-1 mb-1 sm:mt-0 text-3xl sm:text-4xl md:text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white"
         >
-          <Image
-            src={'/photos/event.jpg'}
-            alt="Celebration cheer"
-            class="sm:mx-auto rounded-md w-full"
-            widths={[400, 768, 1024, 2040]}
-            sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
-            width="500"
-            height="437"
-            decoding="async"
-            loading="lazy"
-          />
-        </div>
+          Keynote Speakers
+        </h2>
+      </div>
+      <div class={speakerColCss}>
+        <TeamWidget members={speakers.members} />
       </div>
     </div>
-
-    <!-- Keynote speakers -->
-    <div>
-      <div class="px-4 mx-auto max-w-screen-xl text-center lg:py-2 lg:px-6">
-        <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+  </div>
+  <!-- Email Sign-Up -->
+  <div class="mb-8">
+    <div
+      class="mx-auto max-w-screen-md dark:border dark:border-slate-600 dark:shadow-none p-6 rounded-md shadow-xl text-center"
+    >
+      <div class="text-center mb-0 md:mb-0 md:mx-auto">
+        <div class="mb-4 lg:mb-8">
           <h2
-            class="mt-1 mb-1 sm:mt-0 text-3xl sm:text-4xl md:text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+            class="font-bold font-heading leading-tighter mb-4 tracking-tighter text-3xl sm:text-4xl md:text-5xl text-heading"
           >
-            Keynote Speakers
+            Email Sign-Up
           </h2>
         </div>
-        <div class={speakerColCss}>
-          <TeamWidget members={speakers.members} />
-        </div>
+        <form id="emailForm">
+          <label>
+            <p class="text-muted text-xl dark:text-slate-400 my-4">
+              Don't want to miss out? Add your email here for updates:
+            </p>
+            <input
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              id="userEmail"
+              placeholder="Enter your email"
+              required
+            />
+          </label>
+          <button
+            type="submit"
+            class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+            >Submit</button
+          >
+        </form>
       </div>
     </div>
-    <!-- Email Sign-Up -->
-    <div class="mb-8">
-      <div
-        class="mx-auto max-w-screen-md dark:border dark:border-slate-600 dark:shadow-none p-6 rounded-md shadow-xl text-center"
-      >
-        <div class="text-center mb-0 md:mb-0 md:mx-auto">
-          <div class="mb-4 lg:mb-8">
-            <h2
-              class="font-bold font-heading leading-tighter mb-4 tracking-tighter text-3xl sm:text-4xl md:text-5xl text-heading"
-            >
-              Email Sign-Up
-            </h2>
-          </div>
-          <form id="emailForm">
-            <label>
-              <p class="text-muted text-xl dark:text-slate-400 my-4">
-                Don't want to miss out? Add your email here for updates:
-              </p>
-              <input
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                id="userEmail"
-                placeholder="Enter your email"
-                required
-              />
-            </label>
-            <button
-              type="submit"
-              class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
-              >Submit</button
-            >
-          </form>
-        </div>
-      </div>
 
-      <script is:inline>
-        const form = document.getElementById('emailForm');
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
+    <script is:inline>
+      const form = document.getElementById('emailForm');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-          const email = document.getElementById('userEmail').value;
-          const formUrl =
-            'https://docs.google.com/forms/d/e/1FAIpQLSfHST0fzrRqZO8zqq73QZEJIeKiN-WIdnkav-iaLzXWREF_SQ/formResponse';
-          const data = new FormData();
+        const email = document.getElementById('userEmail').value;
+        const formUrl =
+          'https://docs.google.com/forms/d/e/1FAIpQLSfHST0fzrRqZO8zqq73QZEJIeKiN-WIdnkav-iaLzXWREF_SQ/formResponse';
+        const data = new FormData();
 
-          data.append('entry.193147904', email);
+        data.append('entry.193147904', email);
 
-          fetch(formUrl, {
-            method: 'POST',
-            mode: 'no-cors',
-            body: data,
+        fetch(formUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: data,
+        })
+          .then(() => {
+            alert('Thanks! Your email was submitted.');
+            form.reset();
           })
-            .then(() => {
-              alert('Thanks! Your email was submitted.');
-              form.reset();
-            })
-            .catch((err) => {
-              console.error('Submission error:', err);
-              alert('Oops! Something went wrong.');
-            });
-        });
-      </script>
-    </div>
-  </section>
-  <!-- Sponsorship tiers -->
-
-  <section class="bg-white dark:bg-gray-900 border">
-    <div class="py-8 px-4 mx-auto text-center lg:py-16 lg:px-6">
-      <div class="sponsorship-intro text-center mb-8 mt-2">
-        <h2 class="mb-4 text-3xl sm:text-4xl md:text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-          Become a Sponsor
-        </h2>
-        <br />
-        <p class="text-lg">
-          Support the 10-year anniversary of Boston Women in Bioinformatics. Explore sponsorship opportunities below!
-        </p>
-      </div>
-      <div class="sponsorship-tiers mt-0">
-        <div class="tier">
-          <h2 class="text-2xl sm:text-3xl md:text-4xl">Tier 1: <span class="gold">Gold </span> RNA Sponsor</h2>
-          <div class="contribution">
-            <strong>Contribution Amount:</strong> $1,500
-          </div>
-
-          <h3>Benefits:</h3>
-          <ul class="benefits">
-            <li>
-              🏆 <strong>Prominent Logo Placement:</strong> Sponsor's logo prominently displayed on all event marketing materials,
-              including banners, flyers, and digital media.
-            </li>
-            <li>
-              🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Gold Sponsor" during event opening and closing
-              speeches.
-            </li>
-            <li>
-              🏢 <strong>Booth Space:</strong> Complimentary booth space at the event for product display or promotional
-              activity.
-            </li>
-            <li>
-              🌐 <strong>Website Recognition:</strong> Featured logo and hyperlink on the event website homepage or sponsor
-              page.
-            </li>
-            <li>
-              📣 <strong>Social Media Shoutouts:</strong> Multiple mentions across the event's social media channels before,
-              during, and after the event.
-            </li>
-            <li>
-              🎟️ <strong>Complimentary Tickets:</strong>
-              <span class="gold">Four</span> free tickets to the event for the sponsor's representatives or guests.
-            </li>
-          </ul>
-        </div>
-
-        <div class="tier">
-          <h2>Tier 2: <span class="silver">Silver </span> DNA Sponsor</h2>
-          <div class="contribution">
-            <strong>Contribution Amount:</strong> $500
-          </div>
-
-          <h3>Benefits:</h3>
-          <ul class="benefits">
-            <li>
-              🏆 <strong>Prominent Logo Placement:</strong> Sponsor's logo prominently displayed on all event marketing materials,
-              including banners, flyers, and digital media.
-            </li>
-            <li>
-              🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Silver Sponsor" during event opening and closing
-              speeches.
-            </li>
-            <li>
-              🌐 <strong>Website Recognition:</strong> Featured logo and hyperlink on the event website homepage or sponsor
-              page.
-            </li>
-            <li>
-              📣 <strong>Social Media Shoutouts:</strong> Multiple mentions across the event's social media channels before,
-              during, and after the event.
-            </li>
-            <li>
-              🎟️ <strong>Complimentary Tickets:</strong>
-              <span class="silver">Two</span> free ticket to the event for the sponsor's representatives or guests.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Styles -->
-
-    <style>
-      .sponsorship-tiers {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 20px;
-        max-width: 100%;
-        padding: 0 20px;
-        margin-top: 0;
-      }
-
-      .tier {
-        flex: 1;
-        margin-bottom: 40px;
-        min-width: 300px;
-        max-width: 100%;
-        padding: 25px;
-        border: 2px solid #ddd;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        border-radius: 20px;
-        background-color: #fff;
-        text-align: center;
-      }
-
-      .tier h2 {
-        color: #2c3e50;
-        font-size: 24px;
-        margin-top: 0;
-        padding-bottom: 10px;
-        border-bottom: 2px solid #3498db;
-      }
-
-      .contribution {
-        font-size: 18px;
-        margin: 15px 0;
-        color: #e74c3c;
-      }
-
-      .tier h3 {
-        margin-top: 25px;
-        font-size: 20px;
-        color: #2c3e50;
-      }
-
-      .benefits {
-        list-style-type: none;
-        padding-left: 0;
-      }
-
-      .benefits li {
-        margin-bottom: 10px;
-        line-height: 1.5;
-        display: flex left;
-        align-items: baseline;
-        color: #2c3e50;
-      }
-
-      .benefits li strong {
-        margin-right: 5px;
-      }
-      /* Gold and Silver text colors */
-      .gold {
-        color: #d4af37;
-        font-weight: bold;
-      }
-
-      .silver {
-        color: #a3a3a3;
-        font-weight: bold;
-      }
-    </style>
-  </section>
+          .catch((err) => {
+            console.error('Submission error:', err);
+            alert('Oops! Something went wrong.');
+          });
+      });
+    </script>
+  </div>
 </Layout>
+<!-- Sponsorship tiers -->
+
+<section class="bg-white dark:bg-gray-900 border">
+  <div class="py-8 px-4 mx-auto text-center lg:py-16 lg:px-6">
+    <div class="sponsorship-intro text-center mb-8 mt-2">
+      <h2 class="mb-4 text-3xl sm:text-4xl md:text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+        Become a Sponsor
+      </h2>
+      <br />
+      <p class="text-lg">
+        Support the 10-year anniversary of Boston Women in Bioinformatics. Explore sponsorship opportunities below!
+      </p>
+    </div>
+    <div class="sponsorship-tiers mt-0">
+      <div class="tier">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl">Tier 1: <span class="gold">Gold </span> RNA Sponsor</h2>
+        <div class="contribution">
+          <strong>Contribution Amount:</strong> $1,500
+        </div>
+
+        <h3>Benefits:</h3>
+        <ul class="benefits">
+          <li>
+            🏆 <strong>Prominent Logo Placement:</strong> Sponsor's logo prominently displayed on all event marketing materials,
+            including banners, flyers, and digital media.
+          </li>
+          <li>
+            🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Gold Sponsor" during event opening and closing
+            speeches.
+          </li>
+          <li>
+            🏢 <strong>Booth Space:</strong> Complimentary booth space at the event for product display or promotional activity.
+          </li>
+          <li>
+            🌐 <strong>Website Recognition:</strong> Featured logo and hyperlink on the event website homepage or sponsor
+            page.
+          </li>
+          <li>
+            📣 <strong>Social Media Shoutouts:</strong> Multiple mentions across the event's social media channels before,
+            during, and after the event.
+          </li>
+          <li>
+            🎟️ <strong>Complimentary Tickets:</strong>
+            <span class="gold">Four</span> free tickets to the event for the sponsor's representatives or guests.
+          </li>
+        </ul>
+      </div>
+
+      <div class="tier">
+        <h2>Tier 2: <span class="silver">Silver </span> DNA Sponsor</h2>
+        <div class="contribution">
+          <strong>Contribution Amount:</strong> $500
+        </div>
+
+        <h3>Benefits:</h3>
+        <ul class="benefits">
+          <li>
+            🏆 <strong>Prominent Logo Placement:</strong> Sponsor's logo prominently displayed on all event marketing materials,
+            including banners, flyers, and digital media.
+          </li>
+          <li>
+            🎙️ <strong>Verbal Recognition:</strong> Priority mention as a "Silver Sponsor" during event opening and closing
+            speeches.
+          </li>
+          <li>
+            🌐 <strong>Website Recognition:</strong> Featured logo and hyperlink on the event website homepage or sponsor
+            page.
+          </li>
+          <li>
+            📣 <strong>Social Media Shoutouts:</strong> Multiple mentions across the event's social media channels before,
+            during, and after the event.
+          </li>
+          <li>
+            🎟️ <strong>Complimentary Tickets:</strong>
+            <span class="silver">Two</span> free ticket to the event for the sponsor's representatives or guests.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Styles -->
+
+  <style>
+    .sponsorship-tiers {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 100%;
+      padding: 0 20px;
+      margin-top: 0;
+    }
+
+    .tier {
+      flex: 1;
+      margin-bottom: 40px;
+      min-width: 300px;
+      max-width: 100%;
+      padding: 25px;
+      border: 2px solid #ddd;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .tier h2 {
+      color: #2c3e50;
+      font-size: 24px;
+      margin-top: 0;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #3498db;
+    }
+
+    .contribution {
+      font-size: 18px;
+      margin: 15px 0;
+      color: #e74c3c;
+    }
+
+    .tier h3 {
+      margin-top: 25px;
+      font-size: 20px;
+      color: #2c3e50;
+    }
+
+    .benefits {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .benefits li {
+      margin-bottom: 10px;
+      line-height: 1.5;
+      display: flex left;
+      align-items: baseline;
+      color: #2c3e50;
+    }
+
+    .benefits li strong {
+      margin-right: 5px;
+    }
+    /* Gold and Silver text colors */
+    .gold {
+      color: #d4af37;
+      font-weight: bold;
+    }
+
+    .silver {
+      color: #a3a3a3;
+      font-weight: bold;
+    }
+  </style>
+</section>
