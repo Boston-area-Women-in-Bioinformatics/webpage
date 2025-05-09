@@ -12,6 +12,27 @@ const speakers = {
 
   // Ambassador Profiles
   members: [
+    // Eleanor Howe
+    {
+      // Name: First and last name
+      name: 'Eleanor Howe',
+      // Namelink: Ambassador's Personal Website
+      nameLink: 'https://www.linkedin.com/in/eleanorahowe/',
+      // Job Title
+      title: 'Founder and CEO, Diamond Age Data Science, LLC',
+      // Ambassador Member Photo
+      avatar: '/team/eleanorahowe.jpeg',
+      // Social links
+      social: {
+        // website: '#',
+        // twitter: ''#'',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/eleanorahowe/',
+        //github: '#',
+        //bluesky: '#',
+      },
+    },
     // Lorena Pantano
     {
       // Name: First and last name
@@ -51,27 +72,6 @@ const speakers = {
         // instagram: '#',
         // facebook: '#',
         linkedin: 'https://www.linkedin.com/in/geraldine-van-der-auwera-5a5811/',
-        //github: '#',
-        //bluesky: '#',
-      },
-    },
-    // TBA
-    {
-      // Name: First and last name
-      name: 'TBA',
-      // Namelink: Member's Personal Website
-      //nameLink: '#',
-      // Job Title
-      //title: '#',
-      // Member Photo
-      avatar: '/photos/WIB_Logo.jpg',
-      // Social links
-      social: {
-        // website: '#',
-        // twitter: ''#'',
-        // instagram: '#',
-        // facebook: '#',
-        //linkedin: '#',
         //github: '#',
         //bluesky: '#',
       },
