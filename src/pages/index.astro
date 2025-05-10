@@ -4,7 +4,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Women in Bioinformatics',
+  title: 'Boston Women in Bioinformatics',
 };
 ---
 
@@ -24,7 +24,7 @@ const metadata = {
       { text: 'Learn more', href: '#features' },
     ]}
   > -->
-  <Hero>
+  <!-- <Hero>
     <Fragment slot="title">
       Boston Women in
       <span class="text-accent dark:text-white highlight">Bioinformatics</span>
@@ -34,8 +34,19 @@ const metadata = {
       Team up with <span class="font-semibold">US</span>, your pathway to elevating your career through leadership,
       networking, and professional growth.
     </Fragment>
-  </Hero>
-
+  </Hero> -->
+  <section class="text-center pt-16 pb-8 bg-white dark:bg-black">
+    <h1 class="text-4xl sm:text-5xl font-bold mb-4 mx-auto leading-tight">
+      Boston Women in
+      <span class="text-accent dark:text-white highlight">Bioinformatics</span>
+    </h1>
+  
+    <p class="text-lg sm:text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+      Team up with <span class="font-semibold">US</span>, your pathway to elevating your career through leadership,
+      networking, and professional growth.
+    </p>
+  </section>
+  
   <Features2
     title="We are here to support you!"
     columns={2}
