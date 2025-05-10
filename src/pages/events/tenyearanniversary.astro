@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import { Image } from 'astro:assets';
+// import { Image } from 'astro:assets';
 import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
 import speakers from '~/config/components/tenyearannSpeakers';
 import TeamWidget from '~/components/widgets/Team.jsx';
@@ -44,7 +44,6 @@ if (speakers?.enabled === true) {
     </p>
     <div class="text-center pb-0 mx-auto">
       <!-- wrapped the location & calendar button next to each other -->
-
       <div class="grid sm:grid-cols-2 items-center justify-center">
         <div class="text-lg text-muted py-4 text-center sm:text-right mr-8">
           <p>Date: Sept 30, 2025 @ 4PM ET</p>
@@ -62,8 +61,8 @@ if (speakers?.enabled === true) {
         />
       </div>
     </div>
-        <!--Sponsors -->
-        <SponsorSection />
+    <!--Sponsors -->
+    <SponsorSection />
     <!-- <div class="py-4 relative items-center max-w-7xl mx-auto px-4 sm:px-6">
       <div>
         <div
@@ -104,7 +103,7 @@ if (speakers?.enabled === true) {
     <div class="mb-8">
       <div
         class="mx-auto max-w-screen-md dark:border dark:border-slate-600 dark:shadow-none p-6 rounded-md shadow-xl text-center"
-      
+      >
         <div class="text-center mb-0 md:mb-0 md:mx-auto">
           <div class="mb-4 lg:mb-8">
             <h3
@@ -133,35 +132,36 @@ if (speakers?.enabled === true) {
           </form>
         </div>
       </div>
-
-      <script is:inline>
-        const form = document.getElementById('emailForm');
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
-
-          const email = document.getElementById('userEmail').value;
-          const formUrl =
-            'https://docs.google.com/forms/d/e/1FAIpQLSfHST0fzrRqZO8zqq73QZEJIeKiN-WIdnkav-iaLzXWREF_SQ/formResponse';
-          const data = new FormData();
-
-          data.append('entry.193147904', email);
-
-          fetch(formUrl, {
-            method: 'POST',
-            mode: 'no-cors',
-            body: data,
-          })
-            .then(() => {
-              alert('Thanks! Your email was submitted.');
-              form.reset();
-            })
-            .catch((err) => {
-              console.error('Submission error:', err);
-              alert('Oops! Something went wrong.');
-            });
-        });
-      </script>
     </div>
+
+    <script is:inline>
+      const form = document.getElementById('emailForm');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById('userEmail').value;
+        const formUrl =
+          'https://docs.google.com/forms/d/e/1FAIpQLSfHST0fzrRqZO8zqq73QZEJIeKiN-WIdnkav-iaLzXWREF_SQ/formResponse';
+        const data = new FormData();
+
+        data.append('entry.193147904', email);
+
+        fetch(formUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: data,
+        })
+          .then(() => {
+            alert('Thanks! Your email was submitted.');
+            form.reset();
+          })
+          .catch((err) => {
+            console.error('Submission error:', err);
+            alert('Oops! Something went wrong.');
+          });
+      });
+    </script>
+  </section>
   <!-- Sponsorship tiers -->
   <section class="bg-white dark:bg-gray-900 border">
     <div class="py-8 px-4 mx-auto text-center lg:py-16 lg:px-6">
@@ -244,6 +244,5 @@ if (speakers?.enabled === true) {
     </div>
 
     <!-- Styles -->
-
   </section>
 </Layout>
