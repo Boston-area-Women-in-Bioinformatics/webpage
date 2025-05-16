@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 // import Hero from '~/components/widgets/Hero.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Boston Women in Bioinformatics',
@@ -46,6 +47,26 @@ const metadata = {
       networking, and professional growth.
     </p>
   </section>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Fill out our survey',
+        href: 'https://forms.gle/jhKy3hpYPf1WtC2s8',
+        icon: 'tabler:checkbox',
+      },
+    ]}
+  >
+    <Fragment slot="title">Participate in Our Community Study</Fragment>
+
+    <Fragment slot="subtitle">
+      Help us understand community trends. All questions are optional, and responses are anonymous and used only for research purposes.<br class="hidden md:inline" />[~5 min]
+    </Fragment>
+  </CallToAction>
 
   <Features2
     title="We are here to support you!"
