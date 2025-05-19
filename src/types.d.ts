@@ -122,12 +122,12 @@ interface TeamMember {
 }
 
 interface YouTubeVideo {
-  id: string;               // YouTube video ID
+  id: string; // YouTube video ID
   title: string;
   description?: string;
   url: string;
   publishedAt: Date;
-  duration?: string;        // ISO 8601 duration, e.g., "PT1H2M3S"
+  duration?: string; // ISO 8601 duration, e.g., "PT1H2M3S"
   thumbnailUrl?: string;
 }
 
