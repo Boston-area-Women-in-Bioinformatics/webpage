@@ -32,7 +32,6 @@ git push -u origin <new-branch-name>
 Collapse
 ```
 
-
 ## Add a video to the meetings archive
 
 ```
@@ -44,7 +43,7 @@ git branch
 git checkout main
 # Create a new branch :
 git checkout -b <new-branch-name>
-## Edit the team.js  file (src/config/components/archive_meetings.js) 
+## Edit the team.js  file (src/config/components/archive_meetings.js)
 ## to populate the video information. For the URL use the URL for embedding the video.
 # Run 'npx --prettier' to fix any astro specific formatting issues
 npx prettier --write src/config/components/archive_meetings.js
