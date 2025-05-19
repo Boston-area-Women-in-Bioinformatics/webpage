@@ -32,6 +32,30 @@ git push -u origin <new-branch-name>
 Collapse
 ```
 
+
+## Add a video to the meetings archive
+
+```
+Clone the repository locally :
+git clone https://github.com/Boston-area-Women-in-Bioinformatics/webpage.git
+# List branches in a github repos :
+git branch
+# Be in main branch if not already
+git checkout main
+# Create a new branch :
+git checkout -b <new-branch-name>
+## Edit the team.js  file (src/config/components/archive_meetings.js) 
+## to populate the video information. For the URL use the URL for embedding the video.
+# Run 'npx --prettier' to fix any astro specific formatting issues
+npx prettier --write src/config/components/archive_meetings.js
+# Stage the changes to commit (Assuming you are in the git folder)
+git add ./src/config/components/archive_meetings.js
+#  Commit new changes
+git commit -m "<Add committ message>"
+git push -u origin <new-branch-name>
+Collapse
+```
+
 ## Add a team member
 
 ```
