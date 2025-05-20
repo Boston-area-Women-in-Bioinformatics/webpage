@@ -17,7 +17,7 @@ metadata:
   openGraph:
     site_name: 'Boston Women in Bioinformatics'
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/WIB_Logo.jpg'
         width: 300
         height: 300
     type: website

@@ -1,0 +1,63 @@
+---
+import { SITE } from '~/config/site/config.js';
+import Layout from '~/layouts/PageLayout.astro';
+import VideoWidget from '~/components/widgets/Video.jsx';
+import archieved_meetings from '~/config/components/archive_meetings';
+
+import { getHomePermalink } from '~/utils/permalinks';
+
+const title = `Error 404`;
+
+const metadata = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+
+var archieved_meetingsColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1';
+---
+
+<!-- Sections for Leadership Archieved_meetings, Ambassadors, and Alumni -->{
+  archieved_meetings?.enabled && (
+    <Layout {metadata}>
+      <section class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+          <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+              {archieved_meetings.title}
+            </h2>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{archieved_meetings.description}</p>
+          </div>
+          <div class={archieved_meetingsColCss}>
+            <VideoWidget videos={archieved_meetings.videos} />
+          </div>
+        </div>
+      </section>
+    </Layout>
+  )
+}
+
+<!-- Show Error Page -->
+{
+  !archieved_meetings?.enabled && (
+    <Layout metadata={{ title }}>
+      <section class="flex items-center h-full p-16">
+        <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
+          <div class="max-w-md text-center">
+            <h2 class="mb-8 font-bold text-9xl">
+              <span class="sr-only">Error</span>
+              <span class="text-primary">404</span>
+            </h2>
+            <p class="text-3xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
+            <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
+              But dont worry, you can find plenty of other things on our homepage.
+            </p>
+            <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">
+              Back to homepage
+            </a>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  )
+}
