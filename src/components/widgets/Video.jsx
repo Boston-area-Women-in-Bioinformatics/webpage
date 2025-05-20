@@ -2,14 +2,14 @@ export default function Video(props) {
   return (
     <>
       {props.videos.map((video, index) => (
-        <div key={index} className="border-4 border-double text-center text-gray-500 dark:text-gray-400">
+        <div key={index} className="sm:border-4 sm:border-double text-center text-gray-500 dark:text-gray-400">
           {video?.url && (
             <iframe
               width="560"
               height="315"
               src={video?.url}
               title={video?.title}
-              className="mx-auto m-4 rounded-lg"
+              className="w-full aspect-video mx-auto pr-4 pl-4 m-4 rounded-lg"
               frameBorder="0"
               loading="lazy"
               allow="accelerometer;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
