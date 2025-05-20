@@ -9,7 +9,7 @@ export default function Video(props) {
               height="315"
               src={video?.url}
               title={video?.title}
-              className="w-full aspect-video mx-auto pr-4 pl-4 m-4 rounded-lg"
+              className="aspect-video mx-auto pr-4 pl-4 m-4 rounded-lg"
               frameBorder="0"
               loading="lazy"
               allow="accelerometer;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
