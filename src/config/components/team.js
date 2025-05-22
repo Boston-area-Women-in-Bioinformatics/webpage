@@ -230,6 +230,21 @@ const team = {
         linkedin: 'https://www.linkedin.com/in/nishita-kalepalli/',
       },
     },
+    // Lakshmi Kuttippurathu
+    {
+      // Name: First and last name
+      name: 'Lakshmi Kuttippurathu',
+      // Namelink: Member's Personal Website
+      nameLink: 'https://www.linkedin.com/in/lakshmikc/',
+      // Job Title
+      title: 'Member, Events Committee',
+      // Leadership team member Photo
+      avatar: 'team/lakshmi1.jpg',
+      // Social links
+      social: {
+        linkedin: 'https://www.linkedin.com/in/lakshmikc/',
+      },
+    },
   ],
 };
 

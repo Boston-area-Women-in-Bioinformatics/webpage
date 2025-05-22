@@ -121,6 +121,16 @@ interface TeamMember {
   classes?: Record<string, string>;
 }
 
+interface YouTubeVideo {
+  id: string; // YouTube video ID
+  title: string;
+  description?: string;
+  url: string;
+  publishedAt: Date;
+  duration?: string; // ISO 8601 duration, e.g., "PT1H2M3S"
+  thumbnailUrl?: string;
+}
+
 interface Social {
   icon?: string;
   href?: string;
@@ -221,6 +231,9 @@ export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' |
 
 export interface Team extends Omit<Headline, 'classes'>, Widget {
   team?: Array<TeamMember>;
+}
+export interface Video extends Omit<Headline, 'classes'>, Widget {
+  video?: Array<YouTubeVideo>;
 }
 
 export interface Stats extends Omit<Headline, 'classes'>, Widget {
