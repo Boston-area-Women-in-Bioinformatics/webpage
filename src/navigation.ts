@@ -23,6 +23,10 @@ export const headerData = {
       href: getPermalink('/events/tenyearanniversary'),
     },
     {
+      text: 'Archived Events',
+      href: getPermalink('/events/archived'),
+    },
+    {
       text: 'Contact',
       href: getPermalink('/contact'),
     },
