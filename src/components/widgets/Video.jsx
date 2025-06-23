@@ -2,7 +2,7 @@ export default function Video(props) {
   return (
     <>
       {props.videos.map((video, index) => (
-        <div key={index} className="sm:border-4 sm:border-double text-center text-gray-500 dark:text-gray-400">
+        <div key={index} className="rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6 text-center text-gray-500 dark:text-gray-400">
           {video?.url && (
             <iframe
               width="560"
