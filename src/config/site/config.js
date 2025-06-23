@@ -17,8 +17,7 @@ const CONFIG = {
   title: 'Boston Women in Bioinformatics',
 
   // Website description
-  description:
-    'The online presence of Women in Bioinformatics in the Boston Area.',
+  description: 'The online presence of Women in Bioinformatics in the Boston Area.',
 
   // The website's preview image that is displayed when sharing the website on social media
   defaultImage: defaultImage,
@@ -73,8 +72,7 @@ const CONFIG = {
       default: 'Boston Women in Bioinformatics',
       template: '%s — Boston Women in Bioinformatics',
     },
-    description:
-      'The online presence of Women in Bioinformatics in the Boston Area.',
+    description: 'The online presence of Women in Bioinformatics in the Boston Area.',
     robots: {
       index: true,
       follow: true,

@@ -59,12 +59,12 @@ const speakers = {
       // Name: First and last name
       name: 'Geraldine Van der Auwera',
       // Namelink: Ambassador's Personal Website
-      nameLink: 'https://media.licdn.com/dms/image/v2/C4D03AQF9umpthAuLTA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516255166236?e=1756339200&v=beta&t=30W12e8VKpeWDxZTNEo9GR4BXyu6XTjgigiHLvBNb9s',
+      nameLink:
+        'https://media.licdn.com/dms/image/v2/C4D03AQF9umpthAuLTA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516255166236?e=1756339200&v=beta&t=30W12e8VKpeWDxZTNEo9GR4BXyu6XTjgigiHLvBNb9s',
       // Job Title
       title: 'Lead Developer Advocate at Seqera',
       // Ambassador Photo
-      avatar:
-        '/team/GeraldineVanderAuwera.jpeg',
+      avatar: '/team/GeraldineVanderAuwera.jpeg',
       // Social links
       social: {
         // website: '#',

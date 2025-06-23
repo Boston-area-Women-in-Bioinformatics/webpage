@@ -1,24 +1,43 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
-import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
+import { SITE } from '~/config/site/config.js';
+// import Hero from '~/components/widgets/Hero.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Women in Bioinformatics in the Boston Area',
-  ignoreTitleTemplate: true,
+  title: SITE.title,
+  description: SITE.description,
 };
 ---
 
 <Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <!-- <Hero
+    tagline="Startup Web Demo"
+    actions={[
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Get templates',
+        href: 'https://github.com/onwidget/astrowind',
+        icon: 'tabler:download',
+      },
+      { text: 'Learn more', href: '#features' },
+    ]}
+  > -->
+  <!-- <Hero>
+    <Fragment slot="title">
+      Boston Women in
+      <span class="text-accent dark:text-white highlight">Bioinformatics</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Team up with <span class="font-semibold">US</span>, your pathway to elevating your career through leadership,
+      networking, and professional growth.
+    </Fragment>
+  </Hero> -->
   <section class="text-center pt-16 pb-8">
     <h1 class="text-4xl sm:text-5xl font-bold mb-4 mx-auto leading-tight">
       Boston Women in
@@ -30,7 +49,6 @@ const metadata = {
       networking, and professional growth.
     </p>
   </section>
-
 
   <!-- CallToAction Widget *********** -->
 
@@ -334,4 +352,3 @@ const metadata = {
 </Layout>
 -->
 </Layout>
-
