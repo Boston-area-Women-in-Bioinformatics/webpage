@@ -217,5 +217,5 @@ export const footerData = {
       href: 'https://github.com/Boston-area-Women-in-Bioinformatics',
     },
   ],
-  footNote: `Logos Designed by Siobhan Keegan and <a href="https://www.monikamistry.com/creative-design/">Monika Mistry</a>`,
+  footNote: `Boston Women in Bioinformatics is a nonprofit, tax-exempt charitable organization under Section 501(c)(3) of the Internal Revenue Code. Donations are tax-deductible as allowed by law. Logos were designed by Siobhan Keegan and <a href="https://www.monikamistry.com/creative-design/">Monika Mistry</a>.`,
 };
