@@ -1,11 +1,13 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import { SITE } from '~/config/site/config.js';
 // import Hero from '~/components/widgets/Hero.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Boston Women in Bioinformatics',
+  title: SITE.title,
+  description: SITE.description,
 };
 ---
 
@@ -36,7 +38,7 @@ const metadata = {
       networking, and professional growth.
     </Fragment>
   </Hero> -->
-  <section class="text-center pt-16 pb-8 bg-white dark:bg-black">
+  <section class="text-center pt-16 pb-8">
     <h1 class="text-4xl sm:text-5xl font-bold mb-4 mx-auto leading-tight">
       Boston Women in
       <span class="text-accent dark:text-white highlight">Bioinformatics</span>
