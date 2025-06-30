@@ -13,26 +13,29 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero title="Support. Learn. Share. Network.">
-    <Fragment slot="subtitle">
+  <Hero title="About Us" subtitle="Support. Learn. Share. Network.">
+    <Fragment slot="content">
       We are women++ in the fields of bioinformatics, computational biology, biostatistics, data science and
       informatics. As a community, we aim to empower and encourage all women++ bioinformaticians through regular
       meetings, networking events and workshops. We seek to give a platform to women++ professionals, including those
       members of other underrepresented groups in science, such as BIPOC, the LGBTQIA+ community, and people with
       disabilities.
     </Fragment>
+    <Fragment slot="image">
+      <center>
+        <Image
+          src={'/photos/meetup_20240918.jpg'}
+          width="750"
+          height="537"
+          decoding="async"
+          loading="lazy"
+          alt="BWIB lunch meetup."
+        />
+      </center>
+    </Fragment>
   </Hero>
 
-  <center
-    ><Image
-      src={'/photos/meetup_20240918.jpg'}
-      width="750"
-      height="537"
-      decoding="async"
-      loading="lazy"
-      alt="BWIB lunch meetup."
-    /></center
-  >
+  <center></center>
 
   <!-- Features2 Widget ************** -->
 

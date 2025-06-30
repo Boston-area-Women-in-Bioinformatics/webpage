@@ -1,0 +1,61 @@
+---
+import Features from '~/components/widgets/Features.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Committees',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero title="Committees">
+    <Fragment slot="subtitle">
+      Our organization is powered by a dedicated group of volunteers working across committees to support our mission
+      and community.
+    </Fragment>
+  </Hero>
+
+  <Features
+    items={[
+      {
+        title: 'Events',
+        description:
+          'From technical workshops to networking gatherings, the Event committee organizes and hosts professional and community-focused events.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Sponsorship',
+        description:
+          'Fosters professional growth and supports women on their path to leadership by expanding community access to leadership development resources, mentorship networks, and industry connections',
+        icon: 'tabler:heart-handshake',
+      },
+      {
+        title: 'Bioinformatics Sisters',
+        description:
+          'Supports and organizes Bioinformatics Sisters, a networking and mentoring platform designed to match participants based on shared goals, skills, and preferences.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Web page',
+        description:
+          "The Web Page Committee manages the organization's website to share group information, curate community resources, and promote events.",
+        icon: 'tabler:world',
+      },
+      {
+        title: 'Advocacy',
+        description:
+          'Advances equity and inclusion within the field of bioinformatics by identifying systemic challenges and promoting data-driven strategies.',
+        icon: 'tabler:speakerphone',
+      },
+      {
+        title: 'Communication',
+        description:
+          'Oversees the organization’s public messaging and visibility, ensuring consistent and strategic outreach across platforms.',
+        icon: 'tabler:bubble-text',
+      },
+    ]}
+  />
+</Layout>
