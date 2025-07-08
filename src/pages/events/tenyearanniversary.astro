@@ -5,11 +5,14 @@ import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
 import speakers from '~/config/components/tenyearannSpeakers';
 import TeamWidget from '~/components/widgets/Team.jsx';
 import SponsorSection from '~/components/Sponsors.jsx';
+import { SITE } from '~/config/site/config.js';
 
 //import Image from '~/components/common/Image.astro';
 
 const metadata = {
-  title: '10th Year Anniversary',
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
 };
 
 var speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4';
