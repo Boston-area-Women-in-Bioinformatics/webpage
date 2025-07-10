@@ -24,7 +24,7 @@ All content on this site, including text, images, logos, graphics, and documents
 
 ## 3. Donations and Transactions
 
-We may offer online donations via secure third-party payment processors. By donating, you agree to provide accurate payment information. All donations are voluntary and non-refundable unless otherwise stated.
+Boston Women in Bioinformatics is a nonprofit, tax-exempt charitable organization under Section 501(c)(3) of the Internal Revenue Code in the Commonwealth of Massachusetts. Donations are tax-deductible to the extent permitted by law. We may offer online donations via secure third-party payment processors. By donating, you agree to provide accurate payment information. All donations are voluntary and non-refundable unless otherwise stated.
 
 ## 4. Privacy Policy
 
@@ -49,7 +49,7 @@ To the fullest extent permitted by law, Boston Women in Bioinformatics shall not
 
 ## 8. Termination
 
-We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms and Conditions.
+We may terminate or suspend your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms and Conditions.
 
 Upon termination, your right to use the Service will cease immediately.
 
@@ -63,8 +63,8 @@ These Terms are governed by the laws of the Commonwealth of Massachusetts, witho
 We reserve the right, at our sole discretion, to modify or replace these Terms at any time. Continued use of the site constitutes your acceptance of the revised Terms.
 
 
-## Contact Us
+## 11. Contact Us
 
-If you have any questions about these Terms and Conditions, You can contact us:
+If you have any questions about these Terms and Conditions, you can contact us:
 
-- By email: Bostonwomeninbioinformatics@gmail.com[mailto:Bostonwomeninbioinformatics@gmail.com]
+- By email: [Bostonwomeninbioinformatics@gmail.com](mailto:Bostonwomeninbioinformatics@gmail.com)
