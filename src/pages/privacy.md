@@ -27,7 +27,6 @@ Our website is hosted on [GitHub Pages](https://pages.github.com/), a service pr
 
 We may also use third-party services (such as [Google Forms](https://transparency.google/intl/en_US/our-policies/product-terms/google-forms/)) that collect or process data on our behalf. These services have their own privacy policies, which govern how they handle your information.
 
-
 ## 2. Use of Personal Data
 
 The Boston Women in Bioinformatics may use Personal Data for the following purposes:
@@ -60,7 +59,7 @@ The Boston Women in Bioinformatics will retain your personal data only for as lo
 
 ## 5. Delete Your Personal Data
 
-You have the right to delete or request that we assist in correcting inaccuracies or deleting the personal data that we have collected about you by contacting us at [Bostonwomeninbioinformatics@gmail.com](mailto:Bostonwomeninbioinformatics@gmail.com). 
+You have the right to delete or request that we assist in correcting inaccuracies or deleting the personal data that we have collected about you by contacting us at [Bostonwomeninbioinformatics@gmail.com](mailto:Bostonwomeninbioinformatics@gmail.com).
 
 You may also:
 

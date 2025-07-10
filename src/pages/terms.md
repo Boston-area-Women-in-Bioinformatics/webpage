@@ -14,6 +14,7 @@ These Terms and Conditions govern your access to and use of our website, includi
 By accessing or using our website, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. If you do not agree with any part of these Terms, you must not use our website.
 
 You may not use our website to:
+
 - Post or transmit any unlawful, threatening, defamatory, or obscene material.
 - Interfere with the operation or security of the site.
 - Attempt unauthorized access to any part of the site.
@@ -46,7 +47,6 @@ All content provided is for general information and educational purposes only. W
 
 To the fullest extent permitted by law, Boston Women in Bioinformatics shall not be liable for any special, indirect, incidental, or consequential damages resulting from your use or inability to use this site.
 
-
 ## 8. Termination
 
 We may terminate or suspend your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms and Conditions.
@@ -57,11 +57,9 @@ Upon termination, your right to use the Service will cease immediately.
 
 These Terms are governed by the laws of the Commonwealth of Massachusetts, without regard to conflict of law principles.
 
-
 ## 10. Changes to These Terms and Conditions
 
 We reserve the right, at our sole discretion, to modify or replace these Terms at any time. Continued use of the site constitutes your acceptance of the revised Terms.
-
 
 ## 11. Contact Us
 
