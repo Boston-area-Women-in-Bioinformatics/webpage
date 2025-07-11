@@ -2,9 +2,12 @@
 import Features from '~/components/widgets/Features.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import { SITE } from '~/config/site/config.js';
 
 const metadata = {
-  title: 'Committees',
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
 };
 ---
 

@@ -4,9 +4,12 @@ import Hero from '~/components/widgets/Hero.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
+import { SITE } from '~/config/site/config.js';
 
 const metadata = {
-  title: 'About us',
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
 };
 ---
 
