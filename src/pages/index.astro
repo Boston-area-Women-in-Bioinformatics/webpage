@@ -1,9 +1,11 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { SITE } from '~/config/site/config.js';
-// import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import eventImg from '~/../public/photos/2025/nextflowsummit1.PNG'; // adjust path as needed
+
 
 const metadata = {
   title: SITE.title,
@@ -12,7 +14,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  
 
   <!-- <Hero
     tagline="Startup Web Demo"
@@ -49,6 +51,19 @@ const metadata = {
       networking, and professional growth.
     </p>
   </section>
+
+  <!-- Hero2 Widget ******************* -->
+  <Hero2
+    title="Celebrate a Decade of Community and Empowerment"
+    subtitle="Join us for the 10th Anniversary of Women in Bioinformatics to honor ten years of community, mentorship, and career-building."
+    actions={[
+      { variant: 'primary', text: 'Learn More', href: 'https://boston-wib.org/events/tenyearanniversary', icon: 'tabler:square-rounded-arrow-right' },
+    ]}
+    image={{
+      src: eventImg,
+      alt: "Women in Bioinformatics 10th Anniversary Event",
+    }}
+  />
 
   <!-- CallToAction Widget *********** -->
 
