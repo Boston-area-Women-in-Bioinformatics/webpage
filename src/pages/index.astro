@@ -5,7 +5,8 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import eventImg from '~/../public/photos/2025/nextflowsummit1.png'; // adjust path as needed
-
+import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
+import Button from '~/components/ui/Button.astro';
 const metadata = {
   title: SITE.title,
   description: SITE.description,
@@ -53,99 +54,115 @@ const metadata = {
   <Hero2
     title="Celebrate a Decade of Community and Empowerment"
     subtitle="Join us for the 10th Anniversary of Women in Bioinformatics to honor ten years of community, mentorship, and career-building."
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Learn More',
-        href: 'events/tenyearanniversary',
-        icon: 'tabler:square-rounded-arrow-right',
-      },
-    ]}
     image={{
       src: eventImg,
       alt: 'Women in Bioinformatics 10th Anniversary Event',
     }}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        target: '_blank',
-        text: 'Fill out our survey',
-        href: 'https://forms.gle/jhKy3hpYPf1WtC2s8',
-        icon: 'tabler:checkbox',
-      },
-    ]}
   >
-    <Fragment slot="title">Participate in Our Community Study</Fragment>
+    <Fragment slot="content">
+      <div class="grid sm:grid-cols-2 items-center justify-center">
+        
 
-    <Fragment slot="subtitle">
-      Are you a bioinformatician, computational biologist, or working in an adjacent field? Boston Women in
-      Bioinformatics (BWIB) is conducting a national survey to better understand the landscape of our field. This survey
-      is for everyone, not just women, and only takes ~5 minutes to complete. All responses are anonymous and will be
-      used for community-driven research and programming.<br class="hidden md:inline" />[~5 min]
+          <AddToCalendarButton
+            client:only="react"
+            name="Boston Women in Bioinformatics 10 Year Anniversary"
+            location="Boynton Yards, Somerville"
+            startDate="2025-09-30"
+            endDate="2025-09-30"
+            startTime="16:00"
+            endTime="19:00"
+          />
+          <div class="flex  sm:w-auto">
+          <Button
+            variant="primary"
+            text="Learn More"
+            href="events/tenyearanniversary"
+            icon="tabler:square-rounded-arrow-right"
+            class="h-full"
+          />
+        </div>
+      </div>
     </Fragment>
-  </CallToAction>
 
-  <Features2
-    title="We are here to support you!"
-    columns={2}
-    items={[
-      // {
-      //   title: 'General support',
-      //   description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      // },
-      // {
-      //   title: 'Contact sales',
-      //   description:
-      //     'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
-      // },
-      // {
-      //   title: 'Technical support',
-      //   description:
-      //     'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
-      // },
-      {
-        title: 'Slack',
-        icon: 'tabler:brand-slack',
-        callToAction: {
+    <!-- CallToAction Widget *********** -->
+
+    <CallToAction
+      actions={[
+        {
+          variant: 'primary',
           target: '_blank',
-          text: 'https://boston-women-bioinfo.slack.com',
-          href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ',
-          variant: 'link',
+          text: 'Fill out our survey',
+          href: 'https://forms.gle/jhKy3hpYPf1WtC2s8',
+          icon: 'tabler:checkbox',
         },
-      },
-      {
-        title: 'Email',
-        icon: 'tabler:mail',
-        callToAction: {
-          target: '_blank',
-          text: 'Bostonwomeninbioinformatics@gmail.com',
-          href: 'mailto:Bostonwomeninbioinformatics@gmail.com',
-          variant: 'link',
+      ]}
+    >
+      <Fragment slot="title">Participate in Our Community Study</Fragment>
+
+      <Fragment slot="subtitle">
+        Are you a bioinformatician, computational biologist, or working in an adjacent field? Boston Women in
+        Bioinformatics (BWIB) is conducting a national survey to better understand the landscape of our field. This
+        survey is for everyone, not just women, and only takes ~5 minutes to complete. All responses are anonymous and
+        will be used for community-driven research and programming.<br class="hidden md:inline" />[~5 min]
+      </Fragment>
+    </CallToAction>
+
+    <Features2
+      title="We are here to support you!"
+      columns={2}
+      items={[
+        // {
+        //   title: 'General support',
+        //   description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
+        // },
+        // {
+        //   title: 'Contact sales',
+        //   description:
+        //     'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
+        // },
+        // {
+        //   title: 'Technical support',
+        //   description:
+        //     'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
+        // },
+        {
+          title: 'Slack',
+          icon: 'tabler:brand-slack',
+          callToAction: {
+            target: '_blank',
+            text: 'https://boston-women-bioinfo.slack.com',
+            href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ',
+            variant: 'link',
+          },
         },
-      },
-      {
-        title: 'Linked In',
-        icon: 'tabler:brand-linkedin',
-        callToAction: {
-          target: '_blank',
-          text: 'Boston-area Women in Bioinformatics',
-          href: 'https://www.linkedin.com/groups/13074137/',
-          variant: 'link',
+        {
+          title: 'Email',
+          icon: 'tabler:mail',
+          callToAction: {
+            target: '_blank',
+            text: 'Bostonwomeninbioinformatics@gmail.com',
+            href: 'mailto:Bostonwomeninbioinformatics@gmail.com',
+            variant: 'link',
+          },
         },
-      },
-      {
-        title: 'Location',
-        description: 'Boston Area, Massachusetts',
-        icon: 'tabler:map-pin',
-      },
-    ]}
-  />
-  <!-- <Fragment slot="image">
+        {
+          title: 'Linked In',
+          icon: 'tabler:brand-linkedin',
+          callToAction: {
+            target: '_blank',
+            text: 'Boston-area Women in Bioinformatics',
+            href: 'https://www.linkedin.com/groups/13074137/',
+            variant: 'link',
+          },
+        },
+        {
+          title: 'Location',
+          description: 'Boston Area, Massachusetts',
+          icon: 'tabler:map-pin',
+        },
+      ]}
+    />
+    <!-- <Fragment slot="image">
       <YouTube id="gxBkghlglTg" title="Astro just Launched.... Could it be the ultimate web framework?" />
       <style is:inline>
         lite-youtube {
@@ -154,10 +171,10 @@ const metadata = {
         }
       </style>
     </Fragment> -->
-  <!-- </Hero> -->
+    <!-- </Hero> -->
 
-  <!-- Features2 Widget ************** -->
-  <!-- 
+    <!-- Features2 Widget ************** -->
+    <!-- 
   <Features2
     title="About us"
     subtitle="We believe in the magic of turning dreams into stunning realities. Founded by passionate developers with a shared vision, we set out to simplify the website creation process. Our templates bring together the innovation of Astro 4.0 and the versatility of Tailwind CSS, enabling you to express your unique brand identity like never before."
@@ -167,8 +184,8 @@ const metadata = {
     </Fragment>
   </Features2> -->
 
-  <!-- Stats Widget ****************** -->
-  <!-- 
+    <!-- Stats Widget ****************** -->
+    <!-- 
   <Stats
     title="Discover the impressive impact of Astrowind"
     subtitle="The numbers below reflect the trust our users have placed in us and the remarkable outcomes we've helped them achieve."
@@ -180,9 +197,9 @@ const metadata = {
     ]}
   /> -->
 
-  <!-- Brands Widget ****************** -->
+    <!-- Brands Widget ****************** -->
 
-  <!-- <Brands
+    <!-- <Brands
     title="Partnerships & Collaborations"
     subtitle="At Astrowind, we believe in the power of collaboration to drive innovation and create exceptional experiences."
     icons={[]}
@@ -227,9 +244,9 @@ const metadata = {
     ]}
   /> -->
 
-  <!-- Features2 Widget ************** -->
+    <!-- Features2 Widget ************** -->
 
-  <!-- <Features2
+    <!-- <Features2
     title="What services do we provide?"
     subtitle="We offer a wide range of website templates that suit various industries and purposes such as business, portfolio, e-commerce, blog, etc."
     items={[
@@ -258,9 +275,9 @@ const metadata = {
     </Fragment>
   </Features2> -->
 
-  <!-- Features Widget *************** -->
+    <!-- Features Widget *************** -->
 
-  <!-- <Features
+    <!-- <Features
     id="features"
     title="Main features of our templates"
     subtitle="Possess several key characteristics to effectively cater to the needs of startups and entrepreneurs."
@@ -302,9 +319,9 @@ const metadata = {
     ]}
   /> -->
 
-  <!-- FAQs Widget ******************* -->
+    <!-- FAQs Widget ******************* -->
 
-  <!-- <FAQs
+    <!-- <FAQs
     title="Frequently Asked Questions"
     items={[
       {
@@ -344,9 +361,9 @@ const metadata = {
     </Fragment>
   </FAQs> -->
 
-  <!-- Features3 Widget ************** -->
+    <!-- Features3 Widget ************** -->
 
-  <!-- CallToAction Widget *********** 
+    <!-- CallToAction Widget *********** 
 
   <CallToAction
     actions={[
@@ -368,4 +385,5 @@ const metadata = {
   </CallToAction>
 </Layout>
 -->
+  </Hero2>
 </Layout>
