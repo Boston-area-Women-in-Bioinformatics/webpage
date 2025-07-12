@@ -1,10 +1,12 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { SITE } from '~/config/site/config.js';
-// import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-
+import eventImg from '~/../public/photos/2025/nextflowsummit1.png'; // adjust path as needed
+import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
+import Button from '~/components/ui/Button.astro';
 const metadata = {
   title: SITE.title,
   description: SITE.description,
@@ -12,8 +14,6 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <!-- <Hero
     tagline="Startup Web Demo"
     actions={[
@@ -50,6 +50,38 @@ const metadata = {
     </p>
   </section>
 
+  <!-- Hero2 Widget ******************* -->
+  <Hero2
+    title="Celebrate a Decade of Community and Empowerment"
+    subtitle="Join us for the 10th Anniversary of Women in Bioinformatics to honor ten years of community, mentorship, and career-building."
+    image={{
+      src: eventImg,
+      alt: 'Women in Bioinformatics 10th Anniversary Event',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="grid sm:grid-cols-2 items-center justify-center">
+        <AddToCalendarButton
+          client:only="react"
+          name="Boston Women in Bioinformatics 10 Year Anniversary"
+          location="Boynton Yards, Somerville"
+          startDate="2025-09-30"
+          endDate="2025-09-30"
+          startTime="16:00"
+          endTime="19:00"
+        />
+        <div class="flex sm:w-auto">
+          <Button
+            variant="primary"
+            text="Learn More"
+            href="events/tenyearanniversary"
+            icon="tabler:square-rounded-arrow-right"
+            class="h-full"
+          />
+        </div>
+      </div>
+    </Fragment>
+  </Hero2>
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
