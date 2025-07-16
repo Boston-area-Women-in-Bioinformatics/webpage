@@ -80,6 +80,10 @@ git push -u origin <new-branch-name>
 Collapse
 ```
 
+## Update the banner that appears on every page
+
+Edit the code at `src/components/widgets/Header.astro` and scroll to the bottom of the file.
+
 ### Project structure
 
 This project has the following folders and files:
