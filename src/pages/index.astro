@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { SITE } from '~/config/site/config.js';
-// import Hero from '~/components/widgets/Hero.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
@@ -73,8 +73,12 @@ const metadata = {
     </Fragment>
   </CallToAction>
 
+  <BlogLatestPosts
+    title="Check out our blogs"
+  />
+
   <Features2
-    title="We are here to support you!"
+    title="Let's Connect!"
     columns={2}
     items={[
       // {
