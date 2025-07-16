@@ -18,13 +18,14 @@ git checkout main
 git checkout -b <new-branch-name>
 ```
 
-After you enter a new branch, you need to create a markdown file in the `src/content/meetups` directory. 
+After you enter a new branch, you need to create a markdown file in the `src/content/meetups` directory.
 
-The markdown file should follow a specific format. In between the top two `---` you must fill out the event parameters. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The metadata should include fields like `title`, `dateTime`, `location`, `url`, `image`, `tags`, and `imgpos`. The `imgpos` parameter is for the css on the main events page. See https://tailwindcss.com/docs/object-position for options. `tags` are not currently in use, but may be in the future. 
+The markdown file should follow a specific format. In between the top two `---` you must fill out the event parameters. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The metadata should include fields like `title`, `dateTime`, `location`, `url`, `image`, `tags`, and `imgpos`. The `imgpos` parameter is for the css on the main events page. See https://tailwindcss.com/docs/object-position for options. `tags` are not currently in use, but may be in the future.
 
 To add an image, upload it to the `public/photos` directory of your cloned repository. The image should be referenced in the markdown file using the `image` field in the metadata.
 
 After creating the markdown file and uploading the image, you can run the following commands to format the files and commit your changes:
+
 ```
 # Run 'npx --prettier' to fix any astro specific formatting issues
 npx prettier --write src/content/meetups/{newevent}.md
@@ -50,13 +51,14 @@ git checkout main
 git checkout -b <new-branch-name>
 ```
 
-After you enter a new branch, you need to create a markdown file in the `src/content/post` directory. 
+After you enter a new branch, you need to create a markdown file in the `src/content/post` directory.
 
 The markdown file should follow a specific format. In between the top two `---` you must fill out the parameters for the blog post. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The metadata should include fields like `title`, `dateTime`, `excerpt` (appears on the website front page to describe the post), `image`, `category` ,`author`, `readingTime`, `tags`, `category`. The `imgpos` parameter is for the css on the main events page. See https://tailwindcss.com/docs/object-position for options. The `tags` and `category` are not currently in use, but may be in the future.
 
 To add an image, upload it to the `public/photos` directory of your cloned repository. The image should be referenced in the markdown file using the `image` field in the metadata.
 
 After creating the markdown file and uploading the image, you can run the following commands to format the files and commit your changes:
+
 ```
 # Run 'npx --prettier' to fix any astro specific formatting issues
 npx prettier --write src/content/post/{newblog}.md
@@ -66,7 +68,6 @@ git add src/content/post/{newblog}.md
 #  Commit new changes
 git push -u origin <new-branch-name>
 ```
-
 
 ## Add a video to the meetings archive
 
