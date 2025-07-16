@@ -83,11 +83,13 @@ Collapse
 ## Update the banner that appears on every page
 
 To add or remove the banner, go to `src/layouts/PageLayout.astro` and add or remove the following lines respectively:
+
 ```
 <slot name="banner">
   <Banner client:load />
 </slot>
 ```
+
 To edit the banner, go to `src/components/Banner.jsx` and edit the text inside the `<p>` tag. You can also change the text and link in the `<a>` tag to point to a different page.
 
 ### Project structure
