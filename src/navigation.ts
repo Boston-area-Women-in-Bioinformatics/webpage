@@ -1,4 +1,4 @@
-import { getPermalink } from './utils/permalinks';
+import { getPermalink, getBlogPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -25,6 +25,10 @@ export const headerData = {
     {
       text: 'Archived Events',
       href: getPermalink('/events/archived'),
+    },
+    {
+      text: 'Blog',
+      href: getBlogPermalink()
     },
     {
       text: 'Contact',
