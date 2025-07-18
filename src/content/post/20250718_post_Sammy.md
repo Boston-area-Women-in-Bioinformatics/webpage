@@ -1,19 +1,21 @@
 ---
-publishDate: 2025-07-18T00:00:00Z
-title: "The Genomics Diversity Crisis: Why DEI Isn't Just About Workplace Culture"
-slug: womenshapingBioinformatics
+publishDate: 2025-07-18T14:00:00Z
+title: "The Genomics Diversity Crisis"
+slug: deiGenomics
 author: Samantha J. Klasfeld, Ph.D.
 authorUrl: 'https://linkedin.com/in/samantha-klasfeld'
 excerpt: When 86% of genomic data comes from European ancestry, AI models built on this data will inevitably fail marginalized communities.
-image: https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+image: https://images.unsplash.com/photo-1722717820200-9666326fcacd?q=80&w=934&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+imageDescription: "Image Citation: Schomburg Center for Research in Black Culture, Art and Artifacts Division, The New York Public Library. (1934). Aspects of Negro Life Retrieved from (https://digitalcollections.nypl.org/items/634c59a4-6f99-3618-e040-e00a180633b0)"
 category: Post
 tags:
+  - biotech
   - diversity-equity-inclusion
   - DEI
   - overfitting
   - AI-in-healthcare
   - research-ethics
-  - scientific-responsibility
+  - scientificResponsibility
   - trust-in-science
 metadata:
   title: "The Genomics Diversity Crisis: Why DEI Isn't Just About Workplace Culture"
