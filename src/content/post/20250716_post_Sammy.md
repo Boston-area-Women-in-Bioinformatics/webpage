@@ -1,5 +1,5 @@
 ---
-publishDate: 2025-07-15T00:00:00Z
+publishDate: 2025-07-18T00:00:00Z
 title: "The Genomics Diversity Crisis: Why DEI Isn't Just About Workplace Culture"
 slug: womenshapingBioinformatics
 author: Samantha J. Klasfeld, Ph.D.
