@@ -1,7 +1,7 @@
 ---
 publishDate: 2025-07-18T14:00:00Z
 title: 'The Genomics Diversity Crisis'
-slug: deiGenomics
+slug: blog/deiGenomics
 author: Samantha J. Klasfeld, Ph.D.
 authorUrl: 'https://linkedin.com/in/samantha-klasfeld'
 excerpt: When 86% of genomic data comes from European ancestry, AI models built on this data will inevitably fail marginalized communities.
