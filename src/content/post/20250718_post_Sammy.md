@@ -12,9 +12,7 @@ draft: true
 tags:
   - biotech
   - diversity-equity-inclusion
-  - DEI
   - overfitting
-  - AI-in-healthcare
   - research-ethics
   - scientificResponsibility
   - trust-in-science
@@ -23,7 +21,7 @@ metadata:
   description: 'When 86% of genomic data comes from European ancestry, AI models built on this data will inevitably fail marginalized communities.'
 ---
 
-As diversity, equity, and inclusion (DEI) initiatives are being dismantled across US institutions, Eric Green, former Director of the National Human Genome Research Institute, opened the Festival of Genomics in Boston to make a case that DEI extends far beyond creating better workplace culture. In genomics research, DEI is not just the right thing to do, it's scientifically essential. Current scientific datasets overwhelmingly represent people of European ancestry, yet the genetic insights derived from this narrow slice of humanity are being applied to diagnose, treat, and understand disease across all populations. To truly reflect human genetic diversity, science depends on data from all communities. However, that data cannot be collected from populations who distrust the scientific establishment. Genuine commitments to equity and inclusion are the foundation needed to rebuild those critical relationships.
+As diversity, equity, and inclusion (DEI) initiatives are being dismantled across US institutions, Eric Green, former Director of the National Human Genome Research Institute, opened the Festival of Genomics in Boston to make a case that DEI extends far beyond creating a better workplace culture. In genomics research, DEI is scientifically essential. Current scientific datasets overwhelmingly represent people of European ancestry, yet the genetic insights derived from this narrow slice of humanity are being applied to diagnose, treat, and understand disease across all populations. To truly reflect human genetic diversity, science depends on data from all communities. However, that data cannot be collected from populations who distrust the scientific establishment. Genuine commitments to equity and inclusion are the foundation needed to rebuild those critical relationships.
 
 ### The Technical Problem: Sampling Bias
 
@@ -49,7 +47,7 @@ The examples listed only touch the surface of these deeply rooted issues that pl
 
 History shows that trust in science, even after profound breaches, can be rebuilt. The atrocities conducted by medical professionals in the Holocaust ruptured the relationship between science and Jewish communities. Despite this history, today the Ashkenazi Jewish population is among the most studied groups in human genetics. This reconciliation was made possible through decades of ethical reform and intentional efforts to include and support Jewish scientists.
 
-The Nuremberg Code, a framework established in response to unethical Nazi medical experiments, set up crucial protections for research participants through informed consent and participant autonomy [^4]. However, while these protections support equitable practices, they did not insure participants have meaningful representation and decision-making power in the research itself. For the Jewish community, this gap was filled by inclusive practices like the Rockefeller Foundation's Refugee Scholar Program, which resettled Jewish scientists and supporting their continued involvement in research despite widespread persecution [^5]. This combination of ethical frameworks and institutional inclusion likely contributed significantly to rebuilding trust between Jewish communities and scientific institutions.
+The Nuremberg Code, a framework established in response to unethical Nazi medical experiments, set up crucial protections for research participants through informed consent and participant autonomy [^4]. However, while these protections support equitable practices, they did not insure participants have meaningful representation and decision-making power in the research itself. For the Jewish community, this gap was filled by inclusive practices like the Rockefeller Foundation's Refugee Scholar Program, which resettled Jewish scientists and supported their continued involvement in research despite widespread persecution [^5]. This combination of ethical frameworks and institutional inclusion likely contributed significantly to rebuilding trust between Jewish communities and scientific institutions.
 
 Until recently, we were seeing similar patterns emerging through initiatives of inclusion. Researchers from communities affected by HIV/AIDS has been associated with improved rates of community engagement in research and better treatment outcomes [^6]. Similarly, Indigenous health research programs indicate that studies of their communities benefit from Indigenous leadership by increasing community engagement and fostering resources to support non-Indigenous research team members to develop cultural competency [^7]. These studies ensured that voices of the communities they were doing research on were empowered to shape the research process, from study design to data interpretation.
 
