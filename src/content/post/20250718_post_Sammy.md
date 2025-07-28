@@ -1,10 +1,10 @@
 ---
-publishDate: 2025-07-18T14:00:00Z
+publishDate: 2025-08-01T14:00:00Z
 title: 'The Genomics Diversity Crisis'
 slug: blog/deiGenomics
 author: Samantha J. Klasfeld, Ph.D.
 authorUrl: 'https://linkedin.com/in/samantha-klasfeld'
-excerpt: When 86% of genomic data comes from European ancestry, AI models built on this data will inevitably fail marginalized communities.
+excerpt: When 86% of genomic data comes from European ancestry, treatments built on this data will inevitably fail marginalized communities.
 image: https://images.unsplash.com/photo-1635944599655-500389bddd1e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 imageDescription: 'Image Citation: Photo of a Respect my HIV protest in London by Akhere Unuabona on Unsplash (https://unsplash.com/@mettyunuabona). Recent studies on HIV included scientists from communities affected by HIV as an effort to improve ethical standards of this research.'
 category: Post
@@ -18,7 +18,7 @@ tags:
   - trust-in-science
 metadata:
   title: "The Genomics Diversity Crisis: Why DEI Isn't Just About Workplace Culture"
-  description: 'When 86% of genomic data comes from European ancestry, AI models built on this data will inevitably fail marginalized communities.'
+  description: 'When 86% of genomic data comes from European ancestry, treatments built on this data will inevitably fail marginalized communities.'
 ---
 
 As diversity, equity, and inclusion (DEI) initiatives are being dismantled across US institutions, Eric Green, former Director of the National Human Genome Research Institute, opened the Festival of Genomics in Boston to make a case that DEI extends far beyond creating a better workplace culture. In genomics research, DEI is scientifically essential. DEI refers to efforts that ensure diverse representation (diversity) through fair treatment and opportunity (equity) and meaningful participation (inclusion), all grounded in respect for different communities and perspectives. Current genomic datasets overwhelmingly represent people of European ancestry, yet the insights derived from this narrow slice of humanity are being applied to diagnose, treat, and understand disease across all populations. To truly reflect human diversity, science depends on data from all communities. However, that data cannot be collected from populations who distrust the scientific establishment. Genuine commitments to equity and inclusion are the foundation needed to rebuild those critical relationships.
