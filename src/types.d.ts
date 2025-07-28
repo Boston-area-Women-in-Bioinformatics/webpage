@@ -22,13 +22,17 @@ export interface Post {
   excerpt?: string;
   /**  */
   image?: ImageMetadata | string;
+  imageDescription?: string;
 
   /**  */
   category?: Taxonomy;
   /**  */
   tags?: Taxonomy[];
-  /**  */
+  /** Author Name */
   author?: string;
+
+  /** Author URL */
+  authorUrl?: string;
 
   /**  */
   metadata?: MetaData;
