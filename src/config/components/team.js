@@ -148,7 +148,7 @@ const team = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/sakinasaif/',
       // Job Title
-      title: 'Co-chair, Communication Committee',
+      title: 'Co-chair, Communications Committee',
       // Leadership team member Photo
       avatar: '/team/sakina_sq.jpg',
       // Social links
@@ -167,7 +167,7 @@ const team = {
       // Namelink: Member's Personal Website
       //nameLink: '',
       // Job Title
-      title: 'Co-chair, Communication Committee',
+      title: 'Co-chair, Communications Committee',
       // Leadership team member Photo
       avatar: 'team/shreya_sq.jpg',
       // Social links
@@ -222,7 +222,7 @@ const team = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/nishita-kalepalli/',
       // Job Title
-      title: 'Member, Communication Committee',
+      title: 'Member, Communications Committee',
       // Leadership team member Photo
       avatar: 'team/nishita-kalepalli.png',
       // Social links
