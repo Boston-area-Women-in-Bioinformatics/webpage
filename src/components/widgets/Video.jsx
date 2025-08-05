@@ -13,7 +13,6 @@ export default function Video(props) {
               src={video?.url}
               title={video?.title}
               className="aspect-video mx-auto pr-4 pl-4 m-4 rounded-lg"
-              frameBorder="0"
               loading="lazy"
               allow="accelerometer;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
