@@ -1,4 +1,4 @@
-import { getPermalink } from './utils/permalinks';
+import { getPermalink, getBlogPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -7,8 +7,17 @@ export const headerData = {
       href: getPermalink(''),
     },
     {
-      text: 'About us',
-      href: getPermalink('/about'),
+      text: 'Who we are',
+      links: [
+        {
+          text: 'About us',
+          href: getPermalink('/about'),
+        },
+        {
+          text: 'Committees',
+          href: getPermalink('/about/committees'),
+        },
+      ],
     },
     {
       text: 'Team',
@@ -17,14 +26,24 @@ export const headerData = {
     {
       text: 'Events',
       href: getPermalink('/events'),
+      links: [
+        {
+          text: 'Events List',
+          href: getPermalink('/events'),
+        },
+        {
+          text: '10th Year Anniversary',
+          href: getPermalink('/events/tenyearanniversary'),
+        },
+        {
+          text: 'Archived Events',
+          href: getPermalink('/events/archived'),
+        },
+      ],
     },
     {
-      text: '10th Year Anniversary',
-      href: getPermalink('/events/tenyearanniversary'),
-    },
-    {
-      text: 'Archived Events',
-      href: getPermalink('/events/archived'),
+      text: 'Blog',
+      href: getBlogPermalink(),
     },
     {
       text: 'Contact',

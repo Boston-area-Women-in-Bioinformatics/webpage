@@ -1,17 +1,20 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-// import Hero from '~/components/widgets/Hero.astro';
+import { SITE } from '~/config/site/config.js';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-
+import eventImg from '~/../public/photos/2025/nextflowsummit1.png'; // adjust path as needed
+import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
+import Button from '~/components/ui/Button.astro';
 const metadata = {
-  title: 'Boston Women in Bioinformatics',
+  title: SITE.title,
+  description: SITE.description,
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <!-- <Hero
     tagline="Startup Web Demo"
     actions={[
@@ -36,7 +39,7 @@ const metadata = {
       networking, and professional growth.
     </Fragment>
   </Hero> -->
-  <section class="text-center pt-16 pb-8 bg-white dark:bg-black">
+  <section class="text-center pt-16 pb-8">
     <h1 class="text-4xl sm:text-5xl font-bold mb-4 mx-auto leading-tight">
       Boston Women in
       <span class="text-accent dark:text-white highlight">Bioinformatics</span>
@@ -48,6 +51,38 @@ const metadata = {
     </p>
   </section>
 
+  <!-- Hero2 Widget ******************* -->
+  <Hero2
+    title="Celebrate a Decade of Community and Empowerment"
+    subtitle="Join us for the 10th Anniversary of Women in Bioinformatics to honor ten years of community, mentorship, and career-building."
+    image={{
+      src: eventImg,
+      alt: 'Women in Bioinformatics 10th Anniversary Event',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="grid sm:grid-cols-2 items-center justify-center">
+        <AddToCalendarButton
+          client:only="react"
+          name="Boston Women in Bioinformatics 10 Year Anniversary"
+          location="Boynton Yards, Somerville"
+          startDate="2025-09-30"
+          endDate="2025-09-30"
+          startTime="16:00"
+          endTime="19:00"
+        />
+        <div class="flex sm:w-auto">
+          <Button
+            variant="primary"
+            text="Learn More"
+            href="events/tenyearanniversary"
+            icon="tabler:square-rounded-arrow-right"
+            class="h-full"
+          />
+        </div>
+      </div>
+    </Fragment>
+  </Hero2>
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
@@ -71,8 +106,10 @@ const metadata = {
     </Fragment>
   </CallToAction>
 
+  <BlogLatestPosts title="Check out our blogs" />
+
   <Features2
-    title="We are here to support you!"
+    title="Let's Connect!"
     columns={2}
     items={[
       // {

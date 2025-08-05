@@ -1,29 +1,28 @@
 // General configuration for the website
 
-import defaultImage from '../../assets/images/default.png';
+import defaultImage from '../../assets/images/WIB_Logo.jpg';
 import blog from './blog';
 
 const CONFIG = {
   // The name of the website
-  name: 'AstroWind',
+  name: 'Boston Women in Bioinformatics',
   // The origin of the website (without trailing slash)
-  origin: 'https://astro-demo.birki.io',
+  origin: 'https://boston-wib.org',
   // The base pathname of the website
   basePathname: '/',
   // If the website uses trailing slashes in the URLs
   trailingSlash: false,
 
   // The website title which is displayed in the browser tab
-  title: 'AstroWind — Free template for create a website with Astro + Tailwind CSS + GitHub Pages',
+  title: 'Boston Women in Bioinformatics',
 
   // Website description
-  description:
-    '🚀 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.',
+  description: 'The online presence of Women in Bioinformatics in the Boston Area.',
 
   // The website's preview image that is displayed when sharing the website on social media
   defaultImage: defaultImage,
   // The default alt attribute for the preview image
-  defaultImageAlt: 'Default image',
+  defaultImageAlt: 'WIB Boston Area Logo',
   // The default width and height of the preview image
   defaultImageWidth: 1200,
   defaultImageHeight: 628,
@@ -70,30 +69,24 @@ const CONFIG = {
   // Global metadata config
   metadata: {
     title: {
-      default: 'AstroWind',
-      template: '%s — AstroWind',
+      default: 'Boston Women in Bioinformatics',
+      template: '%s — Boston Women in Bioinformatics',
     },
-    description:
-      '🚀 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.',
+    description: 'The online presence of Women in Bioinformatics in the Boston Area.',
     robots: {
       index: true,
       follow: true,
     },
     openGraph: {
       type: 'website',
-      siteName: 'AstroWind',
+      siteName: 'boston-wib.org',
       images: [
         {
-          url: '~/assets/images/default.jpg',
+          url: '~/assets/images/WIB_Logo.jpg',
           width: 1200,
           height: 628,
         },
       ],
-    },
-    twitter: {
-      handle: '@GrantBirki',
-      site: '@GrantBirki',
-      cardType: 'summary_large_image',
     },
   },
 };

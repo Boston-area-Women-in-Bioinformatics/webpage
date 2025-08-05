@@ -5,6 +5,8 @@
 
 ## Add a new event
 
+Here are the steps to add a new event with git:
+
 ```
 Clone the repository locally :
 git clone https://github.com/Boston-area-Women-in-Bioinformatics/webpage.git
@@ -14,22 +16,57 @@ git branch
 git checkout main
 # Create a new branch :
 git checkout -b <new-branch-name>
-# Do the following to upload your image
-## 1. Upload your image in this location of your cloned repo `public/photos`
-#  2. Create a markdown file at `src/content/meetups` with a .md suffix
-#     * The markdown file must have a specific format.
-#     Look at the other markdown files for reference.
-#     In between the top two `---` you must fill out the event
-#     parameters.
-#     Everything below the second `---` can be in markdown format.
-#  3. Run 'npx --prettier' to fix any astro specific formatting issues
+```
+
+After you enter a new branch, you need to create a markdown file in the `src/content/meetups` directory.
+
+The markdown file should follow a specific format. In between the top two `---` you must fill out the event parameters. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The metadata should include fields like `title`, `dateTime`, `location`, `url`, `image`, `tags`, and `imgpos`. The `imgpos` parameter is for the css on the main events page. See https://tailwindcss.com/docs/object-position for options. `tags` are not currently in use, but may be in the future.
+
+To add an image, upload it to the `public/photos` directory of your cloned repository. The image should be referenced in the markdown file using the `image` field in the metadata.
+
+After creating the markdown file and uploading the image, you can run the following commands to format the files and commit your changes:
+
+```
+# Run 'npx --prettier' to fix any astro specific formatting issues
 npx prettier --write src/content/meetups/{newevent}.md
 # Stage the changes to commit :
 git add /public/photos/<your_image_name>
 git add src/content/meetups/{newevent}.md
 #  Commit new changes
 git push -u origin <new-branch-name>
-Collapse
+```
+
+## Add a new blog post
+
+Here are the steps to add a new blogpost with git:
+
+```
+Clone the repository locally :
+git clone https://github.com/Boston-area-Women-in-Bioinformatics/webpage.git
+# List branches in a github repos :
+git branch
+# Be in main branch if not already
+git checkout main
+# Create a new branch :
+git checkout -b <new-branch-name>
+```
+
+After you enter a new branch, you need to create a markdown file in the `src/content/post` directory.
+
+The markdown file should follow a specific format. In between the top two `---` you must fill out the parameters for the blog post. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The metadata should include fields like `title`, `dateTime`, `excerpt` (appears on the website front page to describe the post), `image`, `category` ,`author`, `readingTime`, `tags`, `category`. The `imgpos` parameter is for the css on the main events page. See https://tailwindcss.com/docs/object-position for options. The `tags` and `category` are not currently in use, but may be in the future.
+
+To add an image, upload it to the `public/photos` directory of your cloned repository. The image should be referenced in the markdown file using the `image` field in the metadata.
+
+After creating the markdown file and uploading the image, you can run the following commands to format the files and commit your changes:
+
+```
+# Run 'npx --prettier' to fix any astro specific formatting issues
+npx prettier --write src/content/post/{newblog}.md
+# Stage the changes to commit :
+git add /public/photos/<your_image_name>
+git add src/content/post/{newblog}.md
+#  Commit new changes
+git push -u origin <new-branch-name>
 ```
 
 ## Add a video to the meetings archive
@@ -79,6 +116,18 @@ git commit -m "<Add committ message>"
 git push -u origin <new-branch-name>
 Collapse
 ```
+
+## Update the banner that appears on every page
+
+To add or remove the banner, go to `src/layouts/PageLayout.astro` and add or remove the following lines respectively:
+
+```
+<slot name="banner">
+  <Banner client:load />
+</slot>
+```
+
+To edit the banner, go to `src/components/Banner.jsx` and edit the text inside the `<p>` tag. You can also change the text and link in the `<a>` tag to point to a different page.
 
 ### Project structure
 
