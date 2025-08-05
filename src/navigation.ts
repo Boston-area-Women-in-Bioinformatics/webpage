@@ -17,14 +17,20 @@ export const headerData = {
     {
       text: 'Events',
       href: getPermalink('/events'),
-    },
-    {
-      text: '10th Year Anniversary',
-      href: getPermalink('/events/tenyearanniversary'),
-    },
-    {
-      text: 'Archived Events',
-      href: getPermalink('/events/archived'),
+      links: [
+        {
+          text: 'Events List',
+          href: getPermalink('/events'),
+        },
+        {
+          text: '10th Year Anniversary',
+          href: getPermalink('/events/tenyearanniversary'),
+        },
+        {
+          text: 'Archived Events',
+          href: getPermalink('/events/archived'),
+        },
+      ],
     },
     {
       text: 'Blog',
