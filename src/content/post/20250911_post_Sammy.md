@@ -61,17 +61,17 @@ As we stand at the threshold of AI-driven genomics, we have a choice to make. We
 
 [^2]: Jones, J. H. (1993). Bad blood: the Tuskegee syphilis experiment. New and expanded ed. New York.
 
-[^3] Gray, F. (1998). The Tuskegee syphilis study: An insider’s account. Montgomery, AL: Black Belt.
+[^3]: Gray, F. (1998). The Tuskegee syphilis study: An insider’s account. Montgomery, AL: Black Belt.
 
 [^4]: Sterling, R. L. (2011). Genetic research among the Havasupai: a cautionary tale. AMA Journal of Ethics, 13(2), 113-117.
 
-[^5] Raz, A. E., Niemiec, E., Howard, H. C., Sterckx, S., Cockbain, J., & Prainsack, B. (2020). Transparency, consent and trust in the use of customers' data by an online genetic testing company: an exploratory survey among 23andMe users. New Genetics and Society, 39(4), 459-482.
+[^5]: Raz, A. E., Niemiec, E., Howard, H. C., Sterckx, S., Cockbain, J., & Prainsack, B. (2020). Transparency, consent and trust in the use of customers' data by an online genetic testing company: an exploratory survey among 23andMe users. New Genetics and Society, 39(4), 459-482.
 
 [^6]: Lagnado, L. M., & Dekel, S. C. (1992). Children of the flames: Dr. Josef Mengele and the untold story of the twins of Auschwitz. Penguin.
 
 [^7]: Trials of War Criminals before the Nuremberg Military Tribunals under Control Council Law No. 10. (n.d.). Permissible medical experiments. (Vol. 2, pp. 181-182). Washington, D.C.: U.S. Government Printing Office.
 
-[^8] Iacobelli, T. (2021). The Rockefeller Foundation’s Refugee Scholar Program.
+[^8]: Iacobelli, T. (2021). The Rockefeller Foundation’s Refugee Scholar Program.
 
 [^9]: Karris, M. Y., Dube, K., & Moore, A. A. (2020). What lessons it might teach us? Community engagement in HIV research. Current Opinion in HIV and AIDS, 15(2), 142-149.
 
