@@ -105,7 +105,9 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
 };
 
 const load = async function (): Promise<Array<Post>> {
-  const posts = await getCollection('post');
+  // only post blogs published before today
+  const posts = await getCollection('post', ({ data }: CollectionEntry<'post'>) => new Date(data.publishDate) <= new Date())
+  //const posts = await getCollection('post')
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
 
   const results = (await Promise.all(normalizedPosts))
