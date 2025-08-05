@@ -50,9 +50,11 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     title,
     excerpt,
     image,
+    imageDescription,
     tags: rawTags = [],
     category: rawCategory,
     author,
+    authorUrl = '#',
     draft = false,
     metadata = {},
   } = data;
@@ -84,10 +86,12 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     title: title,
     excerpt: excerpt,
     image: image,
+    imageDescription: imageDescription,
 
     category: category,
     tags: tags,
     author: author,
+    authorUrl: authorUrl,
 
     draft: draft,
 
@@ -101,7 +105,12 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
 };
 
 const load = async function (): Promise<Array<Post>> {
-  const posts = await getCollection('post');
+  // only post blogs published before today
+  const posts = await getCollection(
+    'post',
+    ({ data }: CollectionEntry<'post'>) => new Date(data.publishDate) <= new Date()
+  );
+  //const posts = await getCollection('post')
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
 
   const results = (await Promise.all(normalizedPosts))
