@@ -14,7 +14,7 @@ tags:
   - diversity-equity-inclusion
   - overfitting
   - research-ethics
-  - scientificResponsibility
+  - scientific-responsibility
   - trust-in-science
 metadata:
   title: "The Genomics Diversity Crisis: Why DEI Isn't Just About Workplace Culture"
