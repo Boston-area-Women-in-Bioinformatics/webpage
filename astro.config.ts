@@ -17,6 +17,8 @@ import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehype
 
 import react from '@astrojs/react';
 
+import remarkToc from 'remark-toc';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const hasExternalScripts = false;
@@ -76,7 +78,7 @@ export default defineConfig({
   },
 
   markdown: {
-    remarkPlugins: [readingTimeRemarkPlugin],
+    remarkPlugins: [remarkToc, readingTimeRemarkPlugin],
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
 
