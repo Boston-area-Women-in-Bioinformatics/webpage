@@ -191,7 +191,12 @@ export const findLatestPosts = async ({ count }: { count?: number }): Promise<Ar
   const _count = count || 4;
   const posts = await fetchPosts();
 
-  return posts ? posts.slice(0, _count) : [];
+  if (!posts) return [];
+
+  // Filter posts that have a valid image
+  const postsWithImages = posts.filter((post) => Boolean(post.image));
+
+  return postsWithImages ? postsWithImages.slice(0, _count) : [];
 };
 
 /** */
