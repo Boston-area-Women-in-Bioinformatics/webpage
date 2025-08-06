@@ -61,7 +61,16 @@ const postCollection = defineCollection({
     tags: z.array(z.string()).optional(),
     author: z.string().optional(),
     authorUrl: z.string().optional(),
+    authors: z
+      .array(
+        z.object({
+          name: z.string(),
+          url: z.string().optional(),
+        })
+      )
+      .optional(),
     metadata: metadataDefinition(),
+    listeningTime: z.string().optional(),
   }),
 });
 
