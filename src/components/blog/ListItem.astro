@@ -72,19 +72,23 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
             post.authors?.length && (
               <>
                 {' '}
-                · 
+                · <Icon name={post.authors.length > 1 ? "tabler:users" : "tabler:user"} class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
                 {post.authors.map((author, index) => (
-                  <>
+                  <Fragment key={index}>
                     {index > 0 && ', '}
                     {author.url ? (
-                      <Icon name="tabler:user" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
-                      <a href={author.url} class="hover:underline">
-                        <span>{author.name.replaceAll('-', ' ')}</span>
-                      </a>
+                      <>
+                        <a href={author.url} class="hover:underline">
+                          <span>{author.name.replaceAll('-', ' ')}</span>
+                        </a>
+                      </>
                     ) : (
-                      <span>{author.name.replaceAll('-', ' ')}</span>
+                      <>
+                        <Icon name="tabler:user" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
+                        <span>{author.name.replaceAll('-', ' ')}</span>
+                      </>
                     )}
-                  </>
+                  </Fragment>
                 ))}
               </>
             )

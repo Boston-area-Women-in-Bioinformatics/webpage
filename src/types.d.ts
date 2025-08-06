@@ -53,7 +53,7 @@ export interface Post {
   content?: string;
 
   /**  */
-  listeningTime?: string; // eg. 6 min 19 sec 
+  listeningTime?: string; // eg. 6 min 19 sec
   readingTime?: number; // Total duration in seconds
 }
 

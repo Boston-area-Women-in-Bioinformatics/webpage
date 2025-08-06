@@ -33,23 +33,24 @@ const { post, url } = Astro.props;
             post.authors?.length && (
               <>
                 {' '}
-                · 
+                · <Icon name={post.authors.length > 1 ? "tabler:users" : "tabler:user"} class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
                 {post.authors.map((author, index) => (
-                  <>
+                  <span class="inline-block">
                     {index > 0 && ', '}
+
                     {author.url ? (
-                      <Icon name="tabler:user" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-                      <a href={author.url} >
-                        <span class="inline-block">{author.name}</span>
+                      <a href={author.url}>
+                        <span class="hover:underline">{author.name}</span>
                       </a>
                     ) : (
-                      <span class="inline-block">{author.name}</span>
+                      <span class="hover:underline">{author.name}</span>
                     )}
-                  </>
+                  </span>
                 ))}
               </>
             )
           }
+
           {
             post.category && (
               <>
@@ -64,16 +65,20 @@ const { post, url } = Astro.props;
           {
             (post.listeningTime || post.readingTime) && (
               <>
-                &nbsp;· 
-                <Icon
-                  name={post.listeningTime ? "tabler:headphones" : "tabler:book"}
-                  class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400"
-                />
-                <span>
-                  {post.listeningTime
-                  ? `${post.listeningTime} listen`
-                 :  `${post.readingTime} min read`}
-                 </span>
+                &nbsp;·
+                <>
+                  <Icon
+                    name={post.listeningTime ? 'tabler:headphones' : 'tabler:book'}
+                    class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400"
+                  />
+                  <span>
+                    {post.listeningTime
+                      ? (() => {
+                          return post.listeningTime + ' listen';
+                        })()
+                      : `${post.readingTime} min read`}
+                  </span>
+                </>
               </>
             )
           }

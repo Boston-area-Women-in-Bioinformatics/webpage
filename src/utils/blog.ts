@@ -55,7 +55,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     category: rawCategory,
     authors: rawAuthors, // new format
     author, // legacy fallback
-    authorUrl = '#',  // legacy fallback
+    authorUrl = '#', // legacy fallback
     listeningTime,
     draft = false,
     metadata = {},
@@ -86,7 +86,6 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     : author
       ? [{ name: author, url: authorUrl }]
       : undefined;
-
 
   return {
     id: id,
@@ -119,7 +118,10 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
 
 const load = async function (): Promise<Array<Post>> {
   // only post blogs published before today
-  const posts = await getCollection('post', ({ data }: CollectionEntry<'post'>) => new Date(data.publishDate) <= new Date())
+  const posts = await getCollection(
+    'post',
+    ({ data }: CollectionEntry<'post'>) => new Date(data.publishDate) <= new Date()
+  );
   //const posts = await getCollection('post')
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
 
