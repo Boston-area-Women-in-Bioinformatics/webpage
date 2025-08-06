@@ -53,8 +53,10 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     imageDescription,
     tags: rawTags = [],
     category: rawCategory,
-    author,
-    authorUrl = '#',
+    authors: rawAuthors, // new format
+    author, // legacy fallback
+    authorUrl = '#',  // legacy fallback
+    listeningTime,
     draft = false,
     metadata = {},
   } = data;
@@ -75,6 +77,17 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     title: tag,
   }));
 
+  // Normalize authors with fallback support
+  const authors = rawAuthors
+    ? rawAuthors.map((a) => ({
+        name: a.name,
+        url: a.url,
+      }))
+    : author
+      ? [{ name: author, url: authorUrl }]
+      : undefined;
+
+
   return {
     id: id,
     slug: slug,
@@ -90,8 +103,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
 
     category: category,
     tags: tags,
-    author: author,
-    authorUrl: authorUrl,
+    authors, // updated field
 
     draft: draft,
 
@@ -101,15 +113,13 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     // or 'content' in case you consume from API
 
     readingTime: remarkPluginFrontmatter?.readingTime,
+    listeningTime: listeningTime,
   };
 };
 
 const load = async function (): Promise<Array<Post>> {
   // only post blogs published before today
-  const posts = await getCollection(
-    'post',
-    ({ data }: CollectionEntry<'post'>) => new Date(data.publishDate) <= new Date()
-  );
+  const posts = await getCollection('post', ({ data }: CollectionEntry<'post'>) => new Date(data.publishDate) <= new Date())
   //const posts = await getCollection('post')
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
 
