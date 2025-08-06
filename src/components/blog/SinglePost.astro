@@ -33,7 +33,11 @@ const { post, url } = Astro.props;
             post.authors?.length && (
               <>
                 {' '}
-                · <Icon name={post.authors.length > 1 ? "tabler:users" : "tabler:user"} class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
+                ·{' '}
+                <Icon
+                  name={post.authors.length > 1 ? 'tabler:users' : 'tabler:user'}
+                  class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400"
+                />
                 {post.authors.map((author, index) => (
                   <span class="inline-block">
                     {index > 0 && ', '}
