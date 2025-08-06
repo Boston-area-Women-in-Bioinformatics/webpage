@@ -1,6 +1,11 @@
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import type { HTMLAttributes, ImageMetadata } from 'astro/types';
 
+export interface PostAuthor {
+  name: string;
+  url?: string;
+}
+
 export interface Post {
   /** A unique ID number that identifies a post. */
   id: string;
@@ -28,11 +33,14 @@ export interface Post {
   category?: Taxonomy;
   /**  */
   tags?: Taxonomy[];
+  /** Author List */
+  authors?: PostAuthor[];
+
   /** Author Name */
-  author?: string;
+  author?: string; // legacy fallback
 
   /** Author URL */
-  authorUrl?: string;
+  authorUrl?: string; // legacy fallback
 
   /**  */
   metadata?: MetaData;
@@ -45,7 +53,8 @@ export interface Post {
   content?: string;
 
   /**  */
-  readingTime?: number;
+  listeningTime?: string; // eg. 6 min 19 sec 
+  readingTime?: number; // Total duration in seconds
 }
 
 export interface Taxonomy {

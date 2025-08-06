@@ -69,14 +69,27 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
           <Icon name="tabler:clock" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
           <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
           {
-            post.author && (
+            post.authors?.length && (
               <>
                 {' '}
-                · <Icon name="tabler:user" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
-                <span>{post.author.replaceAll('-', ' ')}</span>
+                · 
+                {post.authors.map((author, index) => (
+                  <>
+                    {index > 0 && ', '}
+                    {author.url ? (
+                      <Icon name="tabler:user" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
+                      <a href={author.url} class="hover:underline">
+                        <span>{author.name.replaceAll('-', ' ')}</span>
+                      </a>
+                    ) : (
+                      <span>{author.name.replaceAll('-', ' ')}</span>
+                    )}
+                  </>
+                ))}
               </>
             )
           }
+
           {
             post.category && (
               <>
