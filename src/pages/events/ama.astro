@@ -1,0 +1,127 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { SITE } from '~/config/site/config.js';
+
+const metadata = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="text-center pt-16 pb-8">
+    <div class="container max-w-1/3 mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4 mx-auto leading-tight">Ask Me Anything:</h1>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4 mx-auto leading-tight">Boston Women in Bioinformatics</h2>
+
+      <p class="text-lg sm:text-xl text-muted md:mb-6 dark:text-slate-300 max-w-5xl mx-auto text-center">
+        Submit questions to a panel of women in bioinformatics. Whether you're a student just getting started, a
+        researcher switching fields, or simply interested in learning more — we want to hear your questions!
+      </p>
+    </div>
+  </section>
+
+  <!-- Question Submission -->
+  <section>
+    <body class="bg-gray-100 dark:bg-gray-700 font-sans text-gray-800 dark:text-white">
+      <div class="max-w-6xl mx-auto p-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
+          <!-- Guidelines Section -->
+          <div class="bg-blue-50 p-6 border-r border-blue-100 text-black">
+            <h2 class="text-2xl font-semibold mb-4">Guidelines for Asking Questions</h2>
+            <ul class="list-disc list-inside space-y-2 text-base leading-relaxed">
+              <li><strong>Be respectful</strong> – Ask with curiosity, not judgment.</li>
+              <li><strong>Stay on topic</strong> – Bioinformatics, careers, equity in STEM, etc.</li>
+              <li><strong>Keep it appropriate</strong> – Avoid intrusive or overly personal questions.</li>
+              <li><strong>No discrimination</strong> – Sexist, racist, or offensive questions will be removed.</li>
+              <li><strong>Be clear</strong> – Concise and thoughtful questions are more likely to be answered.</li>
+              <li><strong>Anonymous is okay!</strong> – But always be respectful.</li>
+            </ul>
+          </div>
+
+          <!-- Form Section -->
+          <div class="p-6">
+            <h2 class="text-2xl font-semibold mb-4">Submit Your Question</h2>
+            <form id="ama-form" name="ama-form" class="space-y-4">
+              <input type="hidden" name="form-name" value="ama-form" />
+
+              <div>
+                <label for="name" class="block font-medium text-base">Name (optional)</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name or leave blank"
+                  class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black"
+                />
+              </div>
+
+              <div>
+                <label for="question" class="block font-medium text-base"
+                  >Your Question <span class="text-red-500 dark:text-green-400">*</span></label
+                >
+                <textarea
+                  id="question"
+                  name="question"
+                  required
+                  placeholder="Ask your question here..."
+                  class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-base h-32 resize-vertical focus:ring-blue-500 focus:border-blue-500 text-black"
+                ></textarea>
+              </div>
+
+              <div class="flex items-start">
+                <input type="checkbox" id="agree" name="agree" required class="mt-1 mr-2" />
+                <label for="agree" class="text-base">
+                  I have read and agree to follow the question guidelines.
+                  <span class="text-red-500 dark:text-green-400">*</span></label
+                >
+              </div>
+
+              <div>
+                <button
+                  type="submit"
+                  class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-base font-medium"
+                >
+                  Submit Question
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </body>
+
+    <script is:inline>
+      const form = document.getElementById('ama-form');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const question = document.getElementById('question').value;
+        const agree = document.getElementById('agree').checked ? 'Yes' : 'No';
+        const formUrl =
+          'https://docs.google.com/forms/d/e/1FAIpQLSdyYW7LxArIDBkt4tdzS6R2tsx0t2lAlNimuiC71EpuycLPmg/formResponse';
+        const data = new FormData();
+
+        data.append('entry.210603281', name); // optional name
+        data.append('entry.1793598279', question); // your question
+        data.append('entry.2102617965', agree); // checkbox
+
+        fetch(formUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: data,
+        })
+          .then(() => {
+            alert('Thanks! Your question was submitted.');
+            form.reset();
+          })
+          .catch((err) => {
+            console.error('Submission error:', err);
+            alert('Oops! Something went wrong.');
+          });
+      });
+    </script>
+  </section>
+</Layout>
