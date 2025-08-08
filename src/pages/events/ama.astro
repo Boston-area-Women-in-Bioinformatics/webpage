@@ -106,7 +106,9 @@ const metadata = {
 
         data.append('entry.210603281', name); // optional name
         data.append('entry.1793598279', question); // your question
-        data.append('entry.2102617965', agree); // checkbox
+        if (agree) {
+        data.append('entry.2102617965', 'I have read and agree to follow the question guidelines.');
+        }
 
         fetch(formUrl, {
           method: 'POST',
