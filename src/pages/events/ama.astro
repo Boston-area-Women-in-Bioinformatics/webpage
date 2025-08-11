@@ -56,6 +56,28 @@ const metadata = {
                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black"
                 />
               </div>
+              
+              <div>
+                <label for="school" class="block font-medium text-base">Your Grade and School Name (optional)</label>
+                <input
+                  type="text"
+                  id="school"
+                  name="school"
+                  placeholder="Enter your grade and school name (optional)"
+                  class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black"
+                />
+              </div>
+
+              <div>
+                <label for="email" class="block font-medium text-base">Email (optional)</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email (yours or parent/guardian’s)"
+                  class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black"
+                />
+              </div>
 
               <div>
                 <label for="question" class="block font-medium text-base"
@@ -68,62 +90,219 @@ const metadata = {
                   placeholder="Ask your question here..."
                   class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-base h-32 resize-vertical focus:ring-blue-500 focus:border-blue-500 text-black"
                 ></textarea>
-              </div>
 
-              <div class="flex items-start">
-                <input type="checkbox" id="agree" name="agree" required class="mt-1 mr-2" />
-                <label for="agree" class="text-base">
-                  I have read and agree to follow the question guidelines.
-                  <span class="text-red-500 dark:text-green-400">*</span></label
-                >
-              </div>
+                <!-- Random Button Generators -->
+                <div class="mb-3">
+                  <div class="mt-1">
+                    <div class="text-gray-500 block mb-2 text-sm">Need inspiration? Try a random question:</div>
+                    <div class="flex flex-wrap gap-2">
+                      <button
+                        type="button"
+                        id="random-question-btn"
+                        class="bg-purple-500 hover:bg-purple-600 text-white text-xs px-2 py-1 rounded transition-colors"
+                      >
+                        🎲 Any Topic
+                      </button>
+                      <button
+                        type="button"
+                        id="random-career-btn"
+                        class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-2 py-1 rounded transition-colors"
+                      >
+                        💼 Career
+                      </button>
+                      <button
+                        type="button"
+                        id="random-technical-btn"
+                        class="bg-green-500 hover:bg-green-600 text-white text-xs px-2 py-1 rounded transition-colors"
+                      >
+                        💻 Technical
+                      </button>
+                      <button
+                        type="button"
+                        id="random-research-btn"
+                        class="bg-orange-500 hover:bg-orange-600 text-white text-xs px-2 py-1 rounded transition-colors"
+                      >
+                        🔬 Research
+                      </button>
+                    </div>
+                  </div>
 
-              <div>
-                <button
-                  type="submit"
-                  class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-base font-medium"
-                >
-                  Submit Question
-                </button>
+                  <div class="flex items-start my-3">
+                    <input type="checkbox" id="agree" name="agree" required class="w-6 h-6 mr-2" />
+                    <label for="agree" class="text-base">
+                      I have read and agree to follow the question guidelines.
+                      <span class="text-red-500 dark:text-green-400">*</span></label
+                    >
+                  </div>
+
+                  <div>
+                    <button
+                      type="submit"
+                      class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-base font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    >
+                      Submit Question
+                    </button>
+                  </div>
+                </div>
               </div>
             </form>
           </div>
         </div>
       </div>
-    </body>
 
-    <script is:inline>
-      const form = document.getElementById('ama-form');
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
+      <script is:inline>
+        // Categorized questions for more targeted randomness
+        const questionCategories = {
+          career: [
+            'How did you get started in bioinformatics?',
+            'What advice would you give to someone switching careers into bioinformatics?',
+            'What educational path would you recommend for aspiring bioinformaticians?',
+            'How do you maintain work-life balance in a research career?',
+            'What networking advice do you have for women in bioinformatics?',
+          ],
+          technical: [
+            'What programming languages are most commonly used in bioinformatics?',
+            'Which bioinformatics tools do you use most frequently?',
+            'How do you approach learning new computational methods?',
+            'How do you handle large datasets and computational challenges?',
+            'How do you approach debugging complex bioinformatics pipelines?',
+          ],
+          research: [
+            "What's the most exciting project you've worked on?",
+            'How do you balance wet lab work with computational analysis?',
+            'What role does collaboration play in your bioinformatics research?',
+            "What's the biggest breakthrough you've seen in bioinformatics recently?",
+            'What role does open science play in your work?',
+          ],
+          diversity: [
+            'What are the biggest challenges facing women in STEM today?',
+            'How has the field of bioinformatics changed since you started?',
+            "What's the most common misconception people have about bioinformatics?",
+            'How do you explain your work to non-scientists?',
+            "What's the most important skill for success in bioinformatics?",
+          ],
+          personal: [
+            "What's a typical day like in your bioinformatics role?",
+            "What's the most rewarding aspect of working in bioinformatics?",
+            'How do you stay current with rapidly evolving bioinformatics technologies?',
+            'How do you choose which conferences or workshops to attend?',
+            'How important is having a biology background for bioinformatics work?',
+          ],
+        };
 
-        const name = document.getElementById('name').value;
-        const question = document.getElementById('question').value;
-        const agree = document.getElementById('agree').checked ? 'Yes' : 'No';
-        const formUrl =
-          'https://docs.google.com/forms/d/e/1FAIpQLSdyYW7LxArIDBkt4tdzS6R2tsx0t2lAlNimuiC71EpuycLPmg/formResponse';
-        const data = new FormData();
+        // Get all questions in a flat array
+        const allQuestions = Object.values(questionCategories).flat();
 
-        data.append('entry.210603281', name); // optional name
-        data.append('entry.1793598279', question); // your question
-        if (agree) {
-          data.append('entry.2102617965', 'I have read and agree to follow the question guidelines.');
+        // Function to get random question from a specific category or all
+        function getRandomQuestion(category = 'all') {
+          let questionPool;
+
+          if (category === 'all') {
+            questionPool = allQuestions;
+          } else if (questionCategories[category]) {
+            questionPool = questionCategories[category];
+          } else {
+            questionPool = allQuestions;
+          }
+
+          const randomIndex = Math.floor(Math.random() * questionPool.length);
+          return questionPool[randomIndex];
         }
 
-        fetch(formUrl, {
-          method: 'POST',
-          mode: 'no-cors',
-          body: data,
-        })
-          .then(() => {
-            alert('Thanks! Your question was submitted.');
-            form.reset();
-          })
-          .catch((err) => {
-            console.error('Submission error:', err);
-            alert('Oops! Something went wrong.');
+        // Function with typing animation
+        function insertRandomQuestion(category = 'all') {
+          const questionField = document.getElementById('question');
+          const randomQuestion = getRandomQuestion(category);
+
+          // Clear field and show loading
+          questionField.value = '';
+          questionField.placeholder = 'Generating question...';
+
+          // Add a slight delay for effect
+          setTimeout(() => {
+            questionField.placeholder = 'Ask your question here...';
+
+            // Typing animation
+            let i = 0;
+            const typingSpeed = 25;
+
+            const typeWriter = () => {
+              if (i < randomQuestion.length) {
+                questionField.value += randomQuestion.charAt(i);
+                i++;
+                setTimeout(typeWriter, typingSpeed);
+              } else {
+                // Add cursor blink effect at the end
+                questionField.focus();
+                questionField.setSelectionRange(questionField.value.length, questionField.value.length);
+              }
+            };
+
+            typeWriter();
+          }, 300);
+
+          // Clear any existing errors
+          const errorElement = questionField.parentNode.querySelector('.error-message');
+          if (errorElement) {
+            errorElement.remove();
+          }
+          questionField.classList.remove('border-red-500', 'focus:border-red-500');
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function () {
+          // Main random button
+          const randomButton = document.getElementById('random-question-btn');
+          if (randomButton) {
+            randomButton.addEventListener('click', () => insertRandomQuestion());
+          }
+
+          // Category-specific buttons (if you want to add them)
+          Object.keys(questionCategories).forEach((category) => {
+            const categoryBtn = document.getElementById(`random-${category}-btn`);
+            if (categoryBtn) {
+              categoryBtn.addEventListener('click', () => insertRandomQuestion(category));
+            }
           });
-      });
-    </script>
+        });
+
+        const form = document.getElementById('ama-form');
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const school = document.getElementById('school').value;
+          const question = document.getElementById('question').value;
+          const agree = document.getElementById('agree').checked ? 'Yes' : 'No';
+          const formUrl =
+            'https://docs.google.com/forms/d/e/1FAIpQLSdyYW7LxArIDBkt4tdzS6R2tsx0t2lAlNimuiC71EpuycLPmg/formResponse';
+          const data = new FormData();
+
+          data.append('entry.210603281', name); // optional name
+          data.append('entry.1488918494', school); // optional school
+          data.append('entry.1434691752', email); // optional email
+          data.append('entry.1793598279', question); // your question
+          if (agree) {
+            data.append('entry.2102617965', 'I have read and agree to follow the question guidelines.');
+          }
+
+          fetch(formUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: data,
+          })
+            .then(() => {
+              alert('Thanks! Your question was submitted.');
+              form.reset();
+            })
+            .catch((err) => {
+              console.error('Submission error:', err);
+              alert('Oops! Something went wrong.');
+            });
+        });
+      </script>
+    </body>
   </section>
 </Layout>
