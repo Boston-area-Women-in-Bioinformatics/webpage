@@ -17,10 +17,9 @@ const SponsorSection = () => {
             />
           </div>
         </a>
-       
       </div>
       <div className="max-w-6xl mx-auto px-4 text-center pb-12">
-       <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
+        <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
           <span class="silver">Silver </span> DNA Sponsor
         </h2>
         <a href="https://www.nextrnatx.com/" target="_blank" rel="noopener noreferrer">
