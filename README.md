@@ -53,7 +53,22 @@ git checkout -b <new-branch-name>
 
 After you enter a new branch, you need to create a markdown file in the `src/content/post` directory.
 
-The markdown file should follow a specific format. In between the top two `---` you must fill out the parameters for the blog post. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The metadata should include fields like `title`, `dateTime`, `excerpt` (appears on the website front page to describe the post), `image`, `category` ,`author`, `readingTime`, `tags`, `category`. The `imgpos` parameter is for the css on the main events page. See https://tailwindcss.com/docs/object-position for options. The `tags` and `category` are not currently in use, but may be in the future.
+The markdown file should follow a specific format. In between the top two `---` you must fill out the parameters for the blog post. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The parameters include:
+
+- `publishDate`: date when the blog post was published, in ISO format (YYYY-MM -DDTHH:mm:ssZ)
+- `title`: name of the blog post
+- `slug`: a unique identifier for the blog post, used in the URL
+- `excerpt`: appears on the website front page to describe the post
+- `image`: path to the image that will be displayed on the blog post page
+- `width` and `height` (optional): dimensions of the image in pixels
+- author information:
+  - `author`: name of the SINGLE author of the blog post
+  - `authorUrl`: URL to the author's LinkedIn profile
+  - `authors`: list of authors if there are multiple authors, each with their name and LinkedIn URL
+- `category`: category of the blog post, e.g., "Podcast", "Deep Dive", "Quick Take"
+- `tags`: list of tags associated with the blog post, e.g., "bioinformatics", "career-advice", "software-engineering"
+- `metadata`: additional metadata for SEO, including `title`, `description`, and `canonical` URL
+- `listeningTime`: length of time of podcast written out (optional, only for podcast posts)
 
 To add an image, upload it to the `public/photos` directory of your cloned repository. The image should be referenced in the markdown file using the `image` field in the metadata.
 
