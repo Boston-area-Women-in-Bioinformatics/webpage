@@ -78,7 +78,7 @@ const team = {
       // Job Title
       title: 'Co-Chair, Events Committee',
       // Leadership team member Photo
-      avatar: 'team/lina.jpg',
+      avatar: '/team/lina.jpg',
       // Social links
       social: {
         // website: '#',
