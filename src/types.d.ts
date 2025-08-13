@@ -184,6 +184,17 @@ export interface Testimonial {
   image?: string | unknown;
 }
 
+export interface QuestionAndAnswer {
+  question?: string;
+  submittedByName?: string;
+  submittedByTitle?: string; // For children use grade and/or school
+  answer?: string;
+  title?: string;
+  name?: string;
+  job?: string;
+  image?: string | ImageMetadata | unknown;
+}
+
 export interface Input {
   type: HTMLInputTypeAttribute;
   name: string;
@@ -259,6 +270,11 @@ export interface Pricing extends Omit<Headline, 'classes'>, Widget {
 
 export interface Testimonials extends Omit<Headline, 'classes'>, Widget {
   testimonials?: Array<Testimonial>;
+  callToAction?: CallToAction;
+}
+
+export interface QuestionsAndAnswers extends Omit<Headline, 'classes'>, Widget {
+  questionsandanswers?: Array<QuestionAndAnswer>;
   callToAction?: CallToAction;
 }
 
