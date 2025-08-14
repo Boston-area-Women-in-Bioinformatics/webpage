@@ -16,6 +16,10 @@ export interface Props {
 }
 
 const { post, url } = Astro.props;
+
+const isRemoteImage = typeof post.image === 'string' && post.image.startsWith('http');
+const imageWidth = post.image?.width ?? 900;
+const imageHeight = post.image?.height ?? 506;
 ---
 
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">
@@ -102,17 +106,29 @@ const { post, url } = Astro.props;
 
       {
         post.image ? (
-          <Image
-            src={post.image}
-            class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
-            widths={[400, 900]}
-            sizes="(max-width: 900px) 400px, 900px"
-            alt={post?.excerpt || ''}
-            width={900}
-            height={506}
-            loading="eager"
-            decoding="async"
-          />
+          isRemoteImage ? (
+            <img
+              src={post.image}
+              class="block max-w-[900px] w-full h-auto mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
+              alt={post?.excerpt || ''}
+              width={imageWidth}
+              height={imageHeight}
+              loading="eager"
+              decoding="async"
+            />
+          ) : (
+            <Image
+              src={post.image}
+              class="block max-w-[900px] w-full h-auto mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
+              widths={[400, 600, 900]}
+              sizes="(max-width: 900px) 100vw, 900px"
+              alt={post?.excerpt || ''}
+              width={imageWidth}
+              height={imageHeight}
+              loading="eager"
+              decoding="async"
+            />
+          )
         ) : (
           <div class="max-w-3xl mx-auto px-4 sm:px-6">
             <div class="border-t dark:border-slate-700" />
