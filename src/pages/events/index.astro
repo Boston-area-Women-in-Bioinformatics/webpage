@@ -15,7 +15,18 @@ const metadata = {
   <Hero>
     <Fragment slot="title"> Events </Fragment>
 
-    <Fragment slot="subtitle"> Past and future events with Boston-Area Women in Bioinformatics. </Fragment>
+    <Fragment slot="subtitle">
+      To subscribe to future events, check out our
+      <a
+        href="https://lu.ma/bwib"
+        class="inline-flex items-center ml-2 px-4 py-1 bg-blue-600 text-white hover:bg-blue-700 transition focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base text-center me-2 mb-2 dark:border-blue-500 dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+      >
+        <span>Luma page</span>
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </Fragment>
     <Fragment slot="content">
       <EventsTable />
     </Fragment>
