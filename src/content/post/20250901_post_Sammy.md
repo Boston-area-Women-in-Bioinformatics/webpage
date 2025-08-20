@@ -1,5 +1,5 @@
 ---
-publishDate: 2025-09-11T14:00:00Z
+publishDate: 2025-09-01T14:00:00Z
 title: 'The Genomics Diversity Crisis'
 slug: blog/deepdive/deiGenomics
 author: Samantha J. Klasfeld, Ph.D.
