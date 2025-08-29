@@ -16,9 +16,10 @@ export interface Props {
   imgalt: string;
   imgpos?: string;
   url?: string;
+  cost?: number;
 }
 
-const { frontmatter, date, location, url, imgsrc, imgalt, imgpos = 'object-top object-cover' } = Astro.props;
+const { frontmatter, date, location, url, imgsrc, imgalt, imgpos = 'object-top object-cover', cost } = Astro.props;
 
 // Using template literals
 const imgcss = 'h-72 w-full' + { imgpos };
@@ -42,6 +43,11 @@ const metadata: MetaData = {
         <div class="text-lg mb-4">
           <EventAddress artists={location || []} />
         </div>
+        {cost !== undefined && (
+            <div class="text-lg font-semibold mb-4">
+              Ticket Cost: ${cost.toFixed(2)}
+            </div>
+          )}
         {date < new Date() ? ' ' : <Signup url={url} />}
       </div>
     </div>
