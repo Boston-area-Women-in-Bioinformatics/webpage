@@ -43,11 +43,7 @@ const metadata: MetaData = {
         <div class="text-lg mb-4">
           <EventAddress artists={location || []} />
         </div>
-        {cost !== undefined && (
-            <div class="text-lg font-semibold mb-4">
-              Ticket Cost: ${cost.toFixed(2)}
-            </div>
-          )}
+        {cost !== undefined && <div class="text-lg font-semibold mb-4">Ticket Cost: ${cost.toFixed(2)}</div>}
         {date < new Date() ? ' ' : <Signup url={url} />}
       </div>
     </div>
