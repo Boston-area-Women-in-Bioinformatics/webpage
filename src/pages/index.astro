@@ -5,7 +5,7 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import eventImg from '~/../public/photos/2025/nextflowsummit1.png'; // adjust path as needed
+import eventImg from '~/../public/photos/2025/genomicsFestival.jpg'; // adjust path as needed
 import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
 import Button from '~/components/ui/Button.astro';
 const metadata = {
@@ -40,7 +40,7 @@ const metadata = {
     </Fragment>
   </Hero> -->
   <section class="text-center pt-16 pb-8">
-    <h1 class="text-4xl sm:text-5xl font-bold mb-4 mx-auto leading-tight">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 mx-auto leading-tight">
       Boston Women in
       <span class="text-accent dark:text-white highlight">Bioinformatics</span>
     </h1>
@@ -57,7 +57,7 @@ const metadata = {
     subtitle="Join us for the 10th Anniversary of Women in Bioinformatics to honor ten years of community, mentorship, and career-building."
     image={{
       src: eventImg,
-      alt: 'Women in Bioinformatics 10th Anniversary Event',
+      alt: 'Women in Bioinformatics 10th Anniversary Event'
     }}
   >
     <Fragment slot="content">
@@ -71,7 +71,7 @@ const metadata = {
           startTime="16:00"
           endTime="19:00"
         />
-        <div class="flex sm:w-auto">
+        <div class="flex sm:w-auto sm:my-0 my-4 justify-center">
           <Button
             variant="primary"
             text="Learn More"
