@@ -31,16 +31,20 @@ const showBeforeDate = now < releaseDate;
   </section>
 
   <!-- Section to Submit Question -->
-   <section>{showAfterDate && <SubmitQuestionForm />}</section>
-  
-    {showBeforeDate && (
+  <section>{showAfterDate && <SubmitQuestionForm />}</section>
 
+  {
+    showBeforeDate && (
       <div class="p-6 max-w-3xl mx-auto my-4 text-center bg-yellow-100 border border-yellow-300 rounded-lg">
         <h2 class="text-2xl font-semibold mb-4">Questions will be accepted starting September 20, 2025!</h2>
         <p class="text-base leading-relaxed">
-          Come find us at the <u><a href="https://mitmuseum.mit.edu/more/cambridge-science-carnival">Cambridge Science Carnival</a></u>. We look forward to hearing from you!
+          Come find us at the{' '}
+          <u>
+            <a href="https://mitmuseum.mit.edu/more/cambridge-science-carnival">Cambridge Science Carnival</a>
+          </u>
+          . We look forward to hearing from you!
         </p>
       </div>
     )
-    }
+  }
 </Layout>
