@@ -49,6 +49,10 @@ export const headerData = {
       text: 'Contact',
       href: getPermalink('/contact'),
     },
+    {
+      text: 'Donate',
+      href: 'https://givebutter.com/BWIBdonate',
+    },
     // {
     //   text: 'Homes',
     //   links: [
