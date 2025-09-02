@@ -186,7 +186,7 @@ const team = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/samantha-klasfeld/',
       // Job Title
-      title: 'Web Page Developer',
+      title: 'Chair, Web Page',
       // Leadership team member Photo
       avatar: '/team/samanthaklasfeld.jpeg',
       // Social links
@@ -228,6 +228,21 @@ const team = {
       // Social links
       social: {
         linkedin: 'https://www.linkedin.com/in/nishita-kalepalli/',
+      },
+    },
+    // Ozge Tasdemir Yilmaz
+    {
+      name: 'Ozge Tasdemir Yilmaz',
+      nameLink: 'http://linkedin.com/in/ozgeevrimtasdemiryilmaz',
+      title: 'Member, Events Committee',
+      avatar: '/team/Ozge_Tasdemir_Yilmaz.jpg',
+      social: {
+        // website: '#',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'http://linkedin.com/in/ozgeevrimtasdemiryilmaz',
+        // github: '#',
       },
     },
     // Lakshmi Kuttippurathu

@@ -42,8 +42,7 @@ const ambassadors = {
       // Job Title
       title: 'Director, Data Science Learning, AstraZeneca',
       // Ambassador Photo
-      avatar:
-        'https://media.licdn.com/dms/image/v2/C5603AQEaFVo-x59baw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516262069058?e=1748476800&v=beta&t=BiIbGyVfWFrLpjhZS-NjV1wG0xmVAHahRysrjKL4xAQ',
+      avatar: 'team/radhika-khetani.jpg',
       // Social links
       social: {
         // website: '#',

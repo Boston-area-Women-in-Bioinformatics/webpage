@@ -87,6 +87,7 @@ const eventCollection = defineCollection({
       alt: z.string(),
     }),
     imgpos: z.string().optional().default('object-top object-cover'),
+    cost: z.number().optional(),
     tags: z.array(z.string()),
   }),
 });
