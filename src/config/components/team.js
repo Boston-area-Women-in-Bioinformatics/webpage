@@ -42,7 +42,7 @@ const team = {
       // Job Title
       title: 'Co-Chair',
       // Leadership team member Photo
-      avatar: 'team/Yevgenia.jpg',
+      avatar: '/team/Yevgenia.jpg',
       // Social links
       social: {
         linkedin: 'https://www.linkedin.com/in/yevgenia-khodor/',
@@ -78,7 +78,7 @@ const team = {
       // Job Title
       title: 'Co-Chair, Events Committee',
       // Leadership team member Photo
-      avatar: 'team/lina.jpg',
+      avatar: '/team/lina.jpg',
       // Social links
       social: {
         // website: '#',
@@ -134,7 +134,7 @@ const team = {
       // Job Title
       title: 'Co-chair, Sponsorship Committee',
       // Leadership team member Photo
-      avatar: 'team/aysheh.jpg',
+      avatar: '/team/aysheh.jpg',
       // Social links
       social: {
         linkedin: 'https://www.linkedin.com/in/aysheh-alrfooh/',
@@ -169,7 +169,7 @@ const team = {
       // Job Title
       title: 'Co-chair, Communications Committee',
       // Leadership team member Photo
-      avatar: 'team/shreya_sq.jpg',
+      avatar: '/team/shreya_sq.jpg',
       // Social links
       social: {
         // website: '#',
@@ -224,7 +224,7 @@ const team = {
       // Job Title
       title: 'Member, Communications Committee',
       // Leadership team member Photo
-      avatar: 'team/nishita-kalepalli.png',
+      avatar: '/team/nishita-kalepalli.png',
       // Social links
       social: {
         linkedin: 'https://www.linkedin.com/in/nishita-kalepalli/',
@@ -254,7 +254,7 @@ const team = {
       // Job Title
       title: 'Member, Events Committee',
       // Leadership team member Photo
-      avatar: 'team/lakshmi1.jpg',
+      avatar: '/team/lakshmi1.jpg',
       // Social links
       social: {
         linkedin: 'https://www.linkedin.com/in/lakshmikc/',
