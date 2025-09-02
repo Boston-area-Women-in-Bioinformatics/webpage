@@ -1,0 +1,340 @@
+---
+
+import QuestionsAndAnswers from '~/components/widgets/QuestionsAndAnswers.astro';
+---
+<div class="bg-gray-100 dark:bg-gray-700 font-sans text-gray-800 dark:text-white">
+        <div class="max-w-6xl mx-auto p-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
+            <!-- Guidelines Section -->
+            <div class="bg-blue-50 p-6 border-r border-blue-100 text-black">
+              <h2 class="text-2xl font-semibold mb-4">Guidelines for Asking Questions</h2>
+              <ul class="list-disc list-inside space-y-2 text-base leading-relaxed">
+                <li><strong>Be respectful</strong> – Ask with curiosity, not judgment.</li>
+                <li><strong>Stay on topic</strong> – Bioinformatics, careers, equity in STEM, etc.</li>
+                <li><strong>Keep it appropriate</strong> – Avoid intrusive or overly personal questions.</li>
+                <li><strong>No discrimination</strong> – Sexist, racist, or offensive questions will be removed.</li>
+                <li><strong>Be clear</strong> – Concise and thoughtful questions are more likely to be answered.</li>
+                <li><strong>Anonymous is okay!</strong> – But always be respectful.</li>
+              </ul>
+            </div>
+
+            <!-- Form Section -->
+            <div class="p-6">
+              <h2 class="text-2xl font-semibold mb-4">Submit Your Question</h2>
+              <form id="ama-form" name="ama-form" class="space-y-4">
+                <input type="hidden" name="form-name" value="ama-form" />
+
+                <div>
+                  <label for="name" class="block font-medium text-base">Name (optional)</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name or leave blank"
+                    class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black"
+                  />
+                </div>
+
+                <div>
+                  <label for="school" class="block font-medium text-base">Your Grade and School Name (optional)</label>
+                  <input
+                    type="text"
+                    id="school"
+                    name="school"
+                    placeholder="Enter your grade and school name (optional)"
+                    class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black"
+                  />
+                </div>
+
+                <div>
+                  <label for="email" class="block font-medium text-base">Email (optional)</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email (yours or parent/guardian’s)"
+                    class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black"
+                  />
+                </div>
+
+                <div>
+                  <label for="question" class="block font-medium text-base"
+                    >Your Question <span class="text-red-500 dark:text-green-400">*</span></label
+                  >
+                  <textarea
+                    id="question"
+                    name="question"
+                    required
+                    placeholder="Ask your question here..."
+                    class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-base h-32 resize-vertical focus:ring-blue-500 focus:border-blue-500 text-black"
+                  ></textarea>
+
+                  <!-- Random Button Generators -->
+                  <div class="mb-3">
+                    <div class="mt-1">
+                      <div class="text-gray-500 block mb-2 text-sm">Need inspiration? Try a random question:</div>
+                      <div class="flex flex-wrap gap-2">
+                        <button
+                          type="button"
+                          id="random-question-btn"
+                          class="bg-purple-500 hover:bg-purple-600 text-white text-xs px-2 py-1 rounded transition-colors"
+                        >
+                          🎲 Any Topic
+                        </button>
+                        <button
+                          type="button"
+                          id="random-career-btn"
+                          class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-2 py-1 rounded transition-colors"
+                        >
+                          💼 Career
+                        </button>
+                        <button
+                          type="button"
+                          id="random-technical-btn"
+                          class="bg-green-500 hover:bg-green-600 text-white text-xs px-2 py-1 rounded transition-colors"
+                        >
+                          💻 Technical
+                        </button>
+                        <button
+                          type="button"
+                          id="random-research-btn"
+                          class="bg-orange-500 hover:bg-orange-600 text-white text-xs px-2 py-1 rounded transition-colors"
+                        >
+                          🔬 Research
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="flex items-start my-3">
+                      <input type="checkbox" id="agree" name="agree" required class="w-6 h-6 mr-2" />
+                      <label for="agree" class="text-base">
+                        I have read and agree to follow the question guidelines.
+                        <span class="text-red-500 dark:text-green-400">*</span></label
+                      >
+                    </div>
+
+                    <div>
+                      <button
+                        type="submit"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-base font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Question
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend Code to Handle Submission Form -->
+        <script is:inline>
+          // Categorized questions for more targeted randomness
+          const questionCategories = {
+            career: [
+              'How did you get started in bioinformatics?',
+              'What advice would you give to someone switching careers into bioinformatics?',
+              'What educational path would you recommend for aspiring bioinformaticians?',
+              'How do you maintain work-life balance in a research career?',
+              'What networking advice do you have for women in bioinformatics?',
+            ],
+            technical: [
+              'What programming languages are most commonly used in bioinformatics?',
+              'Which bioinformatics tools do you use most frequently?',
+              'How do you approach learning new computational methods?',
+              'How do you handle large datasets and computational challenges?',
+              'How do you approach debugging complex bioinformatics pipelines?',
+            ],
+            research: [
+              "What's the most exciting project you've worked on?",
+              'How do you balance wet lab work with computational analysis?',
+              'What role does collaboration play in your bioinformatics research?',
+              "What's the biggest breakthrough you've seen in bioinformatics recently?",
+              'What role does open science play in your work?',
+            ],
+            diversity: [
+              'What are the biggest challenges facing women in STEM today?',
+              'How has the field of bioinformatics changed since you started?',
+              "What's the most common misconception people have about bioinformatics?",
+              'How do you explain your work to non-scientists?',
+              "What's the most important skill for success in bioinformatics?",
+            ],
+            personal: [
+              "What's a typical day like in your bioinformatics role?",
+              "What's the most rewarding aspect of working in bioinformatics?",
+              'How do you stay current with rapidly evolving bioinformatics technologies?',
+              'How do you choose which conferences or workshops to attend?',
+              'How important is having a biology background for bioinformatics work?',
+            ],
+          };
+
+          // Get all questions in a flat array
+          const allQuestions = Object.values(questionCategories).flat();
+
+          // Function to get random question from a specific category or all
+          function getRandomQuestion(category = 'all') {
+            let questionPool;
+
+            if (category === 'all') {
+              questionPool = allQuestions;
+            } else if (questionCategories[category]) {
+              questionPool = questionCategories[category];
+            } else {
+              questionPool = allQuestions;
+            }
+
+            const randomIndex = Math.floor(Math.random() * questionPool.length);
+            return questionPool[randomIndex];
+          }
+
+          // Function with typing animation
+          function insertRandomQuestion(category = 'all') {
+            const questionField = document.getElementById('question');
+            const randomQuestion = getRandomQuestion(category);
+
+            // Clear field and show loading
+            questionField.value = '';
+            questionField.placeholder = 'Generating question...';
+
+            // Add a slight delay for effect
+            setTimeout(() => {
+              questionField.placeholder = 'Ask your question here...';
+
+              // Typing animation
+              let i = 0;
+              const typingSpeed = 25;
+
+              const typeWriter = () => {
+                if (i < randomQuestion.length) {
+                  questionField.value += randomQuestion.charAt(i);
+                  i++;
+                  setTimeout(typeWriter, typingSpeed);
+                } else {
+                  // Add cursor blink effect at the end
+                  questionField.focus();
+                  questionField.setSelectionRange(questionField.value.length, questionField.value.length);
+                }
+              };
+
+              typeWriter();
+            }, 300);
+
+            // Clear any existing errors
+            const errorElement = questionField.parentNode.querySelector('.error-message');
+            if (errorElement) {
+              errorElement.remove();
+            }
+            questionField.classList.remove('border-red-500', 'focus:border-red-500');
+          }
+
+          // Event listeners
+          document.addEventListener('DOMContentLoaded', function () {
+            // Main random button
+            const randomButton = document.getElementById('random-question-btn');
+            if (randomButton) {
+              randomButton.addEventListener('click', () => insertRandomQuestion());
+            }
+
+            // Category-specific buttons (if you want to add them)
+            Object.keys(questionCategories).forEach((category) => {
+              const categoryBtn = document.getElementById(`random-${category}-btn`);
+              if (categoryBtn) {
+                categoryBtn.addEventListener('click', () => insertRandomQuestion(category));
+              }
+            });
+          });
+
+          const form = document.getElementById('ama-form');
+
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const school = document.getElementById('school').value;
+            const question = document.getElementById('question').value;
+            const agree = document.getElementById('agree').checked ? 'Yes' : 'No';
+            const formUrl =
+              'https://docs.google.com/forms/d/e/1FAIpQLSdyYW7LxArIDBkt4tdzS6R2tsx0t2lAlNimuiC71EpuycLPmg/formResponse';
+            const data = new FormData();
+
+            data.append('entry.210603281', name); // optional name
+            data.append('entry.1488918494', school); // optional school
+            data.append('entry.1434691752', email); // optional email
+            data.append('entry.1793598279', question); // your question
+            if (agree) {
+              data.append('entry.2102617965', 'I have read and agree to follow the question guidelines.');
+            }
+
+            fetch(formUrl, {
+              method: 'POST',
+              mode: 'no-cors',
+              body: data,
+            })
+              .then(() => {
+                alert('Thanks! Your question was submitted.');
+                form.reset();
+              })
+              .catch((err) => {
+                console.error('Submission error:', err);
+                alert('Oops! Something went wrong.');
+              });
+          });
+        </script>
+
+        <!-- Response Section -->
+        <div class="hidden">
+        <QuestionsAndAnswers
+          title="Questions & Answers Transcript"
+          subtitle="Here are some questions we've already received and answered."
+          questionsandanswers={[
+            {
+              question: `What is the purpose of BLAST in bioinformatics?`,
+              submittedByName: 'Brenda Smith',
+              submittedByTitle: '3rd grade, Sunnyvale Elementary',
+              answer:
+                'BLAST (Basic Local Alignment Search Tool) is used to find regions of similarity between sequences. It compares a query sequence against a database to identify matching sequences, often used for gene or protein identification.',
+              name: 'Shayna Stein, Ph.D.',
+              job: 'Senior Bioinformatics Scientist @ Frontier Medicines',
+              image: {
+                src: 'https://media.licdn.com/dms/image/v2/D4E03AQGItH1pvrovAQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1698198989236?e=1758153600&v=beta&t=Zbias4f0tZlVssxP4KGDEnX4XR4OIZ_d_vqiCERXRW8',
+                alt: 'Shayna Stein Image',
+              },
+            },
+            {
+              question: `What is a genome?`,
+              submittedByName: 'James Lee',
+              submittedByTitle: '1st grade, Sunnyvale Elementary',
+              answer:
+                'A genome is the complete set of DNA, including all of its genes, in an organism. It contains all the information needed for the structure, function, and regulation of an organism’s cells and tissues.',
+              name: 'Lina Faller, Ph.D.',
+              job: 'Bioinformatics Leader',
+              image: {
+                src: '~/assets/images/team_members/lina.jpg',
+                alt: 'Lina Faller Image',
+              },
+            },
+            {
+              question: `What is the difference between DNA and RNA?`,
+              submittedByName: 'Tommy Johnson',
+              submittedByTitle: '6th grade, Raindrop Middle School',
+              answer:
+                'DNA is double-stranded, uses the base T (thymine), and stores genetic information. RNA is single-stranded, uses U (uracil) instead of T, and is involved in protein synthesis.',
+              name: 'Samantha Klasfeld, Ph.D.',
+              job: 'Bioinformatics Postdoctoral Fellow',
+              image: {
+                src: '~/assets/images/team_members/samanthaklasfeld.jpeg',
+                alt: 'Samantha Klasfeld Image',
+              },
+            },
+          ]}
+          callToAction={{
+            target: '_blank',
+            text: 'More testimonials...',
+            href: 'https://github.com/onwidget/astrowind',
+            icon: 'tabler:chevron-right',
+          }}
+        />
+        </div>
+    </div>
