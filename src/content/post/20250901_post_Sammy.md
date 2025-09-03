@@ -10,12 +10,13 @@ imageDescription: 'Image Citation: Photo of a Respect my HIV protest in London b
 category: Deep Dive
 draft: false
 tags:
-  - biotech
   - diversity-equity-inclusion
-  - overfitting
-  - research-ethics
-  - scientific-responsibility
-  - trust-in-science
+  - dei-in-science
+  - inclusive-research
+  - genetics-research
+  - equity-in-science
+  - diversity-in-stem
+  - genomics-equity
 metadata:
   title: "The Genomics Diversity Crisis: Why DEI Isn't Just About Workplace Culture"
   description: 'When 86% of genomic data comes from European ancestry, treatments built on this data will inevitably fail marginalized communities.'
