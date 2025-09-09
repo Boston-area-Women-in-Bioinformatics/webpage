@@ -41,9 +41,12 @@ if (speakers?.enabled === true) {
       10th Year Anniversary Event
     </h2>
     <p
-      class="text-xl text-muted md:mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter text-center"
+      class="text-xl text-muted mx-2 sm:mx-5 md:mx-10 md:mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter text-center"
     >
-      Join us in celebrating 10 years of community
+      Join us for a career session of four experienced speakers who will explore the realities of building a career in
+      life sciences and technology. They will share personal stories and practical insights on navigating career
+      options, managing psychological pressures, pivoting into new directions, learning from failure, seizing
+      opportunities, advocating for yourself, and overcoming workplace challenges.
     </p>
     <div class="text-center">
       <a
@@ -73,6 +76,43 @@ if (speakers?.enabled === true) {
         />
       </div>
     </div>
+    <!-- Agenda Table -->
+
+    <div class="min-h-screen flex flex-col items-center justify-center px-4 py-8">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Agenda</h2>
+
+      <div class="w-full max-w-xl overflow-x-auto">
+        <table
+          class="w-full text-left border border-gray-300 divide-y divide-gray-200 rounded-lg overflow-hidden shadow-md bg-white"
+        >
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="px-4 py-3 text-right text-sm font-semibold text-gray-700">Time</th>
+              <th class="px-8 py-3 text-sm font-semibold text-gray-700">Activity</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 text-sm text-gray-800">
+            <tr>
+              <td class="px-4 py-3 text-right">4:00 PM – 4:20 PM</td>
+              <td class="px-8 py-3">Check in & Refreshments</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 text-right">4:20 PM – 4:30 PM</td>
+              <td class="px-8 py-3">Welcoming Remarks</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 text-right">4:30 PM – 4:45 PM</td>
+              <td class="px-8 py-3">Panel and Q&A</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 text-right">4:45 PM – 7:00 PM</td>
+              <td class="px-8 py-3">Networking and Activities</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <!--Sponsors -->
     <SponsorSection />
     <!-- <div class="py-4 relative items-center max-w-7xl mx-auto px-4 sm:px-6">
