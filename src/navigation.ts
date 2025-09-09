@@ -243,6 +243,11 @@ export const footerData = {
       icon: 'tabler:brand-github',
       href: 'https://github.com/Boston-area-Women-in-Bioinformatics',
     },
+    {
+      ariaLabel: 'X (formerly Twitter)',
+      icon: 'tabler:brand-x',
+      href: 'https://x.com/BWIBioinfo',
+    },
   ],
   footNote: `Boston Women in Bioinformatics is a nonprofit, tax-exempt charitable organization under Section 501(c)(3) of the Internal Revenue Code. Donations are tax-deductible as allowed by law. Logos were designed by Siobhan Keegan and <a href="https://www.monikamistry.com/creative-design/">Monika Mistry</a>.`,
 };
