@@ -129,7 +129,21 @@ if (speakers?.enabled === true) {
         </table>
       </div>
     </div>
-
+    <!-- Keynote speakers -->
+    <div>
+      <div class="px-4 mx-auto max-w-screen-xl text-center lg:py-2 lg:px-6">
+        <div class="mx-auto mb-8 max-w-screen-sm lg:mb-12">
+          <h3
+            class="mt-1 mb-1 sm:mt-0 text-3xl sm:text-4xl md:text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+          >
+            Keynote Speakers
+          </h3>
+        </div>
+        <div class={speakerColCss}>
+          <TeamWidget members={speakers.members} />
+        </div>
+      </div>
+    </div>
     <!--Sponsors -->
     <SponsorSection />
     <!-- <div class="py-4 relative items-center max-w-7xl mx-auto px-4 sm:px-6">
@@ -152,21 +166,7 @@ if (speakers?.enabled === true) {
       </div>
     </div> -->
 
-    <!-- Keynote speakers -->
-    <div>
-      <div class="px-4 mx-auto max-w-screen-xl text-center lg:py-2 lg:px-6">
-        <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
-          <h3
-            class="mt-1 mb-1 sm:mt-0 text-3xl sm:text-4xl md:text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white"
-          >
-            Keynote Speakers
-          </h3>
-        </div>
-        <div class={speakerColCss}>
-          <TeamWidget members={speakers.members} />
-        </div>
-      </div>
-    </div>
+
     <!-- Email Sign-Up -->
 
     <div class="mb-8">
