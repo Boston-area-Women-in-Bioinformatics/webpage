@@ -40,7 +40,7 @@ const speakers = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/lpantano/',
       // Job Title
-      title: 'Co-chair & Founder of Women in Bioinformatics Boston Area',
+      title: 'Director of Platform @ Harvard Chan School | Co-chair & Founder of BWIB',
       // Leadership Leadership team member Photo
       avatar: '/team/lpantano.jpg',
       // Social links
@@ -61,7 +61,7 @@ const speakers = {
       // Namelink: Ambassador's Personal Website
       nameLink: 'https://www.linkedin.com/in/geraldine-van-der-auwera-5a5811/',
       // Job Title
-      title: 'Lead Developer Advocate at Seqera',
+      title: 'Lead Developer Advocate at Seqera | Author of "Genomics in the Cloud" (OReilly, 2020)',
       // Ambassador Photo
       avatar: '/team/GeraldineVanderAuwera.jpeg',
       // Social links

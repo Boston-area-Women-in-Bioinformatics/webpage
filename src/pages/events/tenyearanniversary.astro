@@ -95,8 +95,8 @@ if (speakers?.enabled === true) {
     </div>
     <!-- Agenda Table -->
 
-    <div class="min-h-screen flex flex-col items-center justify-center px-4 py-8">
-      <h2 class="text-3xl font-bold mb-6">Agenda</h2>
+    <div class="min-h-screen flex flex-col items-center justify-center px-4 py-4">
+      <h2 class="text-3xl font-bold mb-3">Agenda</h2>
 
       <div class="w-full max-w-xl overflow-x-auto">
         <table
@@ -118,18 +118,32 @@ if (speakers?.enabled === true) {
               <td class="px-8 py-3">Welcoming Remarks</td>
             </tr>
             <tr>
-              <td class="px-4 py-3 text-right">4:30 PM – 4:45 PM</td>
+              <td class="px-4 py-3 text-right">4:30 PM – 5:15 PM</td>
               <td class="px-8 py-3">Panel and Q&A</td>
             </tr>
             <tr>
-              <td class="px-4 py-3 text-right">4:45 PM – 7:00 PM</td>
+              <td class="px-4 py-3 text-right">5:15 PM – 7:00 PM</td>
               <td class="px-8 py-3">Networking and Activities</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-
+    <!-- Keynote speakers -->
+    <div>
+      <div class="px-4 mx-auto max-w-screen-xl text-center lg:py-2 lg:px-6">
+        <div class="mx-auto mb-8 max-w-screen-sm lg:mb-12">
+          <h3
+            class="mt-1 mb-1 sm:mt-0 text-3xl sm:text-4xl md:text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+          >
+            Keynote Speakers
+          </h3>
+        </div>
+        <div class={speakerColCss}>
+          <TeamWidget members={speakers.members} />
+        </div>
+      </div>
+    </div>
     <!--Sponsors -->
     <SponsorSection />
     <!-- <div class="py-4 relative items-center max-w-7xl mx-auto px-4 sm:px-6">
@@ -152,21 +166,6 @@ if (speakers?.enabled === true) {
       </div>
     </div> -->
 
-    <!-- Keynote speakers -->
-    <div>
-      <div class="px-4 mx-auto max-w-screen-xl text-center lg:py-2 lg:px-6">
-        <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
-          <h3
-            class="mt-1 mb-1 sm:mt-0 text-3xl sm:text-4xl md:text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white"
-          >
-            Keynote Speakers
-          </h3>
-        </div>
-        <div class={speakerColCss}>
-          <TeamWidget members={speakers.members} />
-        </div>
-      </div>
-    </div>
     <!-- Email Sign-Up -->
 
     <div class="mb-8">
