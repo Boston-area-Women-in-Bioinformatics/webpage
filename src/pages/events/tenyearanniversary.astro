@@ -57,6 +57,54 @@ if (speakers?.enabled === true) {
         🥳 Register Now! 🎉
       </a>
 
+      <!-- Waitlist Sign-Up -->
+      <form id="waitlistForm">
+        <label>
+          <p class="text-red-500 text-xl my-4">
+            If registration is full, drop your email below and we’ll let you know if a spot opens up.
+          </p>
+          <input
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            id="userEmail"
+            placeholder="Enter your email"
+            required
+          />
+        </label>
+        <button
+          type="submit"
+          class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+          >Submit</button
+        >
+      </form>
+
+      <script is:inline>
+        const waitlistform = document.getElementById('waitlistForm');
+        waitlistform.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const email = document.getElementById('userEmail').value;
+          const formUrl =
+            'https://docs.google.com/forms/d/e/1FAIpQLSfZdeptnI2FS0RNrAjkbi3m2kkMTpmRe0LGjBKrNYT2iYQkVA/formResponse';
+          const waitlistdata = new FormData();
+
+          waitlistdata.append('entry.193147904', email);
+
+          fetch(formUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: waitlistdata,
+          })
+            .then(() => {
+              alert('Thanks! Your email was submitted to the waitlist.');
+              form.reset();
+            })
+            .catch((err) => {
+              console.error('Submission error:', err);
+              alert('Oops! Something went wrong.');
+            });
+        });
+      </script>
+
       <div class="mx-auto max-w-xs w-full mt-20">
         <!-- Light and Dark mode logos -->
         <div class="block dark:hidden">
@@ -166,7 +214,7 @@ if (speakers?.enabled === true) {
       </div>
     </div> -->
 
-    <!-- Email Sign-Up -->
+    <!-- Email Updates Sign-Up -->
 
     <div class="mb-8">
       <div
@@ -180,14 +228,14 @@ if (speakers?.enabled === true) {
               Email Sign-Up
             </h3>
           </div>
-          <form id="emailForm">
+          <form id="emailUpdatesForm">
             <label>
               <p class="text-muted text-xl dark:text-slate-400 my-4">
                 Don't want to miss out? Add your email here for updates:
               </p>
               <input
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                id="userEmail"
+                id="updateeEmail"
                 placeholder="Enter your email"
                 required
               />
@@ -203,11 +251,11 @@ if (speakers?.enabled === true) {
     </div>
 
     <script is:inline>
-      const form = document.getElementById('emailForm');
-      form.addEventListener('submit', function (e) {
+      const updateform = document.getElementById('emailUpdatesForm');
+      updateform.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        const email = document.getElementById('userEmail').value;
+        const email = document.getElementById('updateeEmail').value;
         const formUrl =
           'https://docs.google.com/forms/d/e/1FAIpQLSfHST0fzrRqZO8zqq73QZEJIeKiN-WIdnkav-iaLzXWREF_SQ/formResponse';
         const data = new FormData();
