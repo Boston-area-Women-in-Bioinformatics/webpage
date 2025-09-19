@@ -96,7 +96,7 @@ if (speakers?.enabled === true) {
           })
             .then(() => {
               alert('Thanks! Your email was submitted to the waitlist.');
-              form.reset();
+              waitlistform.reset();
             })
             .catch((err) => {
               console.error('Submission error:', err);
@@ -269,7 +269,7 @@ if (speakers?.enabled === true) {
         })
           .then(() => {
             alert('Thanks! Your email was submitted.');
-            form.reset();
+            updateform.reset();
           })
           .catch((err) => {
             console.error('Submission error:', err);
