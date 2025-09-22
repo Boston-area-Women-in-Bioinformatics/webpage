@@ -72,35 +72,37 @@ import QuestionsAndAnswers from '~/components/widgets/QuestionsAndAnswers.astro'
             <!-- Random Button Generators -->
             <div class="mb-3">
               <div class="mt-1">
-                <div class="text-gray-500 block mb-2 text-sm">Need inspiration? Try a random question:</div>
+                <div class="font-semibold text-gray-500 dark:text-white block mb-2 text-sm">
+                  Need inspiration? Try a random question:
+                </div>
                 <div class="flex flex-wrap gap-2">
                   <button
                     type="button"
                     id="random-question-btn"
-                    class="bg-purple-500 hover:bg-purple-600 text-white text-xs px-2 py-1 rounded transition-colors"
+                    class="font-semibold bg-purple-500 hover:bg-purple-600 text-white text text-sm px-2 py-1 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-transform"
                   >
                     🎲 Any Topic
                   </button>
                   <button
                     type="button"
                     id="random-career-btn"
-                    class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-2 py-1 rounded transition-colors"
+                    class="font-semibold bg-blue-400 hover:bg-blue-500 text-white text-sm px-2 py-1 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-transform"
                   >
                     💼 Career
                   </button>
                   <button
                     type="button"
-                    id="random-technical-btn"
-                    class="bg-green-500 hover:bg-green-600 text-white text-xs px-2 py-1 rounded transition-colors"
+                    id="random-science-btn"
+                    class="font-semibold bg-orange-400 hover:bg-orange-500 text-white text-sm px-2 py-1 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-transform"
                   >
-                    💻 Technical
+                    🔬 Science
                   </button>
                   <button
                     type="button"
-                    id="random-research-btn"
-                    class="bg-orange-500 hover:bg-orange-600 text-white text-xs px-2 py-1 rounded transition-colors"
+                    id="random-fun-btn"
+                    class="font-semibold bg-green-400 hover:bg-green-500 text-white text-sm px-2 py-1 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-transform"
                   >
-                    🔬 Research
+                    🤪 Fun
                   </button>
                 </div>
               </div>
@@ -116,7 +118,7 @@ import QuestionsAndAnswers from '~/components/widgets/QuestionsAndAnswers.astro'
               <div>
                 <button
                   type="submit"
-                  class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-base font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-base font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Submit Question
                 </button>
@@ -134,38 +136,39 @@ import QuestionsAndAnswers from '~/components/widgets/QuestionsAndAnswers.astro'
     const questionCategories = {
       career: [
         'How did you get started in bioinformatics?',
-        'What advice would you give to someone switching careers into bioinformatics?',
+        'How long does it take to become a bioinformatician?',
+        'What is the hardest part of your job?',
         'What educational path would you recommend for aspiring bioinformaticians?',
-        'How do you maintain work-life balance in a research career?',
-        'What networking advice do you have for women in bioinformatics?',
-      ],
-      technical: [
-        'What programming languages are most commonly used in bioinformatics?',
-        'Which bioinformatics tools do you use most frequently?',
-        'How do you approach learning new computational methods?',
-        'How do you handle large datasets and computational challenges?',
-        'How do you approach debugging complex bioinformatics pipelines?',
-      ],
-      research: [
-        "What's the most exciting project you've worked on?",
-        'How do you balance wet lab work with computational analysis?',
-        'What role does collaboration play in your bioinformatics research?',
-        "What's the biggest breakthrough you've seen in bioinformatics recently?",
-        'What role does open science play in your work?',
-      ],
-      diversity: [
-        'What are the biggest challenges facing women in STEM today?',
-        'How has the field of bioinformatics changed since you started?',
-        "What's the most common misconception people have about bioinformatics?",
-        'How do you explain your work to non-scientists?',
+        'What is the coolest part of your job?',
         "What's the most important skill for success in bioinformatics?",
+        "What's the biggest breakthrough you've seen in bioinformatics recently?",
+        'How do you know what parts of DNA are junk and what parts are important?',
+        'How do you get DNA data into a computer in the first place?',
+        'Can you use a computer predict if someone will get sick in the future?',
+        'What kind of math do you use in bioinformatics?',
+        'Do you ever work with doctors or nurses?',
+        'What is the difference between a bioinformatician and a biologist?',
+        'What is the difference between a bioinformatician and a computer scientist?',
       ],
-      personal: [
-        "What's a typical day like in your bioinformatics role?",
-        "What's the most rewarding aspect of working in bioinformatics?",
-        'How do you stay current with rapidly evolving bioinformatics technologies?',
-        'How do you choose which conferences or workshops to attend?',
-        'How important is having a biology background for bioinformatics work?',
+      fun: [
+        'Is DNA like spaghetti?',
+        'Do animals have different shaped DNA than people?',
+        'Can you change DNA to give someone super powers?',
+        'Can you fix DNA if it gets broken, like a toy?',
+        'Could you make a unicorn with science?',
+        'If DNA is in all my cells, does that mean it’s in my boogers too?',
+        'Does DNA ever get dizzy from spinning?',
+        'Can DNA tell you if you like pizza or ice cream better?',
+        'Can you make a dinosaur out of chicken DNA?',
+      ],
+      science: [
+        'Why are bugs so tiny but whales so big?',
+        'Can you see DNA with a magnifying glass?',
+        'If DNA tells your body what to do, who tells the DNA what to do?',
+        'How do plants know which way to grow?',
+        'Why do we get sick?',
+        'How do you find the gene that causes a disease?',
+        'How do you tell which gene came from your mom or dad?',
       ],
     };
 
