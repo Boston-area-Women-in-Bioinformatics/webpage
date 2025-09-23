@@ -88,6 +88,7 @@ const eventCollection = defineCollection({
     }),
     imgpos: z.string().optional().default('object-top object-cover'),
     cost: z.number().optional(),
+    gallery: z.string().optional(), // path to gallery folder
     tags: z.array(z.string()),
   }),
 });

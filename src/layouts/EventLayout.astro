@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Signup from '~/components/Signup.astro';
 import FormattedDate from '~/components/FormattedDate.astro';
 import EventAddress from 'src/components/EventAddress.astro';
+import EventGallery from '~/components/EventGallery.astro';
 
 import type { MetaData } from '~/types';
 
@@ -17,12 +18,23 @@ export interface Props {
   imgpos?: string;
   url?: string;
   cost?: number;
+  gallery?: string; // path to gallery folder
 }
 
-const { frontmatter, date, location, url, imgsrc, imgalt, imgpos = 'object-top object-cover', cost } = Astro.props;
+const {
+  frontmatter,
+  date,
+  location,
+  url,
+  imgsrc,
+  imgalt,
+  imgpos = 'object-top object-cover',
+  cost,
+  gallery,
+} = Astro.props;
 
 // Using template literals
-const imgcss = 'h-72 w-full' + { imgpos };
+const imgcss = `h-72 w-full ${imgpos}`;
 
 const metadata: MetaData = {
   title: frontmatter.title,
@@ -49,6 +61,16 @@ const metadata: MetaData = {
     </div>
   </div>
 
+  <!-- Gallery Section (only if `gallery` is provided) -->
+  {
+    gallery && (
+      <section class="px-4 py-4 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+        <h3 class="font-semibold mb-4">Event Snapshots:</h3>
+        <EventGallery folder={gallery} />
+      </section>
+    )
+  }
+
   <section class="px-4 py-4 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
     <h3 class="font-semibold mb-4">Details:</h3>
     <div
@@ -60,6 +82,8 @@ const metadata: MetaData = {
       <slot />
     </div>
   </section>
+
+  <!-- Code of Conduct Section -->
   <section class="px-4 py-4 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
     <h3 class="font-semibold mb-4">Code of Conduct:</h3>
     This event is dedicated to providing a harassment-free experience for everyone, regardless of gender, gender identity
