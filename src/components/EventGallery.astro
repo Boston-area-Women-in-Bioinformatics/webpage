@@ -1,0 +1,38 @@
+---
+const { folder } = Astro.props;
+
+// ✅ 1. Static glob - hardcoded root path
+const allImages = import.meta.glob('/photos/**/*.{jpg,jpeg,png,gif}', { eager: true });
+
+// ✅ 2. Debug: see what files are loaded
+// console.log('ALL IMAGES:', Object.keys(allImages));
+
+// ✅ 3. Filter only images that match the provided folder
+const images = Object.entries(allImages)
+  .filter(([path]) => {
+    //console.log('Checking path:', path, 'against folder:', folder);
+    return path.includes(`/${folder}/`);
+  })
+  .sort(([a], [b]) => a.localeCompare(b));
+
+//console.log('FILTERED IMAGES:', images.map(([p]) => p));
+---
+
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+  {
+    images.map(([path]) => {
+      // Strip `/public` from the path for correct image URL
+      //const cleanPath = path.replace('/public', '');
+      return (
+        <div class="overflow-hidden rounded-lg shadow-md">
+          <img
+            src={path}
+            alt="Event photo"
+            class="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
+            loading="lazy"
+          />
+        </div>
+      );
+    })
+  }
+</div>

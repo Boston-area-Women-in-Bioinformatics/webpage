@@ -3,7 +3,10 @@ import { getCollection, render } from 'astro:content';
 import EventLayout from '~/layouts/EventLayout.astro';
 
 export async function getStaticPaths() {
+  // 1. Fetch all event entries from your Astro content collection (src/content/config.ts)
   const events = await getCollection('event');
+
+  // 2. Map each event to a static path
   return events.map((meeting) => ({
     params: { slug: meeting.id },
     props: { meeting },
@@ -23,6 +26,7 @@ const { Content } = await render(meeting);
   url={meeting.data.url}
   imgpos={meeting.data.imgpos}
   cost={meeting.data.cost}
+  gallery={meeting.data.gallery}
 >
   <Content />
 </EventLayout>
