@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink } from './utils/permalinks';
+import { getPermalink, getBlogPermalink, getNewsletterPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -18,6 +18,10 @@ export const headerData = {
           href: getPermalink('/about/committees'),
         },
       ],
+    },
+    {
+      text: 'Newsletter',
+      href: getNewsletterPermalink(),
     },
     {
       text: 'Team',
