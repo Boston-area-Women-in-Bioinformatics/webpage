@@ -132,6 +132,7 @@ If you want to add a header image that appears on every newsletter, you can add 
 If you want to add parameters to the newsletter markdown files, such as "issue number", you will need to also do the following:
 
 - add the new parameter to `newsLetterCollection` in `src/content/config.ts`
+- add the new parameter to the `Newsletter` type in `src/types.d.ts`
 - modify `getNormalizedNewsletter` function in `src/utils/newsletter.ts` to handle the new parameter.
 
 ## Add a video to the meetings archive
