@@ -8,6 +8,7 @@ export type Config = {
   i18n?: I18NConfig;
   apps?: {
     blog?: AppBlogConfig;
+    newsletter?: AppNewsletterConfig;
   };
   ui?: unknown;
   analytics?: unknown;
@@ -61,6 +62,26 @@ export interface AppBlogConfig {
     };
   };
   tag: {
+    isEnabled: boolean;
+    pathname: string;
+    robots: {
+      index: boolean;
+      follow: boolean;
+    };
+  };
+}
+export interface AppNewsletterConfig {
+  isEnabled: boolean;
+  postsPerPage: number;
+  post: {
+    isEnabled: boolean;
+    permalink: string;
+    robots: {
+      index: boolean;
+      follow: boolean;
+    };
+  };
+  list: {
     isEnabled: boolean;
     pathname: string;
     robots: {
@@ -172,6 +193,31 @@ const getAppBlog = (config: Config) => {
   return merge({}, _default, config?.apps?.blog ?? {}) as AppBlogConfig;
 };
 
+const getAppNewsletter = (config: Config) => {
+  const _default = {
+    isEnabled: false,
+    postsPerPage: 10,
+    post: {
+      isEnabled: true,
+      permalink: '/newsletter/%slug%',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    list: {
+      isEnabled: true,
+      pathname: 'newsletter',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+  };
+
+  return merge({}, _default, config?.apps?.newsletter ?? {}) as AppNewsletterConfig;
+};
+
 const getUI = (config: Config) => {
   const _default = {
     theme: 'system',
@@ -198,6 +244,7 @@ export default (config: Config) => ({
   I18N: getI18N(config),
   METADATA: getMetadata(config),
   APP_BLOG: getAppBlog(config),
+  APP_NEWSLETTER: getAppNewsletter(config),
   UI: getUI(config),
   ANALYTICS: getAnalytics(config),
 });

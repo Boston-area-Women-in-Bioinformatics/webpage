@@ -60,7 +60,6 @@ The markdown file should follow a specific format. In between the top two `---` 
 - `slug`: a unique identifier for the blog post, used in the URL
 - `excerpt`: appears on the website front page to describe the post
 - `image`: path to the image that will be displayed on the blog post page
-- `width` and `height` (optional): dimensions of the image in pixels
 - author information:
   - `author`: name of the SINGLE author of the blog post
   - `authorUrl`: URL to the author's LinkedIn profile
@@ -83,6 +82,58 @@ git add src/content/post/{newblog}.md
 #  Commit new changes
 git push -u origin <new-branch-name>
 ```
+
+## Add a new newsletter
+
+Here are the steps to add a new newsletter with git:
+
+```
+Clone the repository locally :
+git clone https://github.com/Boston-area-Women-in-Bioinformatics/webpage.git
+# List branches in a github repos :
+git branch
+# Be in main branch if not already
+git checkout main
+# Create a new branch :
+git checkout -b <new-branch-name>
+```
+
+After you enter a new branch, you need to create a markdown file in the `src/content/newsletter` directory.
+
+The markdown file should follow a specific format. In between the top two `---` you must fill out the parameters for the blog post. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The parameters include:
+
+- `publishDate`: date when the blog post was published, in ISO format (YYYY-MM -DDTHH:mm:ssZ)
+- `title`: name of the blog post
+- `excerpt`: appears on the website front page to describe the post
+- `image`: path to the image that will be displayed on the blog post page
+- `authors`: list of authors if there are multiple authors, each with their name and LinkedIn URL
+- `metadata`: additional metadata for SEO, including `title`, `description`, and `canonical` URL
+
+To add an image, upload it to the `public/photos` directory of your cloned repository. The image should be referenced in the markdown file using the `image` field in the metadata.
+
+After creating the markdown file and uploading the image, you can run the following commands to format the files and commit your changes:
+
+```
+# Run 'npx --prettier' to fix any astro specific formatting issues
+npx prettier --write src/content/post/{newblog}.md
+# Stage the changes to commit :
+git add /public/photos/<your_image_name>
+git add src/content/post/{newblog}.md
+#  Commit new changes
+git push -u origin <new-branch-name>
+```
+
+### Newsletter template
+
+To modify the newsletter template, go to `src/components/newsletter/SinglePost.astro`.
+
+If you want to add a header image that appears on every newsletter, you can add it in the `SinglePost.astro` file just below the author information section.
+
+If you want to add parameters to the newsletter markdown files, such as "issue number", you will need to also do the following:
+
+- add the new parameter to `newsLetterCollection` in `src/content/config.ts`
+- add the new parameter to the `Newsletter` type in `src/types.d.ts`
+- modify `getNormalizedNewsletter` function in `src/utils/newsletter.ts` to handle the new parameter.
 
 ## Add a video to the meetings archive
 
