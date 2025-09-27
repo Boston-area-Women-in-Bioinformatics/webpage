@@ -85,7 +85,7 @@ git push -u origin <new-branch-name>
 
 ## Add a new newsletter
 
-Here are the steps to add a new blogpost with git:
+Here are the steps to add a new newsletter with git:
 
 ```
 Clone the repository locally :
