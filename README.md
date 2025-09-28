@@ -119,7 +119,7 @@ git checkout main
 # Create a new branch :
 git checkout -b <new-branch-name>
 # Do the following to upload your image and edit team.js file
-## 1. Upload your image in this location of your cloned repo `/public/team/`
+## 1. Upload your image in this location of your cloned repo `/public/team/` (you may want to crop it to match the rest of the photos)
 ## 2. Edit the team.js  file (src/config/components/team.js) to populate your information
 # Run 'npx --prettier' to fix any astro specific formatting issues
 npx prettier --write src/config/components/team.js
