@@ -141,6 +141,21 @@ const team = {
         github: 'https://github.com/Alrfooh-Aysheh',
       },
     },
+    // Peili Zhang
+    {
+      name: 'Peili Zhang',
+      // Namelink: Member's Personal Website
+      //nameLink: '',
+      // Job Title
+      title: 'Co-chair, Sponsorship Committee',
+      // Leadership team member Photo
+      avatar: '/team/peili_zhang.jpg',
+      // Social links
+      social: {
+        linkedin: 'http://www.linkedin.com/in/peili-zhang',
+        //github: '#',
+      },
+    },
     // Sakina Saif
     {
       // Name: First and last name
@@ -198,6 +213,27 @@ const team = {
         linkedin: 'https://www.linkedin.com/in/samantha-klasfeld/',
         github: 'https://github.com/sklasfeld',
         bluesky: 'https://bsky.app/profile/sklasfeld.bsky.social',
+      },
+    },
+    // Kavya Prasad
+    {
+      // Name: First and last name
+      name: 'Kavya Prasad',
+      // Namelink: Member's Personal Website
+      nameLink: 'https://www.linkedin.com/in/prasadkavya',
+      // Job Title
+      title: 'Co-Chair, Bioinformatics Sisters',
+      // Leadership team member Photo
+      avatar: '/team/Kavya_Prasad.png',
+      // Social links
+      social: {
+        //website: '#',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/prasadkavya',
+        //github: '#',
+        //bluesky: '#',
       },
     },
     // Yaseswini Neelamraju
