@@ -141,6 +141,21 @@ const team = {
         github: 'https://github.com/Alrfooh-Aysheh',
       },
     },
+    // Peili Zhang
+    {
+      name: 'Peili Zhang',
+      // Namelink: Member's Personal Website
+      //nameLink: '',
+      // Job Title
+      title: 'Co-chair, Sponsorship Committee',
+      // Leadership team member Photo
+      avatar: '/team/peili_zhang.jpg',
+      // Social links
+      social: {
+        linkedin: 'http://www.linkedin.com/in/peili-zhang',
+        //github: '#',
+      },
+    },
     // Sakina Saif
     {
       // Name: First and last name
