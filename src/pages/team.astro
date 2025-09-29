@@ -2,7 +2,7 @@
 import { SITE } from '~/config/site/config.js';
 import Layout from '~/layouts/PageLayout.astro';
 import TeamWidget from '~/components/widgets/Team.jsx';
-import team from '~/config/components/team';
+import team, { exec } from '~/config/components/team';
 import ambassadors from '~/config/components/ambassadors';
 import alumni from '~/config/components/alumni';
 
@@ -15,6 +15,18 @@ const metadata = {
   description: SITE.description,
   dontUseTitleTemplate: true,
 };
+
+var execColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4';
+
+if (exec?.enabled === true) {
+  if (exec.members.length === 1) {
+    execColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1';
+  } else if (exec.members.length === 2) {
+    execColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2';
+  } else if (exec.members.length === 3) {
+    execColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3';
+  }
+}
 
 var teamColCss = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4';
 
@@ -59,6 +71,15 @@ if (alumni?.enabled === true) {
       <section>
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
           <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{exec.title}</h2>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{exec.description}</p>
+          </div>
+          <div class={execColCss}>
+            <TeamWidget members={exec.members} />
+          </div>
+        </div>
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+          <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{team.title}</h2>
             <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{team.description}</p>
           </div>
@@ -98,6 +119,15 @@ if (alumni?.enabled === true) {
       <section>
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
           <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{exec.title}</h2>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{exec.description}</p>
+          </div>
+          <div class={execColCss}>
+            <TeamWidget members={exec.members} />
+          </div>
+        </div>
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+          <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{team.title}</h2>
             <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{team.description}</p>
           </div>
@@ -128,6 +158,15 @@ if (alumni?.enabled === true) {
       <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
           <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{exec.title}</h2>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{exec.description}</p>
+          </div>
+          <div class={execColCss}>
+            <TeamWidget members={exec.members} />
+          </div>
+        </div>
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+          <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{team.title}</h2>
             <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{team.description}</p>
           </div>
@@ -154,6 +193,15 @@ if (alumni?.enabled === true) {
   team?.enabled && !ambassadors?.enabled && !alumni?.enabled && (
     <Layout {metadata}>
       <section class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+          <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{exec.title}</h2>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{exec.description}</p>
+          </div>
+          <div class={execColCss}>
+            <TeamWidget members={exec.members} />
+          </div>
+        </div>
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
           <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{team.title}</h2>

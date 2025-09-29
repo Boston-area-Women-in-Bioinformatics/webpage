@@ -1,11 +1,10 @@
 // Configuration for the leadership team component / page
-
-const team = {
+const exec = {
   // Whether the leadership team page is enabled or not
   enabled: true,
 
   // The title of the leadership team section
-  title: 'Our Organizers',
+  title: 'Our Executive Team',
 
   // The subtitle of the leadership team section
   description: 'Meet the organizers behind this organization',
@@ -236,6 +235,21 @@ const team = {
         //bluesky: '#',
       },
     },
+  ],
+};
+
+const team = {
+  // Whether the leadership team page is enabled or not
+  enabled: true,
+
+  // The title of the leadership team section
+  title: 'Our Committee Members',
+
+  // The subtitle of the leadership team section
+  description: 'Meet the team members who bring vision, creativity, and care to our committees',
+
+  // Members of the leadership team
+  members: [
     // Yaseswini Neelamraju
     {
       name: 'Yaseswini Neelamraju',
@@ -325,3 +339,6 @@ const team = {
 };
 
 export default team;
+
+// ✅ Named export for exec
+export { exec };
