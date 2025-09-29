@@ -3,6 +3,7 @@ publishDate: 2025-05-27T00:00:01Z
 title: 'Our First Newsletter'
 excerpt: 'First newsletter issue featuring spotlights and upcoming events'
 image: '~/assets/images/events/science_carnival_2025_1.jpg'
+imageDescription: 'Boston Women in Bioinformatics Booth @ Cambridge Science Carnival 2025'
 authors:
   - name: 'Sakina Saif, M.S.'
     url: 'https://www.linkedin.com/in/sakinasaif'
@@ -39,9 +40,10 @@ Ten years ago, I was sitting in a room full of bioinformaticians and realized I 
 ## Boston Women In Bioinformatics Celebrates 10-Year Anniversary
 
 Boston Women in Bioinformatics is celebrating our 10-year anniversary with an inspiring evening featuring four distinguished keynote speakers (Lorena Pantano, Eleanor Howe, Geraldine Van Der Auwera, and Grace Tiao), networking opportunities, and food.
-**Event Details:**
-Sept 30, 2025 @ 4PM ET
-Boynton Yards, Somerville
+
+**Event Details:**  
+Sept 30, 2025 @ 4PM ET  
+Boynton Yards, Somerville  
 More info: [boston-wib.org](https://boston-wib.org/events/tenyearanniversary)
 
 ## BWIB Organization
@@ -73,3 +75,14 @@ The Web Page committee manages the organization's website to share group informa
 ## Upcoming event(s)
 
 Upcoming Networking Events
+
+## Spotlight on Team Members
+
+![Team Member](/team/team.png)
+
+## Social Media
+
+- **Slack:** [Join our Slack](https://boston-women-bioinfo.slack.com)
+- **Email:** [Bostonwomeninbioinformatics@gmail.com](mailto:Bostonwomeninbioinformatics@gmail.com)
+- **LinkedIn:** [Boston-area Women in Bioinformatics](https://www.linkedin.com)
+- **Location:** Boston Area, Massachusetts
