@@ -1,5 +1,6 @@
 ---
 publishDate: 2025-09-29T00:00:01Z
+issue: 1
 title: 'Our First Newsletter'
 excerpt: 'First newsletter issue featuring spotlights and upcoming events'
 image: '~/assets/images/events/science_carnival_2025_1.jpg'

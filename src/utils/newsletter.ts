@@ -35,6 +35,7 @@ const getNormalizedNewsletter = async (newsletter: CollectionEntry<'newsletter'>
 
   const {
     publishDate: rawPublishDate = new Date(),
+    issue,
     title,
     excerpt,
     image,
@@ -61,7 +62,7 @@ const getNormalizedNewsletter = async (newsletter: CollectionEntry<'newsletter'>
     permalink: await generatePermalink({ id, slug, publishDate }),
 
     publishDate: publishDate,
-
+    issue: issue,
     title: title,
     excerpt: excerpt,
     image: image,

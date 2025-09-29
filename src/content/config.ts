@@ -77,6 +77,7 @@ const postCollection = defineCollection({
 const newsletterCollection = defineCollection({
   schema: z.object({
     publishDate: z.date(),
+    issue: z.number(),
     draft: z.boolean().optional(),
     title: z.string(),
     excerpt: z.string().optional(),
