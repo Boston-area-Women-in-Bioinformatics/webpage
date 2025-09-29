@@ -58,27 +58,27 @@ More info: [boston-wib.org](https://boston-wib.org/events/tenyearanniversary)
 
 ## BWIB Organization
 
-#### Advocacy
+#### 📣 Advocacy
 
 The Advocacy committee advances equity and inclusion within the field of bioinformatics by identifying systemic challenges and promoting data-driven strategies.
 
-#### Bioinformatics Sisters
+#### 👭🏻 Bioinformatics Sisters
 
 This committee supports and organizes Bioinformatics Sisters, a networking and mentoring platform designed to match participants based on shared goals, skills, and preferences.
 
-#### Communications
+#### 💬 Communications
 
 The Communications committee is responsible for managing, coordinating, and improving the flow of information by means of communicating to its members, other committees, and external groups. It ensures the organization is visible via various channels and oversees policies related to collaborations and public relations.
 
-#### Events
+#### 📅 Events
 
 The Events committee organizes and hosts professional and community-focused events from technical workshops to networking gatherings.
 
-#### Career Sponsorship
+#### 💙 Career Sponsorship
 
 The Career Sponsorship committee empowers women in bioinformatics to grow into leadership roles through focused mentorship, career advocacy, and access to professional networks.
 
-#### Web Page
+#### 🌐 Web Page
 
 The Web Page committee manages the organization's website to share group information, curate community resources, and promote events.
 
