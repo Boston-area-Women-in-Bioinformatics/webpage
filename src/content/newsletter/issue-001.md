@@ -101,9 +101,9 @@ This season, our community gathered across Greater Boston for a dynamic lineup o
 
 Tis the year of Byte and Bites lunch gatherings at Time Out Market, Watertown, Somerville, and CambridgeSide where we created space for spontaneous collaboration and new friendships.
 
-At our featured event, Jenn Felsted-Knight, PhD, ACC led a powerful session on Finding Alignment: Strategic Positioning for Career Resilience during Uncertain Times, where we explored how to decode employer needs, articulate our unique value, and turn market uncertainty into a competitive advantage.
+At our featured event, [Jenn Felsted-Knight, PhD, ACC](https://www.felstedcoaching.com/) led a powerful session on Finding Alignment: Strategic Positioning for Career Resilience during Uncertain Times, where we explored how to decode employer needs, articulate our unique value, and turn market uncertainty into a competitive advantage.
 
-We also hosted an Introduction to R Packages workshop, co-organized Lightning Talks with BCBB, and celebrated Women’s History Month with a special panel and networking event—generously sponsored by Eli Lilly and Company, Diamond Age Data Science, and our Boston-area Women in Bioinformatics partners.
+We also hosted an Introduction to R Packages workshop, co-organized Lightning Talks with [Boston Computational Biology and Bioinformatics](https://www.meetup.com/boston-computational-biology-and-bioinformatics-meetup/), and celebrated Women’s History Month with a special panel and networking event—generously sponsored by Eli Lilly and Company and [Diamond Age Data Science](https://diamondage.com/).
 
 And we brought our passion for science outreach to the public with a booth at the Cambridge Science Carnival, where we shared hands-on activities and inspired the next generation of bioinformaticians.
 
@@ -112,6 +112,8 @@ Thanks to everyone who joined us. We’re excited for what’s next!
 ---
 
 ## Committee Members Spotlight
+
+We are proud to recognize the dedicated volunteers who shape the vision and impact of Boston Women in Bioinformatics. Our volunteers make our community thrive by sharing their time, creativity, and passion for our mission in fostering an inclusive, collaborative scientific community.
 
 ![Team Member](/team/team.png)
 
