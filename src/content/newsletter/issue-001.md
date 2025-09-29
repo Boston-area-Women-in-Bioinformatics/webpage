@@ -93,7 +93,7 @@ The Web Page committee manages the organization's website to share group informa
 ## Events Recap
 
 <figure>
-  <img src="../src/assets/images/events/science_carnival_2025_1.jpg" alt="Boston Women in Bioinformatics Booth @ Cambridge Science Carnival 2025" />
+  <img src="/photos/2025/science_carnival_2025_1.jpg" alt="Boston Women in Bioinformatics Booth @ Cambridge Science Carnival 2025" />
 <figcaption>Boston Women in Bioinformatics Booth @ Cambridge Science Carnival 2025</figcaption>
 </figure>
 
