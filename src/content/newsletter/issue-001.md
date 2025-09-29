@@ -1,5 +1,5 @@
 ---
-publishDate: 2025-05-27T00:00:01Z
+publishDate: 2025-09-29T00:00:01Z
 title: 'Our First Newsletter'
 excerpt: 'First newsletter issue featuring spotlights and upcoming events'
 image: '~/assets/images/events/science_carnival_2025_1.jpg'
@@ -26,16 +26,22 @@ Welcome to the **first issue** of our newsletter! 🌟
 
 Here's what's inside this month:
 
-- Message from the Founder
-- Our 10-Year Anniversary
+- Welcome Note from the Founder
+- Ten-Year Anniversary Event
 - Inside our Organization Committees
-- Team Members Spotlight
+- Executive Board
+- Events
+- Committee Members Spotlight
 
-## Message from the Founder
+---
+
+## Welcome Note from the Founder
 
 ![Lorena Pantano](/team/lpantano.jpg)
 
 Ten years ago, I was sitting in a room full of bioinformaticians and realized I was the only woman there. That moment stayed with me—and soon after, with a few colleagues around a table at MIT, we started a simple Meetup page. What began as small, informal gatherings has grown into an energizing community of women, organizing seminars, networking events, and fireside chats. Over the years, different leaders have kept the group alive, and more recently, we became an official non-profit with dedicated volunteers shaping the future. But at the heart of it, this group has always been about community, support, opportunity, and visibility. From just a few women at the beginning, we’ve grown into a vibrant community of hundreds—a powerful sign of how much this space was needed. As we celebrate our 10th anniversary, I hope this community continues to help women grow their careers, find support, and feel seen. And I invite many of you to step into the organization, because this group has never been about a few of us—it has always been about all of us.
+
+---
 
 ## Boston Women In Bioinformatics Celebrates 10-Year Anniversary
 
@@ -45,6 +51,8 @@ Boston Women in Bioinformatics is celebrating our 10-year anniversary with an in
 Sept 30, 2025 @ 4PM ET  
 Boynton Yards, Somerville  
 More info: [boston-wib.org](https://boston-wib.org/events/tenyearanniversary)
+
+---
 
 ## BWIB Organization
 
@@ -72,17 +80,47 @@ The Career Sponsorship committee empowers women in bioinformatics to grow into l
 
 The Web Page committee manages the organization's website to share group information, curate community resources, and promote events.
 
-## Upcoming event(s)
+---
 
-Upcoming Networking Events
+## Executive Board
 
-## Spotlight on Team Members
+![Executive Board Team](/team/executiveBoard.png)
+
+---
+
+## Events
+
+### Recent Events
+
+![](~/assets/images/events/science_carnival_2025_1.jpg)
+_Boston Women in Bioinformatics Booth @ Cambridge Science Carnival 2025_
+
+This season, our community gathered across Greater Boston for a dynamic lineup of events celebrating connection, learning, and leadership. From casual meetups to career strategy sessions, we’ve been building momentum together.
+
+Tis the year of Byte and Bites lunch gatherings at Time Out Market, Watertown, Somerville, and CambridgeSide where we created space for spontaneous collaboration and new friendships.
+
+At our featured event, Jenn Felsted-Knight, PhD, ACC led a powerful session on Finding Alignment: Strategic Positioning for Career Resilience during Uncertain Times, where we explored how to decode employer needs, articulate our unique value, and turn market uncertainty into a competitive advantage.
+
+We also hosted an Introduction to R Packages workshop, co-organized Lightning Talks with BCBB, and celebrated Women’s History Month with a special panel and networking event—generously sponsored by Eli Lilly and Company, Diamond Age Data Science, and our Boston-area Women in Bioinformatics partners.
+
+And we brought our passion for science outreach to the public with a booth at the Cambridge Science Carnival, where we shared hands-on activities and inspired the next generation of bioinformaticians.
+
+Thanks to everyone who joined us. We’re excited for what’s next!
+
+### Upcoming Networking Events
+
+---
+
+## Spotlight on Committee Members
 
 ![Team Member](/team/team.png)
 
+---
+
 ## Social Media
 
-- **Slack:** [Join our Slack](https://boston-women-bioinfo.slack.com)
+- **Slack:** [boston-women-bioinfo](https://boston-women-bioinfo.slack.com)
 - **Email:** [Bostonwomeninbioinformatics@gmail.com](mailto:Bostonwomeninbioinformatics@gmail.com)
-- **LinkedIn:** [Boston-area Women in Bioinformatics](https://www.linkedin.com)
+- **LinkedIn:** [Boston-area Women in Bioinformatics](https://www.linkedin.com/company/boston-women-in-bioinformatics)
+- **Lu.ma:** [Boston Women in Bioinformatics](https://luma.com/bwib)
 - **Location:** Boston Area, Massachusetts
