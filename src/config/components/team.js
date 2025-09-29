@@ -132,7 +132,7 @@ const team = {
       // Namelink: Member's Personal Website
       //nameLink: '',
       // Job Title
-      title: 'Co-chair, Sponsorship Committee',
+      title: 'Co-chair, Career-Sponsorship Committee',
       // Leadership team member Photo
       avatar: '/team/aysheh.jpg',
       // Social links
@@ -147,7 +147,7 @@ const team = {
       // Namelink: Member's Personal Website
       //nameLink: '',
       // Job Title
-      title: 'Co-chair, Sponsorship Committee',
+      title: 'Co-chair, Career-Sponsorship Committee',
       // Leadership team member Photo
       avatar: '/team/peili_zhang.jpg',
       // Social links
@@ -294,6 +294,31 @@ const team = {
       // Social links
       social: {
         linkedin: 'https://www.linkedin.com/in/lakshmikc/',
+      },
+    },
+    // Masoome Rezaei
+    {
+      name: 'Masoome Rezaei',
+      nameLink: 'https://www.linkedin.com/in/masoome-rezaei',
+      title: 'Member, Newsletter Committee',
+      avatar: '/team/MasoomeRezaei.jpg',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/masoome-rezaei',
+      },
+    },
+    // Manonmani Kumar
+    {
+      name: 'Manonmani Kumar',
+      nameLink: 'http://www.linkedin.com/in/manonmani-kumar-9a9180a',
+      title: 'Member, Career-Sponsorship Committee',
+      avatar: '/team/ManonmaniKumar.jpg',
+      social: {
+        // website: '#',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'http://www.linkedin.com/in/manonmani-kumar-9a9180a',
+        github: 'https://github.com/Manonmania',
       },
     },
   ],
