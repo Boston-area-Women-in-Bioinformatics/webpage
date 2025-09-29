@@ -11,6 +11,7 @@ export interface Newsletter {
   slug: string;
   permalink: string;
   publishDate: Date;
+  issue: number;
   title: string;
   excerpt?: string;
   image?: ImageMetadata | string;
