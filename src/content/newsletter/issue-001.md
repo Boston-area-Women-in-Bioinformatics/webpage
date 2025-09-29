@@ -16,8 +16,6 @@ authors:
     url: 'https://www.linkedin.com/in/masoome-rezaei'
   - name: 'Lorena Pantano, Ph.D.'
     url: 'https://www.linkedin.com/in/lorenapantano'
-  - name: 'Diveena Becker, Ph.D.'
-    url: 'https://www.linkedin.com/in/diveena-becker'
 metadata:
   title: 'Our First Newsletter'
   description: 'First newsletter issue featuring spotlights and upcoming events'
@@ -28,17 +26,20 @@ Welcome to the **first issue** of our newsletter! 🌟
 Here's what's inside this month:
 
 - Welcome Note from the Founder
-- Ten-Year Anniversary Event
+- Boston Women In Bioinformatics Celebrates 10-Year Anniversary
 - Inside our Organization Committees
 - Executive Board
-- Events
+- Events Recap
 - Committee Members Spotlight
 
 ---
 
 ## Welcome Note from the Founder
 
-![Lorena Pantano](/team/lpantano.jpg)
+<figure>
+  <img src="/team/lpantano.jpg" alt="Lorena Pantano" />
+<figcaption>Lorena Pantano, Founder BWIB</figcaption>
+</figure>
 
 Ten years ago, I was sitting in a room full of bioinformaticians and realized I was the only woman there. That moment stayed with me—and soon after, with a few colleagues around a table at MIT, we started a simple Meetup page. What began as small, informal gatherings has grown into an energizing community of women, organizing seminars, networking events, and fireside chats. Over the years, different leaders have kept the group alive, and more recently, we became an official non-profit with dedicated volunteers shaping the future. But at the heart of it, this group has always been about community, support, opportunity, and visibility. From just a few women at the beginning, we’ve grown into a vibrant community of hundreds—a powerful sign of how much this space was needed. As we celebrate our 10th anniversary, I hope this community continues to help women grow their careers, find support, and feel seen. And I invite many of you to step into the organization, because this group has never been about a few of us—it has always been about all of us.
 
@@ -89,12 +90,12 @@ The Web Page committee manages the organization's website to share group informa
 
 ---
 
-## Events
+## Events Recap
 
-### Recent Events
-
-![](~/assets/images/events/science_carnival_2025_1.jpg)
-_Boston Women in Bioinformatics Booth @ Cambridge Science Carnival 2025_
+<figure>
+  <img src="../src/assets/images/events/science_carnival_2025_1.jpg" alt="Boston Women in Bioinformatics Booth @ Cambridge Science Carnival 2025" />
+<figcaption>Boston Women in Bioinformatics Booth @ Cambridge Science Carnival 2025</figcaption>
+</figure>
 
 This season, our community gathered across Greater Boston for a dynamic lineup of events celebrating connection, learning, and leadership. From casual meetups to career strategy sessions, we’ve been building momentum together.
 
@@ -108,11 +109,9 @@ And we brought our passion for science outreach to the public with a booth at th
 
 Thanks to everyone who joined us. We’re excited for what’s next!
 
-### Upcoming Networking Events
-
 ---
 
-## Spotlight on Committee Members
+## Committee Members Spotlight
 
 ![Team Member](/team/team.png)
 
