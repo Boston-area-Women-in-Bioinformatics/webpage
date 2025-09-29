@@ -1,9 +1,9 @@
 ---
 import Item from '~/components/newsletter/ListItem.astro';
-import type { Post } from '~/types';
+import type { Newsletter } from '~/types';
 
 export interface Props {
-  posts: Array<Post>;
+  posts: Array<Newsletter>;
 }
 
 const { posts } = Astro.props;
