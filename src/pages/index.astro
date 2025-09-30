@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import { SITE } from '~/config/site/config.js';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import LatestNewsletters from '~/components/widgets/LatestNewsletters.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 //import light_eventImg from '~/../public/photos/2025/WIB_10Year_whitebackground_bright_Logo3.png'; // adjust path as needed
@@ -111,6 +112,8 @@ const metadata = {
       used for community-driven research and programming.<br class="hidden md:inline" />[~5 min]
     </Fragment>
   </CallToAction>
+
+  <LatestNewsletters title="Catch Up on Our Latest Newsletter" />
 
   <BlogLatestPosts title="Check out our blogs" />
 

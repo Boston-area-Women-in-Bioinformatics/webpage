@@ -6,6 +6,24 @@ export interface PostAuthor {
   url?: string;
 }
 
+export interface Newsletter {
+  id: string;
+  slug: string;
+  permalink: string;
+  publishDate: Date;
+  issue: number;
+  title: string;
+  excerpt?: string;
+  image?: ImageMetadata | string;
+  imageDescription?: string;
+  authors?: PostAuthor[];
+  metadata?: MetaData;
+  draft?: boolean;
+  Content?: AstroComponentFactory;
+  content?: string;
+  readingTime?: number; // Total duration in seconds
+}
+
 export interface Post {
   /** A unique ID number that identifies a post. */
   id: string;
