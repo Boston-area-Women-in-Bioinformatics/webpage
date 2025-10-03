@@ -16,7 +16,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <section class="text-center pt-16 pb-8">
+  <section class="text-center py-16">
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 mx-auto leading-tight">
       Boston Women in
       <span class="text-accent dark:text-white highlight">Bioinformatics</span>
@@ -29,7 +29,7 @@ const metadata = {
   </section>
 
   <!-- Hero2 Widget ******************* -->
-  <div>
+  <div class="sm:my-8 md:my-16">
     <Hero2
       title="Celebrating 10 Years of Impact"
       subtitle="We're proud to mark a decade of innovation, community, and growth. Thank you for being part of our journey!"
@@ -65,27 +65,27 @@ const metadata = {
   </div>
 
   <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    title="Participate in Our Community Study"
-    actions={[
-      {
-        variant: 'primary',
-        target: '_blank',
-        text: 'Fill out our survey',
-        href: 'https://forms.gle/jhKy3hpYPf1WtC2s8',
-        icon: 'tabler:checkbox',
-      },
-    ]}
-  >
-    <Fragment slot="subtitle">
-      Are you a bioinformatician, computational biologist, or working in an adjacent field? Boston Women in
-      Bioinformatics (BWIB) is conducting a national survey to better understand the landscape of our field. This survey
-      is for everyone, not just women, and only takes ~5 minutes to complete. All responses are anonymous and will be
-      used for community-driven research and programming.<br class="hidden md:inline" />[~5 min]
-    </Fragment>
-  </CallToAction>
-
+  <div class="sm:my-8 md:my-16">
+    <CallToAction
+      title="Participate in Our Community Study"
+      actions={[
+        {
+          variant: 'primary',
+          target: '_blank',
+          text: 'Fill out our survey',
+          href: 'https://forms.gle/jhKy3hpYPf1WtC2s8',
+          icon: 'tabler:checkbox',
+        },
+      ]}
+    >
+      <Fragment slot="subtitle">
+        Are you a bioinformatician, computational biologist, or working in an adjacent field? Boston Women in
+        Bioinformatics (BWIB) is conducting a national survey to better understand the landscape of our field. This
+        survey is for everyone, not just women, and only takes ~5 minutes to complete. All responses are anonymous and
+        will be used for community-driven research and programming.<br class="hidden md:inline" />[~5 min]
+      </Fragment>
+    </CallToAction>
+  </div>
   <LatestNewsletters title="Catch Up on Our Latest Newsletter" />
 
   <BlogLatestPosts title="Check out our blogs" />
