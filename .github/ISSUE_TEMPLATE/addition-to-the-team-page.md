@@ -7,4 +7,9 @@ assignees: sklasfeld, Yaseswini
 
 ---
 
-Please upload the photo you want to use for the web-page with good enough quality and the role you have in the organization.
+Please upload the photo here
+
+Add links to linkedin and/or GitHub or other social media
+
+Add the role you have in the organization
+
