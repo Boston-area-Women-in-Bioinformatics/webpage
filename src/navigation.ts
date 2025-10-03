@@ -35,14 +35,14 @@ export const headerData = {
           text: 'Events List',
           href: getPermalink('/events'),
         },
-        {
-          text: '10th Year Anniversary',
-          href: getPermalink('/events/tenyearanniversary'),
-        },
-        {
-          text: 'Cambridge Science Carnival 2025',
-          href: getPermalink('/events/ama'),
-        },
+        //{
+        //  text: '10th Year Anniversary',
+        //  href: getPermalink('/events/tenyearanniversary'),
+        //},
+        //{
+        //  text: 'Cambridge Science Carnival 2025',
+        //  href: getPermalink('/events/ama'),
+        //},
         {
           text: 'Archived Events',
           href: getPermalink('/events/archived'),
