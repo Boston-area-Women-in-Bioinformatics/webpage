@@ -6,11 +6,8 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import LatestNewsletters from '~/components/widgets/LatestNewsletters.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-//import light_eventImg from '~/../public/photos/2025/WIB_10Year_whitebackground_bright_Logo3.png'; // adjust path as needed
-//import dark_eventImg from '~/../public/photos/2025/WIB_10Year_darkbackground_bright_Logo3.png'; // adjust path as needed
-
-import eventImg from '~/../public/photos/2025/genomicsFestival.jpg'; // adjust path as needed
-import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
+import eventImg from '~/../public/photos/2025/WIB_10Year_group_photo1.JPG'; // adjust path as needed
+//import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
 import Button from '~/components/ui/Button.astro';
 const metadata = {
   title: SITE.title,
@@ -19,30 +16,6 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- <Hero
-    tagline="Startup Web Demo"
-    actions={[
-      {
-        variant: 'primary',
-        target: '_blank',
-        text: 'Get templates',
-        href: 'https://github.com/onwidget/astrowind',
-        icon: 'tabler:download',
-      },
-      { text: 'Learn more', href: '#features' },
-    ]}
-  > -->
-  <!-- <Hero>
-    <Fragment slot="title">
-      Boston Women in
-      <span class="text-accent dark:text-white highlight">Bioinformatics</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Team up with <span class="font-semibold">US</span>, your pathway to elevating your career through leadership,
-      networking, and professional growth.
-    </Fragment>
-  </Hero> -->
   <section class="text-center pt-16 pb-8">
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 mx-auto leading-tight">
       Boston Women in
@@ -58,15 +31,15 @@ const metadata = {
   <!-- Hero2 Widget ******************* -->
   <div>
     <Hero2
-      title="Celebrate a Decade of Community and Empowerment"
-      subtitle="Join us for the 10th Anniversary of Women in Bioinformatics to honor ten years of community, mentorship, and career-building."
+      title="Celebrating 10 Years of Impact"
+      subtitle="We're proud to mark a decade of innovation, community, and growth. Thank you for being part of our journey!"
       image={{
         src: eventImg,
         alt: 'Women in Bioinformatics 10th Anniversary Event',
       }}
     >
       <Fragment slot="content">
-        <div class="grid sm:grid-cols-2 items-center sm:w-full">
+        <!--<div class="grid sm:grid-cols-2 items-center sm:w-full">
           <div class="flex sm:w-auto sm:my-0 my-4 mx-4 justify-center">
             <AddToCalendarButton
               client:only="react"
@@ -77,16 +50,16 @@ const metadata = {
               startTime="16:00"
               endTime="19:00"
             />
-          </div>
-          <div class="flex sm:w-auto sm:my-0 my-4 mx-4 justify-center">
-            <Button
-              variant="primary"
-              text="Learn More"
-              href="events/tenyearanniversary"
-              icon="tabler:square-rounded-arrow-right"
-            />
-          </div>
+          </div>-->
+        <div class="flex sm:w-auto sm:my-0 my-4 mx-4 justify-center">
+          <Button
+            variant="primary"
+            text="Event Photos"
+            href="https://photos.app.goo.gl/ZhqNmC1k4xfprUy46"
+            icon="tabler:square-rounded-arrow-right"
+          />
         </div>
+        <!--</div>-->
       </Fragment>
     </Hero2>
   </div>
