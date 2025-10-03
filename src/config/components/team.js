@@ -1,11 +1,10 @@
 // Configuration for the leadership team component / page
-
-const team = {
+const exec = {
   // Whether the leadership team page is enabled or not
   enabled: true,
 
   // The title of the leadership team section
-  title: 'Our Organizers',
+  title: 'Our Executive Team',
 
   // The subtitle of the leadership team section
   description: 'Meet the organizers behind this organization',
@@ -132,13 +131,28 @@ const team = {
       // Namelink: Member's Personal Website
       //nameLink: '',
       // Job Title
-      title: 'Co-chair, Sponsorship Committee',
+      title: 'Co-chair, Career-Sponsorship Committee',
       // Leadership team member Photo
       avatar: '/team/aysheh.jpg',
       // Social links
       social: {
         linkedin: 'https://www.linkedin.com/in/aysheh-alrfooh/',
         github: 'https://github.com/Alrfooh-Aysheh',
+      },
+    },
+    // Peili Zhang
+    {
+      name: 'Peili Zhang',
+      // Namelink: Member's Personal Website
+      //nameLink: '',
+      // Job Title
+      title: 'Co-chair, Career-Sponsorship Committee',
+      // Leadership team member Photo
+      avatar: '/team/peili_zhang.jpg',
+      // Social links
+      social: {
+        linkedin: 'http://www.linkedin.com/in/peili-zhang',
+        //github: '#',
       },
     },
     // Sakina Saif
@@ -200,6 +214,42 @@ const team = {
         bluesky: 'https://bsky.app/profile/sklasfeld.bsky.social',
       },
     },
+    // Kavya Prasad
+    {
+      // Name: First and last name
+      name: 'Kavya Prasad',
+      // Namelink: Member's Personal Website
+      nameLink: 'https://www.linkedin.com/in/prasadkavya',
+      // Job Title
+      title: 'Co-Chair, Bioinformatics Sisters',
+      // Leadership team member Photo
+      avatar: '/team/Kavya_Prasad.png',
+      // Social links
+      social: {
+        //website: '#',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/prasadkavya',
+        //github: '#',
+        //bluesky: '#',
+      },
+    },
+  ],
+};
+
+const team = {
+  // Whether the leadership team page is enabled or not
+  enabled: true,
+
+  // The title of the leadership team section
+  title: 'Our Committee Members',
+
+  // The subtitle of the leadership team section
+  description: 'Meet the team members who bring vision, creativity, and care to our committees',
+
+  // Members of the leadership team
+  members: [
     // Yaseswini Neelamraju
     {
       name: 'Yaseswini Neelamraju',
@@ -260,7 +310,35 @@ const team = {
         linkedin: 'https://www.linkedin.com/in/lakshmikc/',
       },
     },
+    // Masoome Rezaei
+    {
+      name: 'Masoome Rezaei',
+      nameLink: 'https://www.linkedin.com/in/masoome-rezaei',
+      title: 'Member, Newsletter Committee',
+      avatar: '/team/MasoomeRezaei.jpg',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/masoome-rezaei',
+      },
+    },
+    // Manonmani Kumar
+    {
+      name: 'Manonmani Kumar',
+      nameLink: 'http://www.linkedin.com/in/manonmani-kumar-9a9180a',
+      title: 'Member, Career-Sponsorship Committee',
+      avatar: '/team/ManonmaniKumar.jpg',
+      social: {
+        // website: '#',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'http://www.linkedin.com/in/manonmani-kumar-9a9180a',
+        github: 'https://github.com/Manonmania',
+      },
+    },
   ],
 };
 
 export default team;
+
+// ✅ Named export for exec
+export { exec };

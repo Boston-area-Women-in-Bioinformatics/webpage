@@ -74,6 +74,27 @@ const postCollection = defineCollection({
   }),
 });
 
+const newsletterCollection = defineCollection({
+  schema: z.object({
+    publishDate: z.date(),
+    issue: z.number(),
+    draft: z.boolean().optional(),
+    title: z.string(),
+    excerpt: z.string().optional(),
+    image: z.string().optional(),
+    imageDescription: z.string().optional(),
+    authors: z
+      .array(
+        z.object({
+          name: z.string(),
+          url: z.string().optional(),
+        })
+      )
+      .optional(),
+    metadata: metadataDefinition(),
+  }),
+});
+
 const eventCollection = defineCollection({
   // Load data from Markdown files on disk
   loader: glob({ pattern: '**/*.md', base: 'src/content/meetups' }),
@@ -95,4 +116,5 @@ const eventCollection = defineCollection({
 export const collections = {
   post: postCollection,
   event: eventCollection,
+  newsletter: newsletterCollection,
 };
