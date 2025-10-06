@@ -335,6 +335,18 @@ const team = {
         github: 'https://github.com/Manonmania',
       },
     },
+    // Marissa Sumathipala
+    {
+      name: 'Marissa Sumathipala',
+      nameLink: 'https://www.linkedin.com/in/marissa-sumathipala',
+      title: 'Member, Career-Sponsorship Committee',
+      avatar: '/team/MarissaSumathipala.jpg',
+      social: {
+        // website: '#',
+        linkedin: 'https://www.linkedin.com/in/marissa-sumathipala/',
+        //github: '#',
+      },
+    },
   ],
 };
 
