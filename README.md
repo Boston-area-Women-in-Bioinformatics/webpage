@@ -160,8 +160,10 @@ Collapse
 
 ## Add a team member
 
+1. Import this reposity to your local computer
+
 ```
-Clone the repository locally :
+# Clone the repository locally :
 git clone https://github.com/Boston-area-Women-in-Bioinformatics/webpage.git
 # List branches in a github repos :
 git branch
@@ -169,9 +171,19 @@ git branch
 git checkout main
 # Create a new branch :
 git checkout -b <new-branch-name>
-# Do the following to upload your image and edit team.js file
-## 1. Upload your image in this location of your cloned repo `/public/team/` (you may want to crop it to match the rest of the photos)
-## 2. Edit the team.js  file (src/config/components/team.js) to populate your information
+```
+
+2. Add headshot of team member image in this location of your cloned repo `/public/team/` (you may want to crop it to match the rest of the photos)
+
+3. Edit the team.js file (src/config/components/team.js) to populate your information
+
+- There are two different dictionary objects in this file. Fill in your information in the correct dictionary by using either ctrl+f for `const exec` or `const team`
+  - `exec` = execuctive team (co-chairs and chairs of committees)
+  - `team` = committee members
+
+4. Format the team.js file and stage changes for git
+
+```
 # Run 'npx --prettier' to fix any astro specific formatting issues
 npx prettier --write src/config/components/team.js
 # Stage the changes to commit (Assuming you are in the git folder)
@@ -180,7 +192,6 @@ git add ./src/config/components/team.js
 #  Commit new changes
 git commit -m "<Add committ message>"
 git push -u origin <new-branch-name>
-Collapse
 ```
 
 ## Update the banner that appears on every page
