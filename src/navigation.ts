@@ -52,6 +52,24 @@ export const headerData = {
     {
       text: 'Blog',
       href: getBlogPermalink(),
+      links: [
+        {
+          text: 'Blog List',
+          href: getBlogPermalink(),
+        },
+        {
+          text: 'Quick Takes',
+          href: getPermalink('quick-take', 'category'),
+        },
+        {
+          text: 'Deep Dives',
+          href: getPermalink('deep-dive', 'category'),
+        },
+        {
+          text: 'Podcasts',
+          href: getPermalink('podcast', 'category'),
+        },
+      ],
     },
     {
       text: 'Contact',
