@@ -27,6 +27,13 @@ const imgcss = 'h-72 w-full' + { imgpos };
 const metadata: MetaData = {
   title: frontmatter.title,
 };
+
+// split title if it contains a colon
+const title = frontmatter.title ?? 'New Event';
+const colonIndex = title.indexOf(':');
+const hasColon = colonIndex !== -1;
+const firstLine = hasColon ? title.slice(0, colonIndex + 1) : title;
+const secondLine = hasColon ? title.slice(colonIndex + 1).trim() : '';
 ---
 
 <Layout metadata={metadata}>
@@ -35,7 +42,9 @@ const metadata: MetaData = {
       <img src={imgsrc} alt={imgalt} class={imgcss} />
       <div class="p-1">
         <h2 class="text-2xl font-bold mb-2 font-heading leading-tighter tracking-tighter">
-          {frontmatter.title}
+          {firstLine}
+          {secondLine && <br />}
+          {secondLine}
         </h2>
         <div class="text-lg mb-4">
           <FormattedDate date={date} />
