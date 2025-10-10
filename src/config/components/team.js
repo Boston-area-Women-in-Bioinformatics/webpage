@@ -1,11 +1,10 @@
 // Configuration for the leadership team component / page
-
-const team = {
+const exec = {
   // Whether the leadership team page is enabled or not
   enabled: true,
 
   // The title of the leadership team section
-  title: 'Our Organizers',
+  title: 'Our Executive Team',
 
   // The subtitle of the leadership team section
   description: 'Meet the organizers behind this organization',
@@ -42,7 +41,7 @@ const team = {
       // Job Title
       title: 'Co-Chair',
       // Leadership team member Photo
-      avatar: 'team/Yevgenia.jpg',
+      avatar: '/team/Yevgenia.jpg',
       // Social links
       social: {
         linkedin: 'https://www.linkedin.com/in/yevgenia-khodor/',
@@ -78,7 +77,7 @@ const team = {
       // Job Title
       title: 'Co-Chair, Events Committee',
       // Leadership team member Photo
-      avatar: 'team/lina.jpg',
+      avatar: '/team/lina.jpg',
       // Social links
       social: {
         // website: '#',
@@ -132,13 +131,28 @@ const team = {
       // Namelink: Member's Personal Website
       //nameLink: '',
       // Job Title
-      title: 'Co-chair, Sponsorship Committee',
+      title: 'Co-chair, Career-Sponsorship Committee',
       // Leadership team member Photo
-      avatar: 'team/aysheh.jpg',
+      avatar: '/team/aysheh.jpg',
       // Social links
       social: {
         linkedin: 'https://www.linkedin.com/in/aysheh-alrfooh/',
         github: 'https://github.com/Alrfooh-Aysheh',
+      },
+    },
+    // Peili Zhang
+    {
+      name: 'Peili Zhang',
+      // Namelink: Member's Personal Website
+      //nameLink: '',
+      // Job Title
+      title: 'Co-chair, Career-Sponsorship Committee',
+      // Leadership team member Photo
+      avatar: '/team/peili_zhang.jpg',
+      // Social links
+      social: {
+        linkedin: 'http://www.linkedin.com/in/peili-zhang',
+        //github: '#',
       },
     },
     // Sakina Saif
@@ -169,7 +183,7 @@ const team = {
       // Job Title
       title: 'Co-chair, Communications Committee',
       // Leadership team member Photo
-      avatar: 'team/shreya_sq.jpg',
+      avatar: '/team/shreya_sq.jpg',
       // Social links
       social: {
         // website: '#',
@@ -186,7 +200,7 @@ const team = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/samantha-klasfeld/',
       // Job Title
-      title: 'Web Page Developer',
+      title: 'Chair, Web Page',
       // Leadership team member Photo
       avatar: '/team/samanthaklasfeld.jpeg',
       // Social links
@@ -200,6 +214,42 @@ const team = {
         bluesky: 'https://bsky.app/profile/sklasfeld.bsky.social',
       },
     },
+    // Kavya Prasad
+    {
+      // Name: First and last name
+      name: 'Kavya Prasad',
+      // Namelink: Member's Personal Website
+      nameLink: 'https://www.linkedin.com/in/prasadkavya',
+      // Job Title
+      title: 'Co-Chair, Bioinformatics Sisters',
+      // Leadership team member Photo
+      avatar: '/team/Kavya_Prasad.png',
+      // Social links
+      social: {
+        //website: '#',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/prasadkavya',
+        //github: '#',
+        //bluesky: '#',
+      },
+    },
+  ],
+};
+
+const team = {
+  // Whether the leadership team page is enabled or not
+  enabled: true,
+
+  // The title of the leadership team section
+  title: 'Our Committee Members',
+
+  // The subtitle of the leadership team section
+  description: 'Meet the team members who bring vision, creativity, and care to our committees',
+
+  // Members of the leadership team
+  members: [
     // Yaseswini Neelamraju
     {
       name: 'Yaseswini Neelamraju',
@@ -224,10 +274,25 @@ const team = {
       // Job Title
       title: 'Member, Communications Committee',
       // Leadership team member Photo
-      avatar: 'team/nishita-kalepalli.png',
+      avatar: '/team/nishita-kalepalli.png',
       // Social links
       social: {
         linkedin: 'https://www.linkedin.com/in/nishita-kalepalli/',
+      },
+    },
+    // Ozge Tasdemir Yilmaz
+    {
+      name: 'Ozge Tasdemir Yilmaz',
+      nameLink: 'http://linkedin.com/in/ozgeevrimtasdemiryilmaz',
+      title: 'Member, Events Committee',
+      avatar: '/team/Ozge_Tasdemir_Yilmaz.jpg',
+      social: {
+        // website: '#',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'http://linkedin.com/in/ozgeevrimtasdemiryilmaz',
+        // github: '#',
       },
     },
     // Lakshmi Kuttippurathu
@@ -239,13 +304,53 @@ const team = {
       // Job Title
       title: 'Member, Events Committee',
       // Leadership team member Photo
-      avatar: 'team/lakshmi1.jpg',
+      avatar: '/team/lakshmi1.jpg',
       // Social links
       social: {
         linkedin: 'https://www.linkedin.com/in/lakshmikc/',
+      },
+    },
+    // Masoome Rezaei
+    {
+      name: 'Masoome Rezaei',
+      nameLink: 'https://www.linkedin.com/in/masoome-rezaei',
+      title: 'Member, Newsletter Committee',
+      avatar: '/team/MasoomeRezaei.jpg',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/masoome-rezaei',
+      },
+    },
+    // Manonmani Kumar
+    {
+      name: 'Manonmani Kumar',
+      nameLink: 'http://www.linkedin.com/in/manonmani-kumar-9a9180a',
+      title: 'Member, Career-Sponsorship Committee',
+      avatar: '/team/ManonmaniKumar.jpg',
+      social: {
+        // website: '#',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'http://www.linkedin.com/in/manonmani-kumar-9a9180a',
+        github: 'https://github.com/Manonmania',
+      },
+    },
+    // Marissa Sumathipala
+    {
+      name: 'Marissa Sumathipala',
+      nameLink: 'https://www.linkedin.com/in/marissa-sumathipala',
+      title: 'Member, Career-Sponsorship Committee',
+      avatar: '/team/MarissaSumathipala.jpg',
+      social: {
+        // website: '#',
+        linkedin: 'https://www.linkedin.com/in/marissa-sumathipala/',
+        //github: '#',
       },
     },
   ],
 };
 
 export default team;
+
+// ✅ Named export for exec
+export { exec };

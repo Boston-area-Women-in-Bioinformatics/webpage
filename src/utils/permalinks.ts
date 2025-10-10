@@ -1,6 +1,6 @@
 import slugify from 'limax';
 
-import { SITE, APP_BLOG } from 'astrowind:config';
+import { SITE, APP_BLOG, APP_NEWSLETTER } from 'astrowind:config';
 
 import { trim } from '~/utils/utils';
 
@@ -24,8 +24,10 @@ export const cleanSlug = (text = '') =>
 export const BLOG_BASE = cleanSlug(APP_BLOG?.list?.pathname);
 export const CATEGORY_BASE = cleanSlug(APP_BLOG?.category?.pathname);
 export const TAG_BASE = cleanSlug(APP_BLOG?.tag?.pathname) || 'tag';
+export const NEWSLETTER_BASE = cleanSlug(APP_NEWSLETTER?.list?.pathname) || 'newsletter';
 
 export const POST_PERMALINK_PATTERN = trimSlash(APP_BLOG?.post?.permalink || `${BLOG_BASE}/%slug%`);
+export const NEWSLETTER_PERMALINK_PATTERN = trimSlash(APP_NEWSLETTER?.post?.permalink || `${NEWSLETTER_BASE}/%slug%`);
 
 /** */
 export const getCanonical = (path = ''): string | URL => {
@@ -61,6 +63,10 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       permalink = getBlogPermalink();
       break;
 
+    case 'newsletter':
+      permalink = getNewsletterPermalink();
+      break;
+
     case 'asset':
       permalink = getAsset(slug);
       break;
@@ -93,6 +99,9 @@ export const getHomePermalink = (): string => getPermalink('/');
 export const getBlogPermalink = (): string => getPermalink(BLOG_BASE);
 
 /** */
+export const getNewsletterPermalink = (): string => getPermalink(NEWSLETTER_BASE);
+
+/** */
 export const getAsset = (path: string): string =>
   '/' +
   [BASE_PATHNAME, path]
@@ -118,6 +127,8 @@ export const applyGetPermalinks = (menu: object = {}) => {
             obj[key] = getHomePermalink();
           } else if (menu[key].type === 'blog') {
             obj[key] = getBlogPermalink();
+          } else if (menu[key].type === 'newsletter') {
+            obj[key] = getNewsletterPermalink();
           } else if (menu[key].type === 'asset') {
             obj[key] = getAsset(menu[key].url);
           } else if (menu[key].url) {

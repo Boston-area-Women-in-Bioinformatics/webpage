@@ -41,10 +41,86 @@ if (speakers?.enabled === true) {
       10th Year Anniversary Event
     </h2>
     <p
-      class="text-xl text-muted md:mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter text-center"
+      class="text-xl text-muted mx-2 sm:mx-5 md:mx-10 md:mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter text-center"
     >
-      Join us in celebrating 10 years of community
+      Join us for a career session of four experienced speakers who will explore the realities of building a career in
+      life sciences and technology. They will share personal stories and practical insights on navigating career
+      options, managing psychological pressures, pivoting into new directions, learning from failure, seizing
+      opportunities, advocating for yourself, and overcoming workplace challenges.
     </p>
+
+    <div class="text-center">
+      <a
+        href="https://givebutter.com/BWIB10YRS"
+        class="inline-flex items-center justify-center my-8 px-8 py-4 rounded-full text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.6)] text-xl font-extrabold tracking-wide bg-gradient-to-r from-pink-500 via-amber-500 to-pink-500 shadow-lg shadow-pink-400/40 transition-all ease-in-out transform hover:scale-110 hover:rotate-1 hover:shadow-yellow-500/60 ring-4 ring-pink-300 dark:from-fuchsia-600 dark:via-amber-500 dark:to-fuchsia-600 dark:shadow-fuchsia-500/50 dark:ring-amber-500 dark:drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]"
+      >
+        🥳 Register Now! 🎉
+      </a>
+
+      <!-- Waitlist Sign-Up -->
+      <form id="waitlistForm">
+        <label>
+          <p class="text-red-500 text-xl my-4">
+            If registration is full, drop your email below and we’ll let you know if a spot opens up.
+          </p>
+          <input
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            id="userEmail"
+            placeholder="Enter your email"
+            required
+          />
+        </label>
+        <button
+          type="submit"
+          class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+          >Submit</button
+        >
+      </form>
+
+      <script is:inline>
+        const waitlistform = document.getElementById('waitlistForm');
+        waitlistform.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const email = document.getElementById('userEmail').value;
+          const formUrl =
+            'https://docs.google.com/forms/d/e/1FAIpQLSfZdeptnI2FS0RNrAjkbi3m2kkMTpmRe0LGjBKrNYT2iYQkVA/formResponse';
+          const waitlistdata = new FormData();
+
+          waitlistdata.append('entry.193147904', email);
+
+          fetch(formUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: waitlistdata,
+          })
+            .then(() => {
+              alert('Thanks! Your email was submitted to the waitlist.');
+              waitlistform.reset();
+            })
+            .catch((err) => {
+              console.error('Submission error:', err);
+              alert('Oops! Something went wrong.');
+            });
+        });
+      </script>
+
+      <div class="mx-auto max-w-xs w-full mt-20">
+        <!-- Light and Dark mode logos -->
+        <div class="block dark:hidden">
+          <img
+            src="/photos/2025/WIB_10Year_whitebackground_bright_Logo3.png"
+            alt="Women in Bioinformatics 10th Anniversary Eventlogo"
+          />
+        </div>
+        <div class="hidden dark:block">
+          <img
+            src="/photos/2025/WIB_10Year_darkbackground_bright_Logo3.png"
+            alt="Women in Bioinformatics 10th Anniversary Event logo"
+          />
+        </div>
+      </div>
+    </div>
     <div class="text-center pb-0 mx-auto">
       <!-- wrapped the location & calendar button next to each other -->
       <div class="grid sm:grid-cols-2 items-center justify-center">
@@ -52,6 +128,7 @@ if (speakers?.enabled === true) {
           <p>Date: Sept 30, 2025 @ 4PM ET</p>
           <!-- <p>Date:Date: September, 2025</p> -->
           <p>Location: Boynton Yards, Somerville</p>
+          <p class="font-semibold">Ticket Cost: $20.00</p>
         </div>
         <AddToCalendarButton
           client:only="react"
@@ -62,6 +139,65 @@ if (speakers?.enabled === true) {
           startTime="16:00"
           endTime="19:00"
         />
+      </div>
+    </div>
+    <!-- Agenda Table -->
+
+    <div class="min-h-screen flex flex-col items-center justify-center px-4 py-4">
+      <h2 class="text-3xl font-bold mb-3">Agenda</h2>
+
+      <div class="w-full max-w-xl overflow-x-auto">
+        <table
+          class="w-full text-left border border-gray-300 divide-y divide-gray-200 rounded-lg overflow-hidden shadow-md bg-white"
+        >
+          <thead class="bg-gray-100 font-semibold text-xl">
+            <tr>
+              <th class="px-4 py-3 text-right text-gray-700">Time</th>
+              <th class="px-8 py-3 text-gray-700">Activity</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 text-lg text-gray-800">
+            <tr>
+              <td class="px-4 py-3 text-right">4:00 PM – 4:20 PM</td>
+              <td class="px-8 py-3">Check in & Refreshments</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 text-right">4:20 PM – 4:25 PM</td>
+              <td class="px-8 py-3">Welcoming Remarks</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 text-right">4:25 PM – 5:10 PM</td>
+              <td class="px-8 py-3">Panel (3 speakers)</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 text-right">5:10 PM – 5:30 PM</td>
+              <td class="px-8 py-3">Closing and Q&A</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 text-right">5:30 PM</td>
+              <td class="px-8 py-3">Announce raffle winner</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 text-right">5:30 PM – 8:00 PM</td>
+              <td class="px-8 py-3">Networking and Activities</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Keynote speakers -->
+    <div>
+      <div class="px-4 mx-auto max-w-screen-xl text-center lg:py-2 lg:px-6">
+        <div class="mx-auto mb-8 max-w-screen-sm lg:mb-12">
+          <h3
+            class="mt-1 mb-1 sm:mt-0 text-3xl sm:text-4xl md:text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+          >
+            Keynote Speakers
+          </h3>
+        </div>
+        <div class={speakerColCss}>
+          <TeamWidget members={speakers.members} />
+        </div>
       </div>
     </div>
     <!--Sponsors -->
@@ -86,26 +222,11 @@ if (speakers?.enabled === true) {
       </div>
     </div> -->
 
-    <!-- Keynote speakers -->
-    <div>
-      <div class="px-4 mx-auto max-w-screen-xl text-center lg:py-2 lg:px-6">
-        <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
-          <h3
-            class="mt-1 mb-1 sm:mt-0 text-3xl sm:text-4xl md:text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white"
-          >
-            Keynote Speakers
-          </h3>
-        </div>
-        <div class={speakerColCss}>
-          <TeamWidget members={speakers.members} />
-        </div>
-      </div>
-    </div>
-    <!-- Email Sign-Up -->
+    <!-- Email Updates Sign-Up -->
 
     <div class="mb-8">
       <div
-        class="mx-auto max-w-screen-md dark:border dark:border-slate-600 dark:shadow-none p-6 rounded-md shadow-xl text-center"
+        class="mx-auto max-w-screen-md dark:border dark:border-slate-600 dark:shadow-none p-6 rounded-md shadow-xl text-center my-auto"
       >
         <div class="text-center mb-0 md:mb-0 md:mx-auto">
           <div class="mb-4 lg:mb-8">
@@ -115,14 +236,14 @@ if (speakers?.enabled === true) {
               Email Sign-Up
             </h3>
           </div>
-          <form id="emailForm">
+          <form id="emailUpdatesForm">
             <label>
               <p class="text-muted text-xl dark:text-slate-400 my-4">
                 Don't want to miss out? Add your email here for updates:
               </p>
               <input
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                id="userEmail"
+                id="updateeEmail"
                 placeholder="Enter your email"
                 required
               />
@@ -138,11 +259,11 @@ if (speakers?.enabled === true) {
     </div>
 
     <script is:inline>
-      const form = document.getElementById('emailForm');
-      form.addEventListener('submit', function (e) {
+      const updateform = document.getElementById('emailUpdatesForm');
+      updateform.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        const email = document.getElementById('userEmail').value;
+        const email = document.getElementById('updateeEmail').value;
         const formUrl =
           'https://docs.google.com/forms/d/e/1FAIpQLSfHST0fzrRqZO8zqq73QZEJIeKiN-WIdnkav-iaLzXWREF_SQ/formResponse';
         const data = new FormData();
@@ -156,7 +277,7 @@ if (speakers?.enabled === true) {
         })
           .then(() => {
             alert('Thanks! Your email was submitted.');
-            form.reset();
+            updateform.reset();
           })
           .catch((err) => {
             console.error('Submission error:', err);

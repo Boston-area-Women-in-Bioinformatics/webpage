@@ -40,7 +40,7 @@ const speakers = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/lpantano/',
       // Job Title
-      title: 'Co-chair & Founder of Women in Bioinformatics Boston Area',
+      title: 'Director of Platform @ Harvard Chan School | Co-chair & Founder of BWIB',
       // Leadership Leadership team member Photo
       avatar: '/team/lpantano.jpg',
       // Social links
@@ -59,10 +59,9 @@ const speakers = {
       // Name: First and last name
       name: 'Geraldine Van der Auwera',
       // Namelink: Ambassador's Personal Website
-      nameLink:
-        'https://media.licdn.com/dms/image/v2/C4D03AQF9umpthAuLTA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516255166236?e=1756339200&v=beta&t=30W12e8VKpeWDxZTNEo9GR4BXyu6XTjgigiHLvBNb9s',
+      nameLink: 'https://www.linkedin.com/in/geraldine-van-der-auwera-5a5811/',
       // Job Title
-      title: 'Lead Developer Advocate at Seqera',
+      title: 'Lead Developer Advocate at Seqera | Author of "Genomics in the Cloud" (OReilly, 2020)',
       // Ambassador Photo
       avatar: '/team/GeraldineVanderAuwera.jpeg',
       // Social links
@@ -76,23 +75,23 @@ const speakers = {
         //bluesky: '#',
       },
     },
-    // TBA
+    // Grace Tiao
     {
       // Name: First and last name
-      name: 'TBA',
+      name: 'Grace Tiao',
       // Namelink: Member's Personal Website
-      //nameLink: '#',
+      nameLink: 'https://www.linkedin.com/in/grace-tiao',
       // Job Title
-      //title: '#',
+      title: 'Co-founder and CEO of E9 Genomics',
       // Member Photo
-      avatar: '/photos/WIB_Logo.jpg',
+      avatar: '/team/GraceTiao.jpeg',
       // Social links
       social: {
         // website: '#',
         // twitter: ''#'',
         // instagram: '#',
         // facebook: '#',
-        //linkedin: '#',
+        linkedin: 'https://www.linkedin.com/in/grace-tiao',
         //github: '#',
         //bluesky: '#',
       },

@@ -6,6 +6,24 @@ export interface PostAuthor {
   url?: string;
 }
 
+export interface Newsletter {
+  id: string;
+  slug: string;
+  permalink: string;
+  publishDate: Date;
+  issue: number;
+  title: string;
+  excerpt?: string;
+  image?: ImageMetadata | string;
+  imageDescription?: string;
+  authors?: PostAuthor[];
+  metadata?: MetaData;
+  draft?: boolean;
+  Content?: AstroComponentFactory;
+  content?: string;
+  readingTime?: number; // Total duration in seconds
+}
+
 export interface Post {
   /** A unique ID number that identifies a post. */
   id: string;
@@ -184,6 +202,17 @@ export interface Testimonial {
   image?: string | unknown;
 }
 
+export interface QuestionAndAnswer {
+  question?: string;
+  submittedByName?: string;
+  submittedByTitle?: string; // For children use grade and/or school
+  answer?: string;
+  title?: string;
+  name?: string;
+  job?: string;
+  image?: string | ImageMetadata | unknown;
+}
+
 export interface Input {
   type: HTMLInputTypeAttribute;
   name: string;
@@ -259,6 +288,11 @@ export interface Pricing extends Omit<Headline, 'classes'>, Widget {
 
 export interface Testimonials extends Omit<Headline, 'classes'>, Widget {
   testimonials?: Array<Testimonial>;
+  callToAction?: CallToAction;
+}
+
+export interface QuestionsAndAnswers extends Omit<Headline, 'classes'>, Widget {
+  questionsandanswers?: Array<QuestionAndAnswer>;
   callToAction?: CallToAction;
 }
 

@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink } from './utils/permalinks';
+import { getPermalink, getBlogPermalink, getNewsletterPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -20,6 +20,10 @@ export const headerData = {
       ],
     },
     {
+      text: 'Newsletter',
+      href: getNewsletterPermalink(),
+    },
+    {
       text: 'Team',
       href: getPermalink('/team'),
     },
@@ -31,10 +35,14 @@ export const headerData = {
           text: 'Events List',
           href: getPermalink('/events'),
         },
-        {
-          text: '10th Year Anniversary',
-          href: getPermalink('/events/tenyearanniversary'),
-        },
+        //{
+        //  text: '10th Year Anniversary',
+        //  href: getPermalink('/events/tenyearanniversary'),
+        //},
+        //{
+        //  text: 'Cambridge Science Carnival 2025',
+        //  href: getPermalink('/events/ama'),
+        //},
         {
           text: 'Archived Events',
           href: getPermalink('/events/archived'),
@@ -44,10 +52,36 @@ export const headerData = {
     {
       text: 'Blog',
       href: getBlogPermalink(),
+      links: [
+        {
+          text: 'Blog List',
+          href: getBlogPermalink(),
+        },
+        {
+          text: 'Quick Takes',
+          href: getPermalink('quick-take', 'category'),
+        },
+        {
+          text: 'Podcasts',
+          href: getPermalink('podcast', 'category'),
+        },
+        {
+          text: 'Deep Dives',
+          href: getPermalink('deep-dive', 'category'),
+        },
+        {
+          text: 'Tutorials',
+          href: getPermalink('tutorial', 'category'),
+        },
+      ],
     },
     {
       text: 'Contact',
       href: getPermalink('/contact'),
+    },
+    {
+      text: 'Donate',
+      href: 'https://givebutter.com/BWIBdonate',
     },
     // {
     //   text: 'Homes',
@@ -234,6 +268,11 @@ export const footerData = {
       ariaLabel: 'Github',
       icon: 'tabler:brand-github',
       href: 'https://github.com/Boston-area-Women-in-Bioinformatics',
+    },
+    {
+      ariaLabel: 'X (formerly Twitter)',
+      icon: 'tabler:brand-x',
+      href: 'https://x.com/BWIBioinfo',
     },
   ],
   footNote: `Boston Women in Bioinformatics is a nonprofit, tax-exempt charitable organization under Section 501(c)(3) of the Internal Revenue Code. Donations are tax-deductible as allowed by law. Logos were designed by Siobhan Keegan and <a href="https://www.monikamistry.com/creative-design/">Monika Mistry</a>.`,

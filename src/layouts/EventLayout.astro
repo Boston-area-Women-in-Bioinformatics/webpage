@@ -16,9 +16,10 @@ export interface Props {
   imgalt: string;
   imgpos?: string;
   url?: string;
+  cost?: number;
 }
 
-const { frontmatter, date, location, url, imgsrc, imgalt, imgpos = 'object-top object-cover' } = Astro.props;
+const { frontmatter, date, location, url, imgsrc, imgalt, imgpos = 'object-top object-cover', cost } = Astro.props;
 
 // Using template literals
 const imgcss = 'h-72 w-full' + { imgpos };
@@ -26,6 +27,22 @@ const imgcss = 'h-72 w-full' + { imgpos };
 const metadata: MetaData = {
   title: frontmatter.title,
 };
+
+// if no title, use "New Event"
+const title = frontmatter.title ?? 'New Event';
+
+// Breaking Title After Colon or Dash
+
+// Find the first colon or dash
+const colonIndex = title.indexOf(':');
+const dashIndex = title.indexOf('-');
+
+// Choose the earliest one (if either exists)
+const breakIndex = [colonIndex, dashIndex].filter((i) => i !== -1).sort((a, b) => a - b)[0];
+
+const hasBreak = breakIndex !== undefined;
+const firstLine = hasBreak ? title.slice(0, breakIndex + 1) : title;
+const secondLine = hasBreak ? title.slice(breakIndex + 1).trim() : '';
 ---
 
 <Layout metadata={metadata}>
@@ -34,7 +51,9 @@ const metadata: MetaData = {
       <img src={imgsrc} alt={imgalt} class={imgcss} />
       <div class="p-1">
         <h2 class="text-2xl font-bold mb-2 font-heading leading-tighter tracking-tighter">
-          {frontmatter.title}
+          {firstLine}
+          {secondLine && <br />}
+          {secondLine}
         </h2>
         <div class="text-lg mb-4">
           <FormattedDate date={date} />
@@ -42,6 +61,7 @@ const metadata: MetaData = {
         <div class="text-lg mb-4">
           <EventAddress artists={location || []} />
         </div>
+        {cost !== undefined && <div class="text-lg font-semibold mb-4">Ticket Cost: ${cost.toFixed(2)}</div>}
         {date < new Date() ? ' ' : <Signup url={url} />}
       </div>
     </div>
@@ -51,8 +71,9 @@ const metadata: MetaData = {
     <h3 class="font-semibold mb-4">Details:</h3>
     <div
       class="prose dark:prose-invert
-  prose-h1:font-bold prose-h1:text-xl dark:prose-a:text-white
-  prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
+  prose-h1:font-bold prose-h1:text-xl
+ prose-a:underline hover:prose-a:text-blue-800
+  prose-p:text-justify prose-img:rounded-xl
   prose-headings:underline"
     >
       <slot />
@@ -65,8 +86,10 @@ const metadata: MetaData = {
     thereof), or technology choices. We do not tolerate harassment in any form. Anyone violating these rules may be sanctioned
     or banned from attending at the discretion of the conference organizers. Please contact the organizers through meet-up
     messaging/Slack, if you feel someone has broken the code of conduct.
-    <br /><br />Original source and credit:
-    <a href="http://2012.jsconf.us/#/about">http://2012.jsconf.us/#/about</a> &
-    <a href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy">The Ada Initiative</a>
+    <br /><br /><div class="prose prose-a:underline hover:prose-a:text-blue-800">
+      Original source and credit:
+      <a href="http://2012.jsconf.us/#/about">http://2012.jsconf.us/#/about</a> &
+      <a href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy">The Ada Initiative</a>
+    </div>
   </section>
 </Layout>
