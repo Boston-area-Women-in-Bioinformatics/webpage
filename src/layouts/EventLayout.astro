@@ -68,19 +68,19 @@ const secondLine = hasBreak ? title.slice(breakIndex + 1).trim() : '';
   </div>
 
   <section class="px-4 py-4 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
-    <h3 class="font-semibold mb-4">Details:</h3>
+    <h3 class="font-semibold mb-4 text-xl">Details:</h3>
     <div
       class="prose dark:prose-invert
   prose-h1:font-bold prose-h1:text-xl
  prose-a:underline hover:prose-a:text-blue-800
   prose-p:text-justify prose-img:rounded-xl
-  prose-headings:underline"
+  prose-headings:no-underline"
     >
       <slot />
     </div>
   </section>
   <section class="px-4 py-4 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
-    <h3 class="font-semibold mb-4">Code of Conduct:</h3>
+    <h3 class="font-semibold mb-4 text-xl">Code of Conduct:</h3>
     This event is dedicated to providing a harassment-free experience for everyone, regardless of gender, gender identity
     and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack
     thereof), or technology choices. We do not tolerate harassment in any form. Anyone violating these rules may be sanctioned
