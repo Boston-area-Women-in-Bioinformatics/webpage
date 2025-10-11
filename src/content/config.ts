@@ -103,6 +103,7 @@ const eventCollection = defineCollection({
     dateTime: z.coerce.date(),
     location: z.array(z.string()),
     url: z.string().optional(),
+    data_luma_event_id: z.string().optional(),
     image: z.object({
       src: z.string(),
       alt: z.string(),
