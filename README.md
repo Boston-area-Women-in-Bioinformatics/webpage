@@ -36,6 +36,15 @@ git add src/content/meetups/{newevent}.md
 git push -u origin <new-branch-name>
 ```
 
+### Event Page template
+
+To modify the event page template, go to `src/layouts/EventLayout.astro`.
+
+If you want to add parameters to the newsletter markdown files, such as "data-luma-event-id", you will need to also do the following:
+
+- add the new parameter to `eventCollection` in `src/content/config.ts`
+- add the new parameter to the `EventLayout` object in `src/pages/events/[...slug].astro`
+
 ## Add a new blog post
 
 Here are the steps to add a new blogpost with git:
