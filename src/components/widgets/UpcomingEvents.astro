@@ -36,7 +36,7 @@ const secondLine = hasBreak ? next_event.data.title.slice(breakIndex + 1).trim()
         <img
           src={next_event.data.image.src}
           alt={next_event.data.image.alt}
-          class={`mx-auto h-auto rounded-md hidden lg:block ${next_event.data.imgpos}`}
+          class={`border border-gray-200 dark:border-gray-700 mx-auto h-auto rounded-md hidden lg:block ${next_event.data.imgpos}`}
           transition:name="playlist ${event.id} image"
         />
       </div>
