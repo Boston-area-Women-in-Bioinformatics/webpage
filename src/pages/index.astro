@@ -9,6 +9,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import eventImg from '~/../public/photos/2025/WIB_10Year_group_photo1.jpg'; // adjust path as needed
 //import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
 import Button from '~/components/ui/Button.astro';
+import UpcomingEvents from '~/components/widgets/UpcomingEvents.astro';
 const metadata = {
   title: SITE.title,
   description: SITE.description,
@@ -64,7 +65,10 @@ const metadata = {
     </Hero2>
   </div>
 
-  <!-- CallToAction Widget *********** -->
+  <!-- UpcomingEvents Widget *********** -->
+
+  <UpcomingEvents />
+
   <div class="sm:my-8 md:my-16">
     <CallToAction
       title="Participate in Our Community Study"
