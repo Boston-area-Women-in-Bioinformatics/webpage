@@ -1,0 +1,82 @@
+---
+//import { splitEvents } from '~/content/utils.js'; // Import your event handling logic
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+//import { playlists } from '../utils/data';
+import FormattedDate from '~/components/FormattedDate.astro';
+import EventAddress from 'src/components/EventAddress.astro';
+//import { Icon } from 'astro-icon/components';
+
+const future_events = (
+  await getCollection('event', ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) > new Date())
+).sort((b, a) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
+
+const next_event = future_events[0];
+
+// Breaking Title After Colon or Dash
+
+// Find the first colon or dash
+const colonIndex = next_event.data.title.indexOf(':');
+const dashIndex = next_event.data.title.indexOf('-');
+
+// Choose the earliest one (if either exists)
+const breakIndex = [colonIndex, dashIndex].filter((i) => i !== -1).sort((a, b) => a - b)[0];
+
+const hasBreak = breakIndex !== undefined;
+const firstLine = hasBreak ? next_event.data.title.slice(0, breakIndex + 1) : next_event.data.title;
+const secondLine = hasBreak ? next_event.data.title.slice(breakIndex + 1).trim() : '';
+const image_class = `border border-gray-200 dark:border-gray-700 shadow mx-auto h-auto rounded-md ${next_event.data.imgpos}`;
+---
+
+{
+  future_events.length === 0 ? (
+    <div />
+  ) : (
+    <div class="relative m-auto max-w-6xl intersect-once intercept-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter lg:flex lg:items-center">
+      <div class="lg:w-2/5 {image_class}">
+        <img
+          src={next_event.data.image.src}
+          alt={next_event.data.image.alt}
+          class={`${image_class} hidden lg:block`}
+          transition:name="playlist ${event.id} image"
+        />
+      </div>
+      <div class="sm:p-4 w-full lg:w-2/3 text-center xs:text-left">
+        <h1
+          class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading intersect-once"
+          transition:name="playlist ${event.id} title"
+        >
+          Upcoming Event
+        </h1>
+        <h2
+          class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-tighter tracking-tighter mb-4 font-heading intersect-once"
+          transition:name="playlist ${event.id} title"
+        >
+          {firstLine}
+          {secondLine && <br />}
+          {secondLine}
+        </h2>
+        <div class="text-md sm:text-lg md:text-xl lg:text-2xl">
+          <div class="mb-4">
+            <FormattedDate date={next_event.data.dateTime} />
+          </div>
+          <div class="mb-4">
+            <EventAddress artists={next_event.data.location || []} />
+          </div>
+        </div>
+        <button
+          type="button"
+          class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+        >
+          <a href={`/events/${next_event.id}`}>MORE INFO</a>
+        </button>
+      </div>
+      <img
+        src={next_event.data.image.src}
+        alt={next_event.data.image.alt}
+        class={`${image_class}  block lg:hidden`}
+        transition:name="playlist ${event.id} image"
+      />
+    </div>
+  )
+}
