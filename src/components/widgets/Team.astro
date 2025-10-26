@@ -1,0 +1,98 @@
+---
+// Team component - displays team members with avatars and social links
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  members: Array<{
+    avatar?: string;
+    name: string;
+    nameLink?: string;
+    title?: string;
+    social?: {
+      website?: string;
+      instagram?: string;
+      facebook?: string;
+      twitter?: string;
+      bluesky?: string;
+      linkedin?: string;
+      github?: string;
+    };
+  }>;
+}
+
+const { members } = Astro.props;
+
+const defaultAvatar =
+  'https://user-images.githubusercontent.com/23362539/226121851-bf667217-0b92-4a5b-accd-07f0333741ca.png';
+---
+
+{
+  members.map((member) => (
+    <div class="text-center text-gray-500 dark:text-slate-400">
+      <img
+        class="mx-auto mb-4 w-36 h-36 rounded-full"
+        src={member?.avatar || defaultAvatar}
+        alt={`${member?.name} - avatar`}
+      />
+      <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        {member?.nameLink ? (
+          <a href={member.nameLink}>{member.name}</a>
+        ) : (
+          member.name
+        )}
+      </h3>
+      {member?.title && <p>{member.title}</p>}
+      <ul class="flex justify-center mt-4 space-x-4">
+        {member?.social?.website && (
+          <li>
+            <a href={member.social.website} class="text-social-linkedin hover:text-gray-900 dark:hover:text-white">
+              <Icon name="tabler:world-www" class="w-6 h-6" />
+            </a>
+          </li>
+        )}
+        {member?.social?.instagram && (
+          <li>
+            <a href={member.social.instagram} class="text-social-instagram hover:text-gray-900 dark:hover:text-white">
+              <Icon name="tabler:brand-instagram" class="w-6 h-6" />
+            </a>
+          </li>
+        )}
+        {member?.social?.facebook && (
+          <li>
+            <a href={member.social.facebook} class="text-social-facebook hover:text-gray-900 dark:hover:text-white">
+              <Icon name="tabler:brand-facebook" class="w-6 h-6" />
+            </a>
+          </li>
+        )}
+        {member?.social?.twitter && (
+          <li>
+            <a href={member.social.twitter} class="text-social-twitter hover:text-gray-900 dark:hover:text-white">
+              <Icon name="tabler:brand-twitter" class="w-6 h-6" />
+            </a>
+          </li>
+        )}
+        {member?.social?.bluesky && (
+          <li>
+            <a href={member.social.bluesky} class="text-social-bluesky hover:text-gray-900 dark:hover:text-white">
+              <Icon name="tabler:brand-bluesky" class="w-6 h-6" />
+            </a>
+          </li>
+        )}
+        {member?.social?.linkedin && (
+          <li>
+            <a href={member.social.linkedin} class="text-social-linkedin hover:text-gray-900 dark:hover:text-white">
+              <Icon name="tabler:brand-linkedin" class="w-6 h-6" />
+            </a>
+          </li>
+        )}
+        {member?.social?.github && (
+          <li>
+            <a href={member.social.github} class="text-social-github hover:text-gray-900 dark:hover:text-white">
+              <Icon name="tabler:brand-github" class="w-6 h-6" />
+            </a>
+          </li>
+        )}
+      </ul>
+    </div>
+  ))
+}
