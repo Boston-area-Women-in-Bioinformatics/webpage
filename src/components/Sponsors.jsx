@@ -1,11 +1,9 @@
 // src/components/SponsorSection.jsx
-import React from 'react';
-
 const SponsorSection = () => {
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 text-center pt-12 pb-6">
-        <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
+        <h2 className="text-2xl font-semibold text-gray-800 dark:text-slate-100 mb-6">
           <span class="gold">Gold </span> RNA Sponsor
         </h2>
         <a href="https://seqera.ia" target="_blank" rel="noopener noreferrer">
@@ -19,7 +17,7 @@ const SponsorSection = () => {
         </a>
       </div>
       <div className="max-w-6xl mx-auto px-4 text-center pb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
+        <h2 className="text-2xl font-semibold text-gray-800 dark:text-slate-100 mb-6">
           <span class="silver">Silver </span> DNA Sponsor
         </h2>
         <a href="https://www.nextrnatx.com/" target="_blank" rel="noopener noreferrer">

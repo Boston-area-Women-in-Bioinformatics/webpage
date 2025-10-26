@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 //import { playlists } from '../utils/data';
 import FormattedDate from '~/components/FormattedDate.astro';
 import EventAddress from 'src/components/EventAddress.astro';
+import Button from '~/components/ui/Button.astro';
 //import { Icon } from 'astro-icon/components';
 
 const future_events = (
@@ -64,12 +65,7 @@ const image_class = `border border-gray-200 dark:border-gray-700 shadow mx-auto 
             <EventAddress artists={next_event.data.location || []} />
           </div>
         </div>
-        <button
-          type="button"
-          class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
-        >
-          <a href={`/events/${next_event.id}`}>MORE INFO</a>
-        </button>
+        <Button variant="primary" href={`/events/${next_event.id}`} text="MORE INFO" />
       </div>
       <img
         src={next_event.data.image.src}

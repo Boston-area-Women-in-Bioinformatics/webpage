@@ -19,7 +19,7 @@ export default function Banner() {
   return (
     <div
       id="site-banner"
-      className="relative isolate flex items-center gap-x-6 overflow-hidden bg-violet-100 dark:bg-gray-600 px-6 py-2 sm:mb-16 sm:px-3.5 sm:before:flex-1"
+      className="relative isolate flex items-center gap-x-6 overflow-hidden bg-violet-100 dark:bg-slate-700 px-6 py-2 sm:mb-16 sm:px-3.5 sm:before:flex-1"
     >
       <div
         className="absolute top-1/2 left-[max(-7rem,calc(50%-52rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl"
@@ -55,7 +55,7 @@ export default function Banner() {
         </p>
         <a
           href="/events/tenyearanniversary"
-          className="flex-none rounded-full bg-accent dark:bg-white px-3.5 py-1 text-sm font-semibold text-white dark:text-gray-900 shadow-xs hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+          className="flex-none rounded-full bg-accent dark:bg-white px-3.5 py-1 text-sm font-semibold text-white dark:text-slate-900 shadow-xs hover:bg-gray-700 dark:hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
         >
           More information <span aria-hidden="true">&rarr;</span>
         </a>
