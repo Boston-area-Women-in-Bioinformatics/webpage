@@ -24,72 +24,81 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <section class="text-center py-16">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 mx-auto leading-tight">
-      Boston Women in
-      <span class="text-accent dark:text-white highlight">Bioinformatics</span>
-    </h1>
-
-    <p class="text-lg sm:text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-      Team up with <span class="font-semibold">US</span>, your pathway to elevating your career through leadership,
-      networking, and professional growth.
-    </p>
+  <!-- Hero Introduction Section -->
+  <section class="py-16 md:py-20 bg-white dark:bg-transparent">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
+        Boston Women in
+        <span class="text-accent dark:text-white highlight">Bioinformatics</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-700 dark:text-gray-300">
+        Team up with <span class="font-semibold">US</span>, your pathway to elevating your career through leadership,
+        networking, and professional growth.
+      </p>
+    </div>
   </section>
 
-  <!-- Hero2 Widget ******************* -->
-  <div class="sm:my-8 md:my-16">
-    <Hero2
-      title="Boston Women in Bioinformatics"
-      subtitle="Team up with US, your pathway to elevating your career through leadership, networking, and professional growth."
-      tagline="Celebrating 10 Years of Impact"
-      image={{
-        src: eventImg,
-        alt: 'Women in Bioinformatics 10th Anniversary Event',
-      }}
-    >
-      <Fragment slot="content">
-        <div class="flex gap-4 justify-center flex-wrap">
-          <Button
-            variant="primary"
-            text="Event Photos"
-            href="https://photos.app.goo.gl/ZhqNmC1k4xfprUy46"
-            icon="tabler:square-rounded-arrow-right"
-          />
-          <Button variant="secondary" text="Join Our Community" href="/contact" />
-        </div>
-      </Fragment>
-    </Hero2>
-  </div>
+  <!-- 10 Year Anniversary Section -->
+  <section class="py-16 md:py-20 bg-gray-50 dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <Hero2
+        title="Boston Women in Bioinformatics"
+        subtitle="Team up with US, your pathway to elevating your career through leadership, networking, and professional growth."
+        tagline="Celebrating 10 Years of Impact"
+        image={{
+          src: eventImg,
+          alt: 'Women in Bioinformatics 10th Anniversary Event',
+        }}
+      >
+        <Fragment slot="content">
+          <div class="flex gap-4 justify-center flex-wrap">
+            <Button
+              variant="primary"
+              text="Event Photos"
+              href="https://photos.app.goo.gl/ZhqNmC1k4xfprUy46"
+              icon="tabler:square-rounded-arrow-right"
+            />
+            <Button variant="secondary" text="Join Our Community" href="/contact" />
+          </div>
+        </Fragment>
+      </Hero2>
+    </div>
+  </section>
 
-  <!-- UpcomingEvents Widget *********** -->
+  <!-- Upcoming Events Section -->
+  <section class="py-16 md:py-20 bg-white dark:bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <UpcomingEvents />
+    </div>
+  </section>
 
-  <UpcomingEvents />
-
-  <!-- Community Survey Section *********** -->
-  <div class="sm:my-8 md:my-16">
-    <CallToAction
-      title="Participate in Our Community Study"
-      actions={[
-        {
-          variant: 'primary',
-          target: '_blank',
-          text: 'Fill out our survey',
-          href: 'https://forms.gle/jhKy3hpYPf1WtC2s8',
-          icon: 'tabler:checkbox',
-        },
-      ]}
-    >
-      <Fragment slot="subtitle">
-        Are you a bioinformatician, computational biologist, or working in an adjacent field? Boston Women in
-        Bioinformatics (BWIB) is conducting a national survey to better understand the landscape of our field. This
-        survey is for everyone, not just women, and only takes ~5 minutes to complete. All responses are anonymous and
-        will be used for community-driven research and programming.<br class="hidden md:inline" />[~5 min]
-      </Fragment>
-    </CallToAction>
-  </div>
+  <!-- Community Survey Section -->
+  <section class="py-16 md:py-20 bg-blue-50 dark:bg-slate-800">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <CallToAction
+        title="Participate in Our Community Study"
+        actions={[
+          {
+            variant: 'primary',
+            target: '_blank',
+            text: 'Fill out our survey',
+            href: 'https://forms.gle/jhKy3hpYPf1WtC2s8',
+            icon: 'tabler:checkbox',
+          },
+        ]}
+      >
+        <Fragment slot="subtitle">
+          Are you a bioinformatician, computational biologist, or working in an adjacent field? Boston Women in
+          Bioinformatics (BWIB) is conducting a national survey to better understand the landscape of our field. This
+          survey is for everyone, not just women, and only takes ~5 minutes to complete. All responses are anonymous and
+          will be used for community-driven research and programming.<br class="hidden md:inline" />[~5 min]
+        </Fragment>
+      </CallToAction>
+    </div>
+  </section>
 
   <!-- Latest Content Section -->
-  <section class="py-12 md:py-20">
+  <section class="py-16 md:py-20 bg-white dark:bg-transparent">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8 text-center">Latest from Our Community</h2>
 
@@ -179,18 +188,19 @@ const metadata = {
     </div>
   </section>
 
-  <Features2
-    title="Let's Connect!"
-    subtitle="Join our community and stay in touch"
-    columns={2}
-    classes={{
-      container: 'py-16',
-      headline: {
-        title: 'text-4xl md:text-5xl font-bold mb-4',
-        subtitle: 'text-xl'
-      }
-    }}
-    items={[
+  <!-- Let's Connect Section -->
+  <section class="py-16 md:py-20 bg-gray-50 dark:bg-slate-900">
+    <Features2
+      title="Let's Connect!"
+      subtitle="Join our community and stay in touch"
+      columns={2}
+      classes={{
+        headline: {
+          title: 'text-4xl md:text-5xl font-bold mb-4',
+          subtitle: 'text-xl'
+        }
+      }}
+      items={[
       // {
       //   title: 'General support',
       //   description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
@@ -241,7 +251,8 @@ const metadata = {
         icon: 'tabler:map-pin',
       },
     ]}
-  />
+    />
+  </section>
   <!-- <Fragment slot="image">
       <YouTube id="gxBkghlglTg" title="Astro just Launched.... Could it be the ultimate web framework?" />
       <style is:inline>
