@@ -20,7 +20,7 @@ This document describes the complete color system for the Boston Women in Bioinf
 | **Primary** | Blue | Blue | `rgb(1 97 239)` / `#0161EF` | Primary actions, links, accents |
 | **Secondary** | Dark Blue | Dark Blue | `rgb(1 84 207)` / `#0154CF` | Secondary actions, hover states |
 | **Accent** | Purple | Purple | `rgb(109 40 217)` / `#6D28D9` | Highlights, special elements |
-| **Accent Warm** | Coral/Pink | Coral/Pink | `#FF6B6B` | Warm highlights, CTAs, featured content - complements logo's rainbow spectrum |
+| **Accent Warm** | Orange | Lime Green | `#e36d1d` / `#84cc16` | Warm highlights, CTAs, featured content - automatically switches between orange (light) and lime (dark) |
 
 ### Sponsorship Tier Colors
 | Tier | Hex | Use Case |
@@ -54,10 +54,17 @@ All colors are defined in [`src/components/CustomStyles.astro`](src/components/C
 
 ### Brand Colors
 ```css
+/* Light Mode (:root) */
 --aw-color-primary: rgb(1 97 239);
 --aw-color-secondary: rgb(1 84 207);
 --aw-color-accent: rgb(109 40 217);
---aw-color-accent-warm: #FF6B6B; /* Coral/warm pink from logo rainbow */
+--aw-color-accent-warm: #e36d1d; /* Orange from logo rainbow */
+
+/* Dark Mode (.dark) */
+--aw-color-primary: rgb(1 97 239);
+--aw-color-secondary: rgb(1 84 207);
+--aw-color-accent: rgb(109 40 217);
+--aw-color-accent-warm: #84cc16; /* Lime green for dark mode - lime-500 */
 ```
 
 ### Sponsorship Tier Colors
@@ -213,7 +220,8 @@ All design tokens are exposed as Tailwind utility classes via [`tailwind.config.
 </button>
 
 <!-- Warm Accent Button (Warm tone - featured CTA) -->
-<button class="bg-accent-warm hover:bg-red-500 text-white px-6 py-3 rounded-full">
+<!-- Automatically coral in light mode, lime green in dark mode -->
+<button class="bg-accent-warm hover:bg-red-500 dark:hover:bg-lime-600 text-gray-900 px-6 py-3 rounded-full">
   Register Now
 </button>
 ```
@@ -262,10 +270,11 @@ All design tokens are exposed as Tailwind utility classes via [`tailwind.config.
 ### Example 5: Warm vs Cool Accent Usage
 ```astro
 <!-- Featured Event (use warm accent for emphasis) -->
+<!-- Note: bg-accent-warm automatically becomes lime green in dark mode -->
 <div class="border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 p-4">
   <h3 class="text-accent-warm font-bold">Featured: 10th Year Anniversary</h3>
   <p>Join us for our special celebration!</p>
-  <button class="bg-accent-warm hover:bg-red-500 text-white px-4 py-2 rounded-full">
+  <button class="bg-accent-warm hover:bg-red-500 dark:hover:bg-lime-600 text-gray-900 px-4 py-2 rounded-full">
     RSVP Now
   </button>
 </div>
@@ -461,11 +470,14 @@ Our color palette balances professional cool tones with warm accents inspired by
 
 ### Color Harmony Guidelines
 
-The warm accent (`#FF6B6B`) was chosen to:
-1. Complement the logo's warm rainbow tones (yellow, orange, coral, pink)
-2. Add visual warmth without overwhelming the professional blue/purple foundation
-3. Create hierarchy: warm = featured/urgent, cool = standard/professional
-4. Align with themes of diversity and community
+The warm accent color system was designed to:
+1. **Light Mode** (`#e36d1d` orange): Complement the logo's warm rainbow tones (yellow, orange, coral, pink)
+2. **Dark Mode** (`#84cc16` lime green): Provide high contrast and visibility on dark backgrounds
+3. Add visual warmth without overwhelming the professional blue/purple foundation
+4. Create hierarchy: warm = featured/urgent, cool = standard/professional
+5. Align with themes of diversity and community
+
+**Automatic Color Switching**: The `accent-warm` design token automatically switches from coral (light mode) to lime green (dark mode) via CSS custom properties. You don't need to add `dark:` variants manually - just use `bg-accent-warm` and it works!
 
 **Best Practice**: Use warm accent sparingly (10-20% of accent usage) to maintain its special emphasis effect.
 

@@ -20,21 +20,24 @@ All design tokens are defined in [`src/components/CustomStyles.astro`](src/compo
 
 ### Color Strategy
 
-Our color system balances **professional cool tones** (blue, purple) with a **warm accent** (coral/pink) that complements the WIB logo's rainbow spectrum:
+Our color system balances **professional cool tones** (blue, purple) with a **warm accent** that complements the WIB logo's rainbow spectrum:
 
 - **Cool accents** (`primary`, `secondary`, `accent`): Use for standard content, navigation, and professional elements
 - **Warm accent** (`accent-warm`): Use sparingly for featured content, high-priority CTAs, and diversity themes
+  - **Light mode**: Orange (`#e36d1d`)
+  - **Dark mode**: Lime green (`#84cc16`)
+  - **Auto-switching**: The design token automatically changes between modes - no need for `dark:` classes!
 
 See [COLOR_PALETTE.md - Color Strategy](COLOR_PALETTE.md#color-strategy-warm-vs-cool-accents) for detailed usage guidelines.
 
 ### Quick Token Reference
 
 ```css
-/* Brand Colors */
+/* Brand Colors - Light Mode */
 --aw-color-primary: rgb(1 97 239);     /* Blue - main brand color */
 --aw-color-secondary: rgb(1 84 207);   /* Dark blue - hover states */
 --aw-color-accent: rgb(109 40 217);    /* Purple - highlights */
---aw-color-accent-warm: #FF6B6B;       /* Coral/pink - featured content */
+--aw-color-accent-warm: #e36d1d;       /* Orange - featured content (auto-switches to lime in dark mode) */
 
 /* Spacing */
 --aw-spacing-section-sm: 2rem;      /* 32px */
@@ -283,9 +286,16 @@ The Button component uses the **primary** color by default (`#0161EF` blue). For
 
 **Featured/Warm Accent Button**:
 ```astro
-<!-- Use Tailwind classes to override with warm accent -->
-<Button variant="primary" href="/register" text="Register Now" class="bg-accent-warm hover:bg-red-500" />
+<!-- Automatically coral in light mode, lime green in dark mode -->
+<Button
+  variant="primary"
+  href="/register"
+  text="Register Now"
+  class="bg-accent-warm hover:bg-red-500 dark:hover:bg-lime-600 text-gray-900 border-accent-warm"
+/>
 ```
+
+**Note**: The `bg-accent-warm` class automatically switches between coral (`#FF6B6B`) in light mode and lime green (`#84cc16`) in dark mode. You only need to specify hover states for each mode.
 
 **When to use warm accent buttons**:
 - Featured events (e.g., 10th Anniversary)
@@ -547,14 +557,20 @@ import Button from '~/components/ui/Button.astro';
 
 ```astro
 <!-- Featured event with warm accent for emphasis -->
+<!-- Note: bg-accent-warm automatically becomes lime green in dark mode -->
 <div class="border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-lg shadow-lg p-6">
   <div class="flex items-start gap-2 mb-2">
-    <span class="bg-accent-warm text-white text-xs font-bold px-2 py-1 rounded">FEATURED</span>
+    <span class="bg-accent-warm text-gray-900 text-xs font-bold px-2 py-1 rounded">FEATURED</span>
     <h3 class="text-2xl font-bold text-accent-warm">10th Year Anniversary Celebration</h3>
   </div>
   <p class="text-muted mb-4">September 30th at Boynton Yards</p>
   <p class="mb-6">Join us for a special evening celebrating a decade of WIB...</p>
-  <Button variant="primary" href="/events/anniversary" text="Register Now" class="bg-accent-warm hover:bg-red-500" />
+  <Button
+    variant="primary"
+    href="/events/anniversary"
+    text="Register Now"
+    class="bg-accent-warm hover:bg-red-500 dark:hover:bg-lime-600 text-gray-900 border-accent-warm"
+  />
 </div>
 
 <!-- Standard event with cool accent -->

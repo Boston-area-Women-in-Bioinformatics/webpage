@@ -21,6 +21,7 @@ const buttonText = isDefault ? 'Link coming soon — click to subscribe to our c
           variant="primary"
           href={finalUrl}
           text="Register for Event"
+          class="bg-accent-warm dark:bg-accent-warm hover:bg-red-500 dark:hover:bg-lime-400 text-dark dark:text-black dark:hover:text-dark border-accent-warm hover:border-red-500 dark:border-lime-400 dark:hover:border-lime-400"
           data-luma-action="checkout"
           data-luma-event-id={data_luma_event_id}
         />
@@ -29,7 +30,12 @@ const buttonText = isDefault ? 'Link coming soon — click to subscribe to our c
     </>
   ) : (
     <center>
-      <Button variant="primary" href={finalUrl} text={buttonText} />
+      <Button
+        variant="primary"
+        href={finalUrl}
+        text={buttonText}
+        class="bg-accent-warm dark:bg-accent-warm hover:bg-red-500 dark:hover:bg-lime-400 text-dark dark:text-black dark:hover:text-dark border-accent-warm hover:border-red-500 dark:border-lime-400 dark:hover:border-lime-400"
+      />
     </center>
   )
 }
