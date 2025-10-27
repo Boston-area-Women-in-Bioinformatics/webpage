@@ -61,27 +61,35 @@ const secondLine = hasBreak ? title.slice(breakIndex + 1).trim() : '';
     <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
       <img src={imgsrc} alt={imgalt} class={imgcss} />
       <div class="p-1">
-        <h2 class="text-2xl font-bold mb-2 font-heading leading-tighter tracking-tighter">
+        <h2
+          class="text-2xl font-bold mb-2 font-heading leading-tighter tracking-tighter text-gray-900 dark:text-slate-100"
+        >
           {firstLine}
           {secondLine && <br />}
           {secondLine}
         </h2>
-        <div class="text-lg mb-4">
+        <div class="text-lg mb-4 text-gray-700 dark:text-slate-300">
           <FormattedDate date={date} />
         </div>
-        <div class="text-lg mb-4">
+        <div class="text-lg mb-4 text-gray-700 dark:text-slate-300">
           <EventAddress artists={location || []} />
         </div>
-        {cost !== undefined && <div class="text-lg font-semibold mb-4">Ticket Cost: ${cost.toFixed(2)}</div>}
+        {
+          cost !== undefined && (
+            <div class="text-lg font-semibold mb-4 text-gray-900 dark:text-slate-100">
+              Ticket Cost: ${cost.toFixed(2)}
+            </div>
+          )
+        }
         {date < new Date() ? ' ' : <Signup url={url} data_luma_event_id={data_luma_event_id} />}
       </div>
     </div>
   </div>
 
   <section class="px-4 py-4 sm:px-6 mx-auto lg:px-8 max-w-4xl">
-    <h3 class="font-semibold mb-4 text-xl">Details:</h3>
+    <h3 class="font-semibold mb-4 text-xl text-gray-900 dark:text-slate-100">Details:</h3>
     <div
-      class="prose dark:prose-invert
+      class="prose prose-lg dark:prose-invert max-w-none
   prose-h1:font-bold prose-h1:text-xl
  prose-a:underline hover:prose-a:text-blue-800
   prose-p:text-justify prose-img:rounded-xl
@@ -91,13 +99,15 @@ const secondLine = hasBreak ? title.slice(breakIndex + 1).trim() : '';
     </div>
   </section>
   <section class="px-4 py-4 sm:px-6 mx-auto lg:px-8 max-w-4xl">
-    <h3 class="font-semibold mb-4 text-xl">Code of Conduct:</h3>
-    This event is dedicated to providing a harassment-free experience for everyone, regardless of gender, gender identity
-    and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack
-    thereof), or technology choices. We do not tolerate harassment in any form. Anyone violating these rules may be sanctioned
-    or banned from attending at the discretion of the conference organizers. Please contact the organizers through lu.ma
-    messaging/Slack, if you feel someone has broken the code of conduct.
-    <br /><br /><div class="prose prose-a:underline hover:prose-a:text-blue-800">
+    <h3 class="font-semibold mb-4 text-xl text-gray-900 dark:text-slate-100">Code of Conduct:</h3>
+    <p class="text-gray-700 dark:text-slate-300">
+      This event is dedicated to providing a harassment-free experience for everyone, regardless of gender, gender
+      identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity,
+      religion (or lack thereof), or technology choices. We do not tolerate harassment in any form. Anyone violating
+      these rules may be sanctioned or banned from attending at the discretion of the conference organizers. Please
+      contact the organizers through lu.ma messaging/Slack, if you feel someone has broken the code of conduct.
+    </p>
+    <br /><br /><div class="prose prose-a:underline hover:prose-a:text-blue-800 dark:prose-invert">
       Original source and credit:
       <a href="http://2012.jsconf.us/#/about">http://2012.jsconf.us/#/about</a> &
       <a href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy">The Ada Initiative</a>

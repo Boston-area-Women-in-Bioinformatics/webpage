@@ -1,4 +1,6 @@
 ---
+import Button from '~/components/ui/Button.astro';
+
 interface Props {
   url?: string;
   data_luma_event_id?: string;
@@ -15,25 +17,25 @@ const buttonText = isDefault ? 'Link coming soon — click to subscribe to our c
   data_luma_event_id ? (
     <>
       <center class="mt-8">
-        <a
+        <Button
+          variant="primary"
           href={finalUrl}
-          class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+          text="Register for Event"
+          class="bg-accent-warm dark:bg-lime-400 hover:bg-red-500 dark:hover:bg-lime-500 text-dark dark:text-black hover:text-dark dark:hover:text-black border-accent-warm dark:border-lime-400 hover:border-red-500 dark:hover:border-lime-500"
           data-luma-action="checkout"
           data-luma-event-id={data_luma_event_id}
-        >
-          Register for Event
-        </a>
+        />
       </center>
-      <script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js" />
+      <script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js" is:inline />
     </>
   ) : (
     <center>
-      <button
-        type="button"
-        class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
-      >
-        <a href={finalUrl}>{buttonText}</a>
-      </button>
+      <Button
+        variant="primary"
+        href={finalUrl}
+        text={buttonText}
+        class="bg-accent-warm dark:bg-lime-400 hover:bg-red-500 dark:hover:bg-lime-500 text-dark dark:text-black hover:text-dark dark:hover:text-black border-accent-warm dark:border-lime-400 hover:border-red-500 dark:hover:border-lime-500"
+      />
     </center>
   )
 }

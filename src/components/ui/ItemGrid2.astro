@@ -2,7 +2,6 @@
 import type { ItemGrid as Props } from '~/types';
 import { Icon } from 'astro-icon/components';
 import { twMerge } from 'tailwind-merge';
-import Button from './Button.astro';
 
 const { items = [], columns, defaultIcon = '', classes = {} } = Astro.props;
 
@@ -32,28 +31,43 @@ const {
         containerClass
       )}
     >
-      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
-        <div
-          class={twMerge(
-            'relative flex flex-col intersect-once intersect-quarter intercept-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
-            panelClass,
-            itemClasses?.panel
-          )}
-        >
-          {(icon || defaultIcon) && (
-            <Icon name={icon || defaultIcon} class={twMerge('mb-2 w-10 h-10', defaultIconClass, itemClasses?.icon)} />
-          )}
-          <div class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</div>
-          {description && (
-            <p class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)} set:html={description} />
-          )}
-          {callToAction && (
-            <div class="mt-2">
-              <Button {...callToAction} />
+      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => {
+        const CardWrapper = callToAction?.href ? 'a' : 'div';
+        const cardProps = callToAction?.href
+          ? {
+              href: callToAction.href,
+              target: callToAction.target,
+              class: twMerge(
+                'relative flex flex-col intersect-once intersect-quarter intercept-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade cursor-pointer hover:shadow-2xl hover:scale-105 dark:hover:shadow-2xl dark:hover:shadow-lime-400/20 transition-all duration-300',
+                panelClass,
+                itemClasses?.panel
+              ),
+            }
+          : {
+              class: twMerge(
+                'relative flex flex-col intersect-once intersect-quarter intercept-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
+                panelClass,
+                itemClasses?.panel
+              ),
+            };
+
+        return (
+          <CardWrapper {...cardProps}>
+            {(icon || defaultIcon) && (
+              <Icon name={icon || defaultIcon} class={twMerge('mb-2 w-10 h-10', defaultIconClass, itemClasses?.icon)} />
+            )}
+            <div class={twMerge('text-xl font-bold text-gray-900 dark:text-slate-100', titleClass, itemClasses?.title)}>
+              {title}
             </div>
-          )}
-        </div>
-      ))}
+            {description && (
+              <p
+                class={twMerge('text-muted dark:text-slate-300 mt-2', descriptionClass, itemClasses?.description)}
+                set:html={description}
+              />
+            )}
+          </CardWrapper>
+        );
+      })}
     </div>
   )
 }
