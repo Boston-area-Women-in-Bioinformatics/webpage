@@ -1,0 +1,122 @@
+---
+/**
+ * SocialLinks Component
+ * Renders social media icons with consistent styling
+ *
+ * @param social - Object containing social media URLs
+ * @param size - Icon size ('sm' | 'md' | 'lg')
+ * @param layout - 'horizontal' | 'vertical'
+ * @param class - Additional custom classes
+ */
+
+import { Icon } from 'astro-icon/components';
+
+interface SocialMedia {
+  website?: string;
+  linkedin?: string;
+  twitter?: string;
+  bluesky?: string;
+  instagram?: string;
+  facebook?: string;
+  github?: string;
+  email?: string;
+}
+
+interface Props {
+  social: SocialMedia;
+  size?: 'sm' | 'md' | 'lg';
+  layout?: 'horizontal' | 'vertical';
+  class?: string;
+}
+
+const { social, size = 'md', layout = 'horizontal', class: customClass = '' } = Astro.props;
+
+// Size mappings
+const sizeClasses = {
+  sm: 'w-4 h-4',
+  md: 'w-6 h-6',
+  lg: 'w-8 h-8',
+};
+
+// Layout classes
+const layoutClasses = {
+  horizontal: 'flex space-x-4',
+  vertical: 'flex flex-col space-y-4',
+};
+
+// Social media configuration with icons and color classes from design system
+// Light mode: platform-specific colors, Dark mode: uniform blue
+const socialConfig = [
+  {
+    key: 'website',
+    icon: 'tabler:world-www',
+    colorClass: 'text-blue-600 dark:text-blue-400',
+    label: 'Website',
+  },
+  {
+    key: 'linkedin',
+    icon: 'tabler:brand-linkedin',
+    colorClass: 'text-social-linkedin dark:text-blue-400',
+    label: 'LinkedIn',
+  },
+  {
+    key: 'twitter',
+    icon: 'tabler:brand-twitter',
+    colorClass: 'text-social-twitter dark:text-blue-400',
+    label: 'Twitter',
+  },
+  {
+    key: 'bluesky',
+    icon: 'tabler:brand-bluesky',
+    colorClass: 'text-social-bluesky dark:text-blue-400',
+    label: 'Bluesky',
+  },
+  {
+    key: 'instagram',
+    icon: 'tabler:brand-instagram',
+    colorClass: 'text-social-instagram dark:text-blue-400',
+    label: 'Instagram',
+  },
+  {
+    key: 'facebook',
+    icon: 'tabler:brand-facebook',
+    colorClass: 'text-social-facebook dark:text-blue-400',
+    label: 'Facebook',
+  },
+  {
+    key: 'github',
+    icon: 'tabler:brand-github',
+    colorClass: 'text-gray-700 dark:text-blue-400',
+    label: 'GitHub',
+  },
+  {
+    key: 'email',
+    icon: 'tabler:mail',
+    colorClass: 'text-gray-700 dark:text-blue-400',
+    label: 'Email',
+  },
+];
+
+// Filter to only show configured social links
+const activeLinks = socialConfig.filter((config) => social[config.key as keyof SocialMedia]);
+---
+
+{
+  activeLinks.length > 0 && (
+    <ul class={`${layoutClasses[layout]} ${customClass}`}>
+      {activeLinks.map((link) => (
+        <li>
+          <a
+            href={social[link.key as keyof SocialMedia]}
+            class={`${link.colorClass} hover:text-gray-900 dark:hover:text-white transition-colors duration-200`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.label}
+          >
+            <Icon name={link.icon} class={sizeClasses[size]} />
+          </a>
+        </li>
+      ))}
+    </ul>
+  )
+}

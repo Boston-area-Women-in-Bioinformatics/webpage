@@ -1,0 +1,115 @@
+---
+/**
+ * FormField Component
+ * Standardized form input fields with consistent styling
+ *
+ * @param type - Input type ('text' | 'email' | 'password' | 'number' | 'textarea' | 'checkbox')
+ * @param name - Field name attribute
+ * @param id - Field id (defaults to name if not provided)
+ * @param label - Field label text
+ * @param placeholder - Placeholder text
+ * @param required - Whether field is required
+ * @param autocomplete - Autocomplete attribute
+ * @param rows - Number of rows for textarea (default: 4)
+ * @param class - Additional custom classes
+ * @param value - Default value
+ * @param helpText - Helper text shown below the field
+ */
+
+interface Props {
+  type?: 'text' | 'email' | 'password' | 'number' | 'textarea' | 'checkbox';
+  name: string;
+  id?: string;
+  label?: string;
+  placeholder?: string;
+  required?: boolean;
+  autocomplete?: string;
+  rows?: number;
+  class?: string;
+  value?: string;
+  helpText?: string;
+}
+
+const {
+  type = 'text',
+  name,
+  id = name,
+  label,
+  placeholder = '',
+  required = false,
+  autocomplete = 'on',
+  rows = 4,
+  class: customClass = '',
+  value = '',
+  helpText,
+} = Astro.props;
+
+// Base input styles from design system
+const baseInputClass =
+  'py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200';
+
+// Checkbox specific styles
+const checkboxClass = 'w-5 h-5 rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500';
+
+// Label styles
+const labelClass = 'block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2';
+
+// Help text styles
+const helpTextClass = 'mt-1 text-sm text-gray-500 dark:text-slate-400';
+---
+
+<div class={`mb-6 ${customClass}`}>
+  {
+    type === 'checkbox' ? (
+      // Checkbox layout
+      <div class="flex items-start">
+        <div class="flex items-center h-5">
+          <input type="checkbox" id={id} name={name} required={required} value={value} class={checkboxClass} />
+        </div>
+        {label && (
+          <div class="ml-3">
+            <label for={id} class="text-sm text-gray-700 dark:text-slate-300">
+              {label}
+              {required && <span class="text-red-500 dark:text-red-400 ml-1">*</span>}
+            </label>
+            {helpText && <p class={helpTextClass}>{helpText}</p>}
+          </div>
+        )}
+      </div>
+    ) : (
+      // Regular input/textarea layout
+      <>
+        {label && (
+          <label for={id} class={labelClass}>
+            {label}
+            {required && <span class="text-red-500 dark:text-red-400 ml-1">*</span>}
+          </label>
+        )}
+        {type === 'textarea' ? (
+          <textarea
+            id={id}
+            name={name}
+            placeholder={placeholder}
+            required={required}
+            rows={rows}
+            class={baseInputClass}
+          >
+            {value}
+          </textarea>
+        ) : (
+          <input
+            type={type}
+            id={id}
+            name={name}
+            placeholder={placeholder}
+            required={required}
+            autocomplete={autocomplete}
+            value={value}
+            class={baseInputClass}
+          />
+        )}
+        {helpText && <p class={helpTextClass}>{helpText}</p>}
+      </>
+    )
+  }
+</div>
