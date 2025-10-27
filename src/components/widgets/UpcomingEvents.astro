@@ -65,7 +65,12 @@ const image_class = `border border-gray-200 dark:border-gray-700 shadow mx-auto 
             <EventAddress artists={next_event.data.location || []} />
           </div>
         </div>
-        <Button variant="primary" href={`/events/${next_event.id}`} text="MORE INFO" />
+        <Button
+          variant="primary"
+          href={`/events/${next_event.id}`}
+          text="More Information"
+          icon="tabler:square-rounded-arrow-right"
+        />
       </div>
       <img
         src={next_event.data.image.src}
