@@ -2,14 +2,21 @@
 import Layout from '~/layouts/PageLayout.astro';
 import { SITE } from '~/config/site/config.js';
 import Hero2 from '~/components/widgets/Hero2.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import LatestNewsletters from '~/components/widgets/LatestNewsletters.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import eventImg from '~/../public/photos/2025/WIB_10Year_group_photo1.jpg'; // adjust path as needed
 //import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
 import Button from '~/components/ui/Button.astro';
 import UpcomingEvents from '~/components/widgets/UpcomingEvents.astro';
+import { findLatestNewsletters } from '~/utils/newsletter';
+import { findLatestPosts } from '~/utils/blog';
+import { APP_NEWSLETTER, APP_BLOG } from 'astrowind:config';
+import { getBlogPermalink } from '~/utils/permalinks';
+import Image from '~/components/common/Image.astro';
+
+const latestNewsletter = APP_NEWSLETTER.isEnabled ? (await findLatestNewsletters({ count: 1 }))[0] : null;
+const latestBlogs = APP_BLOG.isEnabled ? await findLatestPosts({ count: 4 }) : [];
+
 const metadata = {
   title: SITE.title,
   description: SITE.description,
@@ -32,35 +39,24 @@ const metadata = {
   <!-- Hero2 Widget ******************* -->
   <div class="sm:my-8 md:my-16">
     <Hero2
-      title="Celebrating 10 Years of Impact"
-      subtitle="We're proud to mark a decade of innovation, community, and growth. Thank you for being part of our journey!"
+      title="Boston Women in Bioinformatics"
+      subtitle="Team up with US, your pathway to elevating your career through leadership, networking, and professional growth."
+      tagline="Celebrating 10 Years of Impact"
       image={{
         src: eventImg,
         alt: 'Women in Bioinformatics 10th Anniversary Event',
       }}
     >
       <Fragment slot="content">
-        <!--<div class="grid sm:grid-cols-2 items-center sm:w-full">
-          <div class="flex sm:w-auto sm:my-0 my-4 mx-4 justify-center">
-            <AddToCalendarButton
-              client:only="react"
-              name="Boston Women in Bioinformatics 10 Year Anniversary"
-              location="Boynton Yards, Somerville"
-              startDate="2025-09-30"
-              endDate="2025-09-30"
-              startTime="16:00"
-              endTime="19:00"
-            />
-          </div>-->
-        <div class="flex sm:w-auto sm:my-0 my-4 mx-4 justify-center">
+        <div class="flex gap-4 justify-center flex-wrap">
           <Button
             variant="primary"
             text="Event Photos"
             href="https://photos.app.goo.gl/ZhqNmC1k4xfprUy46"
             icon="tabler:square-rounded-arrow-right"
           />
+          <Button variant="secondary" text="Join Our Community" href="/contact" />
         </div>
-        <!--</div>-->
       </Fragment>
     </Hero2>
   </div>
@@ -90,9 +86,93 @@ const metadata = {
       </Fragment>
     </CallToAction>
   </div>
-  <LatestNewsletters title="Catch Up on Our Latest Newsletter" />
+  <!-- Latest Content Section -->
+  <section class="py-12 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8 text-center">
+        Latest from Our Community
+      </h2>
 
-  <BlogLatestPosts title="Check out our blogs" />
+      <!-- Featured Newsletter -->
+      {latestNewsletter && (
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold mb-6">Latest Newsletter</h3>
+          <article class="grid md:grid-cols-2 gap-6 bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
+            {latestNewsletter.image && (
+              <a href={latestNewsletter.permalink} class="block">
+                <Image
+                  src={latestNewsletter.image}
+                  alt={latestNewsletter.title}
+                  class="w-full h-full object-cover"
+                  widths={[400, 768]}
+                  width={768}
+                  height={512}
+                  sizes="(max-width: 768px) 400px, 768px"
+                  loading="lazy"
+                />
+              </a>
+            )}
+            <div class="p-6 flex flex-col justify-center">
+              <h4 class="text-2xl font-bold mb-3">
+                <a
+                  href={latestNewsletter.permalink}
+                  class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
+                >
+                  {latestNewsletter.title}
+                </a>
+              </h4>
+              {latestNewsletter.excerpt && (
+                <p class="text-muted dark:text-slate-400 text-lg mb-4">{latestNewsletter.excerpt}</p>
+              )}
+              <div class="mt-auto">
+                <Button variant="link" href={latestNewsletter.permalink}>
+                  Read more »
+                </Button>
+              </div>
+            </div>
+          </article>
+        </div>
+      )}
+
+      <!-- Recent Blog Posts -->
+      <div>
+        <h3 class="text-2xl font-bold mb-6">Recent Blog Posts</h3>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {latestBlogs.map((post) => (
+            <article class="flex flex-col">
+              {post.image && (
+                <a href={post.permalink} class="block mb-4">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    class="w-full rounded shadow-lg"
+                    widths={[400, 900]}
+                    width={400}
+                    height={400}
+                    sizes="(max-width: 900px) 400px, 900px"
+                    loading="lazy"
+                  />
+                </a>
+              )}
+              <h4 class="text-xl font-bold leading-tight">
+                <a
+                  href={post.permalink}
+                  class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
+                >
+                  {post.title}
+                </a>
+              </h4>
+            </article>
+          ))}
+        </div>
+        <div class="text-center mt-8">
+          <Button variant="link" href={getBlogPermalink()}>
+            View all blog posts »
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <Features2
     title="Let's Connect!"
