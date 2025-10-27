@@ -25,11 +25,11 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Introduction Section -->
-  <section class="py-16 md:py-20 bg-white dark:bg-transparent">
+  <section class="py-16 md:py-20 bg-white dark:bg-dark">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl dark:text-gray-100 font-bold mb-4 leading-tight">
         Boston Women in
-        <span class="text-accent dark:text-white highlight">Bioinformatics</span>
+        <span class="text-accent dark:text-gray-100 highlight">Bioinformatics</span>
       </h1>
       <p class="text-lg sm:text-xl text-gray-700 dark:text-gray-300">
         Team up with <span class="font-semibold">US</span>, your pathway to elevating your career through leadership,
@@ -39,7 +39,7 @@ const metadata = {
   </section>
 
   <!-- 10 Year Anniversary Section -->
-  <section class="py-16 md:py-20 bg-gray-50 dark:bg-slate-900">
+  <section class="py-16 md:py-20 bg-gray-50 dark:bg-slate-800">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <Hero2
         title="Boston Women in Bioinformatics"
@@ -66,7 +66,7 @@ const metadata = {
   </section>
 
   <!-- Upcoming Events Section -->
-  <section class="py-16 md:py-20 bg-white dark:bg-transparent">
+  <section class="py-16 md:py-20 bg-white dark:bg-dark dark:text-gray-200">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <UpcomingEvents />
     </div>
@@ -74,31 +74,33 @@ const metadata = {
 
   <!-- Community Survey Section -->
   <section class="py-16 md:py-20 bg-blue-50 dark:bg-slate-800">
-    <div class="max-w-7xl mx-auto px-4 md:px-6">
-      <CallToAction
-        title="Participate in Our Community Study"
-        actions={[
-          {
-            variant: 'primary',
-            target: '_blank',
-            text: 'Fill out our survey',
-            href: 'https://forms.gle/jhKy3hpYPf1WtC2s8',
-            icon: 'tabler:checkbox',
-          },
-        ]}
-      >
-        <Fragment slot="subtitle">
+    <CallToAction
+      title="Participate in Our Community Study"
+      actions={[
+        {
+          variant: 'primary',
+          target: '_blank',
+          text: 'Fill out our survey',
+          href: 'https://forms.gle/jhKy3hpYPf1WtC2s8',
+          icon: 'tabler:checkbox',
+        },
+      ]}
+    >
+      <Fragment slot="subtitle">
+        <span class="text-gray-700 dark:text-gray-300">
           Are you a bioinformatician, computational biologist, or working in an adjacent field? Boston Women in
-          Bioinformatics (BWIB) is conducting a national survey to better understand the landscape of our field. This
-          survey is for everyone, not just women, and only takes ~5 minutes to complete. All responses are anonymous and
-          will be used for community-driven research and programming.<br class="hidden md:inline" />[~5 min]
-        </Fragment>
-      </CallToAction>
-    </div>
+          Bioinformatics (BWIB) is conducting a national survey to better understand the landscape of our field.
+          This survey is for everyone, not just women, and only takes ~5 minutes to complete. All responses are
+          anonymous and will be used for community-driven research and programming.<br
+            class="hidden md:inline"
+          />[~5 min]
+        </span>
+      </Fragment>
+    </CallToAction>
   </section>
 
   <!-- Latest Content Section -->
-  <section class="py-16 md:py-20 bg-white dark:bg-transparent">
+  <section class="py-16 md:py-20 dark:bg-dark dark:text-gray-200">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8 text-center">Latest from Our Community</h2>
 
@@ -133,7 +135,7 @@ const metadata = {
                     </a>
                   </h4>
                   {latestNewsletter.excerpt && (
-                    <p class="text-muted dark:text-slate-400 text-base mb-4">{latestNewsletter.excerpt}</p>
+                    <p class="text-muted dark:text-dark text-base mb-4">{latestNewsletter.excerpt}</p>
                   )}
                   <Button variant="link" href={latestNewsletter.permalink}>
                     Read more »
@@ -174,7 +176,7 @@ const metadata = {
                         {post.title}
                       </a>
                     </h4>
-                    {post.excerpt && <p class="text-muted dark:text-slate-400 text-xs line-clamp-2">{post.excerpt}</p>}
+                    {post.excerpt && <p class="text-muted dark:text-dark text-xs line-clamp-2">{post.excerpt}</p>}
                   </div>
                 </article>
               ))
@@ -189,7 +191,7 @@ const metadata = {
   </section>
 
   <!-- Let's Connect Section -->
-  <section class="py-16 md:py-20 bg-gray-50 dark:bg-slate-900">
+  <section class="py-16 md:py-20 bg-gray-50 dark:bg-slate-800">
     <Features2
       title="Let's Connect!"
       subtitle="Join our community and stay in touch"
@@ -197,60 +199,60 @@ const metadata = {
       classes={{
         headline: {
           title: 'text-4xl md:text-5xl font-bold mb-4',
-          subtitle: 'text-xl'
-        }
+          subtitle: 'text-xl dark:text-gray-200',
+        },
       }}
       items={[
-      // {
-      //   title: 'General support',
-      //   description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      // },
-      // {
-      //   title: 'Contact sales',
-      //   description:
-      //     'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
-      // },
-      // {
-      //   title: 'Technical support',
-      //   description:
-      //     'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
-      // },
-      {
-        title: 'Slack',
-        icon: 'tabler:brand-slack',
-        callToAction: {
-          target: '_blank',
-          text: 'https://boston-women-bioinfo.slack.com',
-          href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ',
-          variant: 'link',
+        // {
+        //   title: 'General support',
+        //   description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
+        // },
+        // {
+        //   title: 'Contact sales',
+        //   description:
+        //     'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
+        // },
+        // {
+        //   title: 'Technical support',
+        //   description:
+        //     'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
+        // },
+        {
+          title: 'Slack',
+          icon: 'tabler:brand-slack',
+          callToAction: {
+            target: '_blank',
+            text: 'https://boston-women-bioinfo.slack.com',
+            href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ',
+            variant: 'link',
+          },
         },
-      },
-      {
-        title: 'Email',
-        icon: 'tabler:mail',
-        callToAction: {
-          target: '_blank',
-          text: 'Bostonwomeninbioinformatics@gmail.com',
-          href: 'mailto:Bostonwomeninbioinformatics@gmail.com',
-          variant: 'link',
+        {
+          title: 'Email',
+          icon: 'tabler:mail',
+          callToAction: {
+            target: '_blank',
+            text: 'Bostonwomeninbioinformatics@gmail.com',
+            href: 'mailto:Bostonwomeninbioinformatics@gmail.com',
+            variant: 'link',
+          },
         },
-      },
-      {
-        title: 'Linked In',
-        icon: 'tabler:brand-linkedin',
-        callToAction: {
-          target: '_blank',
-          text: 'Boston-area Women in Bioinformatics',
-          href: 'https://www.linkedin.com/groups/13074137/',
-          variant: 'link',
+        {
+          title: 'Linked In',
+          icon: 'tabler:brand-linkedin',
+          callToAction: {
+            target: '_blank',
+            text: 'Boston-area Women in Bioinformatics',
+            href: 'https://www.linkedin.com/groups/13074137/',
+            variant: 'link',
+          },
         },
-      },
-      {
-        title: 'Location',
-        description: 'Boston Area, Massachusetts',
-        icon: 'tabler:map-pin',
-      },
-    ]}
+        {
+          title: 'Location',
+          description: 'Boston Area, Massachusetts',
+          icon: 'tabler:map-pin',
+        },
+      ]}
     />
   </section>
   <!-- <Fragment slot="image">
