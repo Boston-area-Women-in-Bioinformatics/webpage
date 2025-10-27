@@ -3,6 +3,7 @@
 This document defines the complete design system for the Boston Women in Bioinformatics website, including layout patterns, spacing, components, and usage guidelines.
 
 ## Table of Contents
+
 - [Design Tokens](#design-tokens)
 - [Layout System](#layout-system)
 - [Component Library](#component-library)
@@ -34,27 +35,27 @@ See [COLOR_PALETTE.md - Color Strategy](COLOR_PALETTE.md#color-strategy-warm-vs-
 
 ```css
 /* Brand Colors - Light Mode */
---aw-color-primary: rgb(1 97 239);     /* Blue - main brand color */
---aw-color-secondary: rgb(1 84 207);   /* Dark blue - hover states */
---aw-color-accent: rgb(109 40 217);    /* Purple - highlights */
---aw-color-accent-warm: #e36d1d;       /* Orange - featured content (auto-switches to lime in dark mode) */
+--aw-color-primary: rgb(1 97 239); /* Blue - main brand color */
+--aw-color-secondary: rgb(1 84 207); /* Dark blue - hover states */
+--aw-color-accent: rgb(109 40 217); /* Purple - highlights */
+--aw-color-accent-warm: #e36d1d; /* Orange - featured content (auto-switches to lime in dark mode) */
 
 /* Spacing */
---aw-spacing-section-sm: 2rem;      /* 32px */
---aw-spacing-section-md: 3rem;      /* 48px */
---aw-spacing-section-lg: 5rem;      /* 80px */
+--aw-spacing-section-sm: 2rem; /* 32px */
+--aw-spacing-section-md: 3rem; /* 48px */
+--aw-spacing-section-lg: 5rem; /* 80px */
 
 /* Shadows */
 --aw-shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
 --aw-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
 
 /* Border Radius */
---aw-radius-card: 0.75rem;          /* 12px */
---aw-radius-button: 9999px;         /* Full round */
+--aw-radius-card: 0.75rem; /* 12px */
+--aw-radius-button: 9999px; /* Full round */
 
 /* Borders */
---aw-border-color: #ddd;            /* Light gray */
---aw-border-color-accent: #3498db;  /* Blue */
+--aw-border-color: #ddd; /* Light gray */
+--aw-border-color-accent: #3498db; /* Blue */
 ```
 
 ---
@@ -65,20 +66,22 @@ See [COLOR_PALETTE.md - Color Strategy](COLOR_PALETTE.md#color-strategy-warm-vs-
 
 We use **three standard container widths** across the site:
 
-| Container | Max Width | Use Case | Tailwind Class |
-|-----------|-----------|----------|----------------|
-| **Standard** | `1280px` | Most widgets, sections, main content | `max-w-7xl` |
-| **Medium** | `1152px` | Sponsors, featured content, special sections | `max-w-6xl` |
-| **Narrow** | `768px` | Blog posts, articles, form-focused pages | `max-w-3xl` |
+| Container    | Max Width | Use Case                                     | Tailwind Class |
+| ------------ | --------- | -------------------------------------------- | -------------- |
+| **Standard** | `1280px`  | Most widgets, sections, main content         | `max-w-7xl`    |
+| **Medium**   | `1152px`  | Sponsors, featured content, special sections | `max-w-6xl`    |
+| **Narrow**   | `768px`   | Blog posts, articles, form-focused pages     | `max-w-3xl`    |
 
 ### Container Usage Rules
 
 ✅ **DO**:
+
 - Use `max-w-7xl` for all standard widgets and sections (default in WidgetWrapper)
 - Use `max-w-3xl` for blog posts, newsletters, and long-form content
 - Use `max-w-6xl` only for special cases (sponsors, wide tables, dashboards)
 
 ❌ **DON'T**:
+
 - Use random container widths like `max-w-5xl` or `max-w-4xl`
 - Mix container widths within the same page type
 - Override container width without documenting the reason
@@ -110,14 +113,14 @@ We use **three standard container widths** across the site:
 
 Located in [`src/components/ui/`](src/components/ui/):
 
-| Component | Purpose | File |
-|-----------|---------|------|
-| **Button** | All clickable actions | `Button.astro` |
-| **Headline** | Section titles with subtitle/tagline | `Headline.astro` |
-| **WidgetWrapper** | Wrapper for all widget sections | `WidgetWrapper.astro` |
-| **Form** | Form inputs and fields | `Form.astro` |
-| **ItemGrid** | Grid layout for items | `ItemGrid.astro`, `ItemGrid2.astro` |
-| **Background** | Background patterns/colors | `Background.astro` |
+| Component         | Purpose                              | File                                |
+| ----------------- | ------------------------------------ | ----------------------------------- |
+| **Button**        | All clickable actions                | `Button.astro`                      |
+| **Headline**      | Section titles with subtitle/tagline | `Headline.astro`                    |
+| **WidgetWrapper** | Wrapper for all widget sections      | `WidgetWrapper.astro`               |
+| **Form**          | Form inputs and fields               | `Form.astro`                        |
+| **ItemGrid**      | Grid layout for items                | `ItemGrid.astro`, `ItemGrid2.astro` |
+| **Background**    | Background patterns/colors           | `Background.astro`                  |
 
 ### Widget Components
 
@@ -137,17 +140,20 @@ Located in [`src/components/widgets/`](src/components/widgets/):
 ### Section Padding (Vertical Rhythm)
 
 **Standard Widget Spacing** (defined in `WidgetWrapper.astro`):
+
 ```css
 py-12          /* 48px top/bottom padding on mobile */
 md:py-20       /* 80px top/bottom padding on desktop */
 ```
 
 **Blog Post Spacing**:
+
 ```css
 py-8 sm:py-16 lg:py-20    /* Progressive spacing: 32px → 64px → 80px */
 ```
 
 **Hero Section Spacing**:
+
 ```css
 py-12 md:py-20 lg:py-0    /* Varies by breakpoint */
 ```
@@ -155,6 +161,7 @@ py-12 md:py-20 lg:py-0    /* Varies by breakpoint */
 ### Horizontal Padding
 
 **Standard Horizontal Padding**:
+
 ```css
 px-4           /* 16px on mobile */
 md:px-6        /* 24px on tablet/desktop */
@@ -165,6 +172,7 @@ Always use these values in combination with `mx-auto` for centered containers.
 ### Component Spacing
 
 **Gap in Grids**:
+
 ```css
 gap-4          /* 16px - Tight spacing (buttons, small cards) */
 gap-6          /* 24px - Normal spacing (features, items) */
@@ -174,6 +182,7 @@ gap-y-8        /* 32px vertical only */
 ```
 
 **Margins**:
+
 ```css
 mb-4           /* 16px - Between paragraphs */
 mb-6           /* 24px - Between subsections */
@@ -222,45 +231,37 @@ All text uses **Inter Variable** font.
 
 Use responsive text sizing with Tailwind classes:
 
-| Element | Mobile | Tablet | Desktop | Classes |
-|---------|--------|--------|---------|---------|
-| **H1 (Hero)** | 30px | 36px | 48px | `text-3xl sm:text-4xl md:text-5xl` |
-| **H2 (Section)** | 30px | 36px | - | `text-3xl md:text-4xl` |
-| **H3 (Card Title)** | 20px | 24px | - | `text-xl md:text-2xl` |
-| **Body Large** | 16px | 18px | 20px | `text-base sm:text-lg md:text-xl` |
-| **Body** | 14px | 16px | - | `text-sm md:text-base` |
-| **Small** | 12px | 14px | - | `text-xs md:text-sm` |
+| Element             | Mobile | Tablet | Desktop | Classes                            |
+| ------------------- | ------ | ------ | ------- | ---------------------------------- |
+| **H1 (Hero)**       | 30px   | 36px   | 48px    | `text-3xl sm:text-4xl md:text-5xl` |
+| **H2 (Section)**    | 30px   | 36px   | -       | `text-3xl md:text-4xl`             |
+| **H3 (Card Title)** | 20px   | 24px   | -       | `text-xl md:text-2xl`              |
+| **Body Large**      | 16px   | 18px   | 20px    | `text-base sm:text-lg md:text-xl`  |
+| **Body**            | 14px   | 16px   | -       | `text-sm md:text-base`             |
+| **Small**           | 12px   | 14px   | -       | `text-xs md:text-sm`               |
 
 ### Font Weights
 
-| Weight | Value | Tailwind Class | Use Case |
-|--------|-------|----------------|----------|
-| **Normal** | 400 | `font-normal` | Body text, paragraphs |
-| **Semibold** | 600 | `font-semibold` | Subheadings, emphasis |
-| **Bold** | 700 | `font-bold` | Headings, titles |
+| Weight       | Value | Tailwind Class  | Use Case              |
+| ------------ | ----- | --------------- | --------------------- |
+| **Normal**   | 400   | `font-normal`   | Body text, paragraphs |
+| **Semibold** | 600   | `font-semibold` | Subheadings, emphasis |
+| **Bold**     | 700   | `font-bold`     | Headings, titles      |
 
 ### Typography Examples
 
 ```astro
 <!-- Hero Title -->
-<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tighter tracking-tighter">
-  Headline Text
-</h1>
+<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tighter tracking-tighter">Headline Text</h1>
 
 <!-- Section Title -->
-<h2 class="text-3xl md:text-4xl font-bold mb-6">
-  Section Title
-</h2>
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Section Title</h2>
 
 <!-- Body Text -->
-<p class="text-base md:text-lg text-default">
-  Body paragraph text
-</p>
+<p class="text-base md:text-lg text-default">Body paragraph text</p>
 
 <!-- Muted Text -->
-<p class="text-sm text-muted">
-  Secondary information
-</p>
+<p class="text-sm text-muted">Secondary information</p>
 ```
 
 ---
@@ -273,18 +274,19 @@ Use responsive text sizing with Tailwind classes:
 
 ### Button Variants
 
-| Variant | Appearance | Use Case |
-|---------|-----------|----------|
-| **primary** | Blue background, white text | Primary CTAs, main actions |
-| **secondary** | Transparent with border | Secondary actions, alternative options |
-| **tertiary** | Text only, no border | Low-priority actions, inline links |
-| **link** | Styled as link | Navigation, subtle actions |
+| Variant       | Appearance                  | Use Case                               |
+| ------------- | --------------------------- | -------------------------------------- |
+| **primary**   | Blue background, white text | Primary CTAs, main actions             |
+| **secondary** | Transparent with border     | Secondary actions, alternative options |
+| **tertiary**  | Text only, no border        | Low-priority actions, inline links     |
+| **link**      | Styled as link              | Navigation, subtle actions             |
 
 ### Button Colors and Customization
 
 The Button component uses the **primary** color by default (`#0161EF` blue). For featured or high-priority CTAs, you can customize the background color:
 
 **Featured/Warm Accent Button**:
+
 ```astro
 <!-- Automatically coral in light mode, lime green in dark mode -->
 <Button
@@ -298,12 +300,14 @@ The Button component uses the **primary** color by default (`#0161EF` blue). For
 **Note**: The `bg-accent-warm` class automatically switches between coral (`#FF6B6B`) in light mode and lime green (`#84cc16`) in dark mode. You only need to specify hover states for each mode.
 
 **When to use warm accent buttons**:
+
 - Featured events (e.g., 10th Anniversary)
 - High-priority registration CTAs
 - Time-sensitive announcements
 - Diversity-themed actions
 
 **When to use standard primary buttons**:
+
 - General navigation ("Learn More", "View Events")
 - Standard CTAs
 - Professional/informational actions
@@ -350,12 +354,14 @@ The Button component uses the **primary** color by default (`#0161EF` blue). For
 ### Button Best Practices
 
 ✅ **DO**:
+
 - Always use `<Button>` component instead of raw `<button>` or `<a>` tags
 - Use `variant="primary"` for main CTAs
 - Use `variant="secondary"` for alternative actions
 - Provide clear, action-oriented text (e.g., "Register Now", "Learn More")
 
 ❌ **DON'T**:
+
 - Create custom button styling with inline classes
 - Use hardcoded colors like `text-blue-700 hover:text-white border border-blue-700`
 - Nest `<a>` tags inside `<button>` tags
@@ -379,8 +385,7 @@ Standard form styling from [`src/components/ui/Form.astro`](src/components/ui/Fo
 <textarea
   class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
   rows="4"
-  placeholder="Your message"
-></textarea>
+  placeholder="Your message"></textarea>
 ```
 
 ### Form Layout
@@ -450,14 +455,13 @@ xl: 1280px   /* Large desktops */
 ```
 
 **Example**:
+
 ```astro
 <!-- Mobile: text-sm, Tablet: text-base, Desktop: text-lg -->
 <p class="text-sm md:text-base lg:text-lg">Responsive text</p>
 
 <!-- Mobile: column, Desktop: 2 columns -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-  ...
-</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">...</div>
 ```
 
 ### Dark Mode
@@ -470,14 +474,10 @@ Follow the dark mode guidelines from [COLOR_PALETTE.md](COLOR_PALETTE.md):
 
 ```astro
 <!-- Correct -->
-<div class="bg-white dark:bg-slate-900 text-gray-900 dark:text-slate-100">
-  Content
-</div>
+<div class="bg-white dark:bg-slate-900 text-gray-900 dark:text-slate-100">Content</div>
 
 <!-- Incorrect -->
-<div class="bg-white dark:bg-gray-900 text-black dark:text-white">
-  Content
-</div>
+<div class="bg-white dark:bg-gray-900 text-black dark:text-white">Content</div>
 ```
 
 ---
@@ -510,11 +510,7 @@ import Button from '~/components/ui/Button.astro';
 ---
 
 <WidgetWrapper id="my-section">
-  <Headline
-    title="Section Title"
-    subtitle="Optional subtitle"
-    tagline="Optional tagline"
-  />
+  <Headline title="Section Title" subtitle="Optional subtitle" tagline="Optional tagline" />
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     <!-- Content -->
@@ -540,24 +536,25 @@ import Button from '~/components/ui/Button.astro';
 
 ```astro
 <div class="grid grid-cols-1 gap-6">
-  {events.map((event) => (
-    <div class="bg-gray-90 dark:bg-slate-700 rounded-lg shadow-md flex p-4">
-      <img src={event.image} class="h-48 w-48 rounded-md" />
-      <div class="flex-1 pl-6">
-        <h3 class="text-xl font-semibold mb-2">{event.title}</h3>
-        <p class="text-sm text-muted mb-4">{event.date}</p>
-        <Button variant="primary" href={`/events/${event.id}`} text="MORE INFO" />
+  {
+    events.map((event) => (
+      <div class="bg-gray-90 dark:bg-slate-700 rounded-lg shadow-md flex p-4">
+        <img src={event.image} class="h-48 w-48 rounded-md" />
+        <div class="flex-1 pl-6">
+          <h3 class="text-xl font-semibold mb-2">{event.title}</h3>
+          <p class="text-sm text-muted mb-4">{event.date}</p>
+          <Button variant="primary" href={`/events/${event.id}`} text="MORE INFO" />
+        </div>
       </div>
-    </div>
-  ))}
+    ))
+  }
 </div>
 ```
 
 ### Featured Event Pattern (with Warm Accent)
 
 ```astro
-<!-- Featured event with warm accent for emphasis -->
-<!-- Note: bg-accent-warm automatically becomes lime green in dark mode -->
+<!-- Featured event with warm accent for emphasis --><!-- Note: bg-accent-warm automatically becomes lime green in dark mode -->
 <div class="border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-lg shadow-lg p-6">
   <div class="flex items-start gap-2 mb-2">
     <span class="bg-accent-warm text-gray-900 text-xs font-bold px-2 py-1 rounded">FEATURED</span>

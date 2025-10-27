@@ -3,6 +3,7 @@
 This document describes the complete color system for the Boston Women in Bioinformatics website. All colors are centrally managed through CSS custom properties (design tokens) and Tailwind utility classes.
 
 ## Table of Contents
+
 - [Quick Reference](#quick-reference)
 - [Design Tokens Reference](#design-tokens-reference)
 - [Tailwind Utility Classes](#tailwind-utility-classes)
@@ -15,36 +16,40 @@ This document describes the complete color system for the Boston Women in Bioinf
 ## Quick Reference
 
 ### Brand Colors
-| Color | Light Mode | Dark Mode | Hex/RGB | Use Case |
-|-------|-----------|-----------|---------|----------|
-| **Primary** | Blue | Blue | `rgb(1 97 239)` / `#0161EF` | Primary actions, links, accents |
-| **Secondary** | Dark Blue | Dark Blue | `rgb(1 84 207)` / `#0154CF` | Secondary actions, hover states |
-| **Accent** | Purple | Purple | `rgb(109 40 217)` / `#6D28D9` | Highlights, special elements |
-| **Accent Warm** | Orange | Lime Green | `#e36d1d` / `#84cc16` | Warm highlights, CTAs, featured content - automatically switches between orange (light) and lime (dark) |
+
+| Color           | Light Mode | Dark Mode  | Hex/RGB                       | Use Case                                                                                                |
+| --------------- | ---------- | ---------- | ----------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **Primary**     | Blue       | Blue       | `rgb(1 97 239)` / `#0161EF`   | Primary actions, links, accents                                                                         |
+| **Secondary**   | Dark Blue  | Dark Blue  | `rgb(1 84 207)` / `#0154CF`   | Secondary actions, hover states                                                                         |
+| **Accent**      | Purple     | Purple     | `rgb(109 40 217)` / `#6D28D9` | Highlights, special elements                                                                            |
+| **Accent Warm** | Orange     | Lime Green | `#e36d1d` / `#84cc16`         | Warm highlights, CTAs, featured content - automatically switches between orange (light) and lime (dark) |
 
 ### Sponsorship Tier Colors
-| Tier | Hex | Use Case |
-|------|-----|----------|
-| **Gold** | `#d4af37` | Gold sponsor badges, borders, text |
+
+| Tier       | Hex       | Use Case                             |
+| ---------- | --------- | ------------------------------------ |
+| **Gold**   | `#d4af37` | Gold sponsor badges, borders, text   |
 | **Silver** | `#a3a3a3` | Silver sponsor badges, borders, text |
 
 ### Social Media Brand Colors
-| Platform | Hex | Color |
-|----------|-----|-------|
-| **LinkedIn** | `#0077b5` | LinkedIn Blue |
-| **Instagram** | `#e4405f` | Instagram Pink/Red |
-| **Facebook** | `#39569c` | Facebook Blue |
-| **Twitter** | `#00acee` | Twitter Blue |
-| **Bluesky** | `#00acee` | Bluesky Blue |
-| **GitHub** | `rgb(17 24 39)` (light) / `rgb(203 213 225)` (dark) | Dark Gray / Light Gray |
+
+| Platform      | Hex                                                 | Color                  |
+| ------------- | --------------------------------------------------- | ---------------------- |
+| **LinkedIn**  | `#0077b5`                                           | LinkedIn Blue          |
+| **Instagram** | `#e4405f`                                           | Instagram Pink/Red     |
+| **Facebook**  | `#39569c`                                           | Facebook Blue          |
+| **Twitter**   | `#00acee`                                           | Twitter Blue           |
+| **Bluesky**   | `#00acee`                                           | Bluesky Blue           |
+| **GitHub**    | `rgb(17 24 39)` (light) / `rgb(203 213 225)` (dark) | Dark Gray / Light Gray |
 
 ### Semantic Colors
-| Color | Light Mode | Use Case |
-|-------|-----------|----------|
-| **Success** | `rgb(34 197 94)` / Green | Success messages, positive actions |
-| **Warning** | `rgb(251 146 60)` / Orange | Warnings, caution messages |
-| **Error** | `#e74c3c` / Red | Error messages, destructive actions |
-| **Info** | `rgb(59 130 246)` / Blue | Information, tips |
+
+| Color       | Light Mode                 | Use Case                            |
+| ----------- | -------------------------- | ----------------------------------- |
+| **Success** | `rgb(34 197 94)` / Green   | Success messages, positive actions  |
+| **Warning** | `rgb(251 146 60)` / Orange | Warnings, caution messages          |
+| **Error**   | `#e74c3c` / Red            | Error messages, destructive actions |
+| **Info**    | `rgb(59 130 246)` / Blue   | Information, tips                   |
 
 ---
 
@@ -53,6 +58,7 @@ This document describes the complete color system for the Boston Women in Bioinf
 All colors are defined in [`src/components/CustomStyles.astro`](src/components/CustomStyles.astro) as CSS custom properties.
 
 ### Brand Colors
+
 ```css
 /* Light Mode (:root) */
 --aw-color-primary: rgb(1 97 239);
@@ -68,12 +74,14 @@ All colors are defined in [`src/components/CustomStyles.astro`](src/components/C
 ```
 
 ### Sponsorship Tier Colors
+
 ```css
 --aw-color-tier-gold: #d4af37;
 --aw-color-tier-silver: #a3a3a3;
 ```
 
 ### Social Media Brand Colors
+
 ```css
 --aw-color-social-linkedin: #0077b5;
 --aw-color-social-instagram: #e4405f;
@@ -84,6 +92,7 @@ All colors are defined in [`src/components/CustomStyles.astro`](src/components/C
 ```
 
 ### Semantic Colors
+
 ```css
 --aw-color-success: rgb(34 197 94);
 --aw-color-warning: rgb(251 146 60);
@@ -92,38 +101,41 @@ All colors are defined in [`src/components/CustomStyles.astro`](src/components/C
 ```
 
 ### Text Colors
+
 ```css
 /* Light Mode */
---aw-color-text-heading: rgb(0 0 0);        /* Black */
---aw-color-text-default: rgb(16 16 16);     /* Near Black */
+--aw-color-text-heading: rgb(0 0 0); /* Black */
+--aw-color-text-default: rgb(16 16 16); /* Near Black */
 --aw-color-text-muted: rgb(16 16 16 / 66%); /* Muted Gray */
---aw-color-text-dark: #2c3e50;              /* Dark Blue-Gray */
+--aw-color-text-dark: #2c3e50; /* Dark Blue-Gray */
 
 /* Dark Mode */
---aw-color-text-heading: rgb(247, 248, 248);    /* Near White */
---aw-color-text-default: rgb(229 236 246);      /* Light Blue-Gray */
---aw-color-text-muted: rgb(229 236 246 / 66%);  /* Muted Light */
---aw-color-text-dark: rgb(203 213 225);         /* Slate 300 */
+--aw-color-text-heading: rgb(247, 248, 248); /* Near White */
+--aw-color-text-default: rgb(229 236 246); /* Light Blue-Gray */
+--aw-color-text-muted: rgb(229 236 246 / 66%); /* Muted Light */
+--aw-color-text-dark: rgb(203 213 225); /* Slate 300 */
 ```
 
 ### Background Colors
+
 ```css
 /* Light Mode */
---aw-color-bg-page: rgb(255 255 255);      /* White */
---aw-color-bg-page-dark: rgb(3 6 32);      /* Very Dark Blue */
+--aw-color-bg-page: rgb(255 255 255); /* White */
+--aw-color-bg-page-dark: rgb(3 6 32); /* Very Dark Blue */
 
 /* Dark Mode */
---aw-color-bg-page: rgb(3 6 32);           /* Very Dark Blue */
+--aw-color-bg-page: rgb(3 6 32); /* Very Dark Blue */
 ```
 
 ### Border Colors
+
 ```css
 /* Light Mode */
---aw-border-color: #ddd;               /* Light Gray */
---aw-border-color-accent: #3498db;     /* Blue */
+--aw-border-color: #ddd; /* Light Gray */
+--aw-border-color-accent: #3498db; /* Blue */
 
 /* Dark Mode */
---aw-border-color: rgb(51 65 85);      /* Slate 700 */
+--aw-border-color: rgb(51 65 85); /* Slate 700 */
 --aw-border-color-accent: rgb(59 130 246); /* Blue 500 */
 ```
 
@@ -136,6 +148,7 @@ All design tokens are exposed as Tailwind utility classes via [`tailwind.config.
 ### Usage in Components
 
 #### Brand Colors
+
 ```html
 <!-- Text -->
 <p class="text-primary">Primary blue text</p>
@@ -155,6 +168,7 @@ All design tokens are exposed as Tailwind utility classes via [`tailwind.config.
 ```
 
 #### Sponsorship Tier Colors
+
 ```html
 <!-- Gold Tier -->
 <span class="text-gold">Gold Sponsor</span>
@@ -170,34 +184,26 @@ All design tokens are exposed as Tailwind utility classes via [`tailwind.config.
 ```
 
 #### Social Media Colors
+
 ```html
 <!-- LinkedIn -->
-<a href="#" class="text-social-linkedin hover:text-gray-900 dark:hover:text-white">
-  LinkedIn Icon
-</a>
+<a href="#" class="text-social-linkedin hover:text-gray-900 dark:hover:text-white"> LinkedIn Icon </a>
 
 <!-- Instagram -->
-<a href="#" class="text-social-instagram hover:text-gray-900 dark:hover:text-white">
-  Instagram Icon
-</a>
+<a href="#" class="text-social-instagram hover:text-gray-900 dark:hover:text-white"> Instagram Icon </a>
 
 <!-- Facebook -->
-<a href="#" class="text-social-facebook hover:text-gray-900 dark:hover:text-white">
-  Facebook Icon
-</a>
+<a href="#" class="text-social-facebook hover:text-gray-900 dark:hover:text-white"> Facebook Icon </a>
 
 <!-- Twitter -->
-<a href="#" class="text-social-twitter hover:text-gray-900 dark:hover:text-white">
-  Twitter Icon
-</a>
+<a href="#" class="text-social-twitter hover:text-gray-900 dark:hover:text-white"> Twitter Icon </a>
 
 <!-- GitHub -->
-<a href="#" class="text-social-github hover:text-gray-900 dark:hover:text-white">
-  GitHub Icon
-</a>
+<a href="#" class="text-social-github hover:text-gray-900 dark:hover:text-white"> GitHub Icon </a>
 ```
 
 #### Text Colors (Semantic)
+
 ```html
 <p class="text-default">Default body text</p>
 <p class="text-muted">Muted secondary text</p>
@@ -208,16 +214,13 @@ All design tokens are exposed as Tailwind utility classes via [`tailwind.config.
 ## Usage Examples
 
 ### Example 1: Button with Brand Colors
+
 ```astro
 <!-- Primary Button (Cool tone - professional) -->
-<button class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-full">
-  Learn More
-</button>
+<button class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-full"> Learn More </button>
 
 <!-- Accent Button (Cool tone - special) -->
-<button class="bg-accent hover:bg-purple-700 text-white px-6 py-3 rounded-full">
-  Special Action
-</button>
+<button class="bg-accent hover:bg-purple-700 text-white px-6 py-3 rounded-full"> Special Action </button>
 
 <!-- Warm Accent Button (Warm tone - featured CTA) -->
 <!-- Automatically coral in light mode, lime green in dark mode -->
@@ -227,6 +230,7 @@ All design tokens are exposed as Tailwind utility classes via [`tailwind.config.
 ```
 
 ### Example 2: Sponsor Card
+
 ```astro
 <div class="border-4 border-gold bg-white rounded-xl p-4 shadow-lg">
   <h3 class="text-gold font-bold">Gold RNA Sponsor</h3>
@@ -235,42 +239,40 @@ All design tokens are exposed as Tailwind utility classes via [`tailwind.config.
 ```
 
 ### Example 3: Social Media Links (Team Component)
-```jsx
-{/* LinkedIn */}
-<a href={member.social.linkedin}
-   className="text-social-linkedin hover:text-gray-900 dark:hover:text-white">
-  <LinkedInIcon />
-</a>
 
-{/* Instagram */}
-<a href={member.social.instagram}
-   className="text-social-instagram hover:text-gray-900 dark:hover:text-white">
+```jsx
+{
+  /* LinkedIn */
+}
+<a href={member.social.linkedin} className="text-social-linkedin hover:text-gray-900 dark:hover:text-white">
+  <LinkedInIcon />
+</a>;
+
+{
+  /* Instagram */
+}
+<a href={member.social.instagram} className="text-social-instagram hover:text-gray-900 dark:hover:text-white">
   <InstagramIcon />
-</a>
+</a>;
 ```
 
 ### Example 4: Alert Messages (Semantic Colors)
+
 ```astro
 <!-- Success -->
-<div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4">
-  Success message
-</div>
+<div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4">Success message</div>
 
 <!-- Error -->
-<div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4">
-  Error message
-</div>
+<div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4">Error message</div>
 
 <!-- Warning -->
-<div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4">
-  Warning message
-</div>
+<div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4">Warning message</div>
 ```
 
 ### Example 5: Warm vs Cool Accent Usage
+
 ```astro
-<!-- Featured Event (use warm accent for emphasis) -->
-<!-- Note: bg-accent-warm automatically becomes lime green in dark mode -->
+<!-- Featured Event (use warm accent for emphasis) --><!-- Note: bg-accent-warm automatically becomes lime green in dark mode -->
 <div class="border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 p-4">
   <h3 class="text-accent-warm font-bold">Featured: 10th Year Anniversary</h3>
   <p>Join us for our special celebration!</p>
@@ -283,13 +285,12 @@ All design tokens are exposed as Tailwind utility classes via [`tailwind.config.
 <div class="border-l-4 border-accent bg-purple-50 dark:bg-slate-800 p-4">
   <h3 class="text-accent font-bold">Monthly Meetup</h3>
   <p>Join our regular monthly gathering</p>
-  <button class="bg-accent hover:bg-purple-700 text-white px-4 py-2 rounded-full">
-    Learn More
-  </button>
+  <button class="bg-accent hover:bg-purple-700 text-white px-4 py-2 rounded-full"> Learn More </button>
 </div>
 ```
 
 ### Example 6: Using CSS Variables Directly
+
 ```astro
 <style>
   .custom-element {
@@ -322,9 +323,10 @@ All design tokens are exposed as Tailwind utility classes via [`tailwind.config.
 4. Save the file - the change will apply site-wide automatically
 
 **Example**: Changing the primary brand color from blue to teal
+
 ```css
 /* Before */
---aw-color-primary: rgb(1 97 239);  /* Blue */
+--aw-color-primary: rgb(1 97 239); /* Blue */
 
 /* After */
 --aw-color-primary: rgb(20 184 166); /* Teal */
@@ -333,6 +335,7 @@ All design tokens are exposed as Tailwind utility classes via [`tailwind.config.
 ### Adding a New Color
 
 1. **Add the CSS variable** in [`src/components/CustomStyles.astro`](src/components/CustomStyles.astro):
+
    ```css
    :root {
      /* ... existing colors ... */
@@ -346,6 +349,7 @@ All design tokens are exposed as Tailwind utility classes via [`tailwind.config.
    ```
 
 2. **Expose it to Tailwind** in [`tailwind.config.js`](tailwind.config.js):
+
    ```js
    colors: {
      // ... existing colors ...
@@ -355,14 +359,13 @@ All design tokens are exposed as Tailwind utility classes via [`tailwind.config.
 
 3. **Use it in components**:
    ```html
-   <div class="text-custom bg-custom border-custom">
-     New custom color!
-   </div>
+   <div class="text-custom bg-custom border-custom">New custom color!</div>
    ```
 
 ### Best Practices
 
 ✅ **DO**:
+
 - Always use CSS custom properties (design tokens) for colors
 - Use Tailwind utility classes (`text-primary`, `bg-gold`, etc.)
 - Update colors in `CustomStyles.astro` only
@@ -370,6 +373,7 @@ All design tokens are exposed as Tailwind utility classes via [`tailwind.config.
 - Document new colors in this file
 
 ❌ **DON'T**:
+
 - Use hardcoded hex values like `#0161EF` directly in components
 - Use inline styles with color values
 - Define colors in multiple places
@@ -390,16 +394,19 @@ The site uses Tailwind's class-based dark mode strategy (`darkMode: 'class'` in 
 ### Dark Mode Color Guidelines
 
 **Text Colors**:
+
 - Light mode: Use darker colors (black, dark gray)
 - Dark mode: Use lighter colors (white, light gray, slate)
 - **Standard**: `text-gray-900 dark:text-slate-100`
 
 **Background Colors**:
+
 - Light mode: White or light backgrounds
 - Dark mode: Dark blue (`rgb(3 6 32)`) or dark slate
 - **Standard**: `bg-white dark:bg-slate-900`
 
 **Borders**:
+
 - Light mode: `#ddd` (light gray)
 - Dark mode: `rgb(51 65 85)` (slate-700)
 - **Standard**: `border-gray-300 dark:border-slate-700`
@@ -408,14 +415,10 @@ The site uses Tailwind's class-based dark mode strategy (`darkMode: 'class'` in 
 
 ```html
 <!-- Text -->
-<p class="text-gray-800 dark:text-slate-100">
-  Automatically switches in dark mode
-</p>
+<p class="text-gray-800 dark:text-slate-100">Automatically switches in dark mode</p>
 
 <!-- Background -->
-<div class="bg-white dark:bg-slate-800">
-  White in light mode, dark slate in dark mode
-</div>
+<div class="bg-white dark:bg-slate-800">White in light mode, dark slate in dark mode</div>
 
 <!-- Complex Component -->
 <div class="bg-white dark:bg-slate-900 text-gray-900 dark:text-slate-100 border border-gray-300 dark:border-slate-700">
@@ -427,12 +430,12 @@ The site uses Tailwind's class-based dark mode strategy (`darkMode: 'class'` in 
 
 We standardize on **slate** colors for dark mode (not gray):
 
-| Light Mode | Dark Mode |
-|-----------|-----------|
-| `bg-white` | `bg-slate-900` or `bg-slate-800` |
-| `text-gray-900` | `text-slate-100` or `text-slate-200` |
-| `text-gray-600` | `text-slate-400` or `text-slate-300` |
-| `border-gray-300` | `border-slate-700` |
+| Light Mode        | Dark Mode                            |
+| ----------------- | ------------------------------------ |
+| `bg-white`        | `bg-slate-900` or `bg-slate-800`     |
+| `text-gray-900`   | `text-slate-100` or `text-slate-200` |
+| `text-gray-600`   | `text-slate-400` or `text-slate-300` |
+| `border-gray-300` | `border-slate-700`                   |
 
 ---
 
@@ -443,6 +446,7 @@ Our color palette balances professional cool tones with warm accents inspired by
 ### When to Use Cool Accents (Primary, Secondary, Accent)
 
 **Use for**:
+
 - Primary navigation and links
 - Standard buttons and CTAs
 - Professional/informational content
@@ -450,6 +454,7 @@ Our color palette balances professional cool tones with warm accents inspired by
 - Regular events and announcements
 
 **Examples**:
+
 - "Learn More" buttons → `bg-primary`
 - Navigation links → `text-primary`
 - Section headers → `text-accent`
@@ -457,6 +462,7 @@ Our color palette balances professional cool tones with warm accents inspired by
 ### When to Use Warm Accent (Accent Warm)
 
 **Use for**:
+
 - Featured/special events (like 10th Anniversary)
 - High-priority call-to-action buttons
 - Important announcements or alerts
@@ -464,6 +470,7 @@ Our color palette balances professional cool tones with warm accents inspired by
 - Drawing attention to time-sensitive content
 
 **Examples**:
+
 - "Register Now" for featured events → `bg-accent-warm`
 - Featured event cards → `border-accent-warm`
 - Special announcements → `text-accent-warm`
@@ -471,6 +478,7 @@ Our color palette balances professional cool tones with warm accents inspired by
 ### Color Harmony Guidelines
 
 The warm accent color system was designed to:
+
 1. **Light Mode** (`#e36d1d` orange): Complement the logo's warm rainbow tones (yellow, orange, coral, pink)
 2. **Dark Mode** (`#84cc16` lime green): Provide high contrast and visibility on dark backgrounds
 3. Add visual warmth without overwhelming the professional blue/purple foundation
@@ -492,6 +500,7 @@ When choosing or updating colors, ensure sufficient contrast ratios:
 - **UI elements** (buttons, icons): Minimum 3:1 contrast ratio
 
 ### Tools for Checking Contrast
+
 - [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
 - [Coolors Contrast Checker](https://coolors.co/contrast-checker)
 - Chrome DevTools (Inspect element → Color picker shows contrast ratio)
@@ -501,11 +510,13 @@ When choosing or updating colors, ensure sufficient contrast ratios:
 ## Summary
 
 ### Key Files
+
 1. **[`src/components/CustomStyles.astro`](src/components/CustomStyles.astro)** - All CSS custom properties (design tokens)
 2. **[`tailwind.config.js`](tailwind.config.js)** - Tailwind color mappings
 3. **[`src/styles/global.css`](src/styles/global.css)** - Global CSS classes (`.gold`, `.silver`, etc.)
 
 ### Color System Benefits
+
 ✅ Single source of truth for all colors
 ✅ Easy to maintain and update
 ✅ Consistent across light and dark modes
@@ -513,6 +524,7 @@ When choosing or updating colors, ensure sufficient contrast ratios:
 ✅ Semantic naming for better developer experience
 
 ### Quick Commands
+
 ```bash
 # Build the site to verify color changes
 npm run build
