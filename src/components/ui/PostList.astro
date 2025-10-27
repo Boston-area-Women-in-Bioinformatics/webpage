@@ -1,0 +1,28 @@
+---
+/**
+ * PostList Component
+ * A reusable list component for displaying posts (blog posts, newsletters, etc.)
+ *
+ * @param posts - Array of posts to display
+ * @param ItemComponent - The component to use for rendering each item
+ */
+
+import type { Post, Newsletter } from '~/types';
+
+interface Props {
+  posts: Array<Post | Newsletter>;
+  ItemComponent: any; // Component reference
+}
+
+const { posts, ItemComponent } = Astro.props;
+---
+
+<ul>
+  {
+    posts.map((post) => (
+      <li class="mb-12 md:mb-20">
+        <ItemComponent post={post} />
+      </li>
+    ))
+  }
+</ul>

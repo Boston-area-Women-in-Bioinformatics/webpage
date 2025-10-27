@@ -2,8 +2,9 @@
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 
 import Layout from '~/layouts/PageLayout.astro';
-import BlogList from '~/components/blog/List.astro';
-import Headline from '~/components/blog/Headline.astro';
+import PostList from '~/components/ui/PostList.astro';
+import BlogListItem from '~/components/blog/ListItem.astro';
+import Headline from '~/components/ui/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
 // import PostTags from "~/components/blog/Tags.astro";
 
@@ -37,10 +38,11 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <Headline subtitle="Enjoy news, tutorials, resources and other interesting content related to bioinformatics">
-      The Blog
-    </Headline>
-    <BlogList posts={page.data} />
+    <Headline
+      title="The Blog"
+      subtitle="Enjoy news, tutorials, resources and other interesting content related to bioinformatics"
+    />
+    <PostList posts={page.data} ItemComponent={BlogListItem} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
     <!--
       <PostTags tags={allCategories} class="mb-2" title="Search by Categories:" isCategory />
