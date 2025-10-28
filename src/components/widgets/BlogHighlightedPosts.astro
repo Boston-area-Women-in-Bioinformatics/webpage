@@ -1,7 +1,8 @@
 ---
 import { APP_BLOG } from 'astrowind:config';
 
-import Grid from '~/components/blog/Grid.astro';
+import PostGrid from '~/components/ui/PostGrid.astro';
+import PostGridItem from '~/components/ui/PostGridItem.astro';
 
 import { getBlogPermalink } from '~/utils/permalinks';
 import { findPostsByIds } from '~/utils/blog';
@@ -56,7 +57,7 @@ const posts = APP_BLOG.isEnabled ? await findPostsByIds(postIds) : [];
         {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
       </div>
 
-      <Grid posts={posts} />
+      <PostGrid posts={posts} ItemComponent={PostGridItem} />
     </WidgetWrapper>
   ) : (
     <Fragment />

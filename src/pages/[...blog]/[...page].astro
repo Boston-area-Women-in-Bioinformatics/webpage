@@ -3,7 +3,7 @@ import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 
 import Layout from '~/layouts/PageLayout.astro';
 import PostList from '~/components/ui/PostList.astro';
-import BlogListItem from '~/components/blog/ListItem.astro';
+import PostListItem from '~/components/ui/PostListItem.astro';
 import Headline from '~/components/ui/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
 // import PostTags from "~/components/blog/Tags.astro";
@@ -42,7 +42,7 @@ const metadata = {
       title="The Blog"
       subtitle="Enjoy news, tutorials, resources and other interesting content related to bioinformatics"
     />
-    <PostList posts={page.data} ItemComponent={BlogListItem} />
+    <PostList posts={page.data} ItemComponent={PostListItem} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
     <!--
       <PostTags tags={allCategories} class="mb-2" title="Search by Categories:" isCategory />
