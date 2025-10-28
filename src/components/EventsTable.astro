@@ -7,6 +7,7 @@ import Headline from '~/components/ui/Headline.astro';
 import FormattedDate from '~/components/FormattedDate.astro';
 import EventAddress from 'src/components/EventAddress.astro';
 import Button from '~/components/ui/Button.astro';
+import Card from '~/components/ui/Card.astro';
 //import { Icon } from 'astro-icon/components';
 
 const future_events = (
@@ -25,14 +26,14 @@ const past_events = (
       <p>No upcoming events found.</p>
     ) : (
       future_events.map((event) => (
-        <div class="bg-gray-90 dark:bg-slate-700 rounded-lg overflow-hidden shadow-md flex">
+        <Card padding="p-0" class="flex flex-col md:flex-row">
           <img
             src={event.data.image.src}
             alt={event.data.image.alt}
-            class={`h-48 w-48 ${event.data.imgpos}`}
+            class={`w-full md:h-48 md:w-48 h-auto object-cover ${event.data.imgpos}`}
             transition:name="playlist ${event.id} image"
           />
-          <div class="p-4 w-2/3">
+          <div class="p-4 flex-1">
             <h3
               class="text-xl font-semibold mb-2 text-gray-900 dark:text-slate-100"
               transition:name="playlist ${event.id} title"
@@ -47,7 +48,7 @@ const past_events = (
             </div>
             <Button variant="primary" href={`/events/${event.id}`} text="MORE INFO" />
           </div>
-        </div>
+        </Card>
       ))
     )
   }
@@ -57,14 +58,14 @@ const past_events = (
 <div class="grid grid-cols-1 gap-6 mb-8 md:mt-3 md:mb-12 text-center">
   {
     past_events.map((event) => (
-      <div class="bg-gray-90  dark:bg-slate-700 rounded-lg overflow-hidden shadow-md flex">
+      <Card padding="p-0" class="flex flex-col md:flex-row">
         <img
           src={event.data.image.src}
           alt={event.data.image.alt}
-          class={`h-48 w-48 ${event.data.imgpos}`}
+          class={`w-full md:h-48 md:w-48 h-auto object-cover ${event.data.imgpos}`}
           transition:name="playlist ${event.id} image"
         />
-        <div class="p-4 w-2/3">
+        <div class="p-4 flex-1">
           <h3
             class="text-xl font-semibold mb-2 text-gray-900 dark:text-slate-100"
             transition:name="playlist ${event.id} title"
@@ -79,7 +80,7 @@ const past_events = (
           </div>
           <Button variant="primary" href={`/events/${event.id}`} text="MORE INFO" />
         </div>
-      </div>
+      </Card>
     ))
   }
 </div>

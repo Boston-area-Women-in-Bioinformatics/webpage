@@ -1,7 +1,8 @@
 ---
 import { APP_NEWSLETTER } from 'astrowind:config';
 
-import Grid from '~/components/newsletter/Grid.astro';
+import PostGrid from '~/components/ui/PostGrid.astro';
+import PostGridItem from '~/components/ui/PostGridItem.astro';
 
 import { getNewsletterPermalink } from '~/utils/permalinks';
 import { findLatestNewsletters } from '~/utils/newsletter';
@@ -55,7 +56,7 @@ const posts = APP_NEWSLETTER.isEnabled ? await findLatestNewsletters({ count }) 
         {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
       </div>
 
-      <Grid posts={posts} />
+      <PostGrid posts={posts} ItemComponent={PostGridItem} />
     </WidgetWrapper>
   ) : (
     <Fragment />

@@ -24,7 +24,10 @@ const {
       )}
       {title && (
         <h2
-          class={twMerge('font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl', titleClass)}
+          class={twMerge(
+            'font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl text-gray-900 dark:text-slate-100',
+            titleClass
+          )}
           set:html={title}
         />
       )}

@@ -1,0 +1,48 @@
+---
+/**
+ * Card Component
+ * A reusable card component with consistent styling across the site
+ *
+ * @param variant - 'default' | 'blog' | 'sponsor' - Different card styles
+ * @param padding - Custom padding class (default: 'p-6')
+ * @param class - Additional custom classes
+ * @param clickable - Makes the entire card clickable with hover effects
+ * @param href - URL for clickable cards
+ * @param target - Link target (_blank for external links)
+ */
+
+interface Props {
+  variant?: 'default' | 'blog' | 'sponsor';
+  padding?: string;
+  class?: string;
+  clickable?: boolean;
+  href?: string;
+  target?: string;
+}
+
+const { variant = 'default', padding = 'p-6', class: customClass = '', clickable = false, href, target } = Astro.props;
+
+// Base card styles
+const baseStyles = 'bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden';
+
+// Variant-specific styles
+const variantStyles = {
+  default: '',
+  blog: 'transition hover:shadow-lg',
+  sponsor: 'border-4 shadow-lg inline-block',
+};
+
+// Clickable card hover effects
+const clickableStyles = clickable
+  ? 'cursor-pointer hover:shadow-xl hover:scale-[1.02] transition-all duration-300'
+  : '';
+
+const cardClass = `${baseStyles} ${variantStyles[variant]} ${clickableStyles} ${padding} ${customClass}`;
+
+const CardWrapper = href ? 'a' : 'div';
+const wrapperProps = href ? { href, target } : {};
+---
+
+<CardWrapper class={cardClass} {...wrapperProps}>
+  <slot />
+</CardWrapper>

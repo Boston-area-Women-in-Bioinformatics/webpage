@@ -1,39 +1,50 @@
 ---
-import { APP_NEWSLETTER } from 'astrowind:config';
-import type { Newsletter } from '~/types';
+/**
+ * PostGridItem Component
+ * A reusable grid item for displaying posts (blog posts, newsletters, etc.)
+ *
+ * @param post - The post to display (Post or Newsletter type)
+ */
+
+import { APP_BLOG, APP_NEWSLETTER } from 'astrowind:config';
+import type { Post, Newsletter } from '~/types';
 
 import Image from '~/components/common/Image.astro';
+import Card from '~/components/ui/Card.astro';
 
 import { findImage } from '~/utils/images';
 import { getPermalink } from '~/utils/permalinks';
 
 export interface Props {
-  post: Newsletter;
+  post: Post | Newsletter;
 }
 
 const { post } = Astro.props;
 const image = await findImage(post.image);
 
-const link = APP_NEWSLETTER?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
+// Determine if this is a blog post or newsletter
+const isBlogPost = 'tags' in post;
+const config = isBlogPost ? APP_BLOG : APP_NEWSLETTER;
+const link = config?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
 ---
 
 <article
   class="mb-6 transition intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
 >
-  <div class="relative md:h-64 bg-gray-400 dark:bg-slate-700 rounded shadow-lg mb-6">
+  <Card variant="blog" padding="p-0" class="mb-6">
     {
       image &&
         (link ? (
           <a href={link}>
             <Image
               src={image}
-              class="w-full md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+              class="w-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
               widths={[400, 900]}
               width={400}
+              height={400}
               sizes="(max-width: 900px) 400px, 900px"
               alt={post.title}
-              aspectRatio="16:9"
-              layout="cover"
+              layout="responsive"
               loading="lazy"
               decoding="async"
             />
@@ -41,21 +52,21 @@ const link = APP_NEWSLETTER?.post?.isEnabled ? getPermalink(post.permalink, 'pos
         ) : (
           <Image
             src={image}
-            class="w-full md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+            class="w-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
             widths={[400, 900]}
             width={400}
+            height={400}
             sizes="(max-width: 900px) 400px, 900px"
             alt={post.title}
-            aspectRatio="16:9"
-            layout="cover"
+            layout="responsive"
             loading="lazy"
             decoding="async"
           />
         ))
     }
-  </div>
+  </Card>
 
-  <h3 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading dark:text-slate-300">
+  <h3 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading text-gray-900 dark:text-slate-100">
     {
       link ? (
         <a class="inline-block hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href={link}>
@@ -67,5 +78,5 @@ const link = APP_NEWSLETTER?.post?.isEnabled ? getPermalink(post.permalink, 'pos
     }
   </h3>
 
-  <p class="text-muted dark:text-slate-400 text-lg">{post.excerpt}</p>
+  {post.excerpt && <p class="text-muted dark:text-slate-300 text-lg">{post.excerpt}</p>}
 </article>

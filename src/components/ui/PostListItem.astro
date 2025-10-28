@@ -1,24 +1,35 @@
 ---
+/**
+ * PostListItem Component
+ * A reusable list item for displaying posts (blog posts, newsletters, etc.)
+ *
+ * @param post - The post to display (Post or Newsletter type)
+ */
+
 import type { ImageMetadata } from 'astro';
 import { Icon } from 'astro-icon/components';
 import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
 
-import { APP_BLOG } from 'astrowind:config';
-import type { Post } from '~/types';
+import { APP_BLOG, APP_NEWSLETTER } from 'astrowind:config';
+import type { Post, Newsletter } from '~/types';
 
 import { getPermalink } from '~/utils/permalinks';
 import { findImage } from '~/utils/images';
 import { getFormattedDate } from '~/utils/utils';
 
 export interface Props {
-  post: Post;
+  post: Post | Newsletter;
 }
 
 const { post } = Astro.props;
 const image = (await findImage(post.image)) as ImageMetadata | undefined;
 
-const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
+// Determine if this is a blog post or newsletter
+const isBlogPost = 'tags' in post;
+const isNewsletter = 'issue' in post;
+const config = isBlogPost ? APP_BLOG : APP_NEWSLETTER;
+const link = config?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
 ---
 
 <article
@@ -65,7 +76,15 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
   <div class="mt-2">
     <header>
       <div class="mb-1">
-        <span class="text-sm">
+        <span class="text-sm text-gray-700 dark:text-slate-300">
+          {
+            isNewsletter && (
+              <>
+                <Icon name="tabler:news" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" /> Issue-
+                {String((post as Newsletter).issue).padStart(3, '0')} ·{' '}
+              </>
+            )
+          }
           <Icon name="tabler:clock" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
           <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
           {
@@ -99,19 +118,24 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
           }
 
           {
-            post.category && (
-              <>
-                {' '}
-                ·{' '}
-                <a class="hover:underline" href={getPermalink(post.category.slug, 'category')}>
-                  {post.category.title}
-                </a>
-              </>
-            )
+            isBlogPost &&
+              (post as Post).category &&
+              (() => {
+                const category = (post as Post).category!;
+                return (
+                  <>
+                    {' '}
+                    ·{' '}
+                    <a class="hover:underline" href={getPermalink(category.slug, 'category')}>
+                      {category.title}
+                    </a>
+                  </>
+                );
+              })()
           }
         </span>
       </div>
-      <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading dark:text-slate-300">
+      <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading text-gray-900 dark:text-slate-100">
         {
           link ? (
             <a
@@ -127,11 +151,11 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
       </h2>
     </header>
 
-    {post.excerpt && <p class="flex-grow text-muted dark:text-slate-400 text-lg">{post.excerpt}</p>}
+    {post.excerpt && <p class="flex-grow text-muted dark:text-slate-300 text-lg">{post.excerpt}</p>}
     {
-      post.tags && Array.isArray(post.tags) ? (
+      isBlogPost && (post as Post).tags && Array.isArray((post as Post).tags) ? (
         <footer class="mt-5">
-          <PostTags tags={post.tags} />
+          <PostTags tags={(post as Post).tags} />
         </footer>
       ) : (
         <Fragment />

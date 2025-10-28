@@ -7,6 +7,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import eventImg from '~/../public/photos/2025/WIB_10Year_group_photo1.jpg'; // adjust path as needed
 //import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
 import Button from '~/components/ui/Button.astro';
+import Card from '~/components/ui/Card.astro';
 import UpcomingEvents from '~/components/widgets/UpcomingEvents.astro';
 import { findLatestNewsletters } from '~/utils/newsletter';
 import { findLatestPosts } from '~/utils/blog';
@@ -108,7 +109,7 @@ const metadata = {
           latestNewsletter && (
             <div>
               <h3 class="text-2xl font-bold mb-4">Latest Newsletter</h3>
-              <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden">
+              <Card variant="blog" padding="p-0">
                 {latestNewsletter.image && (
                   <a href={latestNewsletter.permalink} class="block">
                     <Image
@@ -133,13 +134,13 @@ const metadata = {
                     </a>
                   </h4>
                   {latestNewsletter.excerpt && (
-                    <p class="text-muted dark:text-dark text-base mb-4">{latestNewsletter.excerpt}</p>
+                    <p class="text-muted dark:text-slate-300 text-base mb-4">{latestNewsletter.excerpt}</p>
                   )}
                   <Button variant="link" href={latestNewsletter.permalink}>
                     Read more »
                   </Button>
                 </div>
-              </article>
+              </Card>
             </div>
           )
         }
@@ -150,7 +151,7 @@ const metadata = {
           <div class="grid grid-cols-2 gap-4">
             {
               latestBlogs.map((post) => (
-                <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden">
+                <Card variant="blog" padding="p-0">
                   {post.image && (
                     <a href={post.permalink} class="block">
                       <Image
@@ -174,9 +175,9 @@ const metadata = {
                         {post.title}
                       </a>
                     </h4>
-                    {post.excerpt && <p class="text-muted dark:text-dark text-xs line-clamp-2">{post.excerpt}</p>}
+                    {post.excerpt && <p class="text-muted dark:text-slate-300 text-xs line-clamp-2">{post.excerpt}</p>}
                   </div>
-                </article>
+                </Card>
               ))
             }
           </div>
