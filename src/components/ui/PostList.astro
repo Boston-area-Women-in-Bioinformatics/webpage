@@ -8,10 +8,11 @@
  */
 
 import type { Post, Newsletter } from '~/types';
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 
 interface Props {
   posts: Array<Post | Newsletter>;
-  ItemComponent: any; // Component reference
+  ItemComponent: AstroComponentFactory;
 }
 
 const { posts, ItemComponent } = Astro.props;
