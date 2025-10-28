@@ -26,14 +26,14 @@ const past_events = (
       <p>No upcoming events found.</p>
     ) : (
       future_events.map((event) => (
-        <Card padding="p-0" class="flex">
+        <Card padding="p-0" class="flex flex-col md:flex-row">
           <img
             src={event.data.image.src}
             alt={event.data.image.alt}
-            class={`h-48 w-48 ${event.data.imgpos}`}
+            class={`w-full md:h-48 md:w-48 h-auto object-cover ${event.data.imgpos}`}
             transition:name="playlist ${event.id} image"
           />
-          <div class="p-4 w-2/3">
+          <div class="p-4 flex-1">
             <h3
               class="text-xl font-semibold mb-2 text-gray-900 dark:text-slate-100"
               transition:name="playlist ${event.id} title"
@@ -58,14 +58,14 @@ const past_events = (
 <div class="grid grid-cols-1 gap-6 mb-8 md:mt-3 md:mb-12 text-center">
   {
     past_events.map((event) => (
-      <Card padding="p-0" class="flex">
+      <Card padding="p-0" class="flex flex-col md:flex-row">
         <img
           src={event.data.image.src}
           alt={event.data.image.alt}
-          class={`h-48 w-48 ${event.data.imgpos}`}
+          class={`w-full md:h-48 md:w-48 h-auto object-cover ${event.data.imgpos}`}
           transition:name="playlist ${event.id} image"
         />
-        <div class="p-4 w-2/3">
+        <div class="p-4 flex-1">
           <h3
             class="text-xl font-semibold mb-2 text-gray-900 dark:text-slate-100"
             transition:name="playlist ${event.id} title"
