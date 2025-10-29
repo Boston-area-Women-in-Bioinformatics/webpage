@@ -1,0 +1,44 @@
+---
+// Team component - displays team members with avatars and social links
+import SocialLinks from '~/components/ui/SocialLinks.astro';
+
+interface Props {
+  members: Array<{
+    avatar?: string;
+    name: string;
+    nameLink?: string;
+    title?: string;
+    social?: {
+      website?: string;
+      instagram?: string;
+      facebook?: string;
+      twitter?: string;
+      bluesky?: string;
+      linkedin?: string;
+      github?: string;
+    };
+  }>;
+}
+
+const { members } = Astro.props;
+
+const defaultAvatar =
+  'https://user-images.githubusercontent.com/23362539/226121851-bf667217-0b92-4a5b-accd-07f0333741ca.png';
+---
+
+{
+  members.map((member) => (
+    <div class="text-center text-gray-500 dark:text-slate-400">
+      <img
+        class="mx-auto mb-4 w-36 h-36 rounded-full"
+        src={member?.avatar || defaultAvatar}
+        alt={`${member?.name} - avatar`}
+      />
+      <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        {member?.nameLink ? <a href={member.nameLink}>{member.name}</a> : member.name}
+      </h3>
+      {member?.title && <p>{member.title}</p>}
+      {member?.social && <SocialLinks social={member.social} class="justify-center mt-4" />}
+    </div>
+  ))
+}
