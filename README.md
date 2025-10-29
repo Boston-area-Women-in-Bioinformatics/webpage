@@ -4,25 +4,31 @@
      alt="Logo for Boston-Area Women in Bioinformatics" width="100">
 
 ## Getting started with the website (Mac)
-* Install homebrew :
+
+- Install homebrew :
 
 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
-* Add homebrow to path
+- Add homebrew to path
 
 ```
-echo >> /Users/yaseswini/.zprofile 
+echo >> /Users/yaseswini/.zprofile
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/yaseswini/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
-* Install `npm` 
+
+- Install `npm`
+
 ```
-brew install npm 
+brew install npm
 ```
-* Install `astro` 
+
+- Install `astro`
+
 ```
-npm install astro  
+npm install astro
 ```
+
 ## Add a new event
 
 Here are the steps to add a new event with git:
