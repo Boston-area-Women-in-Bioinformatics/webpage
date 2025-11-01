@@ -26,6 +26,9 @@ const image = await findImage(post.image);
 const isBlogPost = 'tags' in post;
 const config = isBlogPost ? APP_BLOG : APP_NEWSLETTER;
 const link = config?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
+
+// Use imageAlt if provided, otherwise fall back to title for accessibility
+const altText = post.imageAlt || post.title;
 ---
 
 <article
@@ -43,7 +46,7 @@ const link = config?.post?.isEnabled ? getPermalink(post.permalink, 'post') : ''
               width={400}
               height={400}
               sizes="(max-width: 900px) 400px, 900px"
-              alt={post.title}
+              alt={altText}
               layout="responsive"
               loading="lazy"
               decoding="async"
@@ -57,7 +60,7 @@ const link = config?.post?.isEnabled ? getPermalink(post.permalink, 'post') : ''
             width={400}
             height={400}
             sizes="(max-width: 900px) 400px, 900px"
-            alt={post.title}
+            alt={altText}
             layout="responsive"
             loading="lazy"
             decoding="async"
