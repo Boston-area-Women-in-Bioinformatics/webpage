@@ -2,6 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* Visible focus indicators for accessibility */
+  *:focus-visible {
+    outline: 2px solid #3b82f6; /* Tailwind blue-500 */
+    outline-offset: 2px;
+    border-radius: 0.125rem;
+  }
+
+  /* Enhanced focus for buttons */
+  button:focus-visible,
+  [role='button']:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+
+  /* Enhanced focus for links */
+  a:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+
+  /* Dark mode focus indicators */
+  .dark *:focus-visible {
+    outline-color: #60a5fa; /* Tailwind blue-400 for better contrast in dark mode */
+  }
+
+  .dark button:focus-visible,
+  .dark [role='button']:focus-visible,
+  .dark a:focus-visible {
+    outline-color: #60a5fa;
+  }
+
+  /* Remove default focus for elements using focus-visible */
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
 @layer utilities {
   .bg-page {
     background-color: var(--aw-color-bg-page);

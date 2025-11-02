@@ -5,6 +5,7 @@ title: 'Our First Newsletter'
 excerpt: 'First newsletter issue featuring spotlights and upcoming events'
 image: '~/assets/images/events/science_carnival_2025_1.jpg'
 imageDescription: 'Boston Women in Bioinformatics Booth @ Cambridge Science Carnival 2025'
+imageAlt: 'Six women at Cambridge Science Festival booth with kids'' activity table. Shirts include "Cambridge Science Festival," "Bioinformatics" with rainbow, "Believes in Science," and pi symbol.'
 authors:
   - name: 'Sakina Saif, M.S.'
     url: 'https://www.linkedin.com/in/sakinasaif'
@@ -86,14 +87,14 @@ The Web Page committee manages the organization's website to share group informa
 
 ## Executive Board
 
-![Executive Board Team](/team/executiveBoard.png)
+![Executive Board Team: Lorena Pantano, Yevgenia Khodor Tolan, Diveena Becker, Lina Faller, Katie Hughes, Amulya Shastry, Aysheh Alrfooh, Peili Zhang, Sakina Saif, Shreya Rajasekar, Samantha Klasfeld, and Kavya Prasad](/team/executiveBoard.png)
 
 ---
 
 ## Events Recap
 
 <figure>
-  <img src="/photos/2025/science_carnival_2025_1.jpg" alt="Boston Women in Bioinformatics Booth @ Cambridge Science Carnival 2025" />
+  <img src="/photos/2025/science_carnival_2025_1.jpg" alt="Six women at Cambridge Science Festival booth with kids activity table. Shirts say Cambridge Science Festival, Bioinformatics with rainbow, Believes in Science, and pi symbol." />
 <figcaption>Boston Women in Bioinformatics Booth @ Cambridge Science Carnival 2025</figcaption>
 </figure>
 
@@ -115,7 +116,7 @@ Thanks to everyone who joined us. We’re excited for what’s next!
 
 We are proud to recognize the dedicated volunteers who shape the vision and impact of Boston Women in Bioinformatics. Our volunteers make our community thrive by sharing their time, creativity, and passion for our mission in fostering an inclusive, collaborative scientific community.
 
-![Team Member](/team/team.png)
+![Committee Members: Yaseswini Neelamraju, Nishita Kalepalli, Ozge Tasdemir Yilmaz, Lakshmi Kuttippurathu, Masoome Rezaei, and Manonmani Kumar](/team/team.png)
 
 ---
 
