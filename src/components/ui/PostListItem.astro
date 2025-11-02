@@ -30,6 +30,9 @@ const isBlogPost = 'tags' in post;
 const isNewsletter = 'issue' in post;
 const config = isBlogPost ? APP_BLOG : APP_NEWSLETTER;
 const link = config?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
+
+// Use imageAlt if provided, otherwise fall back to title for accessibility
+const altText = post.imageAlt || post.title;
 ---
 
 <article
@@ -47,7 +50,7 @@ const link = config?.post?.isEnabled ? getPermalink(post.permalink, 'post') : ''
                 widths={[400, 900]}
                 width={900}
                 sizes="(max-width: 900px) 400px, 900px"
-                alt={post.title}
+                alt={altText}
                 aspectRatio="16:9"
                 loading="lazy"
                 decoding="async"
@@ -64,7 +67,7 @@ const link = config?.post?.isEnabled ? getPermalink(post.permalink, 'post') : ''
               widths={[400, 900]}
               width={900}
               sizes="(max-width: 900px) 400px, 900px"
-              alt={post.title}
+              alt={altText}
               aspectRatio="16:9"
               loading="lazy"
               decoding="async"
