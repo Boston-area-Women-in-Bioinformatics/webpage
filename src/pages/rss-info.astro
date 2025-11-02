@@ -1,0 +1,132 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { getAsset } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'RSS Feeds - Subscribe to Updates',
+  description: 'Learn how to subscribe to our blog posts and newsletters via RSS',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <header class="mb-8">
+      <h1
+        class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-gray-900 dark:text-slate-100"
+      >
+        Subscribe via RSS
+      </h1>
+      <p class="text-xl text-muted dark:text-slate-300">
+        Stay up to date with our latest blog posts and newsletters using RSS feeds.
+      </p>
+    </header>
+
+    <div class="prose prose-lg dark:prose-invert max-w-none">
+      <h2>What is RSS?</h2>
+      <p>
+        RSS (Really Simple Syndication) is a way to stay updated with your favorite websites without having to visit
+        them individually. Instead of checking our site for new content, you can use an RSS reader to get notifications
+        when we publish new posts.
+      </p>
+
+      <h2>Our RSS Feeds</h2>
+      <p>We offer three separate RSS feeds so you can subscribe to exactly what interests you:</p>
+
+      <div class="not-prose my-6 space-y-4">
+        <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-white dark:bg-slate-800">
+          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-slate-100">Blog Posts Feed</h3>
+          <p class="text-muted dark:text-slate-300 mb-3">
+            Get updates on all our latest blog articles, tutorials, and insights.
+          </p>
+          <a href={getAsset('/rss.xml')} class="inline-flex items-center text-primary hover:underline font-medium">
+            {getAsset('/rss.xml')}
+          </a>
+        </div>
+
+        <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-white dark:bg-slate-800">
+          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-slate-100">Newsletter Feed</h3>
+          <p class="text-muted dark:text-slate-300 mb-3">
+            Subscribe to our newsletter issues for curated content and updates.
+          </p>
+          <a
+            href={getAsset('/newsletter-rss.xml')}
+            class="inline-flex items-center text-primary hover:underline font-medium"
+          >
+            {getAsset('/newsletter-rss.xml')}
+          </a>
+        </div>
+
+        <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-white dark:bg-slate-800">
+          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-slate-100">Events Feed</h3>
+          <p class="text-muted dark:text-slate-300 mb-3">
+            Never miss an upcoming event! Get notified about our meetups and community gatherings.
+          </p>
+          <a
+            href={getAsset('/events-rss.xml')}
+            class="inline-flex items-center text-primary hover:underline font-medium"
+          >
+            {getAsset('/events-rss.xml')}
+          </a>
+        </div>
+      </div>
+
+      <h2>How to Subscribe</h2>
+
+      <h3>Step 1: Choose an RSS Reader</h3>
+      <p>First, you'll need an RSS reader application. Here are some popular options:</p>
+      <ul>
+        <li>
+          <strong>Feedly</strong> - Web-based, great for beginners (<a
+            href="https://feedly.com"
+            target="_blank"
+            rel="noopener noreferrer">feedly.com</a
+          >)
+        </li>
+        <li>
+          <strong>NewsBlur</strong> - Web and mobile apps (<a
+            href="https://newsblur.com"
+            target="_blank"
+            rel="noopener noreferrer">newsblur.com</a
+          >)
+        </li>
+        <li>
+          <strong>Inoreader</strong> - Powerful features, web and mobile (<a
+            href="https://www.inoreader.com"
+            target="_blank"
+            rel="noopener noreferrer">inoreader.com</a
+          >)
+        </li>
+        <li>
+          <strong>NetNewsWire</strong> - Free, open-source (Mac/iOS) (<a
+            href="https://netnewswire.com"
+            target="_blank"
+            rel="noopener noreferrer">netnewswire.com</a
+          >)
+        </li>
+        <li><strong>Thunderbird</strong> - Email client with built-in RSS reader</li>
+      </ul>
+
+      <h3>Step 2: Add Our Feed</h3>
+      <p>Once you have an RSS reader:</p>
+      <ol>
+        <li>Copy the feed URL you want to subscribe to (see links above)</li>
+        <li>Open your RSS reader</li>
+        <li>Look for an "Add Feed" or "Subscribe" button (usually a + icon)</li>
+        <li>Paste the feed URL</li>
+        <li>Click "Subscribe" or "Add"</li>
+      </ol>
+
+      <h3>Step 3: Enjoy!</h3>
+      <p>
+        That's it! You'll now receive updates whenever we publish new content. You can subscribe to one or both feeds
+        depending on your interests.
+      </p>
+
+      <h2>Need Help?</h2>
+      <p>
+        If you have questions about RSS or need help subscribing, feel free to reach out to us. We're happy to help you
+        stay connected!
+      </p>
+    </div>
+  </section>
+</Layout>

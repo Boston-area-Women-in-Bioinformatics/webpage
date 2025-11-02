@@ -153,13 +153,55 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
           {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
           {
             showRssFeed && (
-              <a
-                class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                aria-label="RSS Feed"
-                href={getAsset('/rss.xml')}
-              >
-                <Icon name="tabler:rss" class="w-5 h-5" aria-hidden="true" />
-              </a>
+              <div class="relative dropdown">
+                <button
+                  type="button"
+                  class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                  aria-label="RSS Feeds menu"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  id="rss-menu"
+                >
+                  <Icon name="tabler:rss" class="w-5 h-5" aria-hidden="true" />
+                </button>
+                <ul
+                  class="dropdown-menu md:backdrop-blur-md dark:md:bg-slate-800 rounded md:absolute right-0 pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.25)]"
+                  aria-labelledby="rss-menu"
+                >
+                  <li>
+                    <a
+                      class="first:rounded-t md:hover:bg-gray-100 hover:text-link dark:text-slate-200 dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-nowrap"
+                      href={getAsset('/rss.xml')}
+                    >
+                      Blog Posts
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="md:hover:bg-gray-100 hover:text-link dark:text-slate-200 dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-nowrap"
+                      href={getAsset('/newsletter-rss.xml')}
+                    >
+                      Newsletters
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="md:hover:bg-gray-100 hover:text-link dark:text-slate-200 dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-nowrap"
+                      href={getAsset('/events-rss.xml')}
+                    >
+                      Events
+                    </a>
+                  </li>
+                  <li class="border-t border-gray-200 dark:border-gray-700">
+                    <a
+                      class="last:rounded-b md:hover:bg-gray-100 hover:text-link dark:text-slate-200 dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-nowrap text-sm"
+                      href="/rss-info"
+                    >
+                      What is RSS?
+                    </a>
+                  </li>
+                </ul>
+              </div>
             )
           }
         </div>
