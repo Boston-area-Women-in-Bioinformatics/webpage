@@ -110,7 +110,7 @@ BWIB’s Executive Committee elections are just around the corner, and we’re e
 
 ---
 
-## Web Committee Glow-Up!
+## Web Committee Glow-Up
 
 Sound the bugle and refresh the cache! The Web Committee is leveling up.
 
