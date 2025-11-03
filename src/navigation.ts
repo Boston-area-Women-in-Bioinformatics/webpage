@@ -1,5 +1,5 @@
 import { getPermalink, getBlogPermalink, getNewsletterPermalink } from './utils/permalinks';
-
+import LumaIcon from '~/icons/luma-logo.svg';
 export const headerData = {
   links: [
     {
@@ -249,9 +249,9 @@ export const footerData = {
   ],
   socialLinks: [
     {
-      ariaLabel: 'MeetUp',
-      icon: 'tabler:brand-meetup',
-      href: 'https://www.meetup.com/boston-area-womens-bioinformatics/',
+      ariaLabel: 'Lu.ma',
+      imageSrc: LumaIcon,
+      href: 'https://luma.com/bwib',
     },
     {
       ariaLabel: 'Slack',
