@@ -30,9 +30,7 @@ export const GET = async () => {
     items: await Promise.all(
       posts.map(async (post) => {
         const bodyHtml = await marked.parse(post.body);
-        const content = post.data.excerpt
-          ? `<p><em>${post.data.excerpt}</em></p>\n\n${bodyHtml}`
-          : bodyHtml;
+        const content = post.data.excerpt ? `<p><em>${post.data.excerpt}</em></p>\n\n${bodyHtml}` : bodyHtml;
         return {
           link: getPermalink(post.slug, 'post'),
           title: post.data.title,
