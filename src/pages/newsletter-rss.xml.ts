@@ -1,7 +1,9 @@
 import { getRssString } from '@astrojs/rss';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { marked } from 'marked';
 
 import { SITE, APP_NEWSLETTER } from 'astrowind:config';
-import { fetchNewsletters } from '~/utils/newsletter';
 import { getPermalink } from '~/utils/permalinks';
 
 export const GET = async () => {
@@ -12,19 +14,33 @@ export const GET = async () => {
     });
   }
 
-  const newsletters = await fetchNewsletters();
+  // Get all published newsletters (not drafts, not future-dated)
+  const newsletters = (
+    await getCollection(
+      'newsletter',
+      ({ data }: CollectionEntry<'newsletter'>) => !data.draft && new Date(data.publishDate) <= new Date()
+    )
+  ).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 
   const rss = await getRssString({
     title: `${SITE.name}'s Newsletter`,
     description: 'Stay updated with our latest newsletters',
     site: import.meta.env.SITE,
 
-    items: newsletters.map((newsletter) => ({
-      link: getPermalink(newsletter.permalink, 'post'),
-      title: newsletter.title,
-      description: newsletter.excerpt,
-      pubDate: newsletter.publishDate,
-    })),
+    items: await Promise.all(
+      newsletters.map(async (newsletter) => {
+        const bodyHtml = await marked.parse(newsletter.body);
+        const content = newsletter.data.excerpt
+          ? `<p><em>${newsletter.data.excerpt}</em></p>\n\n${bodyHtml}`
+          : bodyHtml;
+        return {
+          link: getPermalink(newsletter.slug, 'post'),
+          title: newsletter.data.title,
+          content,
+          pubDate: newsletter.data.publishDate,
+        };
+      })
+    ),
 
     trailingSlash: SITE.trailingSlash,
   });
