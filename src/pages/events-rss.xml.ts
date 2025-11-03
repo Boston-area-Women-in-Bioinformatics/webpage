@@ -18,14 +18,16 @@ export const GET = async () => {
     items: futureEvents.map((event) => ({
       link: `${import.meta.env.SITE}/events/${event.id}`,
       title: event.data.title,
-      description: `Join us on ${event.data.dateTime.toLocaleDateString('en-US', {
+      description: `<p><strong>When:</strong> ${event.data.dateTime.toLocaleDateString('en-US', {
         weekday: 'long',
         year: 'numeric',
         month: 'long',
         day: 'numeric',
         hour: 'numeric',
         minute: '2-digit',
-      })} at ${event.data.location.join(', ')}`,
+      })}</p>
+<p><strong>Where:</strong> ${event.data.location.join(', ')}</p>
+<p>${event.body}</p>`,
       pubDate: event.data.dateTime,
       categories: event.data.tags || [],
     })),
