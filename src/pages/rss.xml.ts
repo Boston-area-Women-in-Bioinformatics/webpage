@@ -11,6 +11,12 @@ const cleanImports = (content: string): string => {
   return content.replace(/^import\s+.*?from\s+['"].*?['"];?\s*$/gm, '').trim();
 };
 
+// Helper function to convert relative image paths to absolute URLs
+const processImages = (html: string, siteUrl: string): string => {
+  // Convert relative image paths to absolute URLs
+  return html.replace(/src="\/([^"]+)"/g, `src="${siteUrl}/$1"`).replace(/src='\/([^']+)'/g, `src='${siteUrl}/$1'`);
+};
+
 export const GET = async () => {
   if (!APP_BLOG.isEnabled) {
     return new Response(null, {
@@ -36,7 +42,23 @@ export const GET = async () => {
       posts.map(async (post) => {
         const cleanedBody = cleanImports(post.body);
         const bodyHtml = await marked.parse(cleanedBody);
-        const content = post.data.excerpt ? `<p><em>${post.data.excerpt}</em></p>\n\n${bodyHtml}` : bodyHtml;
+        const processedHtml = processImages(bodyHtml, import.meta.env.SITE);
+
+        // Add featured image at the top if it exists
+        let content = '';
+        if (post.data.image) {
+          const imageUrl =
+            typeof post.data.image === 'string'
+              ? post.data.image.startsWith('http')
+                ? post.data.image
+                : `${import.meta.env.SITE}${post.data.image}`
+              : post.data.image;
+          const altText = post.data.imageAlt || post.data.title;
+          content += `<img src="${imageUrl}" alt="${altText}" style="max-width: 100%; height: auto;" />\n\n`;
+        }
+
+        content += post.data.excerpt ? `<p><em>${post.data.excerpt}</em></p>\n\n${processedHtml}` : processedHtml;
+
         return {
           link: getPermalink(post.slug, 'post'),
           title: post.data.title,

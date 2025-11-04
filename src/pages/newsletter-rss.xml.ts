@@ -11,6 +11,12 @@ const cleanImports = (content: string): string => {
   return content.replace(/^import\s+.*?from\s+['"].*?['"];?\s*$/gm, '').trim();
 };
 
+// Helper function to convert relative image paths to absolute URLs
+const processImages = (html: string, siteUrl: string): string => {
+  // Convert relative image paths to absolute URLs
+  return html.replace(/src="\/([^"]+)"/g, `src="${siteUrl}/$1"`).replace(/src='\/([^']+)'/g, `src='${siteUrl}/$1'`);
+};
+
 export const GET = async () => {
   if (!APP_NEWSLETTER.isEnabled) {
     return new Response(null, {
@@ -36,9 +42,25 @@ export const GET = async () => {
       newsletters.map(async (newsletter) => {
         const cleanedBody = cleanImports(newsletter.body);
         const bodyHtml = await marked.parse(cleanedBody);
-        const content = newsletter.data.excerpt
-          ? `<p><em>${newsletter.data.excerpt}</em></p>\n\n${bodyHtml}`
-          : bodyHtml;
+        const processedHtml = processImages(bodyHtml, import.meta.env.SITE);
+
+        // Add featured image at the top if it exists
+        let content = '';
+        if (newsletter.data.image) {
+          const imageUrl =
+            typeof newsletter.data.image === 'string'
+              ? newsletter.data.image.startsWith('http')
+                ? newsletter.data.image
+                : `${import.meta.env.SITE}${newsletter.data.image}`
+              : newsletter.data.image;
+          const altText = newsletter.data.imageAlt || newsletter.data.title;
+          content += `<img src="${imageUrl}" alt="${altText}" style="max-width: 100%; height: auto;" />\n\n`;
+        }
+
+        content += newsletter.data.excerpt
+          ? `<p><em>${newsletter.data.excerpt}</em></p>\n\n${processedHtml}`
+          : processedHtml;
+
         return {
           link: getPermalink(newsletter.slug, 'post'),
           title: newsletter.data.title,
