@@ -1,5 +1,4 @@
 import { getPermalink, getBlogPermalink, getNewsletterPermalink } from './utils/permalinks';
-
 export const headerData = {
   links: [
     {
@@ -249,16 +248,17 @@ export const footerData = {
   ],
   socialLinks: [
     {
-      ariaLabel: 'MeetUp',
-      icon: 'tabler:brand-meetup',
-      href: 'https://www.meetup.com/boston-area-womens-bioinformatics/',
-    },
-    {
       ariaLabel: 'Slack',
       icon: 'tabler:brand-slack',
       href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2kg9ojwn9-arPXyQXPB_VgbVWDdoA2nQ',
     },
     { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/groups/13074137/' },
+
+    {
+      ariaLabel: 'Lu.ma',
+      icon: 'LumaIcon', // This matches the check in Footer.astro
+      href: 'https://luma.com/bwib',
+    },
     {
       ariaLabel: 'YouTube',
       icon: 'tabler:brand-youtube',

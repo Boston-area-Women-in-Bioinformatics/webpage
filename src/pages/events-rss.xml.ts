@@ -5,6 +5,11 @@ import { marked } from 'marked';
 
 import { SITE } from 'astrowind:config';
 
+// Helper function to remove import statements from markdown/MDX
+const cleanImports = (content: string): string => {
+  return content.replace(/^import\s+.*?from\s+['"].*?['"];?\s*$/gm, '').trim();
+};
+
 export const GET = async () => {
   // Get all future events (upcoming events only)
   const futureEvents = (
@@ -18,7 +23,8 @@ export const GET = async () => {
 
     items: await Promise.all(
       futureEvents.map(async (event) => {
-        const bodyHtml = event.body ? await marked.parse(event.body) : '';
+        const cleanedBody = event.body ? cleanImports(event.body) : '';
+        const bodyHtml = cleanedBody ? await marked.parse(cleanedBody) : '';
         const content = `<p><strong>When:</strong> ${event.data.dateTime.toLocaleDateString('en-US', {
           weekday: 'long',
           year: 'numeric',
