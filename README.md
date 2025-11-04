@@ -3,6 +3,32 @@
 <img src="src/assets/favicons/WIB_Logo.png" align="right"
      alt="Logo for Boston-Area Women in Bioinformatics" width="100">
 
+## Getting started with the website (Mac)
+
+- Install homebrew :
+
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+- Add homebrew to path
+
+```
+echo >> /Users/yaseswini/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/yaseswini/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+- Install `npm`
+
+```
+brew install npm
+```
+
+- Install `astro`
+
+```
+npm install astro
+```
+
 ## Add a new event
 
 Here are the steps to add a new event with git:
@@ -35,6 +61,15 @@ git add src/content/meetups/{newevent}.md
 #  Commit new changes
 git push -u origin <new-branch-name>
 ```
+
+### Event Page template
+
+To modify the event page template, go to `src/layouts/EventLayout.astro`.
+
+If you want to add parameters to the newsletter markdown files, such as "data-luma-event-id", you will need to also do the following:
+
+- add the new parameter to `eventCollection` in `src/content/config.ts`
+- add the new parameter to the `EventLayout` object in `src/pages/events/[...slug].astro`
 
 ## Add a new blog post
 

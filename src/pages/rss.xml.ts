@@ -1,8 +1,15 @@
 import { getRssString } from '@astrojs/rss';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { marked } from 'marked';
 
 import { SITE, METADATA, APP_BLOG } from 'astrowind:config';
-import { fetchPosts } from '~/utils/blog';
 import { getPermalink } from '~/utils/permalinks';
+
+// Helper function to remove import statements from markdown/MDX
+const cleanImports = (content: string): string => {
+  return content.replace(/^import\s+.*?from\s+['"].*?['"];?\s*$/gm, '').trim();
+};
 
 export const GET = async () => {
   if (!APP_BLOG.isEnabled) {
@@ -12,19 +19,33 @@ export const GET = async () => {
     });
   }
 
-  const posts = await fetchPosts();
+  // Get all published posts (not drafts, not future-dated)
+  const posts = (
+    await getCollection(
+      'post',
+      ({ data }: CollectionEntry<'post'>) => !data.draft && new Date(data.publishDate) <= new Date()
+    )
+  ).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 
   const rss = await getRssString({
-    title: `${SITE.name}’s Blog`,
+    title: `${SITE.name}'s Blog`,
     description: METADATA?.description || '',
     site: import.meta.env.SITE,
 
-    items: posts.map((post) => ({
-      link: getPermalink(post.permalink, 'post'),
-      title: post.title,
-      description: post.excerpt,
-      pubDate: post.publishDate,
-    })),
+    items: await Promise.all(
+      posts.map(async (post) => {
+        const cleanedBody = cleanImports(post.body);
+        const bodyHtml = await marked.parse(cleanedBody);
+        const content = post.data.excerpt ? `<p><em>${post.data.excerpt}</em></p>\n\n${bodyHtml}` : bodyHtml;
+        return {
+          link: getPermalink(post.slug, 'post'),
+          title: post.data.title,
+          content,
+          pubDate: post.data.publishDate,
+          categories: post.data.tags || [],
+        };
+      })
+    ),
 
     trailingSlash: SITE.trailingSlash,
   });

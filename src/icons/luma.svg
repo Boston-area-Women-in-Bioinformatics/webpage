@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 127.14 127.14"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="luma-logo.svg"
+   width="127.14"
+   height="127.14"
+   inkscape:export-filename="luma-logo.png"
+   inkscape:export-xdpi="377.53659"
+   inkscape:export-ydpi="377.53659"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="1.4585635"
+     inkscape:cx="16.454545"
+     inkscape:cy="131.29356"
+     inkscape:window-width="1728"
+     inkscape:window-height="934"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" />
+  <path
+     d="M 127.14,63.57 C 92.03,63.57 63.57,35.11 63.57,0 63.57,35.11 35.11,63.57 0,63.57 v 0 c 35.11,0 63.57,28.46 63.57,63.57 v 0 c 0,-35.11 28.46,-63.57 63.57,-63.57 z"
+     id="path1"
+     sodipodi:nodetypes="ccssssc" />
+</svg>

@@ -1,0 +1,85 @@
+---
+/**
+ * PostGridItem Component
+ * A reusable grid item for displaying posts (blog posts, newsletters, etc.)
+ *
+ * @param post - The post to display (Post or Newsletter type)
+ */
+
+import { APP_BLOG, APP_NEWSLETTER } from 'astrowind:config';
+import type { Post, Newsletter } from '~/types';
+
+import Image from '~/components/common/Image.astro';
+import Card from '~/components/ui/Card.astro';
+
+import { findImage } from '~/utils/images';
+import { getPermalink } from '~/utils/permalinks';
+
+export interface Props {
+  post: Post | Newsletter;
+}
+
+const { post } = Astro.props;
+const image = await findImage(post.image);
+
+// Determine if this is a blog post or newsletter
+const isBlogPost = 'tags' in post;
+const config = isBlogPost ? APP_BLOG : APP_NEWSLETTER;
+const link = config?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
+
+// Use imageAlt if provided, otherwise fall back to title for accessibility
+const altText = post.imageAlt || post.title;
+---
+
+<article
+  class="mb-6 transition intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+>
+  <Card variant="blog" padding="p-0" class="mb-6">
+    {
+      image &&
+        (link ? (
+          <a href={link}>
+            <Image
+              src={image}
+              class="w-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+              widths={[400, 900]}
+              width={400}
+              height={400}
+              sizes="(max-width: 900px) 400px, 900px"
+              alt={altText}
+              layout="responsive"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+        ) : (
+          <Image
+            src={image}
+            class="w-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+            widths={[400, 900]}
+            width={400}
+            height={400}
+            sizes="(max-width: 900px) 400px, 900px"
+            alt={altText}
+            layout="responsive"
+            loading="lazy"
+            decoding="async"
+          />
+        ))
+    }
+  </Card>
+
+  <h3 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading text-gray-900 dark:text-slate-100">
+    {
+      link ? (
+        <a class="inline-block hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href={link}>
+          {post.title}
+        </a>
+      ) : (
+        post.title
+      )
+    }
+  </h3>
+
+  {post.excerpt && <p class="text-muted dark:text-slate-300 text-lg">{post.excerpt}</p>}
+</article>

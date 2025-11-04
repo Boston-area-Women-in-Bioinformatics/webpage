@@ -2,13 +2,22 @@
 import Layout from '~/layouts/PageLayout.astro';
 import { SITE } from '~/config/site/config.js';
 import Hero2 from '~/components/widgets/Hero2.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import LatestNewsletters from '~/components/widgets/LatestNewsletters.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import eventImg from '~/../public/photos/2025/WIB_10Year_group_photo1.jpg'; // adjust path as needed
 //import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
 import Button from '~/components/ui/Button.astro';
+import Card from '~/components/ui/Card.astro';
+import UpcomingEvents from '~/components/widgets/UpcomingEvents.astro';
+import { findLatestNewsletters } from '~/utils/newsletter';
+import { findLatestPosts } from '~/utils/blog';
+import { APP_NEWSLETTER, APP_BLOG } from 'astrowind:config';
+import { getBlogPermalink } from '~/utils/permalinks';
+import Image from '~/components/common/Image.astro';
+
+const latestNewsletter = APP_NEWSLETTER.isEnabled ? (await findLatestNewsletters({ count: 1 }))[0] : null;
+const latestBlogs = APP_BLOG.isEnabled ? await findLatestPosts({ count: 4 }) : [];
+
 const metadata = {
   title: SITE.title,
   description: SITE.description,
@@ -16,56 +25,56 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <section class="text-center py-16">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 mx-auto leading-tight">
-      Boston Women in
-      <span class="text-accent dark:text-white highlight">Bioinformatics</span>
-    </h1>
-
-    <p class="text-lg sm:text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-      Team up with <span class="font-semibold">US</span>, your pathway to elevating your career through leadership,
-      networking, and professional growth.
-    </p>
+  <!-- Hero Introduction Section -->
+  <section class="py-16 md:py-20 bg-white dark:bg-dark">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl dark:text-gray-100 font-bold mb-4 leading-tight">
+        Boston Women in
+        <span class="text-accent dark:text-gray-100 highlight">Bioinformatics</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-700 dark:text-gray-300">
+        Team up with <span class="font-semibold">US</span>, your pathway to elevating your career through leadership,
+        networking, and professional growth.
+      </p>
+    </div>
   </section>
 
-  <!-- Hero2 Widget ******************* -->
-  <div class="sm:my-8 md:my-16">
-    <Hero2
-      title="Celebrating 10 Years of Impact"
-      subtitle="We're proud to mark a decade of innovation, community, and growth. Thank you for being part of our journey!"
-      image={{
-        src: eventImg,
-        alt: 'Women in Bioinformatics 10th Anniversary Event',
-      }}
-    >
-      <Fragment slot="content">
-        <!--<div class="grid sm:grid-cols-2 items-center sm:w-full">
-          <div class="flex sm:w-auto sm:my-0 my-4 mx-4 justify-center">
-            <AddToCalendarButton
-              client:only="react"
-              name="Boston Women in Bioinformatics 10 Year Anniversary"
-              location="Boynton Yards, Somerville"
-              startDate="2025-09-30"
-              endDate="2025-09-30"
-              startTime="16:00"
-              endTime="19:00"
+  <!-- 10 Year Anniversary Section -->
+  <section class="py-16 md:py-20 bg-gray-50 dark:bg-slate-800">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <Hero2
+        title="Boston Women in Bioinformatics"
+        subtitle="Team up with US, your pathway to elevating your career through leadership, networking, and professional growth."
+        tagline="Celebrating 10 Years of Impact"
+        image={{
+          src: eventImg,
+          alt: 'Women in Bioinformatics 10th Anniversary Event',
+        }}
+      >
+        <Fragment slot="content">
+          <div class="flex gap-4 justify-center flex-wrap">
+            <Button
+              variant="primary"
+              text="Event Photos"
+              href="https://photos.app.goo.gl/ZhqNmC1k4xfprUy46"
+              icon="tabler:square-rounded-arrow-right"
             />
-          </div>-->
-        <div class="flex sm:w-auto sm:my-0 my-4 mx-4 justify-center">
-          <Button
-            variant="primary"
-            text="Event Photos"
-            href="https://photos.app.goo.gl/ZhqNmC1k4xfprUy46"
-            icon="tabler:square-rounded-arrow-right"
-          />
-        </div>
-        <!--</div>-->
-      </Fragment>
-    </Hero2>
-  </div>
+            <Button variant="secondary" text="Join Our Community" href="/contact" />
+          </div>
+        </Fragment>
+      </Hero2>
+    </div>
+  </section>
 
-  <!-- CallToAction Widget *********** -->
-  <div class="sm:my-8 md:my-16">
+  <!-- Upcoming Events Section -->
+  <section class="py-16 md:py-20 bg-white dark:bg-dark dark:text-gray-200">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <UpcomingEvents />
+    </div>
+  </section>
+
+  <!-- Community Survey Section -->
+  <section class="py-16 md:py-20 bg-gray-50 dark:bg-slate-800">
     <CallToAction
       title="Participate in Our Community Study"
       actions={[
@@ -79,72 +88,181 @@ const metadata = {
       ]}
     >
       <Fragment slot="subtitle">
-        Are you a bioinformatician, computational biologist, or working in an adjacent field? Boston Women in
-        Bioinformatics (BWIB) is conducting a national survey to better understand the landscape of our field. This
-        survey is for everyone, not just women, and only takes ~5 minutes to complete. All responses are anonymous and
-        will be used for community-driven research and programming.<br class="hidden md:inline" />[~5 min]
+        <span class="text-gray-700 dark:text-gray-300">
+          Are you a bioinformatician, computational biologist, or working in an adjacent field? Boston Women in
+          Bioinformatics (BWIB) is conducting a national survey to better understand the landscape of our field. This
+          survey is for everyone, not just women, and only takes ~5 minutes to complete. All responses are anonymous and
+          will be used for community-driven research and programming.<br class="hidden md:inline" />[~5 min]
+        </span>
       </Fragment>
     </CallToAction>
-  </div>
-  <LatestNewsletters title="Catch Up on Our Latest Newsletter" />
+  </section>
 
-  <BlogLatestPosts title="Check out our blogs" />
+  <!-- Latest Content Section -->
+  <section class="py-16 md:py-20 dark:bg-dark dark:text-gray-200">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8 text-center">Latest from Our Community</h2>
 
-  <Features2
-    title="Let's Connect!"
-    columns={2}
-    items={[
-      // {
-      //   title: 'General support',
-      //   description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      // },
-      // {
-      //   title: 'Contact sales',
-      //   description:
-      //     'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
-      // },
-      // {
-      //   title: 'Technical support',
-      //   description:
-      //     'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
-      // },
-      {
-        title: 'Slack',
-        icon: 'tabler:brand-slack',
-        callToAction: {
-          target: '_blank',
-          text: 'https://boston-women-bioinfo.slack.com',
-          href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ',
-          variant: 'link',
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Newsletter Column -->
+        {
+          latestNewsletter && (
+            <article aria-labelledby="latest-newsletter-heading">
+              <h3 id="latest-newsletter-heading" class="text-2xl font-bold mb-4">
+                Latest Newsletter
+              </h3>
+              <Card variant="blog" padding="p-0">
+                {latestNewsletter.image && (
+                  <a
+                    href={latestNewsletter.permalink}
+                    aria-label={`Read newsletter: ${latestNewsletter.excerpt?.slice(0, 60) || latestNewsletter.title}`}
+                    class="block"
+                  >
+                    <Image
+                      src={latestNewsletter.image}
+                      alt={
+                        latestNewsletter.imageAlt || latestNewsletter.excerpt?.slice(0, 100) || latestNewsletter.title
+                      }
+                      class="w-full h-64 object-cover"
+                      widths={[400, 600]}
+                      width={600}
+                      height={400}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      loading="lazy"
+                    />
+                  </a>
+                )}
+                <div class="p-6">
+                  <h4 class="text-xl font-bold mb-3">
+                    <a
+                      href={latestNewsletter.permalink}
+                      class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
+                    >
+                      {latestNewsletter.title}
+                    </a>
+                  </h4>
+                  {latestNewsletter.excerpt && (
+                    <p class="text-muted dark:text-slate-300 text-base mb-4">{latestNewsletter.excerpt}</p>
+                  )}
+                  <Button variant="link" href={latestNewsletter.permalink}>
+                    Read more »
+                  </Button>
+                </div>
+              </Card>
+            </article>
+          )
+        }
+
+        <!-- Blog Posts Column -->
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Recent Blog Posts</h3>
+          <div class="grid grid-cols-2 gap-4">
+            {
+              latestBlogs.map((post) => (
+                <Card variant="blog" padding="p-0">
+                  {post.image && (
+                    <a href={post.permalink} class="block">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        class="w-full h-32 object-cover"
+                        widths={[200, 300]}
+                        width={300}
+                        height={200}
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                        loading="lazy"
+                      />
+                    </a>
+                  )}
+                  <div class="p-3">
+                    <h4 class="text-sm font-bold leading-tight mb-1">
+                      <a
+                        href={post.permalink}
+                        class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
+                      >
+                        {post.title}
+                      </a>
+                    </h4>
+                    {post.excerpt && <p class="text-muted dark:text-slate-300 text-xs line-clamp-2">{post.excerpt}</p>}
+                  </div>
+                </Card>
+              ))
+            }
+          </div>
+          <div class="text-center mt-6">
+            <Button variant="link" href={getBlogPermalink()}> View all blog posts » </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Let's Connect Section -->
+  <section class="py-16 md:py-20 bg-gray-50 dark:bg-slate-800">
+    <Features2
+      title="Let's Connect!"
+      subtitle="Join our community and stay in touch"
+      columns={2}
+      classes={{
+        headline: {
+          title: 'text-4xl md:text-5xl font-bold mb-4',
+          subtitle: 'text-xl dark:text-gray-200',
         },
-      },
-      {
-        title: 'Email',
-        icon: 'tabler:mail',
-        callToAction: {
-          target: '_blank',
-          text: 'Bostonwomeninbioinformatics@gmail.com',
-          href: 'mailto:Bostonwomeninbioinformatics@gmail.com',
-          variant: 'link',
+      }}
+      items={[
+        // {
+        //   title: 'General support',
+        //   description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
+        // },
+        // {
+        //   title: 'Contact sales',
+        //   description:
+        //     'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
+        // },
+        // {
+        //   title: 'Technical support',
+        //   description:
+        //     'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
+        // },
+        {
+          title: 'Slack',
+          description: 'Join our Slack community',
+          icon: 'tabler:brand-slack',
+          callToAction: {
+            target: '_blank',
+            href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ',
+          },
         },
-      },
-      {
-        title: 'Linked In',
-        icon: 'tabler:brand-linkedin',
-        callToAction: {
-          target: '_blank',
-          text: 'Boston-area Women in Bioinformatics',
-          href: 'https://www.linkedin.com/groups/13074137/',
-          variant: 'link',
+        {
+          title: 'Email',
+          description: 'Reach out to our team',
+          icon: 'tabler:mail',
+          callToAction: {
+            target: '_blank',
+            href: 'mailto:Bostonwomeninbioinformatics@gmail.com',
+          },
         },
-      },
-      {
-        title: 'Location',
-        description: 'Boston Area, Massachusetts',
-        icon: 'tabler:map-pin',
-      },
-    ]}
-  />
+        {
+          title: 'LinkedIn',
+          description: 'Connect with us on LinkedIn',
+          icon: 'tabler:brand-linkedin',
+          callToAction: {
+            target: '_blank',
+            href: 'https://www.linkedin.com/groups/13074137/',
+          },
+        },
+        {
+          title: 'Events Calendar',
+          description: 'View our upcoming events',
+          icon: 'tabler:calendar-event',
+          callToAction: {
+            target: '_blank',
+            href: 'https://luma.com/bwib',
+          },
+        },
+      ]}
+    />
+  </section>
   <!-- <Fragment slot="image">
       <YouTube id="gxBkghlglTg" title="Astro just Launched.... Could it be the ultimate web framework?" />
       <style is:inline>

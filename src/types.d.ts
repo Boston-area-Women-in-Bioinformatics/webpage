@@ -15,6 +15,7 @@ export interface Newsletter {
   title: string;
   excerpt?: string;
   image?: ImageMetadata | string;
+  imageAlt?: string;
   imageDescription?: string;
   authors?: PostAuthor[];
   metadata?: MetaData;
@@ -45,6 +46,9 @@ export interface Post {
   excerpt?: string;
   /**  */
   image?: ImageMetadata | string;
+  /** Alt text for the image (accessibility) */
+  imageAlt?: string;
+  /** Image attribution/description (e.g., "Photo by Jane Doe on Unsplash") */
   imageDescription?: string;
 
   /**  */

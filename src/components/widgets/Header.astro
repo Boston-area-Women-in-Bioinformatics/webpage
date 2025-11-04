@@ -71,7 +71,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     ]}
   >
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
-      <a class="flex items-center" href={getHomePermalink()}>
+      <a class="flex items-center" href={getHomePermalink()} aria-label="Boston Women in Bioinformatics home">
         <Logo />
       </a>
       <div class="flex items-center md:hidden">
@@ -79,33 +79,45 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       </div>
     </div>
     <nav
-      class="items-center w-full md:w-auto hidden md:flex md:mx-5 text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:justify-self-center"
+      class="items-center w-full md:w-auto hidden md:flex md:mx-5 text-default dark:text-slate-200 overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:justify-self-center"
       aria-label="Main navigation"
     >
       <ul
         class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center"
       >
         {
-          links.map(({ text, href, links }) => (
+          links.map(({ text, href, links }, index) => (
             <li class={links?.length ? 'dropdown' : ''}>
               {links?.length ? (
                 <>
                   <button
                     type="button"
                     class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    aria-label={`${text} menu`}
+                    id={`dropdown-${index}`}
                   >
                     {text}{' '}
-                    <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
+                    <Icon
+                      name="tabler:chevron-down"
+                      class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline"
+                      aria-hidden="true"
+                    />
                   </button>
-                  <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.25)]">
+                  <ul
+                    class="dropdown-menu md:backdrop-blur-md dark:md:bg-slate-800 rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.25)]"
+                    aria-labelledby={`dropdown-${index}`}
+                  >
                     {links.map(({ text: text2, href: href2 }) => (
                       <li>
                         <a
                           class:list={[
-                            'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
+                            'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:text-slate-200 dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
                             { 'aw-link-active': href2 === currentPath },
                           ]}
                           href={href2}
+                          aria-current={href2 === currentPath ? 'page' : undefined}
                         >
                           {text2}
                         </a>
@@ -120,6 +132,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                     { 'aw-link-active': href === currentPath },
                   ]}
                   href={href}
+                  aria-current={href === currentPath ? 'page' : undefined}
                 >
                   {text}
                 </a>
@@ -140,13 +153,55 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
           {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
           {
             showRssFeed && (
-              <a
-                class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                aria-label="RSS Feed"
-                href={getAsset('/rss.xml')}
-              >
-                <Icon name="tabler:rss" class="w-5 h-5" />
-              </a>
+              <div class="relative dropdown">
+                <button
+                  type="button"
+                  class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                  aria-label="RSS Feeds menu"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  id="rss-menu"
+                >
+                  <Icon name="tabler:rss" class="w-5 h-5" aria-hidden="true" />
+                </button>
+                <ul
+                  class="dropdown-menu md:backdrop-blur-md dark:md:bg-slate-800 rounded md:absolute right-0 pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.25)]"
+                  aria-labelledby="rss-menu"
+                >
+                  <li>
+                    <a
+                      class="first:rounded-t md:hover:bg-gray-100 hover:text-link dark:text-slate-200 dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-nowrap"
+                      href={getAsset('/rss.xml')}
+                    >
+                      Blog Posts
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="md:hover:bg-gray-100 hover:text-link dark:text-slate-200 dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-nowrap"
+                      href={getAsset('/newsletter-rss.xml')}
+                    >
+                      Newsletters
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="md:hover:bg-gray-100 hover:text-link dark:text-slate-200 dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-nowrap"
+                      href={getAsset('/events-rss.xml')}
+                    >
+                      Events
+                    </a>
+                  </li>
+                  <li class="border-t border-gray-200 dark:border-gray-700">
+                    <a
+                      class="last:rounded-b md:hover:bg-gray-100 hover:text-link dark:text-slate-200 dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-nowrap text-sm"
+                      href="/rss-info"
+                    >
+                      What is RSS?
+                    </a>
+                  </li>
+                </ul>
+              </div>
             )
           }
         </div>

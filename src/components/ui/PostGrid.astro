@@ -1,0 +1,23 @@
+---
+/**
+ * PostGrid Component
+ * A reusable grid component for displaying posts in a grid layout
+ *
+ * @param posts - Array of posts to display
+ * @param ItemComponent - The component to use for rendering each grid item
+ */
+
+import type { Post, Newsletter } from '~/types';
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+
+interface Props {
+  posts: Array<Post | Newsletter>;
+  ItemComponent: AstroComponentFactory;
+}
+
+const { posts, ItemComponent } = Astro.props;
+---
+
+<div class="grid gap-6 row-gap-5 md:grid-cols-2 lg:grid-cols-4 -mb-6">
+  {posts.map((post) => <ItemComponent post={post} />)}
+</div>
