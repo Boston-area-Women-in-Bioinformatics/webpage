@@ -106,7 +106,6 @@ That&amp;#39;s every industry right now.&lt;/p&gt;
 &lt;p&gt;If you&amp;#39;re building data systems that integrate multiple sources and serve non-technical users, I&amp;#39;d love to hear what patterns you&amp;#39;re seeing. What stays the same across domains? What actually changes?&lt;/p&gt;
 </content:encoded><category>data-engineering</category><category>bioinformatics</category><category>career-transition</category></item><item><title>A Coffee with CompBio: Fail, learn, repeat, the bioinformatics way!</title><link>https://boston-wib.org/blog/coffeewithcompbio/episode-9</link><guid isPermaLink="true">https://boston-wib.org/blog/coffeewithcompbio/episode-9</guid><pubDate>Tue, 14 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;A coffee with Saranya Canchi&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;import { FaBell, FaSpotify, FaApple } from &amp;#39;react-icons/fa&amp;#39;;&lt;/p&gt;
 &lt;iframe
   name=&quot;Ausha Podcast Player&quot;
   frameborder=&quot;0&quot;
@@ -297,7 +296,6 @@ More importantly, it meant scientists could trust the data they were seeing. Whe
 &lt;p&gt;What&amp;#39;s your experience with balancing speed vs. process in biotech? Have you seen change management approaches that actually accelerated rather than slowed down scientific progress? 🤔&lt;/p&gt;
 </content:encoded><category>biotech</category><category>change-management</category><category>data-engineering</category><category>bioinformatics</category><category>scientific-computing</category></item><item><title>A Coffee with CompBio: (Dry) Lab Notebooks</title><link>https://boston-wib.org/blog/coffeewithcompbio/episode-8</link><guid isPermaLink="true">https://boston-wib.org/blog/coffeewithcompbio/episode-8</guid><pubDate>Tue, 23 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;The Importance of Recordkeeping in CompBio with insights from Amulya Shastry and Lina Faller.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;import { FaBell, FaSpotify, FaApple } from &amp;#39;react-icons/fa&amp;#39;;&lt;/p&gt;
 &lt;iframe
   name=&quot;Ausha Podcast Player&quot;
   frameborder=&quot;0&quot;
@@ -535,7 +533,6 @@ Try: &amp;quot;I identified data quality issues. Here are three options with tra
 &lt;p&gt;What&amp;#39;s your experience with scope creep? What strategies help you keep projects on track?&lt;/p&gt;
 </content:encoded><category>technical-leadership</category><category>scope-management</category><category>project-management</category><category>leadership</category><category>career-development</category></item><item><title>A Coffee with CompBio: The Spatial Transcriptomics Toolkit</title><link>https://boston-wib.org/blog/coffeewithcompbio/episode-7</link><guid isPermaLink="true">https://boston-wib.org/blog/coffeewithcompbio/episode-7</guid><pubDate>Tue, 02 Sep 2025 08:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;Memory, Clustering, and Deconvolution&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;import { FaBell, FaSpotify, FaApple } from &amp;#39;react-icons/fa&amp;#39;;&lt;/p&gt;
 &lt;iframe
   name=&quot;Ausha Podcast Player&quot;
   frameborder=&quot;0&quot;
@@ -748,7 +745,6 @@ Scientist: &amp;quot;I want to walk into Monday&amp;#39;s meeting and confidentl
 &lt;p&gt;What&amp;#39;s your experience with this? Do you find that starting with outcomes changes what you build?&lt;/p&gt;
 </content:encoded><category>data-science</category><category>requirements</category><category>user-experience</category><category>bioinformatics</category><category>product-development</category></item><item><title>A Coffee with CompBio: First hand experience on transitioning to a Product Manager role</title><link>https://boston-wib.org/blog/coffeewithcompbio/episode-6</link><guid isPermaLink="true">https://boston-wib.org/blog/coffeewithcompbio/episode-6</guid><pubDate>Wed, 13 Aug 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;Katie Huges shares her professional journey from bioinformatics to product management with help from Lorena and Alex.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;import { FaBell, FaSpotify, FaApple } from &amp;#39;react-icons/fa&amp;#39;;&lt;/p&gt;
 &lt;iframe
   name=&quot;Ausha Podcast Player&quot;
   frameborder=&quot;0&quot;
@@ -903,7 +899,6 @@ Add in the risk mitigation (failed due diligence, regulatory compliance, patent 
 &lt;p&gt;What&amp;#39;s your experience with data governance in biotech? Have you seen companies invest in dedicated stewardship roles, or is this still &amp;quot;everyone&amp;#39;s job&amp;quot; (which usually means no one&amp;#39;s job)?&lt;/p&gt;
 </content:encoded><category>cross-functional</category><category>empathy</category><category>bioinformatics</category><category>teamwork</category><category>technical-leadership</category></item><item><title>A Coffee with CompBio: R You Doing It Right?</title><link>https://boston-wib.org/blog/coffeewithcompbio/episode-5</link><guid isPermaLink="true">https://boston-wib.org/blog/coffeewithcompbio/episode-5</guid><pubDate>Tue, 29 Jul 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;Alex and Lorena dig into the tricks and tips that&apos;ll actually make your R code work better.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;import { FaBell, FaSpotify, FaApple } from &amp;#39;react-icons/fa&amp;#39;;&lt;/p&gt;
 &lt;iframe
   name=&quot;Ausha Podcast Player&quot;
   frameborder=&quot;0&quot;
@@ -1082,7 +1077,6 @@ When you document your rationale in real-time, you&amp;#39;re not just helping f
 &lt;p&gt;Do you keep a computational lab notebook? What&amp;#39;s your system for documenting analysis decisions?&lt;/p&gt;
 </content:encoded><category>bioinformatics</category><category>data-science</category><category>computational-biology</category><category>reproducibility</category><category>best-practices</category></item><item><title>A Coffee with CompBio: Fast, Private, and Publish-Ready Spatial Transcriptomics App (Without Losing Your Mind)</title><link>https://boston-wib.org/blog/coffeewithcompbio/episode-4</link><guid isPermaLink="true">https://boston-wib.org/blog/coffeewithcompbio/episode-4</guid><pubDate>Thu, 10 Jul 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;Alex and Lorena journey through the real-life challenges of building interactive single cell spatial data visualizations for large projects.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;import { FaBell, FaSpotify, FaApple } from &amp;#39;react-icons/fa&amp;#39;;&lt;/p&gt;
 &lt;iframe
   name=&quot;Ausha Podcast Player&quot;
   frameborder=&quot;0&quot;
@@ -1117,7 +1111,6 @@ When you document your rationale in real-time, you&amp;#39;re not just helping f
 &lt;p&gt;Hosted by Ausha. See &lt;a href=&quot;https://ausha.co/privacy-policy&quot;&gt;ausha.co/privacy-policy&lt;/a&gt; for more information&lt;/p&gt;
 </content:encoded><category>coffee-with-compbio</category><category>computational-biology</category><category>podcast</category><category>bioinformatics</category><category>womeninscience</category><category>quick-sips</category><category>brewing-up-for-answers</category><category>github-actions</category><category>github</category><category>academia-industry</category><category>cloud-computing</category><category>web-app</category><category>vitessce</category><category>python</category><category>r-programming</category><category>spatial-transcriptomics</category></item><item><title>A Coffee with CompBio: R Markdown</title><link>https://boston-wib.org/blog/coffeewithcompbio/episode-3</link><guid isPermaLink="true">https://boston-wib.org/blog/coffeewithcompbio/episode-3</guid><pubDate>Thu, 26 Jun 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;Alex and Lorena discuss a large bulk RNA-seq project that yielded lasting changes to their group’s everyday bioinformatics practices via the creation of parameterized R Markdown code templates.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;import { FaBell, FaSpotify, FaApple } from &amp;#39;react-icons/fa&amp;#39;;&lt;/p&gt;
 &lt;iframe
   name=&quot;Ausha Podcast Player&quot;
   frameborder=&quot;0&quot;
@@ -1151,7 +1144,6 @@ When you document your rationale in real-time, you&amp;#39;re not just helping f
 &lt;p&gt;Hosted by Ausha. See &lt;a href=&quot;https://ausha.co/privacy-policy&quot;&gt;ausha.co/privacy-policy&lt;/a&gt; for more information&lt;/p&gt;
 </content:encoded><category>coffee-with-compbio</category><category>computational-biology</category><category>podcast</category><category>bioinformatics</category><category>womeninscience</category><category>quick-sips</category><category>brewing-up-for-answers</category><category>reticulate</category><category>r-markdown</category><category>rna-sequencing</category><category>python</category><category>r-programming</category></item><item><title>A Coffee with CompBio: The Thousand Dollar Alignment</title><link>https://boston-wib.org/blog/coffeewithcompbio/episode-2</link><guid isPermaLink="true">https://boston-wib.org/blog/coffeewithcompbio/episode-2</guid><pubDate>Tue, 10 Jun 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;From puzzlingly low mapping rates to unexpected cloud costs caused by unoptimized compute jobs, Lorena and Alex highlight how essential clear communication and bioinformatics-aware experimental design are to any successful project.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;import { FaBell, FaSpotify, FaApple } from &amp;#39;react-icons/fa&amp;#39;;&lt;/p&gt;
 &lt;iframe
   name=&quot;Ausha Podcast Player&quot;
   frameborder=&quot;0&quot;
@@ -1182,7 +1174,6 @@ When you document your rationale in real-time, you&amp;#39;re not just helping f
 &lt;p&gt;Hosted by Ausha. See &lt;a href=&quot;https://ausha.co/privacy-policy&quot;&gt;ausha.co/privacy-policy&lt;/a&gt; for more information&lt;/p&gt;
 </content:encoded><category>coffee-with-compbio</category><category>computationalbiology</category><category>podcast</category><category>science-communication</category><category>bioinformatics</category><category>womeninscience</category><category>pixi</category><category>reproducible-research</category><category>cloud-computing</category><category>quick-sips</category><category>brewing-up-for-answers</category></item><item><title>A Coffee with CompBio: Nine Samples and Zero Cells</title><link>https://boston-wib.org/blog/coffeewithcompbio/episode-1</link><guid isPermaLink="true">https://boston-wib.org/blog/coffeewithcompbio/episode-1</guid><pubDate>Tue, 27 May 2025 00:00:01 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;Alex and Lorena dive into the messy reality of processing single-cell RNA-seq data.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;import { FaBell, FaSpotify, FaApple } from &amp;#39;react-icons/fa&amp;#39;;&lt;/p&gt;
 &lt;iframe
   name=&quot;Ausha Podcast Player&quot;
   frameborder=&quot;0&quot;
@@ -1216,7 +1207,6 @@ When you document your rationale in real-time, you&amp;#39;re not just helping f
 &lt;p&gt;Hosted by Ausha. See &lt;a href=&quot;https://ausha.co/privacy-policy&quot;&gt;ausha.co/privacy-policy&lt;/a&gt; for more information&lt;/p&gt;
 </content:encoded><category>coffee-with-compbio</category><category>computational-biology</category><category>podcast</category><category>science-communication</category><category>bioinformatics</category><category>womeninscience</category><category>single-cell</category><category>rna-sequencing</category><category>troubleshooting</category><category>cell-ranger</category></item><item><title>A Coffee with CompBio: Intro</title><link>https://boston-wib.org/blog/coffeewithcompbio/episode-0</link><guid isPermaLink="true">https://boston-wib.org/blog/coffeewithcompbio/episode-0</guid><pubDate>Tue, 27 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;Whether you&apos;re a researcher, student, or just bio-curious, join us for casual, insightful conversations that bridge science and real life.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;import { FaBell, FaSpotify, FaApple } from &amp;#39;react-icons/fa&amp;#39;;&lt;/p&gt;
 &lt;iframe
   name=&quot;Ausha Podcast Player&quot;
   frameborder=&quot;0&quot;
