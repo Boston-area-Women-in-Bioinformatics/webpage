@@ -47,7 +47,7 @@ We occasionally conduct surveys to gain insight into the experiences, challenges
 
 We **do not sell or rent your personal information**. We share your information only with:
 
-- Trusted third-party service providers for event registration and donation information (e.g., [Meetup](https://help.meetup.com/hc/en-us/articles/360044422391-Privacy-Policy), [Luma, Inc.](https://lu.ma/privacy-policy), [Eventbrite](https://www.eventbrite.com/help/en-us/articles/460838/eventbrite-privacy-policy/), [Givebutter](https://givebutter.com/privacy)).
+- Trusted third-party service providers for event registration and donation information (e.g., [Luma, Inc.](https://lu.ma/privacy-policy), [Eventbrite](https://www.eventbrite.com/help/en-us/articles/460838/eventbrite-privacy-policy/), [Givebutter](https://givebutter.com/privacy)).
 
 - Government authorities if required by law or to comply with legal obligations
 

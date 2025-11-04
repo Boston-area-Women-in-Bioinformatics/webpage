@@ -6,6 +6,11 @@ import { marked } from 'marked';
 import { SITE, APP_NEWSLETTER } from 'astrowind:config';
 import { getPermalink } from '~/utils/permalinks';
 
+// Helper function to remove import statements from markdown/MDX
+const cleanImports = (content: string): string => {
+  return content.replace(/^import\s+.*?from\s+['"].*?['"];?\s*$/gm, '').trim();
+};
+
 export const GET = async () => {
   if (!APP_NEWSLETTER.isEnabled) {
     return new Response(null, {
@@ -29,7 +34,8 @@ export const GET = async () => {
 
     items: await Promise.all(
       newsletters.map(async (newsletter) => {
-        const bodyHtml = await marked.parse(newsletter.body);
+        const cleanedBody = cleanImports(newsletter.body);
+        const bodyHtml = await marked.parse(cleanedBody);
         const content = newsletter.data.excerpt
           ? `<p><em>${newsletter.data.excerpt}</em></p>\n\n${bodyHtml}`
           : bodyHtml;

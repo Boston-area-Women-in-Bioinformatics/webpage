@@ -6,6 +6,11 @@ import { marked } from 'marked';
 import { SITE, METADATA, APP_BLOG } from 'astrowind:config';
 import { getPermalink } from '~/utils/permalinks';
 
+// Helper function to remove import statements from markdown/MDX
+const cleanImports = (content: string): string => {
+  return content.replace(/^import\s+.*?from\s+['"].*?['"];?\s*$/gm, '').trim();
+};
+
 export const GET = async () => {
   if (!APP_BLOG.isEnabled) {
     return new Response(null, {
@@ -29,7 +34,8 @@ export const GET = async () => {
 
     items: await Promise.all(
       posts.map(async (post) => {
-        const bodyHtml = await marked.parse(post.body);
+        const cleanedBody = cleanImports(post.body);
+        const bodyHtml = await marked.parse(cleanedBody);
         const content = post.data.excerpt ? `<p><em>${post.data.excerpt}</em></p>\n\n${bodyHtml}` : bodyHtml;
         return {
           link: getPermalink(post.slug, 'post'),
