@@ -55,6 +55,7 @@ const postCollection = defineCollection({
     title: z.string(),
     excerpt: z.string().optional(),
     image: z.string().optional(),
+    imageAlt: z.string().optional(),
     imageDescription: z.string().optional(),
 
     category: z.string().optional(),
@@ -82,6 +83,7 @@ const newsletterCollection = defineCollection({
     title: z.string(),
     excerpt: z.string().optional(),
     image: z.string().optional(),
+    imageAlt: z.string().optional(),
     imageDescription: z.string().optional(),
     authors: z
       .array(
