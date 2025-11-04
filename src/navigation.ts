@@ -254,11 +254,11 @@ export const footerData = {
     },
     { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/groups/13074137/' },
 
-    {
-      ariaLabel: 'Lu.ma',
-      icon: 'LumaIcon', // This matches the check in Footer.astro
-      href: 'https://luma.com/bwib',
-    },
+    //{
+    //  ariaLabel: 'Lu.ma',
+    //  icon: 'LumaIcon', // This icon is wonky and needs to be fixed
+    //  href: 'https://luma.com/bwib',
+    //},
     {
       ariaLabel: 'YouTube',
       icon: 'tabler:brand-youtube',
