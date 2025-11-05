@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Why Data Layer Guardrails are Key to Scalable Self-Service</title><link>https://boston-wib.org/blog/quicktake/data-layer-guardrails-are-key-to-scalable-self-service</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/data-layer-guardrails-are-key-to-scalable-self-service</guid><pubDate>Fri, 31 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org/~/assets/images/blog_images/2025-10-30-data-layer-guardrails-are-the-key-to-scalable-self-service.png&quot; alt=&quot;A shift from separated security for each application to centralized access management&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Data Stewards vs. Data Scientists</title><link>https://boston-wib.org/blog/quicktake/data-stewards-vs-data-scientists</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/data-stewards-vs-data-scientists</guid><pubDate>Mon, 03 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org/~/assets/images/blog_images/2025-11-03-data-stewards-vs-data-scientists.png&quot; alt=&quot;You need both data stewards and data scientists.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Why Biotech Needs Both (But Hires Only One)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;You can&amp;#39;t hire your way out of a data stewardship problem. 🏗️&lt;/p&gt;
+&lt;p&gt;I keep seeing the same pattern at small biotech companies:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Team doubles after funding&lt;/li&gt;
+&lt;li&gt;Data requests pile up&lt;/li&gt;
+&lt;li&gt;Leadership posts a Data Scientist role&lt;/li&gt;
+&lt;li&gt;New hire gets buried in &amp;quot;quick reports&amp;quot;&lt;/li&gt;
+&lt;li&gt;Six months later, same bottleneck exists&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here&amp;#39;s what&amp;#39;s actually happening: They&amp;#39;re hiring a Ferrari to fix their roads. 🏎️&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;𝗗𝗮𝘁𝗮 𝗦𝗰𝗶𝗲𝗻𝘁𝗶𝘀𝘁𝘀 𝗴𝗲𝗻𝗲𝗿𝗮𝘁𝗲 𝗻𝗲𝘄 𝗶𝗻𝘀𝗶𝗴𝗵𝘁𝘀&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Build ML models&lt;/li&gt;
+&lt;li&gt;Design novel analyses&lt;/li&gt;
+&lt;li&gt;Answer questions nobody&amp;#39;s asked yet&lt;/li&gt;
+&lt;li&gt;Create competitive advantage through discovery&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;𝗗𝗮𝘁𝗮 𝗦𝘁𝗲𝘄𝗮𝗿𝗱𝘀 𝗯𝘂𝗶𝗹𝗱 𝘀𝘆𝘀𝘁𝗲𝗺𝘀 𝗳𝗼𝗿 𝗶𝗻𝘀𝗶𝗴𝗵𝘁𝘀&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create self-service tools&lt;/li&gt;
+&lt;li&gt;Build data pipelines&lt;/li&gt;
+&lt;li&gt;Answer the same questions 100 times (so nobody has to again)&lt;/li&gt;
+&lt;li&gt;Create competitive advantage through efficiency&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Both roles are critical. But timing matters.&lt;/p&gt;
+&lt;p&gt;When scientists spend 8+ hours weekly on routine reporting, that&amp;#39;s not a data science problem. That&amp;#39;s a data stewardship problem.&lt;/p&gt;
+&lt;p&gt;A real example: One client was hiring their third data scientist while their team waited days for basic QC reports. We built a self-service dashboard instead. Reporting time dropped from 8 hours to 45 minutes. The data scientists? They finally got to do actual data science.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;𝗧𝗵𝗲 𝘁𝗲𝘀𝘁 𝗳𝗼𝗿 𝘄𝗵𝗮𝘁 𝘆𝗼𝘂 𝗻𝗲𝗲𝗱:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If someone asks &amp;quot;Can you pull this report?&amp;quot; for the tenth time this month → You need a steward&lt;/p&gt;
+&lt;p&gt;If someone asks &amp;quot;Can you discover something we don&amp;#39;t know?&amp;quot; → You need a scientist&lt;/p&gt;
+&lt;p&gt;Most early-stage biotechs need stewardship infrastructure before advanced analytics. Build the roads before you buy the Ferrari.&lt;/p&gt;
+&lt;p&gt;The good news? Data stewardship directly enables better data science. Once scientists can self-serve routine analyses, your data science team can focus on the questions that actually require their expertise.&lt;/p&gt;
+&lt;p&gt;What&amp;#39;s been your experience? Have you seen teams struggle with this distinction?&lt;/p&gt;
+</content:encoded><category>data-science</category><category>biotech</category><category>data-infrastructure</category><category>biotech-leadership</category></item><item><title>Why Data Layer Guardrails are Key to Scalable Self-Service</title><link>https://boston-wib.org/blog/quicktake/data-layer-guardrails-are-key-to-scalable-self-service</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/data-layer-guardrails-are-key-to-scalable-self-service</guid><pubDate>Fri, 31 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org/~/assets/images/blog_images/2025-10-30-data-layer-guardrails-are-the-key-to-scalable-self-service.png&quot; alt=&quot;A shift from separated security for each application to centralized access management&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;What is the best kind of security for your data?&lt;/em&gt;&lt;/p&gt;
 
