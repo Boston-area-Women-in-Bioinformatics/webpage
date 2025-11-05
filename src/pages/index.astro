@@ -158,35 +158,42 @@ const metadata = {
           <h3 class="text-2xl font-bold mb-4">Recent Blog Posts</h3>
           <div class="grid grid-cols-2 gap-4">
             {
-              latestBlogs.map((post) => (
-                <Card variant="blog" padding="p-0">
-                  {post.image && (
-                    <a href={post.permalink} class="block">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        class="w-full h-32 object-cover"
-                        widths={[200, 300]}
-                        width={300}
-                        height={200}
-                        sizes="(max-width: 768px) 50vw, 25vw"
-                        loading="lazy"
-                      />
-                    </a>
-                  )}
-                  <div class="p-3">
-                    <h4 class="text-sm font-bold leading-tight mb-1">
-                      <a
-                        href={post.permalink}
-                        class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
-                      >
-                        {post.title}
+              latestBlogs.map((post) => {
+                const objectPosition =
+                  post.imagePosition === 'top' ? 'top' : post.imagePosition === 'bottom' ? 'bottom' : 'center';
+                return (
+                  <Card variant="blog" padding="p-0">
+                    {post.image && (
+                      <a href={post.permalink} class="block">
+                        <Image
+                          src={post.image}
+                          alt={post.imageAlt}
+                          class="w-full h-32 object-cover"
+                          style={`object-position: ${objectPosition};`}
+                          widths={[200, 300]}
+                          width={300}
+                          height={200}
+                          sizes="(max-width: 768px) 50vw, 25vw"
+                          loading="lazy"
+                        />
                       </a>
-                    </h4>
-                    {post.excerpt && <p class="text-muted dark:text-slate-300 text-xs line-clamp-2">{post.excerpt}</p>}
-                  </div>
-                </Card>
-              ))
+                    )}
+                    <div class="p-3">
+                      <h4 class="text-sm font-bold leading-tight mb-1">
+                        <a
+                          href={post.permalink}
+                          class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
+                        >
+                          {post.title}
+                        </a>
+                      </h4>
+                      {post.excerpt && (
+                        <p class="text-muted dark:text-slate-300 text-xs line-clamp-2">{post.excerpt}</p>
+                      )}
+                    </div>
+                  </Card>
+                );
+              })
             }
           </div>
           <div class="text-center mt-6">
