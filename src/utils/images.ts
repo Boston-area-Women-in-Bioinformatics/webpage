@@ -79,6 +79,13 @@ export const adaptOpenGraphImages = async (
           isUnpicCompatible(resolvedImage)
         ) {
           _image = (await unpicOptimizer(resolvedImage, [defaultWidth], defaultWidth, defaultHeight, 'jpg'))[0];
+        } else if (typeof resolvedImage === 'string' && (resolvedImage.startsWith('/assets/') || resolvedImage.startsWith('/blog_images/'))) {
+          // For public assets, return as-is without optimization
+          return {
+            url: String(new URL(resolvedImage, astroSite)),
+            width: defaultWidth,
+            height: defaultHeight,
+          };
         } else if (resolvedImage) {
           const dimensions =
             typeof resolvedImage !== 'string' && resolvedImage?.width <= defaultWidth
