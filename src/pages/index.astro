@@ -4,7 +4,7 @@ import { SITE } from '~/config/site/config.js';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import eventImg from '~/../public/photos/2025/WIB_10Year_group_photo1.jpg'; // adjust path as needed
+//import eventImg from '~/../public/photos/2025/WIB_10Year_group_photo1.jpg'; // adjust path as needed
 //import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
 import Button from '~/components/ui/Button.astro';
 import Card from '~/components/ui/Card.astro';
@@ -39,28 +39,43 @@ const metadata = {
     </div>
   </section>
 
-  <!-- 10 Year Anniversary Section -->
-  <section class="py-16 md:py-20 bg-gray-50 dark:bg-slate-800">
+  <!-- Shirt Call to Action -->
+  <section class="py-8 md:py-10 bg-gray-50 dark:bg-slate-800">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <Hero2
-        title="Boston Women in Bioinformatics"
-        subtitle="Team up with US, your pathway to elevating your career through leadership, networking, and professional growth."
-        tagline="Celebrating 10 Years of Impact"
+        title="Our Merch Game is Finally Deploying"
+        subtitle="Join us in bringing Boston Women in Bioinformatics swag to life! Show your pride at events, workshops, zoom calls, and anywhere your bioinformatics journey takes you."
+        tagline="Preorder Now for Just $24"
+        imageBefore={true}
+        imageGap="lg:gap-1"
+        padding="py-8 md:py-10 lg:py-0"
         image={{
-          src: eventImg,
-          alt: 'Women in Bioinformatics 10th Anniversary Event',
+          src: '/photos/tshirt_mockup.svg', // Replace with actual path to uploaded shirt image
+          alt: 'Women+ in Bioinformatics T-shirt with colorful circular logo',
         }}
       >
         <Fragment slot="content">
+          <div class="text-center mb-6">
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-2">
+              We're aiming for <span class="font-bold text-accent dark:text-green-400">30 responses</span> to get a quote
+              from the shirt wizards.
+            </p>
+            <p class="text-base text-gray-600 dark:text-gray-400 italic">
+              The faster you respond, the faster we can make this magic happen!
+            </p>
+          </div>
           <div class="flex gap-4 justify-center flex-wrap">
             <Button
               variant="primary"
-              text="Event Photos"
-              href="https://photos.app.goo.gl/ZhqNmC1k4xfprUy46"
+              text="Order Your Shirt Now"
+              href="https://forms.gle/BQuWoMSu7ueii9wk7"
               icon="tabler:square-rounded-arrow-right"
             />
             <Button variant="secondary" text="Join Our Community" href="/contact" />
           </div>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-6 text-center italic">
+            Let's make 2026 cozy, nerdy, and fabulous. ✨
+          </p>
         </Fragment>
       </Hero2>
     </div>
