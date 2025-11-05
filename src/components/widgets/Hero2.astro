@@ -16,6 +16,10 @@ const {
   id,
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
+
+// Check if image is a remote/public path
+const isRemoteImage = typeof image === 'object' && image !== null && 'src' in image && typeof image.src === 'string' &&
+  (image.src.startsWith('http') || image.src.startsWith('/photos/') || image.src.startsWith('/assets/') || image.src.startsWith('/blog_images/'));
 ---
 
 <section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
@@ -77,6 +81,13 @@ const {
             <div class="relative m-auto max-w-5xl intersect-once intercept-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
               {typeof image === 'string' ? (
                 <Fragment set:html={image} />
+              ) : isRemoteImage ? (
+                <img
+                  src={String(image.src)}
+                  alt={'alt' in image ? String(image.alt || '') : ''}
+                  class="mx-auto h-auto rounded-md w-full"
+                  loading="eager"
+                />
               ) : (
                 <Image
                   class="mx-auto h-auto rounded-md w-full"
