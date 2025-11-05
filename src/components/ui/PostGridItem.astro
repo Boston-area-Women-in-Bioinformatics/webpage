@@ -22,6 +22,11 @@ export interface Props {
 const { post } = Astro.props;
 const image = await findImage(post.image);
 
+// Check if image is a remote/public path (string starting with http, /assets/, or /blog_images/)
+const isRemoteImage =
+  typeof image === 'string' &&
+  (image.startsWith('http') || image.startsWith('/assets/') || image.startsWith('/blog_images/'));
+
 // Determine if this is a blog post or newsletter
 const isBlogPost = 'tags' in post;
 const config = isBlogPost ? APP_BLOG : APP_NEWSLETTER;
@@ -54,20 +59,40 @@ const objectPosition = getObjectPosition(post.imagePosition);
       image &&
         (link ? (
           <a href={link}>
-            <Image
-              src={image}
-              class="w-full rounded shadow-lg bg-gray-400 dark:bg-slate-700 object-cover"
-              style={`object-position: ${objectPosition};`}
-              widths={[400, 900]}
-              width={400}
-              height={400}
-              sizes="(max-width: 900px) 400px, 900px"
-              alt={altText}
-              layout="responsive"
-              loading="lazy"
-              decoding="async"
-            />
+            {isRemoteImage ? (
+              <img
+                src={image}
+                class="w-full rounded shadow-lg bg-gray-400 dark:bg-slate-700 object-cover"
+                style={`object-position: ${objectPosition};`}
+                alt={altText}
+                loading="lazy"
+                decoding="async"
+              />
+            ) : (
+              <Image
+                src={image}
+                class="w-full rounded shadow-lg bg-gray-400 dark:bg-slate-700 object-cover"
+                style={`object-position: ${objectPosition};`}
+                widths={[400, 900]}
+                width={400}
+                height={400}
+                sizes="(max-width: 900px) 400px, 900px"
+                alt={altText}
+                layout="responsive"
+                loading="lazy"
+                decoding="async"
+              />
+            )}
           </a>
+        ) : isRemoteImage ? (
+          <img
+            src={image}
+            class="w-full rounded shadow-lg bg-gray-400 dark:bg-slate-700 object-cover"
+            style={`object-position: ${objectPosition};`}
+            alt={altText}
+            loading="lazy"
+            decoding="async"
+          />
         ) : (
           <Image
             src={image}

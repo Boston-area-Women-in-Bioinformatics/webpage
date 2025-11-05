@@ -47,12 +47,29 @@ export const GET = async () => {
         // Add featured image at the top if it exists
         let content = '';
         if (post.data.image) {
-          const imageUrl =
-            typeof post.data.image === 'string'
-              ? post.data.image.startsWith('http')
-                ? post.data.image
-                : `${import.meta.env.SITE}${post.data.image}`
-              : post.data.image;
+          let imageUrl = post.data.image;
+
+          // Handle different image path formats
+          if (typeof imageUrl === 'string') {
+            if (!imageUrl.startsWith('http')) {
+              if (imageUrl.startsWith('~/assets/images/')) {
+                // Convert ~/assets/images/ path to /blog_images/
+                const imageName = imageUrl.replace('~/assets/images/blog_images/', '');
+                imageUrl = `${import.meta.env.SITE}/blog_images/${imageName}`;
+              } else if (imageUrl.startsWith('~/assets/')) {
+                // General ~/assets/ path
+                const assetPath = imageUrl.replace('~/assets/', '');
+                imageUrl = `${import.meta.env.SITE}/assets/${assetPath}`;
+              } else if (imageUrl.startsWith('/')) {
+                // Relative path from root
+                imageUrl = `${import.meta.env.SITE}${imageUrl}`;
+              } else {
+                // Assume it's a relative path
+                imageUrl = `${import.meta.env.SITE}/${imageUrl}`;
+              }
+            }
+          }
+
           const altText = post.data.imageAlt || post.data.title;
           content += `<img src="${imageUrl}" alt="${altText}" style="max-width: 100%; height: auto;" />\n\n`;
         }
