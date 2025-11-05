@@ -128,12 +128,12 @@ const isRemoteImage =
                 <img
                   src={String(image.src)}
                   alt={'alt' in image ? String(image.alt || '') : ''}
-                  class="mx-auto h-auto rounded-md w-full"
+                  class="mx-auto h-auto rounded-md w-full lg:w-1/2"
                   loading="eager"
                 />
               ) : (
                 <Image
-                  class="mx-auto h-auto rounded-md w-full"
+                  class="mx-auto h-auto rounded-md w-full lg:w-1/2"
                   widths={[400, 768, 1024, 2040]}
                   sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
                   loading="eager"
