@@ -106,67 +106,74 @@ const metadata = {
       <div class="grid md:grid-cols-2 gap-8">
         <!-- Newsletter Column -->
         {
-          latestNewsletter && (() => {
-            const isRemoteNewsletterImage =
-              typeof latestNewsletter.image === 'string' &&
-              (latestNewsletter.image.startsWith('http') || latestNewsletter.image.startsWith('/assets/') || latestNewsletter.image.startsWith('/blog_images/'));
-            return (
-              <article aria-labelledby="latest-newsletter-heading">
-                <h3 id="latest-newsletter-heading" class="text-2xl font-bold mb-4">
-                  Latest Newsletter
-                </h3>
-                <Card variant="blog" padding="p-0">
-                  {latestNewsletter.image && (
-                    <a
-                      href={latestNewsletter.permalink}
-                      aria-label={`Read newsletter: ${latestNewsletter.excerpt?.slice(0, 60) || latestNewsletter.title}`}
-                      class="block"
-                    >
-                      {isRemoteNewsletterImage ? (
-                        <img
-                          src={latestNewsletter.image}
-                          alt={
-                            latestNewsletter.imageAlt || latestNewsletter.excerpt?.slice(0, 100) || latestNewsletter.title
-                          }
-                          class="w-full h-64 object-cover"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <Image
-                          src={latestNewsletter.image}
-                          alt={
-                            latestNewsletter.imageAlt || latestNewsletter.excerpt?.slice(0, 100) || latestNewsletter.title
-                          }
-                          class="w-full h-64 object-cover"
-                          widths={[400, 600]}
-                          width={600}
-                          height={400}
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                          loading="lazy"
-                        />
+          latestNewsletter &&
+            (() => {
+              const isRemoteNewsletterImage =
+                typeof latestNewsletter.image === 'string' &&
+                (latestNewsletter.image.startsWith('http') ||
+                  latestNewsletter.image.startsWith('/assets/') ||
+                  latestNewsletter.image.startsWith('/blog_images/'));
+              return (
+                <article aria-labelledby="latest-newsletter-heading">
+                  <h3 id="latest-newsletter-heading" class="text-2xl font-bold mb-4">
+                    Latest Newsletter
+                  </h3>
+                  <Card variant="blog" padding="p-0">
+                    {latestNewsletter.image && (
+                      <a
+                        href={latestNewsletter.permalink}
+                        aria-label={`Read newsletter: ${latestNewsletter.excerpt?.slice(0, 60) || latestNewsletter.title}`}
+                        class="block"
+                      >
+                        {isRemoteNewsletterImage ? (
+                          <img
+                            src={latestNewsletter.image}
+                            alt={
+                              latestNewsletter.imageAlt ||
+                              latestNewsletter.excerpt?.slice(0, 100) ||
+                              latestNewsletter.title
+                            }
+                            class="w-full h-64 object-cover"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <Image
+                            src={latestNewsletter.image}
+                            alt={
+                              latestNewsletter.imageAlt ||
+                              latestNewsletter.excerpt?.slice(0, 100) ||
+                              latestNewsletter.title
+                            }
+                            class="w-full h-64 object-cover"
+                            widths={[400, 600]}
+                            width={600}
+                            height={400}
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            loading="lazy"
+                          />
+                        )}
+                      </a>
+                    )}
+                    <div class="p-6">
+                      <h4 class="text-xl font-bold mb-3">
+                        <a
+                          href={latestNewsletter.permalink}
+                          class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
+                        >
+                          {latestNewsletter.title}
+                        </a>
+                      </h4>
+                      {latestNewsletter.excerpt && (
+                        <p class="text-muted dark:text-slate-300 text-base mb-4">{latestNewsletter.excerpt}</p>
                       )}
-                    </a>
-                  )}
-                <div class="p-6">
-                  <h4 class="text-xl font-bold mb-3">
-                    <a
-                      href={latestNewsletter.permalink}
-                      class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
-                    >
-                      {latestNewsletter.title}
-                    </a>
-                  </h4>
-                  {latestNewsletter.excerpt && (
-                    <p class="text-muted dark:text-slate-300 text-base mb-4">{latestNewsletter.excerpt}</p>
-                  )}
-                  <Button variant="link" href={latestNewsletter.permalink}>
-                    Read more »
-                  </Button>
-                </div>
-              </Card>
-            </article>
-            );
-          })()
+                      <Button variant="link" href={latestNewsletter.permalink}>
+                        Read more »
+                      </Button>
+                    </div>
+                  </Card>
+                </article>
+              );
+            })()
         }
 
         <!-- Blog Posts Column -->
@@ -178,7 +185,10 @@ const metadata = {
                 const objectPosition =
                   post.imagePosition === 'top' ? 'top' : post.imagePosition === 'bottom' ? 'bottom' : 'center';
                 const isRemoteImage =
-                  typeof post.image === 'string' && (post.image.startsWith('http') || post.image.startsWith('/assets/') || post.image.startsWith('/blog_images/'));
+                  typeof post.image === 'string' &&
+                  (post.image.startsWith('http') ||
+                    post.image.startsWith('/assets/') ||
+                    post.image.startsWith('/blog_images/'));
                 return (
                   <Card variant="blog" padding="p-0">
                     {post.image && (

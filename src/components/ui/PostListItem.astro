@@ -25,7 +25,9 @@ const { post } = Astro.props;
 const image = await findImage(post.image);
 
 // Check if image is a remote/public path (string starting with http, /assets/, or /blog_images/)
-const isRemoteImage = typeof image === 'string' && (image.startsWith('http') || image.startsWith('/assets/') || image.startsWith('/blog_images/'));
+const isRemoteImage =
+  typeof image === 'string' &&
+  (image.startsWith('http') || image.startsWith('/assets/') || image.startsWith('/blog_images/'));
 
 // Determine if this is a blog post or newsletter
 const isBlogPost = 'tags' in post;
