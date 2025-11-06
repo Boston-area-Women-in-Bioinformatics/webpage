@@ -366,7 +366,6 @@ const team = {
       title: 'Web Page Developer',
       avatar: '/team/Anushka.jpeg',
       social: {
-        website: 'https://anushka-don.github.io/',
         // twitter: '#',
         // instagram: '#',
         // facebook: '#',
