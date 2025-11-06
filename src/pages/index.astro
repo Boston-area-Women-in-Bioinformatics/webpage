@@ -4,7 +4,7 @@ import { SITE } from '~/config/site/config.js';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import eventImg from '~/../public/photos/2025/WIB_10Year_group_photo1.jpg'; // adjust path as needed
+//import eventImg from '~/../public/photos/2025/WIB_10Year_group_photo1.jpg'; // adjust path as needed
 //import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
 import Button from '~/components/ui/Button.astro';
 import Card from '~/components/ui/Card.astro';
@@ -39,28 +39,43 @@ const metadata = {
     </div>
   </section>
 
-  <!-- 10 Year Anniversary Section -->
+  <!-- Shirt Call to Action -->
   <section class="py-16 md:py-20 bg-gray-50 dark:bg-slate-800">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <Hero2
-        title="Boston Women in Bioinformatics"
-        subtitle="Team up with US, your pathway to elevating your career through leadership, networking, and professional growth."
-        tagline="Celebrating 10 Years of Impact"
+        title="Our Merch Game is Finally Deploying"
+        subtitle="Join us in bringing Boston Women in Bioinformatics swag to life! Show your pride at events, workshops, zoom calls, and anywhere your bioinformatics journey takes you."
+        tagline="Preorder Now for Just $24"
+        imageBefore={true}
+        imageGap="lg:gap-1"
+        padding="py-8 md:py-10 lg:py-0"
         image={{
-          src: eventImg,
-          alt: 'Women in Bioinformatics 10th Anniversary Event',
+          src: '/photos/tshirt_mockup.svg', // Replace with actual path to uploaded shirt image
+          alt: 'Women+ in Bioinformatics T-shirt with colorful circular logo',
         }}
       >
         <Fragment slot="content">
+          <div class="text-center mb-6">
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-2">
+              We're aiming for <span class="font-bold text-accent dark:text-green-400">30 responses</span> to get a quote
+              from the shirt wizards.
+            </p>
+            <p class="text-base text-gray-600 dark:text-gray-400 italic">
+              The faster you respond, the faster we can make this magic happen!
+            </p>
+          </div>
           <div class="flex gap-4 justify-center flex-wrap">
             <Button
               variant="primary"
-              text="Event Photos"
-              href="https://photos.app.goo.gl/ZhqNmC1k4xfprUy46"
+              text="Order Your Shirt Now"
+              href="https://forms.gle/BQuWoMSu7ueii9wk7"
               icon="tabler:square-rounded-arrow-right"
             />
             <Button variant="secondary" text="Join Our Community" href="/contact" />
           </div>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-6 text-center italic">
+            Let's make 2026 cozy, nerdy, and fabulous. ✨
+          </p>
         </Fragment>
       </Hero2>
     </div>
@@ -106,53 +121,74 @@ const metadata = {
       <div class="grid md:grid-cols-2 gap-8">
         <!-- Newsletter Column -->
         {
-          latestNewsletter && (
-            <article aria-labelledby="latest-newsletter-heading">
-              <h3 id="latest-newsletter-heading" class="text-2xl font-bold mb-4">
-                Latest Newsletter
-              </h3>
-              <Card variant="blog" padding="p-0">
-                {latestNewsletter.image && (
-                  <a
-                    href={latestNewsletter.permalink}
-                    aria-label={`Read newsletter: ${latestNewsletter.excerpt?.slice(0, 60) || latestNewsletter.title}`}
-                    class="block"
-                  >
-                    <Image
-                      src={latestNewsletter.image}
-                      alt={
-                        latestNewsletter.imageAlt || latestNewsletter.excerpt?.slice(0, 100) || latestNewsletter.title
-                      }
-                      class="w-full h-64 object-cover"
-                      widths={[400, 600]}
-                      width={600}
-                      height={400}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      loading="lazy"
-                    />
-                  </a>
-                )}
-                <div class="p-6">
-                  <h4 class="text-xl font-bold mb-3">
-                    <a
-                      href={latestNewsletter.permalink}
-                      class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
-                    >
-                      {latestNewsletter.title}
-                    </a>
-                  </h4>
-                  {latestNewsletter.excerpt && (
-                    <p class="text-muted dark:text-slate-300 text-base mb-4">{latestNewsletter.excerpt}</p>
-                  )}
-                  <Button variant="link" href={latestNewsletter.permalink}>
-                    aria-label=
-                    {`Read full newsletter: ${latestNewsletter.excerpt?.slice(0, 60) || latestNewsletter.title}`}
-                    Read more »
-                  </Button>
-                </div>
-              </Card>
-            </article>
-          )
+          latestNewsletter &&
+            (() => {
+              const isRemoteNewsletterImage =
+                typeof latestNewsletter.image === 'string' &&
+                (latestNewsletter.image.startsWith('http') ||
+                  latestNewsletter.image.startsWith('/assets/') ||
+                  latestNewsletter.image.startsWith('/blog_images/'));
+              return (
+                <article aria-labelledby="latest-newsletter-heading">
+                  <h3 id="latest-newsletter-heading" class="text-2xl font-bold mb-4">
+                    Latest Newsletter
+                  </h3>
+                  <Card variant="blog" padding="p-0">
+                    {latestNewsletter.image && (
+                      <a
+                        href={latestNewsletter.permalink}
+                        aria-label={`Read newsletter: ${latestNewsletter.excerpt?.slice(0, 60) || latestNewsletter.title}`}
+                        class="block"
+                      >
+                        {isRemoteNewsletterImage ? (
+                          <img
+                            src={latestNewsletter.image}
+                            alt={
+                              latestNewsletter.imageAlt ||
+                              latestNewsletter.excerpt?.slice(0, 100) ||
+                              latestNewsletter.title
+                            }
+                            class="w-full h-64 object-cover"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <Image
+                            src={latestNewsletter.image}
+                            alt={
+                              latestNewsletter.imageAlt ||
+                              latestNewsletter.excerpt?.slice(0, 100) ||
+                              latestNewsletter.title
+                            }
+                            class="w-full h-64 object-cover"
+                            widths={[400, 600]}
+                            width={600}
+                            height={400}
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            loading="lazy"
+                          />
+                        )}
+                      </a>
+                    )}
+                    <div class="p-6">
+                      <h4 class="text-xl font-bold mb-3">
+                        <a
+                          href={latestNewsletter.permalink}
+                          class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
+                        >
+                          {latestNewsletter.title}
+                        </a>
+                      </h4>
+                      {latestNewsletter.excerpt && (
+                        <p class="text-muted dark:text-slate-300 text-base mb-4">{latestNewsletter.excerpt}</p>
+                      )}
+                      <Button variant="link" href={latestNewsletter.permalink}>
+                        Read more »
+                      </Button>
+                    </div>
+                  </Card>
+                </article>
+              );
+            })()
         }
 
         <!-- Blog Posts Column -->
@@ -160,35 +196,57 @@ const metadata = {
           <h3 class="text-2xl font-bold mb-4">Recent Blog Posts</h3>
           <div class="grid grid-cols-2 gap-4">
             {
-              latestBlogs.map((post) => (
-                <Card variant="blog" padding="p-0">
-                  {post.image && (
-                    <a href={post.permalink} class="block">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        class="w-full h-32 object-cover"
-                        widths={[200, 300]}
-                        width={300}
-                        height={200}
-                        sizes="(max-width: 768px) 50vw, 25vw"
-                        loading="lazy"
-                      />
-                    </a>
-                  )}
-                  <div class="p-3">
-                    <h4 class="text-sm font-bold leading-tight mb-1">
-                      <a
-                        href={post.permalink}
-                        class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
-                      >
-                        {post.title}
+              latestBlogs.map((post) => {
+                const objectPosition =
+                  post.imagePosition === 'top' ? 'top' : post.imagePosition === 'bottom' ? 'bottom' : 'center';
+                const isRemoteImage =
+                  typeof post.image === 'string' &&
+                  (post.image.startsWith('http') ||
+                    post.image.startsWith('/assets/') ||
+                    post.image.startsWith('/blog_images/'));
+                return (
+                  <Card variant="blog" padding="p-0">
+                    {post.image && (
+                      <a href={post.permalink} class="block">
+                        {isRemoteImage ? (
+                          <img
+                            src={post.image}
+                            alt={post.imageAlt}
+                            class="w-full h-32 object-cover"
+                            style={`object-position: ${objectPosition};`}
+                            loading="lazy"
+                          />
+                        ) : (
+                          <Image
+                            src={post.image}
+                            alt={post.imageAlt}
+                            class="w-full h-32 object-cover"
+                            style={`object-position: ${objectPosition};`}
+                            widths={[200, 300]}
+                            width={300}
+                            height={200}
+                            sizes="(max-width: 768px) 50vw, 25vw"
+                            loading="lazy"
+                          />
+                        )}
                       </a>
-                    </h4>
-                    {post.excerpt && <p class="text-muted dark:text-slate-300 text-xs line-clamp-2">{post.excerpt}</p>}
-                  </div>
-                </Card>
-              ))
+                    )}
+                    <div class="p-3">
+                      <h4 class="text-sm font-bold leading-tight mb-1">
+                        <a
+                          href={post.permalink}
+                          class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
+                        >
+                          {post.title}
+                        </a>
+                      </h4>
+                      {post.excerpt && (
+                        <p class="text-muted dark:text-slate-300 text-xs line-clamp-2">{post.excerpt}</p>
+                      )}
+                    </div>
+                  </Card>
+                );
+              })
             }
           </div>
           <div class="text-center mt-6">
