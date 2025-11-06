@@ -372,6 +372,8 @@ const team = {
         // facebook: '#',
         linkedin: 'https://www.linkedin.com/in/anushka-dongaonkar-191b18201/',
         github: 'https://github.com/anushka-don',
+      },
+    },
   ],
 };
 
