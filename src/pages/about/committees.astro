@@ -1,10 +1,9 @@
 ---
 import CommitteeGrid from '~/components/widgets/CommitteeGrid.astro';
-import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import { SITE } from '~/config/site/config.js';
-import type { Committee } from '~/types/committee';
-import teamConfig, { exec } from '~/config/components/team.js';
+import { getCollection } from 'astro:content';
+import Headline from '~/components/ui/Headline.astro';
 
 const metadata = {
   title: SITE.title,
@@ -12,108 +11,23 @@ const metadata = {
   dontUseTitleTemplate: true,
 };
 
-// Helper function to find team member by name from exec or team
-function findTeamMember(name: string) {
-  const allMembers = [...exec.members, ...teamConfig.members];
-  return allMembers.find((member) => member.name === name);
-}
+// Load committees from content collection
+const committeeEntries = await getCollection('committee');
 
-// Helper function to convert team member to committee member format
-function toCommitteeMember(name: string) {
-  const member = findTeamMember(name);
-  if (!member) {
-    return { name };
-  }
-  return {
-    name: member.name,
-    title: member.title,
-    photo: member.avatar,
-  };
-}
-
-const committees: Committee[] = [
-  {
-    id: 'advocacy',
-    title: 'Advocacy',
-    description:
-      'The Advocacy committee advances equity and inclusion within the field of bioinformatics by identifying systemic challenges and promoting data-driven strategies.',
-    icon: 'tabler:speakerphone',
-    chairs: [toCommitteeMember('Katie Hughes'), toCommitteeMember('Amulya Shastry')],
-    members: [],
-  },
-  {
-    id: 'bioinformatics-sisters',
-    title: 'Bioinformatics Sisters',
-    description:
-      'This committee supports and organizes Bioinformatics Sisters, a networking and mentoring platform designed to match participants based on shared goals, skills, and preferences.',
-    icon: 'tabler:users',
-    chairs: [toCommitteeMember('Kavya Prasad')],
-    members: [],
-  },
-  {
-    id: 'communications',
-    title: 'Communications',
-    description:
-      'The Communications committee is responsible for managing, coordinating, and improving the flow of information by means of communicating to its members, other committees and external groups. It ensures the organization is visible via various channels and oversees policies related to collaborations and public relations.',
-    icon: 'tabler:bubble-text',
-    chairs: [toCommitteeMember('Sakina Saif'), toCommitteeMember('Shreya Rajasekar')],
-    members: [
-      toCommitteeMember('Masoome Rezaei'),
-      toCommitteeMember('Nishita Kalepalli'),
-      toCommitteeMember('Samantha Klasfeld'),
-    ],
-  },
-  {
-    id: 'events',
-    title: 'Events',
-    description:
-      'The Events committee organizes and hosts professional and community-focused events from technical workshops to networking gatherings.',
-    icon: 'tabler:calendar',
-    chairs: [toCommitteeMember('Diveena Becker'), toCommitteeMember('Lina Faller')],
-    members: [
-      toCommitteeMember('Shayna Stein'),
-      toCommitteeMember('Ozge Tasdemir Yilmaz'),
-      toCommitteeMember('Lakshmi Kuttippurathu'),
-      toCommitteeMember('Liyang Diao'),
-      toCommitteeMember('Samantha Klasfeld'),
-    ],
-  },
-  {
-    id: 'career-sponsorship',
-    title: 'Career Sponsorship',
-    description:
-      'The Career Sponsorship committee empowers women in bioinformatics to grow into leadership roles through focused mentorship, career advocacy, and access to professional networks.',
-    icon: 'tabler:heart-handshake',
-    chairs: [toCommitteeMember('Aysheh Alrfooh'), toCommitteeMember('Peili Zhang')],
-    members: [toCommitteeMember('Manonmani Kumar'), toCommitteeMember('Marissa Sumathipala')],
-  },
-  {
-    id: 'web-page',
-    title: 'Web Page',
-    description:
-      "The Web Page committee manages the organization's website to share group information, curate community resources, and promote events",
-    icon: 'tabler:world',
-    chairs: [toCommitteeMember('Samantha Klasfeld')],
-    members: [
-      toCommitteeMember('Yaseswini Neelamraju'),
-      toCommitteeMember('Vishwa Talati'),
-      toCommitteeMember('Anushka Dongaonkar'),
-      toCommitteeMember('Lorena Pantano'),
-      toCommitteeMember('Siqin Li'),
-    ],
-  },
-];
+// Transform to the format expected by CommitteeGrid
+const committees = committeeEntries.map((entry) => ({
+  id: entry.data.id,
+  title: entry.data.title,
+  description: entry.data.description,
+  icon: entry.data.icon,
+}));
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
-  <Hero title="Committees">
-    <Fragment slot="subtitle">
-      Our organization is powered by a dedicated group of volunteers working across committees to support our mission
-      and community.
-    </Fragment>
-  </Hero>
+  <Headline
+    title="Committees"
+    subtitle="Our organization is powered by a dedicated group of volunteers working across committees to support our mission and community."
+  />
 
   <CommitteeGrid committees={committees} />
 </Layout>

@@ -73,7 +73,7 @@ const exec = {
       // Name: First and last name
       name: 'Lina Faller',
       // Namelink: Member's Personal Website
-      //nameLink: '',
+      nameLink: 'https://www.linkedin.com/in/linafaller/',
       // Job Title
       title: 'Co-Chair, Events Committee',
       // Leadership team member Photo
@@ -129,7 +129,7 @@ const exec = {
     {
       name: 'Aysheh Alrfooh',
       // Namelink: Member's Personal Website
-      //nameLink: '',
+      nameLink: 'https://www.linkedin.com/in/aysheh-alrfooh/',
       // Job Title
       title: 'Co-chair, Career-Sponsorship Committee',
       // Leadership team member Photo
@@ -144,7 +144,7 @@ const exec = {
     {
       name: 'Peili Zhang',
       // Namelink: Member's Personal Website
-      //nameLink: '',
+      nameLink: 'http://www.linkedin.com/in/peili-zhang',
       // Job Title
       title: 'Co-chair, Career-Sponsorship Committee',
       // Leadership team member Photo

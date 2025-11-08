@@ -218,18 +218,59 @@ git checkout -b <new-branch-name>
   - `exec` = execuctive team (co-chairs and chairs of committees)
   - `team` = committee members
 
-4. Add your name to the correct committee in the committees.astro file located in `src/pages/about/committees.astro`
+4. Validate or add team member name to the correct committee markdown file in the `src/content/committees/` directory.
 
-5. Format the committees.astro and team.js file and stage changes for git
+5. Format the team.js and markdown file
 
 ```
 # Run 'npx --prettier' to fix any astro specific formatting issues
 npx prettier --write src/config/components/team.js
 npx prettier --write src/pages/about/committees.astro
+```
+
+6. Stage the files and commit the changes
+
+```
 # Stage the changes to commit (Assuming you are in the git folder)
 git add ./public/team/<your_image_name>
 git add ./src/config/components/team.js
 git add ./src/pages/about/committees.astro
+#  Commit new changes
+git commit -m "<Add committ message>"
+git push -u origin <new-branch-name>
+```
+
+## Adding and Editing Committees
+
+**To edit committee information:**
+
+1. Edit the markdown files in `src/content/committees/ ` directory.
+2. Update the frontmatter for metadata (chairs, members, description)
+3. Edit the markdown content below the frontmatter for detailed information
+4. Format the new committee file and stage changes for git
+
+```
+# Run 'npx --prettier' to fix any astro specific formatting issues
+npx prettier --write src/content/committees/{newcommittee}.md
+# Stage the changes to commit :
+git add src/content/committees/{newcommittee}.md
+#  Commit new changes
+git commit -m "<Add committ message>"
+git push -u origin <new-branch-name>
+```
+
+**To add a new committee**:
+
+1. Create a new .md file in `src/content/committees/` directory.
+2. Add frontmatter with required fields (id, title, description, chairs)
+3. Add markdown content
+4. Format the new committee file and stage changes for git
+
+```
+# Run 'npx --prettier' to fix any astro specific formatting issues
+npx prettier --write src/content/committees/{newcommittee}.md
+# Stage the changes to commit :
+git add src/content/committees/{newcommittee}.md
 #  Commit new changes
 git commit -m "<Add committ message>"
 git push -u origin <new-branch-name>
