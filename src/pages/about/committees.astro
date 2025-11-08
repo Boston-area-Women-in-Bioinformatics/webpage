@@ -15,7 +15,7 @@ const metadata = {
 // Helper function to find team member by name from exec or team
 function findTeamMember(name: string) {
   const allMembers = [...exec.members, ...teamConfig.members];
-  return allMembers.find(member => member.name === name);
+  return allMembers.find((member) => member.name === name);
 }
 
 // Helper function to convert team member to committee member format
@@ -38,10 +38,7 @@ const committees: Committee[] = [
     description:
       'The Advocacy committee advances equity and inclusion within the field of bioinformatics by identifying systemic challenges and promoting data-driven strategies.',
     icon: 'tabler:speakerphone',
-    chairs: [
-      toCommitteeMember('Katie Hughes'),
-      toCommitteeMember('Amulya Shastry'),
-    ],
+    chairs: [toCommitteeMember('Katie Hughes'), toCommitteeMember('Amulya Shastry')],
     members: [],
   },
   {
@@ -50,9 +47,7 @@ const committees: Committee[] = [
     description:
       'This committee supports and organizes Bioinformatics Sisters, a networking and mentoring platform designed to match participants based on shared goals, skills, and preferences.',
     icon: 'tabler:users',
-    chairs: [
-      toCommitteeMember('Kavya Prasad'),
-    ],
+    chairs: [toCommitteeMember('Kavya Prasad')],
     members: [],
   },
   {
@@ -61,13 +56,8 @@ const committees: Committee[] = [
     description:
       'The Communications committee is responsible for managing, coordinating, and improving the flow of information by means of communicating to its members, other committees and external groups. It ensures the organization is visible via various channels and oversees policies related to collaborations and public relations.',
     icon: 'tabler:bubble-text',
-    chairs: [
-      toCommitteeMember('Sakina Saif'),
-      toCommitteeMember('Shreya Rajasekar'),
-    ],
-    members: [
-      toCommitteeMember('Nishita Kalepalli'),
-    ],
+    chairs: [toCommitteeMember('Sakina Saif'), toCommitteeMember('Shreya Rajasekar')],
+    members: [toCommitteeMember('Masoome Rezaei'), toCommitteeMember('Nishita Kalepalli')],
   },
   {
     id: 'events',
@@ -75,13 +65,12 @@ const committees: Committee[] = [
     description:
       'The Events committee organizes and hosts professional and community-focused events from technical workshops to networking gatherings.',
     icon: 'tabler:calendar',
-    chairs: [
-      toCommitteeMember('Diveena Becker'),
-      toCommitteeMember('Lina Faller'),
-    ],
+    chairs: [toCommitteeMember('Diveena Becker'), toCommitteeMember('Lina Faller')],
     members: [
+      toCommitteeMember('Shayna Stein'),
       toCommitteeMember('Ozge Tasdemir Yilmaz'),
       toCommitteeMember('Lakshmi Kuttippurathu'),
+      toCommitteeMember('Liyang Diao'),
     ],
   },
   {
@@ -90,14 +79,8 @@ const committees: Committee[] = [
     description:
       'The Career Sponsorship committee empowers women in bioinformatics to grow into leadership roles through focused mentorship, career advocacy, and access to professional networks.',
     icon: 'tabler:heart-handshake',
-    chairs: [
-      toCommitteeMember('Aysheh Alrfooh'),
-      toCommitteeMember('Peili Zhang'),
-    ],
-    members: [
-      toCommitteeMember('Manonmani Kumar'),
-      toCommitteeMember('Marissa Sumathipala'),
-    ],
+    chairs: [toCommitteeMember('Aysheh Alrfooh'), toCommitteeMember('Peili Zhang')],
+    members: [toCommitteeMember('Manonmani Kumar'), toCommitteeMember('Marissa Sumathipala')],
   },
   {
     id: 'web-page',
@@ -105,12 +88,11 @@ const committees: Committee[] = [
     description:
       "The Web Page committee manages the organization's website to share group information, curate community resources, and promote events",
     icon: 'tabler:world',
-    chairs: [
-      toCommitteeMember('Samantha Klasfeld'),
-    ],
+    chairs: [toCommitteeMember('Samantha Klasfeld')],
     members: [
       toCommitteeMember('Yaseswini Neelamraju'),
       toCommitteeMember('Vishwa Talati'),
+      toCommitteeMember('Anushka Dongaonkar'),
       toCommitteeMember('Lorena Pantano'),
     ],
   },

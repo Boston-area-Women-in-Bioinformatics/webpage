@@ -59,8 +59,8 @@ const {
   </div>
 
   <!-- Modal for Committee Details -->
-  <div id="committee-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center p-4 hidden overflow-y-auto">
-    <div class="bg-white dark:bg-slate-800 rounded-lg max-w-4xl w-full my-8 relative shadow-xl">
+  <div id="committee-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-start justify-center p-4 overflow-y-auto" style="display: none;">
+    <div class="bg-white dark:bg-slate-800 rounded-lg max-w-6xl w-full my-8 relative shadow-xl">
       <div class="sticky top-0 bg-white dark:bg-slate-800 rounded-t-lg z-10 flex justify-end p-4 border-b border-gray-200 dark:border-gray-700 shadow-sm">
         <button
           id="close-modal"
@@ -91,7 +91,6 @@ const {
     // Close modal function
     function closeModalFn() {
       if (modal) {
-        modal.classList.add('hidden');
         modal.style.display = 'none';
       }
       document.body.style.overflow = '';
@@ -119,19 +118,19 @@ const {
           ${committee.chairs && committee.chairs.length > 0 ? `
             <div class="space-y-4">
               <h3 class="text-xl font-semibold text-gray-900 dark:text-slate-100">Committee Chairs</h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 ${committee.chairs.map((chair) => `
                   <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-slate-700 rounded-lg">
                     ${chair.photo ? `
-                      <img src="${chair.photo}" alt="${chair.name}" class="w-16 h-16 rounded-full object-cover">
+                      <img src="${chair.photo}" alt="${chair.name}" class="w-20 h-20 rounded-full object-cover flex-shrink-0" loading="lazy">
                     ` : `
-                      <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white text-xl font-bold">
+                      <div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-white text-xl font-bold flex-shrink-0">
                         ${chair.name.split(' ').map((n) => n[0]).join('')}
                       </div>
                     `}
-                    <div>
-                      <p class="font-semibold text-gray-900 dark:text-slate-100">${chair.name}</p>
-                      ${chair.title ? `<p class="text-sm text-muted dark:text-slate-400">${chair.title}</p>` : ''}
+                    <div class="flex-1 min-w-0">
+                      <p class="font-semibold text-gray-900 dark:text-slate-100 truncate">${chair.name}</p>
+                      ${chair.title ? `<p class="text-sm text-muted dark:text-slate-400 line-clamp-2">${chair.title}</p>` : ''}
                     </div>
                   </div>
                 `).join('')}
@@ -143,17 +142,17 @@ const {
           ${committee.members && committee.members.length > 0 ? `
             <div class="space-y-4">
               <h3 class="text-xl font-semibold text-gray-900 dark:text-slate-100">Committee Members</h3>
-              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
                 ${committee.members.map((member) => `
                   <div class="text-center">
                     ${member.photo ? `
-                      <img src="${member.photo}" alt="${member.name}" class="w-20 h-20 mx-auto rounded-full object-cover mb-2">
+                      <img src="${member.photo}" alt="${member.name}" class="w-24 h-24 mx-auto rounded-full object-cover mb-2 shadow-md" loading="lazy">
                     ` : `
-                      <div class="w-20 h-20 mx-auto rounded-full bg-primary flex items-center justify-center text-white text-lg font-bold mb-2">
+                      <div class="w-24 h-24 mx-auto rounded-full bg-primary flex items-center justify-center text-white text-lg font-bold mb-2 shadow-md">
                         ${member.name.split(' ').map((n) => n[0]).join('')}
                       </div>
                     `}
-                    <p class="text-sm font-medium text-gray-900 dark:text-slate-100">${member.name}</p>
+                    <p class="text-sm font-medium text-gray-900 dark:text-slate-100 px-1 break-words">${member.name}</p>
                   </div>
                 `).join('')}
               </div>
@@ -185,9 +184,8 @@ const {
         if (committee && modalContent) {
           showCommitteeDetails(committee);
           if (modal) {
-            modal.classList.remove('hidden');
             modal.style.display = 'flex';
-            // Scroll modal to top when opening
+            // Scroll modal overlay to top when opening
             modal.scrollTop = 0;
           }
           document.body.style.overflow = 'hidden';
@@ -206,7 +204,7 @@ const {
 
     // Escape key to close
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+      if (e.key === 'Escape' && modal && modal.style.display === 'flex') {
         closeModalFn();
       }
     });

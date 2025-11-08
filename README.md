@@ -218,14 +218,18 @@ git checkout -b <new-branch-name>
   - `exec` = execuctive team (co-chairs and chairs of committees)
   - `team` = committee members
 
-4. Format the team.js file and stage changes for git
+4. Add your name to the correct committee in the committees.astro file located in `src/pages/about/committees.astro`
+
+5. Format the committees.astro and team.js file and stage changes for git
 
 ```
 # Run 'npx --prettier' to fix any astro specific formatting issues
 npx prettier --write src/config/components/team.js
+npx prettier --write src/pages/about/committees.astro
 # Stage the changes to commit (Assuming you are in the git folder)
 git add ./public/team/<your_image_name>
 git add ./src/config/components/team.js
+git add ./src/pages/about/committees.astro
 #  Commit new changes
 git commit -m "<Add committ message>"
 git push -u origin <new-branch-name>
