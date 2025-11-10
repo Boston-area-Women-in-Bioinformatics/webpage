@@ -95,6 +95,8 @@ The markdown file should follow a specific format. In between the top two `---` 
 - `slug`: a unique identifier for the blog post, used in the URL
 - `excerpt`: appears on the website front page to describe the post
 - `image`: path to the image that will be displayed on the blog post page
+- `imageAlt`: alt-text to show when images are not rendered or when user is using a screen reader. This text should describe the image's purpose in under 125 characters
+- `imagePosition`: set to `top`, `center`(default), or `bottom` to set where the content of the image is most important.
 - author information:
   - `author`: name of the SINGLE author of the blog post
   - `authorUrl`: URL to the author's LinkedIn profile

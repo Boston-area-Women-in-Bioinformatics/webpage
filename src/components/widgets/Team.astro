@@ -30,7 +30,7 @@ const defaultAvatar =
   members.map((member) => (
     <div class="text-center text-gray-500 dark:text-slate-400">
       <img
-        class="mx-auto mb-4 w-36 h-36 rounded-full"
+        class="mx-auto mb-4 w-36 h-36 rounded-full object-cover object-center"
         src={member?.avatar || defaultAvatar}
         alt={`${member?.name} - avatar`}
       />

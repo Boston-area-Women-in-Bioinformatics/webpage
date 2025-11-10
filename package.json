@@ -1,7 +1,7 @@
 {
   "name": "civil-chroma",
   "version": "1.0.0-beta.48",
-  "description": "Boston Women In BioInforatmics: Team up with US, your pathway to elevating your career through leadership, networking, and professional growth.",
+  "description": "Boston Women In BioInforatmics: Advancing Women in Bioinformatics by Creating Networks of Support, Collaboration, and Empowerment.",
   "type": "module",
   "engines": {
     "node": "^18.17.1 || ^20.3.0 || >= 21.0.0"
@@ -37,6 +37,7 @@
     "astro-icon": "^1.1.1",
     "limax": "4.1.0",
     "lodash.merge": "^4.6.2",
+    "marked": "^16.4.1",
     "probe-image-size": "^7.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

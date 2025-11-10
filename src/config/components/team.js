@@ -347,6 +347,32 @@ const team = {
         //github: '#',
       },
     },
+    // Vishwa Talati
+    {
+      name: 'Vishwa Talati',
+      nameLink: 'https://www.linkedin.com/in/vishwa-talati',
+      title: 'Web Page Developer',
+      avatar: '/team/VishwaTalati.jpeg',
+      social: {
+        // website: '#',
+        linkedin: 'https://www.linkedin.com/in/vishwa-talati',
+        //github: '#',
+      },
+    },
+    // Anushka Dongaonkar
+    {
+      name: 'Anushka Dongaonkar',
+      nameLink: 'https://www.linkedin.com/in/anushka-dongaonkar-191b18201/',
+      title: 'Web Page Developer',
+      avatar: '/team/Anushka.jpeg',
+      social: {
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/anushka-dongaonkar-191b18201/',
+        github: 'https://github.com/anushka-don',
+      },
+    },
   ],
 };
 
