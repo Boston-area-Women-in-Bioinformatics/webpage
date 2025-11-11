@@ -1,4 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Data Stewards vs. Data Scientists</title><link>https://boston-wib.org/blog/quicktake/data-stewards-vs-data-scientists</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/data-stewards-vs-data-scientists</guid><pubDate>Mon, 03 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-03-data-stewards-vs-data-scientists.png&quot; alt=&quot;You need both data stewards and data scientists.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>The Strategic Value of Simple Solutions</title><link>https://boston-wib.org/blog/quicktake/value-of-simple-solutions</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/value-of-simple-solutions</guid><pubDate>Mon, 10 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-10-the-strategic-value-of-simple-solutions.png&quot; alt=&quot;The graph shows how simple solutions work best at small scales, but as your system grows, there’s a tipping point where leveling up to a more complex setup becomes worth the effort.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;The best solution is the one that solves today&apos;s problem without creating tomorrow&apos;s.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The best technical solution is usually the simplest one that actually works.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We had an ETL pipeline running on AWS Lambda - serverless, elegant, modern. Then it started failing randomly.&lt;/p&gt;
+&lt;p&gt;After digging through CloudWatch logs, we found the culprit: the Python script occasionally took longer than 15 minutes, hitting Lambda’s hard timeout limit.&lt;/p&gt;
+&lt;p&gt;The “impressive” solution? Architect a Step Functions workflow with chunking and state management.&lt;/p&gt;
+&lt;p&gt;The solution we actually used? A cron job.&lt;/p&gt;
+&lt;p&gt;Yes, cron. That Unix utility from 1975. Running on a schedule. No serverless complexity. No timeout mysteries.&lt;/p&gt;
+&lt;p&gt;Anyone on the team could debug it. No one needed to understand Lambda configurations or serverless architectures.&lt;/p&gt;
+&lt;p&gt;Why simple wins (especially on lean teams):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Maintenance burden matters more than elegance when you’re the only one who’ll touch the code for the next 6 months&lt;/li&gt;
+&lt;li&gt;“Everyone can understand it” beats “technically impressive” when your team is 2 people wearing 5 hats each&lt;/li&gt;
+&lt;li&gt;Simple solutions ship faster, which means you learn faster whether you built the right thing&lt;/li&gt;
+&lt;li&gt;The best architecture is the one that solves today’s problem without creating tomorrow’s mystery&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;The tricky part: Knowing when to level up&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;That cron solution? It works beautifully when runs are predictable and failures are rare. But if we needed complex dependency management, retry logic with exponential backoff, or parallel execution across multiple pipelines, we’d eventually hit its limits.&lt;/p&gt;
+&lt;p&gt;The skill isn’t just building simple - it’s recognizing the tipping points:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When manual steps start consuming more time than automation would take&lt;/li&gt;
+&lt;li&gt;When the same bug keeps appearing because the simple solution lacks guardrails&lt;/li&gt;
+&lt;li&gt;When “just one person knows how this works” becomes a risk instead of efficiency&lt;/li&gt;
+&lt;li&gt;When the workarounds to keep the simple thing working become more complex than a proper solution would be&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I’ve seen teams waste months over-engineering solutions for problems they didn’t fully understand yet. I’ve also seen teams cling to quick fixes long after they became bottlenecks.&lt;/p&gt;
+&lt;p&gt;The sweet spot? Start simple. Monitor the pain points. Upgrade strategically when the cost of simplicity exceeds the cost of complexity.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The question I ask:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;“If I go on vacation tomorrow, could someone else maintain this?”&lt;/p&gt;
+&lt;p&gt;If the answer is no, I either need to simplify or document better. Usually both.&lt;/p&gt;
+&lt;p&gt;What’s your go-to test for whether a solution is appropriately simple vs. dangerously oversimplified?&lt;/p&gt;
+</content:encoded><category>software-engineering</category><category>data-engineering</category><category>technical-leadership</category><category>biotech</category><category>data-infrastructure</category></item><item><title>Data Stewards vs. Data Scientists</title><link>https://boston-wib.org/blog/quicktake/data-stewards-vs-data-scientists</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/data-stewards-vs-data-scientists</guid><pubDate>Mon, 03 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-03-data-stewards-vs-data-scientists.png&quot; alt=&quot;You need both data stewards and data scientists.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;Why Biotech Needs Both (But Hires Only One)&lt;/em&gt;&lt;/p&gt;
 
