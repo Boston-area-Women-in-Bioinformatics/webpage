@@ -1,5 +1,5 @@
 ---
-publishDate: 2025-11-10T00:00:00Z
+publishDate: 2025-11-11T00:00:00Z
 title: 'Work Life Decoded: How to Handle Workplace Negativity'
 excerpt: 'Without Becoming the Office Therapist'
 slug: 'blog/work-life-decoded/how-to-handle-workplace-negativity'
