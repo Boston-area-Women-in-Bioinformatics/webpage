@@ -119,6 +119,13 @@
   @apply bg-slate-900;
 }
 
+/* Hide RSS menu on mobile even when header is expanded */
+@media (max-width: 767px) {
+  #header .dropdown.hidden {
+    display: none !important;
+  }
+}
+
 .dropdown:focus .dropdown-menu,
 .dropdown:focus-within .dropdown-menu,
 .dropdown:hover .dropdown-menu {
