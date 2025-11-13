@@ -109,18 +109,57 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                     class="dropdown-menu md:backdrop-blur-md dark:md:bg-slate-800 rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.25)]"
                     aria-labelledby={`dropdown-${index}`}
                   >
-                    {links.map(({ text: text2, href: href2 }) => (
-                      <li>
-                        <a
-                          class:list={[
-                            'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:text-slate-200 dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
-                            { 'aw-link-active': href2 === currentPath },
-                          ]}
-                          href={href2}
-                          aria-current={href2 === currentPath ? 'page' : undefined}
-                        >
-                          {text2}
-                        </a>
+                    {links.map(({ text: text2, href: href2, links: subLinks }, subIndex) => (
+                      <li class={subLinks?.length ? 'dropdown-submenu relative' : ''}>
+                        {subLinks?.length ? (
+                          <>
+                            <button
+                              type="button"
+                              class="w-full text-left first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:text-slate-200 dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 whitespace-no-wrap flex items-center justify-between"
+                              aria-expanded="false"
+                              aria-haspopup="true"
+                              aria-label={`${text2} submenu`}
+                              id={`dropdown-${index}-${subIndex}`}
+                            >
+                              {text2}
+                              <Icon
+                                name="tabler:chevron-right"
+                                class="w-3.5 h-3.5 ml-2"
+                                aria-hidden="true"
+                              />
+                            </button>
+                            <ul
+                              class="dropdown-menu md:backdrop-blur-md dark:md:bg-slate-800 rounded md:absolute md:left-full md:top-0 pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.25)]"
+                              aria-labelledby={`dropdown-${index}-${subIndex}`}
+                            >
+                              {subLinks.map(({ text: text3, href: href3 }) => (
+                                <li>
+                                  <a
+                                    class:list={[
+                                      'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:text-slate-200 dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
+                                      { 'aw-link-active': href3 === currentPath },
+                                    ]}
+                                    href={href3}
+                                    aria-current={href3 === currentPath ? 'page' : undefined}
+                                  >
+                                    {text3}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </>
+                        ) : (
+                          <a
+                            class:list={[
+                              'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:text-slate-200 dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
+                              { 'aw-link-active': href2 === currentPath },
+                            ]}
+                            href={href2}
+                            aria-current={href2 === currentPath ? 'page' : undefined}
+                          >
+                            {text2}
+                          </a>
+                        )}
                       </li>
                     ))}
                   </ul>
