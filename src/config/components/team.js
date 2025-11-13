@@ -250,6 +250,21 @@ const team = {
 
   // Members of the leadership team
   members: [
+    // Liyang Diao
+    {
+      name: 'Liyang Diao',
+      nameLink: 'https://www.linkedin.com/in/liyang-diao-90933461',
+      title: 'Member, Events Committee',
+      avatar: '/team/liyang_diao.jpeg',
+      social: {
+        website: 'https://sproutinformatics.com',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/liyang-diao-90933461',
+        //github: '#',
+      },
+    },
     // Yaseswini Neelamraju
     {
       name: 'Yaseswini Neelamraju',
