@@ -16,7 +16,7 @@ import { getBlogPermalink } from '~/utils/permalinks';
 import Image from '~/components/common/Image.astro';
 
 const latestNewsletter = APP_NEWSLETTER.isEnabled ? (await findLatestNewsletters({ count: 1 }))[0] : null;
-const latestBlogs = APP_BLOG.isEnabled ? await findLatestPosts({ count: 4 }) : [];
+const latestBlogs = APP_BLOG.isEnabled ? (await findLatestPosts({ count: 4 })) || [] : [];
 
 const metadata = {
   title: SITE.title,

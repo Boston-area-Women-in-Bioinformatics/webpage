@@ -118,8 +118,21 @@ const eventCollection = defineCollection({
   }),
 });
 
+const committeeCollection = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: 'src/content/committees' }),
+  schema: z.object({
+    id: z.string(),
+    title: z.string(),
+    description: z.string(),
+    icon: z.string().optional(),
+    chairs: z.array(z.string()),
+    members: z.array(z.string()).optional(),
+  }),
+});
+
 export const collections = {
   post: postCollection,
   event: eventCollection,
   newsletter: newsletterCollection,
+  committee: committeeCollection,
 };

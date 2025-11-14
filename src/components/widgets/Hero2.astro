@@ -81,7 +81,7 @@ const isRemoteImage =
                     <img
                       src={String(image.src)}
                       alt={'alt' in image ? String(image.alt || '') : ''}
-                      class="mx-auto h-auto rounded-md w-full"
+                      class="mx-auto h-auto rounded-md w-32 sm:w-48 md:w-64"
                       loading="eager"
                     />
                   ) : (
@@ -128,7 +128,7 @@ const isRemoteImage =
                 <img
                   src={String(image.src)}
                   alt={'alt' in image ? String(image.alt || '') : ''}
-                  class="mx-auto h-auto rounded-md w-full lg:w-1/2"
+                  class="mx-auto h-auto rounded-md w-32 sm:w-48 md:w-64 lg:w-80"
                   loading="eager"
                 />
               ) : (

@@ -6,6 +6,7 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '~/components/FormattedDate.astro';
 import EventAddress from 'src/components/EventAddress.astro';
 import Button from '~/components/ui/Button.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
 //import { Icon } from 'astro-icon/components';
 
 const future_events = (
@@ -14,24 +15,54 @@ const future_events = (
 
 const next_event = future_events[0];
 
-// Breaking Title After Colon or Dash
+// Breaking Title After Colon or Dash (only if event exists)
+let colonIndex: number | undefined;
+let dashIndex: number | undefined;
+let breakIndex: number | undefined;
+let hasBreak: boolean | undefined;
+let firstLine: string | undefined;
+let secondLine: string | undefined;
+let image_class: string | undefined;
 
-// Find the first colon or dash
-const colonIndex = next_event.data.title.indexOf(':');
-const dashIndex = next_event.data.title.indexOf('-');
+if (next_event) {
+  // Find the first colon or dash
+  colonIndex = next_event.data.title.indexOf(':');
+  dashIndex = next_event.data.title.indexOf('-');
 
-// Choose the earliest one (if either exists)
-const breakIndex = [colonIndex, dashIndex].filter((i) => i !== -1).sort((a, b) => a - b)[0];
+  // Choose the earliest one (if either exists)
+  breakIndex = [colonIndex, dashIndex].filter((i) => i !== -1).sort((a, b) => a - b)[0];
 
-const hasBreak = breakIndex !== undefined;
-const firstLine = hasBreak ? next_event.data.title.slice(0, breakIndex + 1) : next_event.data.title;
-const secondLine = hasBreak ? next_event.data.title.slice(breakIndex + 1).trim() : '';
-const image_class = `border border-gray-200 dark:border-gray-700 shadow mx-auto h-auto rounded-md ${next_event.data.imgpos}`;
+  hasBreak = breakIndex !== undefined;
+  firstLine = hasBreak ? next_event.data.title.slice(0, breakIndex + 1) : next_event.data.title;
+  secondLine = hasBreak ? next_event.data.title.slice(breakIndex + 1).trim() : '';
+  image_class = `border border-gray-200 dark:border-gray-700 shadow mx-auto h-auto rounded-md ${next_event.data.imgpos}`;
+}
 ---
 
 {
   future_events.length === 0 ? (
-    <div />
+    <Hero2
+      title="New Events Coming Soon!"
+      subtitle="We're brewing up some exciting gatherings and can't wait to share them with you. Check back soon or join our slack to be the first to know!"
+      image={{ src: '/photos/eventFairy.png', alt: 'Event Fairy' }}
+      imageBefore={true}
+      padding="py-16"
+      actions={[
+        {
+          variant: 'primary',
+          text: 'Join Our Community',
+          href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ',
+          icon: 'tabler:brand-slack',
+          target: '_blank',
+        },
+        {
+          variant: 'secondary',
+          text: 'View Past Events',
+          href: '/events/archived',
+          icon: 'tabler:history',
+        },
+      ]}
+    />
   ) : (
     <div class="relative m-auto max-w-6xl intersect-once intercept-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter lg:flex lg:items-center">
       <div class="lg:w-2/5 {image_class}">

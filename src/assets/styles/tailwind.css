@@ -125,6 +125,12 @@
   display: block;
 }
 
+.dropdown-submenu:focus .dropdown-menu,
+.dropdown-submenu:focus-within .dropdown-menu,
+.dropdown-submenu:hover .dropdown-menu {
+  display: block;
+}
+
 [astro-icon].icon-light > * {
   stroke-width: 1.2;
 }

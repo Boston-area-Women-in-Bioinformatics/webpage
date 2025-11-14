@@ -1,0 +1,217 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+import { SITE } from '~/config/site/config.js';
+import teamConfig, { exec } from '~/config/components/team.js';
+
+export async function getStaticPaths() {
+  const committees = await getCollection('committee');
+  return committees.map((committee) => ({
+    params: { slug: committee.data.id },
+    props: { committee },
+  }));
+}
+
+const { committee } = Astro.props;
+const { Content } = await render(committee);
+
+// Helper function to find team member by name from exec or team
+function findTeamMember(name: string) {
+  const allMembers = [...exec.members, ...teamConfig.members];
+  return allMembers.find((member) => member.name === name);
+}
+
+// Convert names to full member objects with photos
+const chairs =
+  committee.data.chairs?.map((name) => {
+    const member = findTeamMember(name);
+    return {
+      name,
+      title: member?.title,
+      photo: member?.avatar,
+      nameLink: member?.nameLink,
+    };
+  }) || [];
+
+const members =
+  committee.data.members?.map((name) => {
+    const member = findTeamMember(name);
+    return {
+      name,
+      title: member?.title,
+      photo: member?.avatar,
+      nameLink: member?.nameLink,
+    };
+  }) || [];
+
+const metadata = {
+  title: `${committee.data.title} Committee - ${SITE.title}`,
+  description: committee.data.description,
+};
+---
+
+<Layout metadata={metadata}>
+  <div class="px-4 py-16 mx-auto max-w-4xl lg:py-20">
+    <!-- Back button -->
+    <div class="mb-8">
+      <a
+        href="/about/committees"
+        class="inline-flex items-center text-primary hover:text-primary-dark transition-colors"
+      >
+        <Icon name="tabler:arrow-left" class="w-5 h-5 mr-2" />
+        Back to Committees
+      </a>
+    </div>
+
+    <!-- Header -->
+    <div class="mb-12">
+      <div class="flex items-center mb-4">
+        {
+          committee.data.icon && (
+            <div class="text-white bg-primary rounded-full w-16 h-16 p-4 mr-4 flex items-center justify-center">
+              <Icon name={committee.data.icon} class="w-8 h-8" />
+            </div>
+          )
+        }
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-slate-100">
+          {committee.data.title}
+        </h1>
+      </div>
+      <p class="text-xl text-muted dark:text-slate-300 mt-4">
+        {committee.data.description}
+      </p>
+    </div>
+
+    <!-- Committee Chairs -->
+    {
+      chairs.length > 0 && (
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-slate-100 mb-6">Committee Chairs</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {chairs.map((chair) => (
+              <div class="flex items-center space-x-4 p-6 bg-gray-50 dark:bg-slate-800 rounded-lg">
+                {chair.nameLink ? (
+                  <a href={chair.nameLink} class="flex-shrink-0">
+                    {chair.photo ? (
+                      <img
+                        src={chair.photo}
+                        alt={chair.name}
+                        class="w-36 h-36 rounded-full object-cover object-center"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div class="w-36 h-36 rounded-full bg-primary flex items-center justify-center text-white text-xl font-bold">
+                        {chair.name
+                          .split(' ')
+                          .map((n) => n[0])
+                          .join('')}
+                      </div>
+                    )}
+                  </a>
+                ) : (
+                  <>
+                    {chair.photo ? (
+                      <img
+                        src={chair.photo}
+                        alt={chair.name}
+                        class="w-36 h-36 rounded-full object-cover object-center flex-shrink-0"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div class="w-36 h-36 rounded-full bg-primary flex items-center justify-center text-white text-xl font-bold flex-shrink-0">
+                        {chair.name
+                          .split(' ')
+                          .map((n) => n[0])
+                          .join('')}
+                      </div>
+                    )}
+                  </>
+                )}
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-gray-900 dark:text-slate-100 text-lg">
+                    {chair.nameLink ? (
+                      <a href={chair.nameLink} class="hover:text-primary">
+                        {chair.name}
+                      </a>
+                    ) : (
+                      chair.name
+                    )}
+                  </p>
+                  {chair.title && <p class="text-sm text-muted dark:text-slate-400 mt-1">{chair.title}</p>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    <!-- Committee Members -->
+    {
+      members.length > 0 && (
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-slate-100 mb-6">Committee Members</h2>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {members.map((member) => (
+              <div class="text-center">
+                {member.nameLink ? (
+                  <a href={member.nameLink}>
+                    {member.photo ? (
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        class="w-36 h-36 mx-auto rounded-full object-cover object-center mb-4"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div class="w-36 h-36 mx-auto rounded-full bg-primary flex items-center justify-center text-white text-2xl font-bold mb-4">
+                        {member.name
+                          .split(' ')
+                          .map((n) => n[0])
+                          .join('')}
+                      </div>
+                    )}
+                  </a>
+                ) : (
+                  <>
+                    {member.photo ? (
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        class="w-36 h-36 mx-auto rounded-full object-cover object-center mb-4"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div class="w-36 h-36 mx-auto rounded-full bg-primary flex items-center justify-center text-white text-2xl font-bold mb-4">
+                        {member.name
+                          .split(' ')
+                          .map((n) => n[0])
+                          .join('')}
+                      </div>
+                    )}
+                  </>
+                )}
+                <p class="text-base font-semibold text-gray-900 dark:text-slate-100 px-1 break-words">
+                  {member.nameLink ? (
+                    <a href={member.nameLink} class="hover:text-primary">
+                      {member.name}
+                    </a>
+                  ) : (
+                    member.name
+                  )}
+                </p>
+                {member.title && <p class="text-sm text-muted dark:text-slate-400 mt-1 px-1">{member.title}</p>}
+              </div>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    <!-- Markdown Content -->
+    <div class="prose prose-lg dark:prose-invert max-w-none mb-12">
+      <Content />
+    </div>
+  </div>
+</Layout>
