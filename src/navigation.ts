@@ -19,6 +19,10 @@ export const headerData = {
       ],
     },
     {
+      text: 'Career Program',
+      href: getPermalink('/career-mentorship'),
+    },
+    {
       text: 'Newsletter',
       href: getNewsletterPermalink(),
     },
