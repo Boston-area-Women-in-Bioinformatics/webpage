@@ -1,7 +1,7 @@
 ---
 publishDate: 2025-11-11T00:00:00Z
 title: 'Work Life Decoded: How to Handle Workplace Negativity (Without Becoming the Office Therapist)'
-excerpt: 'Practical strategies for handling workplace negativity without getting dragged into the drama or becoming everyone’s emotional dumping ground'
+excerpt: 'Practical strategies for handling workplace negativity.'
 slug: 'blog/work-life-decoded/how-to-handle-workplace-negativity'
 image: '/blog_images/Work-Life-Decoded.png'
 imagePosition: center
