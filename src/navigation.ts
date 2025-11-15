@@ -87,16 +87,20 @@ export const headerData = {
           href: getPermalink('quick-take', 'category'),
         },
         {
-          text: 'Podcasts',
-          href: getPermalink('podcast', 'category'),
-        },
-        {
           text: 'Deep Dives',
           href: getPermalink('deep-dive', 'category'),
         },
         {
           text: 'Tutorials',
           href: getPermalink('tutorial', 'category'),
+        },
+        {
+          text: 'Podcasts',
+          href: getPermalink('podcast', 'category'),
+        },
+        {
+          text: 'Videos',
+          href: getPermalink('video', 'category'),
         },
       ],
     },
