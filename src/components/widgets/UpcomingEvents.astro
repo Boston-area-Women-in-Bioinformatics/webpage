@@ -44,7 +44,11 @@ if (next_event) {
     <Hero2
       title="New Events Coming Soon!"
       subtitle="We're brewing up some exciting gatherings and can't wait to share them with you. Check back soon or join our slack to be the first to know!"
-      image={{ src: '/photos/eventFairy.png', alt: 'Event Fairy' }}
+      image={{
+        src: '/photos/eventFairy.png',
+        alt: 'Event Fairy',
+        class: 'dark:[filter:brightness(1.5)_saturate(0.8)]',
+      }}
       imageBefore={true}
       padding="py-16"
       actions={[
