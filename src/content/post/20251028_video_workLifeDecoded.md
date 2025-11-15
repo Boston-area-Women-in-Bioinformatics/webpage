@@ -11,7 +11,7 @@ authors:
     url: 'https://www.linkedin.com/in/linafaller/'
   - name: 'Lorena Pantano, Ph.D.'
     url: 'https://www.linkedin.com/in/lpantano'
-category: Video
+category: video
 tags:
   - early-career
   - career-advice
