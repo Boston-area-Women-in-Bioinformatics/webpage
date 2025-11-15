@@ -7,7 +7,6 @@ chairs:
   - 'Aysheh Alrfooh'
   - 'Peili Zhang'
 members:
-  - 'Manonmani Kumar'
   - 'Marissa Sumathipala'
 ---
 

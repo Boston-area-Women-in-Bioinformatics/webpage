@@ -335,21 +335,6 @@ const team = {
         linkedin: 'https://www.linkedin.com/in/masoome-rezaei',
       },
     },
-    // Manonmani Kumar
-    {
-      name: 'Manonmani Kumar',
-      nameLink: 'http://www.linkedin.com/in/manonmani-kumar-9a9180a',
-      title: 'Member, Career-Sponsorship Committee',
-      avatar: '/team/ManonmaniKumar.jpg',
-      social: {
-        // website: '#',
-        // twitter: '#',
-        // instagram: '#',
-        // facebook: '#',
-        linkedin: 'http://www.linkedin.com/in/manonmani-kumar-9a9180a',
-        github: 'https://github.com/Manonmania',
-      },
-    },
     // Marissa Sumathipala
     {
       name: 'Marissa Sumathipala',
