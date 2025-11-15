@@ -1,6 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Work Life Decoded: How to Handle Workplace Negativity</title><link>https://boston-wib.org/blog/work-life-decoded/how-to-handle-workplace-negativity</link><guid isPermaLink="true">https://boston-wib.org/blog/work-life-decoded/how-to-handle-workplace-negativity</guid><pubDate>Tue, 11 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/Work-Life-Decoded.png&quot; alt=&quot;Work Life Decoded Video Series Thumbnail&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Data Pipelines That Scientists Can Debug (Without Calling You at 9 PM)</title><link>https://boston-wib.org/blog/quicktake/data-pipelines-that-scientists-can-debug-without-calling-you-at-9-pm</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/data-pipelines-that-scientists-can-debug-without-calling-you-at-9-pm</guid><pubDate>Thu, 13 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-13-data-pipelines-that-scientists-can-debug-without-calling-you-at-9-pm.png&quot; alt=&quot;Clear error messages empowers scientists to solve challenges fast and independently; cryptic messages stall scientific process by often requiring data scientist intervention&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
-&lt;p&gt;&lt;em&gt;Without Becoming the Office Therapist&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Why data scientists should design error messages that guide users straight to solutions.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;quot;Hey, the pipeline failed again. Can you take a look?&amp;quot;&lt;/p&gt;
+&lt;p&gt;This Slack message means your next hour is gone. You&amp;#39;ll dig through logs, decipher SQL errors, and eventually discover something simple: a sample ID mismatch, a missing metadata field, or a file in the wrong format.&lt;/p&gt;
+&lt;p&gt;The scientist could have fixed it in 30 seconds—if the error message had told them what to look for.&lt;/p&gt;
+&lt;p&gt;I&amp;#39;ve watched brilliant researchers stare at &amp;quot;Foreign key constraint violation in table seq_metadata&amp;quot; for 10 minutes before asking for help. The pipeline was doing its job—catching bad data before it corrupted the database. But the error message was useless.&lt;/p&gt;
+&lt;p&gt;The underlying problem was pretty straightforward: sample IDs in the sequencing file didn&amp;#39;t match our experiment registry. A 30-second fix for someone who knows where to look. An unsolvable mystery for everyone else.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Good data engineering includes translating technical failures into actionable scientific context.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Here&amp;#39;s what I now build into every production pipeline:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Error messages that say what AND why: &amp;quot;Sample ID ABC123 not found in experiment registry. Check Benchling or contact data team if this sample should exist.&amp;quot;&lt;/li&gt;
+&lt;li&gt;Data quality checks in scientific terms: &amp;quot;Missing replicate numbers for 3 samples in plate P2024-089. Replicates required for statistical analysis.&amp;quot;&lt;/li&gt;
+&lt;li&gt;Logging that tells a story: Timestamps, input files, sample counts, quality metrics so scientists can reconstruct what happened.&lt;/li&gt;
+&lt;li&gt;Retry logic that makes sense for biology: Retry network glitches. Don&amp;#39;t retry failed QC—that needs human judgment.&lt;/li&gt;
+&lt;li&gt;Clear next steps in failures: Point to docs, suggest who to contact, or indicate if this is expected.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The goal isn&amp;#39;t eliminating errors—it&amp;#39;s making them interpretable.&lt;/p&gt;
+&lt;p&gt;When a scientist sees &amp;quot;QC failed: 12% of reads below threshold (expected &amp;lt;5%). Contact sequencing core,&amp;quot; they know what to do. &amp;quot;ValueError: invalid literal for int()&amp;quot; leaves them stuck.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The best pipeline is one that makes both teams successful.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Data engineers get fewer interruptions and better bug reports. Scientists get independence and faster resolution. Everyone wins when failures are observable and actionable.&lt;/p&gt;
+&lt;p&gt;Since implementing these patterns, debugging interruptions dropped significantly. Not because pipelines stopped failing—they still do. But now when they fail, the error message points scientists directly to the problem.
+Which pattern would have the biggest impact for your team? 🧬💻&lt;/p&gt;
+</content:encoded><category>bioinformatics</category><category>data-engineering</category><category>biotech</category><category>computational-biology</category><category>data-science</category></item><item><title>Work Life Decoded: How to Handle Workplace Negativity (Without Becoming the Office Therapist)</title><link>https://boston-wib.org/blog/work-life-decoded/how-to-handle-workplace-negativity</link><guid isPermaLink="true">https://boston-wib.org/blog/work-life-decoded/how-to-handle-workplace-negativity</guid><pubDate>Tue, 11 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/Work-Life-Decoded.png&quot; alt=&quot;Work Life Decoded Video Series Thumbnail&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Practical strategies for handling workplace negativity.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;“That person is SO incompetent.” “This project is a disaster.” “Management has no idea what they’re doing.”&lt;/p&gt;
 &lt;p&gt;We’ve all worked with chronic complainers. And if you’re in any kind of leadership role—formal or informal—you’ve probably felt the pressure to fix everyone’s frustrations.&lt;/p&gt;
@@ -16,7 +40,52 @@
 &lt;p&gt;This isn’t about toxic positivity or pretending problems don’t exist. It’s about knowing when negativity is productive and when it’s destructive—and having the tools to navigate both.&lt;/p&gt;
 &lt;p&gt;Because negativity is contagious. But so is the solution-focused energy you bring to your team.&lt;/p&gt;
 &lt;p&gt;Watch the full episode &lt;a href=&quot;https://www.patreon.com/posts/143081096&quot;&gt;Work Life Decoded: How to Handle Workplace Negativity (Without Becoming the Office Therapist)&lt;/a&gt; on Patreon.&lt;/p&gt;
-</content:encoded><category>career-advice</category><category>professional-development</category><category>leadership-skills</category><category>workplace-culture</category></item><item><title>The Strategic Value of Simple Solutions</title><link>https://boston-wib.org/blog/quicktake/value-of-simple-solutions</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/value-of-simple-solutions</guid><pubDate>Mon, 10 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-10-the-strategic-value-of-simple-solutions.png&quot; alt=&quot;The graph shows how simple solutions work best at small scales, but as your system grows, there’s a tipping point where leveling up to a more complex setup becomes worth the effort.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>career-advice</category><category>professional-development</category><category>leadership-skills</category><category>workplace-culture</category></item><item><title>A Coffee with CompBio: Collaboration Survival Guide for CompBio</title><link>https://boston-wib.org/blog/coffeewithcompbio/episode-10</link><guid isPermaLink="true">https://boston-wib.org/blog/coffeewithcompbio/episode-10</guid><pubDate>Tue, 11 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/coffeeWithCompBio_logo.jpeg&quot; alt=&quot;Coffee with CompBio Podcast Logo: Stylized orange and blue DNA double helix&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Unpacking the messy truths behind scientific teamwork.&lt;/em&gt;&lt;/p&gt;
+
+&lt;iframe
+  name=&quot;Ausha Podcast Player&quot;
+  frameborder=&quot;0&quot;
+  loading=&quot;lazy&quot;
+  id=&quot;ausha-58eB&quot;
+  height=&quot;220&quot;
+  style=&quot;border: none; width:100%; height:220px&quot;
+  src=&quot;https://player.ausha.co/?podcastId=BMnZZefmJRPo&amp;playlist=false&amp;color=%23751cbf&amp;v=3&amp;playerId=ausha-58eB&quot;
+&gt;&lt;/iframe&gt;
+&lt;script src=&quot;https://player.ausha.co/ausha-player.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;What really happens when a wet lab scientist and a computational biologist sit down to plan an experiment? Spoiler: it&amp;#39;s not always smooth sailing. In this episode of &amp;#39;A Coffee with Compbio,&amp;#39; Lorena Pantano and Alex Bartlett chat with Amulya about the real talk nobody tells you about scientific collaborations.&lt;/p&gt;
+&lt;p&gt;They break down the three make-or-break moments of any project: that first meeting where you&amp;#39;re figuring out if single-cell sequencing on mouse eyes is actually the move (hint: maybe start simpler), the data processing stage where quality issues rear their ugly head, and those uncomfortable conversations when results don&amp;#39;t pan out.&lt;/p&gt;
+&lt;p&gt;What you&amp;#39;ll learn:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How to redirect overambitious project plans without shutting people down&lt;/li&gt;
+&lt;li&gt;Smart ways to communicate technology limitations early&lt;/li&gt;
+&lt;li&gt;What to say when pilot data quality is... not great&lt;/li&gt;
+&lt;li&gt;Why being adaptable beats being rigid every single time&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you want to level up your collaboration game and avoid common pitfalls, grab your coffee and tune in.&lt;/p&gt;
+&lt;p&gt;Thanks &lt;a href=&quot;https://www.linkedin.com/in/amulya-shastry/&quot;&gt;Amulya Shastr&lt;/a&gt; for editing and management support.&lt;/p&gt;
+&lt;p&gt;Send us your comments, questions, and suggestions using &lt;a href=&quot;https://forms.gle/ncwo6HZeN4uA9gPg7&quot;&gt;this form&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Listen to this podcast on other platforms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&amp;lt;span style={{ display: &amp;#39;inline-flex&amp;#39;, alignItems: &amp;#39;center&amp;#39;, gap: &amp;#39;0.5em&amp;#39; }}&amp;gt;
+  &lt;FaApple size={32} className=&quot;text-black dark:text-white&quot; /&gt;{&amp;#39; &amp;#39;}&lt;/p&gt;
+  &lt;a href=&quot;https://podcasts.apple.com/us/podcast/a-coffee-with-saranya-canchi-fail-learn/id1817024741?i=1000731855297&amp;uo=4&quot;&gt;
+    Apple
+  &lt;/a&gt;
+&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&amp;lt;span style={{ display: &amp;#39;inline-flex&amp;#39;, alignItems: &amp;#39;center&amp;#39;, gap: &amp;#39;0.5em&amp;#39; }}&amp;gt;
+  &lt;FaSpotify size={32} color=&quot;#1DB954&quot; /&gt;{&amp;#39; &amp;#39;}
+  &lt;a href=&quot;https://open.spotify.com/episode/2Sx6bFIOAt3x32o5IvySAu&quot;&gt;Spotify&lt;/a&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We are looking for sponsors! Please get in touch if you or your business would like to help support this podcast.&lt;/p&gt;
+&lt;p&gt;Follow &lt;a href=&quot;https://www.linkedin.com/in/lpantano&quot;&gt;Lorena&lt;/a&gt; and &lt;a href=&quot;https://www.linkedin.com/in/alexandra-bartlett-926b32109&quot;&gt;Alex&lt;/a&gt; on LinkedIn!&lt;/p&gt;
+&lt;p&gt;If you enjoyed the episode, &lt;a href=&quot;https://podcast.ausha.co/a-coffee-with-compbio&quot;&gt;please subscribe and leave a review!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hosted by Ausha. See &lt;a href=&quot;https://ausha.co/privacy-policy&quot;&gt;ausha.co/privacy-policy&lt;/a&gt; for more information&lt;/p&gt;
+</content:encoded><category>science-communication</category><category>neuroinformatics</category><category>self-directed-learning</category><category>bioinformatics</category><category>problem-solving-skills</category></item><item><title>The Strategic Value of Simple Solutions</title><link>https://boston-wib.org/blog/quicktake/value-of-simple-solutions</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/value-of-simple-solutions</guid><pubDate>Mon, 10 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-10-the-strategic-value-of-simple-solutions.png&quot; alt=&quot;The graph shows how simple solutions work best at small scales, but as your system grows, there’s a tipping point where leveling up to a more complex setup becomes worth the effort.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;The best solution is the one that solves today&apos;s problem without creating tomorrow&apos;s.&lt;/em&gt;&lt;/p&gt;
 
@@ -135,7 +204,24 @@
 &lt;p&gt;You can&amp;#39;t build self-service tools if every new dashboard requires custom security implementation. Data layer guardrails let you say &amp;quot;build whatever you need&amp;quot; instead of &amp;quot;check with us about access controls first.&amp;quot;&lt;/p&gt;
 &lt;p&gt;The best security is the kind users don&amp;#39;t even notice—they just see the data they&amp;#39;re supposed to see.&lt;/p&gt;
 &lt;p&gt;How are you handling access control for sensitive data? Application layer or data layer?&lt;/p&gt;
-</content:encoded><category>data-engineering</category><category>bioinformatics</category><category>data-quality</category><category>biotech</category><category>self-service</category></item><item><title>The Success Criteria Question: Why I Don&apos;t Start with Requirements</title><link>https://boston-wib.org/blog/quicktake/success-criteria-requirements</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/success-criteria-requirements</guid><pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-10-27-the-success-criteria-question-why-i-dont-start-with-requirements.png&quot; alt=&quot;Bridge diagram showing transformation from vague request &quot;I wish we had...&quot; to specific solution &quot;Quality trend monitoring dashboard&quot; through clarifying questions.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>data-engineering</category><category>bioinformatics</category><category>data-quality</category><category>biotech</category><category>self-service</category></item><item><title>Work Life Decoded: Series Introduction</title><link>https://boston-wib.org/blog/work-life-decoded/welcome-to-the-series</link><guid isPermaLink="true">https://boston-wib.org/blog/work-life-decoded/welcome-to-the-series</guid><pubDate>Tue, 28 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/Work-Life-Decoded.png&quot; alt=&quot;Work Life Decoded Video Series Thumbnail&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;A new video series that cuts through the myths with real talk on science and careers.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Women in Bioinformatics chairs Lorena and Lina introduce their new video series tackling the career challenges that keep bioinformatics professionals up at night. With over 40 years of combined experience at Harvard, eGenesis, Ginkgo Bioworks, and other leading organizations, they&amp;#39;re sharing the honest conversations about workplace dynamics, negotiation, and career navigation that they wish they&amp;#39;d had access to earlier in their careers.&lt;/p&gt;
+&lt;p&gt;Should you stay at your current job or make a move? How do you handle a colleague taking credit for your work? When should you speak up, and when should you let it go? Each video in the series addresses a specific challenge with practical, actionable advice from leaders who&amp;#39;ve been there.&lt;/p&gt;
+&lt;p&gt;This isn&amp;#39;t about motivational platitudes—it&amp;#39;s real talk about career strategy, advocating for yourself, supporting other minorities in the workplace, and managing the daily realities of working in science.&lt;/p&gt;
+&lt;p&gt;If you&amp;#39;re ready for honest insights on building the career you want, join the Patreon video series, &amp;quot;Work Life Decoded.&amp;quot; The first episode &lt;a href=&quot;http://patreon.com/posts/welcome-to-work-142167916&quot;&gt;Welcome to Work Life Decoded&lt;/a&gt; is available now!&lt;/p&gt;
+</content:encoded><category>early-career</category><category>career-advice</category><category>professional-development</category><category>workplace-culture</category></item><item><title>Work Life Decoded: Your Weekly Win Log – The Career Tool You Didn&apos;t Know You Needed</title><link>https://boston-wib.org/blog/work-life-decoded/your-weekly-win-log</link><guid isPermaLink="true">https://boston-wib.org/blog/work-life-decoded/your-weekly-win-log</guid><pubDate>Tue, 28 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/Work-Life-Decoded.png&quot; alt=&quot;Work Life Decoded Video Series Thumbnail&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Why you should keep a weekly log of your wins (and how it can transform your career)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In their latest video, Women in Bioinformatics chairs Lorena and Lina tackle a deceptively simple practice that can transform your career: keeping a weekly log of your wins and quantifying your achievements.&lt;/p&gt;
+&lt;p&gt;This isn&amp;#39;t just about surviving performance review season—though it absolutely makes that easier. A weekly win log is your defense against imposter syndrome, your foundation for a compelling resume, and your ammunition when it&amp;#39;s time to negotiate for what you deserve. The commitment? Just five minutes every Friday.&lt;/p&gt;
+&lt;p&gt;The video walks through why this habit matters, what to track, and how to quantify your impact with concrete before/after examples. No more scrambling six months later trying to remember what you accomplished. No more underselling yourself because you forgot the numbers that prove your value.&lt;/p&gt;
+&lt;p&gt;Lorena and Lina created a one-page Quick Reference Guide with practical setup tips and real examples—available exclusively to Patreon supporters along with the full video.
+Ready to build this career-changing habit? Watch &lt;a href=&quot;https://www.patreon.com/posts/your-weekly-win-142523683&quot;&gt;Your Weekly Win Log – The Career Tool You Didn&amp;#39;t Know You Needed&lt;/a&gt; on Patreon and start logging this Friday. Set that 5-minute calendar reminder right now—your future self will thank you.&lt;/p&gt;
+</content:encoded><category>career-advice</category><category>achievement-tracking</category><category>career-strategy</category><category>professional-development</category><category>productivity-tools</category></item><item><title>The Success Criteria Question: Why I Don&apos;t Start with Requirements</title><link>https://boston-wib.org/blog/quicktake/success-criteria-requirements</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/success-criteria-requirements</guid><pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-10-27-the-success-criteria-question-why-i-dont-start-with-requirements.png&quot; alt=&quot;Bridge diagram showing transformation from vague request &quot;I wish we had...&quot; to specific solution &quot;Quality trend monitoring dashboard&quot; through clarifying questions.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;The difference between requirements and success criteria&lt;/em&gt;&lt;/p&gt;
 
