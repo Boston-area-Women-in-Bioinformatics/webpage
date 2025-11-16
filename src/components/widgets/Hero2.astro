@@ -20,6 +20,7 @@ const {
   padding = 'py-12 md:py-20 lg:py-0', // Vertical padding (default is large)
   imageBefore = false, // If true, image appears between content and actions on mobile
   imageGap = 'lg:gap-8', // Gap between image and content (default is gap-8)
+  bgClass = '', // Background class for the section (e.g., 'bg-white dark:bg-dark')
 } = Astro.props;
 
 // Check if image is a remote/public path
@@ -34,7 +35,7 @@ const isRemoteImage =
     image.src.startsWith('/blog_images/'));
 ---
 
-<section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
+<section class={`relative md:-mt-[76px] not-prose ${bgClass}`} {...id ? { id } : {}}>
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <slot name="bg">
       {bg ? <Fragment set:html={bg} /> : null}
