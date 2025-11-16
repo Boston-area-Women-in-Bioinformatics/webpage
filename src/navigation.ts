@@ -17,27 +17,27 @@ export const headerData = {
           href: getPermalink('/about/committees'),
           links: [
             {
-              text: 'Advocacy',
+              text: 'Advocacy <span class="md:hidden">Committee</span>',
               href: getPermalink('/about/committees/advocacy'),
             },
             {
-              text: 'Bioinformatics Sisters',
+              text: 'Bioinformatics Sisters <span class="md:hidden">Committee</span>',
               href: getPermalink('/about/committees/bioinformatics-sisters'),
             },
             {
-              text: 'Communications',
+              text: 'Communications <span class="md:hidden">Committee</span>',
               href: getPermalink('/about/committees/communications'),
             },
             {
-              text: 'Events',
+              text: 'Events <span class="md:hidden">Committee</span>',
               href: getPermalink('/about/committees/events'),
             },
             {
-              text: 'Career Sponsorship',
+              text: 'Career Sponsorship <span class="md:hidden">Committee</span>',
               href: getPermalink('/about/committees/career-sponsorship'),
             },
             {
-              text: 'Web Page',
+              text: 'Web Page <span class="md:hidden">Committee</span>',
               href: getPermalink('/about/committees/web-page'),
             },
           ],
@@ -57,7 +57,7 @@ export const headerData = {
       href: getPermalink('/events'),
       links: [
         {
-          text: 'Events List',
+          text: 'Upcoming & Past Events',
           href: getPermalink('/events'),
         },
         //{
@@ -69,7 +69,7 @@ export const headerData = {
         //  href: getPermalink('/events/ama'),
         //},
         {
-          text: 'Archived Events',
+          text: 'Event Recordings',
           href: getPermalink('/events/archived'),
         },
       ],
