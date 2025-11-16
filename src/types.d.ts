@@ -279,6 +279,7 @@ export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' |
   padding?: string;
   imageBefore?: boolean;
   imageGap?: string;
+  bgClass?: string;
 }
 
 export interface Team extends Omit<Headline, 'classes'>, Widget {
