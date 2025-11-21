@@ -17,6 +17,7 @@ tags:
   - career-advice
   - professional-development
   - workplace-culture
+  - work-life-decoded
 listeningTime: '3 min'
 metadata:
   title: 'Work Life Decoded: Welcome to the Series!'
