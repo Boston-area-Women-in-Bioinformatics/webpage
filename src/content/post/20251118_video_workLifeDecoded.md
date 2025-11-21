@@ -23,7 +23,7 @@ listeningTime: '4 min'
 metadata:
   title: "Work Life Decoded: Understanding Your Manager's World"
   description: 'How to Building a Strategic Partnership with Your Boss'
-  canonical: https://www.patreon.com/posts/143081096
+  canonical: https://www.patreon.com/posts/new-video-your-143734360
 ---
 
 **Your manager isn’t your boss. They’re your business partner.**
