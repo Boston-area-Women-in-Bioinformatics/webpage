@@ -15,6 +15,32 @@ export const headerData = {
         {
           text: 'Committees',
           href: getPermalink('/about/committees'),
+          links: [
+            {
+              text: 'Advocacy',
+              href: getPermalink('/about/committees/advocacy'),
+            },
+            {
+              text: 'Bioinformatics Sisters',
+              href: getPermalink('/about/committees/bioinformatics-sisters'),
+            },
+            {
+              text: 'Communications',
+              href: getPermalink('/about/committees/communications'),
+            },
+            {
+              text: 'Events',
+              href: getPermalink('/about/committees/events'),
+            },
+            {
+              text: 'Career Sponsorship',
+              href: getPermalink('/about/committees/career-sponsorship'),
+            },
+            {
+              text: 'Web Page',
+              href: getPermalink('/about/committees/web-page'),
+            },
+          ],
         },
       ],
     },
@@ -65,16 +91,20 @@ export const headerData = {
           href: getPermalink('quick-take', 'category'),
         },
         {
-          text: 'Podcasts',
-          href: getPermalink('podcast', 'category'),
-        },
-        {
           text: 'Deep Dives',
           href: getPermalink('deep-dive', 'category'),
         },
         {
           text: 'Tutorials',
           href: getPermalink('tutorial', 'category'),
+        },
+        {
+          text: 'Podcasts',
+          href: getPermalink('podcast', 'category'),
+        },
+        {
+          text: 'Videos',
+          href: getPermalink('video', 'category'),
         },
       ],
     },

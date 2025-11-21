@@ -6,7 +6,7 @@ author: Samantha J. Klasfeld, Ph.D.
 authorUrl: 'https://linkedin.com/in/samantha-klasfeld'
 excerpt: When 86% of genomic data comes from European ancestry, treatments built on this data will inevitably fail marginalized communities.
 image: https://images.unsplash.com/photo-1635944599655-500389bddd1e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-imageDescription: 'Image Citation: Photo of a Respect my HIV protest in London by Akhere Unuabona on Unsplash (https://unsplash.com/@mettyunuabona). Recent studies on HIV included scientists from communities affected by HIV as an effort to improve ethical standards of this research.'
+imageDescription: 'Image Citation: Photo of a Respect my HIV protest in London by <a href="https://unsplash.com/@mettyunuabona">Akhere Unuabona</a> on Unsplash. Recent studies on HIV included scientists from communities affected by HIV as an effort to improve ethical standards of this research.'
 imageAlt: 'Image of a diverse group of protesters holding signs advocating for HIV awareness and rights.'
 category: Deep Dive
 draft: false
