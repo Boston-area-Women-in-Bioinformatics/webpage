@@ -18,6 +18,7 @@ tags:
   - career-strategy
   - professional-development
   - productivity-tools
+  - work-life-decoded
 listeningTime: '3 min'
 metadata:
   title: "Work Life Decoded: Your Weekly Win Log – The Career Tool You Didn't Know You Needed"
