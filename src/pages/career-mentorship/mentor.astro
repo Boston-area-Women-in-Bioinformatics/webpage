@@ -1,0 +1,264 @@
+---
+import GoogleFormWidget from '~/components/widgets/forms/GoogleFormWidget.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import { SITE } from '~/config/site/config.js';
+
+const metadata = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+
+const endDate = new Date('2027-01-01T00:00:00Z');
+const now = new Date();
+
+const hideAfterDate = now >= endDate;
+
+// Configure your form fields
+const formFields = [
+  {
+    id: 'first-name',
+    name: 'first-name',
+    label: 'First Name',
+    type: 'text',
+    placeholder: 'Enter your first name',
+    required: true,
+    entryId: 'entry.XXXXXXXX', // Replace with actual Google Forms entry ID
+  },
+  {
+    id: 'last-name',
+    name: 'last-name',
+    label: 'Last Name',
+    type: 'text',
+    placeholder: 'Enter your last name',
+    required: true,
+    entryId: 'entry.XXXXXXXX', // Replace with actual Google Forms entry ID
+  },
+  {
+    id: 'email',
+    name: 'email',
+    label: 'Email Address',
+    type: 'email',
+    placeholder: 'your.email@example.com',
+    required: true,
+    entryId: 'entry.XXXXXXXX', // Replace with actual Google Forms entry ID
+  },
+  {
+    id: 'title',
+    name: 'title',
+    label: 'Title & Company (Most Recent)',
+    type: 'text',
+    placeholder: 'Role, Company',
+    required: true,
+    entryId: 'entry.XXXXXXXX', // Replace with actual Google Forms entry ID
+  },
+  {
+    id: 'phone',
+    name: 'phone',
+    label: 'Phone Number',
+    type: 'tel',
+    placeholder: '(XXX) XXX-XXXX',
+    required: false,
+    entryId: 'entry.XXXXXXXX', // Replace with actual Google Forms entry ID
+  },
+  {
+    id: 'linkedin',
+    name: 'linkedin',
+    label: 'LinkedIn',
+    type: 'url',
+    placeholder: 'https://linkedin.com/in/username',
+    required: false,
+    entryId: 'entry.XXXXXXXX',
+  },
+  {
+    id: 'mentor-experience',
+    name: 'mentor-experience',
+    label: 'Years of Professional Experience',
+    type: 'select',
+    required: true,
+    entryId: 'entry.XXXXXXXX',
+    options: [
+      { value: '0-5', label: '0-5 years' },
+      { value: '6-10', label: '6-10 years' },
+      { value: '11-20', label: '11-20 years' },
+      { value: '20+', label: '20+ years' },
+    ],
+  },
+  {
+    id: 'area',
+    name: 'area',
+    label: 'Areas of Experience',
+    type: 'checkbox-group',
+    required: true,
+    entryId: 'entry.XXXXXXXX',
+    options: [
+      {
+        value: 'leadership',
+        label: 'Leadership (leading a research team, mentoring junior scientists, guiding collaborative projects)',
+      },
+      {
+        value: 'management',
+        label: 'Management (managing lab or computational projects, timelines, and cross-functional teams)',
+      },
+      {
+        value: 'career-transitions',
+        label:
+          'Career Career transitions (moving from academia to industry, shifting from wet lab to bioinformatics, exploring new career paths)',
+      },
+      {
+        value: 'entrepreneurship',
+        label:
+          'Entrepreneurship (starting a biotech company, consulting, or launching data-driven tools for life sciences)',
+      },
+      {
+        value: 'technical-skills',
+        label:
+          'TechnicTechnical skills (learning R, Python, Nextflow, or improving data analysis, visualization, or pipeline-building skills)al skills',
+      },
+      {
+        value: 'worklife-balance',
+        label: 'Work–life balance (managing workload, avoiding burnout, maintaining wellness in a demanding career)',
+      },
+      {
+        value: 'networking',
+        label:
+          'Networking (building professional connections, engaging in the bioinformatics community, finding mentors or collaborators)',
+      },
+      {
+        value: 'negotiation',
+        label: 'Negotiation (discussing promotions, salary, authorship, or collaborative roles confidently)',
+      },
+      {
+        value: 'public-speaking',
+        label:
+          'Public speaking (presenting at conferences, defending research, improving science communication skills)',
+      },
+    ],
+    hasOther: true,
+  },
+  {
+    id: 'mentee-experience',
+    name: 'mentee-experience',
+    label: 'Career stage you prefer to mentor',
+    type: 'checkbox-group',
+    required: true,
+    entryId: 'entry.XXXXXXXX',
+    options: [
+      { value: '1-3', label: '1-3 years of industrial experience' },
+      { value: '3-7', label: '3-7 years' },
+      { value: '7+', label: '7+ years' },
+    ],
+  },
+  {
+    id: 'program-length',
+    name: 'program-length',
+    label: 'How long would you like the program to be?',
+    type: 'radio',
+    required: true,
+    entryId: 'entry.XXXXXXXX',
+    options: [
+      { value: '6', label: '6 months' },
+      { value: '12', label: '12 months' },
+    ],
+    hasOther: true,
+  },
+  {
+    id: 'meeting-style',
+    name: 'meeting-style',
+    label: 'Preferred meeting style',
+    type: 'select',
+    required: true,
+    entryId: 'entry.XXXXXXXX',
+    options: [
+      { value: 'virtual', label: 'Virtual' },
+      { value: 'inperson', label: 'In-person' },
+      { value: 'flexible', label: 'Flexible' },
+    ],
+    hasOther: false,
+  },
+  {
+    id: 'meeting-freq',
+    name: 'meeting-freq',
+    label: 'Preferred meeting frequency',
+    type: 'radio',
+    required: true,
+    entryId: 'entry.XXXXXXXX',
+    options: [
+      { value: 'biweekly', label: 'Bi-weekly' },
+      { value: 'monthly', label: 'Monthly' },
+    ],
+    hasOther: true,
+  },
+  {
+    id: 'meeting-time',
+    name: 'meeting-time',
+    label: 'Preferred meeting time',
+    type: 'radio',
+    required: true,
+    entryId: 'entry.XXXXXXXX',
+    options: [
+      { value: 'morning', label: 'Morning' },
+      { value: 'noon', label: 'Noon' },
+      { value: 'evening', label: 'Evening' },
+    ],
+    hasOther: true,
+  },
+  {
+    id: 'feedback',
+    name: 'feedback',
+    label: "Type of mentee you'd be most excited to work with",
+    type: 'textarea',
+    placeholder: 'Share your thoughts...',
+    required: true,
+    rows: 8,
+    entryId: 'entry.XXXXXXXX', // Replace with actual Google Forms entry ID
+  },
+];
+const guidelines = [
+  'It only takes a few minutes to fill out, and your input will help us create the best match possible. Thank you for giving your time, insights, and encouragement—it makes a huge difference!',
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- AMA Page Header-->
+  <section class="text-center pt-16 pb-8">
+    <div class="container max-w-1/3 mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4 mx-auto leading-tight">Career Mentorship Program</h1>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4 mx-auto leading-tight">Boston Women in Bioinformatics</h2>
+
+      <div class="text-lg sm:text-xl text-muted md:mb-6 dark:text-slate-300 max-w-5xl mx-auto text-center">
+        <p>
+          Thank you for your interest in becoming a mentor! This program is all about building meaningful connections
+          and helping others grow in their careers. By sharing a bit about your experience and preferences, we can pair
+          you with a mentee who will really benefit from your guidance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section to Submit Question-->
+  <section>
+    {
+      !hideAfterDate && (
+        <GoogleFormWidget
+          formUrl="https://docs.google.com/forms/d/1GZQxuRwP2ILgmmTp--2LGZ28FUx6jjAQNrVad0OFJvE/formResponse"
+          formName="mentor-form"
+          title="Mentor Questionnaire"
+          fields={formFields}
+          submitButtonText="Send Feedback"
+          successMessage="Thank you for your feedback!"
+          guidelines={guidelines}
+          showGuidelines={true}
+          showGuidelinesInline={true}
+        />
+      )
+    }
+    {
+      hideAfterDate && (
+        <div class="p-6 max-w-3xl mx-auto my-4 text-center bg-yellow-100 border border-yellow-300 rounded-lg">
+          <h2 class="text-2xl font-semibold mb-4">Thank you for participating.</h2>
+        </div>
+      )
+    }
+  </section>
+</Layout>
