@@ -1,11 +1,61 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>What Your Favorite Biobank Says About You</title><link>https://boston-wib.org/blog/quicktake/what-your-favorite-biobank-says-about-you</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/what-your-favorite-biobank-says-about-you</guid><pubDate>Fri, 21 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/minator-yang-oJjfBo_0R_8-unsplash.jpg&quot; alt=&quot;What Your Favorite Biobank Says About You&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>What Your Favorite Biobank Says About You</title><link>https://boston-wib.org/blog/quicktake/what-your-favorite-biobank-says-about-you</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/what-your-favorite-biobank-says-about-you</guid><pubDate>Fri, 21 Nov 2025 12:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/minator-yang-oJjfBo_0R_8-unsplash.jpg&quot; alt=&quot;What Your Favorite Biobank Says About You&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;We asked 500,000 researchers which biobank they stan, and the results were… scientifically significant.&lt;/em&gt;&lt;/p&gt;
 
 &lt;Quiz title={quizData.title} questions={quizData.questions} results={quizData.results} /&gt;
 
 &lt;p&gt;&lt;strong&gt;Disclaimer&lt;/strong&gt;: &lt;em&gt;This is satire. All biobanks are incredible resources that have advanced science immeasurably. The author uses multiple biobanks and has deep respect for all of them.&lt;/em&gt;&lt;/p&gt;
-</content:encoded><category>biobanks</category><category>genetics-research</category><category>genomics-humour</category><category>science-quiz</category><category>population-genetics</category><category>human-genetics</category><category>uk-biobank</category><category>all-of-us</category><category>gnomad</category><category>finngen</category><category>biobank-japan</category><category>genes-and-health</category></item><item><title>I Fixed the Same Bug Three Times (No One Noticed)</title><link>https://boston-wib.org/blog/quicktake/i-fixed-the-same-bug-three-times</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/i-fixed-the-same-bug-three-times</guid><pubDate>Thu, 20 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-20-i-fixed-the-same-bug-three-times.png&quot; alt=&quot;Infographic showing a repeating life cycle: a bug occurs, a fix is applied, the solution is documented, turnover happens, documentation is forgotten, and the cycle repeats.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>biobanks</category><category>genetics-research</category><category>genomics-humour</category><category>science-quiz</category><category>population-genetics</category><category>human-genetics</category><category>uk-biobank</category><category>all-of-us</category><category>gnomad</category><category>finngen</category><category>biobank-japan</category><category>genes-and-health</category></item><item><title>AI vs. AI Agents in Healthcare: Not the Same Thing!</title><link>https://boston-wib.org/blog/quicktake/ai-vs-ai-agents-in-healthcare-not-the-same-thing</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/ai-vs-ai-agents-in-healthcare-not-the-same-thing</guid><pubDate>Fri, 21 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-21-ai-vs-ai-agents.jpeg&quot; alt=&quot;Split graphic comparing &quot;AI in healthcare&quot; on the left with &quot;AI agents in healthcare&quot; on the right.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;The distinction between traditional AI and AI agents is crucial for understanding their impact on healthcare.&lt;/em&gt;&lt;/p&gt;
+
+&lt;details class=&quot;image-description&quot;&gt;
+&lt;summary&gt;Text description of graphic&lt;/summary&gt;
+
+&lt;p&gt;&lt;strong&gt;AI vs. AI Agents in Healthcare: Not the Same Thing!&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Left side: AI in healthcare are depicted as assistants providing assistive intelligence. Examples include predicting patient no-shows, flagging patterns from wearables, and answering FAQs via chatbot. Human interpretation and action are still required.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Right side: AI agents are depicted as assistants with &amp;quot;hands to get things done,&amp;quot; providing operational intelligence. Examples include automating data-to-system workflows, insurance verification, and patient file updates. AI agents perform multi-step tasks with minimal human intervention.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/details&gt;
+
+&lt;p&gt;Following up on my last post about the growing role of AI Agents in Healthcare, I wanted to draw a sharp distinction: AI vs. AI Agents; they are not the same thing!&lt;/p&gt;
+&lt;p&gt;Lately, everyone’s been talking about &amp;quot;AI in healthcare&amp;quot; like it’s one big monolithic thing. But honestly, there’s a huge difference between general AI tools and AI agents, and it matters a lot for clinical workflows.&lt;/p&gt;
+&lt;h2&gt;AI in healthcare (in general):&lt;/h2&gt;
+&lt;p&gt;Think of this as assistive intelligence that is usually used for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Predicting which patients might miss their appointments&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Flagging abnormal patterns in wearable data&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A chatbot that answers common insurance or billing questions&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;It’s powerful, but it still depends heavily on clinicians to interpret and act!&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;AI Agents in healthcare:&lt;/h2&gt;
+&lt;p&gt;These are like the overachievers. They don’t just predict, they operate.
+Agents take in data, make decisions, and execute multi-step tasks with minimal human intervention.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;An agent can automatically pull data from multiple sources, populate forms, and update the internal system eliminates the need for manual clicks.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A tool can track insurance eligibility, verify coverage, and seamlessly update the patient file in real time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Basically:&lt;/p&gt;
+&lt;p&gt;AI = smart assistant&lt;/p&gt;
+&lt;p&gt;AI Agents = smart assistant + hands to get things done&lt;/p&gt;
+&lt;h2&gt;Why it matters👇🏽&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Healthcare doesn’t just need predictions; it also needs workflows that actually move.&lt;/li&gt;
+&lt;li&gt;AI agents can tackle the admin overload that burns out clinicians, while still keeping humans in the loop for real judgment calls.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We’re entering the era where hospitals won’t just ask: &amp;quot;Do we have AI?&amp;quot;
+They’ll ask: &amp;quot;Do we have agents that can actually &lt;strong&gt;close the loop&lt;/strong&gt;?&amp;quot;&lt;/p&gt;
+&lt;p&gt;💠 Curious how this evolves in 2026 and beyond clinically, operationally, and ethically!&lt;/p&gt;
+</content:encoded><category>clinical-data</category><category>artificial-intelligence</category><category>ai</category><category>ai-agents</category><category>data-science</category><category>health-informatics</category><category>health-tech</category></item><item><title>I Fixed the Same Bug Three Times (No One Noticed)</title><link>https://boston-wib.org/blog/quicktake/i-fixed-the-same-bug-three-times</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/i-fixed-the-same-bug-three-times</guid><pubDate>Thu, 20 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-20-i-fixed-the-same-bug-three-times.png&quot; alt=&quot;Infographic showing a repeating life cycle: a bug occurs, a fix is applied, the solution is documented, turnover happens, documentation is forgotten, and the cycle repeats.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;The third time the data pipeline failed the exact same way, I realized: we have institutional amnesia.&lt;/p&gt;
 &lt;p&gt;Month 1: Pipeline breaks. I debug for 4 hours, document it, fix it. No one reads the docs.&lt;/p&gt;
@@ -81,7 +131,62 @@
 &lt;p&gt;Data engineers get fewer interruptions and better bug reports. Scientists get independence and faster resolution. Everyone wins when failures are observable and actionable.&lt;/p&gt;
 &lt;p&gt;Since implementing these patterns, debugging interruptions dropped significantly. Not because pipelines stopped failing—they still do. But now when they fail, the error message points scientists directly to the problem.
 Which pattern would have the biggest impact for your team? 🧬💻&lt;/p&gt;
-</content:encoded><category>bioinformatics</category><category>data-engineering</category><category>biotech</category><category>computational-biology</category><category>data-science</category></item><item><title>AI Agents Are Quietly Redefining Healthcare</title><link>https://boston-wib.org/blog/quicktake/precusion-medicine-through-one-lens</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/precusion-medicine-through-one-lens</guid><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/julien-tromeur-FYOwBvRb2Mk-unsplash.jpg&quot; alt=&quot;A futuristic female robot floats mid‑air, holding a metallic brain like a basketball, poised to shoot.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>bioinformatics</category><category>data-engineering</category><category>biotech</category><category>computational-biology</category><category>data-science</category></item><item><title>Write the Test First (Even for Your Science)</title><link>https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</guid><pubDate>Thu, 13 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-17-write-the-test-first-even-for-your-science.png&quot; alt=&quot;Side‑by‑side flowcharts comparing traditional vs. test‑driven development (TDD) approaches.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Why data scientists should design error messages that guide users straight to solutions.&lt;/em&gt;&lt;/p&gt;
+
+&lt;details class=&quot;image-description&quot;&gt;
+&lt;summary&gt;Text description of flowcharts&lt;/summary&gt;
+
+&lt;p&gt;The image shows two parallel workflows to finding bugs in code.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Traditional approach&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;write complex script&lt;/li&gt;
+&lt;li&gt;run on 5,000 samples&lt;/li&gt;
+&lt;li&gt;get plausible results,&lt;/li&gt;
+&lt;li&gt;deploy to production&lt;/li&gt;
+&lt;li&gt;discover bug six months later.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;TDD approach&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;create 5 toy samples&lt;/li&gt;
+&lt;li&gt;write simplest version&lt;/li&gt;
+&lt;li&gt;catch bug immediately,&lt;/li&gt;
+&lt;li&gt;run on 500 samples&lt;/li&gt;
+&lt;li&gt;deploy to production with confidence.&lt;/details&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;quot;I spent three days debugging. Turned out I was normalizing AFTER filtering instead of before. Results looked plausible for weeks.&amp;quot;&lt;/p&gt;
+&lt;p&gt;We&amp;#39;ve all been there.&lt;/p&gt;
+&lt;p&gt;Here&amp;#39;s what software engineers figured out decades ago with Test-Driven Development (TDD): &lt;strong&gt;Ask &amp;quot;How will I know if this is correct?&amp;quot; BEFORE you start coding.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;The Scientific Version&lt;/h2&gt;
+&lt;p&gt;Before you write that filtering script or ML model:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a toy dataset where you know the answer (3 samples, obvious differences)&lt;/li&gt;
+&lt;li&gt;Define what &amp;quot;correct&amp;quot; looks like&lt;/li&gt;
+&lt;li&gt;Run your code&lt;/li&gt;
+&lt;li&gt;If it fails on 3 samples, you caught your bug early&lt;/li&gt;
+&lt;li&gt;If it passes, scale up with confidence&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Why This Matters&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Traditional:&lt;/strong&gt; Write custom script → Run on real data → Get plausible results → Find bug 6 months later&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TDD:&lt;/strong&gt; Create toy example → Build simplest version → Catch bugs at 3 samples, not 300&lt;/p&gt;
+&lt;h2&gt;Real Example&lt;/h2&gt;
+&lt;p&gt;Building a sample quality filtering script, I created synthetic data first: 10 samples where 3 should clearly fail, 7 should clearly pass.&lt;/p&gt;
+&lt;p&gt;Found my threshold logic was backwards immediately 🐛 - when debugging meant 10 samples, not 10,000.&lt;/p&gt;
+&lt;p&gt;By the time I ran production data, I had confidence. Not hope. 🎯&lt;/p&gt;
+&lt;h2&gt;Start Tomorrow&lt;/h2&gt;
+&lt;p&gt;Next time you write custom code:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Make one toy dataset first&lt;/li&gt;
+&lt;li&gt;Looking for upregulated genes? Make 3 genes go UP&lt;/li&gt;
+&lt;li&gt;Filtering samples by quality? Make 2 pass, 1 fail&lt;/li&gt;
+&lt;li&gt;Does your code do what you expect?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Yes = Trust it on real data&lt;/p&gt;
+&lt;p&gt;No = You just saved yourself from bad science&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The best time to catch bugs is when your dataset is small enough to debug by hand.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;What&amp;#39;s your &amp;quot;found the bug too late&amp;quot; horror story?&lt;/p&gt;
+</content:encoded><category>bioinformatics</category><category>data-engineering</category><category>biotech</category><category>computational-biology</category><category>data-science</category></item><item><title>AI Agents Are Quietly Redefining Healthcare</title><link>https://boston-wib.org/blog/quicktake/ai-agents-redefining-healthcare</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/ai-agents-redefining-healthcare</guid><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/julien-tromeur-FYOwBvRb2Mk-unsplash.jpg&quot; alt=&quot;A futuristic female robot floats mid‑air, holding a metallic brain like a basketball, poised to shoot.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;AI agents turn healthcare data into real‑time insights, evolving with patients and providers.&lt;/em&gt;&lt;/p&gt;
 
@@ -473,7 +578,24 @@ I was treating project management like a binary: either I controlled something, 
 The most effective project leaders I&amp;#39;ve worked with don&amp;#39;t have more authority than anyone else. They&amp;#39;re just exceptionally skilled at understanding what motivates each stakeholder and connecting those motivations to project success.&lt;/p&gt;
 &lt;p&gt;That&amp;#39;s the power of operating in your sphere of influence.&lt;/p&gt;
 &lt;p&gt;Where do you find yourself spending most of your energy? In your control zone, influence zone, or spinning your wheels on things you can only be concerned about?&lt;/p&gt;
-</content:encoded><category>project-management</category><category>sphere-of-influence</category><category>leadership</category></item><item><title>Multi-Source Data Integration</title><link>https://boston-wib.org/blog/quicktake/multi-source-data-integration</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/multi-source-data-integration</guid><pubDate>Tue, 07 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-10-06-multi-source-data-integration.png&quot; alt=&quot;Medallion Architecture diagram showing data refinement progression: Bronze layer (raw, messy), Silver layer (clean, standardized), Gold layer (trusted, query-ready)&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>project-management</category><category>sphere-of-influence</category><category>leadership</category></item><item><title>Precision Medicine, Through One Lens</title><link>https://boston-wib.org/blog/quicktake/precusion-medicine-through-one-lens</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/precusion-medicine-through-one-lens</guid><pubDate>Wed, 08 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://images.unsplash.com/photo-1647650549984-3d3bca4b15f3?q=80&amp;w=880&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&quot; alt=&quot;Image of a camera lens&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Bridging Biology with Clinical Insight&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Precision medicine is more than just a buzzword; it’s a shift in how we understand, treat, and even predict disease. Instead of using a “one-size-fits-all” approach, it uses data from a patient’s genome to their clinical history to design treatments that are tailored to them.&lt;/p&gt;
+&lt;p&gt;✨ While precision medicine is a broad field that also involves environmental, lifestyle, and behavioral factors, biological and clinical data play a key role in shaping how we design targeted treatments and predict patient outcomes.&lt;/p&gt;
+&lt;p&gt;#PrecisionMedicine is about asking deeper questions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Why do two patients with the same diagnosis respond differently to the same therapy?&lt;/li&gt;
+&lt;li&gt;Which genetic signatures predict how someone will react to a drug?&lt;/li&gt;
+&lt;li&gt;How can we use molecular data to catch diseases before they appear in symptoms?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And the answer lies in #DataScience. By integrating molecular datasets (like gene expression or mutations) with clinical data (like outcomes or lab results), precision medicine connects the “why” from biology with the “what” from patient care.&lt;/p&gt;
+&lt;p&gt;This isn’t the future; it’s already reshaping how we diagnose, treat, and prevent disease.&lt;/p&gt;
+&lt;p&gt;💡 Want to see how clinical insights and biological data come together in practice?&lt;/p&gt;
+&lt;p&gt;👉🏻 I dive deeper into this idea of this integration with a real-world example &lt;a href=&quot;https://medium.com/@riyadua99/precision-medicine-where-biology-meets-clinical-insights-c14b707f1195&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;💭 Beyond biological and clinical data, which datasets do you believe could further advance the precision medicine revolution?&lt;/p&gt;
+</content:encoded><category>bioinformatics</category><category>clinical-informatics</category><category>data-science</category><category>genomics</category><category>healthcare-data</category><category>precision-medicine</category><category>computational-biology</category><category>patient-care</category></item><item><title>Multi-Source Data Integration</title><link>https://boston-wib.org/blog/quicktake/multi-source-data-integration</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/multi-source-data-integration</guid><pubDate>Tue, 07 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-10-06-multi-source-data-integration.png&quot; alt=&quot;Medallion Architecture diagram showing data refinement progression: Bronze layer (raw, messy), Silver layer (clean, standardized), Gold layer (trusted, query-ready)&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;From chaos to clarity: How the medallion architecture transforms messy, multi-source data into trustworthy insights.&lt;/em&gt;&lt;/p&gt;
 
