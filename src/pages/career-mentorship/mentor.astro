@@ -3,6 +3,21 @@ import GoogleFormWidget from '~/components/widgets/forms/GoogleFormWidget.astro'
 import Layout from '~/layouts/PageLayout.astro';
 import { SITE } from '~/config/site/config.js';
 
+interface FormField {
+  id: string;
+  name: string;
+  label: string;
+  type: 'text' | 'email' | 'tel' | 'url' | 'textarea' | 'checkbox' | 'checkbox-group' | 'radio' | 'select';
+  placeholder?: string;
+  required?: boolean;
+  entryId: string;
+  rows?: number;
+  checkboxText?: string;
+  options?: { value: string; label: string }[];
+  hasOther?: boolean;
+  otherEntryId?: string;
+}
+
 const metadata = {
   title: SITE.title,
   description: SITE.description,
@@ -15,7 +30,7 @@ const now = new Date();
 const hideAfterDate = now >= endDate;
 
 // Configure your form fields
-const formFields = [
+const formFields: FormField[] = [
   {
     id: 'first-name',
     name: 'first-name',
