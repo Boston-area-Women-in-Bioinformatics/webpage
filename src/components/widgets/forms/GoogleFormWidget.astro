@@ -1,0 +1,390 @@
+---
+interface Props {
+  formUrl: string;
+  formName: string;
+  title: string;
+  description?: string; // Optional description text under the title
+  guidelinesTitle?: string;
+  guidelines?: string[];
+  fields: FormField[];
+  submitButtonText?: string;
+  successMessage?: string;
+  showGuidelines?: boolean; // Show guidelines in sidebar
+  showGuidelinesInline?: boolean; // Show guidelines under title as a list
+}
+
+interface FormField {
+  id: string;
+  name: string;
+  label: string;
+  type: 'text' | 'email' | 'tel' | 'url' | 'textarea' | 'checkbox' | 'checkbox-group' | 'radio' | 'select';
+  placeholder?: string;
+  required?: boolean;
+  entryId: string; // Google Forms entry ID
+  rows?: number; // For textarea
+  checkboxText?: string; // For single checkbox fields
+  options?: { value: string; label: string }[]; // For radio, select, and checkbox-group fields
+  hasOther?: boolean; // Enable "Other" option for radio/checkbox-group/select
+  otherEntryId?: string; // Google Forms entry ID for the "Other" text field
+}
+
+const {
+  formUrl,
+  formName,
+  title,
+  description,
+  guidelinesTitle = 'Guidelines',
+  guidelines = [],
+  fields,
+  submitButtonText = 'Submit',
+  successMessage = 'Thanks! Your submission was received.',
+  showGuidelines = true,
+  showGuidelinesInline = false,
+} = Astro.props;
+---
+
+<div class="bg-gray-100 dark:bg-gray-700 font-sans text-gray-800 dark:text-white">
+  <div class="max-w-6xl mx-auto p-6">
+    <div
+      class={`grid grid-cols-1 ${showGuidelines && !showGuidelinesInline ? 'md:grid-cols-2' : ''} bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden`}
+    >
+      <!-- Guidelines Section (optional sidebar) -->
+      {
+        showGuidelines && !showGuidelinesInline && guidelines.length > 0 && (
+          <div class="bg-blue-50 p-6 border-r border-blue-100 text-black">
+            <h2 class="text-2xl font-semibold mb-4">{guidelinesTitle}</h2>
+            <ul class="list-disc list-inside space-y-2 text-base leading-relaxed">
+              {guidelines.map((guideline) => (
+                <li set:html={guideline} />
+              ))}
+            </ul>
+          </div>
+        )
+      }
+
+      <!-- Form Section -->
+      <div class="p-6">
+        <h2 class="text-2xl font-semibold mb-4">{title}</h2>
+
+        <!-- Optional description -->
+        {description && <p class="mb-4 text-base text-gray-600 dark:text-gray-300">{description}</p>}
+
+        <!-- Inline guidelines (optional) -->
+        {
+          showGuidelinesInline && guidelines.length > 0 && (
+            <ul class="list-disc list-inside space-y-2 mb-6 text-base leading-relaxed text-gray-700 dark:text-gray-200">
+              {guidelines.map((guideline) => (
+                <p set:html={guideline} />
+              ))}
+            </ul>
+          )
+        }
+
+        <form id={formName} name={formName} class="space-y-4">
+          <input type="hidden" name="form-name" value={formName} />
+
+          {
+            fields.map((field) => (
+              <div>
+                <label for={field.id} class="block font-medium text-base">
+                  {field.label}
+                  {field.required && <span class="text-red-500 dark:text-green-400"> *</span>}
+                </label>
+
+                {field.type === 'textarea' ? (
+                  <textarea
+                    id={field.id}
+                    name={field.name}
+                    required={field.required}
+                    placeholder={field.placeholder}
+                    rows={field.rows || 4}
+                    class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-base resize-vertical focus:ring-blue-500 focus:border-blue-500 text-black"
+                  />
+                ) : field.type === 'checkbox' ? (
+                  <div class="flex items-start mt-2">
+                    <input
+                      type="checkbox"
+                      id={field.id}
+                      name={field.name}
+                      required={field.required}
+                      class="w-6 h-6 mr-2"
+                    />
+                    <label for={field.id} class="text-base">
+                      {field.checkboxText}
+                      {field.required && <span class="text-red-500 dark:text-green-400"> *</span>}
+                    </label>
+                  </div>
+                ) : field.type === 'checkbox-group' ? (
+                  <div class="mt-2 space-y-2">
+                    {field.options?.map((option) => (
+                      <div class="flex items-center">
+                        <input
+                          type="checkbox"
+                          id={`${field.id}-${option.value}`}
+                          name={field.name}
+                          value={option.value}
+                          class="w-5 h-5 mr-2"
+                        />
+                        <label for={`${field.id}-${option.value}`} class="text-base">
+                          {option.label}
+                        </label>
+                      </div>
+                    ))}
+                    {field.hasOther && (
+                      <div class="space-y-2">
+                        <div class="flex items-center">
+                          <input
+                            type="checkbox"
+                            id={`${field.id}-other-checkbox`}
+                            name={field.name}
+                            value="__other_option__"
+                            class="w-5 h-5 mr-2 flex-shrink-0"
+                          />
+                          <label for={`${field.id}-other-checkbox`} class="text-base">Other</label>
+                        </div>
+                        <input
+                          type="text"
+                          id={`${field.id}-other-input`}
+                          name={`${field.name}-other`}
+                          placeholder="Please specify..."
+                          class="w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black hidden"
+                        />
+                      </div>
+                    )}
+                  </div>
+                ) : field.type === 'radio' ? (
+                  <div class="mt-2 space-y-2">
+                    {field.options?.map((option) => (
+                      <div class="flex items-center">
+                        <input
+                          type="radio"
+                          id={`${field.id}-${option.value}`}
+                          name={field.name}
+                          value={option.value}
+                          required={field.required}
+                          class="w-4 h-4 mr-2"
+                        />
+                        <label for={`${field.id}-${option.value}`} class="text-base">
+                          {option.label}
+                        </label>
+                      </div>
+                    ))}
+                    {field.hasOther && (
+                      <div class="space-y-2">
+                        <div class="flex items-center">
+                          <input
+                            type="radio"
+                            id={`${field.id}-other-radio`}
+                            name={field.name}
+                            value="__other_option__"
+                            required={field.required}
+                            class="w-4 h-4 mr-2 flex-shrink-0"
+                          />
+                          <label for={`${field.id}-other-radio`} class="text-base">Other</label>
+                        </div>
+                        <input
+                          type="text"
+                          id={`${field.id}-other-input`}
+                          name={`${field.name}-other`}
+                          placeholder="Please specify..."
+                          class="w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black hidden"
+                        />
+                      </div>
+                    )}
+                  </div>
+                ) : field.type === 'select' ? (
+                  <div>
+                    <select
+                      id={field.id}
+                      name={field.name}
+                      required={field.required}
+                      class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black"
+                    >
+                      <option value="">{field.placeholder || 'Select an option...'}</option>
+                      {field.options?.map((option) => (
+                        <option value={option.value}>{option.label}</option>
+                      ))}
+                      {field.hasOther && <option value="__other_option__">Other</option>}
+                    </select>
+                    {field.hasOther && (
+                      <input
+                        type="text"
+                        id={`${field.id}-other-input`}
+                        name={`${field.name}-other`}
+                        placeholder="Please specify..."
+                        class="mt-2 w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black hidden"
+                      />
+                    )}
+                  </div>
+                ) : (
+                  <input
+                    type={field.type}
+                    id={field.id}
+                    name={field.name}
+                    required={field.required}
+                    placeholder={field.placeholder}
+                    class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black"
+                  />
+                )}
+              </div>
+            ))
+          }
+
+          <div>
+            <button
+              type="submit"
+              class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-base font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {submitButtonText}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Backend Code to Handle Submission Form -->
+  <script is:inline define:vars={{ formUrl, formName, fields, successMessage }}>
+    const form = document.getElementById(formName);
+
+    // Handle showing/hiding "Other" text inputs
+    fields.forEach((field) => {
+      if (field.hasOther) {
+        const otherInput = document.getElementById(`${field.id}-other-input`);
+
+        if (field.type === 'radio') {
+          const radioButtons = document.querySelectorAll(`input[name="${field.name}"]`);
+          const otherRadio = document.getElementById(`${field.id}-other-radio`);
+
+          radioButtons.forEach((radio) => {
+            radio.addEventListener('change', function () {
+              if (otherRadio.checked) {
+                otherInput.classList.remove('hidden');
+                otherInput.focus();
+              } else {
+                otherInput.classList.add('hidden');
+                otherInput.value = '';
+              }
+            });
+          });
+        } else if (field.type === 'checkbox-group') {
+          const otherCheckbox = document.getElementById(`${field.id}-other-checkbox`);
+
+          otherCheckbox.addEventListener('change', function () {
+            if (otherCheckbox.checked) {
+              otherInput.classList.remove('hidden');
+              otherInput.focus();
+            } else {
+              otherInput.classList.add('hidden');
+              otherInput.value = '';
+            }
+          });
+        } else if (field.type === 'select') {
+          const select = document.getElementById(field.id);
+
+          select.addEventListener('change', function () {
+            if (select.value === '__other_option__') {
+              otherInput.classList.remove('hidden');
+              otherInput.focus();
+            } else {
+              otherInput.classList.add('hidden');
+              otherInput.value = '';
+            }
+          });
+        }
+      }
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const data = new FormData();
+
+      // Map all fields to their Google Forms entry IDs
+      fields.forEach((field) => {
+        const element = document.getElementById(field.id);
+        let value;
+
+        if (field.type === 'checkbox') {
+          value = element.checked ? field.checkboxText || 'Yes' : 'No';
+        } else if (field.type === 'checkbox-group') {
+          const checkboxes = document.querySelectorAll(`input[name="${field.name}"]:checked`);
+          const values = [];
+
+          checkboxes.forEach((checkbox) => {
+            if (checkbox.value === '__other_option__' && field.hasOther) {
+              const otherInput = document.getElementById(`${field.id}-other-input`);
+              if (otherInput.value) {
+                values.push(otherInput.value);
+                // If there's a separate entry ID for "Other", also append it separately
+                if (field.otherEntryId) {
+                  data.append(field.otherEntryId, otherInput.value);
+                }
+              }
+            } else {
+              values.push(checkbox.value);
+            }
+          });
+
+          value = values.join(', ');
+        } else if (field.type === 'radio') {
+          const selected = document.querySelector(`input[name="${field.name}"]:checked`);
+          if (selected) {
+            if (selected.value === '__other_option__' && field.hasOther) {
+              const otherInput = document.getElementById(`${field.id}-other-input`);
+              value = otherInput.value;
+              // If there's a separate entry ID for "Other", use it
+              if (field.otherEntryId && value) {
+                data.append(field.otherEntryId, value);
+                return; // Skip the normal append below
+              }
+            } else {
+              value = selected.value;
+            }
+          }
+        } else if (field.type === 'select') {
+          if (element.value === '__other_option__' && field.hasOther) {
+            const otherInput = document.getElementById(`${field.id}-other-input`);
+            value = otherInput.value;
+            // If there's a separate entry ID for "Other", use it
+            if (field.otherEntryId && value) {
+              data.append(field.otherEntryId, value);
+              return; // Skip the normal append below
+            }
+          } else {
+            value = element.value;
+          }
+        } else {
+          value = element.value;
+        }
+
+        if (value) {
+          data.append(field.entryId, value);
+        }
+      });
+
+      fetch(formUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: data,
+      })
+        .then(() => {
+          alert(successMessage);
+          form.reset();
+          // Re-hide all "Other" inputs after reset
+          fields.forEach((field) => {
+            if (field.hasOther) {
+              const otherInput = document.getElementById(`${field.id}-other-input`);
+              if (otherInput) {
+                otherInput.classList.add('hidden');
+              }
+            }
+          });
+        })
+        .catch((err) => {
+          console.error('Submission error:', err);
+          alert('Oops! Something went wrong.');
+        });
+    });
+  </script>
+</div>
