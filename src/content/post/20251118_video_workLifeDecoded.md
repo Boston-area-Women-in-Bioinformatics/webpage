@@ -12,6 +12,7 @@ authors:
   - name: 'Lorena Pantano, Ph.D.'
     url: 'https://www.linkedin.com/in/lpantano'
 category: video
+draft: false
 tags:
   - career-advice
   - career-development
