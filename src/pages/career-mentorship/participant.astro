@@ -59,15 +59,6 @@ const formFields: FormField[] = [
     entryId: 'entry.XXXXXXXX', // Replace with actual Google Forms entry ID
   },
   {
-    id: 'title',
-    name: 'title',
-    label: 'Title & Company (Most Recent)',
-    type: 'text',
-    placeholder: 'Role, Company',
-    required: true,
-    entryId: 'entry.XXXXXXXX', // Replace with actual Google Forms entry ID
-  },
-  {
     id: 'phone',
     name: 'phone',
     label: 'Phone Number',
@@ -77,12 +68,21 @@ const formFields: FormField[] = [
     entryId: 'entry.XXXXXXXX', // Replace with actual Google Forms entry ID
   },
   {
+    id: 'title',
+    name: 'title',
+    label: 'Title & Company (Most Recent)',
+    type: 'text',
+    placeholder: 'Role, Company',
+    required: false,
+    entryId: 'entry.XXXXXXXX', // Replace with actual Google Forms entry ID
+  },
+  {
     id: 'linkedin',
     name: 'linkedin',
     label: 'LinkedIn',
     type: 'url',
     placeholder: 'https://linkedin.com/in/username',
-    required: false,
+    required: true,
     entryId: 'entry.XXXXXXXX',
   },
   {
@@ -238,7 +238,7 @@ const formFields: FormField[] = [
       'Is there anything else you’d like us or your future mentor to know about your background, goals, or expectations?',
     type: 'textarea',
     placeholder: 'Share your thoughts...',
-    required: true,
+    required: false,
     rows: 8,
     entryId: 'entry.XXXXXXXX', // Replace with actual Google Forms entry ID
   },

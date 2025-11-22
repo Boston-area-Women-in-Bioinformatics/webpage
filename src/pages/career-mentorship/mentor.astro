@@ -59,15 +59,6 @@ const formFields: FormField[] = [
     entryId: 'entry.XXXXXXXX', // Replace with actual Google Forms entry ID
   },
   {
-    id: 'title',
-    name: 'title',
-    label: 'Title & Company (Most Recent)',
-    type: 'text',
-    placeholder: 'Role, Company',
-    required: true,
-    entryId: 'entry.XXXXXXXX', // Replace with actual Google Forms entry ID
-  },
-  {
     id: 'phone',
     name: 'phone',
     label: 'Phone Number',
@@ -77,12 +68,21 @@ const formFields: FormField[] = [
     entryId: 'entry.XXXXXXXX', // Replace with actual Google Forms entry ID
   },
   {
+    id: 'title',
+    name: 'title',
+    label: 'Title & Company (Most Recent)',
+    type: 'text',
+    placeholder: 'Role, Company',
+    required: true,
+    entryId: 'entry.XXXXXXXX', // Replace with actual Google Forms entry ID
+  },
+  {
     id: 'linkedin',
     name: 'linkedin',
     label: 'LinkedIn',
     type: 'url',
     placeholder: 'https://linkedin.com/in/username',
-    required: false,
+    required: true,
     entryId: 'entry.XXXXXXXX',
   },
   {
@@ -169,7 +169,7 @@ const formFields: FormField[] = [
     name: 'program-length',
     label: 'How long would you like the program to be?',
     type: 'radio',
-    required: true,
+    required: false,
     entryId: 'entry.XXXXXXXX',
     options: [
       { value: '6', label: '6 months' },
@@ -182,7 +182,7 @@ const formFields: FormField[] = [
     name: 'meeting-style',
     label: 'Preferred meeting style',
     type: 'select',
-    required: true,
+    required: false,
     entryId: 'entry.XXXXXXXX',
     options: [
       { value: 'virtual', label: 'Virtual' },
@@ -196,7 +196,7 @@ const formFields: FormField[] = [
     name: 'meeting-freq',
     label: 'Preferred meeting frequency',
     type: 'radio',
-    required: true,
+    required: false,
     entryId: 'entry.XXXXXXXX',
     options: [
       { value: 'biweekly', label: 'Bi-weekly' },
@@ -209,7 +209,7 @@ const formFields: FormField[] = [
     name: 'meeting-time',
     label: 'Preferred meeting time',
     type: 'radio',
-    required: true,
+    required: false,
     entryId: 'entry.XXXXXXXX',
     options: [
       { value: 'morning', label: 'Morning' },
@@ -224,7 +224,7 @@ const formFields: FormField[] = [
     label: "Type of mentee you'd be most excited to work with",
     type: 'textarea',
     placeholder: 'Share your thoughts...',
-    required: true,
+    required: false,
     rows: 8,
     entryId: 'entry.XXXXXXXX', // Replace with actual Google Forms entry ID
   },
