@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>What Your Favorite Biobank Says About You</title><link>https://boston-wib.org/blog/quicktake/what-your-favorite-biobank-says-about-you</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/what-your-favorite-biobank-says-about-you</guid><pubDate>Fri, 21 Nov 2025 12:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/minator-yang-oJjfBo_0R_8-unsplash.jpg&quot; alt=&quot;What Your Favorite Biobank Says About You&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Tuesday Tactics: Your First Data Hire Signal</title><link>https://boston-wib.org/blog/quicktake/tuesday-tactics-your-first-data-hire-signal</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/tuesday-tactics-your-first-data-hire-signal</guid><pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/hugo-jehanne-LOHVrTsdvzY-unsplash.jpg&quot; alt=&quot;man holding red smoke signal&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;If your scientists are spending 8+ hours/week on routine reporting, you&amp;#39;ve already waited too long.&lt;/p&gt;
+&lt;p&gt;That&amp;#39;s 20% of your scientific capacity doing data janitorial work instead of discovery.&lt;/p&gt;
+</content:encoded><category>data-engineering</category><category>biotech</category><category>hiring</category><category>scaleup</category></item><item><title>The Explicit Out-of-Scope Section: My Secret Weapon for Project Trust</title><link>https://boston-wib.org/blog/quicktake/explicit-out-of-scope-section</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/explicit-out-of-scope-section</guid><pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-24-explicit-out-of-scope-section.png&quot; alt=&quot;Project requirements document with an ‘Out of Scope’ section. Checklist shows PowerPoint export, real‑time data updates, and mobile responsive design marked as not in scope, with a note that these items are expected in Phase 2.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Transparency isn&apos;t just about what&apos;s included, it&apos;s about naming what&apos;s out of scope.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The projects where I list what we&amp;#39;re NOT doing are the ones that finish on time.&lt;/p&gt;
+&lt;p&gt;I learned this the hard way. A few years ago, I built a visualization tool that checked every box on the requirements list. Shipped on schedule. Stakeholders were thrilled.&lt;/p&gt;
+&lt;p&gt;Two weeks later: &amp;quot;Wait, it doesn&amp;#39;t export to PowerPoint?&amp;quot;&lt;/p&gt;
+&lt;p&gt;That feature was never in scope. But because I hadn&amp;#39;t explicitly said we WEREN&amp;#39;T building it, the expectation existed anyway.&lt;/p&gt;
+&lt;h2&gt;Now every project doc gets this section:&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Explicitly Out of Scope for Phase 1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Not just &amp;quot;nice to haves&amp;quot; or &amp;quot;future considerations.&amp;quot; A clear list of things people might reasonably expect but won&amp;#39;t get in this phase.&lt;/p&gt;
+&lt;p&gt;Here&amp;#39;s what mine typically include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Feature assumptions people make (like that PowerPoint export)&lt;/li&gt;
+&lt;li&gt;Data sources we&amp;#39;re NOT integrating yet&lt;/li&gt;
+&lt;li&gt;User groups we&amp;#39;re NOT supporting in v1&lt;/li&gt;
+&lt;li&gt;Analyses or visualizations that seem related but aren&amp;#39;t included&lt;/li&gt;
+&lt;li&gt;Performance targets we&amp;#39;re not optimizing for yet&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Why this works:&lt;/h2&gt;
+&lt;p&gt;It forces the hard conversations up front. When I write &amp;quot;Phase 1 will NOT include real-time data updates,&amp;quot; someone inevitably says &amp;quot;wait, we need that.&amp;quot; Perfect. Now we can discuss it before I&amp;#39;ve built the wrong thing.&lt;/p&gt;
+&lt;p&gt;It gives me cover during implementation. When scope creep appears (and it always does), I can point to this section and say &amp;quot;remember, we agreed real-time is Phase 2.&amp;quot; No one feels ambushed.&lt;/p&gt;
+&lt;p&gt;It builds trust through transparency. Stakeholders see I&amp;#39;m being honest about limitations rather than overselling what I can deliver.&lt;/p&gt;
+&lt;h2&gt;The key: Revisit it regularly&lt;/h2&gt;
+&lt;p&gt;I review the out-of-scope section at every project checkpoint. Sometimes priorities shift and something from &amp;quot;Phase 2&amp;quot; needs to move to &amp;quot;Phase 1.&amp;quot; That&amp;#39;s fine! The document isn&amp;#39;t a contract—it&amp;#39;s a communication tool.&lt;/p&gt;
+&lt;p&gt;The goal isn&amp;#39;t to never change scope. It&amp;#39;s to make sure everyone understands what&amp;#39;s changing and why.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Managing expectations is easier than managing disappointment.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Do you explicitly document out-of-scope in your project plans? What&amp;#39;s been your experience with scope creep?&lt;/p&gt;
+</content:encoded><category>software-engineering</category><category>project-management</category><category>data-science</category><category>biotech</category><category>leadership</category></item><item><title>What Your Favorite Biobank Says About You</title><link>https://boston-wib.org/blog/quicktake/what-your-favorite-biobank-says-about-you</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/what-your-favorite-biobank-says-about-you</guid><pubDate>Fri, 21 Nov 2025 12:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/minator-yang-oJjfBo_0R_8-unsplash.jpg&quot; alt=&quot;What Your Favorite Biobank Says About You&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;We asked 500,000 researchers which biobank they stan, and the results were… scientifically significant.&lt;/em&gt;&lt;/p&gt;
 
@@ -107,7 +139,31 @@ They’ll ask: &amp;quot;Do we have agents that can actually &lt;strong&gt;close
 &lt;li&gt;How to build trust and advocate for yourself strategically&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Watch the full episode &lt;a href=&quot;https://www.patreon.com/posts/new-video-your-143734360&quot;&gt;Work Life Decoded: Understanding Your Manager&amp;#39;s World)&lt;/a&gt; on Patreon.&lt;/p&gt;
-</content:encoded><category>career-advice</category><category>career-development</category><category>manager-relationships</category><category>workplace-strategy</category><category>professional-growth</category><category>work-life-decoded</category></item><item><title>Write the Test First (Even for Your Science)</title><link>https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</guid><pubDate>Thu, 13 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-17-write-the-test-first-even-for-your-science.png&quot; alt=&quot;Side‑by‑side flowcharts comparing traditional vs. test‑driven development (TDD) approaches.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>career-advice</category><category>career-development</category><category>manager-relationships</category><category>workplace-strategy</category><category>professional-growth</category><category>work-life-decoded</category></item><item><title>Data Pipelines That Scientists Can Debug (Without Calling You at 9 PM)</title><link>https://boston-wib.org/blog/quicktake/data-pipelines-that-scientists-can-debug-without-calling-you-at-9-pm</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/data-pipelines-that-scientists-can-debug-without-calling-you-at-9-pm</guid><pubDate>Thu, 13 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-13-data-pipelines-that-scientists-can-debug-without-calling-you-at-9-pm.png&quot; alt=&quot;Clear error messages empowers scientists to solve challenges fast and independently; cryptic messages stall scientific process by often requiring data scientist intervention&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Why data scientists should design error messages that guide users straight to solutions.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;quot;Hey, the pipeline failed again. Can you take a look?&amp;quot;&lt;/p&gt;
+&lt;p&gt;This Slack message means your next hour is gone. You&amp;#39;ll dig through logs, decipher SQL errors, and eventually discover something simple: a sample ID mismatch, a missing metadata field, or a file in the wrong format.&lt;/p&gt;
+&lt;p&gt;The scientist could have fixed it in 30 seconds—if the error message had told them what to look for.&lt;/p&gt;
+&lt;p&gt;I&amp;#39;ve watched brilliant researchers stare at &amp;quot;Foreign key constraint violation in table seq_metadata&amp;quot; for 10 minutes before asking for help. The pipeline was doing its job—catching bad data before it corrupted the database. But the error message was useless.&lt;/p&gt;
+&lt;p&gt;The underlying problem was pretty straightforward: sample IDs in the sequencing file didn&amp;#39;t match our experiment registry. A 30-second fix for someone who knows where to look. An unsolvable mystery for everyone else.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Good data engineering includes translating technical failures into actionable scientific context.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Here&amp;#39;s what I now build into every production pipeline:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Error messages that say what AND why: &amp;quot;Sample ID ABC123 not found in experiment registry. Check Benchling or contact data team if this sample should exist.&amp;quot;&lt;/li&gt;
+&lt;li&gt;Data quality checks in scientific terms: &amp;quot;Missing replicate numbers for 3 samples in plate P2024-089. Replicates required for statistical analysis.&amp;quot;&lt;/li&gt;
+&lt;li&gt;Logging that tells a story: Timestamps, input files, sample counts, quality metrics so scientists can reconstruct what happened.&lt;/li&gt;
+&lt;li&gt;Retry logic that makes sense for biology: Retry network glitches. Don&amp;#39;t retry failed QC—that needs human judgment.&lt;/li&gt;
+&lt;li&gt;Clear next steps in failures: Point to docs, suggest who to contact, or indicate if this is expected.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The goal isn&amp;#39;t eliminating errors—it&amp;#39;s making them interpretable.&lt;/p&gt;
+&lt;p&gt;When a scientist sees &amp;quot;QC failed: 12% of reads below threshold (expected &amp;lt;5%). Contact sequencing core,&amp;quot; they know what to do. &amp;quot;ValueError: invalid literal for int()&amp;quot; leaves them stuck.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The best pipeline is one that makes both teams successful.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Data engineers get fewer interruptions and better bug reports. Scientists get independence and faster resolution. Everyone wins when failures are observable and actionable.&lt;/p&gt;
+&lt;p&gt;Since implementing these patterns, debugging interruptions dropped significantly. Not because pipelines stopped failing—they still do. But now when they fail, the error message points scientists directly to the problem.
+Which pattern would have the biggest impact for your team? 🧬💻&lt;/p&gt;
+</content:encoded><category>bioinformatics</category><category>data-engineering</category><category>biotech</category><category>computational-biology</category><category>data-science</category></item><item><title>Write the Test First (Even for Your Science)</title><link>https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</guid><pubDate>Thu, 13 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-17-write-the-test-first-even-for-your-science.png&quot; alt=&quot;Side‑by‑side flowcharts comparing traditional vs. test‑driven development (TDD) approaches.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;Why data scientists should design error messages that guide users straight to solutions.&lt;/em&gt;&lt;/p&gt;
 
@@ -162,30 +218,6 @@ They’ll ask: &amp;quot;Do we have agents that can actually &lt;strong&gt;close
 &lt;p&gt;No = You just saved yourself from bad science&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;The best time to catch bugs is when your dataset is small enough to debug by hand.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;What&amp;#39;s your &amp;quot;found the bug too late&amp;quot; horror story?&lt;/p&gt;
-</content:encoded><category>bioinformatics</category><category>data-engineering</category><category>biotech</category><category>computational-biology</category><category>data-science</category></item><item><title>Data Pipelines That Scientists Can Debug (Without Calling You at 9 PM)</title><link>https://boston-wib.org/blog/quicktake/data-pipelines-that-scientists-can-debug-without-calling-you-at-9-pm</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/data-pipelines-that-scientists-can-debug-without-calling-you-at-9-pm</guid><pubDate>Thu, 13 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-13-data-pipelines-that-scientists-can-debug-without-calling-you-at-9-pm.png&quot; alt=&quot;Clear error messages empowers scientists to solve challenges fast and independently; cryptic messages stall scientific process by often requiring data scientist intervention&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
-
-&lt;p&gt;&lt;em&gt;Why data scientists should design error messages that guide users straight to solutions.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;quot;Hey, the pipeline failed again. Can you take a look?&amp;quot;&lt;/p&gt;
-&lt;p&gt;This Slack message means your next hour is gone. You&amp;#39;ll dig through logs, decipher SQL errors, and eventually discover something simple: a sample ID mismatch, a missing metadata field, or a file in the wrong format.&lt;/p&gt;
-&lt;p&gt;The scientist could have fixed it in 30 seconds—if the error message had told them what to look for.&lt;/p&gt;
-&lt;p&gt;I&amp;#39;ve watched brilliant researchers stare at &amp;quot;Foreign key constraint violation in table seq_metadata&amp;quot; for 10 minutes before asking for help. The pipeline was doing its job—catching bad data before it corrupted the database. But the error message was useless.&lt;/p&gt;
-&lt;p&gt;The underlying problem was pretty straightforward: sample IDs in the sequencing file didn&amp;#39;t match our experiment registry. A 30-second fix for someone who knows where to look. An unsolvable mystery for everyone else.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Good data engineering includes translating technical failures into actionable scientific context.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Here&amp;#39;s what I now build into every production pipeline:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Error messages that say what AND why: &amp;quot;Sample ID ABC123 not found in experiment registry. Check Benchling or contact data team if this sample should exist.&amp;quot;&lt;/li&gt;
-&lt;li&gt;Data quality checks in scientific terms: &amp;quot;Missing replicate numbers for 3 samples in plate P2024-089. Replicates required for statistical analysis.&amp;quot;&lt;/li&gt;
-&lt;li&gt;Logging that tells a story: Timestamps, input files, sample counts, quality metrics so scientists can reconstruct what happened.&lt;/li&gt;
-&lt;li&gt;Retry logic that makes sense for biology: Retry network glitches. Don&amp;#39;t retry failed QC—that needs human judgment.&lt;/li&gt;
-&lt;li&gt;Clear next steps in failures: Point to docs, suggest who to contact, or indicate if this is expected.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The goal isn&amp;#39;t eliminating errors—it&amp;#39;s making them interpretable.&lt;/p&gt;
-&lt;p&gt;When a scientist sees &amp;quot;QC failed: 12% of reads below threshold (expected &amp;lt;5%). Contact sequencing core,&amp;quot; they know what to do. &amp;quot;ValueError: invalid literal for int()&amp;quot; leaves them stuck.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;The best pipeline is one that makes both teams successful.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Data engineers get fewer interruptions and better bug reports. Scientists get independence and faster resolution. Everyone wins when failures are observable and actionable.&lt;/p&gt;
-&lt;p&gt;Since implementing these patterns, debugging interruptions dropped significantly. Not because pipelines stopped failing—they still do. But now when they fail, the error message points scientists directly to the problem.
-Which pattern would have the biggest impact for your team? 🧬💻&lt;/p&gt;
 </content:encoded><category>bioinformatics</category><category>data-engineering</category><category>biotech</category><category>computational-biology</category><category>data-science</category></item><item><title>AI Agents Are Quietly Redefining Healthcare</title><link>https://boston-wib.org/blog/quicktake/ai-agents-redefining-healthcare</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/ai-agents-redefining-healthcare</guid><pubDate>Wed, 12 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/julien-tromeur-FYOwBvRb2Mk-unsplash.jpg&quot; alt=&quot;A futuristic female robot floats mid‑air, holding a metallic brain like a basketball, poised to shoot.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;AI agents turn healthcare data into real‑time insights, evolving with patients and providers.&lt;/em&gt;&lt;/p&gt;
