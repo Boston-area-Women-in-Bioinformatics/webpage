@@ -92,14 +92,21 @@ const {
                 </label>
 
                 {field.type === 'textarea' ? (
-                  <textarea
-                    id={field.id}
-                    name={field.name}
-                    required={field.required}
-                    placeholder={field.placeholder}
-                    rows={field.rows || 4}
-                    class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-base resize-vertical focus:ring-blue-500 focus:border-blue-500 text-black"
-                  />
+                  <>
+                    <textarea
+                      id={field.id}
+                      name={field.name}
+                      required={field.required}
+                      placeholder={field.placeholder}
+                      rows={field.rows || 4}
+                      class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-base resize-vertical focus:ring-blue-500 focus:border-blue-500 text-black"
+                    />
+                    <div
+                      id={`${field.id}-error`}
+                      class="text-red-600 dark:text-red-400 text-sm mt-1 hidden"
+                      role="alert"
+                    />
+                  </>
                 ) : field.type === 'checkbox' ? (
                   <div class="flex items-start mt-2">
                     <input
@@ -115,89 +122,103 @@ const {
                     </label>
                   </div>
                 ) : field.type === 'checkbox-group' ? (
-                  <div class="mt-2 space-y-2">
-                    {field.options?.map((option) => (
-                      <div class="flex items-center">
-                        <input
-                          type="checkbox"
-                          id={`${field.id}-${option.value}`}
-                          name={field.name}
-                          value={option.value}
-                          class="w-5 h-5 mr-2"
-                        />
-                        <label for={`${field.id}-${option.value}`} class="text-base">
-                          {option.label}
-                        </label>
-                      </div>
-                    ))}
-                    {field.hasOther && (
-                      <div class="space-y-2">
+                  <>
+                    <div class="mt-2 space-y-2">
+                      {field.options?.map((option) => (
                         <div class="flex items-center">
                           <input
                             type="checkbox"
-                            id={`${field.id}-other-checkbox`}
+                            id={`${field.id}-${option.value}`}
                             name={field.name}
-                            value="__other_option__"
-                            class="w-5 h-5 mr-2 flex-shrink-0"
+                            value={option.value}
+                            class="w-5 h-5 mr-2"
                           />
-                          <label for={`${field.id}-other-checkbox`} class="text-base">
-                            Other
+                          <label for={`${field.id}-${option.value}`} class="text-base">
+                            {option.label}
                           </label>
                         </div>
-                        <input
-                          type="text"
-                          id={`${field.id}-other-input`}
-                          name={`${field.name}-other`}
-                          placeholder="Please specify..."
-                          class="w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black hidden"
-                        />
-                      </div>
-                    )}
-                  </div>
+                      ))}
+                      {field.hasOther && (
+                        <div class="space-y-2">
+                          <div class="flex items-center">
+                            <input
+                              type="checkbox"
+                              id={`${field.id}-other-checkbox`}
+                              name={field.name}
+                              value="__other_option__"
+                              class="w-5 h-5 mr-2 flex-shrink-0"
+                            />
+                            <label for={`${field.id}-other-checkbox`} class="text-base">
+                              Other
+                            </label>
+                          </div>
+                          <input
+                            type="text"
+                            id={`${field.id}-other-input`}
+                            name={`${field.name}-other`}
+                            placeholder="Please specify..."
+                            class="w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black hidden"
+                          />
+                        </div>
+                      )}
+                    </div>
+                    <div
+                      id={`${field.id}-error`}
+                      class="text-red-600 dark:text-red-400 text-sm mt-1 hidden"
+                      role="alert"
+                    />
+                  </>
                 ) : field.type === 'radio' ? (
-                  <div class="mt-2 space-y-2">
-                    {field.options?.map((option) => (
-                      <div class="flex items-center">
-                        <input
-                          type="radio"
-                          id={`${field.id}-${option.value}`}
-                          name={field.name}
-                          value={option.value}
-                          required={field.required}
-                          class="w-4 h-4 mr-2"
-                        />
-                        <label for={`${field.id}-${option.value}`} class="text-base">
-                          {option.label}
-                        </label>
-                      </div>
-                    ))}
-                    {field.hasOther && (
-                      <div class="space-y-2">
+                  <>
+                    <div class="mt-2 space-y-2">
+                      {field.options?.map((option) => (
                         <div class="flex items-center">
                           <input
                             type="radio"
-                            id={`${field.id}-other-radio`}
+                            id={`${field.id}-${option.value}`}
                             name={field.name}
-                            value="__other_option__"
+                            value={option.value}
                             required={field.required}
-                            class="w-4 h-4 mr-2 flex-shrink-0"
+                            class="w-4 h-4 mr-2"
                           />
-                          <label for={`${field.id}-other-radio`} class="text-base">
-                            Other
+                          <label for={`${field.id}-${option.value}`} class="text-base">
+                            {option.label}
                           </label>
                         </div>
-                        <input
-                          type="text"
-                          id={`${field.id}-other-input`}
-                          name={`${field.name}-other`}
-                          placeholder="Please specify..."
-                          class="w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black hidden"
-                        />
-                      </div>
-                    )}
-                  </div>
+                      ))}
+                      {field.hasOther && (
+                        <div class="space-y-2">
+                          <div class="flex items-center">
+                            <input
+                              type="radio"
+                              id={`${field.id}-other-radio`}
+                              name={field.name}
+                              value="__other_option__"
+                              required={field.required}
+                              class="w-4 h-4 mr-2 flex-shrink-0"
+                            />
+                            <label for={`${field.id}-other-radio`} class="text-base">
+                              Other
+                            </label>
+                          </div>
+                          <input
+                            type="text"
+                            id={`${field.id}-other-input`}
+                            name={`${field.name}-other`}
+                            placeholder="Please specify..."
+                            class="w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black hidden"
+                          />
+                        </div>
+                      )}
+                    </div>
+                    <div
+                      id={`${field.id}-error`}
+                      class="text-red-600 dark:text-red-400 text-sm mt-1 hidden"
+                      role="alert"
+                    />
+                  </>
                 ) : field.type === 'select' ? (
-                  <div>
+                  <>
                     <select
                       id={field.id}
                       name={field.name}
@@ -219,16 +240,28 @@ const {
                         class="mt-2 w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black hidden"
                       />
                     )}
-                  </div>
+                    <div
+                      id={`${field.id}-error`}
+                      class="text-red-600 dark:text-red-400 text-sm mt-1 hidden"
+                      role="alert"
+                    />
+                  </>
                 ) : (
-                  <input
-                    type={field.type}
-                    id={field.id}
-                    name={field.name}
-                    required={field.required}
-                    placeholder={field.placeholder}
-                    class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black"
-                  />
+                  <>
+                    <input
+                      type={field.type}
+                      id={field.id}
+                      name={field.name}
+                      required={field.required}
+                      placeholder={field.placeholder}
+                      class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 text-base focus:ring-blue-500 focus:border-blue-500 text-black"
+                    />
+                    <div
+                      id={`${field.id}-error`}
+                      class="text-red-600 dark:text-red-400 text-sm mt-1 hidden"
+                      role="alert"
+                    />
+                  </>
                 )}
               </div>
             ))
@@ -250,6 +283,123 @@ const {
   <!-- Backend Code to Handle Submission Form -->
   <script is:inline define:vars={{ formUrl, formName, fields, successMessage }}>
     const form = document.getElementById(formName);
+
+    // Validation helper functions
+    function showError(fieldId, message) {
+      const errorDiv = document.getElementById(`${fieldId}-error`);
+      const inputElement = document.getElementById(fieldId);
+
+      if (errorDiv) {
+        errorDiv.textContent = message;
+        errorDiv.classList.remove('hidden');
+      }
+
+      if (inputElement) {
+        inputElement.classList.add('border-red-500');
+        inputElement.classList.remove('border-gray-300');
+      }
+    }
+
+    function clearError(fieldId) {
+      const errorDiv = document.getElementById(`${fieldId}-error`);
+      const inputElement = document.getElementById(fieldId);
+
+      if (errorDiv) {
+        errorDiv.textContent = '';
+        errorDiv.classList.add('hidden');
+      }
+
+      if (inputElement) {
+        inputElement.classList.remove('border-red-500');
+        inputElement.classList.add('border-gray-300');
+      }
+    }
+
+    function validateField(field) {
+      const element = document.getElementById(field.id);
+
+      if (!element) return true;
+
+      clearError(field.id);
+
+      // Validate based on field type
+      if (field.type === 'email') {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (field.required && !element.value) {
+          showError(field.id, 'Email address is required.');
+          return false;
+        }
+        if (element.value && !emailRegex.test(element.value)) {
+          showError(field.id, 'Please enter a valid email address (e.g., name@example.com).');
+          return false;
+        }
+      } else if (field.type === 'url') {
+        const urlRegex = /^https?:\/\/.+\..+/;
+        if (field.required && !element.value) {
+          showError(field.id, 'URL is required.');
+          return false;
+        }
+        if (element.value && !urlRegex.test(element.value)) {
+          showError(field.id, 'Please enter a valid URL (e.g., https://linkedin.com/in/username).');
+          return false;
+        }
+      } else if (field.type === 'tel') {
+        const phoneRegex = /^[\d\s\-()]+$/;
+        if (field.required && !element.value) {
+          showError(field.id, 'Phone number is required.');
+          return false;
+        }
+        if (element.value && !phoneRegex.test(element.value)) {
+          showError(field.id, 'Please enter a valid phone number.');
+          return false;
+        }
+      } else if (field.type === 'text' || field.type === 'textarea') {
+        if (field.required && !element.value.trim()) {
+          showError(field.id, 'This field is required.');
+          return false;
+        }
+      } else if (field.type === 'select') {
+        if (field.required && !element.value) {
+          showError(field.id, 'Please select an option.');
+          return false;
+        }
+      } else if (field.type === 'radio') {
+        const selected = document.querySelector(`input[name="${field.name}"]:checked`);
+        if (field.required && !selected) {
+          showError(field.id, 'Please select an option.');
+          return false;
+        }
+      } else if (field.type === 'checkbox-group') {
+        const checked = document.querySelectorAll(`input[name="${field.name}"]:checked`);
+        if (field.required && checked.length === 0) {
+          showError(field.id, 'Please select at least one option.');
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    // Add real-time validation on blur
+    fields.forEach((field) => {
+      const element = document.getElementById(field.id);
+
+      if (
+        element &&
+        (field.type === 'text' ||
+          field.type === 'email' ||
+          field.type === 'url' ||
+          field.type === 'tel' ||
+          field.type === 'textarea')
+      ) {
+        element.addEventListener('blur', () => validateField(field));
+        element.addEventListener('input', () => {
+          if (element.classList.contains('border-red-500')) {
+            validateField(field);
+          }
+        });
+      }
+    });
 
     // Handle showing/hiding "Other" text inputs
     fields.forEach((field) => {
@@ -302,6 +452,31 @@ const {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
+      // Validate all fields before submission
+      let isValid = true;
+      let firstErrorField = null;
+
+      fields.forEach((field) => {
+        if (!validateField(field)) {
+          isValid = false;
+          if (!firstErrorField) {
+            firstErrorField = field.id;
+          }
+        }
+      });
+
+      // If validation fails, scroll to first error and stop submission
+      if (!isValid) {
+        if (firstErrorField) {
+          const errorElement = document.getElementById(firstErrorField);
+          if (errorElement) {
+            errorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            errorElement.focus();
+          }
+        }
+        return;
+      }
+
       const data = new FormData();
 
       // Map all fields to their Google Forms entry IDs
@@ -313,24 +488,20 @@ const {
           value = element.checked ? field.checkboxText || 'Yes' : 'No';
         } else if (field.type === 'checkbox-group') {
           const checkboxes = document.querySelectorAll(`input[name="${field.name}"]:checked`);
-          const values = [];
 
           checkboxes.forEach((checkbox) => {
             if (checkbox.value === '__other_option__' && field.hasOther) {
               const otherInput = document.getElementById(`${field.id}-other-input`);
               if (otherInput.value) {
-                values.push(otherInput.value);
-                // If there's a separate entry ID for "Other", also append it separately
-                if (field.otherEntryId) {
-                  data.append(field.otherEntryId, otherInput.value);
-                }
+                // Google Forms expects the "Other" response in the main entry
+                data.append(field.entryId, otherInput.value);
               }
             } else {
-              values.push(checkbox.value);
+              // Google Forms expects each checkbox value as a separate entry with the same entryId
+              data.append(field.entryId, checkbox.value);
             }
           });
-
-          value = values.join(', ');
+          value = null; // Already appended above, skip the final append
         } else if (field.type === 'radio') {
           const selected = document.querySelector(`input[name="${field.name}"]:checked`);
           if (selected) {
@@ -367,16 +538,24 @@ const {
         }
       });
 
+      // Debug: Log the data being sent
+      console.log('Form submission data:');
+      for (const [key, value] of data.entries()) {
+        console.log(`${key}: ${value}`);
+      }
+
       fetch(formUrl, {
         method: 'POST',
         mode: 'no-cors',
         body: data,
       })
         .then(() => {
+          console.log('Form submitted successfully to Google Forms');
           alert(successMessage);
           form.reset();
-          // Re-hide all "Other" inputs after reset
+          // Clear all errors and re-hide all "Other" inputs after reset
           fields.forEach((field) => {
+            clearError(field.id);
             if (field.hasOther) {
               const otherInput = document.getElementById(`${field.id}-other-input`);
               if (otherInput) {
