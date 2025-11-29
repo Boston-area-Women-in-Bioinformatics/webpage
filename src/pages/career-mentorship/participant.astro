@@ -96,7 +96,7 @@ const formFields: FormField[] = [
       { value: '0-5', label: '0-5 years' },
       { value: '6-10', label: '6-10 years' },
       { value: '11-20', label: '11-20 years' },
-      { value: '20+', label: '20+ years' },
+      { value: '+20', label: '20+ years' },
     ],
   },
   {
@@ -108,43 +108,48 @@ const formFields: FormField[] = [
     entryId: 'entry.1217655187',
     options: [
       {
-        value: 'leadership',
+        value: 'Leadership (leading a research team, mentoring junior scientists, guiding collaborative projects)',
         label: 'Leadership (leading a research team, mentoring junior scientists, guiding collaborative projects)',
       },
       {
-        value: 'management',
+        value: 'Management (managing lab or computational projects, timelines, and cross-functional teams)',
         label: 'Management (managing lab or computational projects, timelines, and cross-functional teams)',
       },
       {
-        value: 'career-transitions',
+        value:
+          'Career transitions (moving from academia to industry, shifting from wet lab to bioinformatics, exploring new career paths)',
         label:
-          'Career Career transitions (moving from academia to industry, shifting from wet lab to bioinformatics, exploring new career paths)',
+          'Career transitions (moving from academia to industry, shifting from wet lab to bioinformatics, exploring new career paths)',
       },
       {
-        value: 'entrepreneurship',
+        value:
+          'Entrepreneurship (starting a biotech company, consulting, or launching data-driven tools for life sciences)',
         label:
           'Entrepreneurship (starting a biotech company, consulting, or launching data-driven tools for life sciences)',
       },
       {
-        value: 'technical-skills',
+        value:
+          'Technical skills (learning R, Python, Nextflow, or improving data analysis, visualization, or pipeline-building skills)',
         label:
-          'TechnicTechnical skills (learning R, Python, Nextflow, or improving data analysis, visualization, or pipeline-building skills)al skills',
+          'Technical skills (learning R, Python, Nextflow, or improving data analysis, visualization, or pipeline-building skills)',
       },
       {
-        value: 'worklife-balance',
+        value: 'Work–life balance (managing workload, avoiding burnout, maintaining wellness in a demanding career)',
         label: 'Work–life balance (managing workload, avoiding burnout, maintaining wellness in a demanding career)',
       },
       {
-        value: 'networking',
+        value:
+          'Networking (building professional connections, engaging in the bioinformatics community, finding mentors or collaborators)',
         label:
           'Networking (building professional connections, engaging in the bioinformatics community, finding mentors or collaborators)',
       },
       {
-        value: 'negotiation',
+        value: 'Negotiation (discussing promotions, salary, authorship, or collaborative roles confidently)',
         label: 'Negotiation (discussing promotions, salary, authorship, or collaborative roles confidently)',
       },
       {
-        value: 'public-speaking',
+        value:
+          'Public speaking (presenting at conferences, defending research, improving science communication skills)',
         label:
           'Public speaking (presenting at conferences, defending research, improving science communication skills)',
       },
@@ -169,8 +174,8 @@ const formFields: FormField[] = [
     required: true,
     entryId: 'entry.833552881',
     options: [
-      { value: '6', label: '6 months' },
-      { value: '12', label: '12 months' },
+      { value: '6 months', label: '6 months' },
+      { value: '12 months', label: '12 months' },
     ],
     hasOther: true,
   },
@@ -180,13 +185,13 @@ const formFields: FormField[] = [
     label: 'Preferred meeting style',
     type: 'select',
     required: true,
-    entryId: 'entry.1597348915',
+    entryId: 'entry.1002571434',
     options: [
-      { value: 'virtual', label: 'Virtual' },
-      { value: 'inperson', label: 'In-person' },
-      { value: 'flexible', label: 'Flexible' },
+      { value: 'Virtual', label: 'Virtual' },
+      { value: 'In person', label: 'In person' },
+      { value: 'Flexible', label: 'Flexible' },
     ],
-    hasOther: false,
+    hasOther: true,
   },
   {
     id: 'meeting-freq',
@@ -194,10 +199,10 @@ const formFields: FormField[] = [
     label: 'Preferred meeting frequency',
     type: 'radio',
     required: true,
-    entryId: 'entry.1002571434',
+    entryId: 'entry.1597348915',
     options: [
-      { value: 'biweekly', label: 'Bi-weekly' },
-      { value: 'monthly', label: 'Monthly' },
+      { value: 'Biweekly', label: 'Bi-weekly' },
+      { value: 'Monthly', label: 'Monthly' },
     ],
     hasOther: true,
   },
@@ -209,9 +214,9 @@ const formFields: FormField[] = [
     required: true,
     entryId: 'entry.1905492297',
     options: [
-      { value: 'morning', label: 'Morning' },
-      { value: 'noon', label: 'Noon' },
-      { value: 'evening', label: 'Evening' },
+      { value: 'Morning', label: 'Morning' },
+      { value: 'Afternoon', label: 'Afternoon' },
+      { value: 'Evening', label: 'Evening' },
     ],
     hasOther: true,
   },
@@ -223,11 +228,26 @@ const formFields: FormField[] = [
     required: true,
     entryId: 'entry.2022006030',
     options: [
-      { value: 'visual', label: 'Visual – I learn best with diagrams, charts, or videos.' },
-      { value: 'auditory', label: 'Auditory – I prefer listening to explanations or discussions.' },
-      { value: 'reading/writing', label: 'Reading/Writing – I like written materials, notes, and articles.' },
-      { value: 'kinesthetic', label: 'Kinesthetic – I learn best by doing, experimenting, or hands-on practice.' },
-      { value: 'social', label: 'Social – I like learning through conversations, collaboration, or group settings.' },
+      {
+        value: 'Visual – I learn best with diagrams, charts, or videos.',
+        label: 'Visual – I learn best with diagrams, charts, or videos.',
+      },
+      {
+        value: 'Auditory – I prefer listening to explanations or discussions.',
+        label: 'Auditory – I prefer listening to explanations or discussions.',
+      },
+      {
+        value: 'Reading/Writing – I like written materials, notes, and articles.',
+        label: 'Reading/Writing – I like written materials, notes, and articles.',
+      },
+      {
+        value: 'Kinesthetic – I learn best by doing, experimenting, or hands-on practice.',
+        label: 'Kinesthetic – I learn best by doing, experimenting, or hands-on practice.',
+      },
+      {
+        value: 'Social – I like learning through conversations, collaboration, or group settings.',
+        label: 'Social – I like learning through conversations, collaboration, or group settings.',
+      },
     ],
     hasOther: true,
   },
@@ -238,7 +258,7 @@ const formFields: FormField[] = [
       "Is there anything else you'd like us or your future mentor to know about your background, goals, or expectations?",
     type: 'textarea',
     placeholder: 'Share your thoughts...',
-    required: false,
+    required: true,
     rows: 8,
     entryId: 'entry.1252258982',
   },
