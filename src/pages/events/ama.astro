@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { SITE } from '~/config/site/config.js';
-//import SubmitQuestionForm from '~/components/widgets/SubmitQuestionForm.astro';
+//import AMAQuestionForm from '~/components/widgets/forms/AMAQuestionForm.astro';
 
 const metadata = {
   title: SITE.title,
@@ -33,7 +33,7 @@ const hideAfterDate = now >= endDate;
   </section>
 
   <!-- Section to Submit Question
-  <section>{showAfterDate && <SubmitQuestionForm />}</section>
+  <section>{showAfterDate && <AMAQuestionForm />}</section>
   -->
 
   {
