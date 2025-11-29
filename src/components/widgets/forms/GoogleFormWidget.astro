@@ -282,7 +282,14 @@ const {
 
   <!-- Backend Code to Handle Submission Form -->
   <script is:inline define:vars={{ formUrl, formName, fields, successMessage }}>
+    console.log('GoogleFormWidget script loaded for form:', formName);
     const form = document.getElementById(formName);
+
+    if (!form) {
+      console.error('Form not found with id:', formName);
+    } else {
+      console.log('Form element found:', form);
+    }
 
     // Validation helper functions
     function showError(fieldId, message) {
@@ -450,6 +457,7 @@ const {
     });
 
     form.addEventListener('submit', function (e) {
+      console.log('Form submit event triggered!');
       e.preventDefault();
 
       // Validate all fields before submission
@@ -478,6 +486,7 @@ const {
       }
 
       const data = new FormData();
+      const sentinelFields = []; // Collect sentinel fields to add later
 
       // Map all fields to their Google Forms entry IDs
       fields.forEach((field) => {
@@ -493,41 +502,58 @@ const {
             if (checkbox.value === '__other_option__' && field.hasOther) {
               const otherInput = document.getElementById(`${field.id}-other-input`);
               if (otherInput.value) {
-                // Google Forms expects the "Other" response in the main entry
-                data.append(field.entryId, otherInput.value);
+                // For "Other" option, send both the marker and the text
+                data.append(field.entryId, '__other_option__');
+                data.append(`${field.entryId}.other_option_response`, otherInput.value);
               }
             } else {
-              // Google Forms expects each checkbox value as a separate entry with the same entryId
+              // Send the checkbox value to Google Forms
               data.append(field.entryId, checkbox.value);
             }
           });
+          // Collect sentinel field for checkbox groups
+          sentinelFields.push(field.entryId);
           value = null; // Already appended above, skip the final append
         } else if (field.type === 'radio') {
           const selected = document.querySelector(`input[name="${field.name}"]:checked`);
           if (selected) {
             if (selected.value === '__other_option__' && field.hasOther) {
               const otherInput = document.getElementById(`${field.id}-other-input`);
-              value = otherInput.value;
-              // If there's a separate entry ID for "Other", use it
-              if (field.otherEntryId && value) {
-                data.append(field.otherEntryId, value);
-                return; // Skip the normal append below
+              if (otherInput.value) {
+                // For "Other" option, send both the marker and the text
+                data.append(field.entryId, '__other_option__');
+                data.append(`${field.entryId}.other_option_response`, otherInput.value);
               }
+              // Collect sentinel field for radio with Other option
+              sentinelFields.push(field.entryId);
+              value = null; // Already appended above, skip the final append
             } else {
+              // Send the radio button value to Google Forms
               value = selected.value;
+              // Collect sentinel if hasOther
+              if (field.hasOther) {
+                sentinelFields.push(field.entryId);
+              }
             }
           }
         } else if (field.type === 'select') {
           if (element.value === '__other_option__' && field.hasOther) {
             const otherInput = document.getElementById(`${field.id}-other-input`);
-            value = otherInput.value;
-            // If there's a separate entry ID for "Other", use it
-            if (field.otherEntryId && value) {
-              data.append(field.otherEntryId, value);
-              return; // Skip the normal append below
+            if (otherInput.value) {
+              // For "Other" option, send both the marker and the text
+              data.append(field.entryId, '__other_option__');
+              data.append(`${field.entryId}.other_option_response`, otherInput.value);
             }
+            // Collect sentinel field for select with Other option
+            sentinelFields.push(field.entryId);
+            value = null; // Already appended above, skip the final append
           } else {
+            // Send the select value to Google Forms
             value = element.value;
+            // Collect sentinel if hasOther
+            if (field.hasOther) {
+              sentinelFields.push(field.entryId);
+            }
           }
         } else {
           value = element.value;
@@ -537,6 +563,24 @@ const {
           data.append(field.entryId, value);
         }
       });
+
+      // Add Google Forms required metadata fields
+      // Must match the exact format from successful Google Form submissions
+      const now = Date.now();
+      const fbzx = '-' + Math.floor(Math.random() * 9e18).toString();
+
+      data.append('dlut', now.toString());
+
+      // Add all sentinel fields grouped together (after dlut, before other metadata)
+      sentinelFields.forEach((entryId) => {
+        data.append(`${entryId}_sentinel`, '');
+      });
+
+      data.append('fvv', '1');
+      data.append('partialResponse', `[null,null,"${fbzx}"]`);
+      data.append('pageHistory', '0');
+      data.append('fbzx', fbzx);
+      data.append('submissionTimestamp', now.toString());
 
       // Debug: Log the data being sent
       console.log('Form submission data:');
