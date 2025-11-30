@@ -16,7 +16,7 @@ tags:
 
 metadata:
   title: 'Tuesday Tactics: The Excel Export Feature Request'
-  canonical: https://lfaller.github.io/biotech/2025/12/02/tuesday-tactics-excel-export-request/
+  canonical: https://lfaller.github.io/biotech/2025/12/30/tuesday-tactics-excel-export-request/
 ---
 
 When scientists ask to export everything to Excel, they're telling you your interface is too rigid.

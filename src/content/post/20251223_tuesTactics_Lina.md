@@ -16,7 +16,7 @@ tags:
 
 metadata:
   title: 'Tuesday Tactics: Data Steward ≠ Data Janitor'
-  canonical: https://lfaller.github.io/biotech/2025/12/02/tuesday-tactics-data-steward-not-janitor/
+  canonical: https://lfaller.github.io/biotech/2025/12/23/tuesday-tactics-data-steward-not-janitor/
 ---
 
 Your most experienced computational biologist shouldn't be reformatting CSVs.

@@ -16,7 +16,7 @@ tags:
 
 metadata:
   title: 'Tuesday Tactics: The 10-Minute Test'
-  canonical: https://lfaller.github.io/biotech/2025/12/02/tuesday-tactics-10-minute-test/
+  canonical: https://lfaller.github.io/biotech/2025/12/16/tuesday-tactics-10-minute-test/
 ---
 
 Can a new scientist find and understand your most commonly used dataset in 10 minutes?

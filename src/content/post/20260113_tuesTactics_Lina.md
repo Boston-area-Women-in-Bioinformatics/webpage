@@ -16,7 +16,7 @@ tags:
 
 metadata:
   title: 'Tuesday Tactics: The Post-Mortem Timing Rule'
-  canonical: https://lfaller.github.io/biotech/2025/12/02/tuesday-tactics-post-mortem-timing-rule/
+  canonical: https://lfaller.github.io/biotech/2026/01/13/tuesday-tactics-post-mortem-timing-rule/
 ---
 
 Run post-mortems within 48 hours of incidents while memory is fresh, but schedule the action items review for one week later.
