@@ -15,7 +15,7 @@ tags:
   - tuesday-tactics
 metadata:
   title: 'Tuesday Tactics: Sunset Before You Scale'
-  canonical: https://lfaller.github.io/biotech/2025/12/02/tuesday-tactics-sunset-before-you-scale/
+  canonical: https://lfaller.github.io/biotech/2025/12/09/tuesday-tactics-sunset-before-you-scale/
 ---
 
 Before building new data infrastructure, document what you'll STOP doing.
