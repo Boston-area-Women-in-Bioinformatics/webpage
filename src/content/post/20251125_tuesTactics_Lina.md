@@ -5,10 +5,6 @@ slug: blog/quicktake/tuesday-tactics-your-first-data-hire-signal
 authors:
   - name: 'Lina L. Faller, Ph.D.'
     url: 'https://www.linkedin.com/in/linafaller/'
-image: '/blog_images/hugo-jehanne-LOHVrTsdvzY-unsplash.jpg'
-imageAlt: 'man holding red smoke signal'
-imageDescription: 'Photo by <a href="https://unsplash.com/@hugojehanne?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Hugo Jehanne</a> on <a href="https://unsplash.com/photos/selective-color-photography-of-person-holding-orange-gas-smoke-standing-on-snow-LOHVrTsdvzY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
-imagePosition: center
 category: Quick Take
 draft: false
 tags:
@@ -16,6 +12,7 @@ tags:
   - biotech
   - hiring
   - scaleup
+  - tuesday-tactics
 
 metadata:
   title: 'Tuesday Tactics: Your First Data Hire Signal'
