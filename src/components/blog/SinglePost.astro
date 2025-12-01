@@ -29,6 +29,9 @@ const getCanonicalSourceName = () => {
   if (post.metadata?.canonical?.startsWith('https://lfaller.github.io')) {
     return 'Original Source: Carriagetown Data Solutions';
   }
+  if (post.metadata?.canonical?.startsWith('https://smartlink.ausha.co/a-coffee-with-compbio')) {
+    return 'Coffee With CompBio';
+  }
   return 'Original Source';
 };
 ---
