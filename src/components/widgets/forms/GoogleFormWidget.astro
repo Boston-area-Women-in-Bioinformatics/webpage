@@ -582,35 +582,59 @@ const {
       data.append('fbzx', fbzx);
       data.append('submissionTimestamp', now.toString());
 
-      // Debug: Log the data being sent
-      console.log('Form submission data:');
+      // Convert FormData to a plain object for JSON serialization
+      const formDataObj = {};
       for (const [key, value] of data.entries()) {
-        console.log(`${key}: ${value}`);
+        // Handle multiple values for the same key (checkboxes)
+        if (formDataObj[key]) {
+          if (Array.isArray(formDataObj[key])) {
+            formDataObj[key].push(value);
+          } else {
+            formDataObj[key] = [formDataObj[key], value];
+          }
+        } else {
+          formDataObj[key] = value;
+        }
       }
 
-      fetch(formUrl, {
+      // Debug: Log the data being sent
+      console.log('Form submission data:');
+      console.log(formDataObj);
+
+      // Submit to Netlify Function instead of directly to Google Forms
+      fetch('/.netlify/functions/submit-form', {
         method: 'POST',
-        mode: 'no-cors',
-        body: data,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formUrl: formUrl,
+          formData: formDataObj,
+        }),
       })
-        .then(() => {
-          console.log('Form submitted successfully to Google Forms');
-          alert(successMessage);
-          form.reset();
-          // Clear all errors and re-hide all "Other" inputs after reset
-          fields.forEach((field) => {
-            clearError(field.id);
-            if (field.hasOther) {
-              const otherInput = document.getElementById(`${field.id}-other-input`);
-              if (otherInput) {
-                otherInput.classList.add('hidden');
+        .then((response) => response.json())
+        .then((result) => {
+          if (result.success) {
+            console.log('Form submitted successfully to Google Forms');
+            alert(successMessage);
+            form.reset();
+            // Clear all errors and re-hide all "Other" inputs after reset
+            fields.forEach((field) => {
+              clearError(field.id);
+              if (field.hasOther) {
+                const otherInput = document.getElementById(`${field.id}-other-input`);
+                if (otherInput) {
+                  otherInput.classList.add('hidden');
+                }
               }
-            }
-          });
+            });
+          } else {
+            throw new Error(result.error || 'Submission failed');
+          }
         })
         .catch((err) => {
           console.error('Submission error:', err);
-          alert('Oops! Something went wrong.');
+          alert('Oops! Something went wrong. Please try again.');
         });
     });
   </script>
