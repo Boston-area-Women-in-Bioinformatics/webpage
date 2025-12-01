@@ -52,7 +52,7 @@ const formFields: FormField[] = [
   {
     id: 'email',
     name: 'email',
-    label: 'Email Address',
+    label: 'E-mail',
     type: 'email',
     placeholder: 'your.email@example.com',
     required: true,
@@ -61,7 +61,7 @@ const formFields: FormField[] = [
   {
     id: 'phone',
     name: 'phone',
-    label: 'Phone Number',
+    label: 'Mobile phone number',
     type: 'tel',
     placeholder: '(XXX) XXX-XXXX',
     required: false,
@@ -73,23 +73,32 @@ const formFields: FormField[] = [
     label: 'Title & Company (Most Recent)',
     type: 'text',
     placeholder: 'Role, Company',
-    required: true,
+    required: false,
     entryId: 'entry.528451911',
   },
   {
     id: 'linkedin',
     name: 'linkedin',
-    label: 'LinkedIn',
-    type: 'url',
+    label: 'LinkedIn profile',
+    type: 'text',
     placeholder: 'https://linkedin.com/in/username',
     required: true,
     entryId: 'entry.1516352466',
   },
   {
+    id: 'feedback',
+    name: 'feedback',
+    label: "Type of mentee you'd be most excited to work with",
+    type: 'text',
+    placeholder: 'Share your thoughts...',
+    required: true,
+    entryId: 'entry.562261500',
+  },
+  {
     id: 'mentor-experience',
     name: 'mentor-experience',
-    label: 'Years of Professional Experience',
-    type: 'select',
+    label: 'Years of professional experience',
+    type: 'radio',
     required: true,
     entryId: 'entry.139577100',
     options: [
@@ -107,47 +116,15 @@ const formFields: FormField[] = [
     required: true,
     entryId: 'entry.1764955939',
     options: [
-      {
-        value: 'leadership',
-        label: 'Leadership (leading a research team, mentoring junior scientists, guiding collaborative projects)',
-      },
-      {
-        value: 'management',
-        label: 'Management (managing lab or computational projects, timelines, and cross-functional teams)',
-      },
-      {
-        value: 'career-transitions',
-        label:
-          'Career Career transitions (moving from academia to industry, shifting from wet lab to bioinformatics, exploring new career paths)',
-      },
-      {
-        value: 'entrepreneurship',
-        label:
-          'Entrepreneurship (starting a biotech company, consulting, or launching data-driven tools for life sciences)',
-      },
-      {
-        value: 'technical-skills',
-        label:
-          'TechnicTechnical skills (learning R, Python, Nextflow, or improving data analysis, visualization, or pipeline-building skills)al skills',
-      },
-      {
-        value: 'worklife-balance',
-        label: 'Work–life balance (managing workload, avoiding burnout, maintaining wellness in a demanding career)',
-      },
-      {
-        value: 'networking',
-        label:
-          'Networking (building professional connections, engaging in the bioinformatics community, finding mentors or collaborators)',
-      },
-      {
-        value: 'negotiation',
-        label: 'Negotiation (discussing promotions, salary, authorship, or collaborative roles confidently)',
-      },
-      {
-        value: 'public-speaking',
-        label:
-          'Public speaking (presenting at conferences, defending research, improving science communication skills)',
-      },
+      { value: 'Leadership', label: 'Leadership' },
+      { value: 'Management', label: 'Management' },
+      { value: 'Career transitions', label: 'Career transitions' },
+      { value: 'Entrepreneurship', label: 'Entrepreneurship' },
+      { value: 'Technical skills', label: 'Technical skills' },
+      { value: 'Work-life balance', label: 'Work-life balance' },
+      { value: 'Networking', label: 'Networking' },
+      { value: 'Negotiation', label: 'Negotiation' },
+      { value: 'Public speaking', label: 'Public speaking' },
     ],
     hasOther: true,
   },
@@ -159,37 +136,36 @@ const formFields: FormField[] = [
     required: true,
     entryId: 'entry.479727474',
     options: [
-      { value: '1-3', label: '1-3 years of industrial experience' },
-      { value: '3-7', label: '3-7 years' },
-      { value: '7+', label: '7+ years' },
+      { value: '1-3 years of industrial experience', label: '1-3 years' },
+      { value: '3-7 years of industrial experience', label: '3-7 years' },
+      { value: '>7 years of industrial experience', label: '>7 years' },
     ],
-  },
-  {
-    id: 'program-length',
-    name: 'program-length',
-    label: 'How long would you like the program to be?',
-    type: 'radio',
-    required: false,
-    entryId: 'entry.322194551',
-    options: [
-      { value: '6', label: '6 months' },
-      { value: '12', label: '12 months' },
-    ],
-    hasOther: true,
   },
   {
     id: 'meeting-style',
     name: 'meeting-style',
     label: 'Preferred meeting style',
-    type: 'select',
+    type: 'radio',
     required: false,
     entryId: 'entry.1978985469',
     options: [
-      { value: 'virtual', label: 'Virtual' },
-      { value: 'inperson', label: 'In-person' },
-      { value: 'flexible', label: 'Flexible' },
+      { value: 'Virtual', label: 'Virtual' },
+      { value: 'In-person', label: 'In-person' },
+      { value: 'Flexible', label: 'Flexible' },
     ],
-    hasOther: false,
+  },
+  {
+    id: 'program-length',
+    name: 'program-length',
+    label: 'How long would you like the program?',
+    type: 'radio',
+    required: false,
+    entryId: 'entry.322194551',
+    options: [
+      { value: '6 months', label: '6 months' },
+      { value: '12 months', label: '12 months' },
+    ],
+    hasOther: true,
   },
   {
     id: 'meeting-freq',
@@ -199,8 +175,8 @@ const formFields: FormField[] = [
     required: false,
     entryId: 'entry.1004615806',
     options: [
-      { value: 'biweekly', label: 'Bi-weekly' },
-      { value: 'monthly', label: 'Monthly' },
+      { value: 'Bi-weekly', label: 'Bi-weekly' },
+      { value: 'Monthly', label: 'Monthly' },
     ],
     hasOther: true,
   },
@@ -208,25 +184,15 @@ const formFields: FormField[] = [
     id: 'meeting-time',
     name: 'meeting-time',
     label: 'Preferred meeting time',
-    type: 'radio',
+    type: 'checkbox-group',
     required: false,
     entryId: 'entry.178813104',
     options: [
-      { value: 'morning', label: 'Morning' },
-      { value: 'noon', label: 'Noon' },
-      { value: 'evening', label: 'Evening' },
+      { value: 'Morning', label: 'Morning' },
+      { value: 'Noon', label: 'Noon' },
+      { value: 'Evening', label: 'Evening' },
     ],
     hasOther: true,
-  },
-  {
-    id: 'feedback',
-    name: 'feedback',
-    label: "Type of mentee you'd be most excited to work with",
-    type: 'textarea',
-    placeholder: 'Share your thoughts...',
-    required: false,
-    rows: 8,
-    entryId: 'entry.562261500',
   },
 ];
 const guidelines = [
@@ -256,7 +222,7 @@ const guidelines = [
     {
       !hideAfterDate && (
         <GoogleFormWidget
-          formUrl="https://docs.google.com/forms/d/1GZQxuRwP2ILgmmTp--2LGZ28FUx6jjAQNrVad0OFJvE/formResponse"
+          formUrl="https://docs.google.com/forms/d/e/1FAIpQLScebxKdB3mXe7mPNsDoawSlTbcBfc_bp2kpNmW8XzhBU8g-nQ/formResponse"
           formName="mentor-form"
           title="Mentor Questionnaire"
           fields={formFields}

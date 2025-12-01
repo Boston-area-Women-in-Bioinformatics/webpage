@@ -33,6 +33,15 @@ export const handler = async (event, context) => {
       }
     }
 
+    // Debug: Log what we're sending to Google Forms
+    console.error('=== SUBMITTING TO GOOGLE FORMS ===');
+    console.error('URL:', formUrl);
+    console.error('Data:', params.toString());
+    console.error('Data (parsed):');
+    for (const [key, value] of params.entries()) {
+      console.error(`  ${key} = ${value}`);
+    }
+
     // Forward the request to Google Forms with proper headers
     const response = await fetch(formUrl, {
       method: 'POST',
@@ -42,6 +51,13 @@ export const handler = async (event, context) => {
       },
       body: params.toString(),
     });
+
+    // Debug: Log the response
+    const responseText = await response.text();
+    console.error('=== GOOGLE FORMS RESPONSE ===');
+    console.error('Status:', response.status);
+    console.error('Headers:', Object.fromEntries(response.headers.entries()));
+    console.error('Response body (first 500 chars):', responseText.substring(0, 500));
 
     // Google Forms typically redirects on success
     if (response.ok || response.status === 302 || response.status === 303) {
