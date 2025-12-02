@@ -24,6 +24,7 @@ metadata:
   title: 'Work Life Decoded: Welcome to the Series!'
   description: 'A new video series that cuts through the myths with real talk on science and careers.'
   canonical: https://www.patreon.com/posts/welcome-to-work-142167916
+  canonicalSource: 'Work Life Decoded'
 ---
 
 Women in Bioinformatics chairs Lorena and Lina introduce their new video series tackling the career challenges that keep bioinformatics professionals up at night. With over 40 years of combined experience at Harvard, eGenesis, Ginkgo Bioworks, and other leading organizations, they're sharing the honest conversations about workplace dynamics, negotiation, and career navigation that they wish they'd had access to earlier in their careers.

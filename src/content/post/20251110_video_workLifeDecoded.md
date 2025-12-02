@@ -24,6 +24,7 @@ metadata:
   title: 'Work Life Decoded: How to Handle Workplace Negativity (Without Becoming the Office Therapist)'
   description: 'Practical strategies for handling workplace negativity without getting dragged into the drama or becoming everyone’s emotional dumping ground'
   canonical: https://www.patreon.com/posts/143081096
+  canonicalSource: 'Work Life Decoded'
 ---
 
 “That person is SO incompetent.” “This project is a disaster.” “Management has no idea what they’re doing.”

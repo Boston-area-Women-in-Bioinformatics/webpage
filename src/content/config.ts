@@ -8,6 +8,7 @@ const metadataDefinition = () =>
       ignoreTitleTemplate: z.boolean().optional(),
 
       canonical: z.string().url().optional(),
+      canonicalSource: z.string().optional(),
 
       robots: z
         .object({
