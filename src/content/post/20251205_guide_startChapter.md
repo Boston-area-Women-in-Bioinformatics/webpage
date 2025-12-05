@@ -1,5 +1,5 @@
 ---
-publishDate: 2025-08-06T00:00:00Z
+publishDate: 2025-12-05T00:00:00Z
 title: 'Starting a Women in Bioinformatics Chapter: A Practical Guide'
 slug: blog/tutorial/starting-a-women-in-bioinformatics-chapter
 excerpt: '"Been There, Done That" advice from established chapters'
