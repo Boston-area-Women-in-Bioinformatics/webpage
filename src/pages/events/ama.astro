@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { SITE } from '~/config/site/config.js';
-import SubmitQuestionForm from '~/components/widgets/SubmitQuestionForm.astro';
+//import AMAQuestionForm from '~/components/widgets/forms/AMAQuestionForm.astro';
 
 const metadata = {
   title: SITE.title,
@@ -10,10 +10,12 @@ const metadata = {
 };
 
 const releaseDate = new Date('2025-09-20T00:00:00Z');
+const endDate = new Date('2025-09-30T00:00:00Z');
 const now = new Date();
 
-const showAfterDate = now >= releaseDate;
+// const showAfterDate = now >= releaseDate;
 const showBeforeDate = now < releaseDate;
+const hideAfterDate = now >= endDate;
 ---
 
 <Layout metadata={metadata}>
@@ -30,8 +32,24 @@ const showBeforeDate = now < releaseDate;
     </div>
   </section>
 
-  <!-- Section to Submit Question -->
-  <section>{showAfterDate && <SubmitQuestionForm />}</section>
+  <!-- Section to Submit Question
+  <section>{showAfterDate && <AMAQuestionForm />}</section>
+  -->
+
+  {
+    hideAfterDate && (
+      <div class="p-6 max-w-3xl mx-auto my-4 text-center bg-yellow-100 border border-yellow-300 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4">Thank you for participating.</h2>
+        <p class="text-base leading-relaxed">
+          Come find us next year at the{' '}
+          <u>
+            <a href="https://mitmuseum.mit.edu/more/cambridge-science-carnival">Cambridge Science Carnival</a>
+          </u>
+          . We look forward to hearing from you!
+        </p>
+      </div>
+    )
+  }
 
   {
     showBeforeDate && (

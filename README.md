@@ -48,6 +48,8 @@ After you enter a new branch, you need to create a markdown file in the `src/con
 
 The markdown file should follow a specific format. In between the top two `---` you must fill out the event parameters. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The metadata should include fields like `title`, `dateTime`, `location`, `url`, `image`, `tags`, and `imgpos`. The `imgpos` parameter is for the css on the main events page. See https://tailwindcss.com/docs/object-position for options. `tags` are not currently in use, but may be in the future.
 
+Note that for the `dateTime` field, the time zone should be specified as either `-05:00` for Eastern Standard Time (EST) or `-04:00` for Eastern Daylight Time (EDT), depending on the date of the event. If the event is in December (EST) use -05:00, but if an event is during Daylight Saving Time (roughly March-November), you should use -04:00 for EDT.
+
 To add an image, upload it to the `public/photos` directory of your cloned repository. The image should be referenced in the markdown file using the `image` field in the metadata.
 
 After creating the markdown file and uploading the image, you can run the following commands to format the files and commit your changes:
@@ -95,6 +97,8 @@ The markdown file should follow a specific format. In between the top two `---` 
 - `slug`: a unique identifier for the blog post, used in the URL
 - `excerpt`: appears on the website front page to describe the post
 - `image`: path to the image that will be displayed on the blog post page
+- `imageAlt`: alt-text to show when images are not rendered or when user is using a screen reader. This text should describe the image's purpose in under 125 characters
+- `imagePosition`: set to `top`, `center`(default), or `bottom` to set where the content of the image is most important.
 - author information:
   - `author`: name of the SINGLE author of the blog post
   - `authorUrl`: URL to the author's LinkedIn profile
@@ -216,14 +220,59 @@ git checkout -b <new-branch-name>
   - `exec` = execuctive team (co-chairs and chairs of committees)
   - `team` = committee members
 
-4. Format the team.js file and stage changes for git
+4. Validate or add team member name to the correct committee markdown file in the `src/content/committees/` directory.
+
+5. Format the team.js and markdown file
 
 ```
 # Run 'npx --prettier' to fix any astro specific formatting issues
 npx prettier --write src/config/components/team.js
+npx prettier --write src/pages/about/committees.astro
+```
+
+6. Stage the files and commit the changes
+
+```
 # Stage the changes to commit (Assuming you are in the git folder)
 git add ./public/team/<your_image_name>
 git add ./src/config/components/team.js
+git add ./src/pages/about/committees.astro
+#  Commit new changes
+git commit -m "<Add committ message>"
+git push -u origin <new-branch-name>
+```
+
+## Adding and Editing Committees
+
+**To edit committee information:**
+
+1. Edit the markdown files in `src/content/committees/ ` directory.
+2. Update the frontmatter for metadata (chairs, members, description)
+3. Edit the markdown content below the frontmatter for detailed information
+4. Format the new committee file and stage changes for git
+
+```
+# Run 'npx --prettier' to fix any astro specific formatting issues
+npx prettier --write src/content/committees/{newcommittee}.md
+# Stage the changes to commit :
+git add src/content/committees/{newcommittee}.md
+#  Commit new changes
+git commit -m "<Add committ message>"
+git push -u origin <new-branch-name>
+```
+
+**To add a new committee**:
+
+1. Create a new .md file in `src/content/committees/` directory.
+2. Add frontmatter with required fields (id, title, description, chairs)
+3. Add markdown content
+4. Format the new committee file and stage changes for git
+
+```
+# Run 'npx --prettier' to fix any astro specific formatting issues
+npx prettier --write src/content/committees/{newcommittee}.md
+# Stage the changes to commit :
+git add src/content/committees/{newcommittee}.md
 #  Commit new changes
 git commit -m "<Add committ message>"
 git push -u origin <new-branch-name>

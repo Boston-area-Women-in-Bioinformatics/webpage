@@ -74,6 +74,14 @@
   .btn-tertiary {
     @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
   }
+
+  .image-description {
+    @apply mb-8 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700;
+  }
+
+  .image-description summary {
+    @apply cursor-pointer font-semibold text-gray-700 dark:text-gray-300 mb-2;
+  }
 }
 
 #header.scroll > div:first-child {
@@ -122,6 +130,12 @@
 .dropdown:focus .dropdown-menu,
 .dropdown:focus-within .dropdown-menu,
 .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-submenu:focus .dropdown-menu,
+.dropdown-submenu:focus-within .dropdown-menu,
+.dropdown-submenu:hover .dropdown-menu {
   display: block;
 }
 

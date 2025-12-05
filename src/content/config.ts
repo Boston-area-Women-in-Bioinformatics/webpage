@@ -8,6 +8,7 @@ const metadataDefinition = () =>
       ignoreTitleTemplate: z.boolean().optional(),
 
       canonical: z.string().url().optional(),
+      canonicalSource: z.string().optional(),
 
       robots: z
         .object({
@@ -55,7 +56,9 @@ const postCollection = defineCollection({
     title: z.string(),
     excerpt: z.string().optional(),
     image: z.string().optional(),
+    imageAlt: z.string().optional(),
     imageDescription: z.string().optional(),
+    imagePosition: z.enum(['top', 'center', 'bottom']).optional(),
 
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
@@ -82,7 +85,9 @@ const newsletterCollection = defineCollection({
     title: z.string(),
     excerpt: z.string().optional(),
     image: z.string().optional(),
+    imageAlt: z.string().optional(),
     imageDescription: z.string().optional(),
+    imagePosition: z.enum(['top', 'center', 'bottom']).optional(),
     authors: z
       .array(
         z.object({
@@ -114,8 +119,21 @@ const eventCollection = defineCollection({
   }),
 });
 
+const committeeCollection = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: 'src/content/committees' }),
+  schema: z.object({
+    id: z.string(),
+    title: z.string(),
+    description: z.string(),
+    icon: z.string().optional(),
+    chairs: z.array(z.string()),
+    members: z.array(z.string()).optional(),
+  }),
+});
+
 export const collections = {
   post: postCollection,
   event: eventCollection,
   newsletter: newsletterCollection,
+  committee: committeeCollection,
 };

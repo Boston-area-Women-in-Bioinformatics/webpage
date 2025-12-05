@@ -39,7 +39,9 @@ const getNormalizedNewsletter = async (newsletter: CollectionEntry<'newsletter'>
     title,
     excerpt,
     image,
+    imageAlt,
     imageDescription,
+    imagePosition,
     authors: rawAuthors, // new format
     draft = false,
     metadata = {},
@@ -66,7 +68,9 @@ const getNormalizedNewsletter = async (newsletter: CollectionEntry<'newsletter'>
     title: title,
     excerpt: excerpt,
     image: image,
+    imageAlt: imageAlt,
     imageDescription: imageDescription,
+    imagePosition: imagePosition,
     authors, // updated field
 
     draft: draft,

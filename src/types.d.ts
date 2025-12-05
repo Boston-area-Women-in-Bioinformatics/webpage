@@ -17,6 +17,7 @@ export interface Newsletter {
   image?: ImageMetadata | string;
   imageAlt?: string;
   imageDescription?: string;
+  imagePosition?: 'top' | 'center' | 'bottom';
   authors?: PostAuthor[];
   metadata?: MetaData;
   draft?: boolean;
@@ -50,6 +51,8 @@ export interface Post {
   imageAlt?: string;
   /** Image attribution/description (e.g., "Photo by Jane Doe on Unsplash") */
   imageDescription?: string;
+  /** Image position for cropping (top, center, or bottom) */
+  imagePosition?: 'top' | 'center' | 'bottom';
 
   /**  */
   category?: Taxonomy;
@@ -89,6 +92,7 @@ export interface MetaData {
   ignoreTitleTemplate?: boolean;
 
   canonical?: string;
+  canonicalSource?: string;
 
   robots?: MetaDataRobots;
 
@@ -273,6 +277,9 @@ export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' |
   content?: string;
   actions?: string | CallToAction[];
   image?: string | unknown;
+  padding?: string;
+  imageBefore?: boolean;
+  imageGap?: string;
 }
 
 export interface Team extends Omit<Headline, 'classes'>, Widget {

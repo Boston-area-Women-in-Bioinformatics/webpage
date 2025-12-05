@@ -17,9 +17,23 @@ export interface Props {
 
 const { post, url } = Astro.props;
 
-const isRemoteImage = typeof post.image === 'string' && post.image.startsWith('http');
-const imageWidth = post.image?.width ?? 900;
-const imageHeight = post.image?.height ?? 506;
+const isRemoteImage =
+  typeof post.image === 'string' &&
+  (post.image.startsWith('http') || post.image.startsWith('/assets/') || post.image.startsWith('/blog_images/'));
+
+// Determine the canonical source name
+const getCanonicalSourceName = () => {
+  if (post.metadata?.canonicalSource) {
+    return post.metadata.canonicalSource;
+  }
+  if (post.metadata?.canonical?.startsWith('https://lfaller.github.io')) {
+    return 'Original Source: Carriagetown Data Solutions';
+  }
+  if (post.metadata?.canonical?.startsWith('https://smartlink.ausha.co/a-coffee-with-compbio')) {
+    return 'Coffee With CompBio';
+  }
+  return 'Original Source';
+};
 ---
 
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">
@@ -90,6 +104,18 @@ const imageHeight = post.image?.height ?? 506;
               </>
             )
           }
+          {
+            post.metadata?.canonical && (
+              <>
+                {' '}
+                ·{' '}
+                <a href={post.metadata.canonical} target="_blank" rel="noopener noreferrer" class="hover:underline">
+                  <Icon name="tabler:external-link" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
+                  {getCanonicalSourceName()}
+                </a>
+              </>
+            )
+          }
         </p>
       </div>
 
@@ -106,29 +132,27 @@ const imageHeight = post.image?.height ?? 506;
 
       {
         post.image ? (
-          isRemoteImage ? (
-            <img
-              src={post.image}
-              class="block max-w-[500px] w-full h-auto mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
-              alt={post?.excerpt || ''}
-              width={imageWidth}
-              height={imageHeight}
-              loading="eager"
-              decoding="async"
-            />
-          ) : (
-            <Image
-              src={post.image}
-              class="block max-w-[900px] w-full h-auto mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
-              widths={[400, 600, 900]}
-              sizes="(max-width: 900px) 100vw, 900px"
-              alt={post?.excerpt || ''}
-              width={imageWidth}
-              height={imageHeight}
-              loading="eager"
-              decoding="async"
-            />
-          )
+          <div class="max-w-3xl mx-auto px-4 sm:px-6 mb-6 flex justify-center">
+            {isRemoteImage ? (
+              <img
+                src={post.image}
+                class="w-3/4 sm:max-w-full h-auto sm:rounded-md"
+                alt={post?.excerpt || ''}
+                loading="eager"
+                decoding="async"
+              />
+            ) : (
+              <Image
+                src={post.image}
+                class="w-3/4 sm:max-w-full h-auto sm:rounded-md"
+                widths={[400, 600, 900]}
+                sizes="(max-width: 900px) 100vw, 900px"
+                alt={post?.excerpt || ''}
+                loading="eager"
+                decoding="async"
+              />
+            )}
+          </div>
         ) : (
           <div class="max-w-3xl mx-auto px-4 sm:px-6">
             <div class="border-t dark:border-slate-700" />
@@ -137,9 +161,10 @@ const imageHeight = post.image?.height ?? 506;
       }
       {
         post.imageDescription && (
-          <p class="max-w-3xl mx-auto px-4 sm:px-6 text-muted dark:text-slate-400 text-sm italic">
-            {post.imageDescription}
-          </p>
+          <p
+            class="max-w-3xl mx-auto px-4 sm:px-6 text-muted dark:text-slate-400 text-sm italic [&_a]:text-blue-600 [&_a]:underline dark:[&_a]:text-blue-400 [&_a]:hover:text-blue-800 dark:[&_a]:hover:text-blue-300"
+            set:html={post.imageDescription}
+          />
         )
       }
     </header>

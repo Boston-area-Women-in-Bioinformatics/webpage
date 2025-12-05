@@ -15,7 +15,23 @@ const {
 
   id,
   bg = await Astro.slots.render('bg'),
+
+  // New parameters for customization
+  padding = 'py-12 md:py-20 lg:py-0', // Vertical padding (default is large)
+  imageBefore = false, // If true, image appears between content and actions on mobile
+  imageGap = 'lg:gap-8', // Gap between image and content (default is gap-8)
 } = Astro.props;
+
+// Check if image is a remote/public path
+const isRemoteImage =
+  typeof image === 'object' &&
+  image !== null &&
+  'src' in image &&
+  typeof image.src === 'string' &&
+  (image.src.startsWith('http') ||
+    image.src.startsWith('/photos/') ||
+    image.src.startsWith('/assets/') ||
+    image.src.startsWith('/blog_images/'));
 ---
 
 <section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
@@ -26,8 +42,8 @@ const {
   </div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-    <div class="py-12 md:py-20 lg:py-0 lg:flex lg:items-center lg:gap-8">
-      <div class="basis-1/2 text-center lg:text-left pb-10 md:pb-16 mx-auto">
+    <div class={`${padding} lg:flex lg:items-center ${imageGap}`}>
+      <div class="basis-1/2 text-center lg:text-left pb-6 md:pb-8 lg:pb-0 mx-auto">
         {
           tagline && (
             <p
@@ -39,11 +55,12 @@ const {
         {
           title && (
             <h1
-              class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
+              class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tighter tracking-tighter sm:mb-4 font-heading dark:text-gray-200 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
               set:html={title}
             />
           )
         }
+
         <div class="max-w-3xl mx-auto lg:max-w-none">
           {
             subtitle && (
@@ -53,7 +70,36 @@ const {
               />
             )
           }
+          {/* On mobile when imageBefore=true, show image here between title and subtitle */}
+          {
+            imageBefore && image && (
+              <div class="lg:hidden my-6">
+                <div class="relative m-auto max-w-md intersect-once intercept-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
+                  {typeof image === 'string' ? (
+                    <Fragment set:html={image} />
+                  ) : isRemoteImage ? (
+                    <img
+                      src={String(image.src)}
+                      alt={'alt' in image ? String(image.alt || '') : ''}
+                      class={`mx-auto h-auto rounded-md w-32 sm:w-48 md:w-64 ${'class' in image ? String(image.class || '') : ''}`}
+                      loading="eager"
+                    />
+                  ) : (
+                    <Image
+                      class="mx-auto h-auto rounded-md w-full"
+                      widths={[400, 768, 1024]}
+                      sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, 1024px"
+                      loading="eager"
+                      width={600}
+                      {...image}
+                    />
+                  )}
+                </div>
+              </div>
+            )
+          }
           {content && <Fragment set:html={content} />}
+
           {
             actions && (
               <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 lg:justify-start lg:m-0 lg:max-w-7xl intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
@@ -71,15 +117,23 @@ const {
           }
         </div>
       </div>
-      <div class="basis-1/2">
+      {/* On mobile when imageBefore=false, show image here after buttons */}
+      <div class={`basis-1/2 ${imageBefore ? 'hidden lg:block' : ''}`}>
         {
           image && (
             <div class="relative m-auto max-w-5xl intersect-once intercept-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
               {typeof image === 'string' ? (
                 <Fragment set:html={image} />
+              ) : isRemoteImage ? (
+                <img
+                  src={String(image.src)}
+                  alt={'alt' in image ? String(image.alt || '') : ''}
+                  class={`mx-auto h-auto rounded-md w-32 sm:w-48 md:w-64 lg:w-80 ${'class' in image ? String(image.class || '') : ''}`}
+                  loading="eager"
+                />
               ) : (
                 <Image
-                  class="mx-auto h-auto rounded-md w-full"
+                  class="mx-auto h-auto rounded-md w-full lg:w-1/2"
                   widths={[400, 768, 1024, 2040]}
                   sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
                   loading="eager"
