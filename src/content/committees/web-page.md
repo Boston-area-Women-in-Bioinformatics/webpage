@@ -8,7 +8,6 @@ chairs:
 members:
   - 'Yaseswini Neelamraju'
   - 'Vishwa Talati'
-  - 'Anushka Dongaonkar'
   - 'Lorena Pantano'
   - 'Siqin Li'
 ---

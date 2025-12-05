@@ -12,6 +12,20 @@ const alumni = {
 
   // Member Profiles
   members: [
+    // Anushka Dongaonkar
+    {
+      name: 'Anushka Dongaonkar',
+      nameLink: 'https://www.linkedin.com/in/anushka-dongaonkar-191b18201/',
+      title: 'Web Page Developer',
+      avatar: '/team/Anushka.jpeg',
+      social: {
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/anushka-dongaonkar-191b18201/',
+        github: 'https://github.com/anushka-don',
+      },
+    },
     // Isha Parikh
     {
       // Name: First and last name
