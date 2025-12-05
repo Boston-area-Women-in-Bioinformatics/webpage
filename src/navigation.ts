@@ -45,8 +45,21 @@ export const headerData = {
       ],
     },
     {
-      text: 'Career Program',
-      href: getPermalink('/career-mentorship'),
+      text: 'Resources',
+      links: [
+        {
+          text: 'Career Program',
+          href: getPermalink('/resources/career-mentorship'),
+        },
+        {
+          text: 'Upskilling Resources',
+          href: getPermalink('/resources/upskilling'),
+        },
+        {
+          text: 'Partner Communities',
+          href: getPermalink('/resources/partner-communities'),
+        },
+      ],
     },
     {
       text: 'Newsletter',
