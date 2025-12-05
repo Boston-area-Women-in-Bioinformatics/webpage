@@ -22,7 +22,6 @@ metadata:
 
 <!-- toc -->
 
-
 ## Getting Started: The Foundation
 
 ### Core Team Assembly
@@ -93,7 +92,6 @@ Based on Boston WiB's successful model, consider establishing these committees a
 
 ### Essential Committees (Start Here)
 
-
 1. **Web/Digital and Communication Committee** - Technical infrastructure
 
    - Handle communications workflows
@@ -103,14 +101,15 @@ Based on Boston WiB's successful model, consider establishing these committees a
 
 2. **Events Committee** – Programming and logistics for events
 
-  The Events Committee is responsible for:
-  - Designing a balanced annual program (technical talks, workshops, networking, career panels, journal clubs, etc.)
-  - Collecting ideas from the community and shaping them into concrete event formats
-  - Handling event logistics: dates, venues (or virtual platforms), AV needs, accessibility considerations, and registration pages (e.g., Luma/Meetup)
-  - Coordinating with speakers and panelists (outreach, confirmations, talk titles/abstracts, bios)
-  - Ensuring each event has a clear run-of-show, roles for volunteers, and a backup plan for virtual participation where possible
-  - Partnering with other committees (Web/Digital, Sponsorship, Communications) to promote events, capture photos/resources, and follow up with attendees
-  - Tracking basic metrics (attendance, feedback, repeat attendees) to improve future programming and support sponsorship conversations
+The Events Committee is responsible for:
+
+- Designing a balanced annual program (technical talks, workshops, networking, career panels, journal clubs, etc.)
+- Collecting ideas from the community and shaping them into concrete event formats
+- Handling event logistics: dates, venues (or virtual platforms), AV needs, accessibility considerations, and registration pages (e.g., Luma/Meetup)
+- Coordinating with speakers and panelists (outreach, confirmations, talk titles/abstracts, bios)
+- Ensuring each event has a clear run-of-show, roles for volunteers, and a backup plan for virtual participation where possible
+- Partnering with other committees (Web/Digital, Sponsorship, Communications) to promote events, capture photos/resources, and follow up with attendees
+- Tracking basic metrics (attendance, feedback, repeat attendees) to improve future programming and support sponsorship conversations
 
 <span style="color: red;"><i>BWiB BTDT advice: we didn’t have official committees for the first ~9 years of the group, but once we did establish committees, we got more things done in a more organized fashion. </i></span>
 
