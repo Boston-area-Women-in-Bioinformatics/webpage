@@ -20,7 +20,17 @@ metadata:
 
 ## Table of Contents
 
-<!-- toc -->
+- [Table of Contents](table-of-contents)
+- [Getting Started: The Foundation](getting-started:-the-foundation)
+- [Digital Infrastructure: Setting Up Your Online Presence](digital-infrastructure:-setting-up-your-online-presence)
+- [Committee Structure: Learning from Boston WiB](committee-structure:-learning-from-boston-wib)
+- [Event Planning: What We Wish We'd Known](event-planning:-what-we-wish-we'd-known)
+- [Funding and Sponsorship: Making It Sustainable](funding-and-sponsorship:-making-it-sustainable)
+- [Community Building: The Soft Skills](community-building:-the-soft-skills)
+- [Common Pitfalls and How to Avoid Them](common-pitfalls-and-how-to-avoid-them)
+- [Timeline: First Year Milestones](timeline:-first-year-milestones)
+- [Resources and Templates](resources-and-templates)
+- [Final Words of Encouragement](final-words-of-encouragement)
 
 ## Getting Started: The Foundation
 
