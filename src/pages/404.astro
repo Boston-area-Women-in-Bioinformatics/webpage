@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 import { getHomePermalink } from '~/utils/permalinks';
+import Image from '~/components/common/Image.astro';
 
 const title = `Error 404`;
 ---
@@ -11,12 +12,24 @@ const title = `Error 404`;
       <div class="max-w-md text-center">
         <h2 class="mb-8 font-bold text-9xl">
           <span class="sr-only">Error</span>
-          <span class="text-primary">404</span>
+          <span class="text-gray-900 dark:text-slate-100">404</span>
         </h2>
-        <p class="text-3xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
-        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
-          But dont worry, you can find plenty of other things on our homepage.
-        </p>
+        <Image
+          src={'/photos/goth_labtop_dark.png'}
+          alt="Anthropomorphic laptop with a discontent, goth expression."
+          class="hidden dark:block mb-6"
+          decoding="async"
+          loading="lazy"
+        />
+        <Image
+          src={'/photos/goth_labtop_light.png'}
+          alt="Anthropomorphic laptop with a discontent, goth expression."
+          class="block dark:hidden mb-6"
+          decoding="async"
+          loading="lazy"
+        />
+        <p class="text-3xl font-semibold md:text-3xl text-gray-900 dark:text-slate-100">This page isn’t here.</p>
+        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">Let’s go somewhere less disappointing</p>
         <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">Back to homepage</a>
       </div>
     </div>
