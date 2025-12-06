@@ -6,7 +6,6 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '~/components/FormattedDate.astro';
 import EventAddress from 'src/components/EventAddress.astro';
 import Button from '~/components/ui/Button.astro';
-import Hero2 from '~/components/widgets/Hero2.astro';
 //import { Icon } from 'astro-icon/components';
 
 const future_events = (
@@ -41,32 +40,44 @@ if (next_event) {
 
 {
   future_events.length === 0 ? (
-    <Hero2
-      title="New Events Coming Soon!"
-      subtitle="We're brewing up some exciting gatherings and can't wait to share them with you. Check back soon or join our slack to be the first to know!"
-      image={{
-        src: '/photos/eventFairy.png',
-        alt: 'Event Fairy',
-        class: 'dark:[filter:brightness(1.5)_saturate(0.8)]',
-      }}
-      imageBefore={true}
-      padding="py-16"
-      actions={[
-        {
-          variant: 'primary',
-          text: 'Join Our Community',
-          href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ',
-          icon: 'tabler:brand-slack',
-          target: '_blank',
-        },
-        {
-          variant: 'secondary',
-          text: 'View Past Events',
-          href: '/events/archived',
-          icon: 'tabler:history',
-        },
-      ]}
-    />
+    <div class="relative m-auto max-w-6xl lg:flex lg:items-center lg:gap-8">
+      <div class="w-full lg:w-2/3 text-center lg:text-left mb-8 lg:mb-0">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+          New Events Coming Soon!
+        </h1>
+        <p class="text-lg sm:text-xl text-muted mb-6 dark:text-slate-300">
+          We're brewing up some exciting gatherings and can't wait to share them with you. Subscribe to our Luma page to
+          stay in the loop!
+        </p>
+        <div class="flex gap-4 justify-center lg:justify-start flex-wrap">
+          <a
+            href="https://luma.com/bwib"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center px-6 py-3.5 md:px-8 rounded-full bg-gradient-to-r from-pink-500 via-yellow-500 to-green-500 hover:opacity-90 transition font-semibold text-base text-white"
+          >
+            Follow Us on Luma
+            <svg class="w-5 h-5 ml-1 -mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+          </a>
+          <Button variant="secondary" text="Watch Past Events" href="/events/archived" icon="tabler:history" />
+        </div>
+      </div>
+      <div class="lg:w-1/3">
+        <img
+          src="/photos/eventFairy2.png"
+          alt="Fairy at a desk with calendar pages scattered around"
+          class="mx-auto h-auto rounded-md w-32 sm:w-48 md:w-64 lg:w-80 dark:[filter:brightness(1.5)_saturate(0.8)]"
+          loading="lazy"
+        />
+      </div>
+    </div>
   ) : (
     <div class="relative m-auto max-w-6xl intersect-once intercept-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter lg:flex lg:items-center">
       <div class="lg:w-2/5 {image_class}">
