@@ -4,6 +4,7 @@ title: 'Starting a Women in Bioinformatics Chapter: A Practical Guide'
 slug: blog/tutorial/starting-a-women-in-bioinformatics-chapter
 excerpt: '"Been There, Done That" advice from established chapters'
 image: ~/assets/images/WIB_Logo.jpg
+imageAlt: 'Boston Women in Bioinformatics Logo'
 category: Tutorial
 tags:
   - computationalbiology
