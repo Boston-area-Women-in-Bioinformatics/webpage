@@ -92,6 +92,7 @@ export interface MetaData {
   ignoreTitleTemplate?: boolean;
 
   canonical?: string;
+  canonicalSource?: string;
 
   robots?: MetaDataRobots;
 

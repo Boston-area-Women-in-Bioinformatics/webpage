@@ -12,16 +12,19 @@ authors:
   - name: 'Lorena Pantano, Ph.D.'
     url: 'https://www.linkedin.com/in/lpantano'
 category: video
+draft: false
 tags:
   - career-advice
   - professional-development
   - leadership-skills
   - workplace-culture
+  - work-life-decoded
 listeningTime: '3 min'
 metadata:
   title: 'Work Life Decoded: How to Handle Workplace Negativity (Without Becoming the Office Therapist)'
   description: 'Practical strategies for handling workplace negativity without getting dragged into the drama or becoming everyone’s emotional dumping ground'
   canonical: https://www.patreon.com/posts/143081096
+  canonicalSource: 'Work Life Decoded'
 ---
 
 “That person is SO incompetent.” “This project is a disaster.” “Management has no idea what they’re doing.”

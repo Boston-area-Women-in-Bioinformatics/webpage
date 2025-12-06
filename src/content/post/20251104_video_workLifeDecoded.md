@@ -12,17 +12,20 @@ authors:
   - name: 'Lorena Pantano, Ph.D.'
     url: 'https://www.linkedin.com/in/lpantano'
 category: video
+draft: false
 tags:
   - career-advice
   - achievement-tracking
   - career-strategy
   - professional-development
   - productivity-tools
+  - work-life-decoded
 listeningTime: '3 min'
 metadata:
   title: "Work Life Decoded: Your Weekly Win Log – The Career Tool You Didn't Know You Needed"
   description: 'Why you should keep a weekly log of your wins (and how it can transform your career)'
   canonical: https://www.patreon.com/posts/your-weekly-win-142523683
+  canonicalSource: 'Work Life Decoded'
 ---
 
 In their latest video, Women in Bioinformatics chairs Lorena and Lina tackle a deceptively simple practice that can transform your career: keeping a weekly log of your wins and quantifying your achievements.

@@ -48,6 +48,8 @@ After you enter a new branch, you need to create a markdown file in the `src/con
 
 The markdown file should follow a specific format. In between the top two `---` you must fill out the event parameters. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The metadata should include fields like `title`, `dateTime`, `location`, `url`, `image`, `tags`, and `imgpos`. The `imgpos` parameter is for the css on the main events page. See https://tailwindcss.com/docs/object-position for options. `tags` are not currently in use, but may be in the future.
 
+Note that for the `dateTime` field, the time zone should be specified as either `-05:00` for Eastern Standard Time (EST) or `-04:00` for Eastern Daylight Time (EDT), depending on the date of the event. If the event is in December (EST) use -05:00, but if an event is during Daylight Saving Time (roughly March-November), you should use -04:00 for EDT.
+
 To add an image, upload it to the `public/photos` directory of your cloned repository. The image should be referenced in the markdown file using the `image` field in the metadata.
 
 After creating the markdown file and uploading the image, you can run the following commands to format the files and commit your changes:
