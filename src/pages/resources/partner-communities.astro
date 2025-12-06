@@ -1,0 +1,133 @@
+---
+import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon/components';
+import Layout from '~/layouts/PageLayout.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { SITE } from '~/config/site/config.js';
+
+const metadata = {
+  title: `Related Communities - ${SITE.title}`,
+  description: 'Organizations and networks in computational biology, bioinformatics, and related fields.',
+};
+
+const allCommunities = await getCollection('communities');
+
+// Group by type
+const groupedByType = {
+  bioinformatics: allCommunities.filter((c) => c.data.category === 'bioinformatics'),
+  biotech: allCommunities.filter((c) => c.data.category === 'biotech'),
+  'data-science': allCommunities.filter((c) => c.data.category === 'data-science'),
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Header Section -->
+  <section class="text-center pt-16 pb-4">
+    <div class="container max-w-5xl mx-auto px-4">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight text-gray-900 dark:text-white">
+        Related Communities
+      </h1>
+
+      <p class="text-lg sm:text-xl text-muted dark:text-slate-300 mb-8">
+        Organizations and networks in Bioinformatics and related fields.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-4 px-4 max-w-5xl mx-auto">
+    {
+      Object.entries(groupedByType).map(([category, communities]) =>
+        communities.length > 0 ? (
+          <div class="mb-10">
+            <h2 class="text-3xl font-semibold mb-4 text-gray-800 dark:text-slate-200">
+              {category
+                .split('-')
+                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ')}
+            </h2>
+            <div class="grid gap-4 md:grid-cols-2">
+              {communities.map((resource) => (
+                <a
+                  href={resource.data.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="border border-gray-200 dark:border-gray-700 rounded-lg p-5 hover:shadow-lg hover:border-primary dark:hover:border-blue-400 transition-all bg-white dark:bg-gray-800 block cursor-pointer group"
+                >
+                  <h4 class="text-lg font-semibold mb-2 text-primary dark:text-blue-400 group-hover:underline">
+                    {resource.data.name}
+                  </h4>
+                  <p class="text-sm text-muted dark:text-slate-300">{resource.data.description}</p>
+                  {resource.data.focus && resource.data.focus.length > 0 && (
+                    <div class="mt-3 flex flex-wrap gap-2">
+                      {resource.data.focus.map((tag) => (
+                        <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  {(resource.data.female || resource.data.boston) && (
+                    <div class="mt-3 flex flex-wrap gap-3 text-sm">
+                      {resource.data.female && (
+                        <span class="flex items-center gap-1 text-gray-700 dark:text-gray-300">
+                          <Icon name="tabler:check" class="w-4 h-4 text-green-600 dark:text-green-400" />
+                          Women-focused
+                        </span>
+                      )}
+                      {resource.data.boston && (
+                        <span class="flex items-center gap-1 text-gray-700 dark:text-gray-300">
+                          <Icon name="tabler:check" class="w-4 h-4 text-green-600 dark:text-green-400" />
+                          Boston chapter
+                        </span>
+                      )}
+                    </div>
+                  )}
+                </a>
+              ))}
+            </div>
+          </div>
+        ) : null
+      )
+    }
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="py-16 md:py-20 bg-gray-50 dark:bg-slate-800">
+    <CallToAction
+      title="Help us grow this list"
+      classes={{
+        title: 'text-5xl md:text-6xl font-bold tracking-tighter mb-4 font-heading',
+      }}
+      actions={[
+        {
+          variant: 'primary',
+          text: 'Email us',
+          href: 'mailto:Bostonwomeninbioinformatics@gmail.com',
+          icon: 'tabler:mail',
+        },
+      ]}
+    >
+      <Fragment slot="subtitle">
+        <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto text-left">
+          <div class="text-gray-700 dark:text-gray-300">
+            <p class="mb-4">
+              We are committed to building connections across the bioinformatics and computational biology communities.
+              If your organization shares our mission, or if you know of a community we've missed, please reach out!
+            </p>
+            <p>We review submissions regularly and aim to respond within two weeks.</p>
+          </div>
+          <div class="text-green-800 dark:text-gray-400">
+            <p class="font-semibold mb-3">Please include:</p>
+            <ul class="list-disc list-outside space-y-2 ml-6">
+              <li>Community/organization name</li>
+              <li>Website URL</li>
+              <li>One sentence describing your mission and activities</li>
+              <li>Primary focus areas</li>
+            </ul>
+          </div>
+        </div>
+      </Fragment>
+    </CallToAction>
+  </section>
+</Layout>
