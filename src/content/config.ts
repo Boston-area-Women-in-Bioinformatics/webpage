@@ -137,7 +137,7 @@ const resourcesCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     url: z.string().url(),
-    category: z.enum(['courses', 'tutorials', 'tools', 'documentation']),
+    category: z.enum(['bioinformatics', 'data-science', 'biology', 'coding']),
     tags: z.array(z.string()).optional(),
     featured: z.boolean().default(false),
   }),

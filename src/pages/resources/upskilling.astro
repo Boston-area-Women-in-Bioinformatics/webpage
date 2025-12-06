@@ -12,9 +12,10 @@ const metadata = {
 const allResources = await getCollection('resources');
 const featuredResources = allResources.filter((r) => r.data.featured);
 const resourcesByCategory = {
-  courses: allResources.filter((r) => r.data.category === 'courses'),
-  tutorials: allResources.filter((r) => r.data.category === 'tutorials'),
-  tools: allResources.filter((r) => r.data.category === 'tools'),
+  bioinformatics: allResources.filter((r) => r.data.category === 'bioinformatics'),
+  'data-science': allResources.filter((r) => r.data.category === 'data-science'),
+  coding: allResources.filter((r) => r.data.category === 'coding'),
+  biology: allResources.filter((r) => r.data.category === 'biology'),
 };
 ---
 
@@ -67,14 +68,13 @@ const resourcesByCategory = {
   }
 
   <section class="py-8 px-4 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Browse by Category</h2>
     {
       Object.entries(resourcesByCategory).map(([category, resources]) =>
         resources.length > 0 ? (
           <div class="mb-10">
-            <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-slate-200">
+            <h2 class="text-3xl font-semibold mb-4 text-gray-800 dark:text-slate-200">
               {category.charAt(0).toUpperCase() + category.slice(1)}
-            </h3>
+            </h2>
             <div class="grid gap-4 md:grid-cols-2">
               {resources.map((resource) => (
                 <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-5 hover:shadow-md transition-shadow bg-white dark:bg-gray-800">
