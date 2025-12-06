@@ -2,13 +2,16 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="190.13614mm"
+   height="181.00714mm"
+   viewBox="0 0 190.13614 181.00714"
    version="1.1"
    id="svg1"
    inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
    sodipodi:docname="goth_labtop_light.svg"
+   inkscape:export-filename="goth_labtop_light.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,8 +27,8 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      inkscape:zoom="0.78216891"
-     inkscape:cx="662.90029"
-     inkscape:cy="597.69699"
+     inkscape:cx="606.64646"
+     inkscape:cy="359.89669"
      inkscape:window-width="1840"
      inkscape:window-height="934"
      inkscape:window-x="0"
@@ -55,21 +58,22 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-14.995059,-62.756261)">
     <path
-       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        d="m 102.83371,143.76423 c 0,0 1.90876,-4.01812 3.72096,-5.07403 1.66764,-0.97168 4.02196,-1.53508 5.75057,-0.67653 1.99176,0.98925 3.38269,5.75056 3.38269,5.75056 v 0"
        id="path6"
        sodipodi:nodetypes="csscc" />
     <rect
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.42378;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.42378;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        id="rect1"
        width="150.65121"
        height="97.201935"
        x="34.436047"
        y="72.098228" />
     <rect
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.42378;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.42378;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        id="rect2"
        width="171.07851"
        height="116.27893"
@@ -78,10 +82,10 @@
     <g
        id="g7"
        transform="matrix(1.8559895,0,0,2.8358104,-194.68963,-538.8087)"
-       style="fill:none;stroke-width:0.65121477;stroke-dasharray:none;stroke:#000000;stroke-opacity:1.0">
+       style="fill:none;stroke:#000000;stroke-width:0.651215;stroke-dasharray:none;stroke-opacity:1">
       <path
          id="rect1-4"
-         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.65121477;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.651215;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          d="M 63.252709,164.6317 H 155.4007 l 4.26152,18.0488 a 3.1287759,3.1287759 128.35757 0 1 -3.04504,3.84775 l -96.181258,0 a 2.4821267,2.4821267 52.762055 0 1 -2.391573,-3.14645 z"
          sodipodi:nodetypes="ccccc"
          inkscape:path-effect="#path-effect1"
@@ -90,9 +94,9 @@
       <g
          id="g6"
          transform="matrix(0.80997036,0,0,0.80843295,137.61259,49.667737)"
-         style="fill:none;stroke-width:0.8047624;stroke-dasharray:none;stroke:#000000;stroke-opacity:1.0">
+         style="fill:none;stroke:#000000;stroke-width:0.804762;stroke-dasharray:none;stroke-opacity:1">
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6"
            width="3.0411878"
            height="3.0528047"
@@ -100,7 +104,7 @@
            y="275.4668"
            transform="matrix(1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0"
            width="3.0411878"
            height="3.0528047"
@@ -108,7 +112,7 @@
            y="261.89618"
            transform="matrix(1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-4"
            width="3.0411878"
            height="3.0528047"
@@ -116,7 +120,7 @@
            y="275.4668"
            transform="matrix(1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-2"
            width="3.0411878"
            height="3.0528047"
@@ -124,7 +128,7 @@
            y="275.4668"
            transform="matrix(1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-2-2"
            width="6.5800223"
            height="2.5900662"
@@ -132,7 +136,7 @@
            y="275.69815"
            transform="matrix(1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-2-2-55"
            width="6.5800223"
            height="2.5900662"
@@ -140,7 +144,7 @@
            y="271.2742"
            transform="matrix(1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-2-2-55-8"
            width="5.7680759"
            height="2.6573987"
@@ -148,7 +152,7 @@
            y="266.7829"
            transform="matrix(1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-2-2-5"
            width="3.9470453"
            height="2.8370514"
@@ -156,7 +160,7 @@
            y="275.57465"
            transform="matrix(1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-2-2-5-0"
            width="3.9470453"
            height="2.8370514"
@@ -164,7 +168,7 @@
            y="257.34872"
            transform="matrix(1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5"
            width="3.0411878"
            height="3.0528047"
@@ -172,7 +176,7 @@
            y="261.89618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6"
            width="3.0411878"
            height="3.0528047"
@@ -180,7 +184,7 @@
            y="257.24084"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-2-2-55-9"
            width="6.5800223"
            height="2.5900662"
@@ -188,7 +192,7 @@
            y="271.2742"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-2-2-55-8-4"
            width="5.7680759"
            height="2.6573987"
@@ -196,7 +200,7 @@
            y="266.7829"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-2-8"
            width="3.0411878"
            height="3.0528047"
@@ -204,7 +208,7 @@
            y="275.4668"
            transform="matrix(1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-2-7"
            width="37.026512"
            height="2.5604112"
@@ -212,7 +216,7 @@
            y="275.71298"
            transform="matrix(1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4"
            width="3.0411878"
            height="3.0528047"
@@ -220,7 +224,7 @@
            y="257.24084"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46"
            width="3.0411878"
            height="3.0528047"
@@ -228,7 +232,7 @@
            y="257.24084"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40"
            width="3.0411878"
            height="3.0528047"
@@ -236,7 +240,7 @@
            y="257.24084"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7"
            width="3.0411878"
            height="3.0528047"
@@ -244,7 +248,7 @@
            y="257.24084"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5"
            width="3.0411878"
            height="3.0528047"
@@ -252,7 +256,7 @@
            y="257.24084"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-7"
            width="3.0411878"
            height="3.0528047"
@@ -260,7 +264,7 @@
            y="257.24084"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-5"
            width="3.0411878"
            height="3.0528047"
@@ -268,7 +272,7 @@
            y="257.24084"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-6"
            width="3.0411878"
            height="3.0528047"
@@ -276,7 +280,7 @@
            y="257.24084"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-7-5"
            width="3.0411878"
            height="3.0528047"
@@ -284,7 +288,7 @@
            y="257.24084"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-8"
            width="3.0411878"
            height="3.0528047"
@@ -292,7 +296,7 @@
            y="257.24084"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-5"
            width="3.0411878"
            height="3.0528047"
@@ -300,7 +304,7 @@
            y="257.24084"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-7-55"
            width="3.0411878"
            height="3.0528047"
@@ -308,7 +312,7 @@
            y="257.0097"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-9"
            width="3.0411878"
            height="3.0528047"
@@ -316,7 +320,7 @@
            y="261.89618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-2"
            width="3.0411878"
            height="3.0528047"
@@ -324,7 +328,7 @@
            y="261.89618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-4"
            width="3.0411878"
            height="3.0528047"
@@ -332,7 +336,7 @@
            y="261.89618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-58"
            width="3.0411878"
            height="3.0528047"
@@ -340,7 +344,7 @@
            y="261.89618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-62"
            width="3.0411878"
            height="3.0528047"
@@ -348,7 +352,7 @@
            y="261.89618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-7-51"
            width="3.0411878"
            height="3.0528047"
@@ -356,7 +360,7 @@
            y="261.89618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-5-3"
            width="3.0411878"
            height="3.0528047"
@@ -364,7 +368,7 @@
            y="261.89618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-6-9"
            width="3.0411878"
            height="3.0528047"
@@ -372,7 +376,7 @@
            y="261.89618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-7-5-7"
            width="3.0411878"
            height="3.0528047"
@@ -380,7 +384,7 @@
            y="261.89618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-8-3"
            width="3.0411878"
            height="3.0528047"
@@ -388,7 +392,7 @@
            y="261.89618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-5-7"
            width="3.0411878"
            height="3.0528047"
@@ -396,7 +400,7 @@
            y="261.89618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-9-8"
            width="3.0411878"
            height="3.0528047"
@@ -404,7 +408,7 @@
            y="266.38748"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-2-7"
            width="3.0411878"
            height="3.0528047"
@@ -412,7 +416,7 @@
            y="266.38748"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-4-1"
            width="3.0411878"
            height="3.0528047"
@@ -420,7 +424,7 @@
            y="266.38748"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-58-5"
            width="3.0411878"
            height="3.0528047"
@@ -428,7 +432,7 @@
            y="266.38748"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-62-5"
            width="3.0411878"
            height="3.0528047"
@@ -436,7 +440,7 @@
            y="266.38748"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-7-51-8"
            width="3.0411878"
            height="3.0528047"
@@ -444,7 +448,7 @@
            y="266.38748"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-5-3-5"
            width="3.0411878"
            height="3.0528047"
@@ -452,7 +456,7 @@
            y="266.38748"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-6-9-6"
            width="3.0411878"
            height="3.0528047"
@@ -460,7 +464,7 @@
            y="266.38748"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-7-5-7-7"
            width="3.0411878"
            height="3.0528047"
@@ -468,7 +472,7 @@
            y="266.38748"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-8-3-9"
            width="3.0411878"
            height="3.0528047"
@@ -476,7 +480,7 @@
            y="266.38748"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-5-7-4"
            width="3.0411878"
            height="3.0528047"
@@ -484,7 +488,7 @@
            y="266.38748"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-9-8-4"
            width="3.0411878"
            height="3.0528047"
@@ -492,7 +496,7 @@
            y="270.81146"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-2-7-4"
            width="3.0411878"
            height="3.0528047"
@@ -500,7 +504,7 @@
            y="270.81146"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-4-1-5"
            width="3.0411878"
            height="3.0528047"
@@ -508,7 +512,7 @@
            y="270.81146"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-58-5-9"
            width="3.0411878"
            height="3.0528047"
@@ -516,7 +520,7 @@
            y="270.81146"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-62-5-7"
            width="3.0411878"
            height="3.0528047"
@@ -524,7 +528,7 @@
            y="270.81146"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-7-51-8-5"
            width="3.0411878"
            height="3.0528047"
@@ -532,7 +536,7 @@
            y="270.81146"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-5-3-5-3"
            width="3.0411878"
            height="3.0528047"
@@ -540,7 +544,7 @@
            y="270.81146"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-6-9-6-9"
            width="3.0411878"
            height="3.0528047"
@@ -548,7 +552,7 @@
            y="270.81146"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-6-9-6-9-5-6"
            width="3.0411878"
            height="3.0528047"
@@ -556,7 +560,7 @@
            y="270.81146"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-7-5-7-7-0"
            width="3.0411878"
            height="3.0528047"
@@ -564,7 +568,7 @@
            y="270.81146"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-8-3-9-5"
            width="3.0411878"
            height="3.0528047"
@@ -572,7 +576,7 @@
            y="270.81146"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-7-55-5"
            width="3.0411878"
            height="3.0528047"
@@ -580,7 +584,7 @@
            y="261.89618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-0"
            width="3.0411878"
            height="3.0528047"
@@ -588,7 +592,7 @@
            y="275.23563"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-6"
            width="3.0411878"
            height="3.0528047"
@@ -596,7 +600,7 @@
            y="275.23563"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-2"
            width="3.0411878"
            height="3.0528047"
@@ -604,7 +608,7 @@
            y="275.23563"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-00"
            width="3.0411878"
            height="3.0528047"
@@ -612,7 +616,7 @@
            y="257.0097"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-56"
            width="3.0411878"
            height="3.0528047"
@@ -620,7 +624,7 @@
            y="257.0097"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-7"
            width="3.0411878"
            height="3.0528047"
@@ -628,7 +632,7 @@
            y="257.0097"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-4-8"
            width="3.0411878"
            height="3.0528047"
@@ -636,7 +640,7 @@
            y="261.89618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-58-0"
            width="3.0411878"
            height="3.0528047"
@@ -644,7 +648,7 @@
            y="261.89618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-62-6"
            width="3.0411878"
            height="3.0528047"
@@ -652,7 +656,7 @@
            y="261.89618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-2-9"
            width="3.0411878"
            height="3.0528047"
@@ -660,7 +664,7 @@
            y="275.39847"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-2-3"
            width="3.0411878"
            height="3.0528047"
@@ -668,7 +672,7 @@
            y="256.61951"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-00-0"
            width="3.0411878"
            height="3.0528047"
@@ -676,7 +680,7 @@
            y="265.95908"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-56-4"
            width="3.0411878"
            height="3.0528047"
@@ -684,7 +688,7 @@
            y="265.95908"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-7-2"
            width="3.0411878"
            height="3.0528047"
@@ -692,7 +696,7 @@
            y="265.84888"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-4-8-3"
            width="3.0411878"
            height="3.0528047"
@@ -700,7 +704,7 @@
            y="271.11618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-58-0-3"
            width="3.0411878"
            height="3.0528047"
@@ -708,7 +712,7 @@
            y="271.11618"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-62-6-7"
            width="3.0411878"
            height="3.0528047"
@@ -716,7 +720,7 @@
            y="270.95087"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-00-0-3"
            width="3.0411878"
            height="3.0528047"
@@ -724,7 +728,7 @@
            y="256.70721"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-56-4-6"
            width="3.0411878"
            height="3.0528047"
@@ -732,7 +736,7 @@
            y="256.70721"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-7-2-0"
            width="3.0411878"
            height="3.0528047"
@@ -740,7 +744,7 @@
            y="256.70721"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-40-4-8-3-4"
            width="3.0411878"
            height="3.0528047"
@@ -748,7 +752,7 @@
            y="261.33313"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-4-7-58-0-3-0"
            width="3.0411878"
            height="3.0528047"
@@ -756,7 +760,7 @@
            y="261.33313"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;paint-order:markers stroke fill;stroke-dasharray:none;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-0-5-6-46-5-62-6-7-9"
            width="3.0411878"
            height="3.0528047"
@@ -764,7 +768,7 @@
            y="261.27805"
            transform="matrix(-1,0,-0.08715574,0.9961947,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80718738;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.807187;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-2-2-4"
            width="7.9388204"
            height="2.4901028"
@@ -772,7 +776,7 @@
            y="276.40366"
            transform="matrix(1,0,-0.10937504,0.99400055,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80710922;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.807109;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-2-2-4-8"
            width="7.8333812"
            height="2.4973114"
@@ -780,7 +784,7 @@
            y="-86.490395"
            transform="matrix(0,1,-0.99419309,-0.10761085,0,0)" />
         <rect
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.80629797;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.806298;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            id="rect6-2-2-4-8-5"
            width="6.5800223"
            height="2.5900662"
@@ -790,7 +794,7 @@
       </g>
     </g>
     <path
-       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        id="path5"
        sodipodi:type="arc"
        sodipodi:cx="73.911736"
@@ -802,7 +806,7 @@
        sodipodi:arc-type="slice"
        d="m 89.641233,96.575745 a 15.729498,8.9641228 0 0 1 -7.864749,7.763155 15.729498,8.9641228 0 0 1 -15.729498,0 15.729498,8.9641228 0 0 1 -7.864748,-7.763155 h 15.729498 z" />
     <path
-       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        id="path5-7"
        sodipodi:type="arc"
        sodipodi:cx="143.40688"
@@ -814,51 +818,51 @@
        sodipodi:arc-type="slice"
        d="m 159.13637,97.450493 a 15.729498,8.9641228 0 0 1 -7.86475,7.763157 15.729498,8.9641228 0 0 1 -15.72949,0 15.729498,8.9641228 0 0 1 -7.86475,-7.763157 h 15.7295 z" />
     <path
-       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        d="m 59.535308,95.730067 -3.04442,-4.397494"
        id="path7" />
     <path
-       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        d="m 65.285876,96.406604 0.33827,-7.780182"
        id="path8" />
     <path
-       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        d="m 71.374713,95.730067 0.67654,-7.780182"
        id="path9" />
     <path
-       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        d="m 78.140091,96.744873 0.676537,-8.45672"
        id="path10" />
     <path
-       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        d="m 84.228928,96.744873 1.691344,-8.45672"
        id="path11" />
     <path
-       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        d="m 89.302959,97.42141 3.04442,-8.118451"
        id="path12" />
     <path
-       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        d="m 129.21868,97.75968 -2.70615,-7.103644"
        id="path13" />
     <path
-       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        d="m 133.2779,96.744873 0.67654,-6.765374"
        id="path14" />
     <path
-       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        d="m 138.6902,97.083143 1.01481,-8.118451"
        id="path15" />
     <path
-       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        d="m 147.14692,97.42141 0.33827,-8.456718"
        id="path16" />
     <path
-       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        d="m 153.9123,98.09795 1.0148,-8.794991"
        id="path17" />
     <path
-       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;paint-order:markers stroke fill;stroke-opacity:1.0"
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.494;stroke-miterlimit:4.9;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        d="m 159.3246,98.774487 2.36788,-8.456721"
        id="path18" />
   </g>
