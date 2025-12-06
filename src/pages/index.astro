@@ -155,8 +155,9 @@ const metadata = {
                             src={latestNewsletter.image}
                             alt={
                               latestNewsletter.imageAlt ||
-                              latestNewsletter.excerpt?.slice(0, 100) ||
-                              latestNewsletter.title
+                              (latestNewsletter.excerpt ? latestNewsletter.excerpt.slice(0, 100) : null) ||
+                              latestNewsletter.title ||
+                              'Newsletter image'
                             }
                             class="w-full h-64 object-cover"
                             widths={[400, 600]}
@@ -218,7 +219,7 @@ const metadata = {
                         ) : (
                           <Image
                             src={post.image}
-                            alt={post.imageAlt}
+                            alt={post.imageAlt || post.title || 'Blog post image'}
                             class="w-full h-32 object-cover"
                             style={`object-position: ${objectPosition};`}
                             widths={[200, 300]}
