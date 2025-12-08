@@ -131,9 +131,37 @@ const committeeCollection = defineCollection({
   }),
 });
 
+const resourcesCollection = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: 'src/content/resources' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    url: z.string().url(),
+    category: z.enum(['bioinformatics', 'machine-learning', 'math', 'biology', 'coding', 'professional-development']),
+    tags: z.array(z.string()).optional(),
+    featured: z.boolean().default(false),
+  }),
+});
+
+const communitiesCollection = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: 'src/content/partnerCommunities' }),
+  schema: z.object({
+    name: z.string(),
+    description: z.string(),
+    website: z.string().url(),
+    focus: z.array(z.string()),
+    category: z.enum(['bioinformatics', 'biotech', 'data-science']),
+    location: z.string().optional(),
+    female: z.boolean().default(false),
+    boston: z.boolean().default(false),
+  }),
+});
+
 export const collections = {
   post: postCollection,
   event: eventCollection,
   newsletter: newsletterCollection,
   committee: committeeCollection,
+  resources: resourcesCollection,
+  communities: communitiesCollection,
 };
