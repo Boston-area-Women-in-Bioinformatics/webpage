@@ -38,43 +38,54 @@ const metadata = {
     </div>
   </section>
 
-  <!-- Shirt Call to Action -->
+  <!-- Career Mentorship Program Call to Action -->
   <section class="py-16 md:py-20 bg-gray-50 dark:bg-slate-800">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <Hero2
-        title="Our Merch Game is Finally Deploying"
-        subtitle="Join us in bringing Boston Women in Bioinformatics swag to life! Show your pride at events, workshops, zoom calls, and anywhere your bioinformatics journey takes you."
-        tagline="Preorder Now for Just $24"
-        imageBefore={true}
-        imageGap="lg:gap-1"
+        title="Career Mentorship Program"
+        subtitle="Empowering women in bioinformatics to advance into leadership roles across academia and industry."
+        tagline="Applications Open Through December 2025"
+        imageBefore={false}
+        imageGap="lg:gap-8"
         padding="py-8 md:py-10 lg:py-0"
         image={{
-          src: '/photos/tshirt_mockup.svg', // Replace with actual path to uploaded shirt image
-          alt: 'Women+ in Bioinformatics T-shirt with colorful circular logo',
+          src: 'https://images.unsplash.com/photo-1553028826-f4804a6dba3b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+          alt: 'A group of women work together at a wooden table with laptops and papers.',
         }}
+        imageCitation='Photo by <a href="https://unsplash.com/@cowomen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">CoWomen</a> on <a href="https://unsplash.com/photos/a-group-of-people-sitting-around-a-wooden-table-ZKHksse8tUU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
       >
         <Fragment slot="content">
-          <div class="text-center mb-6">
-            <p class="text-lg text-gray-700 dark:text-gray-300 mb-2">
-              We're aiming for <span class="font-bold text-accent dark:text-green-400">30 responses</span> to get a quote
-              from the shirt wizards.
+          <div class="text-center lg:text-left mb-6">
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+              Join our year-long mentorship program pairing early- to mid-career professionals with senior mentors who
+              are established leaders in bioinformatics.
             </p>
-            <p class="text-base text-gray-600 dark:text-gray-400 italic">
-              The faster you respond, the faster we can make this magic happen!
+            <p class="text-base text-gray-600 dark:text-gray-400 mb-4">
+              <strong>Program launches:</strong> January 2026
             </p>
           </div>
-          <div class="flex gap-4 justify-center flex-wrap">
+          <div class="flex gap-4 justify-center lg:justify-start flex-wrap">
             <Button
               variant="primary"
-              text="Order Your Shirt Now"
-              href="https://forms.gle/BQuWoMSu7ueii9wk7"
-              icon="tabler:square-rounded-arrow-right"
+              text="Register as Mentee"
+              href="https://givebutter.com/BWIBMentorship-mentee"
+              icon="tabler:user-plus"
             />
-            <Button variant="secondary" text="Join Our Community" href="/contact" />
+            <Button
+              variant="secondary"
+              text="Become a Mentor"
+              href="https://givebutter.com/BWIBMentorship-mentor"
+              icon="tabler:bulb"
+            />
           </div>
-          <p class="text-sm text-gray-500 dark:text-gray-400 mt-6 text-center italic">
-            Let's make 2026 cozy, nerdy, and fabulous. ✨
-          </p>
+          <div class="mt-6 text-center lg:text-left">
+            <a
+              href="/resources/career-mentorship"
+              class="text-primary dark:text-blue-400 hover:underline text-sm font-medium"
+            >
+              Learn more about the program →
+            </a>
+          </div>
         </Fragment>
       </Hero2>
     </div>
