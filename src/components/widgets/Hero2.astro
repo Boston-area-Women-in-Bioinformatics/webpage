@@ -20,6 +20,7 @@ const {
   padding = 'py-12 md:py-20 lg:py-0', // Vertical padding (default is large)
   imageBefore = false, // If true, image appears between content and actions on mobile
   imageGap = 'lg:gap-8', // Gap between image and content (default is gap-8)
+  imageCitation, // Optional citation text with HTML links
 } = Astro.props;
 
 // Check if image is a remote/public path
@@ -121,27 +122,32 @@ const isRemoteImage =
       <div class={`basis-1/2 ${imageBefore ? 'hidden lg:block' : ''}`}>
         {
           image && (
-            <div class="relative m-auto max-w-5xl intersect-once intercept-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
-              {typeof image === 'string' ? (
-                <Fragment set:html={image} />
-              ) : isRemoteImage ? (
-                <img
-                  src={String(image.src)}
-                  alt={'alt' in image ? String(image.alt || '') : ''}
-                  class={`mx-auto h-auto rounded-md w-32 sm:w-48 md:w-64 lg:w-80 ${'class' in image ? String(image.class || '') : ''}`}
-                  loading="eager"
-                />
-              ) : (
-                <Image
-                  class="mx-auto h-auto rounded-md w-full lg:w-1/2"
-                  widths={[400, 768, 1024, 2040]}
-                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
-                  loading="eager"
-                  width={600}
-                  {...image}
-                />
+            <>
+              <div class="relative m-auto max-w-5xl intersect-once intercept-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
+                {typeof image === 'string' ? (
+                  <Fragment set:html={image} />
+                ) : isRemoteImage ? (
+                  <img
+                    src={String(image.src)}
+                    alt={'alt' in image ? String(image.alt || '') : ''}
+                    class={`mx-auto h-auto rounded-md w-48 sm:w-64 md:w-80 lg:w-full ${'class' in image ? String(image.class || '') : ''}`}
+                    loading="eager"
+                  />
+                ) : (
+                  <Image
+                    class="mx-auto h-auto rounded-md w-full lg:w-1/2"
+                    widths={[400, 768, 1024, 2040]}
+                    sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                    loading="eager"
+                    width={600}
+                    {...image}
+                  />
+                )}
+              </div>
+              {imageCitation && (
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 text-center italic" set:html={imageCitation} />
               )}
-            </div>
+            </>
           )
         }
       </div>
