@@ -121,7 +121,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                               aria-label={`${text2} submenu`}
                               id={`dropdown-${index}-${subIndex}`}
                             >
-                              {text2}
+                              <span set:html={text2} />
                               <Icon name="tabler:chevron-right" class="w-3.5 h-3.5 ml-2" aria-hidden="true" />
                             </button>
                             <ul
@@ -137,9 +137,8 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                                     ]}
                                     href={href3}
                                     aria-current={href3 === currentPath ? 'page' : undefined}
-                                  >
-                                    {text3}
-                                  </a>
+                                    set:html={text3}
+                                  />
                                 </li>
                               ))}
                             </ul>
@@ -152,9 +151,8 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                             ]}
                             href={href2}
                             aria-current={href2 === currentPath ? 'page' : undefined}
-                          >
-                            {text2}
-                          </a>
+                            set:html={text2}
+                          />
                         )}
                       </li>
                     ))}
@@ -200,7 +198,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                   <Icon name="tabler:rss" class="w-5 h-5" aria-hidden="true" />
                 </button>
                 <ul
-                  class="dropdown-menu md:backdrop-blur-md dark:md:bg-slate-800 rounded md:absolute right-0 pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.25)]"
+                  class="dropdown-menu md:backdrop-blur-md dark:md:bg-slate-800 rounded md:absolute right-0 pl-4 md:pl-0 hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.25)]"
                   aria-labelledby="rss-menu"
                 >
                   <li>
