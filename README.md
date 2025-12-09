@@ -1,7 +1,23 @@
 # Boston-Area Women in Bioinformatics Website
 
-<img src="src/assets/favicons/WIB_Logo.png" align="right"
-     alt="Logo for Boston-Area Women in Bioinformatics" width="100">
+<img src="src/assets/favicons/WIB_Logo.png" alt="Logo for Boston-Area Women in Bioinformatics" width="100">
+
+## Quick Links
+
+- [Getting started with the website (Mac)](#getting-started-with-the-website-mac)
+- [Getting started without write-access](#getting-started-without-write-access)
+- [Add a new event](#add-a-new-event)
+- [Modify event page template](#modify-event-page-template)
+- [Add a new blog post](#add-a-new-blog-post)
+- [Add a new newsletter](#add-a-new-newsletter)
+- [Modify Newsletter template](#modify-newsletter-template)
+- [Add a video to the meetings archive](#add-a-video-to-the-meetings-archive)
+- [Add a team member](#add-a-team-member)
+- [Adding a Resource](#adding-a-resource)
+- [Adding a Community](#adding-a-community)
+- [Adding and Editing Committees](#adding-and-editing-committees)
+- [Update the banner](#update-the-banner-that-appears-on-every-page)
+- [Image Organization](#image-organization)
 
 ## Getting started with the website (Mac)
 
@@ -29,28 +45,43 @@ brew install npm
 npm install astro
 ```
 
+## Getting started without write-access
+
+1. On github, fork the repository to create a copy of it on GitHub under your account.
+
+2. Clone your forked repository
+
+```
+git clone https://github.com/{your-username}/webpage.git
+```
+
+3. Be in main branch if not already
+   `git checkout main`
+
+4. Pull any updated to the main branch
+   `git pull`
+
+5. Create a new branch with a descriptive name: `git checkout -b {new-branch}`
+
 ## Add a new event
 
 Here are the steps to add a new event with git:
 
-```
-Clone the repository locally :
-git clone https://github.com/Boston-area-Women-in-Bioinformatics/webpage.git
-# List branches in a github repos :
-git branch
-# Be in main branch if not already
-git checkout main
-# Create a new branch :
-git checkout -b <new-branch-name>
-```
+### 1. Open a new branch locally
 
-After you enter a new branch, you need to create a markdown file in the `src/content/meetups` directory.
+See [Getting started without write-access](#getting-started-without-write-access). Give branch name the format `add-event-{date}` (e.g., `add-event-2024-03-15`).
+
+### 2. Create a markdown file in the `src/content/meetups` directory.
 
 The markdown file should follow a specific format. In between the top two `---` you must fill out the event parameters. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The metadata should include fields like `title`, `dateTime`, `location`, `url`, `image`, `tags`, and `imgpos`. The `imgpos` parameter is for the css on the main events page. See https://tailwindcss.com/docs/object-position for options. `tags` are not currently in use, but may be in the future.
 
 Note that for the `dateTime` field, the time zone should be specified as either `-05:00` for Eastern Standard Time (EST) or `-04:00` for Eastern Daylight Time (EDT), depending on the date of the event. If the event is in December (EST) use -05:00, but if an event is during Daylight Saving Time (roughly March-November), you should use -04:00 for EDT.
 
-To add an image, upload it to the `public/photos` directory of your cloned repository. The image should be referenced in the markdown file using the `image` field in the metadata.
+### 3. Add an image
+
+Upload image to the `public/photos` directory of your cloned repository (see [Image Organization](#image-organization)). The image should be referenced in the markdown file using the `image` field in the metadata.
+
+### 4. Push changes to website
 
 After creating the markdown file and uploading the image, you can run the following commands to format the files and commit your changes:
 
@@ -61,10 +92,10 @@ npx prettier --write src/content/meetups/{newevent}.md
 git add /public/photos/<your_image_name>
 git add src/content/meetups/{newevent}.md
 #  Commit new changes
-git push -u origin <new-branch-name>
+git push -u origin add-event-{date}
 ```
 
-### Event Page template
+## Modify event page template
 
 To modify the event page template, go to `src/layouts/EventLayout.astro`.
 
@@ -75,18 +106,11 @@ If you want to add parameters to the newsletter markdown files, such as "data-lu
 
 ## Add a new blog post
 
-Here are the steps to add a new blogpost with git:
+### 1. Open a new branch locally
 
-```
-Clone the repository locally :
-git clone https://github.com/Boston-area-Women-in-Bioinformatics/webpage.git
-# List branches in a github repos :
-git branch
-# Be in main branch if not already
-git checkout main
-# Create a new branch :
-git checkout -b <new-branch-name>
-```
+See [Getting started without write-access](#getting-started-without-write-access). Give branch name the format `add-blog-{slug}` where slug matches the unique identifier you'll use for the blog post URL.
+
+### 2. Create a blog post in markdown
 
 After you enter a new branch, you need to create a markdown file in the `src/content/post` directory.
 
@@ -108,9 +132,13 @@ The markdown file should follow a specific format. In between the top two `---` 
 - `metadata`: additional metadata for SEO, including `title`, `description`, and `canonical` URL
 - `listeningTime`: length of time of podcast written out (optional, only for podcast posts)
 
-To add an image, upload it to the `public/photos` directory of your cloned repository. The image should be referenced in the markdown file using the `image` field in the metadata.
+### 3. Add an image (optional)
 
-After creating the markdown file and uploading the image, you can run the following commands to format the files and commit your changes:
+Upload image to the `public/blog_images` directory of your cloned repository (see [Image Organization](#image-organization)). The image should be referenced in the markdown file using the `image` field in the metadata.
+
+### 4. Push changes to website
+
+Run the following commands to format the files and commit your changes:
 
 ```
 # Run 'npx --prettier' to fix any astro specific formatting issues
@@ -119,23 +147,16 @@ npx prettier --write src/content/post/{newblog}.md
 git add /public/photos/<your_image_name>
 git add src/content/post/{newblog}.md
 #  Commit new changes
-git push -u origin <new-branch-name>
+git push -u origin add-blog-{slug}
 ```
 
 ## Add a new newsletter
 
-Here are the steps to add a new newsletter with git:
+### 1. Open a new branch locally
 
-```
-Clone the repository locally :
-git clone https://github.com/Boston-area-Women-in-Bioinformatics/webpage.git
-# List branches in a github repos :
-git branch
-# Be in main branch if not already
-git checkout main
-# Create a new branch :
-git checkout -b <new-branch-name>
-```
+See [Getting started without write-access](#getting-started-without-write-access). Give branch name the format `add-newsletter-{issue}` (e.g., `add-newsletter-15`).
+
+### 2. Create a newsletter in markdown
 
 After you enter a new branch, you need to create a markdown file in the `src/content/newsletter` directory.
 
@@ -148,7 +169,11 @@ The markdown file should follow a specific format. In between the top two `---` 
 - `authors`: list of authors if there are multiple authors, each with their name and LinkedIn URL
 - `metadata`: additional metadata for SEO, including `title`, `description`, and `canonical` URL
 
-To add an image, upload it to the `public/photos` directory of your cloned repository. The image should be referenced in the markdown file using the `image` field in the metadata.
+### 3. Add an image
+
+Upload image to the `public/photos` directory of your cloned repository (see [Image Organization](#image-organization)). The image should be referenced in the markdown file using the `image` field in the metadata.
+
+### 4. Push changes to website
 
 After creating the markdown file and uploading the image, you can run the following commands to format the files and commit your changes:
 
@@ -159,10 +184,10 @@ npx prettier --write src/content/post/{newblog}.md
 git add /public/photos/<your_image_name>
 git add src/content/post/{newblog}.md
 #  Commit new changes
-git push -u origin <new-branch-name>
+git push -u origin add-newsletter-{issue}
 ```
 
-### Newsletter template
+## Modify Newsletter template
 
 To modify the newsletter template, go to `src/components/newsletter/SinglePost.astro`.
 
@@ -176,53 +201,49 @@ If you want to add parameters to the newsletter markdown files, such as "issue n
 
 ## Add a video to the meetings archive
 
+### 1. Open a new branch locally
+
+See [Getting started without write-access](#getting-started-without-write-access). Give branch name the format `add-video-{date}` (e.g., `add-video-2024-03-15`).
+
+### 2. Edit the archive_meetings java script file
+
+Edit the archive_meetings.js file at `src/config/components/archive_meetings.js`. For the URL use the URL for embedding the video.
+
+### 4. Push changes to website
+
 ```
-Clone the repository locally :
-git clone https://github.com/Boston-area-Women-in-Bioinformatics/webpage.git
-# List branches in a github repos :
-git branch
-# Be in main branch if not already
-git checkout main
-# Create a new branch :
-git checkout -b <new-branch-name>
-## Edit the team.js  file (src/config/components/archive_meetings.js)
-## to populate the video information. For the URL use the URL for embedding the video.
 # Run 'npx --prettier' to fix any astro specific formatting issues
 npx prettier --write src/config/components/archive_meetings.js
 # Stage the changes to commit (Assuming you are in the git folder)
 git add ./src/config/components/archive_meetings.js
 #  Commit new changes
 git commit -m "<Add committ message>"
-git push -u origin <new-branch-name>
-Collapse
+git push -u origin add-video-{date}
 ```
 
 ## Add a team member
 
-1. Import this reposity to your local computer
+### 1. Open a new branch locally
 
-```
-# Clone the repository locally :
-git clone https://github.com/Boston-area-Women-in-Bioinformatics/webpage.git
-# List branches in a github repos :
-git branch
-# Be in main branch if not already
-git checkout main
-# Create a new branch :
-git checkout -b <new-branch-name>
-```
+See [Getting started without write-access](#getting-started-without-write-access). Give branch name the format `add-team-{member_name}`.
 
-2. Add headshot of team member image in this location of your cloned repo `/public/team/` (you may want to crop it to match the rest of the photos)
+### 2. Add team member image
 
-3. Edit the team.js file (src/config/components/team.js) to populate your information
+Add a headshot of team member image in this location of your cloned repo `/public/team/` (you may want to crop it to match the rest of the photos)
+
+### 3. Edit the team java script file
+
+Edit the team.js file (`src/config/components/team.js`) to populate your information
 
 - There are two different dictionary objects in this file. Fill in your information in the correct dictionary by using either ctrl+f for `const exec` or `const team`
   - `exec` = execuctive team (co-chairs and chairs of committees)
   - `team` = committee members
 
-4. Validate or add team member name to the correct committee markdown file in the `src/content/committees/` directory.
+### 4. Edit committee page
 
-5. Format the team.js and markdown file
+Validate or add team member name to the correct committee markdown file in the `src/content/committees/` directory.
+
+### 5. Format the team.js and markdown file
 
 ```
 # Run 'npx --prettier' to fix any astro specific formatting issues
@@ -230,7 +251,7 @@ npx prettier --write src/config/components/team.js
 npx prettier --write src/pages/about/committees.astro
 ```
 
-6. Stage the files and commit the changes
+### 6. Stage the files and commit the changes
 
 ```
 # Stage the changes to commit (Assuming you are in the git folder)
@@ -239,14 +260,95 @@ git add ./src/config/components/team.js
 git add ./src/pages/about/committees.astro
 #  Commit new changes
 git commit -m "<Add committ message>"
-git push -u origin <new-branch-name>
+git push -u origin add-team-{member_name}
 ```
+
+## Adding a Resource
+
+Resources include courses, tutorials, tools, documentation, and other learning materials relevant to bioinformatics and computational biology.
+
+### 1. Open a new branch locally
+
+See [Getting started without write-access](#getting-started-without-write-access). Give branch name the format `add-resource-{new_resource}`.
+
+### 2. Create a new file
+
+Navigate to `src/content/resources/` and create a new markdown file. Name it based on the resource name or descriptively.
+
+### 3. Add frontmatter
+
+Copy this template and fill in the details:
+
+```yaml
+---
+title: 'Name of the Resource'
+description: 'A concise description of what this resource offers (1-2 sentences)'
+url: 'https://example.com'
+category: 'courses' # Options: courses, tutorials, tools, documentation
+tags:
+  - 'Python'
+  - 'genomics'
+  - 'visualization'
+featured: false # Set to true only for exceptional resources
+---
+```
+
+### 4. Push to website
+
+1. Commit your changes: `git commit -m "Add {new_resource}"`
+2. Push to your fork: `git push -u origin add-resource-{new_resource}`
+3. Open a Pull Request with a clear description
+
+## Adding a Community
+
+Communities include organizations, networks, local chapters, and online groups in bioinformatics and related fields.
+
+### 1. Open a new branch locally
+
+See [Getting started without write-access](#getting-started-without-write-access). Give branch name the format `add-community-{new_community}`.
+
+### 2. Create a new file
+
+Navigate to `src/content/communities/` and create a new markdown file:
+
+```
+r-ladies.md
+women-in-data.md
+pyladies.md
+```
+
+### 3. Add frontmatter
+
+Copy this template:
+
+```yaml
+---
+name: 'Organization Name'
+description: "A clear description of the organization's mission and activities"
+website: 'https://example.org'
+focus: # same as tags
+  - networking
+  - computational-biology
+  - bioinformatics
+  - biotech
+category: 'bioinformatics' # Options: bioinformatics, biotech, data-science
+location: 'Boston, MA' # Use "Global" if worldwide, or specify region
+female: false # Set to true if organization is women-focused
+boston: false # Set to true if organization meets in Boston
+---
+```
+
+### 4. Push to website
+
+1. Commit your changes: `git commit -m "Add {new_community}"`
+2. Push to your fork: `git push -u origin add-community-{new_community}`
+3. Open a Pull Request with a clear description
 
 ## Adding and Editing Committees
 
 **To edit committee information:**
 
-1. Edit the markdown files in `src/content/committees/ ` directory.
+1. Add or edit the markdown files in `src/content/committees/ ` directory.
 2. Update the frontmatter for metadata (chairs, members, description)
 3. Edit the markdown content below the frontmatter for detailed information
 4. Format the new committee file and stage changes for git
@@ -290,80 +392,16 @@ To add or remove the banner, go to `src/layouts/PageLayout.astro` and add or rem
 
 To edit the banner, go to `src/components/Banner.jsx` and edit the text inside the `<p>` tag. You can also change the text and link in the `<a>` tag to point to a different page.
 
-### Project structure
+## Image Organization
 
-This project has the following folders and files:
+Store images in the `public/` directory following these conventions:
 
-```
-/
-├── public/
-│   ├── decapcms/
-│   │   ├── config.yml
-│   │   ├── index.html
-│   ├── team/'
-│   │   │   └── ...
-│   ├── _headers
-│   └── robots.txt
-├── src/
-│   ├── assets/
-│   │   ├── favicons/
-│   │   ├── images/
-│   │   └── styles/
-│   │       └── tailwind.css
-│   ├── components/
-│   │   ├── blog/
-│   │   ├── common/
-│   │   ├── ui/
-│   │   ├── widgets/
-│   │   │   ├── Header.astro
-│   │   │   └── ...
-│   │   ├── CustomStyles.astro
-│   │   ├── Favicons.astro
-│   │   └── Logo.astro
-│   ├── config/
-│   │   ├── components/
-│   │   │   ├── team.js
-│   │   ├── site/
-│   │   │   ├── blog.js
-│   │   │   ├── config.js
-│   ├── content/
-│   │   ├── post/
-│   │   │   ├── post-slug-1.md
-│   │   │   ├── post-slug-2.mdx
-│   │   │   └── ...
-│   │   └-- config.ts
-│   ├── layouts/
-│   │   ├── LandingLayout.astro
-│   │   ├── Layout.astro
-│   │   ├── MarkdownLayout.astro
-│   │   └── PageLayout.astro
-│   ├── pages/
-│   │   ├── [...blog]/
-│   │   │   ├── [category]/
-│   │   │   ├── [tag]/
-│   │   │   ├── [...page].astro
-│   │   │   └── index.astro
-│   │   ├── index.astro
-│   │   ├── 404.astro
-│   │   ├-- rss.xml.ts
-│   │   └── ...
-│   ├── utils/
-│   ├── config.yaml
-│   └── env.d.ts
-│   ├── navigation.js
-│   └── types.d.ts
-├── package.json
-├── astro.config.ts
-└── ...
-```
+- **General photos** → `public/photos/` (organize event photos by date, e.g., `photos/2024-03-15-workshop/`)
+- **Team member headshots** → `public/team/`
+- **Sponsor logos** → `public/sponsors/`
+- **Blog post images** → `public/blog_images/`
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-### Website images
-
-Most images can be placed in the `public/` directory if they do not require any transformation.
-
-Team member photos/avatars for the team page should go in `public/team/`. To add a member to the team page, please modify `src/config/components/team.js` and set the "avatar" setting to the path of the member's photo. The path should be in the format `/team/{image_name}`. See other entries as examples. You can also use an image from another website as an avatar image.
+When organizing event photos, create dated subdirectories within `public/photos/` using the format `YYYY-MM-DD-event-name` (e.g., `public/photos/2024-06-20-summer-meetup/`). This keeps our photo archive organized chronologically and makes it easy to find images from specific events.
 
 Logos are found in the `src/assets/favicons` directory.
 

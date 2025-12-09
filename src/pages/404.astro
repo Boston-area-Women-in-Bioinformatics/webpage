@@ -4,6 +4,30 @@ import { getHomePermalink } from '~/utils/permalinks';
 import Image from '~/components/common/Image.astro';
 
 const title = `Error 404`;
+const variations = [
+  //{
+  //  light_image: '/photos/goth_labtop_light.png',
+  //  dark_image: '/photos/goth_labtop_dark.png',
+  //  image_alt: 'Anthropomorphic laptop with a discontent, goth expression.',
+  //  big_text: 'This page isn’t here.',
+  //  small_text: 'Let’s go somewhere less disappointing',
+  //},
+  //{
+  //  light_image: '/photos/laptop_cat_404.png',
+  //  dark_image: '/photos/laptop_cat_404.png',
+  //  image_alt: 'Derpy cat sitting on a laptop',
+  //  big_text: 'This page isn’t here.',
+  //  small_text: 'The cat is trying her best.',
+  //},
+  {
+    light_image: '/photos/train_off_tracks.png',
+    dark_image: '/photos/train_off_tracks.png',
+    image_alt: 'Boston train off the tracks',
+    big_text: 'This page went off the rails.',
+    small_text: 'Let’s get you back on track.',
+  },
+];
+const random = variations[Math.floor(Math.random() * variations.length)];
 ---
 
 <Layout metadata={{ title }}>
@@ -15,21 +39,21 @@ const title = `Error 404`;
           <span class="text-gray-900 dark:text-slate-100">404</span>
         </h2>
         <Image
-          src={'/photos/goth_labtop_dark.png'}
-          alt="Anthropomorphic laptop with a discontent, goth expression."
+          src={random.dark_image}
+          alt={random.image_alt}
           class="hidden dark:block mb-6"
           decoding="async"
           loading="lazy"
         />
         <Image
-          src={'/photos/goth_labtop_light.png'}
-          alt="Anthropomorphic laptop with a discontent, goth expression."
+          src={random.light_image}
+          alt={random.image_alt}
           class="block dark:hidden mb-6"
           decoding="async"
           loading="lazy"
         />
-        <p class="text-3xl font-semibold md:text-3xl text-gray-900 dark:text-slate-100">This page isn’t here.</p>
-        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">Let’s go somewhere less disappointing</p>
+        <p class="text-3xl font-semibold md:text-3xl text-gray-900 dark:text-slate-100">{random.big_text}</p>
+        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">{random.small_text}</p>
         <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">Back to homepage</a>
       </div>
     </div>

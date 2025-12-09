@@ -281,6 +281,7 @@ export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' |
   imageBefore?: boolean;
   imageGap?: string;
   bgClass?: string;
+  imageCitation?: string;
 }
 
 export interface Team extends Omit<Headline, 'classes'>, Widget {
