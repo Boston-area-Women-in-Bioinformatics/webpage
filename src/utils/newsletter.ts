@@ -173,7 +173,7 @@ export const getStaticPathsNewsletterPost = async () => {
   if (!isNewsletterEnabled || !isNewsletterPostRouteEnabled) return [];
   return (await fetchNewsletters()).flatMap((post) => ({
     params: {
-      newsletter: post.permalink.replace(`${NEWSLETTER_BASE}/`, ''), // e.g., 'issue-1'
+      slug: post.permalink.replace(`${NEWSLETTER_BASE}/`, ''), // e.g., 'issue-003'
     },
     props: { post },
   }));

@@ -36,7 +36,13 @@ const metadata = merge(
     openGraph: {
       type: 'article',
       ...(image
-        ? { images: [{ url: image, width: (image as ImageMetadata)?.width, height: (image as ImageMetadata)?.height }] }
+        ? typeof image === 'string'
+          ? { images: [{ url: image, width: 1200, height: 630 }] }
+          : {
+              images: [
+                { url: image, width: (image as ImageMetadata)?.width, height: (image as ImageMetadata)?.height },
+              ],
+            }
         : {}),
     },
   },

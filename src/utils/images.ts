@@ -81,7 +81,9 @@ export const adaptOpenGraphImages = async (
           _image = (await unpicOptimizer(resolvedImage, [defaultWidth], defaultWidth, defaultHeight, 'jpg'))[0];
         } else if (
           typeof resolvedImage === 'string' &&
-          (resolvedImage.startsWith('/assets/') || resolvedImage.startsWith('/blog_images/'))
+          (resolvedImage.startsWith('/assets/') ||
+            resolvedImage.startsWith('/blog_images/') ||
+            resolvedImage.startsWith('/photos/'))
         ) {
           // For public assets, return as-is without optimization
           return {
