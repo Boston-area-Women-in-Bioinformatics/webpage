@@ -24,10 +24,13 @@ export interface Props {
 const { post } = Astro.props;
 const image = await findImage(post.image);
 
-// Check if image is a remote/public path (string starting with http, /assets/, or /blog_images/)
+// Check if image is a remote/public path (string starting with http, /assets/, /blog_images/, or /photos/)
 const isRemoteImage =
   typeof image === 'string' &&
-  (image.startsWith('http') || image.startsWith('/assets/') || image.startsWith('/blog_images/'));
+  (image.startsWith('http') ||
+    image.startsWith('/assets/') ||
+    image.startsWith('/blog_images/') ||
+    image.startsWith('/photos/'));
 
 // Determine if this is a blog post or newsletter
 const isBlogPost = 'tags' in post;
@@ -68,6 +71,8 @@ const objectPosition = getObjectPosition(post.imagePosition);
                 class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
                 style={`object-position: ${objectPosition};`}
                 alt={altText}
+                width="900"
+                height="506"
                 loading="lazy"
                 decoding="async"
               />
@@ -95,6 +100,8 @@ const objectPosition = getObjectPosition(post.imagePosition);
               class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
               style={`object-position: ${objectPosition};`}
               alt={altText}
+              width="900"
+              height="506"
               loading="lazy"
               decoding="async"
             />
