@@ -18,15 +18,17 @@ metadata:
   description: Celebrating committee progress, sharing upcoming events, and open registration to our mentorship program.
 ---
 
-Thanks for joining us for issue two! We’re wrapping up October, looking ahead to November, and inviting you to help shape what’s next—from shirts to elections to events. 🌟
+Issue three is here! We're trading 2025's highlights for 2026's possibilities. Think new mentorship programs, expanded resources, and events worth marking on your calendar. Ready? Let's go! 🚀
 
 Here's what's inside this month:
 
 - [Member Spotlight: Diveena Becker](#member-spotlight-diveena-becker)
 - [Non-profit Status](#non-profit-status)
+- [Holiday Dinner](#holiday-dinner)
 - [November and December Highlights](#events-recap)
 - [Upcoming Event](#upcoming-event)
 - [Career Mentorship Program](#career-mentorship-program)
+- [Community Resources](#resources)
 - [2025 Annual Committee Reports](#committee-reports)
 - [Inside our Organization Committees](#inside-committees)
 - [Meet the Executive Board](#exec-board)
@@ -42,11 +44,23 @@ Here's what's inside this month:
 
 ---
 
-<div id="non-profit-status"></div>
+<div id="non-profit-status">
 
 ## 🎊 We're Official: BWIB Gets Non-Profit Status
 
 We are thrilled to announce that Boston Women in Bioinformatics is now an official non-profit organization! This milestone allows us to expand our impact, access new resources, and better serve our community.
+
+</div>
+
+---
+
+<div id="non-profit-status">
+
+## Holiday Dinner
+
+Our board came together for a holiday dinner to celebrate 2025's successes and plan for an exciting year ahead. Grateful for the passion and dedication this group brings to supporting women in bioinformatics!
+
+</div>
 
 ---
 
@@ -85,15 +99,11 @@ Dr. Jenn Felsted-Knight from [Felsted Coaching & Consulting](https://www.felsted
   </tr>
 </table>
 
-Start 2025 the right way: surrounded by brilliant women in bioinformatics! Join us for a casual evening to meet the community, catch up with familiar faces, and welcome new members.
-
-If you missed our 10-year anniversary celebration, this is your chance to snag some of that exclusive swag, including our limited-edition t-shirts. We're also arranging for a photographer to capture professional headshots—perfect for updating your LinkedIn or giving your website a refresh (details on photo sessions coming soon, but if you have ideas or connections for organizing this, reach out to someone on the [event committee](/about/committees/events) on [slack](https://boston-women-bioinfo.slack.com)).
-
-No agenda, no presentations. Only good conversation, networking, and community. Whether you're a longtime member or considering joining for the first time, this is the perfect low-key way to connect with Boston's bioinformatics women.
+Join us for a casual evening to meet the community, catch up with familiar faces, and welcome new members. Whether you're a longtime member or considering joining for the first time, this is the perfect low-key way to connect with Boston's bioinformatics women.
 
 ---
 
-<div style="padding-top: 80px;" id="career-mentorship-program"></div>
+<div id="career-mentorship-program">
 
 ## Introducing our Career Mentorship Program
 
@@ -124,15 +134,17 @@ We're building meaningful, goal-oriented connections focused on career transitio
 
 This program is for professionals already working in the field—not currently accepting applications from students or recent graduates.
 
+</div>
+
 ---
 
-<div style="padding-top: 80px;" id="resources"></div>
+<divid="resources"></div>
 
 ## 📦 Resource Drop: Skills & Communities
 
 We've expanded the Boston Women in Bioinformatics website with two new pages designed to support your professional growth and community connections:
 
-<u>**Upskilling Resource Library**</u> – A curated collection of tools, tutorials, and platforms across bioinformatics, machine learning, coding, and professional development to help you sharpen your skills.
+<u>**Upskilling Resource Library**</u> – A curated col lection of tools, tutorials, and platforms across bioinformatics, machine learning, coding, and professional development to help you sharpen your skills.
 
 <u>**Partner Communities**</u> – Discover organizations and networks in bioinformatics, biotech, and data science to expand your connections locally and beyond.
 
@@ -145,13 +157,13 @@ Reach out to someone on the [web-development committee](/about/committees/web-pa
 
 ---
 
-<div style="padding-top: 80px;" id="committee-reports"></div>
+<div id="committee-reports"></div>
 
 ## 2025 Annual Committee Reports
 
 ---
 
-<div style="padding-top: 80px;" id="exec-board"></div>
+<div id="exec-board"></div>
 
 ## Executive Board
 
