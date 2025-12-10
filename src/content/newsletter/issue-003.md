@@ -46,10 +46,7 @@ Here's what's inside this month:
 
 ## 🎊 We're Official: BWIB Gets Non-Profit Status
 
-<figure>
-  <img src="/team/diveena.jpg" alt="Diveena Becker" />
-<figcaption>Diveena Becker, BWIB Treasurer & Events Committee Co-chair</figcaption>
-</figure>
+We are thrilled to announce that Boston Women in Bioinformatics is now an official non-profit organization! This milestone allows us to expand our impact, access new resources, and better serve our community.
 
 ---
 
