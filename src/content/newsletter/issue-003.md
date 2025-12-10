@@ -61,11 +61,11 @@ Our November Byte and Bite made for a cozy afternoon of networking and conversat
 
 ### Communicate Your Unique Value: A Masterclass for Job Seekers
 
-[Joanna Ghayad, PharmD, PCC](https://boston-wib.org/events/event20251204) (pronounced "guy-add," as she memorably shared) created an engaging space where attendees moved beyond resume bullet points. Through interactive frameworks and a practical fill-in-the-blank template, participants reflected deeply on their accomplishments, impact, and aspirations—discovering how to articulate their authentic professional value.
+[Joanna Ghayad, PharmD, PCC](https://joannaghayadcoaching.com/) (pronounced "guy-add," as she memorably shared) created an engaging space where attendees moved beyond resume bullet points. Through interactive frameworks and a practical fill-in-the-blank template, participants reflected deeply on their accomplishments, impact, and aspirations—discovering how to articulate their authentic professional value.
 
 ### ​Building Adaptive Strategies for Career Advancement in Science
 
-Career paths in science rarely follow straight lines, and navigating uncertainty requires both strategic thinking and adaptability. Today, Dr. Jenn Felsted-Knight from Felsted Coaching & Consulting led our community through an exploration of building resilient career strategies in an evolving scientific landscape. Attendees engaged in reflective exercises to identify their core values, strengths, and long-term goals, learning how to pivot effectively when faced with unexpected challenges or opportunities.
+Dr. Jenn Felsted-Knight from [Felsted Coaching & Consulting](https://www.felstedcoaching.com) inspired attendees to reflect on their career journeys, with participants sharing their own paths in science. Together, we explored practical strategies for tracking career growth and building adaptive approaches to navigate the evolving landscape of bioinformatics and computational biology.
 
 ---
 
