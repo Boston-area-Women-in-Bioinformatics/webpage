@@ -68,7 +68,7 @@ apps:
 
     post:
       isEnabled: true
-      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%
+      permalink: 'newsletter/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%
       robots:
         index: true
         follow: true
