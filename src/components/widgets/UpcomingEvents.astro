@@ -17,7 +17,6 @@ const future_events = (
 ).sort((b, a) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
 
 const next_event = future_events[0];
-const isPartnerEvent = next_event?.data.partnerEvent || false;
 
 // Breaking Title After Colon or Dash (only if event exists)
 let colonIndex: number | undefined;
