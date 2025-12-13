@@ -14,8 +14,9 @@ export const prerender = true;
 
 export const getStaticPaths = (async ({ paginate }) => {
   const all_past_events = (
-    await getCollection('event', ({ data }: CollectionEntry<'event'>) =>
-      new Date(data.dateTime) < new Date() && !data.partnerEvent
+    await getCollection(
+      'event',
+      ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) < new Date() && !data.partnerEvent
     )
   ).sort((a, b) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
 

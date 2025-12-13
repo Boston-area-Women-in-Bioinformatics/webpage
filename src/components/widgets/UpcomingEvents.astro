@@ -11,8 +11,9 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 
 // Get all future events, excluding partner events for homepage display
 const future_events = (
-  await getCollection('event', ({ data }: CollectionEntry<'event'>) =>
-    new Date(data.dateTime) > new Date() && !data.partnerEvent
+  await getCollection(
+    'event',
+    ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) > new Date() && !data.partnerEvent
   )
 ).sort((b, a) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
 

@@ -15,8 +15,9 @@ const future_events = (
 ).sort((b, a) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
 
 const all_past_events = (
-  await getCollection('event', ({ data }: CollectionEntry<'event'>) =>
-    new Date(data.dateTime) < new Date() && !data.partnerEvent
+  await getCollection(
+    'event',
+    ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) < new Date() && !data.partnerEvent
   )
 ).sort((a, b) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
 
@@ -55,7 +56,9 @@ const past_events = all_past_events.slice(0, 3);
                 transition:name={`playlist ${event.id} title`}
               >
                 {event.data.title}
-                {isPartner && <span class="ml-2 text-xs font-normal text-gray-500 dark:text-gray-400">(Partner Event)</span>}
+                {isPartner && (
+                  <span class="ml-2 text-xs font-normal text-gray-500 dark:text-gray-400">(Partner Event)</span>
+                )}
               </h3>
               <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
                 <FormattedDate date={event.data.dateTime} />
