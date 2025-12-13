@@ -15,10 +15,12 @@ const future_events = (
 ).sort((b, a) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
 
 const all_past_events = (
-  await getCollection('event', ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) < new Date())
+  await getCollection('event', ({ data }: CollectionEntry<'event'>) =>
+    new Date(data.dateTime) < new Date() && !data.partnerEvent
+  )
 ).sort((a, b) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
 
-// Show only 3 most recent past events on main page
+// Show only 3 most recent past events on main page (excluding partner events)
 const past_events = all_past_events.slice(0, 3);
 ---
 
@@ -28,31 +30,44 @@ const past_events = all_past_events.slice(0, 3);
     future_events.length === 0 ? (
       <p>No upcoming events found.</p>
     ) : (
-      future_events.map((event) => (
-        <Card padding="p-0" class="flex flex-col md:flex-row">
-          <img
-            src={event.data.image.src}
-            alt={event.data.image.alt}
-            class={`w-full md:h-48 md:w-48 h-auto object-cover ${event.data.imgpos}`}
-            transition:name="playlist ${event.id} image"
-          />
-          <div class="p-4 flex-1">
-            <h3
-              class="text-xl font-semibold mb-2 text-gray-900 dark:text-slate-100"
-              transition:name="playlist ${event.id} title"
-            >
-              {event.data.title}
-            </h3>
-            <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
-              <FormattedDate date={event.data.dateTime} />
+      future_events.map((event) => {
+        const isPartner = event.data.partnerEvent;
+        const cardClasses = isPartner
+          ? 'flex flex-col md:flex-row opacity-75 hover:opacity-90 transition-opacity duration-300'
+          : 'flex flex-col md:flex-row shadow-[0_0_15px_rgba(255,0,255,0.3),0_0_30px_rgba(0,255,255,0.2),0_0_45px_rgba(255,255,0,0.1)] hover:shadow-[0_0_20px_rgba(255,0,255,0.4),0_0_40px_rgba(0,255,255,0.3),0_0_60px_rgba(255,255,0,0.2)] transition-shadow duration-300';
+
+        // Partner events use logos, so we need object-contain with padding
+        const imageClasses = isPartner
+          ? 'w-full md:h-48 md:w-48 h-auto object-contain p-4 bg-white dark:bg-gray-800'
+          : `w-full md:h-48 md:w-48 h-auto object-cover ${event.data.imgpos}`;
+
+        return (
+          <Card padding="p-0" class={cardClasses}>
+            <img
+              src={event.data.image.src}
+              alt={event.data.image.alt}
+              class={imageClasses}
+              transition:name={`playlist ${event.id} image`}
+            />
+            <div class="p-4 flex-1">
+              <h3
+                class="text-xl font-semibold mb-2 text-gray-900 dark:text-slate-100"
+                transition:name={`playlist ${event.id} title`}
+              >
+                {event.data.title}
+                {isPartner && <span class="ml-2 text-xs font-normal text-gray-500 dark:text-gray-400">(Partner Event)</span>}
+              </h3>
+              <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
+                <FormattedDate date={event.data.dateTime} />
+              </div>
+              <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
+                <EventAddress artists={event.data.location || []} />
+              </div>
+              <Button variant="primary" href={`/events/${event.id}`} text="MORE INFO" />
             </div>
-            <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
-              <EventAddress artists={event.data.location || []} />
-            </div>
-            <Button variant="primary" href={`/events/${event.id}`} text="MORE INFO" />
-          </div>
-        </Card>
-      ))
+          </Card>
+        );
+      })
     )
   }
 </div>

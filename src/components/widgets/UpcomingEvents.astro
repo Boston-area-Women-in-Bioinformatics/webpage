@@ -9,11 +9,15 @@ import Button from '~/components/ui/Button.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 //import { Icon } from 'astro-icon/components';
 
+// Get all future events, excluding partner events for homepage display
 const future_events = (
-  await getCollection('event', ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) > new Date())
+  await getCollection('event', ({ data }: CollectionEntry<'event'>) =>
+    new Date(data.dateTime) > new Date() && !data.partnerEvent
+  )
 ).sort((b, a) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
 
 const next_event = future_events[0];
+const isPartnerEvent = next_event?.data.partnerEvent || false;
 
 // Breaking Title After Colon or Dash (only if event exists)
 let colonIndex: number | undefined;
