@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Signup from '~/components/Signup.astro';
 import FormattedDate from '~/components/FormattedDate.astro';
 import EventAddress from 'src/components/EventAddress.astro';
+import Button from '~/components/ui/Button.astro';
 
 import type { MetaData } from '~/types';
 
@@ -74,9 +75,7 @@ const secondLine = hasBreak ? title.slice(breakIndex + 1).trim() : '';
         </h2>
         {
           partnerEvent && partnerOrganization && (
-            <div class="text-base mb-3 text-gray-600 dark:text-gray-400 italic">
-              Hosted by {partnerOrganization}
-            </div>
+            <div class="text-base mb-3 text-gray-600 dark:text-gray-400 italic">Hosted by {partnerOrganization}</div>
           )
         }
         <div class="text-lg mb-4 text-gray-700 dark:text-slate-300">
@@ -130,4 +129,8 @@ const secondLine = hasBreak ? title.slice(breakIndex + 1).trim() : '';
       </section>
     )
   }
+
+  <div class="text-center px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-4xl">
+    <Button variant="secondary" href="/events" text="Return to Events" />
+  </div>
 </Layout>
