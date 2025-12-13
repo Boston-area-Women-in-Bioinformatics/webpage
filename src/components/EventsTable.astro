@@ -14,9 +14,12 @@ const future_events = (
   await getCollection('event', ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) > new Date())
 ).sort((b, a) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
 
-const past_events = (
+const all_past_events = (
   await getCollection('event', ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) < new Date())
 ).sort((a, b) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
+
+// Show only 3 most recent past events on main page
+const past_events = all_past_events.slice(0, 3);
 ---
 
 <Headline title="Upcoming Events" />
@@ -57,30 +60,42 @@ const past_events = (
 <Headline title="Past Events" />
 <div class="grid grid-cols-1 gap-6 mb-8 md:mt-3 md:mb-12 text-center">
   {
-    past_events.map((event) => (
-      <Card padding="p-0" class="flex flex-col md:flex-row">
-        <img
-          src={event.data.image.src}
-          alt={event.data.image.alt}
-          class={`w-full md:h-48 md:w-48 h-auto object-cover ${event.data.imgpos}`}
-          transition:name="playlist ${event.id} image"
-        />
-        <div class="p-4 flex-1">
-          <h3
-            class="text-xl font-semibold mb-2 text-gray-900 dark:text-slate-100"
-            transition:name="playlist ${event.id} title"
-          >
-            {event.data.title}
-          </h3>
-          <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
-            <FormattedDate date={event.data.dateTime} />
+    past_events.length === 0 ? (
+      <p>No past events found.</p>
+    ) : (
+      past_events.map((event) => (
+        <Card padding="p-0" class="flex flex-col md:flex-row">
+          <img
+            src={event.data.image.src}
+            alt={event.data.image.alt}
+            class={`w-full md:h-48 md:w-48 h-auto object-cover ${event.data.imgpos}`}
+            transition:name="playlist ${event.id} image"
+          />
+          <div class="p-4 flex-1">
+            <h3
+              class="text-xl font-semibold mb-2 text-gray-900 dark:text-slate-100"
+              transition:name="playlist ${event.id} title"
+            >
+              {event.data.title}
+            </h3>
+            <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
+              <FormattedDate date={event.data.dateTime} />
+            </div>
+            <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
+              <EventAddress artists={event.data.location || []} />
+            </div>
+            <Button variant="primary" href={`/events/${event.id}`} text="MORE INFO" />
           </div>
-          <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
-            <EventAddress artists={event.data.location || []} />
-          </div>
-          <Button variant="primary" href={`/events/${event.id}`} text="MORE INFO" />
-        </div>
-      </Card>
-    ))
+        </Card>
+      ))
+    )
   }
 </div>
+
+{
+  all_past_events.length > 3 && (
+    <div class="text-center mb-8">
+      <Button variant="secondary" href="/events/archive" text="View More Past Events" />
+    </div>
+  )
+}
