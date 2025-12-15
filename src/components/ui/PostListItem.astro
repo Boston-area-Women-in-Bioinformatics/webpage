@@ -58,13 +58,13 @@ const objectPosition = getObjectPosition(post.imagePosition);
 ---
 
 <article
-  class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ${image ? 'md:grid-cols-2' : ''}`}
+  class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ${image ? 'md:grid-cols-2' : ''} ${isNewsletter ? 'border-4 border-double border-gray-800 dark:border-gray-300 p-6 bg-white dark:bg-slate-800 shadow-xl' : ''}`}
 >
   {
     image &&
       (link ? (
-        <a class="relative block group" href={link ?? 'javascript:void(0)'}>
-          <div class="relative h-0 pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg">
+        <a class="relative flex items-center justify-center group" href={link ?? 'javascript:void(0)'}>
+          <div class="relative h-0 pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg w-full">
             {isRemoteImage ? (
               <img
                 src={image}
@@ -93,7 +93,8 @@ const objectPosition = getObjectPosition(post.imagePosition);
           </div>
         </a>
       ) : (
-        <div class="relative h-0 pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg">
+        <div class="flex items-center justify-center">
+          <div class="relative h-0 pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg w-full">
           {isRemoteImage ? (
             <img
               src={image}
@@ -120,17 +121,31 @@ const objectPosition = getObjectPosition(post.imagePosition);
             />
           )}
         </div>
+        </div>
       ))
   }
   <div class="mt-2">
     <header>
+      <h2 class={`text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading ${isNewsletter ? 'text-gray-900 dark:text-slate-100 border-b-2 border-gray-800 dark:border-gray-300 pb-2 tracking-tight' : 'text-gray-900 dark:text-slate-100'}`}>
+        {
+          link ? (
+            <a
+              class={`inline-block transition ease-in duration-200 ${isNewsletter ? 'hover:text-amber-900 dark:hover:text-amber-200' : 'hover:text-primary dark:hover:text-blue-700'}`}
+              href={link}
+            >
+              {post.title}
+            </a>
+          ) : (
+            post.title
+          )
+        }
+      </h2>
       <div class="mb-1">
-        <span class="text-sm text-gray-700 dark:text-slate-300">
+        <span class={`text-sm ${isNewsletter ? 'text-gray-800 dark:text-slate-200 font-medium uppercase tracking-wide' : 'text-gray-700 dark:text-slate-300'}`}>
           {
             isNewsletter && (
               <>
-                <Icon name="tabler:news" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" /> Issue-
-                {String((post as Newsletter).issue).padStart(3, '0')} ·{' '}
+                <Icon name="tabler:news" class="w-4 h-4 inline-block -mt-0.5" /> Issue {String((post as Newsletter).issue).padStart(3, '0')} ·{' '}
               </>
             )
           }
@@ -184,23 +199,9 @@ const objectPosition = getObjectPosition(post.imagePosition);
           }
         </span>
       </div>
-      <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading text-gray-900 dark:text-slate-100">
-        {
-          link ? (
-            <a
-              class="inline-block hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
-              href={link}
-            >
-              {post.title}
-            </a>
-          ) : (
-            post.title
-          )
-        }
-      </h2>
     </header>
 
-    {post.excerpt && <p class="flex-grow text-muted dark:text-slate-300 text-lg">{post.excerpt}</p>}
+    {post.excerpt && <p class={`flex-grow text-lg ${isNewsletter ? 'text-gray-800 dark:text-slate-300 leading-relaxed font-serif' : 'text-muted dark:text-slate-300'}`}>{post.excerpt}</p>}
     {
       isBlogPost && (post as Post).tags && Array.isArray((post as Post).tags) ? (
         <footer class="mt-5">
