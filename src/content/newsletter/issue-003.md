@@ -5,7 +5,6 @@ title: '🌟 2025 Year in Review & What’s Next'
 excerpt: Celebrating committee progress, sharing upcoming events, and open registration to our mentorship program.
 image: '/photos/2025/holiday_dinner_2025.jpg'
 imageAlt: 'Group photo of the Boston Women in Bioinformatics executive board holiday dinner'
-imageDescription: 'Boston Women in Bioinformatics executive board holiday dinner'
 authors:
   - name: 'Sakina Saif, M.S.'
     url: 'https://www.linkedin.com/in/sakinasaif'
@@ -58,7 +57,12 @@ We are thrilled to announce that Boston Women in Bioinformatics is now an offici
 
 ## Holiday Dinner
 
-Our board came together for a holiday dinner to celebrate 2025's successes and plan for an exciting year ahead. Grateful for the passion and dedication this group brings to supporting women in bioinformatics!
+<figure>
+  <img src="/photos/2025/holiday_dinner_2025.jpg" alt="Group photo of the Boston Women in Bioinformatics executive board holiday dinner" />
+<figcaption>Boston Women in Bioinformatics executive board holiday dinner</figcaption>
+</figure>
+
+In celebration of the year’s accomplishments, the BWIB organizers and the executive team gathered for a holiday dinner at Gustazo! The evening provided an opportunity to meet and connect with each other in-person, reflect on the organization’s growth, recognize the contributions of the committee chairs and volunteers, and share wishes for a happy and a healthy holiday season!
 
 </div>
 
@@ -99,7 +103,7 @@ Dr. Jenn Felsted-Knight from [Felsted Coaching & Consulting](https://www.felsted
   </tr>
 </table>
 
-Join us for a casual evening to meet the community, catch up with familiar faces, and welcome new members. Whether you're a longtime member or considering joining for the first time, this is the perfect low-key way to connect with Boston's bioinformatics women.
+Let's start 2026 right with a networking event you don't have to skip dinner for! Join us at the C-Side bar in the Cambridgeside food court for our first event of the new year - and this time, allies are welcome too (bring your colleagues!). Leave with new connections, limited-time swag, and maybe a professional headshot that doesn't scream 'pre-pandemic.' Whether your resolution is "network more" or just "update LinkedIn," we've got you covered.
 
 ---
 
