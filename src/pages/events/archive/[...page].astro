@@ -1,0 +1,79 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import Layout from '~/layouts/PageLayout.astro';
+import Headline from '~/components/ui/Headline.astro';
+import FormattedDate from '~/components/FormattedDate.astro';
+import EventAddress from '~/components/EventAddress.astro';
+import Button from '~/components/ui/Button.astro';
+import Card from '~/components/ui/Card.astro';
+import Pagination from '~/components/blog/Pagination.astro';
+
+export const prerender = true;
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const all_past_events = (
+    await getCollection(
+      'event',
+      ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) < new Date() && !data.partnerEvent
+    )
+  ).sort((a, b) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
+
+  return paginate(all_past_events, {
+    pageSize: 5,
+  });
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { page } = Astro.props as Props;
+const currentPage = page.currentPage ?? 1;
+
+const metadata = {
+  title: `Past Events${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  description: 'Browse our archive of past bioinformatics workshops, networking events, and casual meetups',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-7xl">
+    <Headline title="Past Events Archive" subtitle="Browse our history of bioinformatics events and meetups" />
+
+    <div class="grid grid-cols-1 gap-6 mb-8 md:mt-3 md:mb-12">
+      {
+        page.data.map((event) => (
+          <Card padding="p-0" class="flex flex-col md:flex-row">
+            <img
+              src={event.data.image.src}
+              alt={event.data.image.alt}
+              class={`w-full md:h-48 md:w-48 h-auto object-cover ${event.data.imgpos}`}
+              transition:name={`event ${event.id} image`}
+            />
+            <div class="p-4 flex-1">
+              <h3
+                class="text-xl font-semibold mb-2 text-gray-900 dark:text-slate-100"
+                transition:name={`event ${event.id} title`}
+              >
+                {event.data.title}
+              </h3>
+              <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
+                <FormattedDate date={event.data.dateTime} />
+              </div>
+              <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
+                <EventAddress artists={event.data.location || []} />
+              </div>
+              <Button variant="primary" href={`/events/${event.id}`} text="MORE INFO" />
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+
+    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} prevText="Newer events" nextText="Older events" />
+
+    <div class="text-center mt-8">
+      <Button variant="secondary" href="/events" text="Back to Events" />
+    </div>
+  </section>
+</Layout>

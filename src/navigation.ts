@@ -86,8 +86,8 @@ export const headerData = {
         //  href: getPermalink('/events/ama'),
         //},
         {
-          text: 'Archived Events',
-          href: getPermalink('/events/archived'),
+          text: 'Recorded Events',
+          href: getPermalink('/events/recorded-events'),
         },
       ],
     },
