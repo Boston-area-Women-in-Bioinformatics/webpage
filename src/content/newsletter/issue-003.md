@@ -21,8 +21,8 @@ Issue three is here! We're trading 2025's highlights for 2026's possibilities. T
 
 Here's what's inside this month:
 
-- [Member Spotlight: Diveena Becker](#member-spotlight-diveena-becker)
 - [Non-profit Status](#non-profit-status)
+- [Member Spotlight: Diveena Becker](#member-spotlight-diveena-becker)
 - [Holiday Dinner](#holiday-dinner)
 - [November and December Highlights](#events-recap)
 - [Upcoming Event](#upcoming-event)
@@ -34,15 +34,6 @@ Here's what's inside this month:
 
 ---
 
-## Member Spotlight: Diveena Becker
-
-<figure>
-  <img src="/team/diveena.jpg" alt="Diveena Becker" />
-<figcaption>Diveena Becker, BWIB Treasurer & Events Committee Co-chair</figcaption>
-</figure>
-
----
-
 <div id="non-profit-status">
 
 ## 🎊 We're Official: BWIB Gets Non-Profit Status
@@ -50,6 +41,15 @@ Here's what's inside this month:
 We are thrilled to announce that Boston Women in Bioinformatics is now an official non-profit organization! This milestone allows us to expand our impact, access new resources, and better serve our community.
 
 </div>
+
+---
+
+## Member Spotlight: Diveena Becker
+
+<figure>
+  <img src="/team/diveena.jpg" alt="Diveena Becker" width="100px"/>
+<figcaption>Diveena Becker, BWIB Treasurer & Events Committee Co-chair</figcaption>
+</figure>
 
 ---
 
@@ -142,7 +142,7 @@ This program is for professionals already working in the field—not currently a
 
 ---
 
-<divid="resources"></div>
+<div id="resources"></div>
 
 ## 📦 Resource Drop: Skills & Communities
 
