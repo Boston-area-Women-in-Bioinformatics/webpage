@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Signup from '~/components/Signup.astro';
 import FormattedDate from '~/components/FormattedDate.astro';
 import EventAddress from 'src/components/EventAddress.astro';
+import Button from '~/components/ui/Button.astro';
 
 import type { MetaData } from '~/types';
 
@@ -18,6 +19,8 @@ export interface Props {
   url?: string;
   data_luma_event_id?: string;
   cost?: number;
+  partnerEvent?: boolean;
+  partnerOrganization?: string;
 }
 
 const {
@@ -30,6 +33,8 @@ const {
   imgalt,
   imgpos = 'object-top object-cover',
   cost,
+  partnerEvent = false,
+  partnerOrganization,
 } = Astro.props;
 
 // Using template literals
@@ -68,6 +73,11 @@ const secondLine = hasBreak ? title.slice(breakIndex + 1).trim() : '';
           {secondLine && <br />}
           {secondLine}
         </h2>
+        {
+          partnerEvent && partnerOrganization && (
+            <div class="text-base mb-3 text-gray-600 dark:text-gray-400 italic">Hosted by {partnerOrganization}</div>
+          )
+        }
         <div class="text-lg mb-4 text-gray-700 dark:text-slate-300">
           <FormattedDate date={date} />
         </div>
@@ -86,11 +96,16 @@ const secondLine = hasBreak ? title.slice(breakIndex + 1).trim() : '';
     </div>
   </div>
 
-  <section class="px-4 py-4 sm:px-6 mx-auto lg:px-8 max-w-4xl">
-    <h3 class="font-semibold mb-4 text-xl text-gray-900 dark:text-slate-100">Details:</h3>
+  <section class={`px-4 py-4 sm:px-6 mx-auto lg:px-8 max-w-4xl ${partnerEvent ? 'mb-16' : ''}`}>
+    <h2
+      class="font-semibold mb-4 text-2xl font-heading leading-tighter tracking-tighter text-gray-900 dark:text-slate-100"
+    >
+      Details:
+    </h2>
     <div
       class="prose prose-lg dark:prose-invert max-w-none
   prose-h1:font-bold prose-h1:text-xl
+  prose-h2:font-semibold prose-h2:text-2xl
  prose-a:underline hover:prose-a:text-blue-800 dark:prose-a:text-blue-300 dark:hover:prose-a:text-blue-200
   prose-p:text-justify prose-img:rounded-xl
   prose-headings:no-underline"
@@ -98,21 +113,31 @@ const secondLine = hasBreak ? title.slice(breakIndex + 1).trim() : '';
       <slot />
     </div>
   </section>
-  <section class="px-4 py-4 sm:px-6 mx-auto lg:px-8 max-w-4xl">
-    <h3 class="font-semibold mb-4 text-xl text-gray-900 dark:text-slate-100">Code of Conduct:</h3>
-    <p class="text-gray-700 dark:text-slate-300">
-      This event is dedicated to providing a harassment-free experience for everyone, regardless of gender, gender
-      identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity,
-      religion (or lack thereof), or technology choices. We do not tolerate harassment in any form. Anyone violating
-      these rules may be sanctioned or banned from attending at the discretion of the conference organizers. Please
-      contact the organizers through lu.ma messaging/Slack, if you feel someone has broken the code of conduct.
-    </p>
-    <br /><br /><div
-      class="prose prose-a:underline hover:prose-a:text-blue-800 dark:prose-a:text-blue-300 dark:hover:prose-a:text-blue-200 dark:prose-invert"
-    >
-      Original source and credit:
-      <a href="http://2012.jsconf.us/#/about">http://2012.jsconf.us/#/about</a> &
-      <a href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy">The Ada Initiative</a>
-    </div>
-  </section>
+  {
+    !partnerEvent && (
+      <section class="px-4 py-4 sm:px-6 mx-auto lg:px-8 max-w-4xl">
+        <h2 class="font-semibold mb-4 text-2xl font-heading leading-tighter tracking-tighter text-gray-900 dark:text-slate-100">
+          Code of Conduct:
+        </h2>
+        <p class="text-gray-700 dark:text-slate-300">
+          This event is dedicated to providing a harassment-free experience for everyone, regardless of gender, gender
+          identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity,
+          religion (or lack thereof), or technology choices. We do not tolerate harassment in any form. Anyone violating
+          these rules may be sanctioned or banned from attending at the discretion of the conference organizers. Please
+          contact the organizers through lu.ma messaging/Slack, if you feel someone has broken the code of conduct.
+        </p>
+        <br />
+        <br />
+        <div class="prose prose-a:underline hover:prose-a:text-blue-800 dark:prose-a:text-blue-300 dark:hover:prose-a:text-blue-200 dark:prose-invert">
+          Original source and credit:
+          <a href="http://2012.jsconf.us/#/about">http://2012.jsconf.us/#/about</a> &
+          <a href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy">The Ada Initiative</a>
+        </div>
+      </section>
+    )
+  }
+
+  <div class="text-center px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-4xl">
+    <Button variant="secondary" href="/events" text="Return to Events" />
+  </div>
 </Layout>
