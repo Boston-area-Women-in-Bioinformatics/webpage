@@ -202,7 +202,7 @@ The committee successfully developed metrics to enable data-driven advocacy for 
 
 ## Career Sponsorship Committee
 
-<span class="text-purple-700 dark:text-purple-300">Aysheh Alrfooh, Peili Zhang</span>
+<span class="text-purple-700 dark:text-purple-300">Aysheh Alrfooh, Peili Zhang, Marissa Sumathipala</span>
 
 ### Mission
 
