@@ -7,7 +7,7 @@ focus:
   - career-development
   - professional-development
   - skill-building
-category: 'data-science'
+category: 'biotech'
 location: 'Global with a Boston Chapter'
 female: true
 boston: true
