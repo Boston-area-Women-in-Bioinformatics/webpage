@@ -163,7 +163,6 @@ export const findLatestNewsletters = async ({ count }: { count?: number }): Prom
 export const getStaticPathsNewsletterList = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isNewsletterEnabled || !isNewsletterListRouteEnabled) return [];
   return paginate(await fetchNewsletters(), {
-    params: { newsletter: NEWSLETTER_BASE || undefined },
     pageSize: newsletterPostsPerPage,
   });
 };
