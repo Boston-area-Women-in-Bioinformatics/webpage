@@ -21,10 +21,9 @@ Issue three is here! We're trading 2025's highlights for 2026's possibilities. T
 
 Here's what's inside this month:
 
-- [Non-profit Status](#non-profit-status)
-- [Member Spotlight: Diveena Becker](#member-spotlight-diveena-becker)
+- [Non-profit Announcement](#non-profit-status)
 - [Holiday Dinner](#holiday-dinner)
-- [November and December Highlights](#events-recap)
+- [Events Recap](#events-recap)
 - [Upcoming Event](#upcoming-event)
 - [Career Mentorship Program](#career-mentorship-program)
 - [Community Resources](#resources)
@@ -34,26 +33,15 @@ Here's what's inside this month:
 
 ---
 
-<div id="non-profit-status">
+<div id="non-profit-status"></div>
 
 ## 🎊 We're Official: BWIB Gets Non-Profit Status
 
-We are thrilled to announce that Boston Women in Bioinformatics is now an official non-profit organization! This milestone allows us to expand our impact, access new resources, and better serve our community.
-
-</div>
+We are thrilled to announce that BWIB officially became a nonprofit organization in 2025. This milestone provides us with the stable infrastructure needed to sustain and grow our programs, secure funding more effectively, and serve our community for years to come.
 
 ---
 
-## Member Spotlight: Diveena Becker
-
-<figure>
-  <img src="/team/diveena.jpg" alt="Diveena Becker" width="100px"/>
-<figcaption>Diveena Becker, BWIB Treasurer & Events Committee Co-chair</figcaption>
-</figure>
-
----
-
-<div id="non-profit-status">
+<div id="holiday-dinner"></div>
 
 ## Holiday Dinner
 
@@ -63,8 +51,6 @@ We are thrilled to announce that Boston Women in Bioinformatics is now an offici
 </figure>
 
 In celebration of the year’s accomplishments, the BWIB organizers and the executive team gathered for a holiday dinner at Gustazo! The evening provided an opportunity to meet and connect with each other in-person, reflect on the organization’s growth, recognize the contributions of the committee chairs and volunteers, and share wishes for a happy and a healthy holiday season!
-
-</div>
 
 ---
 
@@ -164,6 +150,8 @@ Reach out to someone on the [web-development committee](/about/committees/web-pa
 <div id="committee-reports"></div>
 
 ## 2025 Annual Committee Reports
+
+As the year draws to a close, our various committees have diligently compiled their end-of-year reports to reflect on the 2025 goals, measured progress and achievements, identified lessons learned and potential plans for the next year. This process of annual review highlights the commitment to transparency and continuous and trackable improvement within the organization. We thank all committee members for their hard work and dedication in preparing these valuable summaries. Please enjoy reading them on our website at [boston-wib.org/about/annual-report-2025](/about/annual-report-2025).
 
 ---
 
