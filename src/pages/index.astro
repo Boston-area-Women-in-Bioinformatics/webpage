@@ -137,7 +137,8 @@ const metadata = {
                 typeof latestNewsletter.image === 'string' &&
                 (latestNewsletter.image.startsWith('http') ||
                   latestNewsletter.image.startsWith('/assets/') ||
-                  latestNewsletter.image.startsWith('/blog_images/'));
+                  latestNewsletter.image.startsWith('/blog_images/') ||
+                  latestNewsletter.image.startsWith('/photos/'));
               return (
                 <article aria-labelledby="latest-newsletter-heading">
                   <h3 id="latest-newsletter-heading" class="text-2xl font-bold mb-4">
@@ -158,6 +159,8 @@ const metadata = {
                               latestNewsletter.excerpt?.slice(0, 100) ||
                               latestNewsletter.title
                             }
+                            width="600"
+                            height="400"
                             class="w-full h-64 object-cover"
                             loading="lazy"
                           />
