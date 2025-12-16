@@ -134,7 +134,7 @@ This program is for professionals already working in the field—not currently a
 
 We've expanded the Boston Women in Bioinformatics website with two new pages designed to support your professional growth and community connections:
 
-<u>**Upskilling Resource Library**</u> – A curated col lection of tools, tutorials, and platforms across bioinformatics, machine learning, coding, and professional development to help you sharpen your skills.
+<u>**Upskilling Resource Library**</u> – A curated collection of tools, tutorials, and platforms across bioinformatics, machine learning, coding, and professional development to help you sharpen your skills.
 
 <u>**Partner Communities**</u> – Discover organizations and networks in bioinformatics, biotech, and data science to expand your connections locally and beyond.
 
