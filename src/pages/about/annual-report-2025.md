@@ -100,7 +100,7 @@ The Events Committee has established a strong foundation of diverse programming,
 
 ## Website Committee
 
-<span class="text-purple-700 dark:text-purple-300">Samantha Klasfeld, Lorena pantano, Yaseswini Neelamraju, Anushka Dongaonkar, Vishwa Talati</span>
+<span class="text-purple-700 dark:text-purple-300">Samantha Klasfeld, Lorena Pantano, Yaseswini Neelamraju, Anushka Dongaonkar, Vishwa Talati</span>
 
 ### Mission
 
