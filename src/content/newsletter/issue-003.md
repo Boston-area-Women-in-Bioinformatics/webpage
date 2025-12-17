@@ -83,13 +83,13 @@ Dr. Jenn Felsted-Knight from [Felsted Coaching & Consulting](https://www.felsted
       <ul style="list-style-type: none; padding-left: 0;">
         <li>Jan 15, 2026, 5:30 PM</li>
         <li>Cambridge Side Mall, Cambridge, MA</li>
-        <li><a href="https://boston-wib.org/events/event20251107">Register</a></li>
+        <li><a href="https://boston-wib.org/events/event20260129">Register</a></li>
       </ul>
     </td>
   </tr>
 </table>
 
-Let's start 2026 right with a networking event you don't have to skip dinner for! Join us at the C-Side bar in the Cambridgeside food court for our first event of the new year - and this time, allies are welcome too (bring your colleagues!). Leave with new connections, limited-time swag, and maybe a professional headshot that doesn't scream 'pre-pandemic.' Whether your resolution is "network more" or just "update LinkedIn," we've got you covered.
+Let's start 2026 right with a networking event you don't have to skip dinner for! Join us at the C-Side bar in the Cambridgeside food court for our first event of the new year - and this time, allies are welcome too (bring your colleagues!). Come ready to make new connections, snag limited-time swag, and share your ideas for what our community should tackle this year. Whether your resolution is "network more" or "finally suggest that tool idea I've been thinking about," we've got you covered.
 
 ---
 
