@@ -109,7 +109,7 @@ Let's start 2026 right with a networking event you don't have to skip dinner for
     <ul style="list-style-type: none; padding-left: 0;">
         <li><strong>Mentorship Program Launch</strong></li>
         <li>Begins January 2026</li>
-        <li><a href="https://boston-wib.org/events/mentorship2026">Registration open through December 2025</a></li>
+        <li><a href="https://boston-wib.org/resources/career-mentorship">Registration open through December 2025</a></li>
       </ul>
     </td>
   </tr>
