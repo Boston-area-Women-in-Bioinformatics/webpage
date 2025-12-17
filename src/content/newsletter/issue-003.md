@@ -10,8 +10,8 @@ authors:
     url: 'https://www.linkedin.com/in/sakinasaif'
   - name: 'Samantha Klasfeld, Ph.D.'
     url: 'https://www.linkedin.com/in/samantha-klasfeld'
-  - name: 'Shreya Rajasekar, M.S.'
-    url: 'https://www.linkedin.com/in/shreya-rajasekar'
+  - name: 'Masoome Rezaei, M.S.'
+    url: 'https://www.linkedin.com/in/masoome-rezaei'
 metadata:
   title: '2025 Year in Review & What’s Next'
   description: Celebrating committee progress, sharing upcoming events, and open registration to our mentorship program.
