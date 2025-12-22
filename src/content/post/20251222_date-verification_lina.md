@@ -7,12 +7,12 @@ image: /assets/images/posts/verification-check.png
 imageAlt: A checkmark showing verification
 imagePosition: top
 authors:
-- name: Lina L. Faller, PhD
-  link: https://linkedin.com/in/linafaller
+  - name: Lina L. Faller, PhD
+    link: https://linkedin.com/in/linafaller
 category: Quick Take
 tags:
-- testing
-- verification
+  - testing
+  - verification
 metadata:
   title: 'Date Format Verification: No More Quote Issues'
   description: '## Verification Complete'
@@ -28,18 +28,21 @@ The publishDate field now correctly outputs without quotes in the YAML frontmatt
 ### What This Means
 
 Before:
+
 ```yaml
-publishDate: '2025-12-22T20:00:00-05:00'  # String literal
+publishDate: '2025-12-22T20:00:00-05:00' # String literal
 ```
 
 After:
+
 ```yaml
-publishDate: 2025-12-22T20:00:00-05:00    # Date object
+publishDate: 2025-12-22T20:00:00-05:00 # Date object
 ```
 
 ### Why It Matters
 
 Astro's content system relies on parsing the date field as an actual date. When it's quoted, it's treated as a string, which breaks:
+
 - Date-based sorting in archives
 - Date filtering in queries
 - Proper formatting in templates
