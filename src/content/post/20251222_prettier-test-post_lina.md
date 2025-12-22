@@ -7,12 +7,12 @@ image: /assets/images/posts/cross-post-test.png
 imageAlt: Automation excellence
 imagePosition: top
 authors:
-- name: Lina L. Faller, PhD
-  link: https://linkedin.com/in/linafaller
+  - name: Lina L. Faller, PhD
+    link: https://linkedin.com/in/linafaller
 category: Quick Take
 tags:
-- automation
-- testing
+  - automation
+  - testing
 metadata:
   title: 'Prettier Integration Success: BWIB Cross-Posting Now Formats Code'
   description: '## Prettier Integration Test'
@@ -35,6 +35,7 @@ This post demonstrates that our BWIB cross-posting system now includes automatic
 ### Why This Matters
 
 Code formatting consistency is important for:
+
 - Maintaining a professional appearance
 - Making PRs easier to review
 - Reducing unnecessary diffs
