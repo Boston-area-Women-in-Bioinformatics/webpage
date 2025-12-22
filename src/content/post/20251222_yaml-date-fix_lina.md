@@ -7,12 +7,12 @@ image: /assets/images/posts/calendar-dates.png
 imageAlt: A calendar showing dates
 imagePosition: top
 authors:
-- name: Lina L. Faller, PhD
-  link: https://linkedin.com/in/linafaller
+  - name: Lina L. Faller, PhD
+    link: https://linkedin.com/in/linafaller
 category: Quick Take
 tags:
-- technical
-- formatting
+  - technical
+  - formatting
 metadata:
   title: 'YAML Date Format: Fixing Quote Issues'
   description: '## The YAML Date Problem'
@@ -28,6 +28,7 @@ When transforming Jekyll posts to Astro format, the date field needs to be parse
 ### What Was Wrong
 
 The previous implementation would output:
+
 ```yaml
 publishDate: '2025-12-22T19:30:00-05:00'
 ```
@@ -37,11 +38,13 @@ The quotes tell Astro to treat this as a string literal, not a date. This breaks
 ### The Solution
 
 Now we output the date without quotes:
+
 ```yaml
 publishDate: 2025-12-22T19:30:00-05:00
 ```
 
 This tells Astro to parse it as a proper date object, which allows:
+
 - Correct date sorting in archives
 - Date-based filtering
 - Proper date display in templates
