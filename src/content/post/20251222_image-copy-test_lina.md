@@ -3,16 +3,16 @@ publishDate: 2025-12-22T21:00:00-05:00
 title: 'Image Copy Test: Automatic Image Transfer'
 slug: ''
 excerpt: '## Testing Automatic Image Transfer'
-image: /assets/images/posts/2025-07-15-the-bioinformatics-triangle.png
+image: /blog_images/2025-07-15-the-bioinformatics-triangle.png
 imageAlt: The bioinformatics triangle showing relationships
 imagePosition: top
 authors:
-- name: Lina L. Faller, PhD
-  link: https://linkedin.com/in/linafaller
+  - name: Lina L. Faller, PhD
+    link: https://linkedin.com/in/linafaller
 category: Quick Take
 tags:
-- testing
-- images
+  - testing
+  - images
 metadata:
   title: 'Image Copy Test: Automatic Image Transfer'
   description: '## Testing Automatic Image Transfer'
@@ -36,6 +36,7 @@ This post verifies that images are automatically copied to the BWIB repo during 
 ### The Result
 
 The image should now be:
+
 - ✓ Automatically copied to BWIB's repo
 - ✓ Available in `public/blog_images/`
 - ✓ Referenced with the new path
