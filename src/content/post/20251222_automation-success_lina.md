@@ -7,12 +7,12 @@ image: /assets/images/posts/automation-celebration.png
 imageAlt: A robot celebrating automation
 imagePosition: top
 authors:
-- name: Lina L. Faller, PhD
-  link: https://linkedin.com/in/linafaller
+  - name: Lina L. Faller, PhD
+    link: https://linkedin.com/in/linafaller
 category: Quick Take
 tags:
-- automation
-- engineering
+  - automation
+  - engineering
 metadata:
   title: 'Automation Success: Why I Love Making Things Repeatable'
   description: '## The Joy of Automation'
