@@ -7,12 +7,12 @@ image: /blog_images/2025-07-15-the-bioinformatics-triangle.png
 imageAlt: The bioinformatics triangle showing relationships
 imagePosition: top
 authors:
-- name: Lina L. Faller, PhD
-  link: https://linkedin.com/in/linafaller
+  - name: Lina L. Faller, PhD
+    link: https://linkedin.com/in/linafaller
 category: Quick Take
 tags:
-- testing
-- final
+  - testing
+  - final
 metadata:
   title: Final Image Copy Test - All Systems Go
   description: '## Final Test - Image Copying with Fixed Path Resolution'
@@ -24,6 +24,7 @@ metadata:
 ## Final Test - Image Copying with Fixed Path Resolution
 
 This is the final test to verify that:
+
 1. Images are correctly located on disk
 2. Paths are properly resolved in the workflow context
 3. Images are copied to `public/blog_images/`
@@ -33,6 +34,7 @@ This is the final test to verify that:
 ### Expected Outcome
 
 PR should contain:
+
 - ✓ Post file with `/blog_images/2025-07-15-the-bioinformatics-triangle.png` path
 - ✓ Image file at `public/blog_images/2025-07-15-the-bioinformatics-triangle.png`
 - ✓ Complete, ready-to-merge PR
