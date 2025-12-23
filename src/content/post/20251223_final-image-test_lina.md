@@ -3,7 +3,7 @@ publishDate: 2025-12-23T12:00:00-05:00
 title: Final Image Copy Test - All Systems Go
 slug: ''
 excerpt: '## Final Test - Image Copying with Fixed Path Resolution'
-image: /assets/images/posts/2025-07-15-the-bioinformatics-triangle.png
+image: /blog_images/2025-07-15-the-bioinformatics-triangle.png
 imageAlt: The bioinformatics triangle showing relationships
 imagePosition: top
 authors:
