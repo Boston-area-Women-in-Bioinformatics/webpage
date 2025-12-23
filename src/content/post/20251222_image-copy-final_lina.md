@@ -3,7 +3,7 @@ publishDate: 2025-12-22T21:30:00-05:00
 title: Image Copy - Final Test with Fixed Implementation
 slug: ''
 excerpt: '## Final Test of Image Copying'
-image: /assets/images/posts/2025-07-15-the-bioinformatics-triangle.png
+image: /blog_images/2025-07-15-the-bioinformatics-triangle.png
 imageAlt: The bioinformatics triangle showing relationships
 imagePosition: top
 authors:
