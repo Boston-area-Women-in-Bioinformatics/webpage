@@ -7,12 +7,12 @@ image: https://linafaller.github.io/assets/images/posts/2025-07-15-the-bioinform
 imageAlt: The bioinformatics triangle showing relationships
 imagePosition: top
 authors:
-- name: Lina L. Faller, PhD
-  link: https://linkedin.com/in/linafaller
+  - name: Lina L. Faller, PhD
+    link: https://linkedin.com/in/linafaller
 category: Quick Take
 tags:
-- testing
-- complete
+  - testing
+  - complete
 metadata:
   title: Image URLs Working - Final Test
   description: '## Final Test - Image URLs Pointing to Your Blog'
