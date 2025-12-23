@@ -3,7 +3,7 @@ publishDate: 2025-12-23T13:00:00-05:00
 title: Image URLs Working - Final Test
 slug: ''
 excerpt: '## Final Test - Image URLs Pointing to Your Blog'
-image: /assets/images/posts/2025-07-15-the-bioinformatics-triangle.png
+image: https://linafaller.github.io/assets/images/posts/2025-07-15-the-bioinformatics-triangle.png
 imageAlt: The bioinformatics triangle showing relationships
 imagePosition: top
 authors:
