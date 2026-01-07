@@ -13,6 +13,10 @@ export const headerData = {
           href: getPermalink('/about'),
         },
         {
+          text: '2025 Annual Report',
+          href: getPermalink('/about/annual-report-2025'),
+        },
+        {
           text: 'Committees',
           href: getPermalink('/about/committees'),
           links: [
@@ -86,8 +90,8 @@ export const headerData = {
         //  href: getPermalink('/events/ama'),
         //},
         {
-          text: 'Event Recordings',
-          href: getPermalink('/events/archived'),
+          text: 'Recorded Events',
+          href: getPermalink('/events/recorded-events'),
         },
       ],
     },

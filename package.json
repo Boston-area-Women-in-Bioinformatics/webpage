@@ -4,7 +4,7 @@
   "description": "Boston Women In BioInforatmics: Advancing Women in Bioinformatics by Creating Networks of Support, Collaboration, and Empowerment.",
   "type": "module",
   "engines": {
-    "node": "^18.17.1 || ^20.3.0 || >= 21.0.0"
+    "node": ">=20.0.0"
   },
   "scripts": {
     "dev": "astro dev",
