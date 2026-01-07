@@ -280,6 +280,7 @@ export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' |
   padding?: string;
   imageBefore?: boolean;
   imageGap?: string;
+  bgClass?: string;
   imageCitation?: string;
 }
 

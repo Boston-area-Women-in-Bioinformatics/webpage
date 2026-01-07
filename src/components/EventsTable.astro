@@ -8,6 +8,7 @@ import FormattedDate from '~/components/FormattedDate.astro';
 import EventAddress from 'src/components/EventAddress.astro';
 import Button from '~/components/ui/Button.astro';
 import Card from '~/components/ui/Card.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
 //import { Icon } from 'astro-icon/components';
 
 const future_events = (
@@ -29,7 +30,32 @@ const past_events = all_past_events.slice(0, 3);
 <div class="grid grid-cols-1 gap-6 mb-8 md:mt-3 md:mb-12 text-center">
   {
     future_events.length === 0 ? (
-      <p>No upcoming events found.</p>
+      <Hero2
+        title="New Events Coming Soon!"
+        subtitle="Exciting gatherings are brewing, and we can’t wait to share them. Join our Slack to be the first to know and help shape the magic."
+        image={{
+          src: '/photos/eventFairy.png',
+          alt: 'Fairy sprinkling event magic on our calendar',
+          class: 'dark:[filter:brightness(1.5)_saturate(0.8)]',
+        }}
+        imageBefore={true}
+        padding="py-16"
+        actions={[
+          {
+            variant: 'primary',
+            text: 'Join Our Community',
+            href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ',
+            icon: 'tabler:brand-slack',
+            target: '_blank',
+          },
+          {
+            variant: 'secondary',
+            text: 'View Past Events',
+            href: '/events/archived',
+            icon: 'tabler:history',
+          },
+        ]}
+      />
     ) : (
       future_events.map((event) => {
         const isPartner = event.data.partnerEvent;
