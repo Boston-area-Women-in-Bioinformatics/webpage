@@ -20,6 +20,22 @@ const metadata = {
       <p class="text-lg sm:text-xl text-muted dark:text-slate-300 mb-8">
         Together, we can build a more equitable and connected bioinformatics community.
       </p>
+
+      <!-- Program Status Banner -->
+      <div
+        class="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/40 dark:to-pink-900/40 border-2 border-purple-300 dark:border-purple-600 rounded-xl p-6 max-w-2xl mx-auto"
+      >
+        <div class="flex items-center justify-center gap-3 mb-2">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+          </span>
+          <span class="text-lg font-bold text-purple-900 dark:text-purple-100">2025-2026 Cohort Launching Soon</span>
+        </div>
+        <p class="text-purple-800 dark:text-purple-200 text-sm">
+          Registration has closed. We are finalizing matches and will reach out to participants soon!
+        </p>
+      </div>
     </div>
   </section>
 
@@ -46,10 +62,17 @@ const metadata = {
             career transitions, networking, and skill building. Our goal is to create a lasting culture of
             mentorship—where women not only mentor one another but also open doors to new opportunities.
           </p>
-          <p>
+          <p class="hidden">
             Applications are open through <strong>December 2025</strong> for both mentors and mentees. The program officially
             launches in
             <strong>January 2026</strong>.
+          </p>
+          <p>
+            <b>The registration period for our Career Mentorship Program has officially concluded</b>. Thank you for
+            your incredible support! We are inspired by the high level of interest from aspiring mentees and the deep
+            commitment shown by the BioPharma leaders who have stepped forward as mentors. We are now hard at work
+            finalizing our matches and will be reaching out to all participants soon with next steps. We can’t wait to
+            kick off this journey and make this pilot program a landmark success for Boston Women in Bioinformatics.
           </p>
         </div>
       </div>
@@ -57,7 +80,7 @@ const metadata = {
   </section>
 
   <!-- Registration Buttons -->
-  <section class="py-12 bg-gray-50 dark:bg-slate-800">
+  <section class="py-12 bg-gray-50 dark:bg-slate-800 hidden">
     <div class="container max-w-4xl mx-auto px-4">
       <h2 class="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white">Join the Program</h2>
 
