@@ -301,7 +301,7 @@ export const footerData = {
     {
       ariaLabel: 'Slack',
       icon: 'tabler:brand-slack',
-      href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2kg9ojwn9-arPXyQXPB_VgbVWDdoA2nQ',
+      href: 'https://boston-women-bioinfo.slack.com',
     },
     { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/groups/13074137/' },
 
