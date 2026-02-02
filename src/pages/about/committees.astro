@@ -11,8 +11,8 @@ const metadata = {
   dontUseTitleTemplate: true,
 };
 
-// Load committees from content collection
-const committeeEntries = await getCollection('committee');
+// Load committees from content collection, filtering out hidden ones
+const committeeEntries = await getCollection('committee', ({ data }) => !data.hidden);
 
 // Transform to the format expected by CommitteeGrid
 const committees = committeeEntries.map((entry) => ({
