@@ -130,6 +130,7 @@ const committeeCollection = defineCollection({
     icon: z.string().optional(),
     chairs: z.array(z.string()),
     members: z.array(z.string()).optional(),
+    hidden: z.boolean().optional(),
   }),
 });
 

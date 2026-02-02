@@ -6,6 +6,7 @@ icon: 'tabler:users'
 chairs:
   - 'Kavya Prasad'
 members: []
+hidden: true
 ---
 
 ## About
