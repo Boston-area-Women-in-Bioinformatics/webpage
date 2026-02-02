@@ -28,12 +28,12 @@ const {
 
 // Rainbow colors from the WIB logo
 const rainbowColors = [
-  'bg-purple-500',   // purple
-  'bg-pink-500',     // pink
-  'bg-orange-500',   // orange
-  'bg-yellow-500',   // yellow
-  'bg-green-500',    // green
-  'bg-sky-500',      // blue
+  'bg-purple-500', // purple
+  'bg-pink-500', // pink
+  'bg-orange-500', // orange
+  'bg-yellow-500', // yellow
+  'bg-green-500', // green
+  'bg-sky-500', // blue
 ];
 ---
 
@@ -56,7 +56,12 @@ const rainbowColors = [
           >
             <div class="flex justify-center items-center">
               {committee.icon && (
-                <div class:list={['text-white rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0 flex items-center justify-center', rainbowColors[index % rainbowColors.length]]}>
+                <div
+                  class:list={[
+                    'text-white rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0 flex items-center justify-center',
+                    rainbowColors[index % rainbowColors.length],
+                  ]}
+                >
                   <Icon name={committee.icon} class="w-6 h-6" />
                 </div>
               )}
