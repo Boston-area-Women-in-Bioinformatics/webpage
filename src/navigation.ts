@@ -19,32 +19,6 @@ export const headerData = {
         {
           text: 'Committees',
           href: getPermalink('/about/committees'),
-          links: [
-            {
-              text: 'Advocacy',
-              href: getPermalink('/about/committees/advocacy'),
-            },
-            {
-              text: 'Bioinformatics Sisters',
-              href: getPermalink('/about/committees/bioinformatics-sisters'),
-            },
-            {
-              text: 'Communications',
-              href: getPermalink('/about/committees/communications'),
-            },
-            {
-              text: 'Events',
-              href: getPermalink('/about/committees/events'),
-            },
-            {
-              text: 'Career Sponsorship',
-              href: getPermalink('/about/committees/career-sponsorship'),
-            },
-            {
-              text: 'Web Page',
-              href: getPermalink('/about/committees/web-page'),
-            },
-          ],
         },
       ],
     },
