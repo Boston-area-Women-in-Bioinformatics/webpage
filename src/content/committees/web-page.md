@@ -5,8 +5,8 @@ description: "The Web Page committee manages the organization's website to share
 icon: 'tabler:world'
 chairs:
   - 'Samantha Klasfeld'
-members:
   - 'Yaseswini Neelamraju'
+members:
   - 'Vishwa Talati'
   - 'Lorena Pantano'
   - 'Siqin Li'
