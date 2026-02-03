@@ -57,6 +57,10 @@ let colorIndex = 0;
             class="mx-auto mb-4 w-36 h-36 rounded-full object-cover object-center"
             src={member.avatar}
             alt={`${member?.name} - avatar`}
+            width={144}
+            height={144}
+            loading="lazy"
+            decoding="async"
           />
         ) : (
           <div class:list={['mx-auto mb-4 w-36 h-36 rounded-full flex items-center justify-center', bgColor]}>
