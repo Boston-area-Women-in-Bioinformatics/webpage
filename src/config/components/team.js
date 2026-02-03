@@ -303,27 +303,6 @@ const exec = {
         bluesky: 'https://bsky.app/profile/sharvarinarendra.bsky.social',
       },
     },
-    // Kavya Prasad
-    {
-      // Name: First and last name
-      name: 'Kavya Prasad',
-      // Namelink: Member's Personal Website
-      nameLink: 'https://www.linkedin.com/in/prasadkavya',
-      // Job Title
-      title: 'Co-Chair, Bioinformatics Sisters',
-      // Leadership team member Photo
-      avatar: '/team/Kavya_Prasad.png',
-      // Social links
-      social: {
-        //website: '#',
-        // twitter: '#',
-        // instagram: '#',
-        // facebook: '#',
-        linkedin: 'https://www.linkedin.com/in/prasadkavya',
-        //github: '#',
-        //bluesky: '#',
-      },
-    },
   ],
 };
 
