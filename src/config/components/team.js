@@ -95,7 +95,7 @@ const exec = {
       // Job Title
       title: 'Secretary',
       // Leadership team member Photo
-      //avatar: '/team/Minita_Shah.jpg',
+      avatar: '/team/Minita_Shah.jpg',
       // Social links
       social: {
         // website: '#',
@@ -121,6 +121,7 @@ const exec = {
         // twitter: '#',
         // instagram: '#',
         // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/hugheskj/',
       },
     },
     // Francine Camacho
@@ -128,17 +129,19 @@ const exec = {
       // Name: First and last name
       name: 'Francine Camacho',
       // Namelink: Member's Personal Website
-      //nameLink: 'https://www.linkedin.com/in/hugheskj/',
+      nameLink: 'https://www.linkedin.com/in/francinecamacho',
       // Job Title
       title: `Board member`,
       // Leadership team member Photo
-      //avatar: '/team/katie_sq.jpg',
+      avatar: '/team/Francine_Camacho.jpg',
       // Social links
       social: {
         // website: '#',
         // twitter: '#',
         // instagram: '#',
         // facebook: '#',
+        github: 'https://github.com/frcamacho',
+        linkedin: 'https://www.linkedin.com/in/francinecamacho',
       },
     },
     // Liyang Diao
