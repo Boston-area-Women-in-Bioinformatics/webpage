@@ -91,7 +91,7 @@ const exec = {
       // Name: First and last name
       name: 'Minita Shah',
       // Namelink: Member's Personal Website
-      //nameLink: 'https://www.linkedin.com/in/diveena-becker-5945a771/',
+      nameLink: 'https://www.linkedin.com/in/minita-shah',
       // Job Title
       title: 'Secretary',
       // Leadership team member Photo
@@ -102,7 +102,7 @@ const exec = {
         // twitter: ''#'',
         // instagram: '#',
         // facebook: '#',
-        //linkedin: 'https://www.linkedin.com/in/diveena-becker-5945a771/',
+        linkedin: 'https://www.linkedin.com/in/minita-shah',
       },
     },
     // Katie Hughes
