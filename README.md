@@ -229,7 +229,15 @@ See [Getting started without write-access](#getting-started-without-write-access
 
 ### 2. Add team member image
 
-Add a headshot of team member image in this location of your cloned repo `/public/team/` (you may want to crop it to match the rest of the photos)
+Add a headshot of team member image in this location of your cloned repo `/public/team/` (you may want to crop it to match the rest of the photos).
+
+**Important:** After adding the image, run the resize script to optimize it for the web. This prevents pixelation issues and reduces file sizes:
+
+```bash
+./scripts/resize-team-images.sh
+```
+
+This script automatically resizes any images larger than 500px to a maximum of 500x500 while preserving aspect ratio. Images already 500px or smaller are left unchanged.
 
 ### 3. Edit the team java script file
 
