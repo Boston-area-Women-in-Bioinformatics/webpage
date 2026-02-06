@@ -200,21 +200,6 @@ const exec = {
         bluesky: 'https://bsky.app/profile/sklasfeld.bsky.social',
       },
     },
-    // Yaseswini Neelamraju
-    {
-      name: 'Yaseswini Neelamraju',
-      nameLink: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
-      title: 'Chair (Web Page)',
-      avatar: '/team/yaseswini.png',
-      social: {
-        website: 'https://yaseswinineelamraju.netlify.app/',
-        // twitter: '#',
-        // instagram: '#',
-        // facebook: '#',
-        linkedin: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
-        github: 'https://github.com/Yaseswini',
-      },
-    },
     // Aysheh Alrfooh
     {
       name: 'Aysheh Alrfooh',
@@ -321,6 +306,21 @@ const team = {
 
   // Members of the leadership team
   members: [
+    // Yaseswini Neelamraju
+    {
+      name: 'Yaseswini Neelamraju',
+      nameLink: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
+      title: 'Chair (Web Page)',
+      avatar: '/team/yaseswini.png',
+      social: {
+        website: 'https://yaseswinineelamraju.netlify.app/',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
+        github: 'https://github.com/Yaseswini',
+      },
+    },
     // Nishita Kalepalli
     {
       // Name: First and last name
