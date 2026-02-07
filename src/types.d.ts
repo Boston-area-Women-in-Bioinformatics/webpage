@@ -56,6 +56,8 @@ export interface Post {
 
   /**  */
   category?: Taxonomy;
+  /** Blog series (e.g., "A Coffee with CompBio") */
+  series?: Taxonomy;
   /**  */
   tags?: Taxonomy[];
   /** Author List */
