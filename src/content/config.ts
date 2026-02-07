@@ -61,6 +61,7 @@ const postCollection = defineCollection({
     imagePosition: z.enum(['top', 'center', 'bottom']).optional(),
 
     category: z.string().optional(),
+    series: z.string().optional(),
     tags: z.array(z.string()).optional(),
     author: z.string().optional(),
     authorUrl: z.string().optional(),
