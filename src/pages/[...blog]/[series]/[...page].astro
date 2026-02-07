@@ -1,0 +1,84 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { blogSeriesRobots, getStaticPathsBlogSeries } from '~/utils/blog';
+
+import Layout from '~/layouts/PageLayout.astro';
+import PostList from '~/components/ui/PostList.astro';
+import PostListItem from '~/components/ui/PostListItem.astro';
+import Headline from '~/components/ui/Headline.astro';
+
+export const prerender = true;
+
+export const getStaticPaths = (async () => {
+  return await getStaticPathsBlogSeries();
+}) satisfies GetStaticPaths;
+
+const { series, posts } = Astro.props;
+
+const metadata = {
+  title: `Series: ${series.title}`,
+  robots: {
+    index: blogSeriesRobots?.index,
+    follow: blogSeriesRobots?.follow,
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <Headline title={`Series: ${series.title}`} />
+
+    <div class="flex justify-end mb-6">
+      <button
+        id="sort-toggle"
+        type="button"
+        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors duration-200"
+        data-sort="desc"
+      >
+        <svg class="w-4 h-4" id="sort-icon-desc" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9M3 12h5m4 0l4 4m0 0l4-4m-4 4V4"></path>
+        </svg>
+        <svg class="w-4 h-4 hidden" id="sort-icon-asc" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9M3 12h5m4 8l4-4m0 0l4 4m-4-4v12" transform="scale(1,-1) translate(0,-24)"></path>
+        </svg>
+        <span id="sort-label">Newest first</span>
+      </button>
+    </div>
+
+    <div id="posts-container">
+      <PostList posts={posts} ItemComponent={PostListItem} />
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const btn = document.getElementById('sort-toggle');
+  const container = document.getElementById('posts-container');
+  const label = document.getElementById('sort-label');
+  const iconDesc = document.getElementById('sort-icon-desc');
+  const iconAsc = document.getElementById('sort-icon-asc');
+
+  if (btn && container && label && iconDesc && iconAsc) {
+    btn.addEventListener('click', () => {
+      const ul = container.querySelector('ul');
+      if (!ul) return;
+
+      const items = Array.from(ul.children);
+      items.reverse();
+      items.forEach((item) => ul.appendChild(item));
+
+      const currentSort = btn.getAttribute('data-sort');
+      if (currentSort === 'desc') {
+        btn.setAttribute('data-sort', 'asc');
+        label.textContent = 'Oldest first';
+        iconDesc.classList.add('hidden');
+        iconAsc.classList.remove('hidden');
+      } else {
+        btn.setAttribute('data-sort', 'desc');
+        label.textContent = 'Newest first';
+        iconAsc.classList.add('hidden');
+        iconDesc.classList.remove('hidden');
+      }
+    });
+  }
+</script>
