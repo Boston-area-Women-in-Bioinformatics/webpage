@@ -74,7 +74,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/diveena-becker-5945a771/',
       // Job Title
-      title: 'Treasurer, Co-chair (Events Committee)',
+      title: 'Treasurer & Co-chair, Events Committee',
       // Leadership team member Photo
       avatar: '/team/diveena.jpg',
       // Social links
@@ -149,7 +149,7 @@ const exec = {
       name: 'Liyang Diao',
       nameLink: 'https://www.linkedin.com/in/liyang-diao-90933461',
       // Job Title
-      title: 'Co-chair (Events Committee)',
+      title: 'Co-chair, Events Committee',
       avatar: '/team/liyang_diao.jpeg',
       social: {
         website: 'https://sproutinformatics.com',
@@ -167,7 +167,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/sakinasaif/',
       // Job Title
-      title: 'Co-chair (Communications Committee)',
+      title: 'Co-chair, Communications Committee',
       // Leadership team member Photo
       avatar: '/team/sakina_sq.jpg',
       // Social links
@@ -186,7 +186,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/samantha-klasfeld/',
       // Job Title
-      title: 'Chair (Web Page)',
+      title: 'Chair, Web Page Committee',
       // Leadership team member Photo
       avatar: '/team/samanthaklasfeld.jpeg',
       // Social links
@@ -256,7 +256,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/saba-nafees',
       // Job Title
-      title: 'Co-Chair (Podcast Committee)',
+      title: 'Co-chair, Podcast Committee',
       // Leadership team member Photo
       avatar: '/team/Saba_Nafees.jpg',
       // Social links
@@ -277,7 +277,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/sharvarinarendra',
       // Job Title
-      title: 'Co-Chair (Podcast Committee)',
+      title: 'Co-chair, Podcast Committee',
       // Leadership team member Photo
       avatar: '/team/Sharvari_Narendra.jpg',
       // Social links
@@ -310,7 +310,7 @@ const team = {
     {
       name: 'Yaseswini Neelamraju',
       nameLink: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
-      title: 'Chair (Web Page)',
+      title: 'Member, Web Page Committee',
       avatar: '/team/yaseswini.png',
       social: {
         website: 'https://yaseswinineelamraju.netlify.app/',
@@ -392,7 +392,7 @@ const team = {
     {
       name: 'Vishwa Talati',
       nameLink: 'https://www.linkedin.com/in/vishwa-talati',
-      title: 'Web Page Developer',
+      title: 'Member, Web Page Committee',
       avatar: '/team/VishwaTalati.jpeg',
       social: {
         // website: '#',
