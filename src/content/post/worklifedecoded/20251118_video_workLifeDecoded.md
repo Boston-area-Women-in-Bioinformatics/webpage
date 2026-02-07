@@ -12,6 +12,7 @@ authors:
   - name: 'Lorena Pantano, Ph.D.'
     url: 'https://www.linkedin.com/in/lpantano'
 category: video
+series: 'Work Life Decoded'
 draft: false
 tags:
   - career-advice
