@@ -74,6 +74,8 @@ export interface Post {
 
   /**  */
   draft?: boolean;
+  /** Hide from main blog feed and latest posts, but keep on category/series/tag pages */
+  hiddenFromFeed?: boolean;
 
   /**  */
   Content?: AstroComponentFactory;

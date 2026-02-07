@@ -61,6 +61,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     authorUrl = '#', // legacy fallback
     listeningTime,
     draft = false,
+    hiddenFromFeed = false,
     metadata = {},
   } = data;
 
@@ -118,6 +119,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     authors, // updated field
 
     draft: draft,
+    hiddenFromFeed: hiddenFromFeed,
 
     metadata,
 
@@ -173,6 +175,12 @@ export const fetchPosts = async (): Promise<Array<Post>> => {
   return _posts;
 };
 
+/** Fetch posts filtered for the main blog feed (excludes hiddenFromFeed posts) */
+export const fetchFeedPosts = async (): Promise<Array<Post>> => {
+  const posts = await fetchPosts();
+  return posts.filter((post) => !post.hiddenFromFeed);
+};
+
 /** */
 export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<Post>> => {
   if (!Array.isArray(slugs)) return [];
@@ -204,7 +212,7 @@ export const findPostsByIds = async (ids: Array<string>): Promise<Array<Post>> =
 /** */
 export const findLatestPosts = async ({ count }: { count?: number }): Promise<Array<Post>> => {
   const _count = count || 4;
-  const posts = await fetchPosts();
+  const posts = await fetchFeedPosts();
 
   if (!posts) return [];
 
@@ -217,7 +225,7 @@ export const findLatestPosts = async ({ count }: { count?: number }): Promise<Ar
 /** */
 export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
-  return paginate(await fetchPosts(), {
+  return paginate(await fetchFeedPosts(), {
     params: { blog: BLOG_BASE || undefined },
     pageSize: blogPostsPerPage,
   });

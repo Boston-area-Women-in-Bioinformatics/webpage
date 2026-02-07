@@ -75,6 +75,7 @@ const postCollection = defineCollection({
       .optional(),
     metadata: metadataDefinition(),
     listeningTime: z.string().optional(),
+    hiddenFromFeed: z.boolean().optional(),
   }),
 });
 
