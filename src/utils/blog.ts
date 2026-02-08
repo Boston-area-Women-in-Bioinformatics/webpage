@@ -255,16 +255,19 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
   });
 
   return Array.from(Object.keys(categories)).flatMap((categorySlug) => {
-    const categoryPosts = posts.filter((post) => post.category?.slug && categorySlug === post.category?.slug);
+    const allCategoryPosts = posts.filter((post) => post.category?.slug && categorySlug === post.category?.slug);
 
-    // Collect unique series within this category
+    // Collect unique series within this category (from all posts, including hidden)
     const seriesMap: Record<string, { slug: string; title: string }> = {};
-    categoryPosts.forEach((post) => {
+    allCategoryPosts.forEach((post) => {
       if (post.series?.slug) {
         seriesMap[post.series.slug] = post.series;
       }
     });
     const seriesList = Object.values(seriesMap);
+
+    // Filter out hiddenFromFeed posts for the category listing
+    const categoryPosts = allCategoryPosts.filter((post) => !post.hiddenFromFeed);
 
     return paginate(categoryPosts, {
       params: { category: categorySlug, blog: CATEGORY_BASE || undefined },
