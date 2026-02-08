@@ -18,7 +18,7 @@ tags:
 
 metadata:
   title: 'Tuesday Tactics: Your First Data Hire Signal'
-  canonical: https://lfaller.github.io/biotech/2025/11/25/tuesday-tactics-first-data-hire-signal/
+  canonical: https://linafaller.com/biotech/2025/11/25/tuesday-tactics-first-data-hire-signal/
 ---
 
 If your scientists are spending 8+ hours/week on routine reporting, you've already waited too long.

@@ -17,7 +17,7 @@ tags:
   - tuesday-tactics
 metadata:
   title: 'Tuesday Tactics: The "No Jira Ticket" Rule'
-  canonical: https://lfaller.github.io/biotech/2025/12/02/tuesday-tactics-no-jira-ticket-rule/
+  canonical: https://linafaller.com/data-science/2025/12/02/tuesday-tactics-no-jira-ticket-rule
 ---
 
 If someone needs to file a ticket to get their own experimental data, your infrastructure has failed.

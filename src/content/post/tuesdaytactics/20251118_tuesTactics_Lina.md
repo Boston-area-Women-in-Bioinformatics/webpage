@@ -20,7 +20,7 @@ tags:
 metadata:
   title: 'Tuesday Tactics: The 3-Question Requirements Filter'
   description: 'Why data scientists should design error messages that guide users straight to solutions.'
-  canonical: https://lfaller.github.io/data-science/2025/11/18/tuesday-tactics-3-question-requirements-filter
+  canonical: https://linafaller.com/data-science/2025/11/18/tuesday-tactics-3-question-requirements-filter
 ---
 
 The three questions you should ask before building ANY data tool:

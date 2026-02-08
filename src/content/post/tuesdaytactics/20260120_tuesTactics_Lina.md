@@ -7,7 +7,7 @@ authors:
     url: 'https://www.linkedin.com/in/linafaller/'
 category: Quick Take
 series: 'Tuesday Tactics'
-draft: false
+draft: true
 hiddenFromFeed: true
 tags:
   - software-engineering
@@ -18,7 +18,7 @@ tags:
 
 metadata:
   title: 'Tuesday Tactics: API-First or Bottleneck Forever'
-  canonical: https://lfaller.github.io/biotech/2026/01/20/tuesday-tactics-api-first-or-bottleneck-forever/
+  canonical: https://linafaller.com/biotech/2026/01/20/tuesday-tactics-api-first-or-bottleneck-forever/
 ---
 
 Building standalone apps without APIs? You're creating data islands that'll haunt you at Series B.
