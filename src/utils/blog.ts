@@ -231,6 +231,17 @@ export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateF
   });
 };
 
+/** Returns all feed posts on a single page (no pagination) for client-side filtering */
+export const getStaticPathsBlogListAll = async () => {
+  if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
+  return [
+    {
+      params: { blog: BLOG_BASE || undefined },
+      props: { posts: await fetchFeedPosts() },
+    },
+  ];
+};
+
 /** */
 export const getStaticPathsBlogPost = async () => {
   if (!isBlogEnabled || !isBlogPostRouteEnabled) return [];
