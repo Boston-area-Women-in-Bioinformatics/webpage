@@ -56,6 +56,8 @@ export interface Post {
 
   /**  */
   category?: Taxonomy;
+  /** Blog series (e.g., "A Coffee with CompBio") */
+  series?: Taxonomy;
   /**  */
   tags?: Taxonomy[];
   /** Author List */
@@ -72,6 +74,8 @@ export interface Post {
 
   /**  */
   draft?: boolean;
+  /** Hide from main blog feed and latest posts, but keep on category/series/tag pages */
+  hiddenFromFeed?: boolean;
 
   /**  */
   Content?: AstroComponentFactory;

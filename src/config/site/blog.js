@@ -39,6 +39,15 @@ const blog = {
       index: false,
     },
   },
+
+  series: {
+    pathname: 'series', // Series main path /series/some-series
+    noindex: false,
+    isEnabled: true,
+    robots: {
+      index: true,
+    },
+  },
 };
 
 export default blog;

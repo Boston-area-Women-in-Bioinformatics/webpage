@@ -69,6 +69,14 @@ export interface AppBlogConfig {
       follow: boolean;
     };
   };
+  series: {
+    isEnabled: boolean;
+    pathname: string;
+    robots: {
+      index: boolean;
+      follow: boolean;
+    };
+  };
 }
 export interface AppNewsletterConfig {
   isEnabled: boolean;
@@ -185,6 +193,14 @@ const getAppBlog = (config: Config) => {
       pathname: 'tag',
       robots: {
         index: false,
+        follow: true,
+      },
+    },
+    series: {
+      isEnabled: true,
+      pathname: 'series',
+      robots: {
+        index: true,
         follow: true,
       },
     },

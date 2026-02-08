@@ -6,7 +6,9 @@ authors:
   - name: 'Lina L. Faller, Ph.D.'
     url: 'https://www.linkedin.com/in/linafaller/'
 category: Quick Take
-draft: false
+series: 'Tuesday Tactics'
+draft: true
+hiddenFromFeed: true
 tags:
   - software-engineering
   - build-vs-buy
@@ -16,7 +18,7 @@ tags:
 
 metadata:
   title: 'Tuesday Tactics: The Post-Mortem Timing Rule'
-  canonical: https://lfaller.github.io/biotech/2026/01/13/tuesday-tactics-post-mortem-timing-rule/
+  canonical: https://linafaller.com/biotech/2026/01/13/tuesday-tactics-post-mortem-timing-rule/
 ---
 
 Run post-mortems within 48 hours of incidents while memory is fresh, but schedule the action items review for one week later.

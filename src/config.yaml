@@ -59,6 +59,12 @@ apps:
       robots:
         index: false
 
+    series:
+      isEnabled: true
+      pathname: 'series' # Series main path /series/some-series
+      robots:
+        index: true
+
     isRelatedPostsEnabled: true
     relatedPostsCount: 4
 

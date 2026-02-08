@@ -7,9 +7,9 @@ image: ~/assets/images/WIB_Logo.jpg
 imageAlt: 'Boston Women in Bioinformatics Logo'
 category: Tutorial
 tags:
-  - computationalbiology
+  - computational-biology
   - bioinformatics
-  - womeninscience
+  - women-in-science
   - group-organization
 
 metadata:
