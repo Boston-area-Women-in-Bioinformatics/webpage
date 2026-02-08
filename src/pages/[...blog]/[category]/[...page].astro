@@ -38,7 +38,8 @@ const metadata = {
     <Headline title={category.title} />
     {
       seriesList.length > 0 && (
-        <div class="flex flex-wrap gap-2 justify-center mb-8">
+        <div class="flex flex-wrap gap-2 items-center justify-center mb-8">
+          <span class="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide">Series:</span>
           {seriesList.map((s) => (
             <a
               href={getPermalink(s.slug, 'series')}
