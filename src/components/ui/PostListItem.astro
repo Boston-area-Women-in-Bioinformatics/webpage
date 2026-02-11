@@ -169,16 +169,11 @@ const objectPosition = getObjectPosition(post.imagePosition);
                   <Fragment key={index}>
                     {index > 0 && ', '}
                     {author.url ? (
-                      <>
-                        <a href={author.url} class="hover:underline">
-                          <span>{author.name.replaceAll('-', ' ')}</span>
-                        </a>
-                      </>
-                    ) : (
-                      <>
-                        <Icon name="tabler:user" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
+                      <a href={author.url} class="hover:underline">
                         <span>{author.name.replaceAll('-', ' ')}</span>
-                      </>
+                      </a>
+                    ) : (
+                      <span>{author.name.replaceAll('-', ' ')}</span>
                     )}
                   </Fragment>
                 ))}
