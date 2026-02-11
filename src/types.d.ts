@@ -53,6 +53,8 @@ export interface Post {
   imageDescription?: string;
   /** Image position for cropping (top, center, or bottom) */
   imagePosition?: 'top' | 'center' | 'bottom';
+  /** Hide the hero image from the top of the blog post */
+  hideHeroImage?: boolean;
 
   /**  */
   category?: Taxonomy;

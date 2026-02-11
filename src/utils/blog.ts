@@ -70,6 +70,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     listeningTime,
     draft = false,
     hiddenFromFeed = false,
+    hideHeroImage = false,
     metadata = {},
   } = data;
 
@@ -128,6 +129,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
 
     draft: draft,
     hiddenFromFeed: hiddenFromFeed,
+    hideHeroImage: hideHeroImage,
 
     metadata,
 
