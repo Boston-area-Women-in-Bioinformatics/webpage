@@ -6,7 +6,9 @@ authors:
   - name: 'Lina L. Faller, Ph.D.'
     url: 'https://www.linkedin.com/in/linafaller/'
 category: Quick Take
+series: 'Tuesday Tactics'
 draft: false
+hiddenFromFeed: true
 tags:
   - software-engineering
   - build-vs-buy
@@ -16,7 +18,7 @@ tags:
 
 metadata:
   title: 'Tuesday Tactics: Build vs Buy Red Flag'
-  canonical: https://lfaller.github.io/biotech/2026/01/06/tuesday-tactics-build-vs-buy-red-flag/
+  canonical: https://linafaller.com/software-engineering/2026/01/06/tuesday-tactics-build-vs-buy-red-flag/
 ---
 
 If you're considering building custom infrastructure, ask: "Would I also build my own email server?"

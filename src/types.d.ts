@@ -53,9 +53,13 @@ export interface Post {
   imageDescription?: string;
   /** Image position for cropping (top, center, or bottom) */
   imagePosition?: 'top' | 'center' | 'bottom';
+  /** Hide the hero image from the top of the blog post */
+  hideHeroImage?: boolean;
 
   /**  */
   category?: Taxonomy;
+  /** Blog series (e.g., "A Coffee with CompBio") */
+  series?: Taxonomy;
   /**  */
   tags?: Taxonomy[];
   /** Author List */
@@ -72,6 +76,8 @@ export interface Post {
 
   /**  */
   draft?: boolean;
+  /** Hide from main blog feed and latest posts, but keep on category/series/tag pages */
+  hiddenFromFeed?: boolean;
 
   /**  */
   Content?: AstroComponentFactory;

@@ -6,7 +6,9 @@ authors:
   - name: 'Lina L. Faller, Ph.D.'
     url: 'https://www.linkedin.com/in/linafaller/'
 category: Quick Take
+series: 'Tuesday Tactics'
 draft: false
+hiddenFromFeed: true
 tags:
   - data-engineering
   - data-stewardship
@@ -16,7 +18,7 @@ tags:
 
 metadata:
   title: 'Tuesday Tactics: Data Steward ≠ Data Janitor'
-  canonical: https://lfaller.github.io/biotech/2025/12/23/tuesday-tactics-data-steward-not-janitor/
+  canonical: https://linafaller.com/biotech/2025/12/23/tuesday-tactics-data-steward-not-janitor/
 ---
 
 Your most experienced computational biologist shouldn't be reformatting CSVs.

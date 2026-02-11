@@ -6,7 +6,9 @@ authors:
   - name: 'Lina L. Faller, Ph.D.'
     url: 'https://www.linkedin.com/in/linafaller/'
 category: Quick Take
+series: 'Tuesday Tactics'
 draft: false
+hiddenFromFeed: true
 tags:
   - data-engineering
   - documentation
@@ -16,7 +18,7 @@ tags:
 
 metadata:
   title: 'Tuesday Tactics: The 10-Minute Test'
-  canonical: https://lfaller.github.io/biotech/2025/12/16/tuesday-tactics-10-minute-test/
+  canonical: https://linafaller.com/data-science/2025/12/16/tuesday-tactics-10-minute-test
 ---
 
 Can a new scientist find and understand your most commonly used dataset in 10 minutes?

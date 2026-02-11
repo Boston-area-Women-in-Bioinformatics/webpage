@@ -3,7 +3,15 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { Post } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
-import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
+import {
+  cleanSlug,
+  trimSlash,
+  BLOG_BASE,
+  POST_PERMALINK_PATTERN,
+  CATEGORY_BASE,
+  TAG_BASE,
+  SERIES_BASE,
+} from './permalinks';
 
 const generatePermalink = async ({
   id,
@@ -55,11 +63,14 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     imagePosition,
     tags: rawTags = [],
     category: rawCategory,
+    series: rawSeries,
     authors: rawAuthors, // new format
     author, // legacy fallback
     authorUrl = '#', // legacy fallback
     listeningTime,
     draft = false,
+    hiddenFromFeed = false,
+    hideHeroImage = false,
     metadata = {},
   } = data;
 
@@ -78,6 +89,13 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     slug: cleanSlug(tag),
     title: tag,
   }));
+
+  const series = rawSeries
+    ? {
+        slug: cleanSlug(rawSeries),
+        title: rawSeries,
+      }
+    : undefined;
 
   // Normalize authors with fallback support
   const authors = rawAuthors
@@ -105,10 +123,13 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     imagePosition: imagePosition,
 
     category: category,
+    series: series,
     tags: tags,
     authors, // updated field
 
     draft: draft,
+    hiddenFromFeed: hiddenFromFeed,
+    hideHeroImage: hideHeroImage,
 
     metadata,
 
@@ -145,11 +166,13 @@ export const isBlogListRouteEnabled = APP_BLOG.list.isEnabled;
 export const isBlogPostRouteEnabled = APP_BLOG.post.isEnabled;
 export const isBlogCategoryRouteEnabled = APP_BLOG.category.isEnabled;
 export const isBlogTagRouteEnabled = APP_BLOG.tag.isEnabled;
+export const isBlogSeriesRouteEnabled = APP_BLOG.series.isEnabled;
 
 export const blogListRobots = APP_BLOG.list.robots;
 export const blogPostRobots = APP_BLOG.post.robots;
 export const blogCategoryRobots = APP_BLOG.category.robots;
 export const blogTagRobots = APP_BLOG.tag.robots;
+export const blogSeriesRobots = APP_BLOG.series.robots;
 
 export const blogPostsPerPage = APP_BLOG?.postsPerPage;
 
@@ -160,6 +183,12 @@ export const fetchPosts = async (): Promise<Array<Post>> => {
   }
 
   return _posts;
+};
+
+/** Fetch posts filtered for the main blog feed (excludes hiddenFromFeed posts) */
+export const fetchFeedPosts = async (): Promise<Array<Post>> => {
+  const posts = await fetchPosts();
+  return posts.filter((post) => !post.hiddenFromFeed);
 };
 
 /** */
@@ -193,7 +222,7 @@ export const findPostsByIds = async (ids: Array<string>): Promise<Array<Post>> =
 /** */
 export const findLatestPosts = async ({ count }: { count?: number }): Promise<Array<Post>> => {
   const _count = count || 4;
-  const posts = await fetchPosts();
+  const posts = await fetchFeedPosts();
 
   if (!posts) return [];
 
@@ -206,10 +235,21 @@ export const findLatestPosts = async ({ count }: { count?: number }): Promise<Ar
 /** */
 export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
-  return paginate(await fetchPosts(), {
+  return paginate(await fetchFeedPosts(), {
     params: { blog: BLOG_BASE || undefined },
     pageSize: blogPostsPerPage,
   });
+};
+
+/** Returns all feed posts on a single page (no pagination) for client-side filtering */
+export const getStaticPathsBlogListAll = async () => {
+  if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
+  return [
+    {
+      params: { blog: BLOG_BASE || undefined },
+      props: { posts: await fetchFeedPosts() },
+    },
+  ];
 };
 
 /** */
@@ -235,16 +275,27 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
     }
   });
 
-  return Array.from(Object.keys(categories)).flatMap((categorySlug) =>
-    paginate(
-      posts.filter((post) => post.category?.slug && categorySlug === post.category?.slug),
-      {
-        params: { category: categorySlug, blog: CATEGORY_BASE || undefined },
-        pageSize: blogPostsPerPage,
-        props: { category: categories[categorySlug] },
+  return Array.from(Object.keys(categories)).flatMap((categorySlug) => {
+    const allCategoryPosts = posts.filter((post) => post.category?.slug && categorySlug === post.category?.slug);
+
+    // Collect unique series within this category (from all posts, including hidden)
+    const seriesMap: Record<string, { slug: string; title: string }> = {};
+    allCategoryPosts.forEach((post) => {
+      if (post.series?.slug) {
+        seriesMap[post.series.slug] = post.series;
       }
-    )
-  );
+    });
+    const seriesList = Object.values(seriesMap);
+
+    // Filter out hiddenFromFeed posts for the category listing
+    const categoryPosts = allCategoryPosts.filter((post) => !post.hiddenFromFeed);
+
+    return paginate(categoryPosts, {
+      params: { category: categorySlug, blog: CATEGORY_BASE || undefined },
+      pageSize: blogPostsPerPage,
+      props: { category: categories[categorySlug], seriesList },
+    });
+  });
 };
 
 /** */
@@ -274,6 +325,27 @@ export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFu
 };
 
 /** */
+export const getStaticPathsBlogSeries = async () => {
+  if (!isBlogEnabled || !isBlogSeriesRouteEnabled) return [];
+
+  const posts = await fetchPosts();
+  const seriesMap: Record<string, { slug: string; title: string }> = {};
+  posts.map((post) => {
+    if (post.series?.slug) {
+      seriesMap[post.series.slug] = post.series;
+    }
+  });
+
+  return Array.from(Object.keys(seriesMap)).map((seriesSlug) => ({
+    params: { series: seriesSlug, blog: SERIES_BASE || undefined, page: undefined },
+    props: {
+      series: seriesMap[seriesSlug],
+      posts: posts.filter((post) => post.series?.slug && seriesSlug === post.series?.slug),
+    },
+  }));
+};
+
+/** */
 export async function getRelatedPosts(originalPost: Post, maxResults: number = 4): Promise<Post[]> {
   const allPosts = await fetchPosts();
   const originalTagsSet = new Set(originalPost.tags ? originalPost.tags.map((tag) => tag.slug) : []);
@@ -283,6 +355,10 @@ export async function getRelatedPosts(originalPost: Post, maxResults: number = 4
 
     let score = 0;
     if (iteratedPost.category && originalPost.category && iteratedPost.category.slug === originalPost.category.slug) {
+      score += 5;
+    }
+
+    if (iteratedPost.series && originalPost.series && iteratedPost.series.slug === originalPost.series.slug) {
       score += 5;
     }
 
