@@ -37,8 +37,6 @@ const isMultiDay = endDate && new Date(endDate).toDateString() !== startDate.toD
       {formatDateOnly(startDate)} – {formatDateOnly(new Date(endDate))}
     </time>
   ) : (
-    <time datetime={startDate.toISOString()}>
-      {formatSingle(startDate)}
-    </time>
+    <time datetime={startDate.toISOString()}>{formatSingle(startDate)}</time>
   )
 }
