@@ -17,6 +17,7 @@ const { Content } = await render(meeting);
 <EventLayout
   frontmatter={meeting.data}
   date={meeting.data.dateTime}
+  endDate={meeting.data.endDate}
   location={meeting.data.location}
   imgsrc={meeting.data.image.src}
   imgalt={meeting.data.image.alt}

@@ -10,15 +10,20 @@ import Button from '~/components/ui/Button.astro';
 import Card from '~/components/ui/Card.astro';
 //import { Icon } from 'astro-icon/components';
 
+const now = new Date();
+
 const future_events = (
-  await getCollection('event', ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) > new Date())
+  await getCollection('event', ({ data }: CollectionEntry<'event'>) => {
+    const eventEnd = data.endDate ? new Date(data.endDate) : new Date(data.dateTime);
+    return eventEnd > now;
+  })
 ).sort((b, a) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
 
 const all_past_events = (
-  await getCollection(
-    'event',
-    ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) < new Date() && !data.partnerEvent
-  )
+  await getCollection('event', ({ data }: CollectionEntry<'event'>) => {
+    const eventEnd = data.endDate ? new Date(data.endDate) : new Date(data.dateTime);
+    return eventEnd < now && !data.partnerEvent;
+  })
 ).sort((a, b) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
 
 // Show only 3 most recent past events on main page (excluding partner events)
@@ -61,7 +66,7 @@ const past_events = all_past_events.slice(0, 3);
                 )}
               </h3>
               <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
-                <FormattedDate date={event.data.dateTime} />
+                <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} />
               </div>
               <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
                 <EventAddress artists={event.data.location || []} />
@@ -97,7 +102,7 @@ const past_events = all_past_events.slice(0, 3);
               {event.data.title}
             </h3>
             <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
-              <FormattedDate date={event.data.dateTime} />
+              <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} />
             </div>
             <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
               <EventAddress artists={event.data.location || []} />

@@ -13,11 +13,12 @@ import Pagination from '~/components/blog/Pagination.astro';
 export const prerender = true;
 
 export const getStaticPaths = (async ({ paginate }) => {
+  const now = new Date();
   const all_past_events = (
-    await getCollection(
-      'event',
-      ({ data }: CollectionEntry<'event'>) => new Date(data.dateTime) < new Date() && !data.partnerEvent
-    )
+    await getCollection('event', ({ data }: CollectionEntry<'event'>) => {
+      const eventEnd = data.endDate ? new Date(data.endDate) : new Date(data.dateTime);
+      return eventEnd < now && !data.partnerEvent;
+    })
   ).sort((a, b) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
 
   return paginate(all_past_events, {
@@ -58,7 +59,7 @@ const metadata = {
                 {event.data.title}
               </h3>
               <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
-                <FormattedDate date={event.data.dateTime} />
+                <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} />
               </div>
               <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
                 <EventAddress artists={event.data.location || []} />

@@ -12,6 +12,7 @@ export interface Props {
     title?: string;
   };
   date: Date;
+  endDate?: Date;
   location: string[];
   imgsrc: string;
   imgalt: string;
@@ -26,6 +27,7 @@ export interface Props {
 const {
   frontmatter,
   date,
+  endDate,
   location,
   url,
   data_luma_event_id,
@@ -79,7 +81,7 @@ const secondLine = hasBreak ? title.slice(breakIndex + 1).trim() : '';
           )
         }
         <div class="text-lg mb-4 text-gray-700 dark:text-slate-300">
-          <FormattedDate date={date} />
+          <FormattedDate date={date} endDate={endDate} />
         </div>
         <div class="text-lg mb-4 text-gray-700 dark:text-slate-300">
           <EventAddress artists={location || []} />
@@ -91,7 +93,7 @@ const secondLine = hasBreak ? title.slice(breakIndex + 1).trim() : '';
             </div>
           )
         }
-        {date < new Date() ? ' ' : <Signup url={url} data_luma_event_id={data_luma_event_id} />}
+        {(endDate || date) < new Date() ? ' ' : <Signup url={url} data_luma_event_id={data_luma_event_id} />}
       </div>
     </div>
   </div>
