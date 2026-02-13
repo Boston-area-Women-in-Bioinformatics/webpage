@@ -864,17 +864,7 @@ They’ll ask: &amp;quot;Do we have agents that can actually &lt;strong&gt;close
 &lt;p&gt;Prevention is infrastructure work. It&amp;#39;s boring, invisible when it works, and generates no standup updates. But it&amp;#39;s the difference between teams constantly firefighting and teams that have space to build.&lt;/p&gt;
 &lt;p&gt;The better you are at prevention, the less anyone knows you&amp;#39;re doing it. There&amp;#39;s no glory in disasters that never happen.&lt;/p&gt;
 &lt;p&gt;Have you fixed the same problem repeatedly? How do you make prevention work visible?&lt;/p&gt;
-</content:encoded><category>biotech</category><category>data-engineering</category><category>bioinformatics</category><category>technical-debt</category><category>software-engineering</category></item><item><title>Tuesday Tactics: The 3-Question Requirements Filter</title><link>https://boston-wib.org/blog/quicktake/tuesday-tactics-3-question-requirements-filter</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/tuesday-tactics-3-question-requirements-filter</guid><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;The three questions you should ask before building ANY data tool:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&amp;quot;What decision will this enable?&amp;quot;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&amp;quot;Who makes that decision?&amp;quot;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&amp;quot;What happens if they don&amp;#39;t have this?&amp;quot;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Saves weeks of building the wrong thing.&lt;/p&gt;
-</content:encoded><category>data-science</category><category>data-engineering</category><category>bioinformatics</category><category>product-management</category><category>biotech</category><category>tuesday-tactics</category></item><item><title>Work Life Decoded: Understanding Your Manager&apos;s World</title><link>https://boston-wib.org/blog/work-life-decoded/understanding-your-managers-world</link><guid isPermaLink="true">https://boston-wib.org/blog/work-life-decoded/understanding-your-managers-world</guid><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/Work-Life-Decoded.png&quot; alt=&quot;Work Life Decoded Video Series Thumbnail&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>biotech</category><category>data-engineering</category><category>bioinformatics</category><category>technical-debt</category><category>software-engineering</category></item><item><title>Work Life Decoded: Understanding Your Manager&apos;s World</title><link>https://boston-wib.org/blog/work-life-decoded/understanding-your-managers-world</link><guid isPermaLink="true">https://boston-wib.org/blog/work-life-decoded/understanding-your-managers-world</guid><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/Work-Life-Decoded.png&quot; alt=&quot;Work Life Decoded Video Series Thumbnail&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;How to Building a Strategic Partnership with Your Boss&lt;/em&gt;&lt;/p&gt;
 
@@ -893,7 +883,17 @@ They’ll ask: &amp;quot;Do we have agents that can actually &lt;strong&gt;close
 &lt;li&gt;How to build trust and advocate for yourself strategically&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Watch the full episode &lt;a href=&quot;https://www.patreon.com/posts/new-video-your-143734360&quot;&gt;Work Life Decoded: Understanding Your Manager&amp;#39;s World)&lt;/a&gt; on Patreon.&lt;/p&gt;
-</content:encoded><category>career-advice</category><category>career-development</category><category>manager-relationships</category><category>workplace-strategy</category><category>professional-growth</category><category>work-life-decoded</category></item><item><title>Write the Test First (Even for Your Science)</title><link>https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</guid><pubDate>Mon, 17 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-17-write-the-test-first-even-for-your-science.png&quot; alt=&quot;Side‑by‑side flowcharts comparing traditional vs. test‑driven development (TDD) approaches.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>career-advice</category><category>career-development</category><category>manager-relationships</category><category>workplace-strategy</category><category>professional-growth</category><category>work-life-decoded</category></item><item><title>Tuesday Tactics: The 3-Question Requirements Filter</title><link>https://boston-wib.org/blog/quicktake/tuesday-tactics-3-question-requirements-filter</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/tuesday-tactics-3-question-requirements-filter</guid><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;The three questions you should ask before building ANY data tool:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&amp;quot;What decision will this enable?&amp;quot;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&amp;quot;Who makes that decision?&amp;quot;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&amp;quot;What happens if they don&amp;#39;t have this?&amp;quot;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Saves weeks of building the wrong thing.&lt;/p&gt;
+</content:encoded><category>data-science</category><category>data-engineering</category><category>bioinformatics</category><category>product-management</category><category>biotech</category><category>tuesday-tactics</category></item><item><title>Write the Test First (Even for Your Science)</title><link>https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</guid><pubDate>Mon, 17 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-17-write-the-test-first-even-for-your-science.png&quot; alt=&quot;Side‑by‑side flowcharts comparing traditional vs. test‑driven development (TDD) approaches.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;Why data scientists should design error messages that guide users straight to solutions.&lt;/em&gt;&lt;/p&gt;
 
