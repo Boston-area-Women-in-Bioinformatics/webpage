@@ -11,10 +11,11 @@ const defaultUrl = 'https://luma.com/bwib';
 const isDefault = !url;
 const finalUrl = url ?? defaultUrl;
 const buttonText = isDefault ? 'Link coming soon — click to subscribe to our calendar' : 'Sign Up';
+const showBothButtons = data_luma_event_id && url && !url.endsWith(data_luma_event_id);
 ---
 
 {
-  data_luma_event_id && url ? (
+  showBothButtons ? (
     <>
       <center class="mt-8 flex flex-col items-center gap-4">
         <Button
