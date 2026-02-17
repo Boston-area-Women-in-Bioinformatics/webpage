@@ -1,8 +1,8 @@
 ---
 publishDate: 2026-02-17T08:00:00-05:00
-title: 'ctDNA as an Oncology Endpoint'
+title: 'ctDNA as an oncology endpoint'
 slug: blog/quicktake/ctdna-as-an-oncology-endpoint
-excerpt: 'Takeaways from the FoCR Symposium'
+excerpt: 'Takeaways from the FoCR symposium'
 image: /blog_images/2026-02-10-ctdna-as-a-clinical-endpoint.jpeg
 imageAlt: 'A research figure compares different brain regions to see where information about what someone is consciously seeing can be decoded most accurately, showing stronger decoding in posterior regions than in prefrontal areas'
 #hideHeroImage: true
@@ -23,7 +23,7 @@ tags:
   - precision-medicine
   - drug-development
 metadata:
-  title: 'ctDNA as an Oncology Endpoint'
+  title: 'ctDNA as an oncology endpoint'
   description: 'Takeaways from the FoCR Symposium'
 ---
 
