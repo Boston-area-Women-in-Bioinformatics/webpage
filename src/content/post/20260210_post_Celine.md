@@ -23,8 +23,8 @@ tags:
   - precision-medicine
   - drug-development
 metadata:
-  title: 'Beyond Behavior: How Machine Learning Decodes Consciousness and Forecasts Seizures from Brain Activity'
-  description: 'Reflections on a seminar exploring how AI and brain network analysis can transform patient care'
+  title: 'ctDNA as a Clinical Endpoint'
+  description: 'Takeaways from the FoCR Symposium'
 ---
 
 I recently attended the virtual **[Friends of Cancer Research](https://www.linkedin.com/company/friends-of-cancer-research/) (FoCR)** symposium on **Modernizing Oncology Endpoints**, focused on **circulating tumor DNA (ctDNA)** and **AI-enabled imaging**. The discussion brought together FoCR, industry, FDA, and academia, and it was energizing to see the progress so far, plus a clear path forward.
