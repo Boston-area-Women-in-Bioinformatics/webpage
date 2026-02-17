@@ -33,17 +33,17 @@ A biomarker is a measurable biological signal that helps indicate what’s happe
 
 ## Key takeaways
 
-**The ctMoniTR Project showed ctDNA’s clinical signal at scale and what’s needed next.**
+#### The ctMoniTR Project showed ctDNA’s clinical signal at scale and what’s needed next.
 
-With 20+ sponsors pooling heterogeneous trial datasets, ctMoniTR found consistent patient-level links between ctDNA reduction/clearance and patient outcomes. The next challenge is turning these signals into trial-ready and regulator-ready endpoints, especially in early-stage MRD where ctDNA levels are lowest.
+With 20+ sponsors pooling heterogeneous trial datasets, ctMoniTR found consistent patient-level links between **ctDNA reduction/clearance** and **patient outcomes**. The next challenge is turning these signals into trial-ready and regulator-ready endpoints, especially in **early-stage MRD** where ctDNA levels are lowest.
 
-**Tissue availability is becoming a limiting factor.**
+#### Tissue availability is becoming a limiting factor.
 
-Tumor-informed MRD assays are often preferred, but tissue is not always accessible or usable. A practical approach is to design dual-assay strategy up front: tumor-informed when feasible, with a tumor-naive backup, plus clear decision rules and an analysis plan that handles both.
+**Tumor-informed MRD assays** are often preferred, but tissue is not always accessible or usable. A practical approach is to design **dual-assay strategy** up front: tumor-informed when feasible, with a tumor-naive backup, plus clear decision rules and an analysis plan that handles both.
 
-**Scaling requires prospective standardization.**
+#### Scaling requires prospective standardization.
 
-Define clinical landmark timepoints and sampling schedules in advance, not retroactively. Real-world data can help fill natural history gaps (lead time, kinetics), but only with careful tracking of assay versions and the treatment time period.
+Define clinical landmark timepoints and sampling schedules in advance, not retroactively. **Real-world data** can help fill natural history gaps (lead time, kinetics), but only with careful tracking of assay versions and the treatment time period.
 
 ## Looking Ahead
 
