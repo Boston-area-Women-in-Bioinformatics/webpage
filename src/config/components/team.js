@@ -186,7 +186,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/samantha-klasfeld/',
       // Job Title
-      title: 'Chair, Web Page Committee',
+      title: 'Co-Chair, Communications Committee',
       // Leadership team member Photo
       avatar: '/team/samanthaklasfeld.jpeg',
       // Social links
@@ -306,6 +306,25 @@ const team = {
 
   // Members of the leadership team
   members: [
+    // Shreya Rajasekar
+    {
+      // Name: First and last name
+      name: 'Shreya Rajasekar',
+      // Namelink: Member's Personal Website
+      //nameLink: '',
+      // Job Title
+      title: 'Co-chair, Communications Committee',
+      // Leadership team member Photo
+      avatar: '/team/shreya_sq.jpg',
+      // Social links
+      social: {
+        // website: '#',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/shreya-rajasekar/',
+      },
+    },
     // Yaseswini Neelamraju
     {
       name: 'Yaseswini Neelamraju',
@@ -319,21 +338,6 @@ const team = {
         // facebook: '#',
         linkedin: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
         github: 'https://github.com/Yaseswini',
-      },
-    },
-    // Nishita Kalepalli
-    {
-      // Name: First and last name
-      name: 'Nishita Kalepalli',
-      // Namelink: Member's Personal Website
-      nameLink: 'https://www.linkedin.com/in/nishita-kalepalli/',
-      // Job Title
-      title: 'Member, Communications Committee',
-      // Leadership team member Photo
-      avatar: '/team/nishita-kalepalli.png',
-      // Social links
-      social: {
-        linkedin: 'https://www.linkedin.com/in/nishita-kalepalli/',
       },
     },
     // Ozge Tasdemir Yilmaz

@@ -26,6 +26,21 @@ const alumni = {
         github: 'https://github.com/anushka-don',
       },
     },
+    // Nishita Kalepalli
+    {
+      // Name: First and last name
+      name: 'Nishita Kalepalli',
+      // Namelink: Member's Personal Website
+      nameLink: 'https://www.linkedin.com/in/nishita-kalepalli/',
+      // Job Title
+      title: 'Member, Communications Committee',
+      // Leadership team member Photo
+      avatar: '/team/nishita-kalepalli.png',
+      // Social links
+      social: {
+        linkedin: 'https://www.linkedin.com/in/nishita-kalepalli/',
+      },
+    },
     // Isha Parikh
     {
       // Name: First and last name
