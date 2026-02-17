@@ -1,13 +1,13 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 // import { Image } from 'astro:assets';
-import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
-import speakers from '~/config/components/tenyearannSpeakers';
-import TeamWidget from '~/components/widgets/Team.astro';
-import SponsorSection from '~/components/Sponsors.astro';
+// import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
+// import speakers from '~/config/components/tenyearannSpeakers';
+// import TeamWidget from '~/components/widgets/Team.astro';
+// import SponsorSection from '~/components/Sponsors.astro';
 import { SITE } from '~/config/site/config.js';
 
-//import Image from '~/components/common/Image.astro';
+// import Image from '~/components/common/Image.astro';
 
 const metadata = {
   title: SITE.title,
@@ -15,49 +15,75 @@ const metadata = {
   dontUseTitleTemplate: true,
 };
 
-var speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4';
-
-if (speakers?.enabled === true) {
-  if (speakers.members.length === 1) {
-    speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1';
-  } else if (speakers.members.length === 2) {
-    speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2';
-  } else if (speakers.members.length === 3) {
-    speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3';
-  }
-}
+// var speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4';
+//
+// if (speakers?.enabled === true) {
+//   if (speakers.members.length === 1) {
+//     speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1';
+//   } else if (speakers.members.length === 2) {
+//     speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2';
+//   } else if (speakers.members.length === 3) {
+//     speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3';
+//   }
+// }
 ---
 
 <Layout metadata={metadata}>
   <section>
     <h1
-      class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tighter tracking-tighter font-heading dark:text-gray-200 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter text-center"
+      class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tighter tracking-tighter font-heading dark:text-gray-200 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter text-center pt-8"
     >
       Boston Women in Bioinformatics
     </h1>
     <h2
-      class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter text-center"
+      class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-8 font-heading dark:text-gray-200 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter text-center"
     >
-      10th Year Anniversary Event
+      2026 Fall Fundraiser
     </h2>
+    <p
+      class="text-xl text-muted mx-2 sm:mx-5 md:mx-10 mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter text-center"
+    >
+      Join Boston Women in Bioinformatics for an evening of honest, inspiring conversation with speakers who took
+      their bioinformatics training somewhere unexpected. Through personal stories and candid reflection, they'll
+      explore the breadth of careers this field can lead to, what it takes to recognize and seize an opportunity,
+      and what they wish they'd known earlier in their journey. Stay tuned for details on the date, location, and speakers.
+    </p>
+    <p
+      class="text-xl text-muted mx-2 sm:mx-5 md:mx-10 mb-12 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter text-center"
+    >
+      <b>
+        This is one of our rare ticketed events — your support goes directly toward sustaining the BWiB community and
+        the programming, networking, and resources we provide year-round. Thank you for investing in this community.
+      </b>
+    </p>
+    <!-- Previous event description - uncomment and update when ready
     <p
       class="text-xl text-muted mx-2 sm:mx-5 md:mx-10 md:mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter text-center"
     >
-      Join us for a career session of four experienced speakers who will explore the realities of building a career in
-      life sciences and technology. They will share personal stories and practical insights on navigating career
-      options, managing psychological pressures, pivoting into new directions, learning from failure, seizing
-      opportunities, advocating for yourself, and overcoming workplace challenges.
+      What can you really do with a bioinformatics degree? More than you might think.
     </p>
+    <p
+      class="text-xl text-muted mx-2 sm:mx-5 md:mx-10 md:mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter text-center"
+    >
+      Join Boston Women in Bioinformatics for an evening of honest, inspiring conversation with four speakers who took
+      their bioinformatics training somewhere unexpected — from the paths they planned to the ones they never saw
+      coming. Through personal stories and candid reflection, they'll explore the breadth of careers this field can lead
+      to, what it takes to recognize and seize an opportunity, and what they wish they'd known earlier in their journey.
+      Whether you're just starting out, considering a pivot, or simply curious about the road not taken, this is an
+      evening worth showing up for. Stick around after the panel for drinks, light bites, and good company.
+    </p>
+    -->
 
     <div class="text-center">
+      <!-- Register Button - uncomment and update when ready
       <a
         href="https://givebutter.com/BWIB10YRS"
         class="inline-flex items-center justify-center my-8 px-8 py-4 rounded-full text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.6)] text-xl font-extrabold tracking-wide bg-gradient-to-r from-pink-500 via-amber-500 to-pink-500 shadow-lg shadow-pink-400/40 transition-all ease-in-out transform hover:scale-110 hover:rotate-1 hover:shadow-yellow-500/60 ring-4 ring-pink-300 dark:from-fuchsia-600 dark:via-amber-500 dark:to-fuchsia-600 dark:shadow-fuchsia-500/50 dark:ring-amber-500 dark:drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]"
       >
         🥳 Register Now! 🎉
-      </a>
+      </a>-->
 
-      <!-- Waitlist Sign-Up -->
+      <!-- Waitlist Sign-Up - uncomment and update when ready 
       <form id="waitlistForm">
         <label>
           <p class="text-red-500 text-xl my-4">
@@ -75,7 +101,7 @@ if (speakers?.enabled === true) {
           class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
           >Submit</button
         >
-      </form>
+      </form>-->
 
       <script is:inline>
         const waitlistform = document.getElementById('waitlistForm');
@@ -105,8 +131,8 @@ if (speakers?.enabled === true) {
         });
       </script>
 
+      <!-- Event logo - uncomment and update when ready
       <div class="mx-auto max-w-xs w-full mt-20">
-        <!-- Light and Dark mode logos -->
         <div class="block dark:hidden">
           <img
             src="/photos/2025/WIB_10Year_whitebackground_bright_Logo3.png"
@@ -120,29 +146,29 @@ if (speakers?.enabled === true) {
           />
         </div>
       </div>
+      -->
     </div>
+    <!-- Date, location, and calendar button - uncomment and update when ready
     <div class="text-center pb-0 mx-auto">
-      <!-- wrapped the location & calendar button next to each other -->
       <div class="grid sm:grid-cols-2 items-center justify-center">
         <div class="text-lg text-muted py-4 text-center sm:text-right mr-8">
-          <p>Date: Sept 30, 2025 @ 4PM ET</p>
-          <!-- <p>Date:Date: September, 2025</p> -->
-          <p>Location: Boynton Yards, Somerville</p>
-          <p class="font-semibold">Ticket Cost: $20.00</p>
+          <p>Date: TBD</p>
+          <p>Location: TBD</p>
+          <p class="font-semibold">Ticket Cost: TBD</p>
         </div>
         <AddToCalendarButton
           client:only="react"
-          name="Boston Women in Bioinformatics 10 Year Anniversary"
-          location="Boynton Yards, Somerville"
-          startDate="2025-09-30"
-          endDate="2025-09-30"
+          name="Boston Women in Bioinformatics 2026 Fall Fundraiser"
+          location="TBD"
+          startDate="2026-01-01"
+          endDate="2026-01-01"
           startTime="16:00"
           endTime="19:00"
         />
       </div>
     </div>
-    <!-- Agenda Table -->
-
+    -->
+    <!-- Agenda Table - uncomment and update when ready
     <div class="min-h-screen flex flex-col items-center justify-center px-4 py-4">
       <h2 class="text-3xl font-bold mb-3">Agenda</h2>
 
@@ -158,34 +184,15 @@ if (speakers?.enabled === true) {
           </thead>
           <tbody class="divide-y divide-gray-200 text-lg text-gray-800">
             <tr>
-              <td class="px-4 py-3 text-right">4:00 PM – 4:20 PM</td>
-              <td class="px-8 py-3">Check in & Refreshments</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-right">4:20 PM – 4:25 PM</td>
-              <td class="px-8 py-3">Welcoming Remarks</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-right">4:25 PM – 5:10 PM</td>
-              <td class="px-8 py-3">Panel (3 speakers)</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-right">5:10 PM – 5:30 PM</td>
-              <td class="px-8 py-3">Closing and Q&A</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-right">5:30 PM</td>
-              <td class="px-8 py-3">Announce raffle winner</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-right">5:30 PM – 8:00 PM</td>
-              <td class="px-8 py-3">Networking and Activities</td>
+              <td class="px-4 py-3 text-right">TBD</td>
+              <td class="px-8 py-3">TBD</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-    <!-- Keynote speakers -->
+    -->
+    <!-- Keynote speakers - uncomment and update when ready
     <div>
       <div class="px-4 mx-auto max-w-screen-xl text-center lg:py-2 lg:px-6">
         <div class="mx-auto mb-8 max-w-screen-sm lg:mb-12">
@@ -200,8 +207,10 @@ if (speakers?.enabled === true) {
         </div>
       </div>
     </div>
-    <!--Sponsors -->
+    -->
+    <!-- Sponsors 
     <SponsorSection />
+    -->
     <!-- <div class="py-4 relative items-center max-w-7xl mx-auto px-4 sm:px-6">
       <div>
         <div
@@ -224,14 +233,14 @@ if (speakers?.enabled === true) {
 
     <!-- Email Updates Sign-Up -->
 
-    <div class="mb-8">
+    <div class="mb-8 mt-16">
       <div
-        class="mx-auto max-w-screen-md dark:border dark:border-slate-600 dark:shadow-none p-6 rounded-md shadow-xl text-center my-auto"
+        class="mx-auto max-w-screen-md dark:border dark:border-slate-600 dark:shadow-none p-8 rounded-md shadow-xl text-center my-auto"
       >
         <div class="text-center mb-0 md:mb-0 md:mx-auto">
           <div class="mb-4 lg:mb-8">
             <h3
-              class="font-bold font-heading leading-tighter mb-4 tracking-tighter text-3xl sm:text-4xl md:text-5xl text-heading"
+              class="font-bold font-heading leading-tighter mb-4 tracking-tighter text-3xl sm:text-4xl md:text-5xl text-gray-900 dark:text-white"
             >
               Email Sign-Up
             </h3>
@@ -286,26 +295,24 @@ if (speakers?.enabled === true) {
       });
     </script>
   </section>
-  <!-- Sponsorship tiers -->
-  <section class="bg-white dark:bg-gray-900 border">
-    <div class="py-8 px-4 mx-auto text-center lg:py-16 lg:px-6">
+  <!-- Sponsorship tiers - uncomment and update when ready -->
+  <section class="bg-white dark:bg-gray-900 border mt-12">
+    <div class="py-12 px-4 mx-auto text-center lg:py-20 lg:px-6">
       <div class="sponsorship-intro text-center mb-8 mt-2">
         <h3 class="mb-4 text-3xl sm:text-4xl md:text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white">
           Become a Sponsor
         </h3>
         <br />
-        <p class="text-lg">
-          Support the 10-year anniversary of Boston Women in Bioinformatics. Explore sponsorship opportunities below!
-        </p>
+        <p class="text-lg">Support Boston Women in Bioinformatics. Explore sponsorship opportunities below!</p>
       </div>
       <div class="sponsorship-tiers mt-0">
-        <div class="tier">
-          <h3 class="text-2xl sm:text-3xl md:text-4xl">Tier 1: <span class="gold">Gold </span> RNA Sponsor</h3>
-          <div class="contribution">
+        <div class="tier mb-12">
+          <h3 class="text-2xl sm:text-3xl md:text-4xl mb-4">Tier 1: <span class="gold">Gold </span> RNA Sponsor</h3>
+          <div class="contribution mb-4">
             <strong>Contribution Amount:</strong> $1,500
           </div>
 
-          <h4>Benefits:</h4>
+          <h4 class="mb-2">Benefits:</h4>
           <ul class="benefits">
             <li>
               🏆 <strong>Prominent Logo Placement:</strong> Sponsor's logo prominently displayed on all event marketing materials,
@@ -335,12 +342,12 @@ if (speakers?.enabled === true) {
         </div>
 
         <div class="tier">
-          <h2>Tier 2: <span class="silver">Silver </span> DNA Sponsor</h2>
-          <div class="contribution">
+          <h3 class="text-2xl sm:text-3xl md:text-4xl mb-4">Tier 2: <span class="silver">Silver </span> DNA Sponsor</h3>
+          <div class="contribution mb-4">
             <strong>Contribution Amount:</strong> $500
           </div>
 
-          <h4>Benefits:</h4>
+          <h4 class="mb-2">Benefits:</h4>
           <ul class="benefits">
             <li>
               🏆 <strong>Prominent Logo Placement:</strong> Sponsor's logo prominently displayed on all event marketing materials,
@@ -366,7 +373,5 @@ if (speakers?.enabled === true) {
         </div>
       </div>
     </div>
-
-    <!-- Styles -->
   </section>
 </Layout>
