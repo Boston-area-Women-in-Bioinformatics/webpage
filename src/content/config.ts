@@ -77,6 +77,7 @@ const postCollection = defineCollection({
     listeningTime: z.string().optional(),
     hiddenFromFeed: z.boolean().optional(),
     hideHeroImage: z.boolean().optional(),
+    url: z.string().url().optional(),
   }),
 });
 
