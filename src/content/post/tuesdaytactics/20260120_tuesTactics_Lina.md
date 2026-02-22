@@ -19,8 +19,5 @@ tags:
 metadata:
   title: 'Tuesday Tactics: API-First or Bottleneck Forever'
   canonical: https://linafaller.com/biotech/2026/01/20/tuesday-tactics-api-first-or-bottleneck-forever/
+url: 'https://linafaller.com/biotech/2026/01/20/tuesday-tactics-api-first-or-bottleneck-forever/'
 ---
-
-Building standalone apps without APIs? You're creating data islands that'll haunt you at Series B.
-
-Every new tool should expose its data—future-you will thank present-you when integration requests flood in.
