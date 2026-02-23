@@ -36,9 +36,7 @@ const isRemoteImage =
 const isBlogPost = 'tags' in post;
 const isNewsletter = 'issue' in post;
 const config = isBlogPost ? APP_BLOG : APP_NEWSLETTER;
-const link = 'url' in post && post.url
-  ? post.url
-  : config?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
+const link = 'url' in post && post.url ? post.url : config?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
 
 // Use imageAlt if provided, otherwise fall back to title for accessibility
 const altText = post.imageAlt || post.title;
