@@ -19,8 +19,5 @@ tags:
 metadata:
   title: 'Tuesday Tactics: The Excel Export Feature Request'
   canonical: https://linafaller.com/data-science/2025/12/30/tuesday-tactics-excel-export-request/
+url: 'https://linafaller.com/data-science/2025/12/30/tuesday-tactics-excel-export-request/'
 ---
-
-When scientists ask to export everything to Excel, they're telling you your interface is too rigid.
-
-Don't add an export button—ask what analysis they're trying to do manually that your tool should handle.

@@ -79,6 +79,9 @@ export interface Post {
   /** Hide from main blog feed and latest posts, but keep on category/series/tag pages */
   hiddenFromFeed?: boolean;
 
+  /** External URL — if set, the post card links here instead of the internal page */
+  url?: string;
+
   /**  */
   Content?: AstroComponentFactory;
   content?: string;
