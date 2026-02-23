@@ -72,6 +72,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     hiddenFromFeed = false,
     hideHeroImage = false,
     metadata = {},
+    url,
   } = data;
 
   const slug = cleanSlug(rawSlug); // cleanSlug(rawSlug.split('/').pop());
@@ -135,6 +136,8 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
 
     Content: Content,
     // or 'content' in case you consume from API
+
+    url: url,
 
     readingTime: remarkPluginFrontmatter?.readingTime,
     listeningTime: listeningTime,

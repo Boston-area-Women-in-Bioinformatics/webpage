@@ -33,7 +33,7 @@ const isRemoteImage =
 // Determine if this is a blog post or newsletter
 const isBlogPost = 'tags' in post;
 const config = isBlogPost ? APP_BLOG : APP_NEWSLETTER;
-const link = config?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
+const link = 'url' in post && post.url ? post.url : config?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
 
 // Use imageAlt if provided, otherwise fall back to title for accessibility
 const altText = post.imageAlt || post.title;
@@ -65,7 +65,7 @@ const objectPosition = getObjectPosition(post.imagePosition);
             {isRemoteImage ? (
               <img
                 src={image}
-                class="w-full rounded shadow-lg bg-gray-400 dark:bg-slate-700 object-cover"
+                class="w-full rounded shadow-lg bg-white object-cover"
                 style={`object-position: ${objectPosition};`}
                 alt={altText}
                 width="400"
@@ -76,7 +76,7 @@ const objectPosition = getObjectPosition(post.imagePosition);
             ) : (
               <Image
                 src={image}
-                class="w-full rounded shadow-lg bg-gray-400 dark:bg-slate-700 object-cover"
+                class="w-full rounded shadow-lg bg-white object-cover"
                 style={`object-position: ${objectPosition};`}
                 widths={[400, 900]}
                 width={400}
@@ -92,7 +92,7 @@ const objectPosition = getObjectPosition(post.imagePosition);
         ) : isRemoteImage ? (
           <img
             src={image}
-            class="w-full rounded shadow-lg bg-gray-400 dark:bg-slate-700 object-cover"
+            class="w-full rounded shadow-lg bg-white object-cover"
             style={`object-position: ${objectPosition};`}
             alt={altText}
             width="400"
@@ -103,7 +103,7 @@ const objectPosition = getObjectPosition(post.imagePosition);
         ) : (
           <Image
             src={image}
-            class="w-full rounded shadow-lg bg-gray-400 dark:bg-slate-700 object-cover"
+            class="w-full rounded shadow-lg bg-white object-cover"
             style={`object-position: ${objectPosition};`}
             widths={[400, 900]}
             width={400}

@@ -40,7 +40,7 @@ export const GET = async () => {
 
     items: await Promise.all(
       posts.map(async (post) => {
-        const cleanedBody = cleanImports(post.body);
+        const cleanedBody = cleanImports(post.body || '');
         const bodyHtml = await marked.parse(cleanedBody);
         const processedHtml = processImages(bodyHtml, import.meta.env.SITE);
 

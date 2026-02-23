@@ -19,10 +19,5 @@ tags:
 metadata:
   title: 'Tuesday Tactics: Build vs Buy Red Flag'
   canonical: https://linafaller.com/software-engineering/2026/01/06/tuesday-tactics-build-vs-buy-red-flag/
+url: 'https://linafaller.com/software-engineering/2026/01/06/tuesday-tactics-build-vs-buy-red-flag/'
 ---
-
-If you're considering building custom infrastructure, ask: "Would I also build my own email server?"
-
-If the answer is "obviously not," you probably shouldn't build this either.
-
-Integration costs are real.
