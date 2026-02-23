@@ -7,7 +7,7 @@ chairs:
   - 'Lina Faller'
 members:
   - 'Katie Hughes'
-  - 'Katie D''Aco'
+  - "Katie D'Aco"
   - 'Petra Palenikova'
 ---
 
