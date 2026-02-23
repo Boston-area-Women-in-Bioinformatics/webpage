@@ -249,6 +249,25 @@ const exec = {
         linkedin: 'https://www.linkedin.com/in/amulya-shastry/',
       },
     },
+    // Amulya Shastry
+    {
+      // Name: First and last name
+      name: 'Viveka Patel',
+      // Namelink: Member's Personal Website
+      nameLink: 'https://www.linkedin.com/in/viveka-patil-934b3123b',
+      // Job Title
+      title: 'Co-chair, Enabling Advocacy Committee',
+      // Leadership team member Photo
+      avatar: '/team/VivekaPatel.png',
+      // Social links
+      social: {
+        //website: '',
+        //github: '',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/viveka-patil-934b3123b',
+      },
+    },
     // Saba Nafees
     {
       // Name: First and last name
