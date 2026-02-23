@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-02-17T08:00:00-05:00
+publishDate: 2026-02-23T08:00:00-05:00
 title: 'ctDNA as an oncology endpoint'
 slug: blog/quicktake/ctdna-as-an-oncology-endpoint
 excerpt: 'Takeaways from the FoCR symposium'
