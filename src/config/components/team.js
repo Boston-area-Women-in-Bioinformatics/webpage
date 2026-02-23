@@ -325,6 +325,43 @@ const team = {
 
   // Members of the leadership team
   members: [
+    // Katie D'Aco
+    {
+      // Name: First and last name
+      name: "Katie D'Aco",
+      // Namelink: Member's Personal Website
+      nameLink: 'https://www.linkedin.com/in/katiedaco/',
+      // Job Title
+      title: 'Co-chair, Nominating & Governance Committee',
+      // Leadership team member Photo
+      avatar: '/team/KatieDaco.png',
+      // Social links
+      social: {
+        // website: '#',
+        // github: '#',
+        linkedin: 'https://www.linkedin.com/in/katiedaco/',
+        //bluesky: '#',
+      },
+    },
+    // Petra Palenikova
+    {
+      // Name: First and last name
+      name: 'Petra Palenikova',
+      // Namelink: Member's Personal Website
+      nameLink: 'https://www.linkedin.com/in/petra-palenikova-aa6330142/',
+      // Job Title
+      title: 'Co-chair, Nominating & Governance Committee',
+      // Leadership team member Photo
+      avatar: '/team/PetraPalenikova.png',
+      // Social links
+      social: {
+        // website: '#',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/petra-palenikova-aa6330142/',
+      },
+    },
     // Shreya Rajasekar
     {
       // Name: First and last name
