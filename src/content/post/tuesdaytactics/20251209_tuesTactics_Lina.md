@@ -18,10 +18,5 @@ tags:
 metadata:
   title: 'Tuesday Tactics: Sunset Before You Scale'
   canonical: https://linafaller.com/data-science/2025/12/09/tuesday-tactics-sunset-before-you-scale/
+url: 'https://linafaller.com/data-science/2025/12/09/tuesday-tactics-sunset-before-you-scale/'
 ---
-
-Before building new data infrastructure, document what you'll STOP doing.
-
-Every discontinued project's data should have a sunset plan.
-
-"We'll keep it around" is how data graveyards get built.

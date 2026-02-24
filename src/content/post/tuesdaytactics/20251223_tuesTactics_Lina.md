@@ -19,8 +19,5 @@ tags:
 metadata:
   title: 'Tuesday Tactics: Data Steward ≠ Data Janitor'
   canonical: https://linafaller.com/biotech/2025/12/23/tuesday-tactics-data-steward-not-janitor/
+url: 'https://linafaller.com/biotech/2025/12/23/tuesday-tactics-data-steward-not-janitor/'
 ---
-
-Your most experienced computational biologist shouldn't be reformatting CSVs.
-
-Data stewards should be capturing institutional knowledge, defining standards, and teaching—not doing everyone's data prep.

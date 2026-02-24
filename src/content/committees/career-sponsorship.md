@@ -1,7 +1,7 @@
 ---
 id: 'career-sponsorship'
 title: 'Career Sponsorship'
-description: 'The Career Sponsorship committee empowers women in bioinformatics to grow into leadership roles through focused mentorship, career advocacy, and access to professional networks.'
+description: 'Empowers women in bioinformatics to grow into leadership roles through focused mentorship, career advocacy, and access to professional networks.'
 icon: 'tabler:heart-handshake'
 chairs:
   - 'Aysheh Alrfooh'

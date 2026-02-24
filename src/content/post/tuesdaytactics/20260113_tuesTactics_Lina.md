@@ -19,8 +19,5 @@ tags:
 metadata:
   title: 'Tuesday Tactics: The Post-Mortem Timing Rule'
   canonical: https://linafaller.com/biotech/2026/01/13/tuesday-tactics-post-mortem-timing-rule/
+url: 'https://linafaller.com/biotech/2026/01/13/tuesday-tactics-post-mortem-timing-rule/'
 ---
-
-Run post-mortems within 48 hours of incidents while memory is fresh, but schedule the action items review for one week later.
-
-Hot takes create panic fixes; cooled-down analysis creates systemic improvements.
