@@ -1,7 +1,7 @@
 ---
 id: 'podcast'
 title: 'Podcast'
-description: 'The Podcast committee produces "A Coffee with CompBio," sharing conversations about career paths, challenges, and insights in computational biology.'
+description: 'Produces "A Coffee with CompBio," sharing conversations about career paths, challenges, and insights in computational biology.'
 icon: 'tabler:microphone'
 chairs:
   - 'Sharvari Narendra'

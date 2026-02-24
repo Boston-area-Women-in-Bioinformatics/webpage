@@ -1,7 +1,7 @@
 ---
 id: 'events'
 title: 'Events'
-description: 'The Events committee organizes and hosts professional and community-focused events from technical workshops to networking gatherings.'
+description: 'Organizes and hosts professional and community-focused events from technical workshops to networking gatherings.'
 icon: 'tabler:calendar'
 chairs:
   - 'Diveena Becker'
