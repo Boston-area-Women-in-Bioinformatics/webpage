@@ -21,6 +21,30 @@
   text-align: center;
 }
 
+:is(.dark .tier) {
+  background-color: rgb(31 41 55);
+  color: white;
+}
+
+:is(.dark .tier) h3,
+:is(.dark .tier) h4,
+:is(.dark .benefits) li,
+:is(.dark .contribution) {
+  color: white;
+}
+
+:is(.dark .tier) h3 .gold,
+:is(.dark) .gold {
+  color: var(--aw-color-tier-gold) !important;
+  text-shadow: 0 0 4px rgba(240, 192, 64, 0.3) !important;
+}
+
+:is(.dark .tier) h3 .silver,
+:is(.dark) .silver {
+  color: var(--aw-color-tier-silver) !important;
+  text-shadow: 0 0 4px rgba(156, 168, 184, 0.4) !important;
+}
+
 .tier h3 {
   color: var(--aw-color-text-dark);
   font-size: 24px;
@@ -61,11 +85,13 @@
 .gold {
   color: var(--aw-color-tier-gold);
   font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .silver {
   color: var(--aw-color-tier-silver);
   font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .gold-border {
