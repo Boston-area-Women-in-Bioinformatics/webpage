@@ -4,27 +4,49 @@ on:
   push:
     branches:
       - main  # Set the branch you want to trigger the action
+  schedule:
+    - cron: '1 13 * * *'  # 8:01 AM EST (Nov-Mar)
+    - cron: '1 12 * * *'  # 8:01 AM EDT (Mar-Nov)
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Check if correct schedule for current timezone
+      if: github.event_name == 'schedule'
+      id: tz_check
+      run: |
+        CURRENT_OFFSET=$(TZ='America/New_York' date +%z)
+        SCHEDULE="${{ github.event.schedule }}"
+        if [[ "$CURRENT_OFFSET" == "-0500" && "$SCHEDULE" == "1 12 * * *" ]]; then
+          echo "skip=true" >> $GITHUB_OUTPUT
+        elif [[ "$CURRENT_OFFSET" == "-0400" && "$SCHEDULE" == "1 13 * * *" ]]; then
+          echo "skip=true" >> $GITHUB_OUTPUT
+        else
+          echo "skip=false" >> $GITHUB_OUTPUT
+        fi
+
     - name: Checkout code
+      if: steps.tz_check.outputs.skip != 'true'
       uses: actions/checkout@v2
-      
+
     - name: Set up Node.js
+      if: steps.tz_check.outputs.skip != 'true'
       uses: actions/setup-node@v3
       with:
         node-version: '22'  # Specify the Node.js version you want to use
 
     - name: Install dependencies
+      if: steps.tz_check.outputs.skip != 'true'
       run: npm install
-      
+
     - name: Build project
+      if: steps.tz_check.outputs.skip != 'true'
       run: npm run build  # Adjust if your build command is different
 
     - name: Deploy to GitHub Pages
+      if: steps.tz_check.outputs.skip != 'true'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
