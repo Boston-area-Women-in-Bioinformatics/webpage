@@ -343,6 +343,61 @@ const team = {
         //bluesky: '#',
       },
     },
+    // Dina Issakova
+    {
+      // Name: First and last name
+      name: 'Dina Issakova',
+      // Namelink: Member's Personal Website
+      //nameLink: 'https://www.linkedin.com/in/nishita-kalepalli/',
+      // Job Title
+      title: 'Member, Podcast Committee',
+      // Leadership team member Photo
+      //avatar: '/team/nishita-kalepalli.png',
+      // Social links
+      social: {
+        //linkedin: 'https://www.linkedin.com/in/nishita-kalepalli/',
+      },
+    },
+    // Lakshmi Kuttippurathu
+    {
+      // Name: First and last name
+      name: 'Lakshmi Kuttippurathu',
+      // Namelink: Member's Personal Website
+      nameLink: 'https://www.linkedin.com/in/lakshmikc/',
+      // Job Title
+      title: 'Member, Events Committee',
+      // Leadership team member Photo
+      avatar: '/team/lakshmi1.jpg',
+      // Social links
+      social: {
+        linkedin: 'https://www.linkedin.com/in/lakshmikc/',
+      },
+    },
+    // Dana Moochnick
+    {
+      name: 'Dana Moochnick',
+      nameLink: 'https://www.linkedin.com/in/dana-moochnick',
+      title: 'Member, Podcast Committee',
+      avatar: '/team/DanaMoochnick.jpeg',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/dana-moochnick',
+      },
+    },
+    // Yaseswini Neelamraju
+    {
+      name: 'Yaseswini Neelamraju',
+      nameLink: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
+      title: 'Member, Web Page Committee',
+      avatar: '/team/yaseswini.png',
+      social: {
+        website: 'https://yaseswinineelamraju.netlify.app/',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
+        github: 'https://github.com/Yaseswini',
+      },
+    },
     // Petra Palenikova
     {
       // Name: First and last name
@@ -381,51 +436,6 @@ const team = {
         linkedin: 'https://www.linkedin.com/in/shreya-rajasekar/',
       },
     },
-    // Yaseswini Neelamraju
-    {
-      name: 'Yaseswini Neelamraju',
-      nameLink: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
-      title: 'Member, Web Page Committee',
-      avatar: '/team/yaseswini.png',
-      social: {
-        website: 'https://yaseswinineelamraju.netlify.app/',
-        // twitter: '#',
-        // instagram: '#',
-        // facebook: '#',
-        linkedin: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
-        github: 'https://github.com/Yaseswini',
-      },
-    },
-    // Ozge Tasdemir Yilmaz
-    {
-      name: 'Ozge Tasdemir Yilmaz',
-      nameLink: 'http://linkedin.com/in/ozgeevrimtasdemiryilmaz',
-      title: 'Member, Events Committee',
-      avatar: '/team/Ozge_Tasdemir_Yilmaz.jpg',
-      social: {
-        // website: '#',
-        // twitter: '#',
-        // instagram: '#',
-        // facebook: '#',
-        linkedin: 'http://linkedin.com/in/ozgeevrimtasdemiryilmaz',
-        // github: '#',
-      },
-    },
-    // Lakshmi Kuttippurathu
-    {
-      // Name: First and last name
-      name: 'Lakshmi Kuttippurathu',
-      // Namelink: Member's Personal Website
-      nameLink: 'https://www.linkedin.com/in/lakshmikc/',
-      // Job Title
-      title: 'Member, Events Committee',
-      // Leadership team member Photo
-      avatar: '/team/lakshmi1.jpg',
-      // Social links
-      social: {
-        linkedin: 'https://www.linkedin.com/in/lakshmikc/',
-      },
-    },
     // Masoome Rezaei
     {
       name: 'Masoome Rezaei',
@@ -460,19 +470,19 @@ const team = {
         //github: '#',
       },
     },
-    // Dina Issakova
+    // Ozge Tasdemir Yilmaz
     {
-      // Name: First and last name
-      name: 'Dina Issakova',
-      // Namelink: Member's Personal Website
-      //nameLink: 'https://www.linkedin.com/in/nishita-kalepalli/',
-      // Job Title
-      title: 'Member, Podcast Committee',
-      // Leadership team member Photo
-      //avatar: '/team/nishita-kalepalli.png',
-      // Social links
+      name: 'Ozge Tasdemir Yilmaz',
+      nameLink: 'http://linkedin.com/in/ozgeevrimtasdemiryilmaz',
+      title: 'Member, Events Committee',
+      avatar: '/team/Ozge_Tasdemir_Yilmaz.jpg',
       social: {
-        //linkedin: 'https://www.linkedin.com/in/nishita-kalepalli/',
+        // website: '#',
+        // twitter: '#',
+        // instagram: '#',
+        // facebook: '#',
+        linkedin: 'http://linkedin.com/in/ozgeevrimtasdemiryilmaz',
+        // github: '#',
       },
     },
   ],
