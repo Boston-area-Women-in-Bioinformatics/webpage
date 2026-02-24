@@ -55,10 +55,10 @@ export const headerData = {
           text: 'Events List',
           href: getPermalink('/events'),
         },
-        //{
-        //  text: '10th Year Anniversary',
-        //  href: getPermalink('/events/tenyearanniversary'),
-        //},
+        {
+          text: 'Fall Fundraiser 2026',
+          href: getPermalink('/events/fall-fundraiser-2026'),
+        },
         //{
         //  text: 'Cambridge Science Carnival 2025',
         //  href: getPermalink('/events/ama'),
