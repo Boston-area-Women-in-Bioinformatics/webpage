@@ -16,7 +16,7 @@ const alumni = {
     {
       name: 'Anushka Dongaonkar',
       nameLink: 'https://www.linkedin.com/in/anushka-dongaonkar-191b18201/',
-      title: 'Web Page Developer',
+      title: 'Member, Communications Committee',
       avatar: '/team/Anushka.jpeg',
       social: {
         // twitter: '#',
@@ -65,7 +65,7 @@ const alumni = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/rachel-utama/',
       // Job Title
-      title: 'Member Events Committee',
+      title: 'Member, Events Committee',
       // Leadership team member Photo
       avatar: 'team/RachelUtama.jpg',
       // Social links

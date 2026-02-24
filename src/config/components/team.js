@@ -332,7 +332,7 @@ const team = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/katiedaco/',
       // Job Title
-      title: 'Co-chair, Nominating & Governance Committee',
+      title: 'Nominating & Governance Committee',
       // Leadership team member Photo
       avatar: '/team/KatieDaco.png',
       // Social links
@@ -350,7 +350,7 @@ const team = {
       // Namelink: Member's Personal Website
       //nameLink: 'https://www.linkedin.com/in/nishita-kalepalli/',
       // Job Title
-      title: 'Member, Podcast Committee',
+      title: 'Podcast Committee',
       // Leadership team member Photo
       //avatar: '/team/nishita-kalepalli.png',
       // Social links
@@ -365,7 +365,7 @@ const team = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/lakshmikc/',
       // Job Title
-      title: 'Member, Events Committee',
+      title: 'Events Committee',
       // Leadership team member Photo
       avatar: '/team/lakshmi1.jpg',
       // Social links
@@ -377,7 +377,7 @@ const team = {
     {
       name: 'Dana Moochnick',
       nameLink: 'https://www.linkedin.com/in/dana-moochnick',
-      title: 'Member, Podcast Committee',
+      title: 'Communications Committee',
       avatar: '/team/DanaMoochnick.jpeg',
       social: {
         linkedin: 'https://www.linkedin.com/in/dana-moochnick',
@@ -387,7 +387,7 @@ const team = {
     {
       name: 'Yaseswini Neelamraju',
       nameLink: 'https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/',
-      title: 'Member, Web Page Committee',
+      title: 'Communications Committee',
       avatar: '/team/yaseswini.png',
       social: {
         website: 'https://yaseswinineelamraju.netlify.app/',
@@ -405,7 +405,7 @@ const team = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/petra-palenikova-aa6330142/',
       // Job Title
-      title: 'Co-chair, Nominating & Governance Committee',
+      title: 'Nominating & Governance Committee',
       // Leadership team member Photo
       avatar: '/team/PetraPalenikova.png',
       // Social links
@@ -424,7 +424,7 @@ const team = {
       // Namelink: Member's Personal Website
       //nameLink: '',
       // Job Title
-      title: 'Co-chair, Communications Committee',
+      title: 'Communications Committee',
       // Leadership team member Photo
       avatar: '/team/shreya_sq.jpg',
       // Social links
@@ -440,7 +440,7 @@ const team = {
     {
       name: 'Masoome Rezaei',
       nameLink: 'https://www.linkedin.com/in/masoome-rezaei',
-      title: 'Member, Newsletter Committee',
+      title: 'Newsletter Committee',
       avatar: '/team/MasoomeRezaei.jpg',
       social: {
         linkedin: 'https://www.linkedin.com/in/masoome-rezaei',
@@ -450,7 +450,7 @@ const team = {
     {
       name: 'Marissa Sumathipala',
       nameLink: 'https://www.linkedin.com/in/marissa-sumathipala',
-      title: 'Member, Career-Sponsorship Committee',
+      title: 'Career-Sponsorship Committee',
       avatar: '/team/MarissaSumathipala.jpg',
       social: {
         // website: '#',
@@ -462,7 +462,7 @@ const team = {
     {
       name: 'Vishwa Talati',
       nameLink: 'https://www.linkedin.com/in/vishwa-talati',
-      title: 'Member, Web Page Committee',
+      title: 'Communications Committee',
       avatar: '/team/VishwaTalati.jpeg',
       social: {
         // website: '#',
@@ -474,7 +474,7 @@ const team = {
     {
       name: 'Ozge Tasdemir Yilmaz',
       nameLink: 'http://linkedin.com/in/ozgeevrimtasdemiryilmaz',
-      title: 'Member, Events Committee',
+      title: 'Events Committee',
       avatar: '/team/Ozge_Tasdemir_Yilmaz.jpg',
       social: {
         // website: '#',
