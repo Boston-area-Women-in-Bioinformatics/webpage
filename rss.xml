@@ -31,7 +31,63 @@ White British ancestry (UK Biobank data field 22006, coding 1). The healthy volu
 &lt;/ol&gt;
 &lt;p&gt;Neither instinct serves the project. The discipline I&amp;#39;ve had to learn is this: acknowledge the complexity but focus only on what affects your specific research question.&lt;/p&gt;
 &lt;p&gt;The good news is that this complexity isn&amp;#39;t insurmountable. It just requires understanding the data first. I&amp;#39;ve already fallen into some of these rabbit holes, so hopefully you won&amp;#39;t have to. In a series of posts, I hope to demystify UK Biobank and All of Us so you can navigate them confidently. But let me be clear, I cannot cover every nuance of these massive resources. Your specific research question may surface complexities I haven&amp;#39;t encountered. What I can give you are foundational issues that matter across most use cases, the patterns to watch for, and questions to ask.&lt;/p&gt;
-</content:encoded><category>biobank</category><category>research-strategy</category><category>project-management</category><category>consulting</category><category>bioinformatics</category><category>data-science</category><category>computational-biology</category><category>biotech</category><category>genomics</category><category>best-practices</category></item><item><title>ctDNA as an oncology endpoint</title><link>https://boston-wib.org/blog/quicktake/ctdna-as-an-oncology-endpoint</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/ctdna-as-an-oncology-endpoint</guid><pubDate>Mon, 23 Feb 2026 13:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2026-02-10-ctdna-as-a-clinical-endpoint.jpeg&quot; alt=&quot;A research figure compares different brain regions to see where information about what someone is consciously seeing can be decoded most accurately, showing stronger decoding in posterior regions than in prefrontal areas&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>biobank</category><category>research-strategy</category><category>project-management</category><category>consulting</category><category>bioinformatics</category><category>data-science</category><category>computational-biology</category><category>biotech</category><category>genomics</category><category>best-practices</category></item><item><title>A Coffee with CompBio: Hacking your way into computational biology</title><link>https://boston-wib.org/blog/coffeewithcompbio/s2-e2</link><guid isPermaLink="true">https://boston-wib.org/blog/coffeewithcompbio/s2-e2</guid><pubDate>Tue, 24 Feb 2026 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/coffeeWithCompBio-logo2.png&quot; alt=&quot;Coffee with CompBio Podcast Logo: Four painted women under that podcast title&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Hackathons can be a great way to understand the trends in your field, meet new people, and network. &lt;/em&gt;&lt;/p&gt;
+
+&lt;iframe
+  allow=&quot;autoplay *; encrypted-media *; fullscreen *; clipboard-write&quot;
+  frameborder=&quot;0&quot;
+  height=&quot;175&quot;
+  style=&quot;width:100%;max-width:660px;overflow:hidden;border-radius:10px;&quot;
+  sandbox=&quot;allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation&quot;
+  src=&quot;https://embed.podcasts.apple.com/us/podcast/hacking-your-way-into-computational-biology/id1817024741?i=1000751241489&quot;
+&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Hackathons are not just for coders anymore — computational biologists have made it their own with data, models, and insights! Hackathons can be a great way to understand the trends in your field, meet new people, and network. Do you want to try and participate in a hackathon this year and feel like a true hacker? The wait is over — in this episode we give you all the tea about hackathons, over a cup of coffee! Tune into our latest episode of &amp;quot;A Coffee with CompBio&amp;quot; where Sharvari Narendra and Saba Nafees talk about hackathons and more!&lt;/p&gt;
+&lt;p&gt;If you think you know some more hackathon-related resources, let us know in the comments and we will give you a shoutout in the next episode!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links from the Episode&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://podcast.boston-wib.org/&quot;&gt;Season 1 Archive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://biohackathons.github.io/&quot;&gt;BioHackathons&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://nf-co.re/events/hackathon&quot;&gt;nf-core Hackathon Events&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;strong style={{ color: &amp;#39;red&amp;#39; }}&amp;gt;UPCOMING EVENT -&amp;gt;&lt;/strong&gt; &lt;a href=&quot;https://boston-wib.org/events/20260311_nextflow&quot;&gt;nf-core Hackathon March
+2026&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://college.harvard.edu/student-life/student-stories/how-i-organized-hackathon-harvard&quot;&gt;How I Organized a Hackathon at Harvard&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.bio-itworldexpo.com/fair-data-hackathon&quot;&gt;BIO-IT World FAIR Data Hackathon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.openhackathons.org/s/&quot;&gt;OpenHackathons&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.mlh.com/seasons/2026/events&quot;&gt;MLH 2026 Events&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.codeday.org/&quot;&gt;CodeDay&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://devpost.com/&quot;&gt;Devpost&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ncbi-codeathons.github.io/&quot;&gt;NCBI Codeathons&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Listen On&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&amp;lt;span style={{ display: &amp;#39;inline-flex&amp;#39;, alignItems: &amp;#39;center&amp;#39;, gap: &amp;#39;0.5em&amp;#39; }}&amp;gt;
+  &lt;FaApple size={32} className=&quot;text-black dark:text-white&quot; /&gt;{&amp;#39; &amp;#39;}&lt;/p&gt;
+  &lt;a href=&quot;https://podcasts.apple.com/us/podcast/hacking-your-way-into-computational-biology/id1817024741?i=1000751241489&quot;&gt;
+    Apple
+  &lt;/a&gt;
+&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&amp;lt;span style={{ display: &amp;#39;inline-flex&amp;#39;, alignItems: &amp;#39;center&amp;#39;, gap: &amp;#39;0.5em&amp;#39; }}&amp;gt;
+  &lt;FaSpotify size={32} color=&quot;#1DB954&quot; /&gt;{&amp;#39; &amp;#39;}
+  &lt;a href=&quot;https://open.spotify.com/episode/5r965ssFfE4O91w1xxxX4x&quot;&gt;Spotify&lt;/a&gt;&lt;/p&gt;
+&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&amp;lt;span style={{ display: &amp;#39;inline-flex&amp;#39;, alignItems: &amp;#39;center&amp;#39;, gap: &amp;#39;0.5em&amp;#39; }}&amp;gt;
+  &lt;FaBell size={32} className=&quot;text-yellow-600&quot; /&gt; &lt;a href=&quot;https://podcast.boston-wib.org/feed.xml&quot;&gt;RSS Feed&lt;/a&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;More on this Episode&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;Send us your comments, questions, and suggestions using &lt;a href=&quot;https://forms.gle/ncwo6HZeN4uA9gPg7&quot;&gt;this form&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Thanks &lt;a href=&quot;https://www.linkedin.com/in/amulya-shastry/&quot;&gt;Amulya Shastry&lt;/a&gt; for editing and management support and &lt;a href=&quot;https://www.linkedin.com/in/dinaissakova/&quot;&gt;Dina Issakova&lt;/a&gt; for the cover art and social media support.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Support the Podcast&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;We are looking for sponsors! Please get in touch if you or your business would like to help support this podcast.&lt;/p&gt;
+&lt;p&gt;Follow &lt;a href=&quot;https://www.linkedin.com/in/sharvarinarendra/&quot;&gt;Sharvari&lt;/a&gt; and &lt;a href=&quot;https://www.linkedin.com/in/saba-nafees/&quot;&gt;Saba&lt;/a&gt; on LinkedIn!&lt;/p&gt;
+&lt;p&gt;If you enjoyed the episode, &lt;a href=&quot;https://podcast.ausha.co/a-coffee-with-compbio&quot;&gt;please subscribe and leave a review!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hosted by Ausha. See &lt;a href=&quot;https://ausha.co/privacy-policy&quot;&gt;ausha.co/privacy-policy&lt;/a&gt; for more information&lt;/p&gt;
+</content:encoded><category>science-communication</category><category>computational-biology</category><category>professional-development</category><category>bioinformatics</category><category>hackathons</category><category>nfcore</category><category>nextflow</category><category>networking</category></item><item><title>ctDNA as an oncology endpoint</title><link>https://boston-wib.org/blog/quicktake/ctdna-as-an-oncology-endpoint</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/ctdna-as-an-oncology-endpoint</guid><pubDate>Mon, 23 Feb 2026 13:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2026-02-10-ctdna-as-a-clinical-endpoint.jpeg&quot; alt=&quot;A research figure compares different brain regions to see where information about what someone is consciously seeing can be decoded most accurately, showing stronger decoding in posterior regions than in prefrontal areas&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;Takeaways from the FoCR symposium&lt;/em&gt;&lt;/p&gt;
 
@@ -98,9 +154,7 @@ I am particularly interested in the machine learning side of this work because A
 
 &lt;p&gt;Grab your coffee and join us for another episode of &lt;strong&gt;A Coffee with Comp Bio&lt;/strong&gt;!&lt;/p&gt;
 &lt;p&gt;New year, new episode, new comp-bio goals and new hosts. But first, we wish you a very Happy New Year! Most new year&amp;#39;s resolutions fail due to lack of clarity, so to make it easier, we begin our first episode of the season with a list that hopefully inspires you. From using AI tools to make your life easier to documenting your own code better, we are bringing resolutions every computational biologist needs this new year. Tune into the latest episode of “A Coffee with CompBio” where Sharvari Narendra and Saba Nafees present 12 awesome resolutions for the new year.&lt;/p&gt;
-&lt;p&gt;Send us your comments, questions, and suggestions using &lt;a href=&quot;https://forms.gle/ncwo6HZeN4uA9gPg7&quot;&gt;this form&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Thanks &lt;a href=&quot;https://www.linkedin.com/in/amulya-shastry/&quot;&gt;Amulya Shastry&lt;/a&gt; for editing and management support and &lt;a href=&quot;https://www.linkedin.com/in/dinaissakova/&quot;&gt;Dina Issakova&lt;/a&gt; for the cover art and social media support.&lt;/p&gt;
-&lt;p&gt;Listen to this podcast on other platforms:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Listen On&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&amp;lt;span style={{ display: &amp;#39;inline-flex&amp;#39;, alignItems: &amp;#39;center&amp;#39;, gap: &amp;#39;0.5em&amp;#39; }}&amp;gt;
   &lt;FaApple size={32} className=&quot;text-black dark:text-white&quot; /&gt;{&amp;#39; &amp;#39;}&lt;/p&gt;
@@ -115,9 +169,13 @@ I am particularly interested in the machine learning side of this work because A
 &lt;/span&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&amp;lt;span style={{ display: &amp;#39;inline-flex&amp;#39;, alignItems: &amp;#39;center&amp;#39;, gap: &amp;#39;0.5em&amp;#39; }}&amp;gt;
-  &lt;FaBell size={32} className=&quot;text-red-600&quot; /&gt; &lt;a href=&quot;https://podcast.boston-wib.org/feed.xml&quot;&gt;RSS Feed&lt;/a&gt;&lt;/p&gt;
+  &lt;FaBell size={32} className=&quot;text-yellow-600&quot; /&gt; &lt;a href=&quot;https://podcast.boston-wib.org/feed.xml&quot;&gt;RSS Feed&lt;/a&gt;&lt;/p&gt;
 &lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;More on this Episode&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;Send us your comments, questions, and suggestions using &lt;a href=&quot;https://forms.gle/ncwo6HZeN4uA9gPg7&quot;&gt;this form&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Thanks &lt;a href=&quot;https://www.linkedin.com/in/amulya-shastry/&quot;&gt;Amulya Shastry&lt;/a&gt; for editing and management support and &lt;a href=&quot;https://www.linkedin.com/in/dinaissakova/&quot;&gt;Dina Issakova&lt;/a&gt; for the cover art and social media support.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Support the Podcast&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;We are looking for sponsors! Please get in touch if you or your business would like to help support this podcast.&lt;/p&gt;
 &lt;p&gt;Follow &lt;a href=&quot;https://www.linkedin.com/in/sharvarinarendra/&quot;&gt;Sharvari&lt;/a&gt; and &lt;a href=&quot;https://www.linkedin.com/in/saba-nafees/&quot;&gt;Saba&lt;/a&gt; on LinkedIn!&lt;/p&gt;
 &lt;p&gt;If you enjoyed the episode, &lt;a href=&quot;https://podcast.ausha.co/a-coffee-with-compbio&quot;&gt;please subscribe and leave a review!&lt;/a&gt;&lt;/p&gt;
@@ -507,7 +565,7 @@ They’ll ask: &amp;quot;Do we have agents that can actually &lt;strong&gt;close
 &lt;p&gt;💠 Curious how this evolves in 2026 and beyond clinically, operationally, and ethically!&lt;/p&gt;
 </content:encoded><category>clinical-data</category><category>artificial-intelligence</category><category>ai</category><category>ai-agents</category><category>data-science</category><category>health-informatics</category><category>health-tech</category></item><item><title>I Fixed the Same Bug Three Times (No One Noticed)</title><link>https://boston-wib.org/blog/quicktake/i-fixed-the-same-bug-three-times</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/i-fixed-the-same-bug-three-times</guid><pubDate>Thu, 20 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-20-i-fixed-the-same-bug-three-times.png&quot; alt=&quot;Infographic showing a repeating life cycle: a bug occurs, a fix is applied, the solution is documented, turnover happens, documentation is forgotten, and the cycle repeats.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
-</content:encoded><category>biotech</category><category>data-engineering</category><category>bioinformatics</category><category>technical-debt</category><category>software-engineering</category></item><item><title>Tuesday Tactics: The 3-Question Requirements Filter</title><link>https://boston-wib.org/blog/quicktake/tuesday-tactics-3-question-requirements-filter</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/tuesday-tactics-3-question-requirements-filter</guid><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded/><category>data-science</category><category>data-engineering</category><category>bioinformatics</category><category>product-management</category><category>biotech</category><category>tuesday-tactics</category></item><item><title>Work Life Decoded: Understanding Your Manager&apos;s World</title><link>https://boston-wib.org/blog/work-life-decoded/understanding-your-managers-world</link><guid isPermaLink="true">https://boston-wib.org/blog/work-life-decoded/understanding-your-managers-world</guid><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/Work-Life-Decoded.png&quot; alt=&quot;Work Life Decoded Video Series Thumbnail&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>biotech</category><category>data-engineering</category><category>bioinformatics</category><category>technical-debt</category><category>software-engineering</category></item><item><title>Work Life Decoded: Understanding Your Manager&apos;s World</title><link>https://boston-wib.org/blog/work-life-decoded/understanding-your-managers-world</link><guid isPermaLink="true">https://boston-wib.org/blog/work-life-decoded/understanding-your-managers-world</guid><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/Work-Life-Decoded.png&quot; alt=&quot;Work Life Decoded Video Series Thumbnail&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;How to Building a Strategic Partnership with Your Boss&lt;/em&gt;&lt;/p&gt;
 
@@ -526,7 +584,7 @@ They’ll ask: &amp;quot;Do we have agents that can actually &lt;strong&gt;close
 &lt;li&gt;How to build trust and advocate for yourself strategically&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Watch the full episode &lt;a href=&quot;https://www.patreon.com/posts/new-video-your-143734360&quot;&gt;Work Life Decoded: Understanding Your Manager&amp;#39;s World)&lt;/a&gt; on Patreon.&lt;/p&gt;
-</content:encoded><category>career-advice</category><category>career-development</category><category>manager-relationships</category><category>workplace-strategy</category><category>professional-growth</category><category>work-life-decoded</category></item><item><title>Write the Test First (Even for Your Science)</title><link>https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</guid><pubDate>Mon, 17 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-17-write-the-test-first-even-for-your-science.png&quot; alt=&quot;Side‑by‑side flowcharts comparing traditional vs. test‑driven development (TDD) approaches.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>career-advice</category><category>career-development</category><category>manager-relationships</category><category>workplace-strategy</category><category>professional-growth</category><category>work-life-decoded</category></item><item><title>Tuesday Tactics: The 3-Question Requirements Filter</title><link>https://boston-wib.org/blog/quicktake/tuesday-tactics-3-question-requirements-filter</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/tuesday-tactics-3-question-requirements-filter</guid><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded/><category>data-science</category><category>data-engineering</category><category>bioinformatics</category><category>product-management</category><category>biotech</category><category>tuesday-tactics</category></item><item><title>Write the Test First (Even for Your Science)</title><link>https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</guid><pubDate>Mon, 17 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-17-write-the-test-first-even-for-your-science.png&quot; alt=&quot;Side‑by‑side flowcharts comparing traditional vs. test‑driven development (TDD) approaches.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;Why data scientists should design error messages that guide users straight to solutions.&lt;/em&gt;&lt;/p&gt;
 
