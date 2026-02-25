@@ -358,6 +358,23 @@ const team = {
         //linkedin: 'https://www.linkedin.com/in/nishita-kalepalli/',
       },
     },
+    // Emily Kibbler
+    {
+      // Name: First and last name
+      name: 'Emily Kibbler',
+      // Namelink: Member's Personal Website
+      nameLink: 'https://www.linkedin.com/in/emily-kibbler/',
+      // Job Title
+      title: 'Communications Committee',
+      // Leadership team member Photo
+      avatar: '/team/EmilyKibbler.jpg',
+      // Social links
+      social: {
+        linkedin: 'https://www.linkedin.com/in/emily-kibbler/',
+        github: 'https://github.com/emilykibbler',
+        tiktok: 'https://www.tiktok.com/@emilylovessoup',
+      },
+    },
     // Lakshmi Kuttippurathu
     {
       // Name: First and last name
