@@ -35,6 +35,15 @@ const categoryDescriptions: Record<string, string> = {
 
 const categoryDescription = categoryDescriptions[category.slug] ?? '';
 
+// Build a set of tag slugs that appear on more than one post in this page
+const tagCounts = new Map<string, number>();
+page.data.forEach((post) => {
+  if ('tags' in post && Array.isArray(post.tags)) {
+    post.tags.forEach((t) => tagCounts.set(t.slug, (tagCounts.get(t.slug) ?? 0) + 1));
+  }
+});
+const sharedTagSlugs = new Set([...tagCounts.entries()].filter(([, count]) => count > 1).map(([slug]) => slug));
+
 const metadata = {
   title: `Category '${category.title}' ${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
   robots: {
@@ -159,7 +168,7 @@ const metadata = {
                   New
                 </span>
               )}
-              <PostListItem post={post} />
+              <PostListItem post={post} sharedTagSlugs={sharedTagSlugs} />
             </li>
           );
         })
