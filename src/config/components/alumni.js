@@ -41,22 +41,6 @@ const alumni = {
         linkedin: 'https://www.linkedin.com/in/nishita-kalepalli/',
       },
     },
-    // Isha Parikh
-    {
-      // Name: First and last name
-      name: 'Isha Parikh',
-      // Namelink: Member's Personal Website
-      //nameLink: '',
-      // Job Title
-      title: 'Member, Events Committee',
-      // Leadership team member Photo
-      avatar: 'team/isha.jpeg',
-      // Social links
-      social: {
-        linkedin: 'https://www.linkedin.com/in/isha2106/',
-        github: 'https://github.com/isha2106',
-      },
-    },
     // Rachel Utama
 
     {
