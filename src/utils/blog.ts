@@ -273,11 +273,30 @@ export const getStaticPathsBlogPost = async () => {
 
 /** Load series metadata from the series content collection, keyed by slug */
 const fetchSeriesMetadata = async (): Promise<
-  Record<string, { slug: string; title: string; description?: string; image?: string; imageAlt?: string; imageFit?: 'cover' | 'contain' }>
+  Record<
+    string,
+    {
+      slug: string;
+      title: string;
+      description?: string;
+      image?: string;
+      imageAlt?: string;
+      imageFit?: 'cover' | 'contain';
+    }
+  >
 > => {
   const entries = await getCollection('series');
-  const map: Record<string, { slug: string; title: string; description?: string; image?: string; imageAlt?: string; imageFit?: 'cover' | 'contain' }> =
-    {};
+  const map: Record<
+    string,
+    {
+      slug: string;
+      title: string;
+      description?: string;
+      image?: string;
+      imageAlt?: string;
+      imageFit?: 'cover' | 'contain';
+    }
+  > = {};
   entries.forEach((entry) => {
     const slug = cleanSlug(entry.id.replace(/\.md$/, ''));
     map[slug] = {
