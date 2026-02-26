@@ -212,16 +212,20 @@ const objectPosition = getObjectPosition(post.imagePosition);
       )
     }
     {
-      isBlogPost && (post as Post).tags && Array.isArray((post as Post).tags) ? (() => {
-        const visibleTags = sharedTagSlugs
-          ? (post as Post).tags!.filter((t) => sharedTagSlugs.has(t.slug))
-          : (post as Post).tags;
-        return visibleTags && visibleTags.length > 0 ? (
-          <footer class="mt-3">
-            <PostTags tags={visibleTags} />
-          </footer>
-        ) : <Fragment />;
-      })() : (
+      isBlogPost && (post as Post).tags && Array.isArray((post as Post).tags) ? (
+        (() => {
+          const visibleTags = sharedTagSlugs
+            ? (post as Post).tags!.filter((t) => sharedTagSlugs.has(t.slug))
+            : (post as Post).tags;
+          return visibleTags && visibleTags.length > 0 ? (
+            <footer class="mt-3">
+              <PostTags tags={visibleTags} />
+            </footer>
+          ) : (
+            <Fragment />
+          );
+        })()
+      ) : (
         <Fragment />
       )
     }
