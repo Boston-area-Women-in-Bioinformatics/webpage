@@ -18,10 +18,50 @@ export const getStaticPaths = (async () => {
 const { posts } = Astro.props as { posts: Post[] };
 
 const categories = [
-  { label: 'Quick Takes', href: getPermalink('quick-take', 'category'), comingSoon: false },
-  { label: 'Deep Dives', href: getPermalink('deep-dive', 'category'), comingSoon: false },
-  { label: 'Tutorials', href: getPermalink('tutorial', 'category'), comingSoon: false },
-  { label: 'Interviews', href: '#', comingSoon: true },
+  {
+    label: 'Quick Takes',
+    href: getPermalink('quick-take', 'category'),
+    description: 'Short, punchy perspectives on bioinformatics news and ideas.',
+    comingSoon: false,
+    borderColor: 'border-[rgb(1_97_239)]',
+    textColor: 'text-[rgb(1_97_239)]',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 opacity-80">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+    </svg>`,
+  },
+  {
+    label: 'Deep Dives',
+    href: getPermalink('deep-dive', 'category'),
+    description: 'In-depth explorations of complex topics in computational biology.',
+    comingSoon: false,
+    borderColor: 'border-[rgb(109_40_217)]',
+    textColor: 'text-[rgb(109_40_217)]',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 opacity-80">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21a48.309 48.309 0 01-8.135-.687c-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+    </svg>`,
+  },
+  {
+    label: 'Tutorials',
+    href: getPermalink('tutorial', 'category'),
+    description: 'Step-by-step guides to build your bioinformatics skills.',
+    comingSoon: false,
+    borderColor: 'border-[#e36d1d]',
+    textColor: 'text-[#e36d1d]',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 opacity-80">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+    </svg>`,
+  },
+  {
+    label: 'Interviews',
+    href: '#',
+    description: 'Conversations with leaders and innovators in the field.',
+    comingSoon: true,
+    borderColor: 'border-gray-300 dark:border-gray-600',
+    textColor: 'text-gray-400 dark:text-gray-500',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 opacity-40">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+    </svg>`,
+  },
 ];
 
 const metadata = {
@@ -37,37 +77,14 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-5xl">
     <Headline
       title="The Blog"
       subtitle="Enjoy news, tutorials, resources and other interesting content related to bioinformatics"
     />
 
-    <!-- Category Buttons -->
-    <div class="flex flex-wrap gap-3 justify-center mb-10">
-      {
-        categories.map((cat) =>
-          cat.comingSoon ? (
-            <span class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium border-2 border-gray-300 dark:border-gray-600 text-gray-400 dark:text-gray-500 cursor-not-allowed">
-              {cat.label}
-              <span class="text-xs font-semibold uppercase tracking-wide bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded-full">
-                Coming Soon
-              </span>
-            </span>
-          ) : (
-            <a
-              href={cat.href}
-              class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors duration-200"
-            >
-              {cat.label}
-            </a>
-          )
-        )
-      }
-    </div>
-
     <!-- Search Bar -->
-    <div class="relative mb-10">
+    <div class="relative mb-12 max-w-2xl mx-auto">
       <svg
         class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500 pointer-events-none"
         fill="none"
@@ -84,36 +101,67 @@ const metadata = {
         id="search-input"
         type="search"
         placeholder="Search by title, author, tag, or series…"
-        class="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-slate-100 placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+        class="w-full pl-12 pr-4 py-4 text-base rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-slate-100 placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200 shadow-sm"
         autocomplete="off"
       />
     </div>
 
-    <p id="results-count" aria-live="polite" class="text-sm text-muted dark:text-slate-400 mb-6 hidden">
-      Showing <span id="results-visible"></span> of {posts.length} posts
-    </p>
-
-    <!-- Posts List -->
-    <ul id="posts-list">
+    <!-- Category Cards (shown when not searching) -->
+    <div id="category-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
       {
-        posts.map((post) => {
-          const authorNames = post.authors ? post.authors.map((a) => a.name).join(' ') : '';
-          const seriesTitle = post.series?.title || '';
-          const tagTitles = post.tags ? post.tags.map((t) => t.title).join(' ') : '';
-          const searchData = [post.title, authorNames, seriesTitle, tagTitles].join(' ').toLowerCase();
-
-          return (
-            <li class="mb-12 md:mb-20" data-search={searchData}>
-              <PostListItem post={post} />
-            </li>
-          );
-        })
+        categories.map((cat) =>
+          cat.comingSoon ? (
+            <div
+              class={`relative flex flex-col items-center text-center p-8 rounded-2xl border-4 ${cat.borderColor} bg-white dark:bg-slate-900 cursor-not-allowed opacity-60`}
+            >
+              <div class={`${cat.textColor} mb-4`} set:html={cat.icon} />
+              <h3 class={`text-xl font-bold mb-2 ${cat.textColor}`}>{cat.label}</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">{cat.description}</p>
+              <span class="text-xs font-semibold uppercase tracking-wide bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 px-3 py-1 rounded-full">
+                Coming Soon
+              </span>
+            </div>
+          ) : (
+            <a
+              href={cat.href}
+              class={`flex flex-col items-center text-center p-8 rounded-2xl border-4 ${cat.borderColor} bg-white dark:bg-slate-900 hover:shadow-lg transition-shadow duration-200 group`}
+            >
+              <div class={`${cat.textColor} mb-4 group-hover:scale-110 transition-transform duration-200`} set:html={cat.icon} />
+              <h3 class={`text-xl font-bold mb-2 ${cat.textColor}`}>{cat.label}</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400">{cat.description}</p>
+            </a>
+          )
+        )
       }
-    </ul>
+    </div>
 
-    <p id="no-results" class="hidden text-center text-gray-500 dark:text-gray-400 py-12 text-lg">
-      No posts match your search.
-    </p>
+    <!-- Search Results (hidden until searching) -->
+    <div id="search-results-section" class="hidden">
+      <p id="results-count" aria-live="polite" class="text-sm text-muted dark:text-slate-400 mb-6">
+        Showing <span id="results-visible"></span> of {posts.length} posts
+      </p>
+
+      <ul id="posts-list">
+        {
+          posts.map((post) => {
+            const authorNames = post.authors ? post.authors.map((a) => a.name).join(' ') : '';
+            const seriesTitle = post.series?.title || '';
+            const tagTitles = post.tags ? post.tags.map((t) => t.title).join(' ') : '';
+            const searchData = [post.title, authorNames, seriesTitle, tagTitles].join(' ').toLowerCase();
+
+            return (
+              <li class="mb-12 md:mb-20" data-search={searchData}>
+                <PostListItem post={post} />
+              </li>
+            );
+          })
+        }
+      </ul>
+
+      <p id="no-results" class="hidden text-center text-gray-500 dark:text-gray-400 py-12 text-lg">
+        No posts match your search.
+      </p>
+    </div>
   </section>
 </Layout>
 
@@ -123,28 +171,31 @@ const metadata = {
   const resultsCount = document.getElementById('results-count');
   const resultsVisible = document.getElementById('results-visible');
   const noResults = document.getElementById('no-results');
+  const searchResultsSection = document.getElementById('search-results-section');
+  const categoryCards = document.getElementById('category-cards');
 
-  if (searchInput && postsList && resultsCount && resultsVisible && noResults) {
+  if (searchInput && postsList && resultsCount && resultsVisible && noResults && searchResultsSection && categoryCards) {
     function applySearch() {
       const query = searchInput.value.trim().toLowerCase();
       const items = postsList!.querySelectorAll('li[data-search]');
       let visibleCount = 0;
 
-      items.forEach((li) => {
-        const searchData = li.getAttribute('data-search') || '';
-        const matches = !query || searchData.includes(query);
-
-        (li as HTMLElement).style.display = matches ? '' : 'none';
-        if (matches) visibleCount++;
-      });
-
-      noResults!.classList.toggle('hidden', visibleCount > 0);
-
       if (query) {
-        resultsCount!.classList.remove('hidden');
+        searchResultsSection!.classList.remove('hidden');
+        categoryCards!.classList.add('hidden');
+
+        items.forEach((li) => {
+          const searchData = li.getAttribute('data-search') || '';
+          const matches = searchData.includes(query);
+          (li as HTMLElement).style.display = matches ? '' : 'none';
+          if (matches) visibleCount++;
+        });
+
+        noResults!.classList.toggle('hidden', visibleCount > 0);
         resultsVisible!.textContent = String(visibleCount);
       } else {
-        resultsCount!.classList.add('hidden');
+        searchResultsSection!.classList.add('hidden');
+        categoryCards!.classList.remove('hidden');
       }
 
       const params = new URLSearchParams();
