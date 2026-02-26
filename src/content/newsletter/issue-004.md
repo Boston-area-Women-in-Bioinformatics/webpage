@@ -1,0 +1,274 @@
+---
+publishDate: 2026-02-05T00:00:01Z
+issue: 3
+title: '🌸 Fresh Commits: The BWIB Spring Edition'
+excerpt: New faces, big updates, and data that matters.
+image: '/photos/2026/DataDrivenPharmaForum_20260211_0768.jpg'
+imageAlt: 'A group of Boston Women in Bioinformatics members gathered together at a community AI event.'
+authors:
+  - name: 'Samantha Klasfeld, Ph.D.'
+    url: 'https://www.linkedin.com/in/samantha-klasfeld'
+  - name: 'Sakina Saif, M.S.'
+    url: 'https://www.linkedin.com/in/sakinasaif'
+  - name: 'Dana Moochnick'
+    url: 'https://www.linkedin.com/in/dana-moochnick'
+  - name: 'Masoome Rezaei, M.S.'
+    url: 'https://www.linkedin.com/in/masoome-rezaei'
+metadata:
+  title: '🌸 Fresh Commits: The BWIB Spring Edition'
+  description: New faces, big updates, and data that matters.
+---
+
+2026 is already in full swing, and there's a lot to catch up on — meet the incoming executive board, recap some recent events, and get a sneak peek at what's ahead. We're also spotlighting new programs, sharing early findings from our advocacy survey, and introducing a few fresh corners of the BWIB world. Grab your coffee and settle in.
+
+Here's what's inside this month:
+
+- [Member Spotlight: Sharvari Narendra, M.S.](#member-spotlight)
+- [Welcoming Our 2026 Executive Board](#exec-board-intro)
+- [Committee Updates: New Structures, New Voices](#committee-updates)
+- [Career Mentorship Program Update](#career-mentorship-program)
+- [Finance Snapshot](#finance)
+- [Events Recap](#events-recap)
+- [Upcoming Events](#upcoming-event)
+- [Advocacy Survey](#survey)
+- [New Web Resources](#resources)
+- [Inside our Organization Committees](#inside-committees)
+- [Meet the Executive Board](#exec-board)
+
+---
+
+<div id="member-spotlight"></div>
+
+## 🎙️ Member Spotlight: [Sharvari Narendra, M.S.](https://www.linkedin.com/in/sharvarinarendra)
+
+_Highlights from Dana’s interview with Shavari_
+
+---
+
+<div id="exec-board-intro"></div>
+
+## 🎉 Welcoming Our 2026 Executive Board
+
+We're thrilled to introduce BWIB's 2026 executive board! This year brings fresh leadership and renewed energy to our mission of building community for women in bioinformatics.
+
+**Officers**: [Yevgenia Khodor Tolan](https://www.linkedin.com/in/yevgenia-khodor/) (President), [Lina Faller](https://www.linkedin.com/in/linafaller/) (Vice President), [Minita Shah](https://www.linkedin.com/in/minita-shah) (Secretary), and [Diveena Becker](https://www.linkedin.com/in/diveena-becker-5945a771/) (Treasurer). Board members [Katie Hughes](https://www.linkedin.com/in/hugheskj/) and [Francine Camacho](https://www.linkedin.com/in/francinecamacho) round out the officer team, and a heartfelt thank you to our Founder and Immediate Past President [Lorena Pantano](https://www.linkedin.com/in/lpantano/), whose vision continues to guide everything we do.
+
+**Committee Co-Chairs**:
+
+- 📅 **Events**: [Diveena Becker](https://www.linkedin.com/in/diveena-becker-5945a771/) & [Liyang Diao](https://www.linkedin.com/in/liyang-diao-90933461)
+
+- 📣 **Communications**: [Sakina Saif](https://www.linkedin.com/in/sakinasaif/) & [Samantha Klasfeld](https://www.linkedin.com/in/samantha-klasfeld/)
+
+- 🤝 **Career-Sponsorship**: [Aysheh Alrfooh](https://www.linkedin.com/in/aysheh-alrfooh/) & [Peili Zhang](https://www.linkedin.com/in/peili-zhang)
+
+- 💬 **Enabling Advocacy**: [Amulya Shastry](https://ashastry2.github.io/) & [Viveka Patil](https://www.linkedin.com/in/viveka-patil-934b3123b)
+
+- 🔨**Nominating & Governance**: [Lina Faller](https://www.linkedin.com/in/linafaller/)
+
+🎙️ **Podcast**: [Saba Nafees](https://www.linkedin.com/in/saba-nafees) & [Sharvari Narendra](https://www.linkedin.com/in/sharvarinarendra)
+
+---
+
+<div id="committee-updates"></div>
+
+## 📣 Committee Updates: New Structures, New Voices
+
+We've made some exciting changes to our committee structure to better serve our growing community.
+
+**Communications Committee** — Our Website and Communications teams have joined forces into one unified Communications Committee, bringing together a powerhouse group with clearly defined roles:
+
+<table style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid #d1d5db; padding: 8px 12px; text-align: left; background-color: #f9fafb;">Role</th>
+      <th style="border: 1px solid #d1d5db; padding: 8px 12px; text-align: left; background-color: #f9fafb;">Members</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #d1d5db; padding: 8px 12px; vertical-align: top;">Interviewers</td>
+      <td style="border: 1px solid #d1d5db; padding: 8px 12px;"><a href="https://www.linkedin.com/in/dana-moochnick/">Dana Moochnick</a>, <a href="https://www.linkedin.com/in/isha2106/">Isha Parikh</a>, <a href="https://www.linkedin.com/in/sharvarinarendra">Sharvari Narendra</a></td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #d1d5db; padding: 8px 12px; vertical-align: top;">Historian</td>
+      <td style="border: 1px solid #d1d5db; padding: 8px 12px;"><a href="https://www.linkedin.com/in/emily-kibbler/">Emily Kibbler</a></td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #d1d5db; padding: 8px 12px; vertical-align: top;">Website</td>
+      <td style="border: 1px solid #d1d5db; padding: 8px 12px;"><a href="https://www.linkedin.com/in/samantha-klasfeld/">Samantha Klasfeld</a>, <a href="https://www.linkedin.com/in/vishwa-talati">Vishwa Talati</a>, <a href="https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/">Yaseswini Neelamraju</a></td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #d1d5db; padding: 8px 12px; vertical-align: top;">Social Media</td>
+      <td style="border: 1px solid #d1d5db; padding: 8px 12px;"><a href="https://www.linkedin.com/in/samantha-klasfeld/">Samantha Klasfeld</a>, <a href="https://www.linkedin.com/in/sakinasaif/">Sakina Saif</a>, <a href="https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/">Yaseswini Neelamraju</a></td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #d1d5db; padding: 8px 12px; vertical-align: top;">Newsletter</td>
+      <td style="border: 1px solid #d1d5db; padding: 8px 12px;"><a href="https://www.linkedin.com/in/sakinasaif/">Sakina Saif</a>, <a href="https://www.linkedin.com/in/samantha-klasfeld/">Samantha Klasfeld</a>, <a href="https://www.linkedin.com/in/masoome-rezaei">Masoome Rezaei</a></td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #d1d5db; padding: 8px 12px; vertical-align: top;">Communications Analytics</td>
+      <td style="border: 1px solid #d1d5db; padding: 8px 12px;"><a href="https://www.linkedin.com/in/shreya-rajasekar/">Shreya Rajasekar</a></td>
+    </tr>
+  </tbody>
+</table>
+
+It truly takes a village!
+
+**Podcast Committee** — Say hello to our brand new Podcast Committee, already hard at work on **Season 2 of Coffee with CompBio**! Co-chaired by [Saba Nafees](https://www.linkedin.com/in/saba-nafees) and [Sharvari Narendra](https://www.linkedin.com/in/sharvarinarendra), the team also includes [Amulya Shastry](https://ashastry2.github.io/) (editing & management) and [Dina Issakova](https://www.linkedin.com/in/dinaissakova/) (cover art & social media). More great conversations with computational biologists are coming so stay tuned!
+
+**Nominating & Governance Committee** — We've also formalized a Nominating & Governance Committee to ensure BWIB continues to operate with transparency and accountability — managing our membership structure, board elections, and bylaws compliance. Thank you to [Katie Hughes](https://www.linkedin.com/in/hugheskj/), [Katie D'Aco](https://www.linkedin.com/in/katiedaco/) and [Petra Palenikova](https://www.linkedin.com/in/petra-palenikova-aa6330142/) for taking on this important work behind the scenes.
+
+---
+
+<div id="career-mentorship-program">
+
+## 🤝 Career Mentorship Program Update
+
+**The 2025-2026 cohort matches have been sent out!**
+Thank you for your incredible support! We are inspired by the high level of interest from aspiring mentees and the deep commitment shown by the BioPharma leaders who have stepped forward as mentors. All participants should check their email for match details and next steps. We can't wait to kick off this journey and make this pilot program a landmark success for Boston Women in Bioinformatics.
+
+</div>
+
+---
+
+<div id="finance">
+
+## 💸 Finance Snapshot
+
+BWIB funds its operations through ticketed events, corporate sponsorships, and individual donations. These funds support event food and beverages, small gift cards to boost participation, website maintenance, branded merchandise to increase visibility, and routine expenses such as postage and printing materials. Continued donor support allows us to expand our programming and reach more members of our community. Your contribution directly helps sustain and grow BWIB’s impact. Consider donating [here](https://givebutter.com/BWIBdonate) or reach out to <communications@boston-wib.org>. if your company would like to become a sponsor for future events.
+
+</div>
+
+---
+
+<div id="events-recap">
+
+## Events Recap
+
+### New Year, New Connections
+
+_By: Manasvi_
+
+### Galentines Day Byte & Bite
+
+<figure>
+  <img src="/photos/2026/GalentinesDay_FEB2026.jpg" alt="Group photo, ski lift backdrop" style="max-width: 400px; width: 100%;" />
+<figcaption>Boston Women in Bioinformatics Galentine's Day Lunch</figcaption>
+</figure>
+
+Eight BWIB members gathered at CanalSide Food & Drink at CambridgeSide Mall to celebrate Galentine's Day over lunch. It was a relaxed afternoon of good food and great conversation — members got to know each other better and even got a head start talking about the upcoming nf-core Hackathon happening just down the street in March. A small but mighty turnout! 💝
+
+</div>
+
+---
+
+<div id="upcoming-event">
+
+## Upcoming Events
+
+### NF-Core Hackathon
+
+<table style="border-collapse: collapse; border: none;">
+  <tr>
+    <td style="vertical-align: top; border: none;">
+      <img src="/photos/nf-core-logo-square.png" alt="nf-core logo" width="250px"/>
+    </td>
+    <td style="vertical-align: middle; padding-left: 20px; border: none;">
+      <ul style="list-style-type: none; padding-left: 0;">
+        <li>Mar 11-13, 2026</li>
+        <li>Cambridge Side Mall, Cambridge, MA</li>
+        <li><a href="https://boston-wib.org/events/20260311_nextflow">Register</a></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+Nextflow fans, this one's for you! BWIB is helping to host a Boston site for the global nf-core Hackathon at CambridgeSide Mall, March 11–13. Collaborate on Nextflow pipelines, contribute to open-source projects, and connect with the nf-core community in person (or online). All skill levels welcome, though some Nextflow experience is expected. Registration is open now. You will need to sign up in two places, so check out our event page for details.
+
+### ​​Byte and Bite: Bioinformatics Lunch Meetup
+
+<table style="border-collapse: collapse; border: none;">
+  <tr>
+    <td style="vertical-align: top; border: none;">
+      <img src="/photos/byteAndBiteLogo1.png" alt="Boston Women in Bioinformatics Byte and Bite" width="250px"/>
+    </td>
+    <td style="vertical-align: middle; padding-left: 20px; border: none;">
+      <ul style="list-style-type: none; padding-left: 0;">
+        <li>Mar 16, 2025, 12:00 PM</li>
+        <li>Shy Bird - Kendall Square, Cambridge, MA</li>
+        <li><a href="https://boston-wib.org/events/20260316_event">Register</a></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+Shake off the last of winter and grab lunch with your fellow bioinformaticians at Shy Bird in Kendall Square! Whether you're deep in pipelines or just bioinformatics-curious, join us for a relaxed afternoon of good food, great company, and springtime vibes.
+
+</div>
+
+---
+
+<div id="survey"></div>
+
+## 📊 Help Us Tell the Full Story — Advocacy Survey
+
+The gender gap in leadership isn't just a feeling — it shows up in the data. Our ongoing advocacy survey has already captured responses from 194 participants, and the early findings are striking: while women make up the vast majority of respondents, 21% of male respondents report being in a leadership position compared to only 14% of female respondents.
+
+But we need more voices to make this data count. Right now our dataset skews heavily female, which limits what we can conclude. The more balanced and representative our responses, the stronger the case we can make — for ourselves, our peers, and the generations coming up behind us.
+
+We're asking you to do two things:
+
+1. Fill out the survey if you haven't already
+2. Share it with the men and non-binary people in your network — colleagues, collaborators, partners, friends
+
+Every 100 new responses, we raffle a $25 gift card — so there's never been a better time to participate.
+
+👉 [Survey](http://forms.gle/jhKy3hpYPf1WtC2s8)
+
+_Together, we can build the evidence base our community deserves._
+
+---
+
+<div id="resources"></div>
+
+## 📦 Resource Drop: Skills & Communities
+
+We've expanded the Boston Women in Bioinformatics website with two new pages designed to support your professional growth and community connections:
+
+<u>**Upskilling Resource Library**</u> – A curated collection of tools, tutorials, and platforms across bioinformatics, machine learning, coding, and professional development to help you sharpen your skills.
+
+<u>**Partner Communities**</u> – Discover organizations and networks in bioinformatics, biotech, and data science to expand your connections locally and beyond.
+
+**Have a resource or community to add?** We'd love your contributions! To suggest an addition, please share:
+
+- _For Upskilling Resources_: Name, description, URL, category (bioinformatics, machine-learning, math, biology, coding, professional-development, or other), and tags (e.g., free, beginner-friendly)
+- _For Partner Communities_: Name, description, website, category (bioinformatics, biotech, data-science, or other), location, whether it's female-only, Boston-based, and relevant tags
+
+Reach out to someone on the [web-development committee](/about/committees/web-page) on [slack](https://boston-women-bioinfo.slack.com) and help us build a comprehensive resource hub for our community!
+
+---
+
+<div id="committee-reports"></div>
+
+## 2025 Annual Committee Reports
+
+As the year draws to a close, our various committees have diligently compiled their end-of-year reports to reflect on the 2025 goals, measured progress and achievements, identified lessons learned and potential plans for the next year. This process of annual review highlights the commitment to transparency and continuous and trackable improvement within the organization. We thank all committee members for their hard work and dedication in preparing these valuable summaries. Please enjoy reading them on our website at [boston-wib.org/about/annual-report-2025](/about/annual-report-2025).
+
+---
+
+<div id="exec-board"></div>
+
+## Executive Board
+
+**THIS NEEDS TO BE UPDATED**
+![Executive Board Team](/team/executiveBoard.png)
+
+---
+
+## Social Media
+
+- **Slack:** [boston-women-bioinfo](https://boston-women-bioinfo.slack.com)
+- **Email:** [communications@boston-wib.org](mailto:communications@boston-wib.org)
+- **LinkedIn:** [Boston-area Women in Bioinformatics](https://www.linkedin.com/company/boston-women-in-bioinformatics)
+- **Lu.ma:** [Boston Women in Bioinformatics](https://luma.com/bwib)
+- **Location:** Boston Area, Massachusetts
