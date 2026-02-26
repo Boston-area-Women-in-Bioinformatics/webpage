@@ -7,14 +7,15 @@ chairs:
   - 'Samantha Klasfeld'
   - 'Sakina Saif'
 members:
-  - 'Shreya Rajasekar'
-  - 'Yaseswini Neelamraju'
+  - 'Emily Kibbler'
+  - 'Siqin Li'
   - 'Dana Moochnick'
+  - 'Sharvari Narendra'
+  - 'Yaseswini Neelamraju'
+  - 'Isha Parikh'
+  - 'Shreya Rajasekar'
   - 'Masoome Rezaei'
   - 'Vishwa Talati'
-  - 'Emily Kibbler'
-  - 'Sharvari Narendra'
-  - 'Siqin Li'
 ---
 
 ## About
