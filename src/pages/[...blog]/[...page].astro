@@ -17,6 +17,9 @@ export const getStaticPaths = (async () => {
 
 const { posts } = Astro.props as { posts: Post[] };
 
+const thirtyDaysAgo = new Date();
+thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
 const categories = [
   {
     label: 'Quick Takes',
@@ -77,14 +80,15 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-5xl">
+  <section class="px-4 sm:px-6 lg:px-8 pt-3 pb-12 mx-auto max-w-6xl">
     <Headline
       title="The Blog"
       subtitle="Enjoy news, tutorials, resources and other interesting content related to bioinformatics"
+      classes={{ container: 'my-2 md:my-3 max-w-3xl' }}
     />
 
     <!-- Search Bar -->
-    <div class="relative mb-12 max-w-2xl mx-auto">
+    <div class="relative mb-8 max-w-2xl mx-auto">
       <svg
         class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500 pointer-events-none"
         fill="none"
@@ -107,7 +111,7 @@ const metadata = {
     </div>
 
     <!-- Category Cards (shown when not searching) -->
-    <div id="category-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+    <div id="category-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
       {
         categories.map((cat) =>
           cat.comingSoon ? (
@@ -151,9 +155,15 @@ const metadata = {
             const seriesTitle = post.series?.title || '';
             const tagTitles = post.tags ? post.tags.map((t) => t.title).join(' ') : '';
             const searchData = [post.title, authorNames, seriesTitle, tagTitles].join(' ').toLowerCase();
+            const isNew = new Date(post.publishDate) >= thirtyDaysAgo;
 
             return (
-              <li class="mb-12 md:mb-20" data-search={searchData}>
+              <li class="mb-4 md:mb-6 relative" data-search={searchData}>
+                {isNew && (
+                  <span class="absolute -top-2 -left-2 z-10 bg-[#e36d1d] text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-full shadow-md">
+                    New
+                  </span>
+                )}
                 <PostListItem post={post} />
               </li>
             );
