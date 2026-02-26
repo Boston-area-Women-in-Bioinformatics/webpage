@@ -122,8 +122,6 @@ const metadata = {
   const noResults = document.getElementById('no-results');
 
   if (searchInput && postsList && resultsCount && resultsVisible && noResults) {
-    const totalPosts = postsList.querySelectorAll('li[data-search]').length;
-
     function applySearch() {
       const query = searchInput.value.trim().toLowerCase();
       const items = postsList!.querySelectorAll('li[data-search]');
