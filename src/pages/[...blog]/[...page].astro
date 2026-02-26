@@ -6,6 +6,7 @@ import PostListItem from '~/components/ui/PostListItem.astro';
 import Headline from '~/components/ui/Headline.astro';
 
 import { blogListRobots, getStaticPathsBlogListAll } from '~/utils/blog';
+import { getPermalink } from '~/utils/permalinks';
 import type { Post } from '~/types';
 
 export const prerender = true;
@@ -56,6 +57,13 @@ uniqueAuthors.sort((a, b) => a.name.localeCompare(b.name));
 uniqueSeries.sort((a, b) => a.title.localeCompare(b.title));
 uniqueTags.sort((a, b) => a.title.localeCompare(b.title));
 
+const categories = [
+  { label: 'Quick Takes', href: getPermalink('quick-take', 'category'), comingSoon: false },
+  { label: 'Deep Dives', href: getPermalink('deep-dive', 'category'), comingSoon: false },
+  { label: 'Tutorials', href: getPermalink('tutorial', 'category'), comingSoon: false },
+  { label: 'Interviews', href: '#', comingSoon: true },
+];
+
 const metadata = {
   title: 'Blog',
   robots: {
@@ -74,6 +82,29 @@ const metadata = {
       title="The Blog"
       subtitle="Enjoy news, tutorials, resources and other interesting content related to bioinformatics"
     />
+
+    <!-- Category Buttons -->
+    <div class="flex flex-wrap gap-3 justify-center mb-10">
+      {
+        categories.map((cat) =>
+          cat.comingSoon ? (
+            <span class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium border-2 border-gray-300 dark:border-gray-600 text-gray-400 dark:text-gray-500 cursor-not-allowed">
+              {cat.label}
+              <span class="text-xs font-semibold uppercase tracking-wide bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded-full">
+                Coming Soon
+              </span>
+            </span>
+          ) : (
+            <a
+              href={cat.href}
+              class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors duration-200"
+            >
+              {cat.label}
+            </a>
+          )
+        )
+      }
+    </div>
 
     <!-- Filter Bar -->
     <div
