@@ -252,13 +252,13 @@ const exec = {
     // Amulya Shastry
     {
       // Name: First and last name
-      name: 'Viveka Patel',
+      name: 'Viveka Patil',
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/viveka-patil-934b3123b',
       // Job Title
       title: 'Co-chair, Enabling Advocacy Committee',
       // Leadership team member Photo
-      avatar: '/team/VivekaPatel.png',
+      avatar: '/team/VivekaPatil.png',
       // Social links
       social: {
         //website: '',
@@ -432,6 +432,22 @@ const team = {
         // instagram: '#',
         // facebook: '#',
         linkedin: 'https://www.linkedin.com/in/petra-palenikova-aa6330142/',
+      },
+    },
+    // Isha Parikh
+    {
+      // Name: First and last name
+      name: 'Isha Parikh',
+      // Namelink: Member's Personal Website
+      //nameLink: '',
+      // Job Title
+      title: 'Communications Committee',
+      // Leadership team member Photo
+      avatar: '/team/isha.jpeg',
+      // Social links
+      social: {
+        linkedin: 'https://www.linkedin.com/in/isha2106/',
+        github: 'https://github.com/isha2106',
       },
     },
     // Shreya Rajasekar
