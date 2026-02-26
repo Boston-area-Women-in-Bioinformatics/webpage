@@ -126,7 +126,10 @@ const metadata = {
               href={cat.href}
               class={`flex flex-col items-center text-center p-8 rounded-2xl border-4 ${cat.borderColor} bg-white dark:bg-slate-900 hover:shadow-lg transition-shadow duration-200 group`}
             >
-              <div class={`${cat.textColor} mb-4 group-hover:scale-110 transition-transform duration-200`} set:html={cat.icon} />
+              <div
+                class={`${cat.textColor} mb-4 group-hover:scale-110 transition-transform duration-200`}
+                set:html={cat.icon}
+              />
               <h3 class={`text-xl font-bold mb-2 ${cat.textColor}`}>{cat.label}</h3>
               <p class="text-sm text-gray-500 dark:text-gray-400">{cat.description}</p>
             </a>
@@ -174,7 +177,15 @@ const metadata = {
   const searchResultsSection = document.getElementById('search-results-section');
   const categoryCards = document.getElementById('category-cards');
 
-  if (searchInput && postsList && resultsCount && resultsVisible && noResults && searchResultsSection && categoryCards) {
+  if (
+    searchInput &&
+    postsList &&
+    resultsCount &&
+    resultsVisible &&
+    noResults &&
+    searchResultsSection &&
+    categoryCards
+  ) {
     function applySearch() {
       const query = searchInput.value.trim().toLowerCase();
       const items = postsList!.querySelectorAll('li[data-search]');
