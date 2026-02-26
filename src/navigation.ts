@@ -70,24 +70,12 @@ export const headerData = {
       ],
     },
     {
-      text: 'Blog',
+      text: 'Media',
       href: getBlogPermalink(),
       links: [
         {
-          text: 'Blog List',
+          text: 'Blogs',
           href: getBlogPermalink(),
-        },
-        {
-          text: 'Quick Takes',
-          href: getPermalink('quick-take', 'category'),
-        },
-        {
-          text: 'Deep Dives',
-          href: getPermalink('deep-dive', 'category'),
-        },
-        {
-          text: 'Tutorials',
-          href: getPermalink('tutorial', 'category'),
         },
         {
           text: 'Podcasts',

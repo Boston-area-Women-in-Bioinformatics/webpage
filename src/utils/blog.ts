@@ -244,13 +244,18 @@ export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateF
   });
 };
 
+const BLOG_EXCLUDED_CATEGORIES = ['Podcast', 'video'];
+
 /** Returns all feed posts on a single page (no pagination) for client-side filtering */
 export const getStaticPathsBlogListAll = async () => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
+  const posts = (await fetchFeedPosts()).filter(
+    (post) => !BLOG_EXCLUDED_CATEGORIES.includes(post.category?.title || '')
+  );
   return [
     {
       params: { blog: BLOG_BASE || undefined },
-      props: { posts: await fetchFeedPosts() },
+      props: { posts },
     },
   ];
 };
