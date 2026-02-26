@@ -82,7 +82,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <section class="px-4 sm:px-6 lg:px-8 pt-3 pb-12 mx-auto max-w-6xl">
     <Headline
-      title="The Blog"
+      title="Blogs"
       subtitle="Enjoy news, tutorials, resources and other interesting content related to bioinformatics"
       classes={{ container: 'my-2 md:my-3 max-w-3xl' }}
     />
@@ -158,13 +158,8 @@ const metadata = {
             const isNew = new Date(post.publishDate) >= thirtyDaysAgo;
 
             return (
-              <li class="mb-4 md:mb-6 relative" data-search={searchData}>
-                {isNew && (
-                  <span class="absolute -top-2 -left-2 z-10 bg-[#e36d1d] text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-full shadow-md">
-                    New
-                  </span>
-                )}
-                <PostListItem post={post} />
+              <li class="mb-4 md:mb-6" data-search={searchData}>
+                <PostListItem post={post} isNew={isNew} />
               </li>
             );
           })
