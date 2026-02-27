@@ -244,18 +244,63 @@ export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateF
   });
 };
 
-const BLOG_EXCLUDED_CATEGORIES = ['Podcast', 'video'];
+const BLOG_EXCLUDED_CATEGORIES = ['Podcast', 'Video'];
 
-/** Returns all feed posts on a single page (no pagination) for client-side filtering */
+/** Returns all feed posts on a single page (no pagination) for client-side filtering.
+ * Also passes a seriesList so series cards can be shown under "Series only". */
 export const getStaticPathsBlogListAll = async () => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
-  const posts = (await fetchFeedPosts()).filter(
-    (post) => !BLOG_EXCLUDED_CATEGORIES.includes(post.category?.title || '')
+  const allPosts = await fetchPosts();
+  const seriesMetadata = await fetchSeriesMetadata();
+
+  const posts = allPosts.filter(
+    (post) => !post.hiddenFromFeed && !BLOG_EXCLUDED_CATEGORIES.includes(post.category?.title || '')
   );
+
+  // Build series list across all non-excluded posts (including hiddenFromFeed)
+  const eligiblePosts = allPosts.filter((post) => !BLOG_EXCLUDED_CATEGORIES.includes(post.category?.title || ''));
+  const thirtyDaysAgo = new Date();
+  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+  const seriesLatestDate: Record<string, number> = {};
+  const seriesHasNewPost: Record<string, boolean> = {};
+  eligiblePosts.forEach((post) => {
+    if (post.series?.slug) {
+      const d = new Date(post.publishDate).getTime();
+      if (!seriesLatestDate[post.series.slug] || d > seriesLatestDate[post.series.slug]) {
+        seriesLatestDate[post.series.slug] = d;
+      }
+      if (new Date(post.publishDate) >= thirtyDaysAgo) {
+        seriesHasNewPost[post.series.slug] = true;
+      }
+    }
+  });
+  const seriesSlugsSeen = new Set<string>();
+  const seriesList: Array<{
+    slug: string;
+    title: string;
+    description?: string;
+    image?: string;
+    imageAlt?: string;
+    imageFit?: 'cover' | 'contain';
+    latestPostDate: number;
+    hasNewPost: boolean;
+  }> = [];
+  eligiblePosts.forEach((post) => {
+    if (post.series?.slug && !seriesSlugsSeen.has(post.series.slug)) {
+      seriesSlugsSeen.add(post.series.slug);
+      const meta = seriesMetadata[post.series.slug];
+      seriesList.push({
+        ...(meta ?? { slug: post.series.slug, title: post.series.title }),
+        latestPostDate: seriesLatestDate[post.series.slug],
+        hasNewPost: seriesHasNewPost[post.series.slug] ?? false,
+      });
+    }
+  });
+
   return [
     {
       params: { blog: BLOG_BASE || undefined },
-      props: { posts },
+      props: { posts, seriesList },
     },
   ];
 };
@@ -271,11 +316,52 @@ export const getStaticPathsBlogPost = async () => {
   }));
 };
 
+/** Load series metadata from the series content collection, keyed by slug */
+const fetchSeriesMetadata = async (): Promise<
+  Record<
+    string,
+    {
+      slug: string;
+      title: string;
+      description?: string;
+      image?: string;
+      imageAlt?: string;
+      imageFit?: 'cover' | 'contain';
+    }
+  >
+> => {
+  const entries = await getCollection('series');
+  const map: Record<
+    string,
+    {
+      slug: string;
+      title: string;
+      description?: string;
+      image?: string;
+      imageAlt?: string;
+      imageFit?: 'cover' | 'contain';
+    }
+  > = {};
+  entries.forEach((entry) => {
+    const slug = cleanSlug(entry.id.replace(/\.md$/, ''));
+    map[slug] = {
+      slug,
+      title: entry.data.title,
+      description: entry.data.description,
+      image: entry.data.image,
+      imageAlt: entry.data.imageAlt,
+      imageFit: entry.data.imageFit,
+    };
+  });
+  return map;
+};
+
 /** */
 export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogCategoryRouteEnabled) return [];
 
   const posts = await fetchPosts();
+  const seriesMetadata = await fetchSeriesMetadata();
   const categories = {};
   posts.map((post) => {
     if (post.category?.slug) {
@@ -286,17 +372,57 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
   return Array.from(Object.keys(categories)).flatMap((categorySlug) => {
     const allCategoryPosts = posts.filter((post) => post.category?.slug && categorySlug === post.category?.slug);
 
-    // Collect unique series within this category (from all posts, including hidden)
-    const seriesMap: Record<string, { slug: string; title: string }> = {};
+    // Collect unique series within this category, enriched with collection metadata + latest post date
+    const seriesLatestDate: Record<string, number> = {};
     allCategoryPosts.forEach((post) => {
       if (post.series?.slug) {
-        seriesMap[post.series.slug] = post.series;
+        const ms = new Date(post.publishDate).getTime();
+        if (!seriesLatestDate[post.series.slug] || ms > seriesLatestDate[post.series.slug]) {
+          seriesLatestDate[post.series.slug] = ms;
+        }
       }
     });
-    const seriesList = Object.values(seriesMap);
+    const thirtyDaysAgo = new Date();
+    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+    const seriesHasNewPost: Record<string, boolean> = {};
+    allCategoryPosts.forEach((post) => {
+      if (post.series?.slug && new Date(post.publishDate) >= thirtyDaysAgo) {
+        seriesHasNewPost[post.series.slug] = true;
+      }
+    });
+    const seriesSlugsSeen = new Set<string>();
+    const seriesList: Array<{
+      slug: string;
+      title: string;
+      description?: string;
+      image?: string;
+      imageAlt?: string;
+      imageFit?: 'cover' | 'contain';
+      latestPostDate: number;
+      hasNewPost: boolean;
+    }> = [];
+    allCategoryPosts.forEach((post) => {
+      if (post.series?.slug && !seriesSlugsSeen.has(post.series.slug)) {
+        seriesSlugsSeen.add(post.series.slug);
+        const meta = seriesMetadata[post.series.slug];
+        seriesList.push({
+          ...(meta ?? {
+            slug: post.series.slug,
+            title: post.series.title,
+            image: typeof post.image === 'string' ? post.image : undefined,
+          }),
+          latestPostDate: seriesLatestDate[post.series.slug],
+          hasNewPost: seriesHasNewPost[post.series.slug] ?? false,
+        });
+      }
+    });
 
-    // Filter out hiddenFromFeed posts for the category listing
-    const categoryPosts = allCategoryPosts.filter((post) => !post.hiddenFromFeed);
+    // Hide series posts from the category listing — they are represented by series cards instead.
+    const categoryPosts = allCategoryPosts.filter((post) => {
+      if (post.hiddenFromFeed) return false;
+      if (post.series?.slug) return false;
+      return true;
+    });
 
     return paginate(categoryPosts, {
       params: { category: categorySlug, blog: CATEGORY_BASE || undefined },
@@ -337,6 +463,7 @@ export const getStaticPathsBlogSeries = async () => {
   if (!isBlogEnabled || !isBlogSeriesRouteEnabled) return [];
 
   const posts = await fetchPosts();
+  const seriesMetadata = await fetchSeriesMetadata();
   const seriesMap: Record<string, { slug: string; title: string }> = {};
   posts.map((post) => {
     if (post.series?.slug) {
@@ -344,13 +471,19 @@ export const getStaticPathsBlogSeries = async () => {
     }
   });
 
-  return Array.from(Object.keys(seriesMap)).map((seriesSlug) => ({
-    params: { series: seriesSlug, blog: SERIES_BASE || undefined, page: undefined },
-    props: {
-      series: seriesMap[seriesSlug],
-      posts: posts.filter((post) => post.series?.slug && seriesSlug === post.series?.slug),
-    },
-  }));
+  return Array.from(Object.keys(seriesMap)).map((seriesSlug) => {
+    const meta = seriesMetadata[seriesSlug];
+    const seriesPosts = posts.filter((post) => post.series?.slug && seriesSlug === post.series?.slug);
+    const categorySlug = seriesPosts[0]?.category?.slug ?? null;
+    return {
+      params: { series: seriesSlug, blog: SERIES_BASE || undefined, page: undefined },
+      props: {
+        series: meta ?? seriesMap[seriesSlug],
+        posts: seriesPosts,
+        categorySlug,
+      },
+    };
+  });
 };
 
 /** */

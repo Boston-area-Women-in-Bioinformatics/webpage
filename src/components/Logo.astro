@@ -1,26 +1,21 @@
 ---
-import { Image } from 'astro:assets';
-import logoname_light from '~/assets/favicons/WIB_Logo.png';
-import logoname_dark from '~/assets/favicons/WIB_Logo_dark.png';
+import logoLight from '~/assets/favicons/WIB_Logo.svg?url';
+import logoDark from '~/assets/favicons/WIB_Logo_dark.svg?url';
 ---
 
-<span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
->
-  <Image
-    class="block dark:hidden"
-    src={logoname_light}
-    width="150"
+<span class="self-center ml-2 rtl:ml-0 rtl:mr-2 whitespace-nowrap">
+  <img
+    class="block dark:hidden h-20 w-auto"
+    src={logoLight}
     decoding="async"
-    loading="lazy"
+    loading="eager"
     alt="Boston Women in Bioinformatics"
   />
-  <Image
-    class="hidden dark:block"
-    src={logoname_dark}
-    width="150"
+  <img
+    class="hidden dark:block h-20 w-auto"
+    src={logoDark}
     decoding="async"
-    loading="lazy"
+    loading="eager"
     alt="Boston Women in Bioinformatics"
   />
 </span>

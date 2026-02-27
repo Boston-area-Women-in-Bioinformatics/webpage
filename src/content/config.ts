@@ -151,6 +151,17 @@ const resourcesCollection = defineCollection({
   }),
 });
 
+const seriesCollection = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: 'src/content/series' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    imageFit: z.enum(['cover', 'contain']).optional().default('cover'),
+  }),
+});
+
 const communitiesCollection = defineCollection({
   loader: glob({ pattern: '**/*.md', base: 'src/content/partnerCommunities' }),
   schema: z.object({
@@ -171,5 +182,6 @@ export const collections = {
   newsletter: newsletterCollection,
   committee: committeeCollection,
   resources: resourcesCollection,
+  series: seriesCollection,
   communities: communitiesCollection,
 };
