@@ -52,7 +52,7 @@ export const headerData = {
       href: getPermalink('/events'),
       links: [
         {
-          text: 'Events List',
+          text: 'Upcoming Events',
           href: getPermalink('/events'),
         },
         {
@@ -64,8 +64,12 @@ export const headerData = {
         //  href: getPermalink('/events/ama'),
         //},
         {
-          text: 'Recorded Events',
+          text: 'Event Recordings',
           href: getPermalink('/events/recorded-events'),
+        },
+        {
+          text: 'Archive',
+          href: getPermalink('/events/archive'),
         },
       ],
     },

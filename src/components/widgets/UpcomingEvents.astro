@@ -67,7 +67,7 @@ if (next_event) {
         {
           variant: 'secondary',
           text: 'View Past Events',
-          href: '/events/archived',
+          href: '/events/archive',
           icon: 'tabler:history',
         },
       ]}
@@ -115,7 +115,7 @@ if (next_event) {
       <img
         src={next_event.data.image.src}
         alt={next_event.data.image.alt}
-        class={`${image_class}  block lg:hidden`}
+        class={`${image_class} mt-6 block lg:hidden max-w-sm mx-auto`}
         transition:name="playlist ${event.id} image"
       />
     </div>

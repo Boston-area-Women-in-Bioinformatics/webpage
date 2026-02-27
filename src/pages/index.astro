@@ -14,9 +14,19 @@ import { findLatestPosts } from '~/utils/blog';
 import { APP_NEWSLETTER, APP_BLOG } from 'astrowind:config';
 import { getBlogPermalink } from '~/utils/permalinks';
 import Image from '~/components/common/Image.astro';
+import NewBadge from '~/components/ui/NewBadge.astro';
 
 const latestNewsletter = APP_NEWSLETTER.isEnabled ? (await findLatestNewsletters({ count: 1 }))[0] : null;
-const latestBlogs = APP_BLOG.isEnabled ? (await findLatestPosts({ count: 4 })) || [] : [];
+const allLatestPosts = APP_BLOG.isEnabled ? (await findLatestPosts({ count: 20 })) || [] : [];
+const latestPodcast = allLatestPosts.find((p) => p.category?.slug === 'podcast') || null;
+const latestMediaPosts = allLatestPosts.filter((p) => p.category?.slug !== 'podcast').slice(0, 4);
+
+const thirtyDaysAgo = new Date();
+thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+const newsletterDate = latestNewsletter?.publishDate ? new Date(latestNewsletter.publishDate) : new Date(0);
+const podcastDate = latestPodcast?.publishDate ? new Date(latestPodcast.publishDate) : new Date(0);
+const podcastFirst = podcastDate > newsletterDate;
 
 const metadata = {
   title: SITE.title,
@@ -39,7 +49,7 @@ const metadata = {
   </section>
 
   <!-- Career Mentorship Program Call to Action -->
-  <section class="py-16 md:py-20 bg-gray-50 dark:bg-slate-800">
+  <section class="py-10 md:py-14 bg-gray-50 dark:bg-slate-800">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <Hero2
         title="Career Mentorship Program"
@@ -75,43 +85,17 @@ const metadata = {
   </section>
 
   <!-- Upcoming Events Section -->
-  <section class="py-16 md:py-20 bg-white dark:bg-dark dark:text-gray-200">
+  <section class="py-10 md:py-14 bg-white dark:bg-dark dark:text-gray-200">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <UpcomingEvents />
     </div>
   </section>
 
-  <!-- Community Survey Section -->
-  <section class="py-16 md:py-20 bg-gray-50 dark:bg-slate-800">
-    <CallToAction
-      title="Participate in Our Community Study"
-      actions={[
-        {
-          variant: 'primary',
-          target: '_blank',
-          text: 'Fill out our survey',
-          href: 'https://forms.gle/jhKy3hpYPf1WtC2s8',
-          icon: 'tabler:checkbox',
-        },
-      ]}
-    >
-      <Fragment slot="subtitle">
-        <span class="text-gray-700 dark:text-gray-300">
-          Are you a bioinformatician, computational biologist, or working in an adjacent field? Boston Women in
-          Bioinformatics (BWIB) is conducting a national survey to better understand the landscape of our field. This
-          survey is for everyone, not just women, and only takes ~5 minutes to complete. All responses are anonymous and
-          will be used for community-driven research and programming.<br class="hidden md:inline" />[~5 min]
-        </span>
-      </Fragment>
-    </CallToAction>
-  </section>
-
-  <!-- Latest Content Section -->
-  <section class="py-16 md:py-20 dark:bg-dark dark:text-gray-200">
+  <!-- From Our Committees Section (Newsletter + Podcast) -->
+  <section class="py-10 md:py-14 bg-gray-50 dark:bg-slate-800 dark:text-gray-200">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8 text-center">Latest from Our Community</h2>
-
-      <div class="grid md:grid-cols-2 gap-8">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8 text-center">Updates</h2>
+      <div class="grid md:grid-cols-2 gap-8 md:items-stretch">
         <!-- Newsletter Column -->
         {
           latestNewsletter &&
@@ -123,146 +107,264 @@ const metadata = {
                   latestNewsletter.image.startsWith('/blog_images/') ||
                   latestNewsletter.image.startsWith('/photos/'));
               return (
-                <article aria-labelledby="latest-newsletter-heading">
+                <article
+                  aria-labelledby="latest-newsletter-heading"
+                  class={`flex flex-col h-full ${podcastFirst ? 'md:order-last' : ''}`}
+                >
                   <h3 id="latest-newsletter-heading" class="text-2xl font-bold mb-4">
-                    Latest Newsletter
+                    Communications
                   </h3>
-                  <Card variant="blog" padding="p-0">
-                    {latestNewsletter.image && (
-                      <a
-                        href={latestNewsletter.permalink}
-                        aria-label={`Read newsletter: ${latestNewsletter.excerpt?.slice(0, 60) || latestNewsletter.title}`}
-                        class="block"
-                      >
-                        {isRemoteNewsletterImage ? (
-                          <img
-                            src={latestNewsletter.image}
-                            alt={
-                              latestNewsletter.imageAlt ||
-                              latestNewsletter.excerpt?.slice(0, 100) ||
-                              latestNewsletter.title
-                            }
-                            width="600"
-                            height="400"
-                            class="w-full h-64 object-cover"
-                            loading="lazy"
-                          />
-                        ) : (
-                          <Image
-                            src={latestNewsletter.image}
-                            alt={
-                              latestNewsletter.imageAlt ||
-                              (latestNewsletter.excerpt ? latestNewsletter.excerpt.slice(0, 100) : null) ||
-                              latestNewsletter.title ||
-                              'Newsletter image'
-                            }
-                            class="w-full h-64 object-cover"
-                            widths={[400, 600]}
-                            width={600}
-                            height={400}
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            loading="lazy"
-                          />
-                        )}
-                      </a>
-                    )}
-                    <div class="p-6">
-                      <h4 class="text-xl font-bold mb-3">
+                  <div class="relative flex flex-col flex-1">
+                    {new Date(latestNewsletter.publishDate) >= thirtyDaysAgo && <NewBadge />}
+                    <Card variant="blog" padding="p-0" class="flex flex-col flex-1">
+                      {latestNewsletter.image && (
                         <a
                           href={latestNewsletter.permalink}
-                          class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
+                          aria-label={`Read newsletter: ${latestNewsletter.excerpt?.slice(0, 60) || latestNewsletter.title}`}
+                          class="block"
                         >
-                          {latestNewsletter.title}
+                          {isRemoteNewsletterImage ? (
+                            <img
+                              src={latestNewsletter.image}
+                              alt={
+                                latestNewsletter.imageAlt ||
+                                latestNewsletter.excerpt?.slice(0, 100) ||
+                                latestNewsletter.title
+                              }
+                              width="600"
+                              height="400"
+                              class="w-full h-64 object-cover"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <Image
+                              src={latestNewsletter.image}
+                              alt={
+                                latestNewsletter.imageAlt ||
+                                (latestNewsletter.excerpt ? latestNewsletter.excerpt.slice(0, 100) : null) ||
+                                latestNewsletter.title ||
+                                'Newsletter image'
+                              }
+                              class="w-full h-64 object-cover"
+                              widths={[400, 600]}
+                              width={600}
+                              height={400}
+                              sizes="(max-width: 768px) 100vw, 50vw"
+                              loading="lazy"
+                            />
+                          )}
                         </a>
-                      </h4>
-                      {latestNewsletter.excerpt && (
-                        <p class="text-muted dark:text-slate-300 text-base mb-4">{latestNewsletter.excerpt}</p>
                       )}
-                      <Button variant="link" href={latestNewsletter.permalink}>
-                        Read more »
-                      </Button>
-                    </div>
-                  </Card>
+                      <div class="p-6">
+                        <h4 class="text-xl font-bold mb-3">
+                          <a
+                            href={latestNewsletter.permalink}
+                            class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
+                          >
+                            {latestNewsletter.title}
+                          </a>
+                        </h4>
+                        {latestNewsletter.excerpt && (
+                          <p class="text-muted dark:text-slate-300 text-base mb-4">{latestNewsletter.excerpt}</p>
+                        )}
+                        <Button variant="link" href={latestNewsletter.permalink}>
+                          Read more »
+                        </Button>
+                      </div>
+                    </Card>
+                  </div>
                 </article>
               );
             })()
         }
 
-        <!-- Blog Posts Column -->
-        <div>
-          <h3 class="text-2xl font-bold mb-4">Recent Blog Posts</h3>
-          <div class="grid grid-cols-2 gap-4">
-            {
-              latestBlogs.map((post) => {
-                const objectPosition =
-                  post.imagePosition === 'top' ? 'top' : post.imagePosition === 'bottom' ? 'bottom' : 'center';
-                const isRemoteImage =
-                  typeof post.image === 'string' &&
-                  (post.image.startsWith('http') ||
-                    post.image.startsWith('/assets/') ||
-                    post.image.startsWith('/blog_images/'));
-                return (
-                  <Card variant="blog" padding="p-0">
-                    {post.image && (
-                      <a href={post.permalink} class="block">
-                        {isRemoteImage ? (
-                          <img
-                            src={post.image}
-                            alt={post.imageAlt}
-                            class="w-full h-32 object-cover"
-                            style={`object-position: ${objectPosition};`}
-                            loading="lazy"
-                          />
-                        ) : (
-                          <Image
-                            src={post.image}
-                            alt={post.imageAlt || post.title || 'Blog post image'}
-                            class="w-full h-32 object-cover"
-                            style={`object-position: ${objectPosition};`}
-                            widths={[200, 300]}
-                            width={300}
-                            height={200}
-                            sizes="(max-width: 768px) 50vw, 25vw"
-                            loading="lazy"
-                          />
-                        )}
-                      </a>
-                    )}
-                    <div class="p-3">
-                      <h4 class="text-sm font-bold leading-tight mb-1">
-                        <a
-                          href={post.permalink}
-                          class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
-                        >
-                          {post.title}
+        <!-- Latest Podcast Column -->
+        {
+          latestPodcast &&
+            (() => {
+              const isRemotePodcastImage =
+                typeof latestPodcast.image === 'string' &&
+                (latestPodcast.image.startsWith('http') ||
+                  latestPodcast.image.startsWith('/assets/') ||
+                  latestPodcast.image.startsWith('/blog_images/') ||
+                  latestPodcast.image.startsWith('/photos/'));
+              return (
+                <article
+                  aria-labelledby="latest-podcast-heading"
+                  class={`flex flex-col h-full ${podcastFirst ? 'md:order-first' : ''}`}
+                >
+                  <h3 id="latest-podcast-heading" class="text-2xl font-bold mb-4">
+                    Podcast
+                  </h3>
+                  <div class="relative flex flex-col flex-1">
+                    {new Date(latestPodcast.publishDate) >= thirtyDaysAgo && <NewBadge />}
+                    <Card variant="blog" padding="p-0" class="flex flex-col flex-1">
+                      {latestPodcast.image && (
+                        <a href={latestPodcast.permalink} class="block">
+                          {isRemotePodcastImage ? (
+                            <img
+                              src={latestPodcast.image}
+                              alt={latestPodcast.imageAlt || latestPodcast.title}
+                              class="w-full h-64 object-contain"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <Image
+                              src={latestPodcast.image}
+                              alt={latestPodcast.imageAlt || latestPodcast.title || 'Podcast image'}
+                              class="w-full h-64 object-contain"
+                              widths={[400, 600]}
+                              width={600}
+                              height={600}
+                              sizes="(max-width: 768px) 100vw, 50vw"
+                              loading="lazy"
+                            />
+                          )}
                         </a>
-                      </h4>
-                      {post.excerpt && (
-                        <p class="text-muted dark:text-slate-300 text-xs line-clamp-2">{post.excerpt}</p>
                       )}
-                    </div>
-                  </Card>
-                );
-              })
-            }
-          </div>
-          <div class="text-center mt-6">
-            <Button variant="link" href={getBlogPermalink()}> View all blog posts » </Button>
-          </div>
-        </div>
+                      <div class="p-6">
+                        <p class="text-xs font-semibold uppercase tracking-wide text-muted dark:text-slate-400 mb-2">
+                          Latest Episode
+                        </p>
+                        <h4 class="text-xl font-bold mb-3">
+                          <a
+                            href={latestPodcast.permalink}
+                            class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
+                          >
+                            {latestPodcast.title}
+                          </a>
+                        </h4>
+                        {latestPodcast.excerpt && (
+                          <p class="text-muted dark:text-slate-300 text-base mb-4">{latestPodcast.excerpt}</p>
+                        )}
+                        <Button variant="link" href={latestPodcast.permalink}>
+                          Listen now »
+                        </Button>
+                      </div>
+                    </Card>
+                  </div>
+                </article>
+              );
+            })()
+        }
       </div>
     </div>
   </section>
 
+  <!-- Latest from Our Community Section (blogs + videos) -->
+  <section class="py-10 md:py-14 bg-white dark:bg-dark dark:text-gray-200">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-center">Latest from Our Community</h2>
+      <p class="text-center text-gray-500 dark:text-gray-400 mb-8">
+        Dive into the latest blogs, videos, and conversations from our members
+      </p>
+      <div class="grid grid-cols-2 gap-6">
+        {
+          latestMediaPosts.map((post) => {
+            const objectPosition =
+              post.imagePosition === 'top' ? 'top' : post.imagePosition === 'bottom' ? 'bottom' : 'center';
+            const isRemoteImage =
+              typeof post.image === 'string' &&
+              (post.image.startsWith('http') ||
+                post.image.startsWith('/assets/') ||
+                post.image.startsWith('/blog_images/'));
+            const isNew = new Date(post.publishDate) >= thirtyDaysAgo;
+            return (
+              <div class="relative">
+                {isNew && <NewBadge />}
+                <Card variant="blog" padding="p-0">
+                  {post.image && (
+                    <a href={post.permalink} class="block">
+                      {isRemoteImage ? (
+                        <img
+                          src={post.image}
+                          alt={post.imageAlt}
+                          class="w-full h-48 object-cover"
+                          style={`object-position: ${objectPosition};`}
+                          loading="lazy"
+                        />
+                      ) : (
+                        <Image
+                          src={post.image}
+                          alt={post.imageAlt || post.title || 'Post image'}
+                          class="w-full h-48 object-cover"
+                          style={`object-position: ${objectPosition};`}
+                          widths={[400, 600]}
+                          width={600}
+                          height={400}
+                          sizes="(max-width: 768px) 50vw, 50vw"
+                          loading="lazy"
+                        />
+                      )}
+                    </a>
+                  )}
+                  <div class="p-3">
+                    {post.series && (
+                      <span class="inline-block text-xs font-semibold text-primary dark:text-blue-400 uppercase tracking-wide mb-1">
+                        Series: {post.series.title}
+                      </span>
+                    )}
+                    <h4 class="text-sm font-bold leading-tight mb-1">
+                      <a
+                        href={post.permalink}
+                        class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
+                      >
+                        {post.title}
+                      </a>
+                    </h4>
+                    {post.excerpt && <p class="text-muted dark:text-slate-300 text-xs line-clamp-2">{post.excerpt}</p>}
+                  </div>
+                </Card>
+              </div>
+            );
+          })
+        }
+      </div>
+      <div class="text-center mt-6">
+        <Button variant="link" href={getBlogPermalink()}>View all posts »</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Survey Section -->
+  <section class="py-16 md:py-20 bg-blue-50 dark:bg-blue-950 border-l-4 border-primary">
+    <CallToAction
+      title="Help Us Close the Gender Gap<br/><span class='text-2xl font-normal'>(and win a $25 gift card!)</span>"
+      actions={[
+        {
+          variant: 'primary',
+          target: '_blank',
+          text: 'Fill out our survey',
+          href: 'https://forms.gle/jhKy3hpYPf1WtC2s8',
+          icon: 'tabler:checkbox',
+        },
+      ]}
+    >
+      <Fragment slot="subtitle">
+        <p class="text-gray-700 dark:text-slate-300 mb-6">
+          Our data already shows it: <span class="text-primary dark:text-white font-semibold">21% of men</span> vs. <span
+            class="text-primary dark:text-white font-semibold">14% of women</span
+          > report holding leadership positions.<br />
+          Help us build the evidence base our community deserves.
+        </p>
+        <ul class="text-gray-700 dark:text-slate-300 text-base space-y-2 mb-2 inline-block text-left">
+          <li>✅ Takes ~5 minutes &amp; all responses are anonymous</li>
+          <li>🎁 Every 100 new responses, we raffle a $25 gift card</li>
+          <li>📢 Share with colleagues, collaborators, and friends</li>
+        </ul>
+      </Fragment>
+    </CallToAction>
+  </section>
+
   <!-- Let's Connect Section -->
-  <section class="py-16 md:py-20 bg-gray-50 dark:bg-slate-800">
+  <section class="py-10 md:py-14 bg-gray-50 dark:bg-slate-800 dark:text-gray-200">
     <Features2
       title="Let's Connect!"
       subtitle="Join our community and stay in touch"
       columns={2}
       classes={{
         headline: {
-          title: 'text-4xl md:text-5xl font-bold mb-4',
+          title: 'text-3xl font-bold tracking-tight sm:text-4xl mb-4',
           subtitle: 'text-xl dark:text-gray-200',
         },
       }}
