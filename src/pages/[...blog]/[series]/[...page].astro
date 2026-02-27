@@ -44,7 +44,11 @@ const metadata = {
       </a>
     </div>
 
-    <Headline title={`Series: ${series.title}`} />
+    <Headline title={`Series: ${series.title}`} classes={{ container: 'my-2 md:my-3' }} />
+
+    <p class="text-center text-gray-500 dark:text-gray-400 text-base max-w-xl mx-auto -mt-2 mb-2">
+      {`${series.description || `Posts in the ${series.title} series`}`}
+    </p>
 
     <div class="flex justify-end mb-6">
       <button
