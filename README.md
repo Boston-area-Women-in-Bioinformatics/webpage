@@ -9,6 +9,7 @@
 - [Add a new event](#add-a-new-event)
 - [Modify event page template](#modify-event-page-template)
 - [Add a new blog post](#add-a-new-blog-post)
+- [Add a new series](#add-a-new-series)
 - [Add a new newsletter](#add-a-new-newsletter)
 - [Modify Newsletter template](#modify-newsletter-template)
 - [Add a video to the meetings archive](#add-a-video-to-the-meetings-archive)
@@ -132,6 +133,8 @@ The markdown file should follow a specific format. In between the top two `---` 
 - `metadata`: additional metadata for SEO, including `title`, `description`, and `canonical` URL
 - `listeningTime`: length of time of podcast written out (optional, only for podcast posts)
 
+> **Starting a new series?** If this post is the first in a new series, also follow the steps in [Add a new series](#add-a-new-series) to create the series metadata file.
+
 ### 3. Add an image (optional)
 
 Upload image to the `public/blog_images` directory of your cloned repository (see [Image Organization](#image-organization)). The image should be referenced in the markdown file using the `image` field in the metadata.
@@ -148,6 +151,59 @@ git add /public/photos/<your_image_name>
 git add src/content/post/{newblog}.md
 #  Commit new changes
 git push -u origin add-blog-{slug}
+```
+
+## Add a new series
+
+A series groups multiple related blog posts under a shared card on category pages. Individual posts still appear separately on the main blog page and in search results.
+
+### 1. Open a new branch locally
+
+See [Getting started without write-access](#getting-started-without-write-access). Give branch name the format `add-series-{slug}` (e.g., `add-series-biobank-intro`).
+
+### 2. Create a series metadata file
+
+Create a markdown file in `src/content/series/` named with the series slug (e.g., `biobank-intro-series.md`). This file holds the series title, description, and cover image shown on the series card.
+
+```yaml
+---
+title: 'Your Series Title'
+description: 'A short description of what the series covers.'
+image: '/blog_images/your-series-image.png'
+imageAlt: 'Alt text describing the series image'
+imageFit: cover # Use 'contain' if your image is an infographic that should not be cropped
+---
+```
+
+The `imageFit` field is optional and defaults to `cover`. Use `contain` when the image is an infographic or diagram that should not be cropped.
+
+### 3. Tag your blog posts with the series
+
+In each post's frontmatter, add a `series` field referencing the series slug:
+
+```yaml
+series: 'Your Series Title'
+```
+
+The series slug is derived from the title automatically (lowercase, hyphens for spaces). Posts tagged with a series will be collapsed into a single series card on category pages.
+
+### 4. Add a series image (optional)
+
+Upload the cover image to `public/blog_images/` (see [Image Organization](#image-organization)) and reference it in the series metadata file.
+
+### 5. Note on `hiddenFromFeed`
+
+The `hiddenFromFeed: true` flag is reserved for posts that are too short to stand on their own in the main feed (e.g., Tuesday Tactics micro-posts). Do **not** use it simply because a post belongs to a series — series posts appear individually on the main blog and in search results.
+
+### 6. Push changes to website
+
+```
+# Format the new series file
+npx prettier --write src/content/series/{newseries}.md
+# Stage and commit
+git add src/content/series/{newseries}.md
+git add public/blog_images/<your_image_name>
+git push -u origin add-series-{slug}
 ```
 
 ## Add a new newsletter

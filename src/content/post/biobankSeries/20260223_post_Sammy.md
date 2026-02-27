@@ -9,6 +9,7 @@ imagePosition: top
 author: Samantha J. Klasfeld, Ph.D.
 authorUrl: 'https://linkedin.com/in/samantha-klasfeld'
 category: Tutorial
+hideHeroImage: true
 series: 'Biobank Intro Series'
 tags:
   - biobank
@@ -19,13 +20,12 @@ tags:
   - data-science
   - computational-biology
   - biotech
-  - genomics
+  - genetics
   - best-practices
 metadata:
   title: 'Biobank Intro Series: Getting Started'
   description: 'How to do biobank analysis without losing your mind'
   canonical: https://sklasfeld.netlify.app/blog/biobank-intro-series/01-biobank-iceberg/
-hideHeroImage: true
 ---
 
 <figure>
