@@ -31,6 +31,28 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { page } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;
 
+// Serialize all events for client-side search (across all pages)
+const now = new Date();
+const allPastEvents = (
+  await getCollection('event', ({ data }: CollectionEntry<'event'>) => {
+    const eventEnd = data.endDate ? new Date(data.endDate) : new Date(data.dateTime);
+    return eventEnd < now && !data.partnerEvent;
+  })
+).sort((a, b) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
+
+const eventsForClient = allPastEvents.map((e) => ({
+  id: e.id,
+  title: e.data.title,
+  tags: e.data.tags || [],
+  dateTime: e.data.dateTime.toISOString(),
+  endDate: e.data.endDate?.toISOString() ?? null,
+  location: e.data.location || [],
+  imageSrc: e.data.image.src,
+  imageAlt: e.data.image.alt,
+  imgpos: e.data.imgpos ?? '',
+  href: `/events/${e.id}`,
+}));
+
 const metadata = {
   title: `Past Events${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
   description: 'Browse our archive of past bioinformatics workshops, networking events, and casual meetups',
@@ -41,40 +63,182 @@ const metadata = {
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-7xl">
     <Headline title="Past Events Archive" subtitle="Browse our history of bioinformatics events and meetups" />
 
-    <div class="grid grid-cols-1 gap-6 mb-8 md:mt-3 md:mb-12">
-      {
-        page.data.map((event) => (
-          <Card padding="p-0" class="flex flex-col md:flex-row">
-            <img
-              src={event.data.image.src}
-              alt={event.data.image.alt}
-              class={`w-full md:h-48 md:w-48 h-auto object-cover ${event.data.imgpos}`}
-              transition:name={`event ${event.id} image`}
-            />
-            <div class="p-4 flex-1">
-              <h3
-                class="text-xl font-semibold mb-2 text-gray-900 dark:text-slate-100"
-                transition:name={`event ${event.id} title`}
-              >
-                {event.data.title}
-              </h3>
-              <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
-                <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} />
-              </div>
-              <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
-                <EventAddress artists={event.data.location || []} />
-              </div>
-              <Button variant="primary" href={`/events/${event.id}`} text="MORE INFO" />
-            </div>
-          </Card>
-        ))
-      }
+    <!-- Search and Sort Controls -->
+    <div class="flex flex-col sm:flex-row gap-3 mb-6">
+      <div class="relative flex-1">
+        <label for="event-search" class="sr-only">Search events</label>
+        <input
+          id="event-search"
+          type="search"
+          placeholder="Search by title or tag..."
+          class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 placeholder-gray-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary"
+          autocomplete="off"
+        />
+        <svg
+          class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 dark:text-slate-500 pointer-events-none"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"
+          ></path>
+        </svg>
+      </div>
+      <div>
+        <label for="event-sort" class="sr-only">Sort events</label>
+        <select
+          id="event-sort"
+          class="py-2 px-4 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary"
+        >
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+          <option value="az">Title A–Z</option>
+          <option value="za">Title Z–A</option>
+        </select>
+      </div>
     </div>
 
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} prevText="Newer events" nextText="Older events" />
+    <!-- Static paginated list (shown when no search/sort active) -->
+    <div id="static-list">
+      <div class="grid grid-cols-1 gap-6 mb-8 md:mt-3 md:mb-12">
+        {
+          page.data.map((event) => (
+            <Card padding="p-0" class="flex flex-col md:flex-row">
+              <img
+                src={event.data.image.src}
+                alt={event.data.image.alt}
+                class={`w-full md:h-48 md:w-48 h-auto object-cover ${event.data.imgpos}`}
+                transition:name={`event ${event.id} image`}
+              />
+              <div class="p-4 flex-1">
+                <h3
+                  class="text-xl font-semibold mb-2 text-gray-900 dark:text-slate-100"
+                  transition:name={`event ${event.id} title`}
+                >
+                  {event.data.title}
+                </h3>
+                <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
+                  <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} />
+                </div>
+                <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
+                  <EventAddress artists={event.data.location || []} />
+                </div>
+                {event.data.tags && event.data.tags.length > 0 && (
+                  <div class="flex flex-wrap gap-1 mb-4">
+                    {event.data.tags.map((tag) => (
+                      <span class="text-xs px-2 py-0.5 rounded-full bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-slate-300">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <Button variant="primary" href={`/events/${event.id}`} text="MORE INFO" />
+              </div>
+            </Card>
+          ))
+        }
+      </div>
+
+      <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} prevText="Newer events" nextText="Older events" />
+    </div>
+
+    <!-- Dynamic search/sort results (shown when search or non-default sort is active) -->
+    <div id="search-results" class="hidden">
+      <div id="search-results-list" class="grid grid-cols-1 gap-6 mb-8 md:mt-3 md:mb-12"></div>
+      <p id="no-results" class="hidden text-center text-gray-500 dark:text-slate-400 py-12 text-lg">
+        No events found matching your search.
+      </p>
+    </div>
 
     <div class="text-center mt-8">
       <Button variant="secondary" href="/events" text="Back to Events" />
     </div>
   </section>
 </Layout>
+
+<script is:inline define:vars={{ eventsForClient }}>
+  const searchInput = document.getElementById('event-search');
+  const sortSelect = document.getElementById('event-sort');
+  const staticList = document.getElementById('static-list');
+  const searchResultsSection = document.getElementById('search-results');
+  const searchResultsList = document.getElementById('search-results-list');
+  const noResults = document.getElementById('no-results');
+
+  function formatDate(isoString) {
+    const d = new Date(isoString);
+    return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  }
+
+  function renderEventCard(event) {
+    const tagsHtml =
+      event.tags && event.tags.length > 0
+        ? `<div class="flex flex-wrap gap-1 mb-4">${event.tags
+            .map(
+              (t) =>
+                `<span class="text-xs px-2 py-0.5 rounded-full bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-slate-300">${t}</span>`
+            )
+            .join('')}</div>`
+        : '';
+
+    const locationHtml =
+      event.location && event.location.length > 0
+        ? `<div class="text-sm mb-4 text-gray-700 dark:text-slate-300">${event.location.join(', ')}</div>`
+        : '';
+
+    return `
+      <div class="rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-700 shadow overflow-hidden flex flex-col md:flex-row">
+        <img src="${event.imageSrc}" alt="${event.imageAlt}" class="w-full md:h-48 md:w-48 h-auto object-cover ${event.imgpos}" loading="lazy" />
+        <div class="p-4 flex-1">
+          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-slate-100">${event.title}</h3>
+          <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">${formatDate(event.dateTime)}</div>
+          ${locationHtml}
+          ${tagsHtml}
+          <a href="${event.href}" class="inline-block px-4 py-2 text-sm font-semibold rounded-lg bg-primary text-white hover:bg-blue-700 transition">MORE INFO</a>
+        </div>
+      </div>`;
+  }
+
+  function updateDisplay() {
+    const query = searchInput.value.trim().toLowerCase();
+    const sort = sortSelect.value;
+    const isActive = query.length > 0 || sort !== 'newest';
+
+    if (!isActive) {
+      staticList.classList.remove('hidden');
+      searchResultsSection.classList.add('hidden');
+      return;
+    }
+
+    staticList.classList.add('hidden');
+    searchResultsSection.classList.remove('hidden');
+
+    let results = eventsForClient;
+
+    if (query) {
+      results = results.filter(
+        (e) => e.title.toLowerCase().includes(query) || e.tags.some((t) => t.toLowerCase().includes(query))
+      );
+    }
+
+    results = [...results].sort((a, b) => {
+      if (sort === 'newest') return new Date(b.dateTime) - new Date(a.dateTime);
+      if (sort === 'oldest') return new Date(a.dateTime) - new Date(b.dateTime);
+      if (sort === 'az') return a.title.localeCompare(b.title);
+      if (sort === 'za') return b.title.localeCompare(a.title);
+      return 0;
+    });
+
+    if (results.length === 0) {
+      searchResultsList.innerHTML = '';
+      noResults.classList.remove('hidden');
+    } else {
+      noResults.classList.add('hidden');
+      searchResultsList.innerHTML = results.map(renderEventCard).join('');
+    }
+  }
+
+  searchInput.addEventListener('input', updateDisplay);
+  sortSelect.addEventListener('change', updateDisplay);
+</script>
