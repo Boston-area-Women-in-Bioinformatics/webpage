@@ -26,7 +26,7 @@ src/
 ├── styles/          # Global CSS
 ├── utils/           # Pure TypeScript helpers
 ├── config.yaml      # Site-wide config (name, URL, blog/newsletter settings)
-├── navigation.ts    # Header/footer nav structure
+├── navigation.ts    # Header/footer nav structure — edit this to add/remove nav links
 ├── types.d.ts       # Shared TypeScript types (Post, Newsletter, Taxonomy, MetaData…)
 └── env.d.ts         # Astro env types
 ```
@@ -84,6 +84,10 @@ src/components/
 
 - `widgets/UpcomingEvents.astro` — shows the **single next upcoming event** in a hero layout; used on the homepage
 - `EventsTable.astro` — shows **all upcoming events** as cards on the `/events` page; past events section only renders when there are no upcoming events
+
+### Navigation (`src/navigation.ts`)
+
+`headerData.links` drives the top nav. Each item is either a flat link `{ text, href }` or a dropdown `{ text, href, links: [...] }`. The current top-level items are: **Home, Who we are, Resources, Newsletter, Team, Events, Media, Contact, Donate**. The **Events** dropdown currently contains: Upcoming Events, Fall Fundraiser 2026, Past Events Archive, Recorded Events. To add a link (e.g. Past Events Archive), add an entry to the relevant `links` array using `getPermalink('/events/archive')`.
 
 ### Layouts (`src/layouts/`)
 
