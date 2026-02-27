@@ -33,39 +33,39 @@ src/
 
 ### Entry Points
 
-| File | Role |
-|------|------|
-| `src/pages/index.astro` | Homepage |
-| `src/pages/[...blog]/[...page].astro` | Blog list with search + category cards |
-| `src/pages/[...blog]/index.astro` | Individual blog post |
-| `src/pages/[...blog]/[category]/[...page].astro` | Category page (search + sort + series filter) |
-| `src/pages/[...blog]/[series]/[...page].astro` | Series page (sort, back link varies by category) |
-| `src/pages/[...blog]/[tag]/[...page].astro` | Tag page |
-| `src/pages/newsletter/[...page].astro` | Newsletter list |
-| `src/pages/newsletter/[...slug].astro` | Individual newsletter issue |
-| `src/pages/events/index.astro` | Events listing |
+| File                                             | Role                                             |
+| ------------------------------------------------ | ------------------------------------------------ |
+| `src/pages/index.astro`                          | Homepage                                         |
+| `src/pages/[...blog]/[...page].astro`            | Blog list with search + category cards           |
+| `src/pages/[...blog]/index.astro`                | Individual blog post                             |
+| `src/pages/[...blog]/[category]/[...page].astro` | Category page (search + sort + series filter)    |
+| `src/pages/[...blog]/[series]/[...page].astro`   | Series page (sort, back link varies by category) |
+| `src/pages/[...blog]/[tag]/[...page].astro`      | Tag page                                         |
+| `src/pages/newsletter/[...page].astro`           | Newsletter list                                  |
+| `src/pages/newsletter/[...slug].astro`           | Individual newsletter issue                      |
+| `src/pages/events/index.astro`                   | Events listing                                   |
 
 ### Content Collections (`src/content/config.ts`)
 
-| Collection | Description | Key Fields |
-|------------|-------------|------------|
-| `post` | Blog posts | `publishDate`, `category`, `series`, `tags`, `authors`, `draft`, `hiddenFromFeed` |
-| `newsletter` | Newsletter issues | `publishDate`, `issue`, `title`, `authors` |
-| `meetups` | Events | `title`, `dateTime`, `location`, `tags` |
-| `committees` | Committee pages | `title`, `chairs`, `members` |
-| `resources` | Resource directory | `category`, `tags`, `featured` |
-| `series` | Series metadata | `title`, `description`, `image`, `imageFit` |
+| Collection   | Description        | Key Fields                                                                        |
+| ------------ | ------------------ | --------------------------------------------------------------------------------- |
+| `post`       | Blog posts         | `publishDate`, `category`, `series`, `tags`, `authors`, `draft`, `hiddenFromFeed` |
+| `newsletter` | Newsletter issues  | `publishDate`, `issue`, `title`, `authors`                                        |
+| `meetups`    | Events             | `title`, `dateTime`, `location`, `tags`                                           |
+| `committees` | Committee pages    | `title`, `chairs`, `members`                                                      |
+| `resources`  | Resource directory | `category`, `tags`, `featured`                                                    |
+| `series`     | Series metadata    | `title`, `description`, `image`, `imageFit`                                       |
 
 ### Key Utility Files (`src/utils/`)
 
-| File | Role |
-|------|------|
-| `blog.ts` | All static path generators (`getStaticPathsBlogListAll`, `getStaticPathsBlogCategory`, `getStaticPathsBlogSeries`, `getStaticPathsBlogPost`, etc.), post normalization, series metadata, filtering |
-| `permalinks.ts` | URL generation — `getPermalink(slug, type)` where `type` is `'post' \| 'category' \| 'tag' \| 'series'`; also exports `BLOG_BASE`, `CATEGORY_BASE`, `TAG_BASE`, `SERIES_BASE` |
-| `images.ts` | Image lookup (`findImage`) |
-| `utils.ts` | Formatting helpers (`getFormattedDate`, etc.) |
-| `newsletter.ts` | Newsletter-specific fetch helpers |
-| `frontmatter.ts` | Remark plugins: reading time, responsive tables, lazy images |
+| File             | Role                                                                                                                                                                                               |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `blog.ts`        | All static path generators (`getStaticPathsBlogListAll`, `getStaticPathsBlogCategory`, `getStaticPathsBlogSeries`, `getStaticPathsBlogPost`, etc.), post normalization, series metadata, filtering |
+| `permalinks.ts`  | URL generation — `getPermalink(slug, type)` where `type` is `'post' \| 'category' \| 'tag' \| 'series'`; also exports `BLOG_BASE`, `CATEGORY_BASE`, `TAG_BASE`, `SERIES_BASE`                      |
+| `images.ts`      | Image lookup (`findImage`)                                                                                                                                                                         |
+| `utils.ts`       | Formatting helpers (`getFormattedDate`, etc.)                                                                                                                                                      |
+| `newsletter.ts`  | Newsletter-specific fetch helpers                                                                                                                                                                  |
+| `frontmatter.ts` | Remark plugins: reading time, responsive tables, lazy images                                                                                                                                       |
 
 ### Components
 
@@ -85,13 +85,13 @@ src/components/
 
 ### Configuration Files
 
-| File | Role |
-|------|------|
-| `src/config.yaml` | Blog/newsletter settings (posts per page, permalink patterns, paths) |
-| `astro.config.ts` | Integrations (Tailwind, MDX, Sitemap, Icons, React), image domains |
+| File                 | Role                                                                                                         |
+| -------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `src/config.yaml`    | Blog/newsletter settings (posts per page, permalink patterns, paths)                                         |
+| `astro.config.ts`    | Integrations (Tailwind, MDX, Sitemap, Icons, React), image domains                                           |
 | `tailwind.config.js` | Custom colors (`primary`, `secondary`, `accent`, social colors), fonts (`font-heading`), `intersect` variant |
-| `.prettierrc.cjs` | Print width 120, single quotes, `prettier-plugin-astro` |
-| `eslint.config.js` | ESLint 9 flat config — Astro + TypeScript recommended |
+| `.prettierrc.cjs`    | Print width 120, single quotes, `prettier-plugin-astro`                                                      |
+| `eslint.config.js`   | ESLint 9 flat config — Astro + TypeScript recommended                                                        |
 
 ### CI/CD (`.github/workflows/`)
 
