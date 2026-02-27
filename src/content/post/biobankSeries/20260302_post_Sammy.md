@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-02-26T08:00:00-05:00
+publishDate: 2026-03-03T08:00:00-05:00
 title: 'Biobank Intro Series: Hardware Settings'
 excerpt: 'Hardware setup lessons for UK Biobank Research Analysis Platform and All of Us Workbench'
 slug: blog/biobank-intro-series/02-hardware-settings
