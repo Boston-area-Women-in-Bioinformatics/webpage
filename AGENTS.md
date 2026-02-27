@@ -43,7 +43,8 @@ src/
 | `src/pages/[...blog]/[tag]/[...page].astro`      | Tag page                                         |
 | `src/pages/newsletter/[...page].astro`           | Newsletter list                                  |
 | `src/pages/newsletter/[...slug].astro`           | Individual newsletter issue                      |
-| `src/pages/events/index.astro`                   | Events listing                                   |
+| `src/pages/events/index.astro`                   | Events listing (past events section hidden when upcoming events exist) |
+| `src/pages/events/archive/index.astro`           | Past events archive (client-side search, sort, date range, hide-partner filter) |
 
 ### Content Collections (`src/content/config.ts`)
 
@@ -51,7 +52,7 @@ src/
 | ------------ | ------------------ | --------------------------------------------------------------------------------- |
 | `post`       | Blog posts         | `publishDate`, `category`, `series`, `tags`, `authors`, `draft`, `hiddenFromFeed` |
 | `newsletter` | Newsletter issues  | `publishDate`, `issue`, `title`, `authors`                                        |
-| `meetups`    | Events             | `title`, `dateTime`, `location`, `tags`                                           |
+| `event`      | Events             | `title`, `dateTime`, `endDate`, `location`, `tags`, `image`, `imgpos`, `partnerEvent`, `partnerOrganization` — **files live in `src/content/meetups/`** (folder name differs from collection name) |
 | `committees` | Committee pages    | `title`, `chairs`, `members`                                                      |
 | `resources`  | Resource directory | `category`, `tags`, `featured`                                                    |
 | `series`     | Series metadata    | `title`, `description`, `image`, `imageFit`                                       |
@@ -79,6 +80,10 @@ src/components/
 └── *.astro/.tsx   # Root-level: Banner, Logo, Signup, Sponsors, Quiz, EventsTable…
 ```
 
+**Event-specific components:**
+- `widgets/UpcomingEvents.astro` — shows the **single next upcoming event** in a hero layout; used on the homepage
+- `EventsTable.astro` — shows **all upcoming events** as cards on the `/events` page; past events section only renders when there are no upcoming events
+
 ### Layouts (`src/layouts/`)
 
 `Layout.astro` → `PageLayout.astro` (most pages), `MarkdownLayout.astro` (blog posts), `EventLayout.astro`, `LandingLayout.astro`
@@ -96,7 +101,7 @@ src/components/
 ### CI/CD (`.github/workflows/`)
 
 - **`actions.yaml`**: Runs on PRs and pushes to `main` — matrix build (Node 18/20/22) + ESLint + Prettier check
-- **`publish.yaml`**: Deploys to GitHub Pages on push to `main` and on a cron schedule (8 AM US Eastern); publishes from `./dist`
+- **`publish.yaml`**: Deploys to GitHub Pages on push to `main` and on a **daily cron at 8 AM US Eastern** (this keeps future/past event splits current without a manual deploy); publishes from `./dist`
 
 ### Tests
 
@@ -127,6 +132,7 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 8. **Dark mode** — Tailwind `dark:` variants throughout. For inline-styled HTML in Markdown (e.g. newsletter tables), use a scoped `<style>` block with `:global(.dark) element[style*="..."] { ... !important }`.
 9. **`BLOG_EXCLUDED_CATEGORIES`** — Podcast and Video posts are excluded from the main blog list and category filter but appear on their own category pages at `/blog/podcast` and `/blog/video`. On the homepage, the latest Podcast is shown in its own card (top row, right column) and Video posts appear in the "Recent Media" grid. The homepage fetches via `findLatestPosts({ count: 20 })` and splits by `category.slug`.
 10. **Search data attributes** — client-side search uses `data-search` on `<li>` elements; sort uses `data-date` (milliseconds); series filter uses `data-in-series` and `data-series-card`.
+11. **Archive `DEFAULT_START`** — `src/pages/events/archive/index.astro` has a hardcoded `DEFAULT_START = '2025-08-08'` used as the default "From" date. Update this when the desired default window changes. The date picker `min="2024-08-08"` is the first-ever event date and should stay fixed.
 
 ---
 
