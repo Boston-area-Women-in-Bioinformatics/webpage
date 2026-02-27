@@ -114,7 +114,7 @@ const metadata = {
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8 text-center">Latest from Our Community</h2>
 
       <!-- Top row: Newsletter + Podcast -->
-      <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <div class="grid md:grid-cols-2 gap-8 mb-12 md:items-stretch">
         <!-- Newsletter Column -->
         {
           latestNewsletter &&
@@ -126,11 +126,11 @@ const metadata = {
                   latestNewsletter.image.startsWith('/blog_images/') ||
                   latestNewsletter.image.startsWith('/photos/'));
               return (
-                <article aria-labelledby="latest-newsletter-heading">
+                <article aria-labelledby="latest-newsletter-heading" class="flex flex-col h-full">
                   <h3 id="latest-newsletter-heading" class="text-2xl font-bold mb-4">
                     Community Newsletter
                   </h3>
-                  <Card variant="blog" padding="p-0">
+                  <Card variant="blog" padding="p-0" class="flex flex-col flex-1">
                     {latestNewsletter.image && (
                       <a
                         href={latestNewsletter.permalink}
@@ -202,30 +202,28 @@ const metadata = {
                   latestPodcast.image.startsWith('/blog_images/') ||
                   latestPodcast.image.startsWith('/photos/'));
               return (
-                <article aria-labelledby="latest-podcast-heading">
+                <article aria-labelledby="latest-podcast-heading" class="flex flex-col h-full">
                   <h3 id="latest-podcast-heading" class="text-2xl font-bold mb-4">
                     On the Mic
                   </h3>
-                  <Card variant="blog" padding="p-0">
+                  <Card variant="blog" padding="p-0" class="flex flex-col flex-1">
                     {latestPodcast.image && (
                       <a href={latestPodcast.permalink} class="block">
                         {isRemotePodcastImage ? (
                           <img
                             src={latestPodcast.image}
                             alt={latestPodcast.imageAlt || latestPodcast.title}
-                            width="600"
-                            height="400"
-                            class="w-full h-64 object-cover"
+                            class="w-full h-64 object-contain"
                             loading="lazy"
                           />
                         ) : (
                           <Image
                             src={latestPodcast.image}
                             alt={latestPodcast.imageAlt || latestPodcast.title || 'Podcast image'}
-                            class="w-full h-64 object-cover"
+                            class="w-full h-64 object-contain"
                             widths={[400, 600]}
                             width={600}
-                            height={400}
+                            height={600}
                             sizes="(max-width: 768px) 100vw, 50vw"
                             loading="lazy"
                           />
@@ -233,6 +231,9 @@ const metadata = {
                       </a>
                     )}
                     <div class="p-6">
+                      <p class="text-xs font-semibold uppercase tracking-wide text-muted dark:text-slate-400 mb-2">
+                        Latest Episode
+                      </p>
                       <h4 class="text-xl font-bold mb-3">
                         <a
                           href={latestPodcast.permalink}
