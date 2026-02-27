@@ -33,29 +33,29 @@ src/
 
 ### Entry Points
 
-| File                                             | Role                                             |
-| ------------------------------------------------ | ------------------------------------------------ |
-| `src/pages/index.astro`                          | Homepage                                         |
-| `src/pages/[...blog]/[...page].astro`            | Blog list with search + category cards           |
-| `src/pages/[...blog]/index.astro`                | Individual blog post                             |
-| `src/pages/[...blog]/[category]/[...page].astro` | Category page (search + sort + series filter)    |
-| `src/pages/[...blog]/[series]/[...page].astro`   | Series page (sort, back link varies by category) |
-| `src/pages/[...blog]/[tag]/[...page].astro`      | Tag page                                         |
-| `src/pages/newsletter/[...page].astro`           | Newsletter list                                  |
-| `src/pages/newsletter/[...slug].astro`           | Individual newsletter issue                      |
-| `src/pages/events/index.astro`                   | Events listing (past events section hidden when upcoming events exist) |
+| File                                             | Role                                                                            |
+| ------------------------------------------------ | ------------------------------------------------------------------------------- |
+| `src/pages/index.astro`                          | Homepage                                                                        |
+| `src/pages/[...blog]/[...page].astro`            | Blog list with search + category cards                                          |
+| `src/pages/[...blog]/index.astro`                | Individual blog post                                                            |
+| `src/pages/[...blog]/[category]/[...page].astro` | Category page (search + sort + series filter)                                   |
+| `src/pages/[...blog]/[series]/[...page].astro`   | Series page (sort, back link varies by category)                                |
+| `src/pages/[...blog]/[tag]/[...page].astro`      | Tag page                                                                        |
+| `src/pages/newsletter/[...page].astro`           | Newsletter list                                                                 |
+| `src/pages/newsletter/[...slug].astro`           | Individual newsletter issue                                                     |
+| `src/pages/events/index.astro`                   | Events listing (past events section hidden when upcoming events exist)          |
 | `src/pages/events/archive/index.astro`           | Past events archive (client-side search, sort, date range, hide-partner filter) |
 
 ### Content Collections (`src/content/config.ts`)
 
-| Collection   | Description        | Key Fields                                                                        |
-| ------------ | ------------------ | --------------------------------------------------------------------------------- |
-| `post`       | Blog posts         | `publishDate`, `category`, `series`, `tags`, `authors`, `draft`, `hiddenFromFeed` |
-| `newsletter` | Newsletter issues  | `publishDate`, `issue`, `title`, `authors`                                        |
+| Collection   | Description        | Key Fields                                                                                                                                                                                         |
+| ------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `post`       | Blog posts         | `publishDate`, `category`, `series`, `tags`, `authors`, `draft`, `hiddenFromFeed`                                                                                                                  |
+| `newsletter` | Newsletter issues  | `publishDate`, `issue`, `title`, `authors`                                                                                                                                                         |
 | `event`      | Events             | `title`, `dateTime`, `endDate`, `location`, `tags`, `image`, `imgpos`, `partnerEvent`, `partnerOrganization` — **files live in `src/content/meetups/`** (folder name differs from collection name) |
-| `committees` | Committee pages    | `title`, `chairs`, `members`                                                      |
-| `resources`  | Resource directory | `category`, `tags`, `featured`                                                    |
-| `series`     | Series metadata    | `title`, `description`, `image`, `imageFit`                                       |
+| `committees` | Committee pages    | `title`, `chairs`, `members`                                                                                                                                                                       |
+| `resources`  | Resource directory | `category`, `tags`, `featured`                                                                                                                                                                     |
+| `series`     | Series metadata    | `title`, `description`, `image`, `imageFit`                                                                                                                                                        |
 
 ### Key Utility Files (`src/utils/`)
 
@@ -81,6 +81,7 @@ src/components/
 ```
 
 **Event-specific components:**
+
 - `widgets/UpcomingEvents.astro` — shows the **single next upcoming event** in a hero layout; used on the homepage
 - `EventsTable.astro` — shows **all upcoming events** as cards on the `/events` page; past events section only renders when there are no upcoming events
 
