@@ -473,11 +473,14 @@ export const getStaticPathsBlogSeries = async () => {
 
   return Array.from(Object.keys(seriesMap)).map((seriesSlug) => {
     const meta = seriesMetadata[seriesSlug];
+    const seriesPosts = posts.filter((post) => post.series?.slug && seriesSlug === post.series?.slug);
+    const categorySlug = seriesPosts[0]?.category?.slug ?? null;
     return {
       params: { series: seriesSlug, blog: SERIES_BASE || undefined, page: undefined },
       props: {
         series: meta ?? seriesMap[seriesSlug],
-        posts: posts.filter((post) => post.series?.slug && seriesSlug === post.series?.slug),
+        posts: seriesPosts,
+        categorySlug,
       },
     };
   });

@@ -1,6 +1,7 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import { blogSeriesRobots, getStaticPathsBlogSeries } from '~/utils/blog';
+import { getPermalink } from '~/utils/permalinks';
 
 import Layout from '~/layouts/PageLayout.astro';
 import PostListItem from '~/components/ui/PostListItem.astro';
@@ -12,7 +13,14 @@ export const getStaticPaths = (async () => {
   return await getStaticPathsBlogSeries();
 }) satisfies GetStaticPaths;
 
-const { series, posts } = Astro.props;
+const { series, posts, categorySlug } = Astro.props;
+
+const backLink =
+  categorySlug === 'podcast'
+    ? { href: getPermalink('podcast', 'category'), label: 'All Podcasts' }
+    : categorySlug === 'video'
+      ? { href: getPermalink('video', 'category'), label: 'All Videos' }
+      : { href: '/blog', label: 'All Categories' };
 
 const metadata = {
   title: `Series: ${series.title}`,
@@ -27,7 +35,7 @@ const metadata = {
   <section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
     <div class="mb-2">
       <a
-        href="/blog"
+        href={backLink.href}
         class="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors duration-200"
       >
         <svg
@@ -40,7 +48,7 @@ const metadata = {
         >
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
         </svg>
-        All Categories
+        {backLink.label}
       </a>
     </div>
 
