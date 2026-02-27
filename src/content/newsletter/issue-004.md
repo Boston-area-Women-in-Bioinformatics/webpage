@@ -208,51 +208,36 @@ Shake off the last of winter and grab lunch with your fellow bioinformaticians a
 
 ---
 
-<div id="survey"></div>
+<div id="survey">
 
 ## 📊 Help Us Tell the Full Story — Advocacy Survey
 
-The gender gap in leadership isn't just a feeling — it shows up in the data. Our ongoing advocacy survey has already captured responses from 194 participants, and the early findings are striking: while women make up the vast majority of respondents, 21% of male respondents report being in a leadership position compared to only 14% of female respondents.
-
-But we need more voices to make this data count. Right now our dataset skews heavily female, which limits what we can conclude. The more balanced and representative our responses, the stronger the case we can make — for ourselves, our peers, and the generations coming up behind us.
+The gender gap in leadership isn't just a feeling — it shows up in the data. Our ongoing advocacy survey has already captured responses from 194 participants, and the early findings are striking: while women make up the vast majority of respondents, 21% of male respondents report being in a leadership position compared to only 14% of female respondents. In the future, we plan to explore these questions with a well-balanced dataset to understand the bias related to gender gap, pay, and years of experience or education needed. We plan to share the aggregated results publicly and potentially publish findings to benefit the broader community. 
 
 We're asking you to do two things:
 
 1. Fill out the survey if you haven't already
-2. Share it with the men and non-binary people in your network — colleagues, collaborators, partners, friends
+2. Share it with more people in your network — colleagues, collaborators, partners, friends
 
-Every 100 new responses, we raffle a $25 gift card — so there's never been a better time to participate.
+**Every 100 new responses, we raffle a $25 gift card — so there's never been a better time to participate.**
 
 👉 [Survey](http://forms.gle/jhKy3hpYPf1WtC2s8)
 
 _Together, we can build the evidence base our community deserves._
 
----
-
-<div id="resources"></div>
-
-## 📦 Resource Drop: Skills & Communities
-
-We've expanded the Boston Women in Bioinformatics website with two new pages designed to support your professional growth and community connections:
-
-<u>**Upskilling Resource Library**</u> – A curated collection of tools, tutorials, and platforms across bioinformatics, machine learning, coding, and professional development to help you sharpen your skills.
-
-<u>**Partner Communities**</u> – Discover organizations and networks in bioinformatics, biotech, and data science to expand your connections locally and beyond.
-
-**Have a resource or community to add?** We'd love your contributions! To suggest an addition, please share:
-
-- _For Upskilling Resources_: Name, description, URL, category (bioinformatics, machine-learning, math, biology, coding, professional-development, or other), and tags (e.g., free, beginner-friendly)
-- _For Partner Communities_: Name, description, website, category (bioinformatics, biotech, data-science, or other), location, whether it's female-only, Boston-based, and relevant tags
-
-Reach out to someone on the [web-development committee](/about/committees/web-page) on [slack](https://boston-women-bioinfo.slack.com) and help us build a comprehensive resource hub for our community!
+</div>
 
 ---
 
-<div id="committee-reports"></div>
+<div id="resources">
 
-## 2025 Annual Committee Reports
+## 📝 What's New on the Site
 
-As the year draws to a close, our various committees have diligently compiled their end-of-year reports to reflect on the 2025 goals, measured progress and achievements, identified lessons learned and potential plans for the next year. This process of annual review highlights the commitment to transparency and continuous and trackable improvement within the organization. We thank all committee members for their hard work and dedication in preparing these valuable summaries. Please enjoy reading them on our website at [boston-wib.org/about/annual-report-2025](/about/annual-report-2025).
+We've leveled up the blog on our website — it's now cleaner and more searchable, thanks to feedback from our amazing **bloggers**. We want to keep that content pipeline full, so if you've ever had an idea for a post, we want to hear it. No citations needed, even one post counts!
+
+Interested in getting involved? Head to[ **boston-wib.org/about/committees**](https://boston-wib.org/about/committees) — blogging falls under **Communications**, but browse around and find the committee that piques your interest.
+
+## </div>
 
 ---
 
