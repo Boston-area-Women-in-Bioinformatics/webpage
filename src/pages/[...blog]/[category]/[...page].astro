@@ -234,7 +234,7 @@ const metadata = {
 
           const post = page.data[item.index];
           const authorNames = post.authors ? post.authors.map((a) => a.name).join(' ') : '';
-          const tagTitles = 'tags' in post && post.tags ? post.tags.map((t) => t.title).join(' ') : '';
+          const tagTitles = 'tags' in post && post.tags ? post.tags.map((t) => t.title + ' ' + t.slug.replace(/-/g, ' ')).join(' ') : '';
           const seriesTitle = 'series' in post && post.series ? (post.series as { title: string }).title : '';
           const searchData = [post.title, authorNames, tagTitles, seriesTitle].join(' ').toLowerCase();
           const isNew = new Date(post.publishDate) >= thirtyDaysAgo;
