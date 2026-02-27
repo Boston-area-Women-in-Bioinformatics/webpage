@@ -31,7 +31,7 @@ Here's what's inside this month:
 - [Events Recap](#events-recap)
 - [Upcoming Events](#upcoming-event)
 - [Advocacy Survey](#survey)
-- [New Web Resources](#resources)
+- [Hot off the Blog](#resources)
 - [Inside our Organization Committees](#inside-committees)
 - [Meet the Executive Board](#exec-board)
 
@@ -73,7 +73,7 @@ We're thrilled to introduce BWIB's 2026 executive board! This year brings fresh 
 
 ## 📣 Committee Updates: New Structures, New Voices
 
-We've made some exciting changes to our committee structure to better serve our growing community.
+We've made some exciting changes to our [committee structure](https://boston-wib.org/about/committees) to better serve our growing community.
 
 **Communications Committee** — Our Website and Communications teams have joined forces into one unified Communications Committee, bringing together a powerhouse group with clearly defined roles:
 
@@ -231,11 +231,17 @@ _Together, we can build the evidence base our community deserves._
 
 <div id="resources">
 
-## 📝 What's New on the Site
+📝 Hot off the Blog
 
-We've leveled up the blog on our website — it's now cleaner and more searchable, thanks to feedback from our amazing **bloggers**. We want to keep that content pipeline full, so if you've ever had an idea for a post, we want to hear it. No citations needed, even one post counts!
+Our bloggers have been busy! Here's what's been published recently:
 
-Interested in getting involved? Head to[ **boston-wib.org/about/committees**](https://boston-wib.org/about/committees) — blogging falls under **Communications**, but browse around and find the committee that piques your interest.
+[**Beyond Behavior: How Machine Learning Decodes Consciousness and Forecasts Seizures**](https://boston-wib.org/blog/deepdive/seminar-reflections-beyond-behavior) · _Deep Dive by Dana Moochnick_ Reflections on a UMass Amherst seminar exploring how AI and brain network analysis are transforming our understanding of consciousness and what that means for epilepsy care.
+
+[**ctDNA as an Oncology Endpoint**](https://boston-wib.org/blog/quicktake/ctdna-as-an-oncology-endpoint) · _Quick Take by Celine Han, Ph.D._ Takeaways from the Friends of Cancer Research symposium on modernizing oncology endpoints — a clear-eyed look at where ctDNA stands as a clinical biomarker and what still needs to happen for it to get there.
+
+[**Biobank Intro Series: Getting Started**](https://boston-wib.org/blog/biobank-intro-series/01-biobank-iceberg) _Tutorial Series by Samantha J. Klasfeld, Ph.D._ The first installment of a weekly tutorial series demystifying UK Biobank and All of Us. If biobank analysis has ever felt overwhelming, this series is for you.
+
+Want to see your name here? We're always looking for new voices. You don't need citations, a polished draft, or even a complete idea — just something you've been thinking about. Reach out to the us at the [communications committee](https://boston-wib.org/about/committees/communications) to get started.
 
 ## </div>
 
