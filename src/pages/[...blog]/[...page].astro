@@ -9,13 +9,24 @@ import { blogListRobots, getStaticPathsBlogListAll } from '~/utils/blog';
 import { getPermalink } from '~/utils/permalinks';
 import type { Post } from '~/types';
 
+type SeriesCard = {
+  slug: string;
+  title: string;
+  description?: string;
+  image?: string;
+  imageAlt?: string;
+  imageFit?: 'cover' | 'contain';
+  latestPostDate: number;
+  hasNewPost: boolean;
+};
+
 export const prerender = true;
 
 export const getStaticPaths = (async () => {
   return await getStaticPathsBlogListAll();
 }) satisfies GetStaticPaths;
 
-const { posts } = Astro.props as { posts: Post[] };
+const { posts, seriesList = [] } = Astro.props as { posts: Post[]; seriesList: SeriesCard[] };
 
 const thirtyDaysAgo = new Date();
 thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
@@ -87,27 +98,53 @@ const metadata = {
       classes={{ container: 'my-2 md:my-3 max-w-3xl' }}
     />
 
-    <!-- Search Bar -->
-    <div class="relative mb-8 max-w-2xl mx-auto">
-      <svg
-        class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500 pointer-events-none"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
+    <!-- Search + Filter controls -->
+    <div class="flex flex-col sm:flex-row gap-3 mb-8">
+      <!-- Search Bar -->
+      <div class="relative flex-1">
+        <svg
+          class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500 pointer-events-none"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"></path>
+        </svg>
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search by title, author, tag, or series…"
+          class="w-full pl-12 pr-4 py-4 text-base rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-slate-100 placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200 shadow-sm"
+          autocomplete="off"
+        />
+      </div>
+
+      <!-- Series filter checkbox -->
+      <label
+        class="inline-flex items-center gap-2 px-6 py-4 bg-white dark:bg-slate-900 text-gray-700 dark:text-slate-300 font-medium text-base cursor-pointer transition-colors duration-200 whitespace-nowrap select-none"
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"></path>
-      </svg>
-      <input
-        id="search-input"
-        type="search"
-        placeholder="Search by title, author, tag, or series…"
-        class="w-full pl-12 pr-4 py-4 text-base rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-slate-100 placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200 shadow-sm"
-        autocomplete="off"
-      />
+        <input id="series-filter-btn" type="checkbox" class="sr-only" />
+        <span
+          id="series-checkbox-box"
+          class="w-5 h-5 rounded border-2 border-gray-300 dark:border-gray-600 flex items-center justify-center transition-colors duration-200 flex-shrink-0"
+        >
+          <svg
+            id="series-checkbox-check"
+            class="w-3 h-3 hidden text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="3"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </span>
+        Series only
+      </label>
     </div>
 
     <!-- Category Cards (shown when not searching) -->
@@ -142,7 +179,7 @@ const metadata = {
       }
     </div>
 
-    <!-- Search Results (hidden until searching) -->
+    <!-- Search Results (hidden until searching or series filter active) -->
     <div id="search-results-section" class="hidden">
       <!-- Sort button -->
       <div class="flex justify-end mb-4">
@@ -172,16 +209,81 @@ const metadata = {
 
       <ul id="posts-list">
         {
+          /* Series cards — hidden by default, shown only in "series only" mode */
+          seriesList.map((s) => {
+            const seriesLink = getPermalink(s.slug, 'series');
+            return (
+              <li class="mb-8 md:mb-12" data-series-card data-date={s.latestPostDate} style="display:none">
+                <div class="relative max-w-md mx-auto md:max-w-none">
+                  <div class="absolute inset-0 translate-x-2 translate-y-2 rounded bg-gray-100 dark:bg-slate-700/60" />
+                  <div class="absolute inset-0 translate-x-1 translate-y-1 rounded bg-gray-200/80 dark:bg-slate-700/80" />
+                  {s.hasNewPost && (
+                    <span class="absolute -top-2 -left-2 z-10">
+                      <span
+                        class="absolute inset-0 rounded-full dark:animate-ping bg-green-500 opacity-75"
+                        style="animation-duration: 2s;"
+                      />
+                      <span class="relative bg-green-500 dark:bg-green-600 text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-full shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] dark:shadow-none inline-block">
+                        New
+                      </span>
+                    </span>
+                  )}
+                  <a
+                    href={seriesLink}
+                    class={`group relative grid gap-4 md:gap-6 ${s.image ? 'md:grid-cols-2' : ''} bg-white dark:bg-slate-800 rounded shadow-lg hover:shadow-xl transition-shadow duration-200`}
+                  >
+                    {s.image && (
+                      <div class="relative h-0 pb-[56.25%] md:pb-0 md:h-56 lg:h-64 overflow-hidden bg-white rounded-tl rounded-bl">
+                        <img
+                          src={s.image}
+                          alt={s.imageAlt ?? s.title}
+                          class={`absolute inset-0 w-full h-full rounded-tl rounded-bl transition-transform duration-300 ${s.imageFit === 'contain' ? 'object-contain p-3' : 'object-cover group-hover:scale-105'}`}
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+                    <div class={`mt-2 ${s.image ? 'pr-4 pb-4' : 'p-4'}`}>
+                      <div class="mb-1.5 flex items-center gap-2">
+                        <span class="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-3 h-3"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0l-4-4m4 4l-4 4" />
+                          </svg>
+                          Series
+                        </span>
+                      </div>
+                      <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading text-gray-900 dark:text-slate-100 group-hover:text-primary dark:group-hover:text-blue-700 transition ease-in duration-200">
+                        {s.title}
+                      </h2>
+                      {s.description && <p class="text-muted dark:text-slate-300 text-lg">{s.description}</p>}
+                      <p class="text-sm text-purple-600 dark:text-purple-400 font-medium mt-3">View all posts →</p>
+                    </div>
+                  </a>
+                </div>
+              </li>
+            );
+          })
+        }
+        {
           posts.map((post) => {
             const authorNames = post.authors ? post.authors.map((a) => a.name).join(' ') : '';
             const seriesTitle = post.series?.title || '';
-            const tagTitles = post.tags ? post.tags.map((t) => t.title + ' ' + t.slug.replace(/-/g, ' ')).join(' ') : '';
+            const tagTitles = post.tags
+              ? post.tags.map((t) => t.title + ' ' + t.slug.replace(/-/g, ' ')).join(' ')
+              : '';
             const searchData = [post.title, authorNames, seriesTitle, tagTitles].join(' ').toLowerCase();
             const isNew = new Date(post.publishDate) >= thirtyDaysAgo;
             const dateMs = new Date(post.publishDate).getTime();
+            const inSeries = post.series ? 'true' : 'false';
 
             return (
-              <li class="mb-4 md:mb-6" data-search={searchData} data-date={dateMs}>
+              <li class="mb-4 md:mb-6" data-search={searchData} data-date={dateMs} data-in-series={inSeries}>
                 <PostListItem post={post} isNew={isNew} />
               </li>
             );
@@ -201,6 +303,9 @@ const metadata = {
   const sortBtn = document.getElementById('sort-btn') as HTMLButtonElement;
   const sortLabel = document.getElementById('sort-label') as HTMLSpanElement;
   const sortIcon = document.getElementById('sort-icon') as unknown as SVGElement;
+  const seriesFilterBtn = document.getElementById('series-filter-btn') as HTMLInputElement;
+  const seriesCheckboxBox = document.getElementById('series-checkbox-box') as HTMLSpanElement;
+  const seriesCheckboxCheck = document.getElementById('series-checkbox-check') as unknown as SVGElement;
   const postsList = document.getElementById('posts-list') as HTMLUListElement;
   const resultsVisible = document.getElementById('results-visible');
   const noResults = document.getElementById('no-results');
@@ -209,6 +314,22 @@ const metadata = {
 
   const iconDesc = `<path stroke-linecap="round" stroke-linejoin="round" d="M3 4h13M3 8h9M3 12h5m10 0l-4 4m4-4l-4-4" />`;
   const iconAsc = `<path stroke-linecap="round" stroke-linejoin="round" d="M3 4h13M3 8h9M3 12h5m10 8l-4-4m4 4l-4-4" />`;
+
+  function isSeriesOnly() {
+    return seriesFilterBtn.checked;
+  }
+
+  function updateCheckboxVisual() {
+    if (seriesFilterBtn.checked) {
+      seriesCheckboxBox.classList.remove('border-gray-300', 'dark:border-gray-600');
+      seriesCheckboxBox.classList.add('bg-purple-600', 'border-purple-600');
+      seriesCheckboxCheck.classList.remove('hidden');
+    } else {
+      seriesCheckboxBox.classList.add('border-gray-300', 'dark:border-gray-600');
+      seriesCheckboxBox.classList.remove('bg-purple-600', 'border-purple-600');
+      seriesCheckboxCheck.classList.add('hidden');
+    }
+  }
 
   function applySort(order: 'asc' | 'desc') {
     const items = Array.from(postsList.querySelectorAll<HTMLLIElement>('li[data-date]'));
@@ -220,26 +341,40 @@ const metadata = {
     items.forEach((li) => postsList.appendChild(li));
   }
 
-  function applySearch() {
+  function getSeriesItems() {
+    return Array.from(postsList.querySelectorAll<HTMLLIElement>('li[data-series-card]'));
+  }
+
+  function update() {
     const query = searchInput.value.trim().toLowerCase();
-    const items = postsList.querySelectorAll<HTMLLIElement>('li[data-search]');
+    const seriesOnly = isSeriesOnly();
+    const items = Array.from(postsList.querySelectorAll<HTMLLIElement>('li[data-search]'));
     let visibleCount = 0;
 
-    if (query) {
-      searchResultsSection!.classList.remove('hidden');
-      categoryCards!.classList.add('hidden');
+    const showResults = !!(query || seriesOnly);
+    searchResultsSection!.classList.toggle('hidden', !showResults);
+    categoryCards!.classList.toggle('hidden', showResults);
 
-      items.forEach((li) => {
-        const matches = (li.getAttribute('data-search') || '').includes(query);
+    // Post items: hide all when series-only, otherwise filter by search
+    items.forEach((li) => {
+      if (seriesOnly) {
+        li.style.display = 'none';
+      } else {
+        const matches = !query || (li.getAttribute('data-search') || '').includes(query);
         li.style.display = matches ? '' : 'none';
         if (matches) visibleCount++;
-      });
+      }
+    });
 
-      noResults!.classList.toggle('hidden', visibleCount > 0);
+    // Series cards: show only in series-only mode, hide when searching
+    getSeriesItems().forEach((li) => {
+      li.style.display = seriesOnly ? '' : 'none';
+    });
+
+    const totalVisible = seriesOnly ? getSeriesItems().length : visibleCount;
+    noResults!.classList.toggle('hidden', totalVisible > 0);
+    if (query && !seriesOnly) {
       resultsVisible!.textContent = String(visibleCount);
-    } else {
-      searchResultsSection!.classList.add('hidden');
-      categoryCards!.classList.remove('hidden');
     }
 
     const params = new URLSearchParams();
@@ -247,6 +382,11 @@ const metadata = {
     const newUrl = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname;
     window.history.replaceState({}, '', newUrl);
   }
+
+  seriesFilterBtn.addEventListener('change', () => {
+    updateCheckboxVisual();
+    update();
+  });
 
   sortBtn.addEventListener('click', () => {
     const current = sortBtn.getAttribute('data-order') as 'asc' | 'desc';
@@ -257,13 +397,13 @@ const metadata = {
     applySort(next);
   });
 
-  searchInput.addEventListener('input', applySearch);
+  searchInput.addEventListener('input', update);
 
   // Restore search query from URL
   const params = new URLSearchParams(window.location.search);
   const q = params.get('q');
   if (q) {
     searchInput.value = q;
-    applySearch();
+    update();
   }
 </script>

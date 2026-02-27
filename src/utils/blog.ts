@@ -246,16 +246,61 @@ export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateF
 
 const BLOG_EXCLUDED_CATEGORIES = ['Podcast', 'Video'];
 
-/** Returns all feed posts on a single page (no pagination) for client-side filtering */
+/** Returns all feed posts on a single page (no pagination) for client-side filtering.
+ * Also passes a seriesList so series cards can be shown under "Series only". */
 export const getStaticPathsBlogListAll = async () => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
-  const posts = (await fetchFeedPosts()).filter(
-    (post) => !BLOG_EXCLUDED_CATEGORIES.includes(post.category?.title || '')
+  const allPosts = await fetchPosts();
+  const seriesMetadata = await fetchSeriesMetadata();
+
+  const posts = allPosts.filter(
+    (post) => !post.hiddenFromFeed && !BLOG_EXCLUDED_CATEGORIES.includes(post.category?.title || '')
   );
+
+  // Build series list across all non-excluded posts (including hiddenFromFeed)
+  const eligiblePosts = allPosts.filter((post) => !BLOG_EXCLUDED_CATEGORIES.includes(post.category?.title || ''));
+  const thirtyDaysAgo = new Date();
+  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+  const seriesLatestDate: Record<string, number> = {};
+  const seriesHasNewPost: Record<string, boolean> = {};
+  eligiblePosts.forEach((post) => {
+    if (post.series?.slug) {
+      const d = new Date(post.publishDate).getTime();
+      if (!seriesLatestDate[post.series.slug] || d > seriesLatestDate[post.series.slug]) {
+        seriesLatestDate[post.series.slug] = d;
+      }
+      if (new Date(post.publishDate) >= thirtyDaysAgo) {
+        seriesHasNewPost[post.series.slug] = true;
+      }
+    }
+  });
+  const seriesSlugsSeen = new Set<string>();
+  const seriesList: Array<{
+    slug: string;
+    title: string;
+    description?: string;
+    image?: string;
+    imageAlt?: string;
+    imageFit?: 'cover' | 'contain';
+    latestPostDate: number;
+    hasNewPost: boolean;
+  }> = [];
+  eligiblePosts.forEach((post) => {
+    if (post.series?.slug && !seriesSlugsSeen.has(post.series.slug)) {
+      seriesSlugsSeen.add(post.series.slug);
+      const meta = seriesMetadata[post.series.slug];
+      seriesList.push({
+        ...(meta ?? { slug: post.series.slug, title: post.series.title }),
+        latestPostDate: seriesLatestDate[post.series.slug],
+        hasNewPost: seriesHasNewPost[post.series.slug] ?? false,
+      });
+    }
+  });
+
   return [
     {
       params: { blog: BLOG_BASE || undefined },
-      props: { posts },
+      props: { posts, seriesList },
     },
   ];
 };
