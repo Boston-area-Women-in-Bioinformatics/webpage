@@ -128,7 +128,7 @@ const metadata = {
               return (
                 <article aria-labelledby="latest-newsletter-heading">
                   <h3 id="latest-newsletter-heading" class="text-2xl font-bold mb-4">
-                    Latest Newsletter
+                    Community Newsletter
                   </h3>
                   <Card variant="blog" padding="p-0">
                     {latestNewsletter.image && (
@@ -193,70 +193,71 @@ const metadata = {
 
         <!-- Latest Podcast Column -->
         {
-          latestPodcast && (() => {
-            const isRemotePodcastImage =
-              typeof latestPodcast.image === 'string' &&
-              (latestPodcast.image.startsWith('http') ||
-                latestPodcast.image.startsWith('/assets/') ||
-                latestPodcast.image.startsWith('/blog_images/') ||
-                latestPodcast.image.startsWith('/photos/'));
-            return (
-              <article aria-labelledby="latest-podcast-heading">
-                <h3 id="latest-podcast-heading" class="text-2xl font-bold mb-4">
-                  Latest Podcast
-                </h3>
-                <Card variant="blog" padding="p-0">
-                  {latestPodcast.image && (
-                    <a href={latestPodcast.permalink} class="block">
-                      {isRemotePodcastImage ? (
-                        <img
-                          src={latestPodcast.image}
-                          alt={latestPodcast.imageAlt || latestPodcast.title}
-                          width="600"
-                          height="400"
-                          class="w-full h-64 object-cover"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <Image
-                          src={latestPodcast.image}
-                          alt={latestPodcast.imageAlt || latestPodcast.title || 'Podcast image'}
-                          class="w-full h-64 object-cover"
-                          widths={[400, 600]}
-                          width={600}
-                          height={400}
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                          loading="lazy"
-                        />
-                      )}
-                    </a>
-                  )}
-                  <div class="p-6">
-                    <h4 class="text-xl font-bold mb-3">
-                      <a
-                        href={latestPodcast.permalink}
-                        class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
-                      >
-                        {latestPodcast.title}
+          latestPodcast &&
+            (() => {
+              const isRemotePodcastImage =
+                typeof latestPodcast.image === 'string' &&
+                (latestPodcast.image.startsWith('http') ||
+                  latestPodcast.image.startsWith('/assets/') ||
+                  latestPodcast.image.startsWith('/blog_images/') ||
+                  latestPodcast.image.startsWith('/photos/'));
+              return (
+                <article aria-labelledby="latest-podcast-heading">
+                  <h3 id="latest-podcast-heading" class="text-2xl font-bold mb-4">
+                    On the Mic
+                  </h3>
+                  <Card variant="blog" padding="p-0">
+                    {latestPodcast.image && (
+                      <a href={latestPodcast.permalink} class="block">
+                        {isRemotePodcastImage ? (
+                          <img
+                            src={latestPodcast.image}
+                            alt={latestPodcast.imageAlt || latestPodcast.title}
+                            width="600"
+                            height="400"
+                            class="w-full h-64 object-cover"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <Image
+                            src={latestPodcast.image}
+                            alt={latestPodcast.imageAlt || latestPodcast.title || 'Podcast image'}
+                            class="w-full h-64 object-cover"
+                            widths={[400, 600]}
+                            width={600}
+                            height={400}
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            loading="lazy"
+                          />
+                        )}
                       </a>
-                    </h4>
-                    {latestPodcast.excerpt && (
-                      <p class="text-muted dark:text-slate-300 text-base mb-4">{latestPodcast.excerpt}</p>
                     )}
-                    <Button variant="link" href={latestPodcast.permalink}>
-                      Listen now »
-                    </Button>
-                  </div>
-                </Card>
-              </article>
-            );
-          })()
+                    <div class="p-6">
+                      <h4 class="text-xl font-bold mb-3">
+                        <a
+                          href={latestPodcast.permalink}
+                          class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
+                        >
+                          {latestPodcast.title}
+                        </a>
+                      </h4>
+                      {latestPodcast.excerpt && (
+                        <p class="text-muted dark:text-slate-300 text-base mb-4">{latestPodcast.excerpt}</p>
+                      )}
+                      <Button variant="link" href={latestPodcast.permalink}>
+                        Listen now »
+                      </Button>
+                    </div>
+                  </Card>
+                </article>
+              );
+            })()
         }
       </div>
 
       <!-- Bottom row: Media (blogs + videos) -->
       <div>
-        <h3 class="text-2xl font-bold mb-4">Recent Media</h3>
+        <h3 class="text-2xl font-bold mb-4">New from Our Members</h3>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           {
             latestMediaPosts.map((post) => {
@@ -303,9 +304,7 @@ const metadata = {
                         {post.title}
                       </a>
                     </h4>
-                    {post.excerpt && (
-                      <p class="text-muted dark:text-slate-300 text-xs line-clamp-2">{post.excerpt}</p>
-                    )}
+                    {post.excerpt && <p class="text-muted dark:text-slate-300 text-xs line-clamp-2">{post.excerpt}</p>}
                   </div>
                 </Card>
               );
