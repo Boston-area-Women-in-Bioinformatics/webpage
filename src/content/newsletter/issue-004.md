@@ -79,7 +79,7 @@ We're thrilled to introduce BWIB's 2026 executive board! This year brings fresh 
 
 We've made some exciting changes to our [committee structure](https://boston-wib.org/about/committees) to better serve our growing community.
 
-### Communications Committee
+### [Communications Committee](https://boston-wib.org/about/committees/communications)
 
 Our Website and Communications teams have joined forces into one unified Communications Committee, bringing together a powerhouse group with clearly defined roles:
 
@@ -120,15 +120,15 @@ Our Website and Communications teams have joined forces into one unified Communi
 
 It truly takes a village!
 
-### Podcast Committee
+### [Podcast Committee](https://boston-wib.org/about/committees/podcast)
 
 Say hello to our brand new Podcast Committee, already hard at work on **Season 2 of Coffee with CompBio**! The team includes [Amulya Shastry](https://ashastry2.github.io/) (editing & management) and [Dina Issakova](https://www.linkedin.com/in/dinaissakova/) (cover art & social media). More great conversations with computational biologists are on the way — stay tuned!
 
-### Nominating & Governance Committee
+### [Nominating & Governance Committee](https://boston-wib.org/about/committees/nominating-governance)
 
 We've formalized a Nominating & Governance Committee to ensure BWIB continues to operate with transparency and accountability. Members include [Katie Hughes](https://www.linkedin.com/in/hugheskj/), [Katie D'Aco](https://www.linkedin.com/in/katiedaco/), and [Petra Palenikova](https://www.linkedin.com/in/petra-palenikova-aa6330142/), working behind the scenes on board elections, membership structure, and bylaws compliance.
 
-### Finance Committee
+### [Finance Committee](https://boston-wib.org/about/committees/finance)
 
 New this year, the Finance Committee oversees the financial health of BWIB — from budgeting and cash flow to financial filings and evaluating the feasibility of new programs and events. Members include [Lorena Pantano](https://www.linkedin.com/in/lpantano/) and [Francine Camacho](https://www.linkedin.com/in/francinecamacho). Curious about where the money goes? Read on.
 
