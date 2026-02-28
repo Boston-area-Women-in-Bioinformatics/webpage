@@ -15,11 +15,11 @@ authors:
   - name: 'Masoome Rezaei, M.S.'
     url: 'https://www.linkedin.com/in/masoome-rezaei'
 metadata:
-  title: '🌸 Fresh Commits: The BWIB Spring Edition'
+  title: 'Fresh Commits: The BWIB Spring Edition'
   description: New faces, big updates, and data that matters.
 ---
 
-2026 is already in full swing, and there's a lot to catch up on — meet the incoming executive board, recap some recent events, and get a sneak peek at what's ahead. We're also spotlighting new programs, sharing early findings from our advocacy survey, and introducing a few fresh corners of the BWIB world. Grab your coffee and settle in.
+2026 has entered the chat and she is not the one to take things slow. New executive board? Check. Events? Check. New programs, advocacy survey findings, and fresh BWIB developments? Check, check, and check. Buckle up and settle in. 🚙✌️
 
 Here's what's inside this month:
 
@@ -51,21 +51,25 @@ _Highlights from Dana’s interview with Shavari_
 
 We're thrilled to introduce BWIB's 2026 executive board! This year brings fresh leadership and renewed energy to our mission of building community for women in bioinformatics.
 
-**Officers**: [Yevgenia Khodor Tolan](https://www.linkedin.com/in/yevgenia-khodor/) (President), [Lina Faller](https://www.linkedin.com/in/linafaller/) (Vice President), [Minita Shah](https://www.linkedin.com/in/minita-shah) (Secretary), and [Diveena Becker](https://www.linkedin.com/in/diveena-becker-5945a771/) (Treasurer). Board members [Katie Hughes](https://www.linkedin.com/in/hugheskj/) and [Francine Camacho](https://www.linkedin.com/in/francinecamacho) round out the officer team, and a heartfelt thank you to our Founder and Immediate Past President [Lorena Pantano](https://www.linkedin.com/in/lpantano/), whose vision continues to guide everything we do.
+**Officers**:
+
+- 🏛️ **President**: [Yevgenia Khodor Tolan](https://www.linkedin.com/in/yevgenia-khodor/)
+- 🏛️ **Vice President**: [Lina Faller](https://www.linkedin.com/in/linafaller/)
+- 📋 **Secretary**: [Minita Shah](https://www.linkedin.com/in/minita-shah)
+- 💰 **Treasurer**: [Diveena Becker](https://www.linkedin.com/in/diveena-becker-5945a771/)
+- 🌟 **Board Member**: [Katie Hughes](https://www.linkedin.com/in/hugheskj/)
+- 🌟 **Board Member**: [Francine Camacho](https://www.linkedin.com/in/francinecamacho)
+- 🏅 **Founder & Immediate Past President**: [Lorena Pantano](https://www.linkedin.com/in/lpantano/)
 
 **Committee Co-Chairs**:
 
 - 📅 **Events**: [Diveena Becker](https://www.linkedin.com/in/diveena-becker-5945a771/) & [Liyang Diao](https://www.linkedin.com/in/liyang-diao-90933461)
-
 - 📣 **Communications**: [Sakina Saif](https://www.linkedin.com/in/sakinasaif/) & [Samantha Klasfeld](https://www.linkedin.com/in/samantha-klasfeld/)
-
 - 🤝 **Career-Sponsorship**: [Aysheh Alrfooh](https://www.linkedin.com/in/aysheh-alrfooh/) & [Peili Zhang](https://www.linkedin.com/in/peili-zhang)
-
 - 💬 **Enabling Advocacy**: [Amulya Shastry](https://ashastry2.github.io/) & [Viveka Patil](https://www.linkedin.com/in/viveka-patil-934b3123b)
-
-- 🔨**Nominating & Governance**: [Lina Faller](https://www.linkedin.com/in/linafaller/)
-
-🎙️ **Podcast**: [Saba Nafees](https://www.linkedin.com/in/saba-nafees) & [Sharvari Narendra](https://www.linkedin.com/in/sharvarinarendra)
+- 💰 **Finance**: [Diveena Becker](https://www.linkedin.com/in/diveena-becker-5945a771/)
+- 🔨 **Nominating & Governance**: [Lina Faller](https://www.linkedin.com/in/linafaller/)
+- 🎙️ **Podcast**: [Saba Nafees](https://www.linkedin.com/in/saba-nafees) & [Sharvari Narendra](https://www.linkedin.com/in/sharvarinarendra)
 
 ---
 
@@ -75,7 +79,9 @@ We're thrilled to introduce BWIB's 2026 executive board! This year brings fresh 
 
 We've made some exciting changes to our [committee structure](https://boston-wib.org/about/committees) to better serve our growing community.
 
-**Communications Committee** — Our Website and Communications teams have joined forces into one unified Communications Committee, bringing together a powerhouse group with clearly defined roles:
+### Communications Committee
+
+Our Website and Communications teams have joined forces into one unified Communications Committee, bringing together a powerhouse group with clearly defined roles:
 
 <table style="border-collapse: collapse; width: 100%;">
   <thead>
@@ -114,34 +120,38 @@ We've made some exciting changes to our [committee structure](https://boston-wib
 
 It truly takes a village!
 
-**Podcast Committee** — Say hello to our brand new Podcast Committee, already hard at work on **Season 2 of Coffee with CompBio**! Co-chaired by [Saba Nafees](https://www.linkedin.com/in/saba-nafees) and [Sharvari Narendra](https://www.linkedin.com/in/sharvarinarendra), the team also includes [Amulya Shastry](https://ashastry2.github.io/) (editing & management) and [Dina Issakova](https://www.linkedin.com/in/dinaissakova/) (cover art & social media). More great conversations with computational biologists are coming so stay tuned!
+### Podcast Committee
 
-**Nominating & Governance Committee** — We've also formalized a Nominating & Governance Committee to ensure BWIB continues to operate with transparency and accountability — managing our membership structure, board elections, and bylaws compliance. Thank you to [Katie Hughes](https://www.linkedin.com/in/hugheskj/), [Katie D'Aco](https://www.linkedin.com/in/katiedaco/) and [Petra Palenikova](https://www.linkedin.com/in/petra-palenikova-aa6330142/) for taking on this important work behind the scenes.
+Say hello to our brand new Podcast Committee, already hard at work on **Season 2 of Coffee with CompBio**! The team includes [Amulya Shastry](https://ashastry2.github.io/) (editing & management) and [Dina Issakova](https://www.linkedin.com/in/dinaissakova/) (cover art & social media). More great conversations with computational biologists are on the way — stay tuned!
+
+### Nominating & Governance Committee
+
+We've formalized a Nominating & Governance Committee to ensure BWIB continues to operate with transparency and accountability. Members include [Katie Hughes](https://www.linkedin.com/in/hugheskj/), [Katie D'Aco](https://www.linkedin.com/in/katiedaco/), and [Petra Palenikova](https://www.linkedin.com/in/petra-palenikova-aa6330142/), working behind the scenes on board elections, membership structure, and bylaws compliance.
+
+### Finance Committee
+
+New this year, the Finance Committee oversees the financial health of BWIB — from budgeting and cash flow to financial filings and evaluating the feasibility of new programs and events. Members include [Lorena Pantano](https://www.linkedin.com/in/lpantano/) and [Francine Camacho](https://www.linkedin.com/in/francinecamacho). Curious about where the money goes? Read on.
 
 ---
 
-<div id="career-mentorship-program">
+<div id="finance"></div>
+
+## 💸 Finance Snapshot
+
+BWIB funds its operations through ticketed events, corporate sponsorships, and individual donations. These funds support event food and beverages, small gift cards to boost participation, website maintenance, branded merchandise to increase visibility, and routine expenses such as postage and printing materials. Continued donor support allows us to expand our programming and reach more members of our community. Your contribution directly helps sustain and grow BWIB’s impact. Consider donating [here](https://givebutter.com/BWIBdonate) or reach out to <communications@boston-wib.org>. if your company would like to become a sponsor for future events.
+
+---
+
+<div id="career-mentorship-program"></div>
 
 ## 🤝 Career Mentorship Program Update
 
 **The 2025-2026 cohort matches have been sent out!**
 Thank you for your incredible support! We are inspired by the high level of interest from aspiring mentees and the deep commitment shown by the BioPharma leaders who have stepped forward as mentors. All participants should check their email for match details and next steps. We can't wait to kick off this journey and make this pilot program a landmark success for Boston Women in Bioinformatics.
 
-</div>
-
 ---
 
-<div id="finance">
-
-## 💸 Finance Snapshot
-
-BWIB funds its operations through ticketed events, corporate sponsorships, and individual donations. These funds support event food and beverages, small gift cards to boost participation, website maintenance, branded merchandise to increase visibility, and routine expenses such as postage and printing materials. Continued donor support allows us to expand our programming and reach more members of our community. Your contribution directly helps sustain and grow BWIB’s impact. Consider donating [here](https://givebutter.com/BWIBdonate) or reach out to <communications@boston-wib.org>. if your company would like to become a sponsor for future events.
-
-</div>
-
----
-
-<div id="events-recap">
+<div id="events-recap"></div>
 
 ## Events Recap
 
@@ -158,11 +168,9 @@ _By: Manasvi_
 
 Eight BWIB members gathered at CanalSide Food & Drink at CambridgeSide Mall to celebrate Galentine's Day over lunch. It was a relaxed afternoon of good food and great conversation — members got to know each other better and even got a head start talking about the upcoming nf-core Hackathon happening just down the street in March. A small but mighty turnout! 💝
 
-</div>
-
 ---
 
-<div id="upcoming-event">
+<div id="upcoming-event"></div>
 
 ## Upcoming Events
 
@@ -204,11 +212,9 @@ Nextflow fans, this one's for you! BWIB is helping to host a Boston site for the
 
 Shake off the last of winter and grab lunch with your fellow bioinformaticians at Shy Bird in Kendall Square! Whether you're deep in pipelines or just bioinformatics-curious, join us for a relaxed afternoon of good food, great company, and springtime vibes.
 
-</div>
-
 ---
 
-<div id="survey">
+<div id="survey"></div>
 
 ## 📊 Help Us Tell the Full Story — Advocacy Survey
 
@@ -225,25 +231,21 @@ We're asking you to do two things:
 
 _Together, we can build the evidence base our community deserves._
 
-</div>
-
 ---
 
 <div id="resources">
 
-📝 Hot off the Blog
+## 🔥 Hot off the Blog
 
 Our bloggers have been busy! Here's what's been published recently:
 
-[**Beyond Behavior: How Machine Learning Decodes Consciousness and Forecasts Seizures**](https://boston-wib.org/blog/deepdive/seminar-reflections-beyond-behavior) · _Deep Dive by Dana Moochnick_ Reflections on a UMass Amherst seminar exploring how AI and brain network analysis are transforming our understanding of consciousness and what that means for epilepsy care.
+[**Beyond Behavior: How Machine Learning Decodes Consciousness and Forecasts Seizures**](https://boston-wib.org/blog/deepdive/seminar-reflections-beyond-behavior) · _Deep Dive by Dana Moochnick_<br><span style="color: #6b7280;">Reflections on a seminar that explored how AI and brain network analysis are transforming our understanding of consciousness and what that means for epilepsy care.</span>
 
-[**ctDNA as an Oncology Endpoint**](https://boston-wib.org/blog/quicktake/ctdna-as-an-oncology-endpoint) · _Quick Take by Celine Han, Ph.D._ Takeaways from the Friends of Cancer Research symposium on modernizing oncology endpoints — a clear-eyed look at where ctDNA stands as a clinical biomarker and what still needs to happen for it to get there.
+**[**ctDNA as an Oncology Endpoint**](https://boston-wib.org/blog/quicktake/ctdna-as-an-oncology-endpoint) · _Quick Take by Celine Han, Ph.D._**<br><span style="color: #6b7280;">Takeaways from the _Friends of Cancer Research_ symposium on modernizing oncology endpoints that delivered a clear-eyed look at where ctDNA stands as a clinical biomarker and what still needs to happen for it to get there.</span>
 
-[**Biobank Intro Series: Getting Started**](https://boston-wib.org/blog/biobank-intro-series/01-biobank-iceberg) _Tutorial Series by Samantha J. Klasfeld, Ph.D._ The first installment of a weekly tutorial series demystifying UK Biobank and All of Us. If biobank analysis has ever felt overwhelming, this series is for you.
+[**Biobank Intro Series: Getting Started**](https://boston-wib.org/blog/biobank-intro-series/01-biobank-iceberg) · _Tutorial Series by Samantha J. Klasfeld, Ph.D._<br><span style="color: #6b7280;">The first installment of a weekly tutorial series demystifying UK Biobank and All of Us. If biobank analysis has ever felt overwhelming, this series is for you.</span>
 
-Want to see your name here? We're always looking for new voices. You don't need citations, a polished draft, or even a complete idea — just something you've been thinking about. Reach out to the us at the [communications committee](https://boston-wib.org/about/committees/communications) to get started.
-
-## </div>
+**Want to see your name here?** We're always looking for new voices. You don't need citations, a polished draft, or even a complete idea — just something you've been thinking about. Reach out to the us at the [communications committee](https://boston-wib.org/about/committees/communications) to get started.
 
 ---
 
