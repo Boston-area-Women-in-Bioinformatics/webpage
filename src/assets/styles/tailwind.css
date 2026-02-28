@@ -56,6 +56,12 @@
   .text-muted {
     color: var(--aw-color-text-muted);
   }
+  .text-muted-adaptive {
+    color: var(--aw-color-text-muted);
+  }
+  .dark .text-muted-adaptive {
+    color: white;
+  }
 }
 
 @layer components {

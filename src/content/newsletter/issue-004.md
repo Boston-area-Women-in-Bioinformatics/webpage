@@ -239,11 +239,11 @@ _Together, we can build the evidence base our community deserves._
 
 Our bloggers have been busy! Here's what's been published recently:
 
-[**Beyond Behavior: How Machine Learning Decodes Consciousness and Forecasts Seizures**](https://boston-wib.org/blog/deepdive/seminar-reflections-beyond-behavior) · _Deep Dive by Dana Moochnick_<br><span style="color: #6b7280;">Reflections on a seminar that explored how AI and brain network analysis are transforming our understanding of consciousness and what that means for epilepsy care.</span>
+[**Beyond Behavior: How Machine Learning Decodes Consciousness and Forecasts Seizures**](https://boston-wib.org/blog/deepdive/seminar-reflections-beyond-behavior) <span class="text-muted">· _Deep Dive by Dana Moochnick_</span><br>Reflections on a seminar that explored how AI and brain network analysis are transforming our understanding of consciousness and what that means for epilepsy care.
 
-**[**ctDNA as an Oncology Endpoint**](https://boston-wib.org/blog/quicktake/ctdna-as-an-oncology-endpoint) · _Quick Take by Celine Han, Ph.D._**<br><span style="color: #6b7280;">Takeaways from the _Friends of Cancer Research_ symposium on modernizing oncology endpoints that delivered a clear-eyed look at where ctDNA stands as a clinical biomarker and what still needs to happen for it to get there.</span>
+[**ctDNA as an Oncology Endpoint**](https://boston-wib.org/blog/quicktake/ctdna-as-an-oncology-endpoint) <span class="text-muted">· _Quick Take by Celine Han, Ph.D._</span><br>Takeaways from the _Friends of Cancer Research_ symposium on modernizing oncology endpoints that delivered a clear-eyed look at where ctDNA stands as a clinical biomarker and what still needs to happen for it to get there.
 
-[**Biobank Intro Series: Getting Started**](https://boston-wib.org/blog/biobank-intro-series/01-biobank-iceberg) · _Tutorial Series by Samantha J. Klasfeld, Ph.D._<br><span style="color: #6b7280;">The first installment of a weekly tutorial series demystifying UK Biobank and All of Us. If biobank analysis has ever felt overwhelming, this series is for you.</span>
+[**Biobank Intro Series: Getting Started**](https://boston-wib.org/blog/biobank-intro-series/01-biobank-iceberg) <span class="text-muted">· _Tutorial Series by Samantha J. Klasfeld, Ph.D._</span><br>The first installment of a weekly tutorial series demystifying UK Biobank and All of Us. If biobank analysis has ever felt overwhelming, this series is for you.
 
 **Want to see your name here?** We're always looking for new voices. You don't need citations, a polished draft, or even a complete idea — just something you've been thinking about. Reach out to the us at the [communications committee](https://boston-wib.org/about/committees/communications) to get started.
 
