@@ -62,6 +62,24 @@
   .dark .text-muted-adaptive {
     color: white;
   }
+  .table-header {
+    background-color: #f9fafb;
+    border-color: #d1d5db;
+    color: inherit;
+  }
+  .dark .table-header {
+    background-color: rgb(15 23 42); /* slate-950 */
+    border-color: rgb(51 65 85); /* slate-700 */
+  }
+  .table-cell {
+    border-color: #d1d5db;
+    background-color: #ffffff;
+    font-size: 1rem; /* text-sm */
+  }
+  .dark .table-cell {
+    border-color: rgb(51 65 85); /* slate-700 */
+    background-color: rgb(30 41 59); /* slate-800 */
+  }
 }
 
 @layer components {

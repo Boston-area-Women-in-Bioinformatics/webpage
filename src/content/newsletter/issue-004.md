@@ -86,34 +86,34 @@ Our Website and Communications teams have joined forces into one unified Communi
 <table style="border-collapse: collapse; width: 100%;">
   <thead>
     <tr>
-      <th style="border: 1px solid #d1d5db; padding: 8px 12px; text-align: left; background-color: #f9fafb;">Role</th>
-      <th style="border: 1px solid #d1d5db; padding: 8px 12px; text-align: left; background-color: #f9fafb;">Members</th>
+      <th class="table-header" style="border: 1px solid; padding: 8px 12px; text-align: left;">Role</th>
+      <th class="table-header" style="border: 1px solid; padding: 8px 12px; text-align: left;">Members</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="border: 1px solid #d1d5db; padding: 8px 12px; vertical-align: top;">Interviewers</td>
-      <td style="border: 1px solid #d1d5db; padding: 8px 12px;"><a href="https://www.linkedin.com/in/dana-moochnick/">Dana Moochnick</a>, <a href="https://www.linkedin.com/in/isha2106/">Isha Parikh</a>, <a href="https://www.linkedin.com/in/sharvarinarendra">Sharvari Narendra</a></td>
+      <td class="table-cell" style="border: 1px solid; padding: 8px 12px; vertical-align: top;">Interviewers</td>
+      <td class="table-cell" style="border: 1px solid; padding: 8px 12px;"><a href="https://www.linkedin.com/in/dana-moochnick/">Dana Moochnick</a>, <a href="https://www.linkedin.com/in/isha2106/">Isha Parikh</a>, <a href="https://www.linkedin.com/in/sharvarinarendra">Sharvari Narendra</a></td>
     </tr>
     <tr>
-      <td style="border: 1px solid #d1d5db; padding: 8px 12px; vertical-align: top;">Historian</td>
-      <td style="border: 1px solid #d1d5db; padding: 8px 12px;"><a href="https://www.linkedin.com/in/emily-kibbler/">Emily Kibbler</a></td>
+      <td class="table-cell" style="border: 1px solid; padding: 8px 12px; vertical-align: top;">Historian</td>
+      <td class="table-cell" style="border: 1px solid; padding: 8px 12px;"><a href="https://www.linkedin.com/in/emily-kibbler/">Emily Kibbler</a></td>
     </tr>
     <tr>
-      <td style="border: 1px solid #d1d5db; padding: 8px 12px; vertical-align: top;">Website</td>
-      <td style="border: 1px solid #d1d5db; padding: 8px 12px;"><a href="https://www.linkedin.com/in/samantha-klasfeld/">Samantha Klasfeld</a>, <a href="https://www.linkedin.com/in/vishwa-talati">Vishwa Talati</a>, <a href="https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/">Yaseswini Neelamraju</a></td>
+      <td class="table-cell" style="border: 1px solid; padding: 8px 12px; vertical-align: top;">Website</td>
+      <td class="table-cell" style="border: 1px solid; padding: 8px 12px;"><a href="https://www.linkedin.com/in/samantha-klasfeld/">Samantha Klasfeld</a>, <a href="https://www.linkedin.com/in/vishwa-talati">Vishwa Talati</a>, <a href="https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/">Yaseswini Neelamraju</a></td>
     </tr>
     <tr>
-      <td style="border: 1px solid #d1d5db; padding: 8px 12px; vertical-align: top;">Social Media</td>
-      <td style="border: 1px solid #d1d5db; padding: 8px 12px;"><a href="https://www.linkedin.com/in/samantha-klasfeld/">Samantha Klasfeld</a>, <a href="https://www.linkedin.com/in/sakinasaif/">Sakina Saif</a>, <a href="https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/">Yaseswini Neelamraju</a></td>
+      <td class="table-cell" style="border: 1px solid; padding: 8px 12px; vertical-align: top;">Social Media</td>
+      <td class="table-cell" style="border: 1px solid; padding: 8px 12px;"><a href="https://www.linkedin.com/in/samantha-klasfeld/">Samantha Klasfeld</a>, <a href="https://www.linkedin.com/in/sakinasaif/">Sakina Saif</a>, <a href="https://www.linkedin.com/in/yaseswini-neelamraju-phd-14b7ba29/">Yaseswini Neelamraju</a></td>
     </tr>
     <tr>
-      <td style="border: 1px solid #d1d5db; padding: 8px 12px; vertical-align: top;">Newsletter</td>
-      <td style="border: 1px solid #d1d5db; padding: 8px 12px;"><a href="https://www.linkedin.com/in/sakinasaif/">Sakina Saif</a>, <a href="https://www.linkedin.com/in/samantha-klasfeld/">Samantha Klasfeld</a>, <a href="https://www.linkedin.com/in/masoome-rezaei">Masoome Rezaei</a></td>
+      <td class="table-cell" style="border: 1px solid; padding: 8px 12px; vertical-align: top;">Newsletter</td>
+      <td class="table-cell" style="border: 1px solid; padding: 8px 12px;"><a href="https://www.linkedin.com/in/sakinasaif/">Sakina Saif</a>, <a href="https://www.linkedin.com/in/samantha-klasfeld/">Samantha Klasfeld</a>, <a href="https://www.linkedin.com/in/masoome-rezaei">Masoome Rezaei</a></td>
     </tr>
     <tr>
-      <td style="border: 1px solid #d1d5db; padding: 8px 12px; vertical-align: top;">Communications Analytics</td>
-      <td style="border: 1px solid #d1d5db; padding: 8px 12px;"><a href="https://www.linkedin.com/in/shreya-rajasekar/">Shreya Rajasekar</a></td>
+      <td class="table-cell" style="border: 1px solid; padding: 8px 12px; vertical-align: top;">Communications Analytics</td>
+      <td class="table-cell" style="border: 1px solid; padding: 8px 12px;"><a href="https://www.linkedin.com/in/shreya-rajasekar/">Shreya Rajasekar</a></td>
     </tr>
   </tbody>
 </table>
