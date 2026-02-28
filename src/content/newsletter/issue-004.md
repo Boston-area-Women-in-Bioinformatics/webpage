@@ -19,7 +19,7 @@ metadata:
   description: New faces, big updates, and data that matters.
 ---
 
-2026 has entered the chat and she is not the one to take things slow. New executive board? Check. Events? Check. New programs, advocacy survey findings, and fresh BWIB developments? Check, check, and check. Buckle up and settle in. 🚙✌️
+2026 has entered the chat and she is not the one to take things slow. New executive board? Check. Events? Check. New programs, advocacy survey findings, and fresh BWIB developments? Check, check, and check. Buckle up and settle in.
 
 Here's what's inside this month:
 
@@ -53,23 +53,23 @@ We're thrilled to introduce BWIB's 2026 executive board! This year brings fresh 
 
 **Officers**:
 
-- 🏛️ **President**: [Yevgenia Khodor Tolan](https://www.linkedin.com/in/yevgenia-khodor/)
-- 🏛️ **Vice President**: [Lina Faller](https://www.linkedin.com/in/linafaller/)
-- 📋 **Secretary**: [Minita Shah](https://www.linkedin.com/in/minita-shah)
-- 💰 **Treasurer**: [Diveena Becker](https://www.linkedin.com/in/diveena-becker-5945a771/)
-- 🌟 **Board Member**: [Katie Hughes](https://www.linkedin.com/in/hugheskj/)
-- 🌟 **Board Member**: [Francine Camacho](https://www.linkedin.com/in/francinecamacho)
-- 🏅 **Founder & Immediate Past President**: [Lorena Pantano](https://www.linkedin.com/in/lpantano/)
+- **President**: [Yevgenia Khodor Tolan](https://www.linkedin.com/in/yevgenia-khodor/)
+- **Vice President**: [Lina Faller](https://www.linkedin.com/in/linafaller/)
+- **Secretary**: [Minita Shah](https://www.linkedin.com/in/minita-shah)
+- **Treasurer**: [Diveena Becker](https://www.linkedin.com/in/diveena-becker-5945a771/)
+- **Board Member**: [Katie Hughes](https://www.linkedin.com/in/hugheskj/)
+- **Board Member**: [Francine Camacho](https://www.linkedin.com/in/francinecamacho)
+- **Founder & Immediate Past President**: [Lorena Pantano](https://www.linkedin.com/in/lpantano/)
 
 **Committee Co-Chairs**:
 
-- 📅 **Events**: [Diveena Becker](https://www.linkedin.com/in/diveena-becker-5945a771/) & [Liyang Diao](https://www.linkedin.com/in/liyang-diao-90933461)
-- 📣 **Communications**: [Sakina Saif](https://www.linkedin.com/in/sakinasaif/) & [Samantha Klasfeld](https://www.linkedin.com/in/samantha-klasfeld/)
-- 🤝 **Career-Sponsorship**: [Aysheh Alrfooh](https://www.linkedin.com/in/aysheh-alrfooh/) & [Peili Zhang](https://www.linkedin.com/in/peili-zhang)
-- 💬 **Enabling Advocacy**: [Amulya Shastry](https://ashastry2.github.io/) & [Viveka Patil](https://www.linkedin.com/in/viveka-patil-934b3123b)
-- 💰 **Finance**: [Diveena Becker](https://www.linkedin.com/in/diveena-becker-5945a771/)
-- 🔨 **Nominating & Governance**: [Lina Faller](https://www.linkedin.com/in/linafaller/)
-- 🎙️ **Podcast**: [Saba Nafees](https://www.linkedin.com/in/saba-nafees) & [Sharvari Narendra](https://www.linkedin.com/in/sharvarinarendra)
+- **Events**: [Diveena Becker](https://www.linkedin.com/in/diveena-becker-5945a771/) & [Liyang Diao](https://www.linkedin.com/in/liyang-diao-90933461)
+- **Communications**: [Sakina Saif](https://www.linkedin.com/in/sakinasaif/) & [Samantha Klasfeld](https://www.linkedin.com/in/samantha-klasfeld/)
+- **Career-Sponsorship**: [Aysheh Alrfooh](https://www.linkedin.com/in/aysheh-alrfooh/) & [Peili Zhang](https://www.linkedin.com/in/peili-zhang)
+- **Enabling Advocacy**: [Amulya Shastry](https://ashastry2.github.io/) & [Viveka Patil](https://www.linkedin.com/in/viveka-patil-934b3123b)
+- **Finance**: [Diveena Becker](https://www.linkedin.com/in/diveena-becker-5945a771/)
+- **Nominating & Governance**: [Lina Faller](https://www.linkedin.com/in/linafaller/)
+- **Podcast**: [Saba Nafees](https://www.linkedin.com/in/saba-nafees) & [Sharvari Narendra](https://www.linkedin.com/in/sharvarinarendra)
 
 ---
 
@@ -153,7 +153,7 @@ Thank you for your incredible support! We are inspired by the high level of inte
 
 <div id="events-recap"></div>
 
-## Events Recap
+## 🌄 Events Recap
 
 ### New Year, New Connections
 
@@ -166,13 +166,13 @@ _By: Manasvi_
 <figcaption>Boston Women in Bioinformatics Galentine's Day Lunch</figcaption>
 </figure>
 
-Eight BWIB members gathered at CanalSide Food & Drink at CambridgeSide Mall to celebrate Galentine's Day over lunch. It was a relaxed afternoon of good food and great conversation — members got to know each other better and even got a head start talking about the upcoming nf-core Hackathon happening just down the street in March. A small but mighty turnout! 💝
+Eight BWIB members gathered at CanalSide Food & Drink at CambridgeSide Mall to celebrate Galentine's Day over lunch. It was a relaxed afternoon of good food and great conversation — members got to know each other better and even got a head start talking about the upcoming nf-core Hackathon happening just down the street in March. A small but mighty turnout!
 
 ---
 
 <div id="upcoming-event"></div>
 
-## Upcoming Events
+## 📆 Upcoming Events
 
 ### NF-Core Hackathon
 
@@ -227,7 +227,7 @@ We're asking you to do two things:
 
 **Every 100 new responses, we raffle a $25 gift card — so there's never been a better time to participate.**
 
-👉 [Survey](http://forms.gle/jhKy3hpYPf1WtC2s8)
+[Take the Survey](http://forms.gle/jhKy3hpYPf1WtC2s8)
 
 _Together, we can build the evidence base our community deserves._
 
@@ -251,7 +251,7 @@ Our bloggers have been busy! Here's what's been published recently:
 
 <div id="exec-board"></div>
 
-## Executive Board
+## 🏛️ Executive Board
 
 **THIS NEEDS TO BE UPDATED**
 ![Executive Board Team](/team/executiveBoard.png)
@@ -264,4 +264,5 @@ Our bloggers have been busy! Here's what's been published recently:
 - **Email:** [communications@boston-wib.org](mailto:communications@boston-wib.org)
 - **LinkedIn:** [Boston-area Women in Bioinformatics](https://www.linkedin.com/company/boston-women-in-bioinformatics)
 - **Lu.ma:** [Boston Women in Bioinformatics](https://luma.com/bwib)
+- **Blue Sky** [Boston Women in Bioinformatics](https://bsky.app/profile/boston-wib.bsky.social)
 - **Location:** Boston Area, Massachusetts
