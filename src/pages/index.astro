@@ -307,7 +307,7 @@ const metadata = {
                 {isNew && <NewBadge />}
                 <Card variant="blog" padding="p-0">
                   {cardImage && (
-                    <a href={post.permalink} class="block">
+                    <a href={post.series ? `/series/${post.series.slug}` : post.permalink} class="block">
                       {isRemoteImage ? (
                         <img
                           src={cardImage}
