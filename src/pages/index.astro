@@ -11,6 +11,7 @@ import Card from '~/components/ui/Card.astro';
 import UpcomingEvents from '~/components/widgets/UpcomingEvents.astro';
 import { findLatestNewsletters } from '~/utils/newsletter';
 import { findLatestPosts } from '~/utils/blog';
+import { getCollection } from 'astro:content';
 import { APP_NEWSLETTER, APP_BLOG } from 'astrowind:config';
 import { getBlogPermalink } from '~/utils/permalinks';
 import Image from '~/components/common/Image.astro';
@@ -19,7 +20,35 @@ import NewBadge from '~/components/ui/NewBadge.astro';
 const latestNewsletter = APP_NEWSLETTER.isEnabled ? (await findLatestNewsletters({ count: 1 }))[0] : null;
 const allLatestPosts = APP_BLOG.isEnabled ? (await findLatestPosts({ count: 20 })) || [] : [];
 const latestPodcast = allLatestPosts.find((p) => p.category?.slug === 'podcast') || null;
-const latestMediaPosts = allLatestPosts.filter((p) => p.category?.slug !== 'podcast').slice(0, 4);
+const nonPodcastPosts = allLatestPosts.filter((p) => p.category?.slug !== 'podcast');
+
+// Build a map of series slug → series image/alt from the series collection
+const seriesEntries = await getCollection('series');
+const seriesImageMap = new Map<string, { image?: string; imageAlt?: string; imageFit?: string }>();
+seriesEntries.forEach((entry) => {
+  const slug = entry.id.replace(/\.md$/, '');
+  seriesImageMap.set(slug, { image: entry.data.image, imageAlt: entry.data.imageAlt, imageFit: entry.data.imageFit });
+});
+
+// Build a map of series slug → 2 most recent posts
+const seriesPostsMap = new Map<string, typeof nonPodcastPosts>();
+nonPodcastPosts.forEach((p) => {
+  if (p.series?.slug) {
+    const existing = seriesPostsMap.get(p.series.slug) ?? [];
+    if (existing.length < 2) seriesPostsMap.set(p.series.slug, [...existing, p]);
+  }
+});
+
+const seenSeries = new Set<string>();
+const latestMediaPosts = nonPodcastPosts
+  .filter((p) => {
+    if (p.series?.slug) {
+      if (seenSeries.has(p.series.slug)) return false;
+      seenSeries.add(p.series.slug);
+    }
+    return true;
+  })
+  .slice(0, 4);
 
 const thirtyDaysAgo = new Date();
 thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
@@ -261,33 +290,37 @@ const metadata = {
       <div class="grid grid-cols-2 gap-6">
         {
           latestMediaPosts.map((post) => {
+            const seriesMeta = post.series?.slug ? seriesImageMap.get(post.series.slug) : undefined;
+            const cardImage = seriesMeta?.image ?? post.image;
+            const cardImageAlt = seriesMeta?.imageAlt ?? post.imageAlt;
+            const cardImageFit = seriesMeta?.imageFit ?? 'cover';
             const objectPosition =
               post.imagePosition === 'top' ? 'top' : post.imagePosition === 'bottom' ? 'bottom' : 'center';
             const isRemoteImage =
-              typeof post.image === 'string' &&
-              (post.image.startsWith('http') ||
-                post.image.startsWith('/assets/') ||
-                post.image.startsWith('/blog_images/'));
+              typeof cardImage === 'string' &&
+              (cardImage.startsWith('http') ||
+                cardImage.startsWith('/assets/') ||
+                cardImage.startsWith('/blog_images/'));
             const isNew = new Date(post.publishDate) >= thirtyDaysAgo;
             return (
               <div class="relative">
                 {isNew && <NewBadge />}
                 <Card variant="blog" padding="p-0">
-                  {post.image && (
-                    <a href={post.permalink} class="block">
+                  {cardImage && (
+                    <a href={post.series ? `/series/${post.series.slug}` : post.permalink} class="block">
                       {isRemoteImage ? (
                         <img
-                          src={post.image}
-                          alt={post.imageAlt}
-                          class="w-full h-48 object-cover"
+                          src={cardImage}
+                          alt={cardImageAlt}
+                          class={`w-full h-48 object-${cardImageFit}`}
                           style={`object-position: ${objectPosition};`}
                           loading="lazy"
                         />
                       ) : (
                         <Image
-                          src={post.image}
-                          alt={post.imageAlt || post.title || 'Post image'}
-                          class="w-full h-48 object-cover"
+                          src={cardImage}
+                          alt={cardImageAlt || post.title || 'Post image'}
+                          class={`w-full h-48 object-${cardImageFit}`}
                           style={`object-position: ${objectPosition};`}
                           widths={[400, 600]}
                           width={600}
@@ -299,20 +332,39 @@ const metadata = {
                     </a>
                   )}
                   <div class="p-3">
-                    {post.series && (
-                      <span class="inline-block text-xs font-semibold text-primary dark:text-blue-400 uppercase tracking-wide mb-1">
-                        Series: {post.series.title}
-                      </span>
+                    {post.series ? (
+                      <>
+                        <span class="inline-block text-xs font-semibold text-primary dark:text-blue-400 uppercase tracking-wide mb-1">
+                          Series: {post.series.title}
+                        </span>
+                        <ul class="mt-1 space-y-1">
+                          {(seriesPostsMap.get(post.series.slug) ?? []).map((sp) => (
+                            <li class="text-xs">
+                              <a
+                                href={sp.permalink}
+                                class="font-semibold hover:text-primary dark:hover:text-blue-400 transition ease-in duration-200"
+                              >
+                                {sp.title}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    ) : (
+                      <>
+                        <h4 class="text-sm font-bold leading-tight mb-1">
+                          <a
+                            href={post.permalink}
+                            class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
+                          >
+                            {post.title}
+                          </a>
+                        </h4>
+                        {post.excerpt && (
+                          <p class="text-muted dark:text-slate-300 text-xs line-clamp-2">{post.excerpt}</p>
+                        )}
+                      </>
                     )}
-                    <h4 class="text-sm font-bold leading-tight mb-1">
-                      <a
-                        href={post.permalink}
-                        class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
-                      >
-                        {post.title}
-                      </a>
-                    </h4>
-                    {post.excerpt && <p class="text-muted dark:text-slate-300 text-xs line-clamp-2">{post.excerpt}</p>}
                   </div>
                 </Card>
               </div>
