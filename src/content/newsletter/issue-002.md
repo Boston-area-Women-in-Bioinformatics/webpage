@@ -193,7 +193,7 @@ The Web Page committee manages the organization's website to share group informa
 
 ## Executive Board
 
-![Executive Board Team](/team/executiveBoard.png)
+![Executive Board Team](/team/executiveBoard_2025.png)
 
 ---
 
