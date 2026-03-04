@@ -42,7 +42,12 @@ Here's what's inside this month:
 
 ## 🌟 Member Spotlight: [Sharvari Narendra, M.S.](https://www.linkedin.com/in/sharvarinarendra)
 
-_Highlights from Dana’s interview with Shavari_
+She moved across the world. Questioned her path. Struggled through coding. And stayed anyway!
+
+Next week, our very own blogger [Dana Moochnick](https://www.linkedin.com/in/dana-moochnick) sits down with fellow Boston Women in Bioinformatics Podcast Co-Chair Sharvari Narendra for a conversation that is as honest as it is inspiring. From landing in snowy Boston and feeling "immediately enthralled by the opportunities that the air in Boston held," to wondering if she had made the right choice pursuing bioinformatics, Sharvari shares the moments that shaped her growth, including the internship that helped her "re-ignite" her passion for the field. The interview goes in to show how growth in science really looks like. Not polished. Not linear. Real.
+
+Shavari reflects on finding her voice, building agency in science, navigating the rise of AI which she describes as "so scary and so incredible all at once," and why it is our responsibility to make science more accessible. This interview is vulnerable. It is empowering. And it drops next week.
+[10:34 AM]
 
 ---
 
@@ -123,7 +128,7 @@ It truly takes a village!
 
 ### [Podcast Committee](https://boston-wib.org/about/committees/podcast)
 
-Say hello to our brand new Podcast Committee, already hard at work on **Season 2 of Coffee with CompBio**! The team includes [Amulya Shastry](https://ashastry2.github.io/) (editing & management) and [Dina Issakova](https://www.linkedin.com/in/dinaissakova/) (cover art & social media). Read on for a sneak peek at what's coming this season.
+Say hello to our brand new Podcast Committee, already hard at work on **Season 2 of Coffee with CompBio**! The team includes [Amulya Shastry](https://ashastry2.github.io/) (editing & management) and [Dina Issakova](https://www.linkedin.com/in/dinaissakova/) (cover art & social media). Read on for a [sneak peek](#podcast) at what's coming this season.
 
 ### [Nominating & Governance Committee](https://boston-wib.org/about/committees/nominating-governance)
 
@@ -166,7 +171,7 @@ Thank you for your incredible support! We are inspired by the high level of inte
 
 ### New Year, New Connections
 
-_By: Manasvi_
+The energy at our kick-off event on January 15th was everything we could have hoped for to jump-start 2026. So many first-timers and younger faces joining longtime community members made it one of our most lively socials yet. We loved hearing your ideas for the year ahead, and every suggestion dropped in the box has been read; we're already working on bringing them to life. Thank you to everyone who came out. You reminded us exactly why we do _this_."
 
 ### Galentines Day Byte & Bite
 
@@ -175,7 +180,7 @@ _By: Manasvi_
 <figcaption>Boston Women in Bioinformatics Galentine's Day Lunch</figcaption>
 </figure>
 
-Eight BWIB members gathered at CanalSide Food & Drink at CambridgeSide Mall to celebrate Galentine's Day over lunch. It was a relaxed afternoon of good food and great conversation — members got to know each other better and even got a head start talking about the upcoming nf-core Hackathon happening just down the street in March. A small but mighty turnout!
+Eight BWIB members gathered at CanalSide Food & Drink at CambridgeSide Mall to celebrate Galentine's Day over lunch. It was a relaxed afternoon, and let's just say the conversation was as good as the food. Members got to know each other better and it was a small but mighty turnout!
 
 ---
 
@@ -262,7 +267,6 @@ Our bloggers have been busy! Here's what's been published recently:
 
 ## 🏛️ Executive Board
 
-**THIS NEEDS TO BE UPDATED**
 ![Executive Board Team](/team/executiveBoard.png)
 
 ---
