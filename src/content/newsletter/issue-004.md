@@ -264,7 +264,7 @@ Our bloggers have been busy! Here's what's been published recently:
 
 ## 🏛️ Executive Board
 
-![Executive Board Team](/team/executiveBoard.png)
+![Executive Board Team](/team/executiveBoard_2026.png)
 
 ---
 
