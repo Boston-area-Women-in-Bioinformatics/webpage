@@ -47,7 +47,6 @@ She moved across the world. Questioned her path. Struggled through coding. And s
 Next week, our very own blogger [Dana Moochnick](https://www.linkedin.com/in/dana-moochnick) sits down with fellow Boston Women in Bioinformatics Podcast Co-Chair Sharvari Narendra for a conversation that is as honest as it is inspiring. From landing in snowy Boston and feeling "immediately enthralled by the opportunities that the air in Boston held," to wondering if she had made the right choice pursuing bioinformatics, Sharvari shares the moments that shaped her growth, including the internship that helped her "re-ignite" her passion for the field. The interview goes in to show how growth in science really looks like. Not polished. Not linear. Real.
 
 Shavari reflects on finding her voice, building agency in science, navigating the rise of AI which she describes as "so scary and so incredible all at once," and why it is our responsibility to make science more accessible. This interview is vulnerable. It is empowering. And it drops next week.
-[10:34 AM]
 
 ---
 
