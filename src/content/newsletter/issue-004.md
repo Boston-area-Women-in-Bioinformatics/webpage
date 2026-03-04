@@ -12,8 +12,6 @@ authors:
     url: 'https://www.linkedin.com/in/sakinasaif'
   - name: 'Dana Moochnick'
     url: 'https://www.linkedin.com/in/dana-moochnick'
-  - name: 'Masoome Rezaei, M.S.'
-    url: 'https://www.linkedin.com/in/masoome-rezaei'
 metadata:
   title: 'Fresh Commits: The BWIB Spring Edition'
   description: New faces, big updates, and data that matters.
