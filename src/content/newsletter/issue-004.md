@@ -40,7 +40,7 @@ Here's what's inside this month:
 
 <div id="member-spotlight"></div>
 
-## 🎙️ Member Spotlight: [Sharvari Narendra, M.S.](https://www.linkedin.com/in/sharvarinarendra)
+## 🌟 Member Spotlight: [Sharvari Narendra, M.S.](https://www.linkedin.com/in/sharvarinarendra)
 
 _Highlights from Dana’s interview with Shavari_
 
