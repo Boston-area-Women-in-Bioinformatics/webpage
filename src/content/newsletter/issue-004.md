@@ -26,6 +26,7 @@ Here's what's inside this month:
 - [Member Spotlight: Sharvari Narendra, M.S.](#member-spotlight)
 - [Welcoming Our 2026 Executive Board](#exec-board-intro)
 - [Committee Updates: New Structures, New Voices](#committee-updates)
+- [Coffee with CompBio: Season 2](#podcast)
 - [Career Mentorship Program Update](#career-mentorship-program)
 - [Finance Snapshot](#finance)
 - [Events Recap](#events-recap)
@@ -122,7 +123,7 @@ It truly takes a village!
 
 ### [Podcast Committee](https://boston-wib.org/about/committees/podcast)
 
-Say hello to our brand new Podcast Committee, already hard at work on **Season 2 of Coffee with CompBio**! The team includes [Amulya Shastry](https://ashastry2.github.io/) (editing & management) and [Dina Issakova](https://www.linkedin.com/in/dinaissakova/) (cover art & social media). More great conversations with computational biologists are on the way — stay tuned!
+Say hello to our brand new Podcast Committee, already hard at work on **Season 2 of Coffee with CompBio**! The team includes [Amulya Shastry](https://ashastry2.github.io/) (editing & management) and [Dina Issakova](https://www.linkedin.com/in/dinaissakova/) (cover art & social media). Read on for a sneak peek at what's coming this season.
 
 ### [Nominating & Governance Committee](https://boston-wib.org/about/committees/nominating-governance)
 
@@ -131,6 +132,14 @@ We've formalized a Nominating & Governance Committee to ensure BWIB continues to
 ### [Finance Committee](https://boston-wib.org/about/committees/finance)
 
 New this year, the Finance Committee oversees the financial health of BWIB — from budgeting and cash flow to financial filings and evaluating the feasibility of new programs and events. Members include [Lorena Pantano](https://www.linkedin.com/in/lpantano/) and [Francine Camacho](https://www.linkedin.com/in/francinecamacho). Curious about where the money goes? Read on.
+
+---
+
+<div id="podcast"></div>
+
+## 🎙️ Coffee with CompBio: Season 2
+
+Coffee with CompBio is BWIB's podcast. In our previous season, Alex and Lorena dug into bioinformatics topics from best practices in R and navigating bad data to project management and scientific collaboration. This year, our new hosts — [Saba Nafees](https://www.linkedin.com/in/saba-nafees), [Sharvari Narendra](https://www.linkedin.com/in/sharvarinarendra), [Amulya Shastry](https://ashastry2.github.io/), and [Dina Issakova](https://www.linkedin.com/in/dinaissakova/) — continue the quest to bring you both the technical and human side of bioinformatics, especially in the AI era. Look out for upcoming episodes on Claude Code, coding for neurodivergent scientists, perspectives of a job recruiter, and more!
 
 ---
 
