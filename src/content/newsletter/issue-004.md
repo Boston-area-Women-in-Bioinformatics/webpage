@@ -157,8 +157,11 @@ BWIB funds its operations through ticketed events, corporate sponsorships, and i
 
 ## 🤝 Career Mentorship Program Update
 
-**The 2025-2026 cohort matches have been sent out!**
-Thank you for your incredible support! We are inspired by the high level of interest from aspiring mentees and the deep commitment shown by the BioPharma leaders who have stepped forward as mentors. All participants should check their email for match details and next steps. We can't wait to kick off this journey and make this pilot program a landmark success for Boston Women in Bioinformatics.
+We’re excited to share that the inaugural Boston Women in Bioinformatics (BWIB) Career Sponsorship Program officially launched in January! The program received a strong response from the BWIB community, with 38 participants expressing interest, including 28 mentees and 10 senior mentors from academia and industry. Following a thoughtful matching process, 10 mentor–mentee pairs were formed.
+
+Each pair will meet regularly for career-focused conversations centered on leadership development, strategic growth, and professional advancement. The program reflects BWIB’s commitment to supporting women as they advance into leadership roles in bioinformatics and fostering a strong, supportive professional network within the community.
+
+We look forward to sharing updates and highlights from the program throughout the year as these mentorship relationships grow and create meaningful career impact.
 
 ---
 
