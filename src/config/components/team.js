@@ -74,7 +74,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/diveena-becker-5945a771/',
       // Job Title
-      title: 'Treasurer & Co-chair, Events Committee',
+      title: 'Treasurer, Finance Committee Chair & Events Committee Co-chair',
       // Leadership team member Photo
       avatar: '/team/diveena.jpg',
       // Social links
@@ -149,7 +149,7 @@ const exec = {
       name: 'Liyang Diao',
       nameLink: 'https://www.linkedin.com/in/liyang-diao-90933461',
       // Job Title
-      title: 'Co-chair, Events Committee',
+      title: 'Events Committee Co-chair',
       avatar: '/team/liyang_diao.jpeg',
       social: {
         website: 'https://sproutinformatics.com',
@@ -167,7 +167,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/sakinasaif/',
       // Job Title
-      title: 'Co-chair, Communications Committee',
+      title: 'Communications Committee Co-chair',
       // Leadership team member Photo
       avatar: '/team/sakina_sq.jpg',
       // Social links
@@ -186,7 +186,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/samantha-klasfeld/',
       // Job Title
-      title: 'Co-Chair, Communications Committee',
+      title: 'Communications Committee Co-chair',
       // Leadership team member Photo
       avatar: '/team/samanthaklasfeld.jpeg',
       // Social links
@@ -206,7 +206,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/aysheh-alrfooh/',
       // Job Title
-      title: 'Co-chair, Career-Sponsorship Committee',
+      title: 'Career-Sponsorship Committee Co-chair',
       // Leadership team member Photo
       avatar: '/team/aysheh.jpg',
       // Social links
@@ -221,7 +221,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'http://www.linkedin.com/in/peili-zhang',
       // Job Title
-      title: 'Co-chair, Career-Sponsorship Committee',
+      title: 'Career-Sponsorship Committee Co-chair',
       // Leadership team member Photo
       avatar: '/team/peili_zhang.jpg',
       // Social links
@@ -237,7 +237,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'https://ashastry2.github.io/',
       // Job Title
-      title: 'Co-chair, Enabling Advocacy Committee',
+      title: 'Enabling Advocacy Committee Co-chair',
       // Leadership team member Photo
       avatar: '/team/AmulyaShastry.jpeg',
       // Social links
@@ -256,7 +256,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/viveka-patil-934b3123b',
       // Job Title
-      title: 'Co-chair, Enabling Advocacy Committee',
+      title: 'Enabling Advocacy Committee Co-chair',
       // Leadership team member Photo
       avatar: '/team/VivekaPatil.png',
       // Social links
@@ -275,7 +275,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/saba-nafees',
       // Job Title
-      title: 'Co-chair, Podcast Committee',
+      title: 'Podcast Committee Co-chair',
       // Leadership team member Photo
       avatar: '/team/Saba_Nafees.jpg',
       // Social links
@@ -296,7 +296,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/sharvarinarendra',
       // Job Title
-      title: 'Co-chair, Podcast Committee',
+      title: 'Podcast Committee Co-chair',
       // Leadership team member Photo
       avatar: '/team/Sharvari_Narendra.jpg',
       // Social links

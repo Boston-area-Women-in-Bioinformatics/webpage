@@ -87,7 +87,7 @@ The Web Page committee manages the organization's website to share group informa
 
 ## Executive Board
 
-![Executive Board Team: Lorena Pantano, Yevgenia Khodor Tolan, Diveena Becker, Lina Faller, Katie Hughes, Amulya Shastry, Aysheh Alrfooh, Peili Zhang, Sakina Saif, Shreya Rajasekar, Samantha Klasfeld, and Kavya Prasad](/team/executiveBoard.png)
+![Executive Board Team: Lorena Pantano, Yevgenia Khodor Tolan, Diveena Becker, Lina Faller, Katie Hughes, Amulya Shastry, Aysheh Alrfooh, Peili Zhang, Sakina Saif, Shreya Rajasekar, Samantha Klasfeld, and Kavya Prasad](/team/executiveBoard_2025.png)
 
 ---
 
