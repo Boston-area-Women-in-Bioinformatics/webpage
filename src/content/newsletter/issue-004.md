@@ -244,7 +244,7 @@ _Together, we can build the evidence base our community deserves._
 
 ---
 
-<div id="resources">
+<div id="resources"></div>
 
 ## 🔥 Hot off the Blog
 
