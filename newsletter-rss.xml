@@ -167,6 +167,23 @@
 &lt;/table&gt;
 
 &lt;p&gt;Shake off the last of winter and grab lunch with your fellow bioinformaticians at Shy Bird in Kendall Square! Whether you&amp;#39;re deep in pipelines or just bioinformatics-curious, join us for a relaxed afternoon of good food, great company, and springtime vibes.&lt;/p&gt;
+&lt;h3&gt;Single Cell Basics: A 2-Day Hands-On scRNA-seq Workshop&lt;/h3&gt;
+&lt;table style=&quot;border-collapse: collapse; border: none;&quot;&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;vertical-align: top; border: none;&quot;&gt;
+      &lt;img src=&quot;https://boston-wib.org//photos/sprout_bwib_logo.jpg&quot; alt=&quot;Boston Women in Bioinformatics and Sprout Informatics Logos&quot; width=&quot;250px&quot;/&gt;
+    &lt;/td&gt;
+    &lt;td style=&quot;vertical-align: middle; padding-left: 20px; border: none;&quot;&gt;
+      &lt;ul style=&quot;list-style-type: none; padding-left: 0;&quot;&gt;
+        &lt;li&gt;Apr 2–3, 2026, 12:00 PM&lt;/li&gt;
+        &lt;li&gt;Zoom&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;https://boston-wib.org/events/20260402_event&quot;&gt;Register&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Have you read scRNA-seq papers but never run the analysis yourself? This beginner-friendly 2-day Zoom workshop, hosted by BWIB and sponsored by &lt;a href=&quot;https://www.linkedin.com/company/sprout-informatics/&quot;&gt;Sprout Informatics&lt;/a&gt;, will take you from a raw 10x Genomics dataset through QC, clustering, marker gene identification, and cell type assignment — all in your own dedicated cloud environment. Registration is $5, with all proceeds supporting BWIB.&lt;/p&gt;
 &lt;hr&gt;
 &lt;div id=&quot;survey&quot;&gt;&lt;/div&gt;
 

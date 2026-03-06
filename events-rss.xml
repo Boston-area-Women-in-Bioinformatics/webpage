@@ -46,11 +46,11 @@
 &lt;/ul&gt;
 &lt;h3&gt;How to find us&lt;/h3&gt;
 &lt;p&gt;For those driving, parking is available at the 350 Kendall Street Garage (Pilgrim Parking). If you’re taking the T, Shy Bird is just a short walk from the Kendall/MIT station.&lt;/p&gt;
-</content:encoded><category>byteandbite</category><category>networking</category></item><item><title>From Counts to Cell Type — A 2-Day Hands-On scRNA-seq Workshop</title><link>https://boston-wib.org//events/20260402_event</link><guid isPermaLink="true">https://boston-wib.org//events/20260402_event</guid><pubDate>Thu, 02 Apr 2026 17:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;When:&lt;/strong&gt; Thursday, April 2, 2026 at 5:00 PM&lt;/p&gt;
+</content:encoded><category>byteandbite</category><category>networking</category></item><item><title>Single Cell Basics: A 2-Day Hands-On scRNA-seq Workshop for Beginner</title><link>https://boston-wib.org//events/20260402_event</link><guid isPermaLink="true">https://boston-wib.org//events/20260402_event</guid><pubDate>Thu, 02 Apr 2026 17:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;When:&lt;/strong&gt; Thursday, April 2, 2026 at 5:00 PM&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Where:&lt;/strong&gt; Zoom&lt;/p&gt;
 &lt;p&gt;Have you read single-cell RNA-seq papers but never run the analysis yourself? This beginner-friendly workshop will take you from raw 10x Genomics data to identifying real biological cell types.&lt;/p&gt;
 &lt;p&gt;Hosted by Boston Women in Bioinformatics (BWiB) and sponsored by &lt;a href=&quot;https://www.linkedin.com/company/sprout-informatics/&quot;&gt;Sprout Informatics&lt;/a&gt;, this 2-day live Zoom series is designed for students and early-stage researchers ready to get hands-on with single-cell analysis.&lt;/p&gt;
-&lt;h2&gt;What you’ll do:&lt;/h2&gt;
+&lt;h2&gt;What you&amp;#39;ll do:&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Understand how single-cell RNA-seq experiments work&lt;/li&gt;
 &lt;li&gt;Load a real PBMC dataset from 10x Genomics&lt;/li&gt;
@@ -58,6 +58,12 @@
 &lt;li&gt;Normalize and cluster cells&lt;/li&gt;
 &lt;li&gt;Identify marker genes&lt;/li&gt;
 &lt;li&gt;Determine the most abundant cell type — and explain why&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;What will we provide:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A dedicated cloud environment with all required packages pre-installed and data pre-downloaded&lt;/li&gt;
+&lt;li&gt;Instruction on how to connect via VS Code and run the analysis in a Jupyter notebook&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Sprout-Informatics/sc-cellementary&quot;&gt;Git repo&lt;/a&gt; with markdown files and step-by-step instructions&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Day 1 — April 2&lt;/h3&gt;
 &lt;p&gt;Understanding the experiment, connecting it to the gene-by-cell count matrix, setting up the analysis environment, and performing QC and filtering.&lt;/p&gt;
@@ -73,11 +79,7 @@
 &lt;h2&gt;Summary&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Format: Live on Zoom&lt;/li&gt;
-&lt;li&gt;Registration: $10 (covers compute infrastructure)&lt;ul&gt;
-&lt;li&gt;Fee waived upon assignment submission&lt;/li&gt;
+&lt;li&gt;Registration: $5 — all proceeds go directly to support BWIB!&lt;/li&gt;
+&lt;li&gt;Spots may be limited due to compute capacity&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Spots may be limited due to compute capacity.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Join us as we bridge experiment to analysis — and turn counts into cell types.&lt;/p&gt;
 </content:encoded><category>workshop</category><category>hands-on-workshop</category><category>virtual</category></item></channel></rss>
