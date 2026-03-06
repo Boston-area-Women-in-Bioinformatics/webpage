@@ -11,8 +11,8 @@
 &lt;li&gt;&lt;a href=&quot;#podcast&quot;&gt;Coffee with CompBio: Season 2&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#career-mentorship-program&quot;&gt;Career Mentorship Program Update&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#finance&quot;&gt;Finance Snapshot&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#events-recap&quot;&gt;Events Recap&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#upcoming-event&quot;&gt;Upcoming Events&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#events-recap&quot;&gt;Events Recap&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#survey&quot;&gt;Advocacy Survey&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#resources&quot;&gt;Hot off the Blog&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#inside-committees&quot;&gt;Inside our Organization Committees&lt;/a&gt;&lt;/li&gt;
@@ -117,19 +117,6 @@
 &lt;p&gt;Each pair will meet regularly for career-focused conversations centered on leadership development, strategic growth, and professional advancement. The program reflects BWIB’s commitment to supporting women as they advance into leadership roles in bioinformatics and fostering a strong, supportive professional network within the community.&lt;/p&gt;
 &lt;p&gt;We look forward to sharing updates and highlights from the program throughout the year as these mentorship relationships grow and create meaningful career impact.&lt;/p&gt;
 &lt;hr&gt;
-&lt;div id=&quot;events-recap&quot;&gt;&lt;/div&gt;
-
-&lt;h2&gt;🌄 Events Recap&lt;/h2&gt;
-&lt;h3&gt;New Year, New Connections&lt;/h3&gt;
-&lt;p&gt;The energy at our kick-off event on January 15th was everything we could have hoped for to jump-start 2026. So many first-timers and younger faces joining longtime community members made it one of our most lively socials yet. We loved hearing your ideas for the year ahead, and every suggestion dropped in the box has been read; we&amp;#39;re already working on bringing them to life. Thank you to everyone who came out. You reminded us exactly why we do &lt;em&gt;this&lt;/em&gt;.&amp;quot;&lt;/p&gt;
-&lt;h3&gt;Galentines Day Byte &amp;amp; Bite&lt;/h3&gt;
-&lt;figure&gt;
-  &lt;img src=&quot;https://boston-wib.org//photos/2026/GalentinesDay_FEB2026.jpg&quot; alt=&quot;Group photo, ski lift backdrop&quot; style=&quot;max-width: 400px; width: 100%;&quot; /&gt;
-&lt;figcaption&gt;Boston Women in Bioinformatics Galentine&apos;s Day Lunch&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Eight BWIB members gathered at CanalSide Food &amp;amp; Drink at CambridgeSide Mall to celebrate Galentine&amp;#39;s Day over lunch. It was a relaxed afternoon, and let&amp;#39;s just say the conversation was as good as the food. Members got to know each other better and it was a small but mighty turnout!&lt;/p&gt;
-&lt;hr&gt;
 &lt;div id=&quot;upcoming-event&quot;&gt;&lt;/div&gt;
 
 &lt;h2&gt;📆 Upcoming Events&lt;/h2&gt;
@@ -184,6 +171,19 @@
 &lt;/table&gt;
 
 &lt;p&gt;Have you read scRNA-seq papers but never run the analysis yourself? This beginner-friendly 2-day Zoom workshop, hosted by BWIB and sponsored by &lt;a href=&quot;https://www.linkedin.com/company/sprout-informatics/&quot;&gt;Sprout Informatics&lt;/a&gt;, will take you from a raw 10x Genomics dataset through QC, clustering, marker gene identification, and cell type assignment — all in your own dedicated cloud environment. Registration is $5, with all proceeds supporting BWIB.&lt;/p&gt;
+&lt;hr&gt;
+&lt;div id=&quot;events-recap&quot;&gt;&lt;/div&gt;
+
+&lt;h2&gt;🌄 Events Recap&lt;/h2&gt;
+&lt;h3&gt;New Year, New Connections&lt;/h3&gt;
+&lt;p&gt;The energy at our kick-off event on January 15th was everything we could have hoped for to jump-start 2026. So many first-timers and younger faces joining longtime community members made it one of our most lively socials yet. We loved hearing your ideas for the year ahead, and every suggestion dropped in the box has been read; we&amp;#39;re already working on bringing them to life. Thank you to everyone who came out. You reminded us exactly why we do &lt;em&gt;this&lt;/em&gt;.&amp;quot;&lt;/p&gt;
+&lt;h3&gt;Galentines Day Byte &amp;amp; Bite&lt;/h3&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;https://boston-wib.org//photos/2026/GalentinesDay_FEB2026.jpg&quot; alt=&quot;Group photo, ski lift backdrop&quot; style=&quot;max-width: 400px; width: 100%;&quot; /&gt;
+&lt;figcaption&gt;Boston Women in Bioinformatics Galentine&apos;s Day Lunch&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Eight BWIB members gathered at CanalSide Food &amp;amp; Drink at CambridgeSide Mall to celebrate Galentine&amp;#39;s Day over lunch. It was a relaxed afternoon, and let&amp;#39;s just say the conversation was as good as the food. Members got to know each other better and it was a small but mighty turnout!&lt;/p&gt;
 &lt;hr&gt;
 &lt;div id=&quot;survey&quot;&gt;&lt;/div&gt;
 
