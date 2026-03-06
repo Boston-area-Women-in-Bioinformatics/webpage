@@ -27,8 +27,8 @@ Here's what's inside this month:
 - [Coffee with CompBio: Season 2](#podcast)
 - [Career Mentorship Program Update](#career-mentorship-program)
 - [Finance Snapshot](#finance)
-- [Events Recap](#events-recap)
 - [Upcoming Events](#upcoming-event)
+- [Events Recap](#events-recap)
 - [Advocacy Survey](#survey)
 - [Hot off the Blog](#resources)
 - [Inside our Organization Committees](#inside-committees)
@@ -165,25 +165,6 @@ We look forward to sharing updates and highlights from the program throughout th
 
 ---
 
-<div id="events-recap"></div>
-
-## 🌄 Events Recap
-
-### New Year, New Connections
-
-The energy at our kick-off event on January 15th was everything we could have hoped for to jump-start 2026. So many first-timers and younger faces joining longtime community members made it one of our most lively socials yet. We loved hearing your ideas for the year ahead, and every suggestion dropped in the box has been read; we're already working on bringing them to life. Thank you to everyone who came out. You reminded us exactly why we do _this_."
-
-### Galentines Day Byte & Bite
-
-<figure>
-  <img src="/photos/2026/GalentinesDay_FEB2026.jpg" alt="Group photo, ski lift backdrop" style="max-width: 400px; width: 100%;" />
-<figcaption>Boston Women in Bioinformatics Galentine's Day Lunch</figcaption>
-</figure>
-
-Eight BWIB members gathered at CanalSide Food & Drink at CambridgeSide Mall to celebrate Galentine's Day over lunch. It was a relaxed afternoon, and let's just say the conversation was as good as the food. Members got to know each other better and it was a small but mighty turnout!
-
----
-
 <div id="upcoming-event"></div>
 
 ## 📆 Upcoming Events
@@ -244,6 +225,25 @@ Shake off the last of winter and grab lunch with your fellow bioinformaticians a
 </table>
 
 Have you read scRNA-seq papers but never run the analysis yourself? This beginner-friendly 2-day Zoom workshop, hosted by BWIB and sponsored by [Sprout Informatics](https://www.linkedin.com/company/sprout-informatics/), will take you from a raw 10x Genomics dataset through QC, clustering, marker gene identification, and cell type assignment — all in your own dedicated cloud environment. Registration is $5, with all proceeds supporting BWIB.
+
+---
+
+<div id="events-recap"></div>
+
+## 🌄 Events Recap
+
+### New Year, New Connections
+
+The energy at our kick-off event on January 15th was everything we could have hoped for to jump-start 2026. So many first-timers and younger faces joining longtime community members made it one of our most lively socials yet. We loved hearing your ideas for the year ahead, and every suggestion dropped in the box has been read; we're already working on bringing them to life. Thank you to everyone who came out. You reminded us exactly why we do _this_."
+
+### Galentines Day Byte & Bite
+
+<figure>
+  <img src="/photos/2026/GalentinesDay_FEB2026.jpg" alt="Group photo, ski lift backdrop" style="max-width: 400px; width: 100%;" />
+<figcaption>Boston Women in Bioinformatics Galentine's Day Lunch</figcaption>
+</figure>
+
+Eight BWIB members gathered at CanalSide Food & Drink at CambridgeSide Mall to celebrate Galentine's Day over lunch. It was a relaxed afternoon, and let's just say the conversation was as good as the food. Members got to know each other better and it was a small but mighty turnout!
 
 ---
 
