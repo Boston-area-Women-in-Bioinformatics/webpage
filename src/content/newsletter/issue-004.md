@@ -226,6 +226,25 @@ Nextflow fans, this one's for you! BWIB is helping to host a Boston site for the
 
 Shake off the last of winter and grab lunch with your fellow bioinformaticians at Shy Bird in Kendall Square! Whether you're deep in pipelines or just bioinformatics-curious, join us for a relaxed afternoon of good food, great company, and springtime vibes.
 
+### Single Cell Basics: A 2-Day Hands-On scRNA-seq Workshop
+
+<table style="border-collapse: collapse; border: none;">
+  <tr>
+    <td style="vertical-align: top; border: none;">
+      <img src="/photos/sprout_bwib_logo.jpg" alt="Boston Women in Bioinformatics and Sprout Informatics Logos" width="250px"/>
+    </td>
+    <td style="vertical-align: middle; padding-left: 20px; border: none;">
+      <ul style="list-style-type: none; padding-left: 0;">
+        <li>Apr 2–3, 2026, 12:00 PM</li>
+        <li>Zoom</li>
+        <li><a href="https://boston-wib.org/events/20260402_event">Register</a></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+Have you read scRNA-seq papers but never run the analysis yourself? This beginner-friendly 2-day Zoom workshop, hosted by BWIB and sponsored by [Sprout Informatics](https://www.linkedin.com/company/sprout-informatics/), will take you from a raw 10x Genomics dataset through QC, clustering, marker gene identification, and cell type assignment — all in your own dedicated cloud environment. Registration is $5, with all proceeds supporting BWIB.
+
 ---
 
 <div id="survey"></div>
