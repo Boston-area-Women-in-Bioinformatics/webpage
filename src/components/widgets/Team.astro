@@ -70,7 +70,9 @@ let colorIndex = 0;
         <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {member?.nameLink ? <a href={member.nameLink}>{member.name}</a> : member.name}
         </h3>
-        {member?.title && <p>{member.title}</p>}
+        {member?.title && (
+          <p set:html={member.title.replace(/\bCo-chair\b/g, '<span style="white-space:nowrap">Co-chair</span>')} />
+        )}
         {member?.social && <SocialLinks social={member.social} class="justify-center mt-4" />}
       </div>
     );

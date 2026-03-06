@@ -21,6 +21,13 @@ const { post, url } = Astro.props;
 const ContentComponent = post?.Content ?? post?.content ?? null;
 ---
 
+<style>
+  :global(.dark) article th[style*='background-color'] {
+    background-color: #1e293b !important;
+    color: #e2e8f0;
+  }
+</style>
+
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">
   <article>
     <header class="intersect-once intersect-quarter motion-safe:md:intersect:animate-fade">
