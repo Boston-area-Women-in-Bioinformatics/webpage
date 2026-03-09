@@ -159,7 +159,7 @@ As the year draws to a close, our various committees have diligently compiled th
 
 ## Executive Board
 
-![Executive Board Team](/team/executiveBoard.png)
+![Executive Board Team](/team/executiveBoard_2025.png)
 
 ---
 
