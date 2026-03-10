@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Biobank Intro Series: Hardware Settings</title><link>https://boston-wib.org/blog/biobank-intro-series/02-hardware-settings</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/02-hardware-settings</guid><pubDate>Tue, 03 Mar 2026 05:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/commandlineinterfaceBridge.png&quot; alt=&quot;Two islands labeled &quot;Your Workspace&quot; and &quot;Data Storage&quot; are connected by a tiny, rickety wooden footbridge. Crossing the bridge is a terminal carrying a folder.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Biobank Intro Series: UK Biobank Observational Data (Part I)</title><link>https://boston-wib.org/blog/biobank-intro-series/03-ukb-observational-data-partI</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/03-ukb-observational-data-partI</guid><pubDate>Tue, 10 Mar 2026 05:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/ukbShowcaseGraphic.png&quot; alt=&quot;Papers tell you WHAT was used. Showcase tells you what&apos;s AVAILABLE NOW.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Save a clock tick with the UK Biobank Showcase&lt;/em&gt;&lt;/p&gt;
+
+&lt;figcaption class=&quot;text-center text-sm opacity-80 mt-2&quot;&gt;
+   &lt;em&gt;The showcase returns at least three different field IDs for BMI. It is difficult to find this information in any publication.&lt;/em&gt;
+&lt;/figcaption&gt;
+
+&lt;p&gt;Consider this post a love letter to the Showcase.&lt;/p&gt;
+&lt;p&gt;When I first started working with UK Biobank, I did what I always did in graduate school. I dug through methods sections and supplemental materials to track down the features used in the study. It worked, but it was slow. Part of the problem is that papers rarely cite &lt;a href=&quot;https://biobank.ndph.ox.ac.uk/showcase/&quot;&gt;The UK Biobank Showcase&lt;/a&gt; directly. It is so foundational to the field that experienced researchers treat it as assumed knowledge. Coming from a different domain, I had no idea it existed. Once my manager pointed me to the Showcase, I discovered measurements beyond what had been published and no longer had to spend hours on detective work.&lt;/p&gt;
+&lt;p&gt;To understand why the showcase is so useful, it helps to know the scale of what UK Biobank actually contains. The UK Biobank as a resource spans clinical measurements, survey data, genomics, imaging, proteomics, metabolomics, and more. For a comprehensive overview of all available data types, see &lt;a href=&quot;https://community.ukbiobank.ac.uk/hc/en-gb/articles/23472796568861-What-types-of-data-are-available-in-UK-Biobank&quot;&gt;What types of data are available in UK Biobank?&lt;/a&gt; on the UK Biobank Community site. The Showcase is your tool for navigating all of it.&lt;/p&gt;
+&lt;p&gt;For example, searching &amp;quot;Left Ventricular Ejection Fraction&amp;quot; returns &lt;a href=&quot;https://biobank.ndph.ox.ac.uk/showcase/search.cgi?wot=0&amp;srch=Left+Ventricular+Ejection+Fraction&amp;yfirst=2000&amp;ylast=2025&quot;&gt;multiple relevant fields&lt;/a&gt; and three with the exact correct description (22420, 24103, and 31060). But which one should you use? This is where the Showcase becomes essential.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/lvef_search.png&quot; alt=&quot;UK Biobank Showcase search interface showing search results for left ventricular ejection fraction, with three data fields highlighted: 22420 (Left ventricular size and function category), 24103 (Cardiac and aortic function #1 category), and 31060 (Cardiac and aortic function #2 category)&quot;&gt;&lt;/p&gt;
+&lt;figcaption class=&quot;text-center text-sm opacity-80 mt-2&quot;&gt;
+   UK Biobank Showcase search results showing three LVEF measurement fields in different categories
+&lt;/figcaption&gt;
+
+&lt;p&gt;Notice the three highlighted fields measure the same thing but belong to different categories. Clicking into each field reveals why this matters:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/lvef_fields_long.png&quot; alt=&quot;Three-panel comparison showing data field headers and category descriptions for fields 22420, 24103, and 31060. Field 22420 shows 39,645 participants with a quality warning. Field 24103 shows 80,974 participants with methodology references. Field 31060 shows 4,868 participants with publication citations. Each panel includes category warnings about data quality and compatibility.&quot;&gt;&lt;/p&gt;
+&lt;figcaption class=&quot;text-center text-sm opacity-80 mt-2&quot;&gt;
+   Comparison of three LVEF fields showing participant counts and category quality warnings
+&lt;/figcaption&gt;
+
+&lt;p&gt;Field 22420 (&lt;a href=&quot;https://biobank.ndph.ox.ac.uk/showcase/label.cgi?id=133&quot;&gt;category 133&lt;/a&gt;) has 39,649 measurements but includes a warning: &amp;quot;Quality issues may exist in this data. Researchers may wish to consider using data available in Category 157 or Category 162 as an alternative.&amp;quot; Field 24103 (&lt;a href=&quot;https://biobank.ndph.ox.ac.uk/showcase/label.cgi?id=157&quot;&gt;category 157&lt;/a&gt;) contains 80,974 measurements and references a published methodology, but warns these fields &amp;quot;should not be considered together&amp;quot; with Category 162 without quality assessment. Field 31060 (&lt;a href=&quot;https://biobank.ndph.ox.ac.uk/showcase/label.cgi?id=162&quot;&gt;category 162&lt;/a&gt;) has only 4,868 participants, fewer than the flagged field 22420.&lt;/p&gt;
+&lt;p&gt;For my cardiomyopathy work (&lt;a href=&quot;https://www.cell.com/hgg-advances/fulltext/S2666-2477(25)00063-6&quot;&gt;Klasfeld &lt;em&gt;et al&lt;/em&gt; 2025&lt;/a&gt;), I chose field 24103 for its sample size and data quality. However, other practical information provided by the showcase includes the date of which the data was reported (Debut) and the distribution of the data (shown in the data tab in the second section of the Field ID entry).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Another critical detail:&lt;/strong&gt; Many UK Biobank measurements were collected at multiple timepoints (instances). The Showcase shows you not just the field ID, but which instances have data. For most phenotypes, the initial assessment (Instance 0) has the largest sample size, with subsequent visits having progressively fewer participants. For covariates, I typically use the initial visit value. If you need longitudinal data, expect much smaller sample sizes.&lt;/p&gt;
+&lt;p&gt;Additionally, some fields contain multiple measurements per participant within a single visit (arrays). For example, blood pressure taken three times. The Showcase specifies these array structures so you can plan your handling strategy.&lt;/p&gt;
+&lt;h2&gt;UK Biobank Showcase Tips&lt;/h2&gt;
+&lt;p&gt;After working with the Showcase on multiple projects, I&amp;#39;ve developed a workflow that catches issues before they become problems. Here&amp;#39;s my list:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Before selecting a field:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Always check the category warnings, not just the field description&lt;/li&gt;
+&lt;li&gt;Look at the data distribution tab: Is it normally distributed? Heavy missingness? Homogenous values? Sampling bias?&lt;/li&gt;
+&lt;li&gt;Check the total participants to plan your sample size accordingly&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;For reproducibility:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Note the debut date (when data became available)&lt;/li&gt;
+&lt;li&gt;Record the version date (last import/update)&lt;/li&gt;
+&lt;li&gt;Check stability rating (how data may change in future releases)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;To save time:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use algorithmically-defined outcomes in Category &lt;a href=&quot;https://biobank.ndph.ox.ac.uk/showcase/label.cgi?id=42&quot;&gt;42&lt;/a&gt; instead of manually classifying from multiple sources&lt;/li&gt;
+&lt;li&gt;Watch for &amp;quot;Not available&amp;quot; status because sometimes fields are listed before release&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Publications tell you which field &lt;em&gt;was&lt;/em&gt; used, but they rarely tell you which field to use. The Showcase is how you figure out which one you should use. Spending a few minutes there before starting your analysis can save weeks of downstream headaches. For more details on features I didn&amp;#39;t cover, see Part III of the &lt;a href=&quot;https://biobank.ndph.ox.ac.uk/showcase/ukb/exinfo/ShowcaseUserGuide.pdf&quot;&gt;Showcase user guide&lt;/a&gt; (page 4).&lt;/p&gt;
+&lt;p&gt;Finding the right field is half the battle. In the next post, we&amp;#39;ll dive into actually loading this data for analysis.&lt;/p&gt;
+</content:encoded><category>biobank</category><category>uk-biobank</category><category>ukb-showcase</category><category>phenotype-data</category><category>field-selection</category><category>data-quality</category><category>reproducibility</category></item><item><title>Biobank Intro Series: Hardware Settings</title><link>https://boston-wib.org/blog/biobank-intro-series/02-hardware-settings</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/02-hardware-settings</guid><pubDate>Tue, 03 Mar 2026 05:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/commandlineinterfaceBridge.png&quot; alt=&quot;Two islands labeled &quot;Your Workspace&quot; and &quot;Data Storage&quot; are connected by a tiny, rickety wooden footbridge. Crossing the bridge is a terminal carrying a folder.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;Hardware setup lessons for UK Biobank Research Analysis Platform and All of Us Workbench&lt;/em&gt;&lt;/p&gt;
 
