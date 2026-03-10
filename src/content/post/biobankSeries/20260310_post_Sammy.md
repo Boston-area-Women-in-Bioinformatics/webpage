@@ -38,23 +38,29 @@ To understand why the showcase is so useful, it helps to know the scale of what 
 
 ## Reading Between the Data Fields: Arrays, Instances, and Codes
 
-The Showcase doesn't just catalog measurements. It lovingly documents the shape of the data itself. On the main page for each field, the 'Data' tab provides key details about coding, instances, and array indices that will save you real headaches downstream.
+The Showcase doesn't just catalog measurements. It lovingly documents the shape of the data itself. On the main page for each field, the **Data** tab provides key details about coding, instances, and array indices that will save you real headaches downstream.
 
-**Coding** is how categorical responses are stored. Rather than storing "Yes" or "No", many fields store numeric codes: **1** for "Yes", **0** for "No", and **-3** for "Prefer not to answer". The Showcase provides a data coding table for each such field. More on working with complex codes in the next post.
+### Coding
 
-**Instances** are timepoints. For example, if a measurement reports using instancing type 2, it will report measurements collected at four visits:
+Coding is how categorical responses are stored. Rather than storing "Yes" or "No", many fields store numeric codes: `1` for "Yes", `0` for "No", and `-3` for "Prefer not to answer". The Showcase provides a data coding table for each such field. More on working with complex codes in the next post.
 
-- instance 0: the initial assessment
+### Instances
 
-- instance 1: the first repeat vist
+Instances are timepoints. For example, if a measurement reports using instancing type 2, it will report measurements collected at four visits:
 
-- instance 2: the imagining vist
+- instance `0`: the initial assessment
 
-- instance 3: the first repeat imaging visit
+- instance `1`: the first repeat visit
 
-For most phenotypes, Instance 0 has the largest sample size. If you need longitudinal data, expect much smaller numbers at later instances.
+- instance `2`: the imaging visit
 
-**Arrays** are repeated measurements within a single visit. Diastolic and systolic blood pressure (4079, 4080), for example, are taken twice in one sitting. Each repeat is stored as a separate array index (0,1). The Showcase tells you how many array values a field has so you can plan how to handle them.
+- instance `3`: the first repeat imaging visit
+
+For most phenotypes, Instance `0` has the largest sample size. If you need longitudinal data, expect much smaller numbers at later instances.
+
+### Arrays
+
+Arrays are repeated measurements within a single visit. Diastolic and systolic blood pressure (`4079`, `4080`), for example, are taken twice in one sitting. Each repeat is stored as a separate array index (`0`, `1`). The Showcase tells you how many array values a field has so you can plan how to handle them.
 
 The Data tab gives you the architecture of a field: how its values are structured, repeated, and encoded. What it does not tell you is whether those values are reliable, comparable, or the best available option for your phenotype. For that, you need the category-level context, and the Showcase delivers it.
 
@@ -76,9 +82,9 @@ Notice the three highlighted fields measure the same thing but belong to differe
    Comparison of three LVEF fields showing participant counts and category quality warnings
 </figcaption>
 
-Field 22420 ([category 133](https://biobank.ndph.ox.ac.uk/showcase/label.cgi?id=133)) has 39,649 measurements but includes a warning: "Quality issues may exist in this data. Researchers may wish to consider using data available in Category 157 or Category 162 as an alternative." Field 24103 ([category 157](https://biobank.ndph.ox.ac.uk/showcase/label.cgi?id=157)) contains 80,974 measurements and references a published methodology, but warns these fields "should not be considered together" with Category 162 without quality assessment. Field 31060 ([category 162](https://biobank.ndph.ox.ac.uk/showcase/label.cgi?id=162)) has only 4,868 participants, fewer than the flagged field 22420.
+Field `22420` ([category 133](https://biobank.ndph.ox.ac.uk/showcase/label.cgi?id=133)) has 39,649 measurements but includes a warning: "Quality issues may exist in this data. Researchers may wish to consider using data available in Category 157 or Category 162 as an alternative." Field `24103` ([category 157](https://biobank.ndph.ox.ac.uk/showcase/label.cgi?id=157)) contains 80,974 measurements and references a published methodology, but warns these fields "should not be considered together" with Category 162 without quality assessment. Field `31060` ([category 162](https://biobank.ndph.ox.ac.uk/showcase/label.cgi?id=162)) has only 4,868 participants, fewer than the flagged field `22420`.
 
-For my cardiomyopathy work ([Klasfeld _et al_ 2025](<https://www.cell.com/hgg-advances/fulltext/S2666-2477(25)00063-6>)), I chose field 24103 for its sample size and data quality. However, other practical information provided by the showcase includes the date of which the data was reported (Debut) and the distribution of the data (shown in the data tab in the second section of the Field ID entry).
+For my cardiomyopathy work ([Klasfeld _et al_ 2025](<https://www.cell.com/hgg-advances/fulltext/S2666-2477(25)00063-6>)), I chose field `24103` for its sample size and data quality. However, other practical information provided by the showcase includes the date of which the data was reported (Debut) and the distribution of the data (shown in the data tab in the second section of the Field ID entry).
 
 ## UK Biobank Showcase Tips
 
@@ -100,7 +106,7 @@ After working with the Showcase on multiple projects, I've developed a workflow 
 
 - Like any great love, the Showcase is not perfect. Sometimes a data field has the status set to "Not available", meaning it is listed before release. If the release date is listed and it is not set in the future, reach out to UK Biobank support for clarification.
 - Sometimes data that appears in the Showcase is missing from your RAP workspace entirely. This can happen if your project is running an outdated version of the UK Biobank data release.
-  - If you are the project admin, go to the **Settings** page of your dispensed project and click **"Check for Updates"** in the UK Biobank section.
+  - If you are the project admin, go to the `Settings` page of your dispensed project and click `Check for Updates` in the UK Biobank section.
   - If you are not the admin or the update does not resolve it, reach out to the UK Biobank support team directly. Tell them upfront if you have already searched the community forums. They are genuinely helpful and worth contacting.
 
 The more time I spend with the Showcase, the more I appreciate what it actually is: not just a catalog, but a guide to making good decisions about your data. For features not covered here, Part III of the [Showcase user guide](https://biobank.ndph.ox.ac.uk/showcase/ukb/exinfo/ShowcaseUserGuide.pdf) (page 4) is worth bookmarking. In the next post, we'll dive into actually loading this data for analysis.
