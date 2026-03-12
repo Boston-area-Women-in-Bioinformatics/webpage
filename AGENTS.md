@@ -141,7 +141,23 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 
 ---
 
+## Markdown Formatting Conventions (Blog Posts)
+
+Use the following conventions consistently in blog post `.md` files:
+
+| Element                                   | Format                               | Example                                                      |
+| ----------------------------------------- | ------------------------------------ | ------------------------------------------------------------ |
+| Variable/field names, IDs, numeric values | Inline code (backticks)              | `` `22420` ``, `` `1` ``, `` `-3` ``                         |
+| UI tab names, button labels, page names   | Bold                                 | `**Data** tab`, `**Settings** page`, `**Check for Updates**` |
+| Key domain terms being defined            | Bold (first use) or `###` subheading | `**Coding**` or `### Coding`                                 |
+| File paths, code identifiers              | Inline code (backticks)              | `` `src/utils/blog.ts` ``                                    |
+
+Inline code renders with a styled pill background (gray-100 light / slate-800 dark) via `.prose :not(pre) > code` in `tailwind.css`. The Tailwind Typography quote pseudo-elements are suppressed.
+
+---
+
 ## Self-Correction
 
 - **Stale code map**: If you discover that a file path, export name, or directory described above no longer exists or has moved, update the relevant section of this file immediately before proceeding with the task.
 - **User corrections**: If the user corrects how work should be done in this repo (workflow, tooling preferences, naming conventions, patterns to avoid), add the correction to the **Local norms** section above so future sessions inherit it.
+- **After editing this file**: Run `npm run fix` to apply Prettier formatting before proceeding.
