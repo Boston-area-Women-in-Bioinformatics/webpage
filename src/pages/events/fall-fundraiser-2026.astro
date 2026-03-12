@@ -300,95 +300,125 @@ const metadata = {
       });
     </script>
   </section>
-  <!-- Sponsorship tiers - uncomment and update when ready -->
+  <!-- Sponsorship tiers -->
   <section class="bg-white dark:bg-gray-900 border mt-12">
     <div class="py-12 px-4 mx-auto text-center lg:py-20 lg:px-6">
-      <div class="sponsorship-intro text-center mb-8 mt-2">
+      <div class="sponsorship-intro text-center mb-10 mt-2">
         <h3 class="mb-4 text-3xl sm:text-4xl md:text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white">
           Become a Sponsor
         </h3>
-        <br />
-        <p class="text-lg dark:text-white">
-          Support Boston Women in Bioinformatics. Explore sponsorship opportunities below!
+        <p class="text-lg text-muted dark:text-slate-300 mt-4 max-w-4xl mx-auto">
+          Support Boston Women in Bioinformatics and get your organization in front of our engaged community. Explore
+          the sponsorship tiers below, and reach out to us at
+          <a
+            href="mailto:communications@boston-wib.org?subject=Fall%20Fundraiser%20Sponsor"
+            class="text-blue-600 dark:text-blue-400 hover:underline font-medium">communications@boston-wib.org</a
+          >
+          with the subject <span class="font-medium">"Fall Fundraiser Sponsor"</span> to get started.
         </p>
       </div>
-      <div class="flex justify-around flex-wrap gap-5 max-w-full px-5 mt-0">
-        <div
-          class="flex-1 mb-10 min-w-[300px] max-w-full p-6 border-2 border-gray-200 dark:border-gray-700 shadow-md rounded-xl bg-white dark:bg-gray-800 text-center"
+
+      <div class="overflow-x-auto max-w-4xl mx-auto">
+        <table
+          class="w-full text-left border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md text-sm sm:text-base"
         >
-          <h3 class="text-2xl sm:text-3xl md:text-4xl mb-4">
-            Tier 1: <span class="text-gold font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">Gold </span> RNA Sponsor
-          </h3>
-          <div class="text-lg my-4 text-red-600 dark:text-white">
-            <strong>Contribution Amount:</strong> $1,500
-          </div>
-
-          <h4 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white mb-2">Benefits:</h4>
-          <ul class="list-none p-0 text-left text-gray-900 dark:text-white">
-            <li class="mb-2.5 leading-relaxed flex items-baseline">
-              🏆 <strong class="mr-1">Prominent Logo Placement:</strong> Sponsor's logo prominently displayed on all event
-              marketing materials, including banners, flyers, and digital media.
-            </li>
-            <li class="mb-2.5 leading-relaxed flex items-baseline">
-              🎙️ <strong class="mr-1">Verbal Recognition:</strong> Priority mention as a "Gold Sponsor" during event opening
-              and closing speeches.
-            </li>
-            <li class="mb-2.5 leading-relaxed flex items-baseline">
-              🏢 <strong class="mr-1">Booth Space:</strong> Complimentary booth space at the event for product display or
-              promotional activity.
-            </li>
-            <li class="mb-2.5 leading-relaxed flex items-baseline">
-              🌐 <strong class="mr-1">Website Recognition:</strong> Featured logo and hyperlink on the event website homepage
-              or sponsor page.
-            </li>
-            <li class="mb-2.5 leading-relaxed flex items-baseline">
-              📣 <strong class="mr-1">Social Media Shoutouts:</strong> Multiple mentions across the event's social media
-              channels before, during, and after the event.
-            </li>
-            <li class="mb-2.5 leading-relaxed flex items-baseline">
-              🎟️ <strong class="mr-1">Complimentary Tickets:</strong>
-              <span class="text-gold font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">Four</span> free tickets
-              to the event for the sponsor's representatives or guests.
-            </li>
-          </ul>
-        </div>
-
-        <div
-          class="flex-1 mb-10 min-w-[300px] max-w-full p-6 border-2 border-gray-200 dark:border-gray-700 shadow-md rounded-xl bg-white dark:bg-gray-800 text-center"
-        >
-          <h3 class="text-2xl sm:text-3xl md:text-4xl mb-4">
-            Tier 2: <span class="text-silver font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">Silver </span> DNA
-            Sponsor
-          </h3>
-          <div class="text-lg my-4 text-red-600 dark:text-white">
-            <strong>Contribution Amount:</strong> $500
-          </div>
-
-          <h4 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white mb-2">Benefits:</h4>
-          <ul class="list-none p-0 text-left text-gray-900 dark:text-white">
-            <li class="mb-2.5 leading-relaxed flex items-baseline">
-              🏆 <strong class="mr-1">Prominent Logo Placement:</strong> Sponsor's logo prominently displayed on all event
-              marketing materials, including banners, flyers, and digital media.
-            </li>
-            <li class="mb-2.5 leading-relaxed flex items-baseline">
-              🎙️ <strong class="mr-1">Verbal Recognition:</strong> Priority mention as a "Silver Sponsor" during event opening
-              and closing speeches.
-            </li>
-            <li class="mb-2.5 leading-relaxed flex items-baseline">
-              🌐 <strong class="mr-1">Website Recognition:</strong> Featured logo and hyperlink on the event website homepage
-              or sponsor page.
-            </li>
-            <li class="mb-2.5 leading-relaxed flex items-baseline">
-              📣 <strong class="mr-1">Social Media Shoutouts:</strong> Multiple mentions across the event's social media
-              channels before, during, and after the event.
-            </li>
-            <li class="mb-2.5 leading-relaxed flex items-baseline">
-              🎟️ <strong class="mr-1">Complimentary Tickets:</strong>
-              <span class="text-silver font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">Two</span> free ticket
-              to the event for the sponsor's representatives or guests.
-            </li>
-          </ul>
-        </div>
+          <thead>
+            <tr class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200">
+              <th class="px-5 py-4 font-semibold w-1/2">Benefit</th>
+              <th class="px-5 py-4 font-semibold text-center">
+                <span class="text-gold font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">Gold</span> DNA Sponsor
+                <div class="text-red-600 dark:text-red-400 font-bold mt-1">$1,500</div>
+              </th>
+              <th class="px-5 py-4 font-semibold text-center">
+                <span class="text-silver font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">Silver</span> RNA Sponsor
+                <div class="text-red-600 dark:text-red-400 font-bold mt-1">$500</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 dark:divide-gray-700 text-gray-900 dark:text-white">
+            <tr class="even:bg-gray-50 dark:even:bg-gray-800/50">
+              <td class="px-5 py-4">
+                <span class="mr-2">🏆</span><strong>Prominent Logo Placement</strong>
+                <p class="text-sm text-muted dark:text-slate-400 mt-1">
+                  Logo on all event marketing materials, including banners, flyers, and digital media.
+                </p>
+              </td>
+              <td class="px-5 py-4 text-center text-xl">✓</td>
+              <td class="px-5 py-4 text-center text-xl">✓</td>
+            </tr>
+            <tr class="even:bg-gray-50 dark:even:bg-gray-800/50">
+              <td class="px-5 py-4">
+                <span class="mr-2">🌐</span><strong>Website Recognition</strong>
+                <p class="text-sm text-muted dark:text-slate-400 mt-1">
+                  Featured logo and hyperlink on the event website homepage or sponsor page.
+                </p>
+              </td>
+              <td class="px-5 py-4 text-center text-xl">✓</td>
+              <td class="px-5 py-4 text-center text-xl">✓</td>
+            </tr>
+            <tr class="even:bg-gray-50 dark:even:bg-gray-800/50">
+              <td class="px-5 py-4">
+                <span class="mr-2">📣</span><strong>Social Media Shoutouts</strong>
+                <p class="text-sm text-muted dark:text-slate-400 mt-1">
+                  Multiple mentions across social media channels before, during, and after the event.
+                </p>
+              </td>
+              <td class="px-5 py-4 text-center text-xl">✓</td>
+              <td class="px-5 py-4 text-center text-xl">✓</td>
+            </tr>
+            <tr class="even:bg-gray-50 dark:even:bg-gray-800/50">
+              <td class="px-5 py-4">
+                <span class="mr-2">🎙️</span><strong>Verbal Recognition</strong>
+                <p class="text-sm text-muted dark:text-slate-400 mt-1">
+                  Priority mention during event opening and closing speeches.
+                </p>
+              </td>
+              <td class="px-5 py-4 text-center text-xl">✓</td>
+              <td class="px-5 py-4 text-center text-xl">✓</td>
+            </tr>
+            <tr class="even:bg-gray-50 dark:even:bg-gray-800/50">
+              <td class="px-5 py-4">
+                <span class="mr-2">🎰</span><strong>Raffle Table Recognition</strong>
+                <p class="text-sm text-muted dark:text-slate-400 mt-1">
+                  Company name and logo displayed at the raffle table throughout the event.
+                </p>
+              </td>
+              <td class="px-5 py-4 text-center text-xl">✓</td>
+              <td class="px-5 py-4 text-center text-xl">✓</td>
+            </tr>
+            <tr class="even:bg-gray-50 dark:even:bg-gray-800/50">
+              <td class="px-5 py-4">
+                <span class="mr-2">🎙️</span><strong>Sponsor Spotlight</strong>
+                <p class="text-sm text-muted dark:text-slate-400 mt-1">
+                  60-second self-introduction at the mic to share your organization's work with attendees.
+                </p>
+              </td>
+              <td class="px-5 py-4 text-center text-xl">✓</td>
+              <td class="px-5 py-4 text-center text-gray-300 dark:text-gray-600 text-xl">—</td>
+            </tr>
+            <tr class="even:bg-gray-50 dark:even:bg-gray-800/50">
+              <td class="px-5 py-4">
+                <span class="mr-2">🎁</span><strong>Named Raffle Category</strong>
+                <p class="text-sm text-muted dark:text-slate-400 mt-1">
+                  Sponsor's name featured as a prize category at the event raffle (e.g., "[Company] Prize Basket").
+                </p>
+              </td>
+              <td class="px-5 py-4 text-center text-xl">✓</td>
+              <td class="px-5 py-4 text-center text-gray-300 dark:text-gray-600 text-xl">—</td>
+            </tr>
+            <tr class="even:bg-gray-50 dark:even:bg-gray-800/50">
+              <td class="px-5 py-4">
+                <span class="mr-2">🎟️</span><strong>Complimentary Tickets</strong>
+              </td>
+              <td class="px-5 py-4 text-center font-semibold">
+                <span class="text-gold font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">4</span> tickets
+              </td>
+              <td class="px-5 py-4 text-center font-semibold">
+                <span class="text-silver font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">2</span> tickets
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
