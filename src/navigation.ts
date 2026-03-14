@@ -37,6 +37,10 @@ export const headerData = {
           text: 'Partner Communities',
           href: getPermalink('/resources/partner-communities'),
         },
+        {
+          text: 'Return To Work',
+          href: getPermalink('/resources/return-to-workforce'),
+        },
       ],
     },
     {
