@@ -200,7 +200,7 @@ The Web Page committee manages the organization's website to share group informa
 ## Social Media
 
 - **Slack:** [boston-women-bioinfo](https://boston-women-bioinfo.slack.com)
-- **Email:** [Bostonwomeninbioinformatics@gmail.com](mailto:Bostonwomeninbioinformatics@gmail.com)
+- **Email:** [communications@boston-wib.org](mailto:communications@boston-wib.org)
 - **LinkedIn:** [Boston-area Women in Bioinformatics](https://www.linkedin.com/company/boston-women-in-bioinformatics)
 - **Lu.ma:** [Boston Women in Bioinformatics](https://luma.com/bwib)
 - **Location:** Boston Area, Massachusetts

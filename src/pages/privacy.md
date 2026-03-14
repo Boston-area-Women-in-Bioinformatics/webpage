@@ -59,7 +59,7 @@ The Boston Women in Bioinformatics will retain your personal data only for as lo
 
 ## 5. Delete Your Personal Data
 
-You have the right to delete or request that we assist in correcting inaccuracies or deleting the personal data that we have collected about you by contacting us at [Bostonwomeninbioinformatics@gmail.com](mailto:Bostonwomeninbioinformatics@gmail.com).
+You have the right to delete or request that we assist in correcting inaccuracies or deleting the personal data that we have collected about you by contacting us at [communications@boston-wib.org](mailto:communications@boston-wib.org).
 
 You may also:
 
@@ -93,4 +93,4 @@ We may update this Privacy Policy periodically. We encourage you to review this 
 
 If you have any questions about this Privacy Policy, you can contact us:
 
-- By email: [Bostonwomeninbioinformatics@gmail.com](mailto:Bostonwomeninbioinformatics@gmail.com)
+- By email: [communications@boston-wib.org](mailto:communications@boston-wib.org)
