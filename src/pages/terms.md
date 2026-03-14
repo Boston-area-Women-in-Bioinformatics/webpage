@@ -65,4 +65,4 @@ We reserve the right, at our sole discretion, to modify or replace these Terms a
 
 If you have any questions about these Terms and Conditions, you can contact us:
 
-- By email: [Bostonwomeninbioinformatics@gmail.com](mailto:Bostonwomeninbioinformatics@gmail.com)
+- By email: [communications@boston-wib.org](mailto:communications@boston-wib.org)

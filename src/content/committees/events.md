@@ -32,4 +32,4 @@ Check our [events calendar](https://luma.com/bwib) for the latest information on
 
 ## Get Involved
 
-Interested in helping organize events or have ideas for future gatherings? [We'd love to hear from you!](mailto:Bostonwomeninbioinformatics@gmail.com)
+Interested in helping organize events or have ideas for future gatherings? [We'd love to hear from you!](mailto:communications@boston-wib.org)
