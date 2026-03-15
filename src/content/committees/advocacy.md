@@ -4,8 +4,8 @@ title: 'Advocacy'
 description: 'Advances equity and inclusion within the field of bioinformatics by identifying systemic challenges and promoting data-driven strategies.'
 icon: 'tabler:speakerphone'
 chairs:
-  - 'Katie Hughes'
   - 'Amulya Shastry'
+  - 'Viveka Patil'
 members: []
 ---
 

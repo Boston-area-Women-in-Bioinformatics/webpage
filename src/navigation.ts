@@ -37,6 +37,10 @@ export const headerData = {
           text: 'Partner Communities',
           href: getPermalink('/resources/partner-communities'),
         },
+        {
+          text: 'Return To Work',
+          href: 'https://bwib-return-to-workforce.netlify.app',
+        },
       ],
     },
     {
