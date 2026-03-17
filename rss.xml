@@ -1,4 +1,91 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Biobank Intro Series: UK Biobank Observational Data (Part I)</title><link>https://boston-wib.org/blog/biobank-intro-series/03-ukb-observational-data-partI</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/03-ukb-observational-data-partI</guid><pubDate>Tue, 10 Mar 2026 05:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/ukbShowcaseGraphic.png&quot; alt=&quot;Papers tell you WHAT was used. Showcase tells you what&apos;s AVAILABLE NOW.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Biobank Intro Series: UK Biobank Observational Data (Part II)</title><link>https://boston-wib.org/blog/biobank-intro-series/03-ukb-observational-data-partII</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/03-ukb-observational-data-partII</guid><pubDate>Mon, 16 Mar 2026 05:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/ukb_fieldid_scent.png&quot; alt=&quot;Cat following wafts of fresh kibble onto a table. The scent trails are labeled with UK Biobank Field IDs.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Loading phenotype data in the UK Biobank RAP (Research Analysis Platform) environment&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;When you get approved for a UK Biobank project you are gifted a VIP pass to a secure data wonderland called the UK Biobank Research Analysis Platform (UKB RAP). The UKB RAP is a cloud-based venue (built on DNAnexus infrastructure) where you can spin up coding environments (JupyterLab, RStudio, take your pick) and analyze data without the nightmare of downloading 500,000+ participant records to your poor laptop.&lt;/p&gt;
+&lt;p&gt;I enjoy working in JupyterLab, but the concepts transfer regardless of your preferred environment. Opening JupyterLab on UKB RAP is straightforward: click &amp;quot;Tools&amp;quot; in the navigation menu and hit the teal &amp;quot;+ New JupyterLab&amp;quot; button. This opens a setup GUI where you can configure your compute specs. For most analyses, the defaults work just fine (see my tips on hardware in a &lt;a href=&quot;../02-hardwareonukbandaou&quot;&gt;previous post&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;In this post, we&amp;#39;ll focus on the phenotype data. Here I define phenotype data as essentially anything that is not genetic data. This includes not just questionnaire responses, physical measurements, and hospital records, but proteomics data as well.&lt;/p&gt;
+&lt;p&gt;To query the data, you need a fully qualified dataset reference combining your project ID (your workspace on RAP) and your dispensed dataset ID (the UK Biobank data object provisioned to that project). Below I have cheatcodes for finding these values in python and BASH.&lt;/p&gt;
+&lt;p&gt;python:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-{python}&quot;&gt;import dxpy
+import glob
+
+# Get your dataset identifier
+dispensed_dataset_id = dxpy.find_one_data_object(
+    typename=&amp;#39;Dataset&amp;#39;,
+    name=&amp;#39;app*.dataset&amp;#39;,
+    folder=&amp;#39;/&amp;#39;,
+    name_mode=&amp;#39;glob&amp;#39;
+)[&amp;#39;id&amp;#39;]
+
+project_id = dxpy.find_one_project()[&amp;quot;id&amp;quot;]
+dataset = f&amp;quot;{project_id}:{dispensed_dataset_id}&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;bash:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-{bash}&quot;&gt;# Get project ID
+project_id=$(dx env --json | jq -r &amp;#39;.project&amp;#39;)
+
+# Get dispensed dataset ID
+dispensed_dataset_id=$(dx find data --name &amp;quot;app*.dataset&amp;quot; --brief)
+
+# Combine them
+dataset=&amp;quot;${project_id}:${dispensed_dataset_id}&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With that in hand, let&amp;#39;s get some data.&lt;/p&gt;
+&lt;h2&gt;Step 1: Find the field names for your data&lt;/h2&gt;
+&lt;figure class=&quot;my-8 !max-w-none&quot;&gt;
+&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/notebook_v_commandline.png&quot; alt=&quot;Cat peering over a table in delight at two plates of kibble: one labeled &apos;Jupyter Notebook&apos; and the other labeled &apos;Command Line&apos;.&quot; /&gt;
+&lt;figcaption class=&quot;text-center text-sm opacity-80 mt-2&quot;&gt;
+   &lt;em&gt;Two bowls, same feast: whether you import via Jupyter or the command line, you’re still getting the data you want.&lt;/em&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;With a list of field IDs you gathered from the UKB Showcase, your next step is to figure out their exact field names on the RAP (which aren&amp;#39;t always identical to what the Showcase shows), and then extract the actual participant data for those fields. There are two different methods for this.&lt;/p&gt;
+&lt;h3&gt;Quick lookup via terminal&lt;/h3&gt;
+&lt;p&gt;When I&amp;#39;m in &amp;quot;just get it working&amp;quot; mode (which, let&amp;#39;s be honest, is most of research), I found that the command-line approach is faster for quick lookups. I simply list all the field names in the terminal and grep for the ones I need.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;dx extract_dataset ${dataset}  --entities participant --list-fields | grep &amp;quot;22420&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Dictionary approach&lt;/h3&gt;
+&lt;p&gt;The UKB RAP documentation will steer you toward extracting dictionary files (&lt;code&gt;*.dataset.data_dictionary.csv &lt;/code&gt;), which map field IDs to field names, describe data coding schemes, and generally serve as the Rosetta Stone for the dataset. This approach is considered more &amp;quot;proper&amp;quot;, and for good reason: it&amp;#39;s reproducible, documentable, and plays nicely with notebooks.&lt;/p&gt;
+&lt;p&gt;The dictionary approach requires more setup: extracting CSVs, loading them into pandas, and writing filter logic. When you&amp;#39;re exploring or need a quick answer, I recommend the quick and dirty command-line approach. That said, there are times when the dictionaries are nice to have. They make your code easier to comprehend and also are useful for making sense of these data tables after extraction.&lt;/p&gt;
+&lt;h2&gt;Step 2: Extract the dataset&lt;/h2&gt;
+&lt;p&gt;To extract the actual dataset values, use DNAnexus&amp;#39; &lt;code&gt;extract_dataset&lt;/code&gt; command with the &lt;code&gt;--fields&lt;/code&gt; flag set to the relevant field names:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;dx extract_dataset &amp;lt;project_id&amp;gt;:&amp;lt;dispensed_dataset_id&amp;gt; \
+  --fields participant.eid,participant.p22420_i2,participant.p22420_i3 \
+  --delimiter &amp;quot;,&amp;quot; \
+  --output lvef_pheno.csv
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Step 3: Translate the dataset values&lt;/h2&gt;
+&lt;p&gt;The data you just extracted is often coded, meaning the raw values or numbers are not immediately interpretable.. Therefore, to make human analysis easier, it is sometimes helpful to translate these code to their definition.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example: Filtering cardiomyopathy diagnoses from ICD10 codes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Working on a project to understand the genetic architecture of cardiomyopathy, I needed to identify participants with cardiomyopathy diagnoses. The Showcase told me International Classification of Disease version 10 (ICD-10) diagnosis codes were Field ID 41270.&lt;/p&gt;
+&lt;p&gt;I extracted the field names easily enough with &lt;code&gt;dx&lt;/code&gt; commands. However, the raw data returned value codes like &amp;quot;I42&amp;quot; or &amp;quot;I420&amp;quot;, meaningless without context.&lt;/p&gt;
+&lt;p&gt;Fortunately, the UKB Showcase maintains various data coding tables for each of their coded data fields. Specifically ICD-10 diagnosis codes are given coding 19 in UKB. Similarly ICD9 codes are found in coding 87.&lt;/p&gt;
+&lt;p&gt;You could also extract all the coding dictionaries once and have them ready as searchable dataframes. For example,&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;import subprocess
+import pandas as pd
+
+# Extract dictionaries once with -ddd flag
+cmd = [&amp;quot;dx&amp;quot;, &amp;quot;extract_dataset&amp;quot;, dataset, &amp;quot;-ddd&amp;quot;, &amp;quot;--delimiter&amp;quot;, &amp;quot;,&amp;quot;]
+subprocess.check_call(cmd)
+
+# Load the codings dictionary
+codings_df = pd.read_csv(glob.glob(&amp;quot;*.codings.csv&amp;quot;)[0])
+
+# Find which ICD10 codes mean &amp;quot;cardiomyopathy&amp;quot;
+icd10_coding = codings_df[codings_df[&amp;#39;coding_name&amp;#39;] == &amp;quot;data_coding_19&amp;quot;]
+cardiomyopathy_codes = icd10_coding[
+    icd10_coding[&amp;#39;meaning&amp;#39;].str.contains(&amp;#39;cardiomyopathy&amp;#39;, case=False)
+][[&amp;quot;meaning&amp;quot;, &amp;quot;code&amp;quot;]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now you can filter your extracted data to only participants with those specific codes, without tab-switching back to the Showcase every time you need to decode something.&lt;/p&gt;
+&lt;h2&gt;The Gotchas Nobody Tells You&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Authentication weirdness:&lt;/strong&gt; Sometimes &lt;code&gt;dx&lt;/code&gt; commands work fine in terminal but throw mysterious errors when called through &lt;code&gt;subprocess&lt;/code&gt; in Jupyter. I&amp;#39;ve never pinned down exactly why. It possible that the Jupyter notebook does not inherit the same environment variables that your interactive terminal session has. Either way, when you hit this, just run the command in terminal instead.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Spark is not optional for big extractions:&lt;/strong&gt; If you&amp;#39;re pulling more than ~30 fields, you&amp;#39;ll need a Spark cluster. The &lt;a href=&quot;https://dnanexus.gitbook.io/uk-biobank-rap/working-on-the-research-analysis-platform/accessing-data/accessing-phenotypic-data&quot;&gt;UKB RAP documentation&lt;/a&gt; covers this, but fair warning: Spark uses lazy evaluation, which means errors can show up way downstream from where they actually originated. Fun times.&lt;/p&gt;
+&lt;h2&gt;Wrapping Up&lt;/h2&gt;
+&lt;p&gt;That&amp;#39;s the full pipeline: find your field names, extract the data, and decode any coded values. Once you&amp;#39;ve done it a couple of times, the whole process takes minutes.&lt;/p&gt;
+&lt;p&gt;In the next post, we&amp;#39;ll look at how to do the same thing on the All of Us Researcher Workbench.&lt;/p&gt;
+</content:encoded><category>biobank</category><category>sql</category><category>ukb-rap</category><category>ehr-data</category><category>phenotype-data</category></item><item><title>Biobank Intro Series: UK Biobank Observational Data (Part I)</title><link>https://boston-wib.org/blog/biobank-intro-series/03-ukb-observational-data-partI</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/03-ukb-observational-data-partI</guid><pubDate>Tue, 10 Mar 2026 05:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/ukbShowcaseGraphic.png&quot; alt=&quot;Papers tell you WHAT was used. Showcase tells you what&apos;s AVAILABLE NOW.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;An ode to the UK Biobank Showcase&lt;/em&gt;&lt;/p&gt;
 
