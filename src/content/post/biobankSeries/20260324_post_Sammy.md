@@ -6,7 +6,7 @@ slug: blog/biobank-intro-series/04-aou-observational-data-partI
 image: /blog_images/biobank1/source_to_standard_omop.png
 imageAlt: 'Flowchart showing hospital data being extracted, transformed via OHDSI vocabularies, and loaded into OMOP relational tables.'
 imageDescription: 'When you finally know which field IDs you need and suddenly the whole dataset smells delicious.'
-imagePosition: top
+imagePosition: 'center'
 hideHeroImage: true
 author: Samantha J. Klasfeld, Ph.D.
 authorUrl: 'https://linkedin.com/in/samantha-klasfeld'
