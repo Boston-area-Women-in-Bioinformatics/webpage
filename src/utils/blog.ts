@@ -327,6 +327,7 @@ const fetchSeriesMetadata = async (): Promise<
       image?: string;
       imageAlt?: string;
       imageFit?: 'cover' | 'contain';
+      defaultOrder?: 'asc' | 'desc';
     }
   >
 > => {
@@ -340,6 +341,7 @@ const fetchSeriesMetadata = async (): Promise<
       image?: string;
       imageAlt?: string;
       imageFit?: 'cover' | 'contain';
+      defaultOrder?: 'asc' | 'desc';
     }
   > = {};
   entries.forEach((entry) => {
@@ -351,6 +353,7 @@ const fetchSeriesMetadata = async (): Promise<
       image: entry.data.image,
       imageAlt: entry.data.imageAlt,
       imageFit: entry.data.imageFit,
+      defaultOrder: entry.data.defaultOrder,
     };
   });
   return map;

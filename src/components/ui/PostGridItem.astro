@@ -38,13 +38,20 @@ const link = 'url' in post && post.url ? post.url : config?.post?.isEnabled ? ge
 // Use imageAlt if provided, otherwise fall back to title for accessibility
 const altText = post.imageAlt || post.title;
 
-// Determine object position based on imagePosition field
-const getObjectPosition = (position?: 'top' | 'center' | 'bottom') => {
+// Determine object fit and position based on imagePosition field
+const isContain = post.imagePosition === 'contain';
+const objectFit = isContain ? 'object-contain' : 'object-cover';
+const getObjectPosition = (position?: 'top' | 'center' | 'bottom' | 'left' | 'right' | 'contain') => {
   switch (position) {
     case 'top':
       return 'top';
     case 'bottom':
       return 'bottom';
+    case 'left':
+      return 'left';
+    case 'right':
+      return 'right';
+    case 'contain':
     case 'center':
     default:
       return 'center';
@@ -65,7 +72,7 @@ const objectPosition = getObjectPosition(post.imagePosition);
             {isRemoteImage ? (
               <img
                 src={image}
-                class="w-full rounded shadow-lg bg-white object-cover"
+                class={`w-full rounded shadow-lg bg-white ${objectFit}`}
                 style={`object-position: ${objectPosition};`}
                 alt={altText}
                 width="400"
@@ -76,7 +83,7 @@ const objectPosition = getObjectPosition(post.imagePosition);
             ) : (
               <Image
                 src={image}
-                class="w-full rounded shadow-lg bg-white object-cover"
+                class={`w-full rounded shadow-lg bg-white ${objectFit}`}
                 style={`object-position: ${objectPosition};`}
                 widths={[400, 900]}
                 width={400}
@@ -92,7 +99,7 @@ const objectPosition = getObjectPosition(post.imagePosition);
         ) : isRemoteImage ? (
           <img
             src={image}
-            class="w-full rounded shadow-lg bg-white object-cover"
+            class={`w-full rounded shadow-lg bg-white ${objectFit}`}
             style={`object-position: ${objectPosition};`}
             alt={altText}
             width="400"
@@ -103,7 +110,7 @@ const objectPosition = getObjectPosition(post.imagePosition);
         ) : (
           <Image
             src={image}
-            class="w-full rounded shadow-lg bg-white object-cover"
+            class={`w-full rounded shadow-lg bg-white ${objectFit}`}
             style={`object-position: ${objectPosition};`}
             widths={[400, 900]}
             width={400}
