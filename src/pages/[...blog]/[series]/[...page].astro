@@ -15,7 +15,10 @@ export const getStaticPaths = (async () => {
 
 const { series, posts, categorySlug } = Astro.props;
 const defaultOrder: 'asc' | 'desc' = series.defaultOrder ?? 'desc';
-const sortedPosts = defaultOrder === 'asc' ? [...posts].sort((a, b) => new Date(a.publishDate).getTime() - new Date(b.publishDate).getTime()) : [...posts].sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
+const sortedPosts =
+  defaultOrder === 'asc'
+    ? [...posts].sort((a, b) => new Date(a.publishDate).getTime() - new Date(b.publishDate).getTime())
+    : [...posts].sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
 
 const backLink =
   categorySlug === 'podcast'
