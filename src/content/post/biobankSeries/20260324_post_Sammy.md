@@ -3,10 +3,10 @@ publishDate: 2026-03-24T00:00:00-04:00
 title: 'Biobank Intro Series: All of Us Observational Data (Part I)'
 excerpt: 'Finding concept IDs for the All of Us Researcher Workbench'
 slug: blog/biobank-intro-series/04-aou-observational-data-partI
-image: /blog_images/biobank1/source_to_standard_omop.png
+image: /blog_images/biobank1/source_to_standard_omop_square.png
 imageAlt: 'Flowchart showing hospital data being extracted, transformed via OHDSI vocabularies, and loaded into OMOP relational tables.'
 imageDescription: 'When you finally know which field IDs you need and suddenly the whole dataset smells delicious.'
-imagePosition: 'center'
+imagePosition: 'contain'
 hideHeroImage: true
 author: Samantha J. Klasfeld, Ph.D.
 authorUrl: 'https://linkedin.com/in/samantha-klasfeld'
@@ -22,7 +22,7 @@ tags:
 draft: false
 seo:
   image:
-    src: '/blog_images/biobank1/source_to_standard_omop.png'
+    src: '/blog_images/biobank1/source_to_standard_omop_square.png'
     alt: 'Flowchart showing hospital data being extracted, transformed via OHDSI vocabularies, and loaded into OMOP relational tables.'
 ---
 
