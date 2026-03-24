@@ -1,4 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>A Coffee with CompBio: Claude Code for Bioinformatics</title><link>https://boston-wib.org/blog/coffeewithcompbio/s2-e3</link><guid isPermaLink="true">https://boston-wib.org/blog/coffeewithcompbio/s2-e3</guid><pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/coffeeWithCompBio-logo2.png&quot; alt=&quot;Coffee with CompBio Podcast Logo: Four painted women under that podcast title&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Biobank Intro Series: All of Us Observational Data (Part I)</title><link>https://boston-wib.org/blog/biobank-intro-series/04-aou-observational-data-partI</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/04-aou-observational-data-partI</guid><pubDate>Tue, 24 Mar 2026 04:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/source_to_standard_omop_square.png&quot; alt=&quot;Flowchart showing hospital data being extracted, transformed via OHDSI vocabularies, and loaded into OMOP relational tables.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Finding concept IDs for the All of Us Researcher Workbench&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;All of Us has returned to the chat (she made her first appearance in the &lt;a href=&quot;../02-hardwareOnUKBandAoU&quot;&gt;hardware post&lt;/a&gt;) and she&amp;#39;s bringing noble intentions and absolutely feral data provenance. UK Biobank is a well-organized remarkable resource, but with &amp;gt;93% European ancestry, it was never designed to represent global genetic diversity. On the other hand, All of Us was explicitly built to oversample underrepresented populations. &lt;a href=&quot;https://www.researchallofus.org/data-tools/data-snapshots/&quot;&gt;With almost 50% of participants identifying as a racial or ethnic minority&lt;/a&gt;, &amp;quot;All of Us&amp;quot; isn&amp;#39;t just a pun. It&amp;#39;s a mission statement. (I wrote more about why that matters &lt;a href=&quot;https://boston-wib.org/blog/deepdive/deigenomics&quot;&gt;here&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;That ambition comes with a data architecture to match. UK Biobank invited ~500,000 people to assessment centers, ran standardized measurements, and stored the results in a single curated dataset with clean field IDs. Even its hospital records flow from a single source: the UK&amp;#39;s publicly funded National Health Service (NHS). All of Us is working with a different reality entirely. It aggregates EHR records from 50+ independent US health systems, enrollment surveys, wearables data, and biosamples, and standardizes all of it after the fact using the OMOP-CDM (&lt;a href=&quot;https://ohdsi.github.io/CommonDataModel/cdm53.html&quot;&gt;Observational Medical Outcomes Partnership Common Data Model&lt;/a&gt;) developed by the Observational Health Data Sciences and Informatics (OHDSI) community. What gets recorded in any given participant&amp;#39;s file follows whatever combination of ICD, LOINC, CPT, or SNOMED their health system happened to use.&lt;/p&gt;
+&lt;p&gt;This is why the workflow feels different. Instead of searching a Showcase and grabbing a field ID, you&amp;#39;re navigating concept IDs, vocabulary mappings, and relational tables: the machinery the OMOP-CDM uses to impose order on that heterogeneity. Concept IDs are the key to unlocking most of what&amp;#39;s available, so let&amp;#39;s start there.&lt;/p&gt;
+&lt;figure class=&quot;my-8 !max-w-none&quot;&gt;
+&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/source_to_standard_omop.png&quot; alt=&quot;Flowchart showing the process of transforming hospital EHR data into OMOP format.&quot; class=&quot;block dark:hidden !max-w-none mx-auto w-full&quot; &gt;
+&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/source_to_standard_omop_dark.png&quot; alt=&quot;Flowchart showing the process of transforming hospital EHR data into OMOP format.&quot; class=&quot;hidden dark:block !max-w-none mx-auto w-full&quot;&gt;
+&lt;figcaption class=&quot;text-center text-sm opacity-80 mt-2&quot;&gt;
+   &lt;em&gt;Raw hospital data is transformed into standardized OHDSI vocabularies and loaded into OMOP-CDM relational tables.&lt;/em&gt;
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2&gt;Finding Concept IDs: Three Approaches&lt;/h2&gt;
+&lt;p&gt;Similar to Field IDs, a concept ID is just a number until you know what it maps to. These three tools each give you a different way to look that up, depending on how much context you need.&lt;/p&gt;
+&lt;h3&gt;1. All of Us Data Browser (fastest for quick lookups)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://databrowser.researchallofus.org&quot;&gt;All of Us Data Browser&lt;/a&gt;&lt;/strong&gt; shows what concepts exist and how often they&amp;#39;re used. Search &amp;quot;systolic blood pressure&amp;quot; and you&amp;#39;ll see results under &amp;quot;Conditions&amp;quot; and &amp;quot;Labs &amp;amp; Measurements&amp;quot; - it can be recorded multiple ways.&lt;/p&gt;
+&lt;p&gt;Click a category to see participant counts and value distributions. For example, 225,000+ participants have concept ID 3004249 (Systolic blood pressure) with source code LOINC 8480-6.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;When to use:&lt;/strong&gt; Quick lookups, checking data availability, getting participant counts.&lt;/p&gt;
+&lt;h3&gt;2. OHDSI Athena Vocabulary (richer metadata)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://athena.ohdsi.org/&quot;&gt;OHDSI Athena&lt;/a&gt;&lt;/strong&gt; provides concept context such as hierarchies, standard vs. non-standard mappings, and relationships. Searching for &amp;quot;systolic blood pressure&amp;quot; returns about 78,865 items at the time of writing. However, if you look up OMOP-CDM concept ID 3004249 (which you found with the All of Us Data Browser), you&amp;#39;ll see its vocabulary source (LOINC), domain (Measurement), and related concepts.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;When to use:&lt;/strong&gt; Detailed concept information, exploring relationships, understanding vocabulary mappings.&lt;/p&gt;
+&lt;h3&gt;3. Direct SQL queries (most flexible)&lt;/h3&gt;
+&lt;p&gt;Query the &lt;code&gt;CONCEPT&lt;/code&gt; table directly to translate medical concepts into IDs:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;import pandas as pd
+import os
+
+# Use environmental variable for the Controlled Tier
+CDR = os.environ[&amp;#39;WORKSPACE_CDR&amp;#39;]
+
+# Search by name
+concept_query = f&amp;#39;&amp;#39;&amp;#39;SELECT *
+    FROM `{CDR}.concept`
+    WHERE LOWER(concept_name) LIKE &amp;#39;%systolic blood pressure%&amp;#39;
+    &amp;#39;&amp;#39;&amp;#39;
+sbp_query = pd.io.gbq.read_gbq(concept_query, dialect=&amp;#39;standard&amp;#39;)
+
+# Or query a known concept ID directly
+concept_id_query = pd.io.gbq.read_gbq(f&amp;#39;SELECT * FROM `{CDR}.concept` WHERE concept_id = 3004249&amp;#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Use &lt;code&gt;CONCEPT_RELATIONSHIP&lt;/code&gt; to explore how concepts relate - for example, which ICD-10 codes map to SNOMED concept 3004249.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;When to use:&lt;/strong&gt; Complex relationship queries, programmatic vocabulary exploration.&lt;/p&gt;
+&lt;h2&gt;What&amp;#39;s Next&lt;/h2&gt;
+&lt;p&gt;Finding concept IDs is the first step, but you need to navigate the relational tables to actually pull observational data. In Part II, we&amp;#39;ll get into the messier, more interesting part.&lt;/p&gt;
+</content:encoded><category>biobank</category><category>all-of-us</category><category>omop</category><category>athena</category><category>ehr-data</category><category>observational-data</category></item><item><title>A Coffee with CompBio: Claude Code for Bioinformatics</title><link>https://boston-wib.org/blog/coffeewithcompbio/s2-e3</link><guid isPermaLink="true">https://boston-wib.org/blog/coffeewithcompbio/s2-e3</guid><pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/coffeeWithCompBio-logo2.png&quot; alt=&quot;Coffee with CompBio Podcast Logo: Four painted women under that podcast title&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;Can Claude Code handle real bioinformatics? Saba and Amulya put it to the test.&lt;/em&gt;&lt;/p&gt;
 
