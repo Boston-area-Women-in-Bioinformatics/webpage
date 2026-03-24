@@ -159,6 +159,7 @@ const seriesCollection = defineCollection({
     image: z.string().optional(),
     imageAlt: z.string().optional(),
     imageFit: z.enum(['cover', 'contain']).optional().default('cover'),
+    defaultOrder: z.enum(['asc', 'desc']).optional().default('desc'),
   }),
 });
 
