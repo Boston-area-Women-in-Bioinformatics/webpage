@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-02-24T00:00:00-04:00
+publishDate: 2026-03-24T00:00:00-04:00
 title: 'Biobank Intro Series: All of Us Observational Data (Part I)'
 excerpt: 'Finding concept IDs for the All of Us Researcher Workbench'
 slug: blog/biobank-intro-series/04-aou-observational-data-partI
