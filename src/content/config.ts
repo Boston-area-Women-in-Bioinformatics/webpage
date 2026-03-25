@@ -58,7 +58,7 @@ const postCollection = defineCollection({
     image: z.string().optional(),
     imageAlt: z.string().optional(),
     imageDescription: z.string().optional(),
-    imagePosition: z.enum(['top', 'center', 'bottom']).optional(),
+    imagePosition: z.enum(['top', 'center', 'bottom', 'left', 'right', 'contain']).optional(),
 
     category: z.string().optional(),
     series: z.string().optional(),
@@ -91,7 +91,7 @@ const newsletterCollection = defineCollection({
     image: z.string().optional(),
     imageAlt: z.string().optional(),
     imageDescription: z.string().optional(),
-    imagePosition: z.enum(['top', 'center', 'bottom']).optional(),
+    imagePosition: z.enum(['top', 'center', 'bottom', 'left', 'right', 'contain']).optional(),
     authors: z
       .array(
         z.object({
@@ -159,6 +159,7 @@ const seriesCollection = defineCollection({
     image: z.string().optional(),
     imageAlt: z.string().optional(),
     imageFit: z.enum(['cover', 'contain']).optional().default('cover'),
+    defaultOrder: z.enum(['asc', 'desc']).optional().default('desc'),
   }),
 });
 

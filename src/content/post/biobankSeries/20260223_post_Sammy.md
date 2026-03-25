@@ -5,7 +5,7 @@ excerpt: 'How to do biobank analysis without losing your mind'
 slug: blog/biobank-intro-series/01-biobank-iceberg
 image: /blog_images/biobank1/biobank_iceberg.png
 imageAlt: 'Iceberg diagram illustrating hidden complexities in biobank data: visible raw data above the waterline, and three categories of hidden challenges below: batch effects, population stratification, and inaccurate phenotype data.'
-imagePosition: top
+imagePosition: contain
 author: Samantha J. Klasfeld, Ph.D.
 authorUrl: 'https://linkedin.com/in/samantha-klasfeld'
 category: Tutorial

@@ -5,7 +5,7 @@ excerpt: 'An ode to the UK Biobank Showcase'
 slug: blog/biobank-intro-series/03-ukb-observational-data-partI
 image: /blog_images/biobank1/ukbShowcaseGraphic.png
 imageAlt: "Papers tell you WHAT was used. Showcase tells you what's AVAILABLE NOW."
-imagePosition: center
+imagePosition: contain
 hideHeroImage: false
 author: Samantha J. Klasfeld, Ph.D.
 authorUrl: 'https://linkedin.com/in/samantha-klasfeld'

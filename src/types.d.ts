@@ -17,7 +17,7 @@ export interface Newsletter {
   image?: ImageMetadata | string;
   imageAlt?: string;
   imageDescription?: string;
-  imagePosition?: 'top' | 'center' | 'bottom';
+  imagePosition?: 'top' | 'center' | 'bottom' | 'left' | 'right' | 'contain';
   authors?: PostAuthor[];
   metadata?: MetaData;
   draft?: boolean;
@@ -52,7 +52,7 @@ export interface Post {
   /** Image attribution/description (e.g., "Photo by Jane Doe on Unsplash") */
   imageDescription?: string;
   /** Image position for cropping (top, center, or bottom) */
-  imagePosition?: 'top' | 'center' | 'bottom';
+  imagePosition?: 'top' | 'center' | 'bottom' | 'left' | 'right' | 'contain';
   /** Hide the hero image from the top of the blog post */
   hideHeroImage?: boolean;
 
