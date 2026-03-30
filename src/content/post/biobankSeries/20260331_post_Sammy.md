@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-03-30T00:00:00-04:00
+publishDate: 2026-03-31T00:00:00-04:00
 title: 'Biobank Intro Series: All of Us Observational Data (Part II)'
 excerpt: 'Loading observational data in the All of Us Researcher Workbench'
 slug: blog/biobank-intro-series/04-aou-observational-data-partII
