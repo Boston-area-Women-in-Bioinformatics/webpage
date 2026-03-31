@@ -1,4 +1,190 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Biobank Intro Series: All of Us Observational Data (Part I)</title><link>https://boston-wib.org/blog/biobank-intro-series/04-aou-observational-data-partI</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/04-aou-observational-data-partI</guid><pubDate>Tue, 24 Mar 2026 04:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/source_to_standard_omop_square.png&quot; alt=&quot;Flowchart showing hospital data being extracted, transformed via OHDSI vocabularies, and loaded into OMOP relational tables.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Biobank Intro Series: All of Us Observational Data (Part II)</title><link>https://boston-wib.org/blog/biobank-intro-series/04-aou-observational-data-partII</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/04-aou-observational-data-partII</guid><pubDate>Tue, 31 Mar 2026 04:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/omop_table_relationships_basic.png&quot; alt=&quot;Diagram showing the four-step OMOP workflow: look up concept IDs, query a clinical table (e.g., measurement, observation), label values with concept names, and join with person_id to build a cohort table.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Loading observational data in the All of Us Researcher Workbench&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The UK has a single national health system, and it shows: one table, one field ID, a coding dictionary if you needed it. The US has hundreds of hospital systems, dozens of billing standards, and its data model matches this beloved chaotic energy. In All of Us, your data is spread across clinical tables, the coded values in those tables are translated via a separate concept table, and everything traces back to &lt;code&gt;person_id&lt;/code&gt;. More joins, more steps, but it&amp;#39;s just what a data model built on real EHR data looks like.&lt;/p&gt;
+&lt;p&gt;With your concept IDs in hand (&lt;a href=&quot;../05-aou-omop&quot;&gt;Part I&lt;/a&gt;), the workflow has three moving parts: knowing which clinical table holds your concept, joining to the &lt;code&gt;concept&lt;/code&gt; table to decode any coded values, and merging everything back to &lt;code&gt;person&lt;/code&gt; to build your cohort. More pieces than UKB, but engineered for the diverse US healthcare system.&lt;/p&gt;
+&lt;h2&gt;The OMOP-CDM Schema&lt;/h2&gt;
+&lt;p&gt;The full &lt;a href=&quot;https://ohdsi.github.io/CommonDataModel/cdm53.html&quot;&gt;OMOP CDM schema&lt;/a&gt; is worth bookmarking. It documents every available table and its fields. Clinical tables contain records of observed medical and clinical data, where each row represents a single clinical event. In my experience, most analyses only touch a handful of clinical tables:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;condition_occurrence&lt;/code&gt;: diagnoses observed by a provider or reported by a patient&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;measurement&lt;/code&gt;: lab values and test results (e.g., BMI, blood pressure)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;observation&lt;/code&gt;: clinical facts that cannot be measured with a standardized test, such as medical history, family history, and lifestyle choices&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;drug_exposure&lt;/code&gt;: medication records, useful for validating diagnoses or identifying undiagnosed conditions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;code&gt;person&lt;/code&gt; table is the anchor table of the schema. It holds one row per participant, and every clinical table links back to it via &lt;code&gt;person_id&lt;/code&gt;. Like clinical tables, it also uses &lt;code&gt;concept_id&lt;/code&gt; columns as foreign keys to the &lt;code&gt;concept&lt;/code&gt; table for decoding coded values.&lt;/p&gt;
+&lt;h3&gt;Query a Clinical Table&lt;/h3&gt;
+&lt;p&gt;The OMOP CDM tables live in Google BigQuery. The examples below use Python&amp;#39;s &lt;code&gt;pandas.read_gbq&lt;/code&gt; function, which takes a SQL string and returns a dataframe. R users can likely query them with the &lt;code&gt;bigrquery&lt;/code&gt; package. The examples assume the following setup:&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;Environment versions&lt;/summary&gt;
+Python 3.10.16, pandas 2.0.3, google-cloud-bigquery 2.34.4, CDR C2024Q3R9
+&lt;/details&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;import pandas as pd
+import os
+CDR = os.environ[&amp;#39;WORKSPACE_CDR&amp;#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In Part I, we found that systolic blood pressure maps to concept ID 3004249 in the &lt;code&gt;measurement&lt;/code&gt; table. Let&amp;#39;s use that as our worked example:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;sbp_query = f&amp;#39;&amp;#39;&amp;#39;
+    SELECT
+        measurement_id,
+        person_id,
+        measurement_concept_id,
+        measurement_type_concept_id,
+        measurement_date,
+        measurement_datetime,
+        value_as_number
+    FROM `{CDR}.measurement`
+    WHERE measurement_concept_id = 3004249&amp;#39;&amp;#39;&amp;#39;
+sbp_df = pd.io.gbq.read_gbq(sbp_query, dialect=&amp;#39;standard&amp;#39;)
+sbp_df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The SELECT statement exports these columns:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;measurement_id&lt;/strong&gt;: unique row identifier&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;person_id&lt;/strong&gt;: foreign key linking the &lt;code&gt;person&lt;/code&gt; and clinical tables&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;measurement_concept_id&lt;/strong&gt;: ID of the data field&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;measurement_type_concept_id&lt;/strong&gt;: ID of the data source (eg. EHR, Lab result, etc.)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;measurement_date&lt;/strong&gt; / &lt;strong&gt;measurement_datetime&lt;/strong&gt;: date and time of the record&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;value_as_number&lt;/strong&gt;: numeric systolic blood pressure value&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The WHERE clause limits the measurement table to this field. Since we will stack multiple measurement types into a single cohort table, human-readable labels for &lt;code&gt;measurement_concept_id&lt;/code&gt; and &lt;code&gt;measurement_type_concept_id&lt;/code&gt; are essential for distinguishing which rows belong to which measurement.&lt;/p&gt;
+&lt;h3&gt;Decode Coded Values via the &lt;code&gt;concept&lt;/code&gt; Table&lt;/h3&gt;
+&lt;p&gt;Coded fields across all OMOP tables store numeric IDs. To translate them, join to the &lt;code&gt;concept&lt;/code&gt; table. The query below decodes the systolic blood pressure measurements:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;sbp_query = f&amp;#39;&amp;#39;&amp;#39;SELECT
+  m.person_id,
+  mc.concept_name AS measurement_name,
+  mtc.concept_name AS measurement_type_name,
+  m.value_as_number,
+ROW_NUMBER() OVER (
+    PARTITION BY m.person_id, m.measurement_concept_id
+    ORDER BY m.measurement_date DESC, m.measurement_datetime DESC, m.measurement_id DESC
+  ) AS recency_rank
+FROM
+  `{CDR}.measurement` m
+LEFT JOIN `{CDR}.concept` mc ON mc.concept_id = m.measurement_concept_id
+LEFT JOIN `{CDR}.concept` mtc ON mtc.concept_id = m.measurement_type_concept_id
+WHERE measurement_concept_id = 3004249&amp;#39;&amp;#39;&amp;#39;
+pd.io.gbq.read_gbq(sbp_query, dialect=&amp;#39;standard&amp;#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This JOIN pattern repeats throughout OMOP and works the same way for any coded field across any clinical table, including the &lt;code&gt;person&lt;/code&gt; table. The query below decodes gender values:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;gender_query = f&amp;#39;&amp;#39;&amp;#39;
+  SELECT
+    person.person_id,
+    pgc.concept_name as gender,
+    person.gender_source_value,
+    pgsc.concept_name as gender_source_concept_name
+  FROM `{CDR}.person` person
+  LEFT JOIN `{CDR}.concept` pgc ON pgc.concept_id = person.gender_concept_id
+  LEFT JOIN `{CDR}.concept` pgsc ON pgsc.concept_id = person.gender_source_concept_id
+&amp;#39;&amp;#39;&amp;#39;
+gender_df = pd.io.gbq.read_gbq(gender_query, dialect=&amp;#39;standard&amp;#39;)
+gender_df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;gender_source_value&lt;/code&gt; column is the shortcut that feels right but isn&amp;#39;t. It contains raw, unstandardized values from the original data source, think of it as the &amp;quot;close enough&amp;quot; column. For any real analysis, always use the decoded &lt;code&gt;gender&lt;/code&gt; column obtained through the &lt;code&gt;concept&lt;/code&gt; join. Keep &lt;code&gt;gender_source_value&lt;/code&gt; around for reference, but DO NOT let it anywhere near your results.&lt;/p&gt;
+&lt;h3&gt;Merge Everything into a Cohort Table&lt;/h3&gt;
+&lt;p&gt;Each query produces its own dataframe. Merge them on &lt;code&gt;person_id&lt;/code&gt; to build your cohort:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;cohort_df = pd.merge(
+  gender_df,
+  sbp_df.sort_values(&amp;#39;recency_rank&amp;#39;).drop_duplicates(&amp;#39;person_id&amp;#39;),
+  on=&amp;#39;person_id&amp;#39;,
+  how=&amp;#39;left&amp;#39;
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This pattern scales to any study: find your concept IDs (&lt;a href=&quot;../05-aou-omop&quot;&gt;Part I&lt;/a&gt;), query the relevant OMOP tables, join to &lt;code&gt;concept&lt;/code&gt; for readable labels, and merge the resulting dataframes in pandas.&lt;/p&gt;
+&lt;p&gt;The pandas approach above is readable and easy to follow, but it loads each table into memory separately before joining. For larger cohorts, it&amp;#39;s more efficient to do the join entirely in SQL so BigQuery returns only the final result:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;cohort_query = f&amp;#39;&amp;#39;&amp;#39;
+-- Pull one row per participant from the person table
+SELECT
+  p.person_id,
+  pgc.concept_name AS gender,
+  p.gender_source_value AS raw_gender,
+  m.value_as_number AS sbp,
+  mtc.concept_name AS sbp_source
+FROM `{CDR}.person` p
+
+-- Decode gender_concept_id to a human-readable label
+LEFT JOIN `{CDR}.concept` pgc ON pgc.concept_id = p.gender_concept_id
+
+-- Get the most recent SBP measurement per person
+LEFT JOIN (
+  SELECT
+    person_id,
+    value_as_number,
+    measurement_concept_id,
+    measurement_type_concept_id,
+    ROW_NUMBER() OVER (
+      PARTITION BY person_id, measurement_concept_id
+      ORDER BY measurement_date DESC, measurement_datetime DESC, measurement_id DESC
+    ) AS recency_rank  -- 1 = most recent
+  FROM `{CDR}.measurement`
+  WHERE measurement_concept_id = 3004249  -- systolic blood pressure
+) m ON m.person_id = p.person_id AND m.recency_rank = 1
+
+-- Decode measurement_concept_id and measurement_type_concept_id
+LEFT JOIN `{CDR}.concept` mc ON mc.concept_id = m.measurement_concept_id
+LEFT JOIN `{CDR}.concept` mtc ON mtc.concept_id = m.measurement_type_concept_id
+&amp;#39;&amp;#39;&amp;#39;
+cohort_df = pd.io.gbq.read_gbq(cohort_query, dialect=&amp;#39;standard&amp;#39;)
+cohort_df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the above example, we are only exporting one measurement from the clinical table &lt;code&gt;measurement&lt;/code&gt;. However, you will likely need to export multiple data fields from a single clinical table. Unfortunately, the query grows linearly with the number of measurements. A UNION_ALL approach followed by a pivot will make your query a lot cleaner. The query below exports a cohort table with gender, systolic blood pressure, and BMI (Concept ID:3038553).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-{python}&quot;&gt;cohort_query = f&amp;#39;&amp;#39;&amp;#39;
+WITH measurements AS (
+  -- Stack all measurements into one table, keeping only the most recent per person
+  SELECT
+    m.person_id,
+    m.measurement_concept_id,
+    m.value_as_number,
+    mtc.concept_name AS measurement_source,
+    ROW_NUMBER() OVER (
+      PARTITION BY m.person_id, m.measurement_concept_id
+      ORDER BY m.measurement_date DESC, m.measurement_datetime DESC, m.measurement_id DESC
+    ) AS recency_rank
+  FROM `{CDR}.measurement` m
+  -- Decode measurement_type_concept_id to a human-readable label
+  LEFT JOIN `{CDR}.concept` mtc ON mtc.concept_id = m.measurement_type_concept_id
+  WHERE m.measurement_concept_id IN (
+    3004249,  -- systolic blood pressure
+    3038553   -- BMI
+  )
+)
+-- Pull one row per participant from the person table
+SELECT
+  p.person_id,
+  pgc.concept_name AS gender,
+  p.gender_source_value AS raw_gender,
+  -- Pivot each measurement into its own column
+  MAX(CASE WHEN measurement_concept_id = 3004249 THEN value_as_number END) AS sbp,
+  MAX(CASE WHEN measurement_concept_id = 3038553 THEN value_as_number END) AS bmi,
+  MAX(CASE WHEN measurement_concept_id = 3004249 THEN measurement_source END) AS sbp_source,
+  MAX(CASE WHEN measurement_concept_id = 3038553 THEN measurement_source END) AS bmi_source
+FROM `{CDR}.person` p
+
+-- Decode gender_concept_id to a human-readable label
+LEFT JOIN `{CDR}.concept` pgc ON pgc.concept_id = p.gender_concept_id
+
+-- Join the pivoted measurements
+LEFT JOIN measurements m ON m.person_id = p.person_id AND m.recency_rank = 1
+GROUP BY p.person_id, pgc.concept_name, p.gender_source_value
+&amp;#39;&amp;#39;&amp;#39;
+cohort_df = pd.io.gbq.read_gbq(cohort_query, dialect=&amp;#39;standard&amp;#39;)
+cohort_df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Cohort and Dataset Builders&lt;/h2&gt;
+&lt;figure class=&quot;my-8 !max-w-none&quot;&gt;
+&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/aou_observation_dataset_tools.png&quot; alt=&quot;Three illustrated scenes representing All of Us data tools: a meal kit for Cohort and Dataset Builders, a stocked pantry for OMOP SQL access, and a vegetable garden for CDR directory files.&quot; class=&quot;!max-w-none mx-auto w-full&quot; &gt;
+&lt;figcaption class=&quot;text-center text-sm opacity-80 mt-2&quot;&gt;
+   &lt;em&gt;Tools for building datasets in All of Us. Cohort and dataset builders are easy-to-use tools but they are limited similar to a meal kit box. OMOP CDM SQL queries are flexible but more complex, like cooking from a fully stocked pantry. The CDR and other external data sources expand available data but are separate, like ingredients from an accessible garden. Image generated by ChatGPT and text modified by the author.&lt;/em&gt;
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;If you just scrolled past three SQL blocks and felt your eyes glaze over, good news: there&amp;#39;s a meal kit version. The AoU &lt;a href=&quot;https://www.researchallofus.org/data-tools/workbench/&quot;&gt;Cohort and Dataset Builders&lt;/a&gt; are point-and-click tools that work in two steps: define your participant criteria (the Cohort Builder), then build your data features (the Dataset Builder). Easy to use, but limited — like a meal kit, you&amp;#39;re working with what&amp;#39;s in the box. I didn&amp;#39;t find them flexible enough for my project, but they&amp;#39;re great for exploration. And since they run SQL under the hood, you can click &amp;quot;Analyze&amp;quot; → &amp;quot;See Code Preview&amp;quot; to peek at the BigQuery query they generated. It&amp;#39;s a handy starting point if you want to adapt it yourself.&lt;/p&gt;
+&lt;h2&gt;Beyond OMOP-CDM: CDR Directory Files&lt;/h2&gt;
+&lt;p&gt;Beyond observational data, note that some pre-computed data in the Researcher Workbench lives outside of OMOP-CDM data tables. If you have access to the &lt;a href=&quot;https://support.researchallofus.org/hc/en-us/articles/29475233432212-Controlled-CDR-Directory&quot;&gt;Controlled CDR directory&lt;/a&gt;, you&amp;#39;ll find pre-computed genomic data (e.g., precomputed genetic ancestry, admixture estimates, relatedness, etc.) are made readily available in tab-delimited tables. These genetically-derived estimates can complement or replace the self-reported race and ethnicity values in the BigQuery tables.&lt;/p&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;That&amp;#39;s the full pipeline: find your concept IDs, query the right clinical table, label your coded values, and merge everything into a cohort. It takes more joins than UKB, but the logic is consistent once you&amp;#39;ve done it once. The next post moves from phenotype data into genotype data, where the complexity shifts from data models to file formats.&lt;/p&gt;
+</content:encoded><category>biobank</category><category>all-of-us</category><category>omop</category><category>athena</category><category>ehr-data</category><category>observational-data</category></item><item><title>Biobank Intro Series: All of Us Observational Data (Part I)</title><link>https://boston-wib.org/blog/biobank-intro-series/04-aou-observational-data-partI</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/04-aou-observational-data-partI</guid><pubDate>Tue, 24 Mar 2026 04:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/source_to_standard_omop_square.png&quot; alt=&quot;Flowchart showing hospital data being extracted, transformed via OHDSI vocabularies, and loaded into OMOP relational tables.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;Finding concept IDs for the All of Us Researcher Workbench&lt;/em&gt;&lt;/p&gt;
 
