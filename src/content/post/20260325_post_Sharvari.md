@@ -4,7 +4,7 @@ title: 'The Rite of Process'
 slug: blog/quicktake/wgs-analysis-poem
 excerpt: 'A Poem on Whole Genome Sequencing Analysis'
 image: /blog_images/2026-03-25-the_rite_of_process.png
-imageAlt: 'Image shows DNA and some sequencing.'
+imageAlt: 'DNA sequencing'
 imageDescription: 'Created by AI, modified by author.'
 imagePosition: center
 authors:
