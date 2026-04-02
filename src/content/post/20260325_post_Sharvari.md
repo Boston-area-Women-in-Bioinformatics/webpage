@@ -1,10 +1,11 @@
 ---
-publishDate: 2026-03-25T15:00:00-04:00
+publishDate: 2026-04-02T10:00:00-04:00
 title: 'The Rite of Process'
 slug: blog/quicktake/wgs-analysis-poem
 excerpt: 'A Poem on Whole Genome Sequencing Analysis'
 image: /blog_images/2026-03-25-the_rite_of_process.png
-imageAlt: 'Created by AI, modified by author.'
+imageAlt: 'Image shows DNA and some sequencing.'
+imageDescription: 'Created by AI, modified by author.'
 imagePosition: center
 authors:
   - name: Sharvari Narendra
@@ -116,4 +117,3 @@ if only to leave you
 until you become a statistic mentioned in passing,
 
 in the endless cold and dark.
-
