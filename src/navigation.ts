@@ -13,6 +13,10 @@ export const headerData = {
           href: getPermalink('/about'),
         },
         {
+          text: 'Board',
+          href: getPermalink('/about/board'),
+        },
+        {
           text: '2025 Annual Report',
           href: getPermalink('/about/annual-report-2025'),
         },
