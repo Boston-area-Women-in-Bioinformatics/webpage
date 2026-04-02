@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Biobank Intro Series: All of Us Observational Data (Part II)</title><link>https://boston-wib.org/blog/biobank-intro-series/04-aou-observational-data-partII</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/04-aou-observational-data-partII</guid><pubDate>Tue, 31 Mar 2026 04:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/omop_table_relationships_basic.png&quot; alt=&quot;Diagram showing the four-step OMOP workflow: look up concept IDs, query a clinical table (e.g., measurement, observation), label values with concept names, and join with person_id to build a cohort table.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>The Rite of Process</title><link>https://boston-wib.org/blog/quicktake/wgs-analysis-poem</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/wgs-analysis-poem</guid><pubDate>Thu, 02 Apr 2026 14:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2026-03-25-the_rite_of_process.png&quot; alt=&quot;DNA sequencing&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;A Poem on Whole Genome Sequencing Analysis&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;You sat there, together yet all alone,&lt;/p&gt;
+&lt;p&gt;in the endless cold and dark —&lt;/p&gt;
+&lt;p&gt;waiting, for days, with bated breath,&lt;/p&gt;
+&lt;p&gt;to be rescued.&lt;/p&gt;
+&lt;p&gt;They came, promising an escape — a quick way out —&lt;/p&gt;
+&lt;p&gt;the ones in white coats made many promises,&lt;/p&gt;
+&lt;p&gt;but kept only a few.&lt;/p&gt;
+&lt;p&gt;Would you say you were rescued&lt;/p&gt;
+&lt;p&gt;if you are no longer who you used to be?&lt;/p&gt;
+&lt;p&gt;Or would you say you were elevated,&lt;/p&gt;
+&lt;p&gt;because that sounds more convincing?&lt;/p&gt;
+&lt;p&gt;They told you, when they came to save you,&lt;/p&gt;
+&lt;p&gt;that you’d be better off alone.&lt;/p&gt;
+&lt;p&gt;The journey ahead demanded individuality —&lt;/p&gt;
+&lt;p&gt;even if it meant tearing you into two,&lt;/p&gt;
+&lt;p&gt;before putting the entire picture together.&lt;/p&gt;
+&lt;p&gt;And so you agreed,&lt;/p&gt;
+&lt;p&gt;because you knew that there was only so much you could control,&lt;/p&gt;
+&lt;p&gt;especially once they began stripping you down&lt;/p&gt;
+&lt;p&gt;to see if you were fit to continue,&lt;/p&gt;
+&lt;p&gt;even if you were already in parts.&lt;/p&gt;
+&lt;p&gt;You didn’t say a word —&lt;/p&gt;
+&lt;p&gt;you just silently prayed&lt;/p&gt;
+&lt;p&gt;that you would still have enough of yourself left&lt;/p&gt;
+&lt;p&gt;when they arrogantly came to assemble you.&lt;/p&gt;
+&lt;p&gt;The white coats put you together&lt;/p&gt;
+&lt;p&gt;in a haphazard fashion —&lt;/p&gt;
+&lt;p&gt;brazen, annoyed, careless —&lt;/p&gt;
+&lt;p&gt;you weren’t perfect,&lt;/p&gt;
+&lt;p&gt;but you were suitable for their purpose.&lt;/p&gt;
+&lt;p&gt;The journey ahead demanded identity and purity.&lt;/p&gt;
+&lt;p&gt;Where you came from mattered&lt;/p&gt;
+&lt;p&gt;only in the context of who you were now.&lt;/p&gt;
+&lt;p&gt;You had started, together yet all alone,&lt;/p&gt;
+&lt;p&gt;a dozen of you,&lt;/p&gt;
+&lt;p&gt;in the endless cold and dark.&lt;/p&gt;
+&lt;p&gt;And after a sequence of events,&lt;/p&gt;
+&lt;p&gt;here you were, at the end of the road,&lt;/p&gt;
+&lt;p&gt;back with the dozen others,&lt;/p&gt;
+&lt;p&gt;hoping to be remembered&lt;/p&gt;
+&lt;p&gt;more than you waited to be rescued.&lt;/p&gt;
+&lt;p&gt;For what else was the point&lt;/p&gt;
+&lt;p&gt;of making you whole again,&lt;/p&gt;
+&lt;p&gt;if only to leave you&lt;/p&gt;
+&lt;p&gt;until you become a statistic mentioned in passing,&lt;/p&gt;
+&lt;p&gt;in the endless cold and dark.&lt;/p&gt;
+</content:encoded><category>bioinformatics</category><category>whole-genome-sequencing</category><category>whole-genome-sequencing-analysis</category><category>wgs</category><category>wgs-analysis</category><category>poem</category><category>poetry</category><category>computational-biology</category><category>comp-bio</category></item><item><title>Biobank Intro Series: All of Us Observational Data (Part II)</title><link>https://boston-wib.org/blog/biobank-intro-series/04-aou-observational-data-partII</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/04-aou-observational-data-partII</guid><pubDate>Tue, 31 Mar 2026 04:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/omop_table_relationships_basic.png&quot; alt=&quot;Diagram showing the four-step OMOP workflow: look up concept IDs, query a clinical table (e.g., measurement, observation), label values with concept names, and join with person_id to build a cohort table.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;Loading observational data in the All of Us Researcher Workbench&lt;/em&gt;&lt;/p&gt;
 
