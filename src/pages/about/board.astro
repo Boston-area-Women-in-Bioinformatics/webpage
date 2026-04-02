@@ -1,0 +1,52 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import TeamWidget from '~/components/widgets/Team.astro';
+import { exec } from '~/config/components/team';
+
+const metadata = {
+  title: 'Board',
+  description: 'Meet the Board of Boston Women in Bioinformatics.',
+  dontUseTitleTemplate: true,
+};
+
+const boardMemberNames = [
+  'Yevgenia Khodor Tolan',
+  'Lina Faller',
+  'Diveena Becker',
+  'Minita Shah',
+  'Katie Hughes',
+  'Francine Camacho',
+  'Lorena Pantano',
+];
+
+const boardMembers = boardMemberNames
+  .map((name) => exec.members.find((member) => member.name === name))
+  .filter(Boolean);
+
+let boardGridClass = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4';
+
+if (boardMembers.length === 1) {
+  boardGridClass = 'grid gap-8 lg:gap-16 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1';
+} else if (boardMembers.length === 2) {
+  boardGridClass = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2';
+} else if (boardMembers.length === 3) {
+  boardGridClass = 'grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3';
+}
+---
+
+<Layout metadata={metadata}>
+  <section class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+    <div class="mx-auto mb-8 max-w-screen-md lg:mb-16">
+      <h1 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+        Board
+      </h1>
+      <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+        Meet the board members who provide governance and strategic leadership for Boston Women in
+        Bioinformatics.
+      </p>
+    </div>
+    <div class={boardGridClass}>
+      <TeamWidget members={boardMembers} />
+    </div>
+  </section>
+</Layout>
