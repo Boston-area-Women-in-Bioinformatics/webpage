@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-03-25T15:00:00-05:00
+publishDate: 2026-03-25T15:00:00-04:00
 title: 'The Rite of Process'
 slug: blog/quicktake/wgs-analysis-poem
 excerpt: 'A Poem on Whole Genome Sequencing Analysis'
