@@ -76,7 +76,10 @@ See [Getting started without write-access](#getting-started-without-write-access
 
 The markdown file should follow a specific format. In between the top two `---` you must fill out the event parameters. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The metadata should include fields like `title`, `dateTime`, `location`, `url`, `image`, `tags`, and `imgpos`. The `imgpos` parameter is for the css on the main events page. See https://tailwindcss.com/docs/object-position for options. `tags` are not currently in use, but may be in the future.
 
-Note that for the `dateTime` field, the time zone should be specified as either `-05:00` for Eastern Standard Time (EST) or `-04:00` for Eastern Daylight Time (EDT), depending on the date of the event. If the event is in December (EST) use -05:00, but if an event is during Daylight Saving Time (roughly March-November), you should use -04:00 for EDT.
+For the `dateTime` field, use New York time:
+
+- `-04:00` (EDT) from the second Sunday of March through the first Saturday of November
+- `-05:00` (EST) from the first Sunday of November through the second Saturday of March
 
 ### 3. Add an image
 
@@ -115,23 +118,44 @@ See [Getting started without write-access](#getting-started-without-write-access
 
 After you enter a new branch, you need to create a markdown file in the `src/content/post` directory.
 
-The markdown file should follow a specific format. In between the top two `---` you must fill out the parameters for the blog post. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The parameters include:
+The markdown file should follow a specific format. In between the top two `---` you must fill out the parameters for the blog post. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference.
 
-- `publishDate`: date when the blog post was published, in ISO format (YYYY-MM -DDTHH:mm:ssZ)
+**Required fields:**
+
+- `publishDate`: date when the blog post was published. Use New York time, so the format will always be one of:
+  - `YYYY-MM-DDTHH:mm:ss-04:00` (EDT) from the second Sunday of March through the first Saturday of November
+  - `YYYY-MM-DDTHH:mm:ss-05:00` (EST) from the first Sunday of November through the second Saturday of March
 - `title`: name of the blog post
-- `slug`: a unique identifier for the blog post, used in the URL
-- `excerpt`: appears on the website front page to describe the post
-- `image`: path to the image that will be displayed on the blog post page
-- `imageAlt`: alt-text to show when images are not rendered or when user is using a screen reader. This text should describe the image's purpose in under 125 characters
-- `imagePosition`: set to `top`, `center`(default), or `bottom` to set where the content of the image is most important.
-- author information:
-  - `author`: name of the SINGLE author of the blog post
-  - `authorUrl`: URL to the author's LinkedIn profile
-  - `authors`: list of authors if there are multiple authors, each with their name and LinkedIn URL
-- `category`: category of the blog post, e.g., "Podcast", "Deep Dive", "Quick Take"
-- `tags`: list of tags associated with the blog post, e.g., "bioinformatics", "career-advice", "software-engineering"
-- `metadata`: additional metadata for SEO, including `title`, `description`, and `canonical` URL
-- `listeningTime`: length of time of podcast written out (optional, only for podcast posts)
+
+**Optional fields:**
+
+- `updateDate`: date the post was last updated, in the same ISO format as `publishDate`
+- `draft`: set to `true` to prevent the post from appearing on the site until it is ready. Omit or set to `false` to publish.
+- `slug`: a unique identifier for the blog post used in the URL (e.g., `blog/deep-dive/my-post-title`)
+- `excerpt`: short description that appears on the blog listing pages to summarize the post
+- `image`: path to the hero image displayed at the top of the post (e.g., `/blog_images/my-image.png`)
+- `imageAlt`: alt text for the hero image, shown when images are not rendered or for screen readers. Aim for 125 characters or fewer. Describe the purpose, not the appearance. Do not include the words "image" or "logo" since those are already implied.
+  - Good: `"Bioinformatics job postings by field in 2024"`
+  - Bad: `"A blue and green bar chart with three bars of different heights showing data"`
+- `imageDescription`: caption or citation text shown below the hero image
+- `imagePosition`: controls which part of the image is most visible when cropped. Options: `top`, `center` (default), `bottom`, `left`, `right`, `contain`. Use `contain` for infographics or diagrams that should not be cropped.
+- `hideHeroImage`: set to `true` to hide the hero image from the top of the post (useful when you want to embed the image manually in the body with a caption)
+- author information (use one of the following, not both):
+  - `author` + `authorUrl`: name and LinkedIn URL of a single author
+  - `authors`: list of authors when there are multiple contributors, each with a `name` and optional `url`
+- `category`: category label for the post, e.g., `Deep Dive`, `Quick Take`, `Tutorial`, `Video`, `Podcast`
+- `series`: title of the series this post belongs to (must match the `title` in the corresponding `src/content/series/` file). See [Add a new series](#add-a-new-series).
+- `tags`: list of tags associated with the post, e.g., `bioinformatics`, `career-advice`, `software-engineering`
+- `url`: external URL where the original post lives (used when cross-posting from another site)
+- `listeningTime`: reading or listening time displayed on the post (e.g., `5 min`). Typically used for podcast or video posts.
+- `hiddenFromFeed`: set to `true` to exclude the post from the main blog feed while keeping it accessible by URL. Reserved for posts that are too short to stand on their own (e.g., Tuesday Tactics micro-posts). Do **not** use this just because a post belongs to a series.
+- `metadata`: additional SEO metadata:
+  - `title`: page title used in the browser tab and search results (overrides the post title)
+  - `description`: meta description for search engines
+  - `canonical`: canonical URL if this post was originally published elsewhere
+  - `canonicalSource`: human-readable name of the canonical source (e.g., `"Work Life Decoded"`)
+  - `ignoreTitleTemplate`: set to `true` to use the metadata title exactly as written, without appending the site name
+  - `robots`: object with `index` and/or `follow` booleans to control search engine crawling
 
 > **Starting a new series?** If this post is the first in a new series, also follow the steps in [Add a new series](#add-a-new-series) to create the series metadata file.
 
@@ -170,7 +194,7 @@ Create a markdown file in `src/content/series/` named with the series slug (e.g.
 title: 'Your Series Title'
 description: 'A short description of what the series covers.'
 image: '/blog_images/your-series-image.png'
-imageAlt: 'Alt text describing the series image'
+imageAlt: 'Tuesday Tactics' # Good: describes purpose. Bad: describes appearance (colors, layout, etc.)
 imageFit: cover # Use 'contain' if your image is an infographic that should not be cropped
 ---
 ```
@@ -193,7 +217,7 @@ Upload the cover image to `public/blog_images/` (see [Image Organization](#image
 
 ### 5. Note on `hiddenFromFeed`
 
-The `hiddenFromFeed: true` flag is reserved for posts that are too short to stand on their own in the main feed (e.g., Tuesday Tactics micro-posts). Do **not** use it simply because a post belongs to a series — series posts appear individually on the main blog and in search results.
+The `hiddenFromFeed: true` flag is reserved for posts that are too short to stand on their own in the main feed (e.g., Tuesday Tactics micro-posts). Do **not** use it simply because a post belongs to a series. Series posts appear individually on the main blog and in search results.
 
 ### 6. Push changes to website
 
@@ -216,14 +240,18 @@ See [Getting started without write-access](#getting-started-without-write-access
 
 After you enter a new branch, you need to create a markdown file in the `src/content/newsletter` directory.
 
-The markdown file should follow a specific format. In between the top two `---` you must fill out the parameters for the blog post. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The parameters include:
+The markdown file should follow a specific format. In between the top two `---` you must fill out the parameters for the newsletter. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The parameters include:
 
-- `publishDate`: date when the blog post was published, in ISO format (YYYY-MM -DDTHH:mm:ssZ)
-- `title`: name of the blog post
-- `excerpt`: appears on the website front page to describe the post
-- `image`: path to the image that will be displayed on the blog post page
+- `publishDate`: date when the newsletter was published. Use New York time, so the format will always be one of:
+  - `YYYY-MM-DDTHH:mm:ss-04:00` (EDT) from the second Sunday of March through the first Saturday of November
+  - `YYYY-MM-DDTHH:mm:ss-05:00` (EST) from the first Sunday of November through the second Saturday of March
+- `title`: name of the newsletter
+- `excerpt`: appears on the website front page to describe the newsletter (should be a sentence or less)
+- `image`: path to the image that will be displayed on the newsletter page
 - `authors`: list of authors if there are multiple authors, each with their name and LinkedIn URL
-- `metadata`: additional metadata for SEO, including `title`, `description`, and `canonical` URL
+- `metadata`: controls what appears when someone searches for the page on Google or shares it on social media. Key fields:
+  - `title`: the page title shown in Google search results
+  - `description`: the text snippet shown under the title in Google search results. Keep it under two sentences. Often can just match what was written in `excerpt`.
 
 ### 3. Add an image
 
