@@ -2,7 +2,7 @@
 publishDate: 2026-03-16T00:00:00-05:00
 title: 'Biobank Intro Series: UK Biobank Observational Data (Part II)'
 excerpt: 'Loading phenotype data in the UK Biobank RAP (Research Analysis Platform) environment'
-slug: blog/biobank-intro-series/03-ukb-observational-data-partII
+slug: blog/biobank-intro-series/04-ukb-observational-data-partII
 image: /blog_images/biobank1/ukb_fieldid_scent.png
 imageAlt: 'Cat following wafts of fresh kibble onto a table. The scent trails are labeled with UK Biobank Field IDs.'
 imageDescription: 'When you finally know which field IDs you need and suddenly the whole dataset smells delicious.'
