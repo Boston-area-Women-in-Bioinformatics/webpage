@@ -2,7 +2,7 @@
 title: 'StatQuest with Josh Starmer'
 description: 'Learn complex topics in statistics, machine learning, data science, and AI in a simple and easy-to-understand way by Josh Starmer'
 url: 'https://www.youtube.com/c/joshstarmer'
-category: 'statistics' # Options: courses, tutorials, tools, documentation
+category: 'machine-learning' # Options: courses, tutorials, tools, documentation
 tags:
   - statistics
   - machine-learning
