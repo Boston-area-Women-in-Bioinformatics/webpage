@@ -20,10 +20,10 @@ tags:
   - data-quality
   - reproducibility
 draft: false
-seo:
-  image:
-    src: '/blog_images/biobank1/ukbShowcaseGraphic.png'
-    alt: 'Save a clock tick with the UK Biobank Showcase'
+metadata:
+  title: 'Biobank Intro Series: UK Biobank Observational Data (Part I)'
+  description: 'A practical guide to the UK Biobank Showcase: navigating field IDs, data coding, instances, arrays, and category-level quality warnings for better phenotype selection.'
+  canonical: https://sklasfeld.netlify.app/blog/biobank-intro-series/03-ukb-showcase/
 ---
 
 <figcaption class="text-center text-sm opacity-80 mt-2">

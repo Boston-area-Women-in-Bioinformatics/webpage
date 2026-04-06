@@ -22,10 +22,10 @@ tags:
   - resource-management
   - cli-tools
 draft: false
-seo:
-  image:
-    src: '/blog_images/biobank1/commandlineinterfaceBridge.png'
-    alt: 'Two islands labeled "Your Workspace" and "Data Storage" are connected by a tiny, rickety wooden footbridge. Crossing the bridge is a terminal carrying a folder.'
+metadata:
+  title: 'Biobank Intro Series: Hardware Settings'
+  description: 'How to configure compute and storage settings for UK Biobank RAP and All of Us Workbench before running your first analysis.'
+  canonical: https://sklasfeld.netlify.app/blog/biobank-intro-series/02-hardwareonukbandaou/
 ---
 
 In 2026 the most expensive resource isn't compute time or storage. It's your time rerunning failed analyses. After months of working across the UK Biobank RAP and All of Us Researcher Workbench, I've collected some hard-won lessons about resource management.

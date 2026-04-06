@@ -24,7 +24,7 @@ tags:
   - best-practices
 metadata:
   title: 'Biobank Intro Series: Getting Started'
-  description: 'How to do biobank analysis without losing your mind'
+  description: "A beginner's guide to biobank research platforms: what to expect, what trips people up, and how to get started with UK Biobank and All of Us"
   canonical: https://sklasfeld.netlify.app/blog/biobank-intro-series/01-biobank-iceberg/
 ---
 
