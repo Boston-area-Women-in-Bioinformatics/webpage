@@ -40,6 +40,19 @@ export default {
       },
     },
   },
+  safelist: [
+    'object-top',
+    'object-bottom',
+    'object-left',
+    'object-right',
+    'object-center',
+    'object-left-top',
+    'object-right-top',
+    'object-left-bottom',
+    'object-right-bottom',
+    'object-contain',
+    'object-cover',
+  ],
   plugins: [
     typographyPlugin,
     plugin(({ addVariant }) => {

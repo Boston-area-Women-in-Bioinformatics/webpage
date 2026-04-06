@@ -42,9 +42,8 @@ const past_events = all_past_events.slice(0, 3);
           ? 'flex flex-col md:flex-row opacity-75 hover:opacity-90 transition-opacity duration-300'
           : 'flex flex-col md:flex-row shadow-[0_0_15px_rgba(255,0,255,0.3),0_0_30px_rgba(0,255,255,0.2),0_0_45px_rgba(255,255,0,0.1)] hover:shadow-[0_0_20px_rgba(255,0,255,0.4),0_0_40px_rgba(0,255,255,0.3),0_0_60px_rgba(255,255,0,0.2)] transition-shadow duration-300';
 
-        // Partner events use logos, so we need object-contain with padding
         const imageClasses = isPartner
-          ? 'w-full md:h-48 md:w-48 h-auto object-contain p-4 bg-white dark:bg-gray-800'
+          ? `w-full md:h-48 md:w-48 h-auto object-cover ${event.data.imgpos} bg-white dark:bg-gray-800`
           : `w-full md:h-48 md:w-48 h-auto object-cover ${event.data.imgpos}`;
 
         return (

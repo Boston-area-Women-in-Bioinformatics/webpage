@@ -293,7 +293,7 @@ const metadata = {
             const seriesMeta = post.series?.slug ? seriesImageMap.get(post.series.slug) : undefined;
             const cardImage = seriesMeta?.image ?? post.image;
             const cardImageAlt = seriesMeta?.imageAlt ?? post.imageAlt;
-            const cardImageFit = seriesMeta?.imageFit ?? 'cover';
+            const cardImageFit = post.imagePosition === 'contain' ? 'contain' : (seriesMeta?.imageFit ?? 'cover');
             const objectPosition =
               post.imagePosition === 'top' ? 'top' : post.imagePosition === 'bottom' ? 'bottom' : 'center';
             const isRemoteImage =
@@ -459,7 +459,7 @@ const metadata = {
           icon: 'tabler:brand-linkedin',
           callToAction: {
             target: '_blank',
-            href: 'https://www.linkedin.com/groups/13074137/',
+            href: 'https://www.linkedin.com/company/boston-women-in-bioinformatics',
           },
         },
         {

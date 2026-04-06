@@ -17,7 +17,6 @@ const formatSingle = (d: Date) =>
     minute: '2-digit',
     hour12: true,
     timeZone: 'America/New_York',
-    timeZoneName: 'short',
   });
 
 const formatDateOnly = (d: Date) =>
@@ -28,13 +27,36 @@ const formatDateOnly = (d: Date) =>
     timeZone: 'America/New_York',
   });
 
-const isMultiDay = endDate && new Date(endDate).toDateString() !== startDate.toDateString();
+const endDateObj = endDate ? new Date(endDate) : undefined;
+const isMultiDay = endDateObj && endDateObj.toDateString() !== startDate.toDateString();
+const isSameDayWithEnd = endDateObj && !isMultiDay;
+
+const formatTimeOnly = (d: Date) =>
+  d.toLocaleTimeString('en-us', {
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+    timeZone: 'America/New_York',
+  });
+
+const getTimeZoneAbbr = (d: Date) =>
+  d
+    .toLocaleTimeString('en-us', {
+      timeZone: 'America/New_York',
+      timeZoneName: 'short',
+    })
+    .split(' ')
+    .at(-1);
 ---
 
 {
   isMultiDay ? (
     <time datetime={startDate.toISOString()}>
-      {formatDateOnly(startDate)} – {formatDateOnly(new Date(endDate))}
+      {formatDateOnly(startDate)} – {formatDateOnly(endDateObj!)}
+    </time>
+  ) : isSameDayWithEnd ? (
+    <time datetime={startDate.toISOString()}>
+      {formatSingle(startDate)} – {formatTimeOnly(endDateObj!)}&nbsp;{getTimeZoneAbbr(endDateObj!)}
     </time>
   ) : (
     <time datetime={startDate.toISOString()}>{formatSingle(startDate)}</time>

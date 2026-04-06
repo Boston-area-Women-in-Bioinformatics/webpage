@@ -5,7 +5,7 @@ excerpt: 'Hardware setup lessons for UK Biobank Research Analysis Platform and A
 slug: blog/biobank-intro-series/02-hardware-settings
 image: /blog_images/biobank1/commandlineinterfaceBridge.png
 imageAlt: 'Two islands labeled "Your Workspace" and "Data Storage" are connected by a tiny, rickety wooden footbridge. Crossing the bridge is a terminal carrying a folder.'
-imagePosition: center
+imagePosition: contain
 hideHeroImage: true
 author: Samantha J. Klasfeld, Ph.D.
 authorUrl: 'https://linkedin.com/in/samantha-klasfeld'
