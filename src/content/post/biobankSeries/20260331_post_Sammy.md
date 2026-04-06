@@ -20,10 +20,10 @@ tags:
   - ehr-data
   - observational-data
 draft: false
-seo:
-  image:
-    src: '/blog_images/biobank1/omop_table_relationships_basic.png'
-    alt: 'Diagram showing the four-step OMOP workflow: look up concept IDs, query a clinical table (e.g., measurement, observation), label values with concept names, and join with person_id to build a cohort table.'
+metadata:
+  title: 'Biobank Intro Series: All of Us Observational Data (Part II)'
+  description: 'A practical guide to loading and querying observational data in the All of Us Researcher Workbench using BigQuery and the OMOP data model.'
+  canonical: https://sklasfeld.netlify.app/blog/biobank-intro-series/06-phenodataallofus/
 ---
 
 The UK has a single national health system, and it shows: one table, one field ID, a coding dictionary if you needed it. The US has hundreds of hospital systems, dozens of billing standards, and its data model matches this beloved chaotic energy. In All of Us, your data is spread across clinical tables, the coded values in those tables are translated via a separate concept table, and everything traces back to `person_id`. More joins, more steps, but it's just what a data model built on real EHR data looks like.
