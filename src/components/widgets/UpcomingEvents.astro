@@ -105,12 +105,15 @@ if (next_event) {
             <EventAddress artists={next_event.data.location || []} />
           </div>
         </div>
-        <Button
-          variant="primary"
-          href={`/events/${next_event.id}`}
-          text="More Information"
-          icon="tabler:square-rounded-arrow-right"
-        />
+        <div class="flex flex-wrap gap-4 justify-center xs:justify-start">
+          <Button
+            variant="primary"
+            href={`/events/${next_event.id}`}
+            text="Learn More"
+            icon="tabler:square-rounded-arrow-right"
+          />
+          <Button variant="secondary" href={`/events`} text="Browse Events" icon="tabler:calendar" />
+        </div>
       </div>
       <img
         src={next_event.data.image.src}

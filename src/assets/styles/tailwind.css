@@ -92,7 +92,7 @@
   }
 
   .btn-secondary {
-    @apply btn;
+    @apply btn text-primary border-primary hover:bg-primary hover:border-primary hover:text-white dark:text-primary dark:border-primary dark:hover:bg-primary dark:hover:text-white;
   }
 
   .btn-tertiary {
