@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { SITE } from '~/config/site/config.js';
-import Hero2 from '~/components/widgets/Hero2.astro';
+// import Hero2 from '~/components/widgets/Hero2.astro'; // restore with mentorship section below
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 //import eventImg from '~/../public/photos/2025/WIB_10Year_group_photo1.jpg'; // adjust path as needed
@@ -77,7 +77,7 @@ const metadata = {
     </div>
   </section>
 
-  <!-- Career Mentorship Program Call to Action -->
+  {/* Career Mentorship Program Call to Action — uncomment to restore for next cohort announcement
   <section class="py-10 md:py-14 bg-gray-50 dark:bg-slate-800">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <Hero2
@@ -112,6 +112,7 @@ const metadata = {
       </Hero2>
     </div>
   </section>
+  */}
 
   <!-- Upcoming Events Section -->
   <section class="py-10 md:py-14 bg-white dark:bg-dark dark:text-gray-200">
