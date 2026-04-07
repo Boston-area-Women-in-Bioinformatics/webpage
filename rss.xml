@@ -1,4 +1,159 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>The Rite of Process</title><link>https://boston-wib.org/blog/quicktake/wgs-analysis-poem</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/wgs-analysis-poem</guid><pubDate>Thu, 02 Apr 2026 14:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2026-03-25-the_rite_of_process.png&quot; alt=&quot;DNA sequencing&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Biobank Intro Series: UK Biobank Genetic Data</title><link>https://boston-wib.org/blog/biobank-intro-series/07-ukb-genetic-data</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/07-ukb-genetic-data</guid><pubDate>Tue, 07 Apr 2026 04:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/ukb_genetic_timeline.png&quot; alt=&quot;A tree ring visualization where each ring is a relevant UKB release&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Traversing genetic data on the UK Biobank RAP (Research Analysis Platform) environment&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Genetic data. We made it. Coming from my Ph.D. in plant epigenetics, I was used to raw sequencing data from one replicate at a time. In contrast, the UK Biobank (UKB) has around 500,000 participants. The enormity of it can become an unbearable dead weight if you let it. The fix is straightforward: fit the data to your analysis, not the other way around. In my work, I&amp;#39;ve focused on a single region or a handful of variants at a time. That means streaming raw files from the data repository and filtering on the fly, rather than pulling them down in full with DNAnexus (see &lt;a href=&quot;../02-hardwareOnUKBandAoU&quot;&gt;my previous blog on UKB hardware&lt;/a&gt;). The first step is knowing what genetic data UKB actually has, where it lives, and how to filter it before it becomes your problem.&lt;/p&gt;
+&lt;h2&gt;The Showcase Knows About Genetics Too&lt;/h2&gt;
+&lt;p&gt;In my previous post about the &lt;a href=&quot;../03-ukb-showcase&quot;&gt;UKB Showcase&lt;/a&gt;, I focused on observational fields, but the Showcase also catalogs &lt;a href=&quot;https://biobank.ctsu.ox.ac.uk/crystal/label.cgi?id=100314&quot;&gt;genetic data resources&lt;/a&gt;, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Microarray genotyping data&lt;/strong&gt; — directly measured variants at selected positions across the genome&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Imputed genotypes&lt;/strong&gt; — variants inferred by combining array data with full-genome reference panels&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Exome sequencing data&lt;/strong&gt; — sequenced protein-coding regions (~2% of the genome)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Whole genome sequencing&lt;/strong&gt; — full genome coverage&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Phased haplotypes&lt;/strong&gt; — estimates of which alleles sit on the same chromosome (i.e., are inherited together)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Depending on the research question, you may need multiple data types. For example, phased haplotype data provides haplotype structure but excludes rare variants, so you might pair it with whole genome sequencing calls to get both. These data types were generated using different tools and released at
+different times, and I find it helpful to know that context to not only
+pick the right data, but also to understand the publications that
+used UKB genetic data before me. UKB provides a &lt;a href=&quot;https://community.ukbiobank.ac.uk/hc/en-gb/articles/26655145866269-Past-data-releases&quot;&gt;comprehensive timeline&lt;/a&gt; of their data releases, but coming from a sequencing background, the terminology didn&amp;#39;t sit well with me. For example, &amp;quot;genotyping data&amp;quot; actually means microarray data — not sequencing. Here are the current releases you&amp;#39;ll most likely use:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Year&lt;/th&gt;
+&lt;th&gt;Data Type&lt;/th&gt;
+&lt;th&gt;Field ID&lt;/th&gt;
+&lt;th&gt;Participants&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;2017&lt;/td&gt;
+&lt;td&gt;Microarray + imputation&lt;/td&gt;
+&lt;td&gt;22418&lt;/td&gt;
+&lt;td&gt;488,377&lt;/td&gt;
+&lt;td&gt;~800K measured; ~96M imputed [^1]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2022&lt;/td&gt;
+&lt;td&gt;Exome sequencing (final)&lt;/td&gt;
+&lt;td&gt;23141&lt;/td&gt;
+&lt;td&gt;~470,000&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2022&lt;/td&gt;
+&lt;td&gt;Imputation (new panels)&lt;/td&gt;
+&lt;td&gt;21007&lt;/td&gt;
+&lt;td&gt;488,377&lt;/td&gt;
+&lt;td&gt;GEL and TOPMed; now in GRCh38&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2023&lt;/td&gt;
+&lt;td&gt;Whole genome sequencing&lt;/td&gt;
+&lt;td&gt;24311&lt;/td&gt;
+&lt;td&gt;~500,000&lt;/td&gt;
+&lt;td&gt;ML corrections; DRAGEN; unphased&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2025&lt;/td&gt;
+&lt;td&gt;WGS (updated)&lt;/td&gt;
+&lt;td&gt;30108&lt;/td&gt;
+&lt;td&gt;~500,000&lt;/td&gt;
+&lt;td&gt;phased VCFs&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;And here are the earlier releases you may encounter in older publications:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Year&lt;/th&gt;
+&lt;th&gt;Data Type&lt;/th&gt;
+&lt;th&gt;Participants&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;2019&lt;/td&gt;
+&lt;td&gt;Exome sequencing&lt;/td&gt;
+&lt;td&gt;50,000&lt;/td&gt;
+&lt;td&gt;Alignment errors identified [^2]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2020&lt;/td&gt;
+&lt;td&gt;Exome sequencing (reprocessed)&lt;/td&gt;
+&lt;td&gt;200,000&lt;/td&gt;
+&lt;td&gt;New OQFE pipeline [^3]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2021&lt;/td&gt;
+&lt;td&gt;Exome sequencing&lt;/td&gt;
+&lt;td&gt;~454,000&lt;/td&gt;
+&lt;td&gt;[^4]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2021&lt;/td&gt;
+&lt;td&gt;Whole genome sequencing&lt;/td&gt;
+&lt;td&gt;200,000&lt;/td&gt;
+&lt;td&gt;[^5]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;h2&gt;Where Are the Files? (The Practical Part)&lt;/h2&gt;
+&lt;figure class=&quot;my-8 !max-w-none&quot;&gt;
+&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/dx_jupyternotebook.png&quot; alt=&apos;Screenshot of the DNAnexus JupyterLab launcher interface. Two arrows are overlaid: &quot;Local Working Directory&quot; points to the top section of the left sidebar, and &quot;Data Storage&quot; points to the DNAnexus tab below it. The main panel shows kernel options for notebooks (DNAnexus Notebook, Python 3, Bash, R), console, and other file types.&apos; style=&quot;max-height: 600px; width: auto;&quot; /&gt;
+&lt;figcaption class=&quot;text-center text-sm opacity-80 mt-2&quot;&gt;
+   &lt;em&gt; The JupyterLab launcher on UKB RAP. The left sidebar gives you access to both storage spaces: your local working directory at the top (temporary, session-only) and the DNAnexus project storage below it (persistent, where Bulk data lives). Clicking &quot;DNAnexus Notebook&quot; in the launcher (boxed in red) opens a notebook that saves directly to project storage; no manual upload needed.&lt;/em&gt;
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;If you need a refresher on the two storage spaces, see the &lt;a href=&quot;../02-hardwareOnUKBandAoU&quot;&gt;hardware post&lt;/a&gt;. The genetic data lives in data storage under a directory called &amp;quot;Bulk&amp;quot;. Filenames contain field ID numbers, so you can cross-reference them with the UK Biobank Showcase. For WGS data, field ID 24311 corresponds to the ML-corrected DRAGEN release. As of the latest release, this is often the one you want.&lt;/p&gt;
+&lt;p&gt;Start broad to learn the file structure, then narrow down. Running&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-{bash}&quot;&gt;dx find data --name &amp;quot;ukb24311*.vcf.gz&amp;quot; --folder /Bulk | head
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;reveals that files follow the pattern:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/Bulk/DRAGEN WGS/ML-corrected DRAGEN population level WGS variants, pVCF format [500k release]/chr{CHROMOSOME}/ukb24311_c{CHROMOSOME}_b{BATCH}_v1.vcf.gz&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Yes, the path has spaces. Always quote it. Once you know that, you can narrow the search to a specific chromosome. Even then, WGS data is split across many batch files, so &lt;code&gt;| head&lt;/code&gt; is still warranted:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-{bash}&quot;&gt;dx find data --name &amp;quot;ukb24311_c11_*.vcf.gz&amp;quot; --folder &amp;quot;/Bulk/DRAGEN WGS/ML-corrected DRAGEN population level WGS variants, pVCF format [500k release]/chr11&amp;quot; | head
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Unfortunately the official documentation is no help here. The best I found was a
+&lt;a href=&quot;https://community.ukbiobank.ac.uk/hc/en-gb/community/posts/16790347396253-Question-regarding-batches&quot;&gt;two-year-old community forum reply&lt;/a&gt; suggesting each batch covers roughly 20,000 bp. Thanks, George F. You saved me more time than UKB&amp;#39;s own docs did. Take the estimate as a ballpark, not a guarantee.&lt;/p&gt;
+&lt;p&gt;Here is the approach in practice. To find positions 47,331,406 - 47,352,702 on chromosome 11, you can divide 47,331,406 by 20,000 to derive batch 2366 as a reasonable first guess. I wrote a small script (&lt;code&gt;firstpos.sh&lt;/code&gt;) to check the first position of any candidate file:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;#!/bin/bash
+
+CHR=$1
+BATCH=$2
+FILE=&amp;quot;/Bulk/DRAGEN WGS/ML-corrected DRAGEN population level WGS variants, pVCF format [500k release]/chr${CHR}/ukb24311_c${CHR}_b${BATCH}_v1.vcf.gz&amp;quot;
+URL=$(dx make_download_url &amp;quot;$FILE&amp;quot; --duration 1h)
+bcftools query -f &amp;#39;%POS\n&amp;#39; &amp;quot;$URL&amp;quot; | head -1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;bash firstpos.sh 11 2366
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;returns 47,319,031. This is just below my target region, which is a good sign.&lt;/p&gt;
+&lt;p&gt;Checking the next batch:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;bash firstpos.sh 11 2367
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;returns 47,339,029, meaning batch 2366 covers 47,319,031 - 47,339,028. My region ends at 47,352,702, so I check batch 2368 to find where that&amp;#39;s covered. Once you&amp;#39;ve identified which batches bracket your full region, you have your files. If the 20,000 bp estimate puts you nowhere near the right chromosome positions, jump by a larger increment and binary search from there. Eventually you&amp;#39;ll find your file. Then comes the next question: what do you do with it?&lt;/p&gt;
+&lt;h2&gt;What&amp;#39;s Actually in These Files?&lt;/h2&gt;
+&lt;p&gt;A VCF is a giant matrix. Lines starting with &lt;code&gt;#&lt;/code&gt; are metadata: pipeline details, descriptions for variant annotations in the INFO column, chromosome descriptions, and so on. The last &lt;code&gt;#&lt;/code&gt; line is the column header for the data rows below it. Each data row is one variant. The first nine columns describe that variant: chromosome, position, ID, reference allele, alternate allele, quality score, filter status, info fields, and format. Everything after column nine is per-sample genotype data. At biobank scale that&amp;#39;s 500,000 columns. The good news is that bcftools can filter by position without loading the entire matrix into memory, which is the whole reason streaming works at scale.&lt;/p&gt;
+&lt;h2&gt;Code to Stream Genetic Data in UK Biobank&lt;/h2&gt;
+&lt;p&gt;That&amp;#39;s exactly what the &lt;code&gt;--regions&lt;/code&gt; flag does.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-{bash}&quot;&gt;FILE=&amp;quot;/Bulk/DRAGEN WGS/ML-corrected DRAGEN population level WGS variants, pVCF format [500k release]/chr11/ukb24311_c11_b2366_v1.vcf.gz&amp;quot;
+URL=$(dx make_download_url &amp;quot;$FILE&amp;quot; --duration 1h)
+bcftools view &amp;quot;$URL&amp;quot; \
+  --regions 11:47331406-47352702 \
+  -O z -o my_region.vcf.gz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Bcftools reads only what it needs and stops. That&amp;#39;s the whole game: 500,000 participants, one small region, no downloading required.&lt;/p&gt;
+&lt;h2&gt;The Short Version&lt;/h2&gt;
+&lt;p&gt;The release timeline is worth knowing for reading older papers, but you don&amp;#39;t need to memorize it. For most analyses, start with the DRAGEN WGS release (field ID 24311). If your analysis requires haplotype structure, reach for the phased release (field ID 30108) instead, or use both if you need rare variant calls in haplotype context. Once you&amp;#39;ve found the right batch file, &lt;code&gt;dx make_download_url&lt;/code&gt;, hands bcftools a URL to a file that may be half a terabyte in size and lets it take only what it needs.&lt;/p&gt;
+&lt;p&gt;In the next post, I&amp;#39;ll walk through how All of Us handles its genetic data. Spoiler: the documentation isn&amp;#39;t better.&lt;/p&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;[^1]: Bycroft, C., Freeman, C., Petkova, D. et al. (2018). The UK Biobank resource with deep phenotyping and genomic data. &lt;em&gt;Nature&lt;/em&gt; 562, 203–209 &lt;a href=&quot;https://doi.org/10.1038/s41586-018-0579-z&quot;&gt;https://doi.org/10.1038/s41586-018-0579-z&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[^2]: Van Hout, C. V., Tachmazidou, I., Backman, J. D., Hoffman, J. X., Ye, B., Pandey, A. K., et al. (2019). Whole exome sequencing and characterization of coding variation in 49,960 individuals in the UK Biobank. &lt;em&gt;BioRxiv&lt;/em&gt;, 572347, &lt;a href=&quot;https://doi.org/10.1101/572347&quot;&gt;https://doi.org/10.1101/572347&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[^3]: Szustakowski, J. D., Balasubramanian, S., Kvikstad, E., Khalid, S., Bronson, P. G., Sasson, A., ... &amp;amp; Reid, J. G. (2021). Advancing human genetics research and drug discovery through exome sequencing of the UK Biobank. Nature genetics, 53(7), 942-948.&lt;/p&gt;
+&lt;p&gt;[^4]: Backman, J.D., Li, A.H., Marcketta, A. et al. (2021). Exome sequencing and analysis of 454,787 UK Biobank participants. Nature 599, 628–634, &lt;a href=&quot;https://doi.org/10.1038/s41586-021-04103-z&quot;&gt;https://doi.org/10.1038/s41586-021-04103-z&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[^5]: Halldorsson, B.V., Eggertsson, H.P., Moore, K.H.S. et al. (2022). The sequences of 150,119 genomes in the UK Biobank. Nature 607, 732–740, &lt;a href=&quot;https://doi.org/10.1038/s41586-022-04965-x&quot;&gt;https://doi.org/10.1038/s41586-022-04965-x&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[^6]: The UK Biobank Whole-Genome Sequencing Consortium. (2025).Whole-genome sequencing of 490,640 UK Biobank participants. Nature 645, 692–701 &lt;a href=&quot;https://doi.org/10.1038/s41586-025-09272-9&quot;&gt;https://doi.org/10.1038/s41586-025-09272-9&lt;/a&gt;&lt;/p&gt;
+</content:encoded><category>biobank</category><category>uk-biobank</category><category>genotype-data</category><category>variant-calls</category><category>variant-annotation</category></item><item><title>The Rite of Process</title><link>https://boston-wib.org/blog/quicktake/wgs-analysis-poem</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/wgs-analysis-poem</guid><pubDate>Thu, 02 Apr 2026 14:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2026-03-25-the_rite_of_process.png&quot; alt=&quot;DNA sequencing&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;A Poem on Whole Genome Sequencing Analysis&lt;/em&gt;&lt;/p&gt;
 
@@ -48,7 +203,7 @@
 &lt;p&gt;if only to leave you&lt;/p&gt;
 &lt;p&gt;until you become a statistic mentioned in passing,&lt;/p&gt;
 &lt;p&gt;in the endless cold and dark.&lt;/p&gt;
-</content:encoded><category>bioinformatics</category><category>whole-genome-sequencing</category><category>whole-genome-sequencing-analysis</category><category>wgs</category><category>wgs-analysis</category><category>poem</category><category>poetry</category><category>computational-biology</category><category>comp-bio</category></item><item><title>Biobank Intro Series: All of Us Observational Data (Part II)</title><link>https://boston-wib.org/blog/biobank-intro-series/04-aou-observational-data-partII</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/04-aou-observational-data-partII</guid><pubDate>Tue, 31 Mar 2026 04:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/omop_table_relationships_basic.png&quot; alt=&quot;Diagram showing the four-step OMOP workflow: look up concept IDs, query a clinical table (e.g., measurement, observation), label values with concept names, and join with person_id to build a cohort table.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>bioinformatics</category><category>whole-genome-sequencing</category><category>whole-genome-sequencing-analysis</category><category>wgs</category><category>wgs-analysis</category><category>poem</category><category>poetry</category><category>computational-biology</category><category>comp-bio</category></item><item><title>Biobank Intro Series: All of Us Observational Data (Part II)</title><link>https://boston-wib.org/blog/biobank-intro-series/06-aou-observational-data-partII</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/06-aou-observational-data-partII</guid><pubDate>Tue, 31 Mar 2026 04:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/omop_table_relationships_basic.png&quot; alt=&quot;Diagram showing the four-step OMOP workflow: look up concept IDs, query a clinical table (e.g., measurement, observation), label values with concept names, and join with person_id to build a cohort table.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;Loading observational data in the All of Us Researcher Workbench&lt;/em&gt;&lt;/p&gt;
 
@@ -234,7 +389,7 @@ cohort_df
 &lt;p&gt;Beyond observational data, note that some pre-computed data in the Researcher Workbench lives outside of OMOP-CDM data tables. If you have access to the &lt;a href=&quot;https://support.researchallofus.org/hc/en-us/articles/29475233432212-Controlled-CDR-Directory&quot;&gt;Controlled CDR directory&lt;/a&gt;, you&amp;#39;ll find pre-computed genomic data (e.g., precomputed genetic ancestry, admixture estimates, relatedness, etc.) are made readily available in tab-delimited tables. These genetically-derived estimates can complement or replace the self-reported race and ethnicity values in the BigQuery tables.&lt;/p&gt;
 &lt;h2&gt;Summary&lt;/h2&gt;
 &lt;p&gt;That&amp;#39;s the full pipeline: find your concept IDs, query the right clinical table, label your coded values, and merge everything into a cohort. It takes more joins than UKB, but the logic is consistent once you&amp;#39;ve done it once. The next post moves from phenotype data into genotype data, where the complexity shifts from data models to file formats.&lt;/p&gt;
-</content:encoded><category>biobank</category><category>all-of-us</category><category>omop</category><category>athena</category><category>ehr-data</category><category>observational-data</category></item><item><title>Biobank Intro Series: All of Us Observational Data (Part I)</title><link>https://boston-wib.org/blog/biobank-intro-series/04-aou-observational-data-partI</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/04-aou-observational-data-partI</guid><pubDate>Tue, 24 Mar 2026 04:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/source_to_standard_omop_square.png&quot; alt=&quot;Flowchart showing hospital data being extracted, transformed via OHDSI vocabularies, and loaded into OMOP relational tables.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>biobank</category><category>all-of-us</category><category>omop</category><category>athena</category><category>ehr-data</category><category>observational-data</category></item><item><title>Biobank Intro Series: All of Us Observational Data (Part I)</title><link>https://boston-wib.org/blog/biobank-intro-series/05-aou-observational-data-partI</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/05-aou-observational-data-partI</guid><pubDate>Tue, 24 Mar 2026 04:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/source_to_standard_omop_square.png&quot; alt=&quot;Flowchart showing hospital data being extracted, transformed via OHDSI vocabularies, and loaded into OMOP relational tables.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;Finding concept IDs for the All of Us Researcher Workbench&lt;/em&gt;&lt;/p&gt;
 
@@ -331,7 +486,7 @@ concept_id_query = pd.io.gbq.read_gbq(f&amp;#39;SELECT * FROM `{CDR}.concept` WH
 &lt;p&gt;Follow &lt;a href=&quot;https://www.linkedin.com/in/sharvarinarendra/&quot;&gt;Sharvari&lt;/a&gt; and &lt;a href=&quot;https://www.linkedin.com/in/saba-nafees/&quot;&gt;Saba&lt;/a&gt; on LinkedIn!&lt;/p&gt;
 &lt;p&gt;If you enjoyed the episode, &lt;a href=&quot;https://podcast.ausha.co/a-coffee-with-compbio&quot;&gt;please subscribe and leave a review!&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Hosted by Ausha. See &lt;a href=&quot;https://ausha.co/privacy-policy&quot;&gt;ausha.co/privacy-policy&lt;/a&gt; for more information&lt;/p&gt;
-</content:encoded><category>science-communication</category><category>computational-biology</category><category>professional-development</category><category>bioinformatics</category><category>networking</category><category>claude-code</category><category>single-cell-rna</category></item><item><title>Biobank Intro Series: UK Biobank Observational Data (Part II)</title><link>https://boston-wib.org/blog/biobank-intro-series/03-ukb-observational-data-partII</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/03-ukb-observational-data-partII</guid><pubDate>Mon, 16 Mar 2026 05:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/ukb_fieldid_scent.png&quot; alt=&quot;Cat following wafts of fresh kibble onto a table. The scent trails are labeled with UK Biobank Field IDs.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>science-communication</category><category>computational-biology</category><category>professional-development</category><category>bioinformatics</category><category>networking</category><category>claude-code</category><category>single-cell-rna</category></item><item><title>Biobank Intro Series: UK Biobank Observational Data (Part II)</title><link>https://boston-wib.org/blog/biobank-intro-series/04-ukb-observational-data-partII</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/04-ukb-observational-data-partII</guid><pubDate>Mon, 16 Mar 2026 05:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/ukb_fieldid_scent.png&quot; alt=&quot;Cat following wafts of fresh kibble onto a table. The scent trails are labeled with UK Biobank Field IDs.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;Loading phenotype data in the UK Biobank RAP (Research Analysis Platform) environment&lt;/em&gt;&lt;/p&gt;
 
@@ -1166,7 +1321,7 @@ They’ll ask: &amp;quot;Do we have agents that can actually &lt;strong&gt;close
 &lt;p&gt;💠 Curious how this evolves in 2026 and beyond clinically, operationally, and ethically!&lt;/p&gt;
 </content:encoded><category>clinical-data</category><category>artificial-intelligence</category><category>ai</category><category>ai-agents</category><category>data-science</category><category>health-informatics</category><category>health-tech</category></item><item><title>I Fixed the Same Bug Three Times (No One Noticed)</title><link>https://boston-wib.org/blog/quicktake/i-fixed-the-same-bug-three-times</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/i-fixed-the-same-bug-three-times</guid><pubDate>Thu, 20 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-20-i-fixed-the-same-bug-three-times.png&quot; alt=&quot;Infographic showing a repeating life cycle: a bug occurs, a fix is applied, the solution is documented, turnover happens, documentation is forgotten, and the cycle repeats.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
-</content:encoded><category>biotech</category><category>data-engineering</category><category>bioinformatics</category><category>technical-debt</category><category>software-engineering</category></item><item><title>Work Life Decoded: Understanding Your Manager&apos;s World</title><link>https://boston-wib.org/blog/work-life-decoded/understanding-your-managers-world</link><guid isPermaLink="true">https://boston-wib.org/blog/work-life-decoded/understanding-your-managers-world</guid><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/Work-Life-Decoded.png&quot; alt=&quot;Work Life Decoded Video Series Thumbnail&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>biotech</category><category>data-engineering</category><category>bioinformatics</category><category>technical-debt</category><category>software-engineering</category></item><item><title>Tuesday Tactics: The 3-Question Requirements Filter</title><link>https://boston-wib.org/blog/quicktake/tuesday-tactics-3-question-requirements-filter</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/tuesday-tactics-3-question-requirements-filter</guid><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded/><category>data-science</category><category>data-engineering</category><category>bioinformatics</category><category>product-management</category><category>biotech</category><category>tuesday-tactics</category></item><item><title>Work Life Decoded: Understanding Your Manager&apos;s World</title><link>https://boston-wib.org/blog/work-life-decoded/understanding-your-managers-world</link><guid isPermaLink="true">https://boston-wib.org/blog/work-life-decoded/understanding-your-managers-world</guid><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/Work-Life-Decoded.png&quot; alt=&quot;Work Life Decoded Video Series Thumbnail&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;How to Building a Strategic Partnership with Your Boss&lt;/em&gt;&lt;/p&gt;
 
@@ -1185,7 +1340,7 @@ They’ll ask: &amp;quot;Do we have agents that can actually &lt;strong&gt;close
 &lt;li&gt;How to build trust and advocate for yourself strategically&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Watch the full episode &lt;a href=&quot;https://www.patreon.com/posts/new-video-your-143734360&quot;&gt;Work Life Decoded: Understanding Your Manager&amp;#39;s World)&lt;/a&gt; on Patreon.&lt;/p&gt;
-</content:encoded><category>career-advice</category><category>career-development</category><category>manager-relationships</category><category>workplace-strategy</category><category>professional-growth</category><category>work-life-decoded</category></item><item><title>Tuesday Tactics: The 3-Question Requirements Filter</title><link>https://boston-wib.org/blog/quicktake/tuesday-tactics-3-question-requirements-filter</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/tuesday-tactics-3-question-requirements-filter</guid><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded/><category>data-science</category><category>data-engineering</category><category>bioinformatics</category><category>product-management</category><category>biotech</category><category>tuesday-tactics</category></item><item><title>Write the Test First (Even for Your Science)</title><link>https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</guid><pubDate>Mon, 17 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-17-write-the-test-first-even-for-your-science.png&quot; alt=&quot;Side‑by‑side flowcharts comparing traditional vs. test‑driven development (TDD) approaches.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>career-advice</category><category>career-development</category><category>manager-relationships</category><category>workplace-strategy</category><category>professional-growth</category><category>work-life-decoded</category></item><item><title>Write the Test First (Even for Your Science)</title><link>https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</guid><pubDate>Mon, 17 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-17-write-the-test-first-even-for-your-science.png&quot; alt=&quot;Side‑by‑side flowcharts comparing traditional vs. test‑driven development (TDD) approaches.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;Why data scientists should design error messages that guide users straight to solutions.&lt;/em&gt;&lt;/p&gt;
 
