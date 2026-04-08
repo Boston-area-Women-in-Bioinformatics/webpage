@@ -56,8 +56,9 @@ Event reflection from Emily Lachtara - Our latest Byte & Bite lunch was a great 
 
 ## Event on the Horizon
 
-### Networking Without the Ick Workshop with Jenn  
-April 21 @ Cambridge Side  
+### Networking Without the Ick Workshop with Jenn
+
+April 21 @ Cambridge Side
 
 The registration deadline has passed, but we have a handful of spots left. If talking about your work in networking conversations makes you want to disappear, this is your sign to grab one. On April 21 at 5:30 PM at CambridgeSide Mall, Dr. Jenn Felsted-Knight, a former neuroscientist and certified professional coach, will walk us through building a networking pitch that actually sounds like you: no personal branding buzzwords, no cringe, just a clear and honest way to communicate the impact you've had. You'll practice out loud in small group rounds and leave with something ready to use. Tickets are $10.
 
@@ -69,20 +70,23 @@ Swap your terminal for a barstool and join us for a casual happy hour where bioi
 
 ---
 
-### Festival of Genomics Networking  
-June 04  
+### Festival of Genomics Networking
+
+June 04
 
 If you're attending the Festival of Genomics in Boston, come find us in the Genome Dome. We're hosting a structured speed networking session with women working across bioinformatics, research, and industry. The format is simple: fast, one-on-one conversations with one goal: walk away with one memorable detail about every person you meet. Not just a new connection, but a real reason to follow up. Bring something to write with.
 
 ---
 
-### Workshop with Joanna  
-June 09  
+### Workshop with Joanna
+
+June 09
 
 ---
 
-### BCBB & BWIB Lightning Talks  
-June 24  
+### BCBB & BWIB Lightning Talks
+
+June 24
 
 BWIB is teaming up with Boston Computational Biology & Bioinformatics for an evening of community Lightning Talks this June, and we're especially excited to spotlight the rockstar women in bioinformatics across both communities. Five minutes, any topic: your current research, a workflow that changed how you work, the AI agent you've been obsessing over, a dataset you think everyone should know about, or a tool you wish someone had shown you sooner. Start thinking now about what you'd talk about if you had five minutes and a room full of people who get it. Stay tuned for the venue, date, and submission form.
 
@@ -111,10 +115,10 @@ What does it feel like to be a DNA sample moving through a whole genome sequenci
 ## Partner Events
 
 AI Agents for Biological Discovery: From Spatial Omics to Therapeutics  
-Virtual | April 18, 10:00 AM  
+Virtual | April 18, 10:00 AM
 
 Biotech Data and Beers  
-Lamplighter Brewing Co. | April 13, 5:30–8:00 PM  
+Lamplighter Brewing Co. | April 13, 5:30–8:00 PM
 
 ---
 
@@ -129,4 +133,4 @@ BWIB runs entirely on volunteer energy, and we're always looking for passionate 
 Slack: https://lnkd.in/eecyVA7C  
 Email: Bostonwomeninbioinformatics@gmail.com  
 LinkedIn: https://lnkd.in/egg4T2qr  
-Lu.ma: https://luma.com/bwib  
+Lu.ma: https://luma.com/bwib
