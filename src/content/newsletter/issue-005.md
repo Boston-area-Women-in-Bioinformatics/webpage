@@ -1,11 +1,10 @@
 ---
-publishDate: 2026-04-14T00:00:01-04:00
+publishDate: 2026-04-08T00:00:01-04:00
 issue: 5
-title: 'Fresh Commits: The BWIB April Edition'
+title: '🪴 Branching Out: The BWIB April 2026 Edition'
 excerpt: Reflections, events, and new opportunities shaping our community this month.
-image: '/photos/2026/DataDrivenPharmaForum_20260211_0768.jpg'
-imageAlt: 'Boston Women in Bioinformatics community event'
-authors:
+image: '/photos/2026/biteNbyte_march2026.jpeg'
+imageAlt: 'Boston Women in Bioinformatics Bite & Byte Lunch'
 authors:
   - name: 'Sakina Saif, M.S.'
     url: 'https://www.linkedin.com/in/sakinasaif'
@@ -24,17 +23,39 @@ authors:
   - name: 'Vishwa Talati'
     url: 'https://www.linkedin.com/in/vishwa-talati/'
 metadata:
-  title: 'Branching Out: The BWIB April 2026 Edition'
+  title: '🪴 Branching Out: The BWIB April 2026 Edition'
   description: Reflections, events, and new opportunities shaping our community this month.
 ---
 
-BWIB banner on top (Same as before)
+Here's what's inside this month:
+
+- [Farewell to our Linked in Group](#farewell)
+- [Member Spotlight: Aysheh Alrfooh](#member-spotlight)
+- [Events Reflections](#events-recap)
+- [Events on the Horizon](#upcoming-events)
+- [Coffee with CompBio: Behind the Interview Table](#podcast)
+- [Blogs](#blogs)
+- [Partner Events](#partner-events)
+- [Get Involved](#get-involved)
+- [Social Media](#social-media)
 
 ## A Farewell to our Linked in Group
 
-## Member Spotlight
+<div id="farewell"></div>
+
+Group chat left on read
+
+Company page glows brand new
+
+[Follow us. We're here.](https://www.linkedin.com/company/boston-women-in-bioinformatics)
+
+## Member Spotlight: [Aysheh Alrfooh](https://www.linkedin.com/in/aysheh-alrfooh)
+
+<div id="member-spotlight"></div>
 
 ## Events Reflections
+
+<div id="events-recap"></div>
 
 ### NF-Core hackathon — A First-Timer's Reflection (By: Mrunali Thokadiwala)
 
@@ -52,9 +73,11 @@ Event reflection from Emily Lachtara - Our latest Byte & Bite lunch was a great 
 
 ---
 
-## Single Cell Basics Workshop
+### Single Cell Basics Workshop
 
-## Event on the Horizon
+## Events on the Horizon
+
+<div id="upcoming-events"></div>
 
 ### Networking Without the Ick Workshop with Jenn
 
@@ -92,13 +115,17 @@ BWIB is teaming up with Boston Computational Biology & Bioinformatics for an eve
 
 ---
 
-## Coffee with Comp Bio: Behind the Interview Table
+## Coffee with CompBio: Behind the Interview Table
+
+<div id="podcast"></div>
 
 Ever wonder what hiring managers are actually looking for when they review your application or conduct an interview? In our April episode, we sit down with Lauren Fitch and Kaye Guerard-Hatziioannou from ArkeaBio for an honest conversation about the interview process from the interviewer's perspective.
 
 ---
 
 ## Blogs
+
+<div id="blogs"></div>
 
 ### Getting Started with UK Biobank and All of Us
 
@@ -114,6 +141,8 @@ What does it feel like to be a DNA sample moving through a whole genome sequenci
 
 ## Partner Events
 
+<div id="partner-events"></div>
+
 AI Agents for Biological Discovery: From Spatial Omics to Therapeutics  
 Virtual | April 18, 10:00 AM
 
@@ -124,11 +153,15 @@ Lamplighter Brewing Co. | April 13, 5:30–8:00 PM
 
 ## Get Involved
 
+<div id="get-involved"></div>
+
 BWIB runs entirely on volunteer energy, and we're always looking for passionate people to join us. From organizing events and producing the podcast to managing finances and advocating for equity in the field, there's a place for every skill set. Learn more at https://boston-wib.org/about/committees
 
 ---
 
 ## Social Media
+
+<div id="social-media"></div>
 
 Slack: https://lnkd.in/eecyVA7C  
 Email: Bostonwomeninbioinformatics@gmail.com  
