@@ -7,8 +7,20 @@ url: 'https://luma.com/event/evt-E1PiOJKkm6SvUCZ'
 data_luma_event_id: 'evt-E1PiOJKkm6SvUCZ'
 image:
   src: '/photos/2026/biotech-data-and-beers.png'
-  alt: 'AI Agents for Biological Discovery: From Spatial Omics to Therapeutics'
-tags: []
+  alt: 'Carolina Cloud Logo'
+tags:
+  [
+    'networking',
+    'bioinformatics',
+    'genomics',
+    'pipelines',
+    'biotech',
+    'lifesciences',
+    'free-drinks',
+    'compute-credits',
+    'carolina-cloud',
+    'cloud',
+  ]
 imgpos: object-right
 partnerEvent: true
 partnerOrganization: 'Carolina Cloud'
