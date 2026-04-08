@@ -63,6 +63,8 @@ const getTimeZoneAbbr = (d: Date) =>
       {formatSingle(startDate)} – {formatTimeOnly(endDateObj!)}&nbsp;{getTimeZoneAbbr(endDateObj!)}
     </time>
   ) : (
-    <time datetime={startDate.toISOString()}>{formatSingle(startDate)}&nbsp;{getTimeZoneAbbr(startDate)}</time>
+    <time datetime={startDate.toISOString()}>
+      {formatSingle(startDate)}&nbsp;{getTimeZoneAbbr(startDate)}
+    </time>
   )
 }
