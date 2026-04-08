@@ -1,6 +1,6 @@
 ---
 publishDate: 2026-02-05T00:00:01Z
-issue: 3
+issue: 4
 title: '🌸 Fresh Commits: The BWIB Spring Edition'
 excerpt: New faces, big updates, and data that matters.
 image: '/photos/2026/DataDrivenPharmaForum_20260211_0768.jpg'
