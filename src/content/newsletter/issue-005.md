@@ -149,7 +149,7 @@ Swap your terminal for a barstool and join us for a casual happy hour where bioi
       <ul style="list-style-type: none; padding-left: 0;">
         <li>June 4, 2026 @ 11:30 AM</li>
         <li>Genome Dome, Boston Convention and Exhibition Center</li>
-        <li><a href="https://boston-wib.org/events/20260604_event" class="btn-primary">Event Page</a></li>
+        <li><a href="https://boston-wib.org/events/20260604_event?utm_source=newsletter&utm_medium=email&utm_campaign=april-2026" class="btn-primary">Event Page</a></li>
       </ul>
     </td>
   </tr>
@@ -196,15 +196,15 @@ And stay tuned until the end of the episode for a surprise!
 
 <div id="blogs"></div>
 
-[**Getting Started with UK Biobank and All of Us**](https://boston-wib.org/series/biobank-intro-series) <span class="text-muted">  
+[**Getting Started with UK Biobank and All of Us**](https://boston-wib.org/series/biobank-intro-series?utm_source=newsletter&utm_medium=email&utm_campaign=april-2026) <span class="text-muted">  
 _Tutorial Series by [Samantha J. Klasfeld, Ph.D.](https://www.linkedin.com/in/samantha-klasfeld)_</span>  
 This series provides a practical guide to working with UK Biobank and All of Us. Written for researchers who are new to working with these environments, it covers cloud hardware, phenotype data, OMOP concepts, and genetic variant extraction. A wrap-up post is planned to close out the series.
 
-[**The Rite of Process**](https://boston-wib.org/blog/quicktake/wgs-analysis-poem) <span class="text-muted">  
+[**The Rite of Process**](https://boston-wib.org/blog/quicktake/wgs-analysis-poem?utm_source=newsletter&utm_medium=email&utm_campaign=april-2026) <span class="text-muted">  
 _Quick Take by [Sharvari Narendra](https://www.linkedin.com/in/sharvarinarendra/)_</span>  
 What does it feel like to be a DNA sample moving through a whole genome sequencing pipeline? Reimagine the process from the inside out in this evocative poem.
 
-**Want to see your name here?** We're always looking for new voices. You don't need citations, a polished draft, or even a complete idea — just something you've been thinking about. Reach out to the us at the [communications committee](https://boston-wib.org/about/committees/communications) to get started.
+**Want to see your name here?** We're always looking for new voices. You don't need citations, a polished draft, or even a complete idea — just something you've been thinking about. Reach out to the us at the [communications committee](https://boston-wib.org/about/committees/communications?utm_source=newsletter&utm_medium=email&utm_campaign=april-2026) to get started.
 
 ---
 
@@ -214,17 +214,17 @@ What does it feel like to be a DNA sample moving through a whole genome sequenci
 
 **AI Agents for Biological Discovery: From Spatial Omics to Therapeutics**  
 [Bioinformatics XChange](https://luma.com/bioinfoclub) | Virtual | April 18, 10:00 AM  
-Spatial omics datasets are growing faster than teams can analyze them. In this virtual talk, Dr. Ilknur Icke (Head of R&D, Symbiont-AI Cognitive Labs) presents a landscape analysis of 37 AI agent systems, with a deep dive into multi-agent approaches for spatial biology and their links to therapeutic reasoning. [Register here](https://boston-wib.org/events/20260418_bxc_event?utm_source=boston-wib.org).
+Spatial omics datasets are growing faster than teams can analyze them. In this virtual talk, Dr. Ilknur Icke (Head of R&D, Symbiont-AI Cognitive Labs) presents a landscape analysis of 37 AI agent systems, with a deep dive into multi-agent approaches for spatial biology and their links to therapeutic reasoning. [Register here](https://boston-wib.org/events/20260418_bxc_event?utm_source=newsletter&utm_medium=email&utm_campaign=april-2026).
 
 **Biotech Data and Beers**  
 [Carolina Cloud](https://www.linkedin.com/company/carolina-cloud-io/) | Lamplighter Brewing Co. | April 13, 5:30–8:00 PM  
-A casual Cambridge meetup for bioinformaticians -- drinks provided, $250 in cloud compute credits up for grabs, and good conversation with people who get it. [Register here](https://boston-wib.org/events/20260413_carolinaCloud?utm_source=boston-wib.org).
+A casual Cambridge meetup for bioinformaticians -- drinks provided, $250 in cloud compute credits up for grabs, and good conversation with people who get it. [Register here](https://boston-wib.org/events/20260413_carolinaCloud?utm_source=newsletter&utm_medium=email&utm_campaign=april-2026).
 
 ## Get Involved
 
 <div id="get-involved"></div>
 
-BWIB runs entirely on volunteer energy, and we're always looking for passionate people to join us. From organizing events and producing the podcast to managing finances and advocating for equity in the field, there's a place for every skill set. Learn more at https://boston-wib.org/about/committees
+BWIB runs entirely on volunteer energy, and we're always looking for passionate people to join us. From organizing events and producing the podcast to managing finances and advocating for equity in the field, there's a place for every skill set. Learn more at [boston-wib.org/about/committees](https://boston-wib.org/about/committees?utm_source=newsletter&utm_medium=email&utm_campaign=april-2026)
 
 ---
 
