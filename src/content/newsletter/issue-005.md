@@ -68,6 +68,11 @@ _[Follow us. We're here.](https://www.linkedin.com/company/boston-women-in-bioin
 
 ### NF-Core hackathon — A First-Timer's Reflection
 
+<figure>
+  <img src="/photos/2026/nextflow-hackathon-march-2026-02.jpeg" alt="Nine nf-core Hackathon attendees pose for a selfie-style group photo, with the Seqera representative holding the camera.">
+  <figcaption>Cambridge, MA participants at the BWIB-hosted nf-core Hackathon, sponsored by Seqera</figcaption>
+</figure>
+
 _[Mrunali Thokadiwala](https://www.linkedin.com/in/emrunali/)_ • March 11-13,2026
 
 I walked into the nf-core Hackathon with more questions than answers. The goal was to contribute, though I wasn't yet sure what I had to offer. The first two days were humbling: hours of scanning issues, looking for something I could meaningfully address, and quietly closing tabs on threads I couldn't yet navigate. With guidance from Lei Ma (our Boston event host), I submitted my first-ever pull request and finally found my footing. By Day 3, I was implementing a fix rooted in my own single-cell RNA-sequencing experience, which led maintainers to evaluate a more elegant, universal solution within Nextflow itself. Looks like I brought something worth noticing after all.
@@ -78,13 +83,21 @@ Two words for someone on the fence about their first hackathon — just go!
 
 ### Byte & Bite @ Shy Bird
 
+<figure>
+  <img
+    src="/photos/2026/biteNbyte_march2026.jpeg"
+    alt="Seventeen BWIB members seated along a long wooden table, smiling at the camera over grain bowls and water carafes."
+  />
+  <figcaption>BWIB's Byte &amp; Bite lunch at Shy Bird in Kendall Square, hosted by BWIB.</figcaption>
+</figure>
+
 _[Emily Lachtara](https://www.linkedin.com/in/emily-lachtara/)_ • March 16,2026
 
 Our latest Byte & Bite lunch was a great success! We had 17 attendees from across the bioinformatics field, including industry professionals, academic researchers, postdocs, and graduate students. It was my first time hosting, and I really couldn’t have asked for a better experience. Everyone was so kind and welcoming, which made it feel easy and fun. The conversations were lively and insightful, and the food made it even better. Huge thanks to Shy Bird for hosting us. I’m already looking forward to the next one!
 
 ### Single Cell Basics Workshop
 
-_[Prisni Rath](https://www.linkedin.com/in/prisni-r/), [Liyang Diao](https://www.linkedin.com/in/liyang-diao-90933461/) & Maryanne_ • April 2-3,2026
+_[Prisni Rath](https://www.linkedin.com/in/prisni-r/), [Liyang Diao](https://www.linkedin.com/in/liyang-diao-90933461/) & [Maryanne Muchuki](https://www.linkedin.com/in/maryanne-muchuki-b49905207/)_ • April 2-3,2026
 
 We recently hosted our first beginner-friendly, hands-on, virtual workshop on single-cell RNA-seq analysis in collaboration with BWiB and Sprout Informatics. It was incredibly rewarding to see the level of participation and engagement throughout the sessions.
 
