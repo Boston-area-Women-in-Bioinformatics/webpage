@@ -130,7 +130,7 @@ As our first workshop of this kind, we learned just as much as we taught. We're 
   </tr>
 </table>
 
-The registration deadline has passed, but we have a handful of spots left. If talking about your work in networking conversations makes you want to disappear, this is your sign to grab one. Dr. Jenn Felsted-Knight, a former neuroscientist and certified professional coach, will walk us through building a networking pitch that actually sounds like you: no personal branding buzzwords, no cringe, just a clear and honest way to communicate the impact you’ve had. You’ll practice out loud in small group rounds and leave with something ready to use. Tickets are $10. Click "Donate & Tickets" on the [givebutter registration page](https://givebutter.com/networking-without-the-ick?utm_source=boston-wib.org).
+You've built pipelines, analyzed datasets, and figured out problems most people don't even know exist. Now let's make it easier to talk about. Dr. Jenn Felsted-Knight, a former neuroscientist and certified professional coach, will walk us through building a networking pitch that actually sounds like you: no personal branding buzzwords, no cringe, just a clear and honest way to communicate the impact you've had. You'll practice out loud in small group rounds and leave with something ready to use. Only 9 spots left. And if you know someone who could use this too, bring them along. Tickets are $10.61. Click "Donate & Tickets" on the [givebutter registration page](https://givebutter.com/networking-without-the-ick?utm_source=boston-wib.org).
 
 ### Bits & Brews
 
