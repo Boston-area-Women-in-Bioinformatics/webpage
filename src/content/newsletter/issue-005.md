@@ -231,9 +231,9 @@ What does it feel like to be a DNA sample moving through a whole genome sequenci
 [Bioinformatics XChange](https://luma.com/bioinfoclub) | Virtual | April 18, 10:00 AM  
 Spatial omics datasets are growing faster than teams can analyze them. In this virtual talk, Dr. Ilknur Icke (Head of R&D, Symbiont-AI Cognitive Labs) presents a landscape analysis of 37 AI agent systems, with a deep dive into multi-agent approaches for spatial biology and their links to therapeutic reasoning. [Register here](https://boston-wib.org/events/20260418_bxc_event?utm_source=newsletter&utm_medium=email&utm_campaign=april-2026).
 
-**Biotech Data and Beers**  
-[Carolina Cloud](https://www.linkedin.com/company/carolina-cloud-io/) | Lamplighter Brewing Co. | April 13, 5:30–8:00 PM  
-A casual Cambridge meetup for bioinformaticians -- drinks provided, $250 in cloud compute credits up for grabs, and good conversation with people who get it. [Register here](https://boston-wib.org/events/20260413_carolinaCloud?utm_source=newsletter&utm_medium=email&utm_campaign=april-2026).
+**Nextflow Summit Boston 2026**
+[Seqera](https://seqera.io/) | Boston & Online | April 30 – May 1
+The annual Nextflow Summit, presented by Seqera, brings together scientists and computational biologists to advance data science and workflow development. This year's Boston edition includes the nf-core Hackathon and Nextflow Training (April 28-29) ahead of the main summit. Academic registration is $100; online attendance is free. In-person registration closes April 17, but you can reach out to [communications@boston-wib.org](mailto:communications@boston-wib.org) for a promo code. [Learn more and register here](https://summit.nextflow.io/2026/boston/overview).
 
 ## Get Involved
 
@@ -255,7 +255,9 @@ BWIB runs entirely on volunteer energy, and we're always looking for passionate 
 
 <div id="social-media"></div>
 
-Slack: https://lnkd.in/eecyVA7C  
-Email: Bostonwomeninbioinformatics@gmail.com  
-LinkedIn: https://lnkd.in/egg4T2qr  
-Lu.ma: https://luma.com/bwib
+- **Slack:** [boston-women-bioinfo](https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ)
+- **Email:** [communications@boston-wib.org](mailto:communications@boston-wib.org)
+- **LinkedIn:** [Boston-area Women in Bioinformatics](https://www.linkedin.com/company/boston-women-in-bioinformatics)
+- **Lu.ma:** [Boston Women in Bioinformatics](https://luma.com/bwib)
+- **Blue Sky** [Boston Women in Bioinformatics](https://bsky.app/profile/boston-wib.bsky.social)
+- **Location:** Boston Area, Massachusetts
