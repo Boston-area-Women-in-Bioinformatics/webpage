@@ -1,0 +1,57 @@
+---
+// src/components/NewsletterSignup.astro
+const SCRIPT_URL =
+  'https://script.google.com/macros/s/AKfycbwHw0-ll8uEnY3sC9G4YQJ3YtN1O2ZYs9_9zMCJuUm-NQA_XSG6jus-EJrP6VcBis-DNg/exec';
+---
+
+<div class="flex flex-col gap-2">
+  <p class="font-semibold text-gray-900 dark:text-slate-100 m-0">Subscribe to the BWIB newsletter</p>
+  <div class="flex flex-wrap gap-2">
+    <input
+      type="email"
+      id="newsletter-email"
+      placeholder="your@email.com"
+      autocomplete="email"
+      class="flex-1 min-w-[200px] px-3 py-2 rounded-full border border-gray-400 dark:border-slate-500 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 text-base focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+    />
+    <button id="newsletter-submit" type="button" class="btn-primary disabled:opacity-60 disabled:cursor-not-allowed">
+      Subscribe
+    </button>
+  </div>
+  <p id="newsletter-message" class="text-sm m-0 min-h-[1.25rem]" aria-live="polite"></p>
+</div>
+
+<script define:vars={{ SCRIPT_URL }}>
+  const input = document.getElementById('newsletter-email');
+  const button = document.getElementById('newsletter-submit');
+  const message = document.getElementById('newsletter-message');
+
+  button.addEventListener('click', async () => {
+    const email = input.value.trim();
+    if (!email) return;
+
+    button.disabled = true;
+    button.textContent = 'Subscribing...';
+    message.textContent = '';
+    message.className = 'text-sm m-0 min-h-[1.25rem]';
+
+    try {
+      const res = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      message.textContent = data.message;
+      message.className =
+        'text-sm m-0 min-h-[1.25rem] ' +
+        (data.success ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400');
+      if (data.success) input.value = '';
+    } catch {
+      message.textContent = 'Network error. Please try again.';
+      message.className = 'text-sm m-0 min-h-[1.25rem] text-red-600 dark:text-red-400';
+    } finally {
+      button.disabled = false;
+      button.textContent = 'Subscribe';
+    }
+  });
+</script>
