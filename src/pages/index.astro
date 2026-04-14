@@ -16,6 +16,7 @@ import { APP_NEWSLETTER, APP_BLOG } from 'astrowind:config';
 import { getBlogPermalink } from '~/utils/permalinks';
 import Image from '~/components/common/Image.astro';
 import NewBadge from '~/components/ui/NewBadge.astro';
+import NewsletterSignup from '~/components/newsletter/NewsletterSignup.astro';
 
 const latestNewsletter = APP_NEWSLETTER.isEnabled ? (await findLatestNewsletters({ count: 1 }))[0] : null;
 const allLatestPosts = APP_BLOG.isEnabled ? (await findLatestPosts({ count: 20 })) || [] : [];
@@ -146,6 +147,7 @@ const metadata = {
                   <h3 id="latest-newsletter-heading" class="text-2xl font-bold mb-4">
                     Communications
                   </h3>
+                  <NewsletterSignup />
                   <div class="relative flex flex-col flex-1">
                     {new Date(latestNewsletter.publishDate) >= thirtyDaysAgo && <NewBadge />}
                     <Card variant="blog" padding="p-0" class="flex flex-col flex-1">
