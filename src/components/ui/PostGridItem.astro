@@ -28,7 +28,8 @@ const isRemoteImage =
   (image.startsWith('http') ||
     image.startsWith('/assets/') ||
     image.startsWith('/blog_images/') ||
-    image.startsWith('/photos/'));
+    image.startsWith('/photos/') ||
+    image.startsWith('/team/'));
 
 // Determine if this is a blog post or newsletter
 const isBlogPost = 'tags' in post;
