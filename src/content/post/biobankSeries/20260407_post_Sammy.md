@@ -22,7 +22,7 @@ draft: false
 metadata:
   title: 'Biobank Intro Series: UK Biobank Genetic Data'
   description: 'How to access and traverse genetic data on the UK Biobank Research Analysis Platform, including file types, storage structure, and retrieval tools.'
-  canonical: https://sklasfeld.netlify.app/blog/biobank-intro-series/06-phenodataallofus/
+  canonical: https://sklasfeld.netlify.app/blog/biobank-intro-series/07-genotypeukb/
 ---
 
 Genetic data. We made it. Coming from my Ph.D. in plant epigenetics, I was used to raw sequencing data from one replicate at a time. In contrast, the UK Biobank (UKB) has around 500,000 participants. The enormity of it can become an unbearable dead weight if you let it. The fix is straightforward: fit the data to your analysis, not the other way around. In my work, I've focused on a single region or a handful of variants at a time. That means streaming raw files from the data repository and filtering on the fly, rather than pulling them down in full with DNAnexus (see [my previous blog on UKB hardware](../02-hardwareOnUKBandAoU)). The first step is knowing what genetic data UKB actually has, where it lives, and how to filter it before it becomes your problem.
