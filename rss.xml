@@ -1,4 +1,211 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Biobank Intro Series: UK Biobank Genetic Data</title><link>https://boston-wib.org/blog/biobank-intro-series/07-ukb-genetic-data</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/07-ukb-genetic-data</guid><pubDate>Tue, 07 Apr 2026 04:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/ukb_genetic_timeline.png&quot; alt=&quot;A tree ring visualization where each ring is a relevant UKB release&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Biobank Intro Series: All of Us Genetic Data</title><link>https://boston-wib.org/blog/biobank-intro-series/08-aou-genetic-data</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/08-aou-genetic-data</guid><pubDate>Tue, 14 Apr 2026 04:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/bucketofblobs.png&quot; alt=&quot;A tree ring visualization where each ring is a relevant UKB release&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Navigating All of Us genotype data for variant extraction and analysis&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;If UK Biobank RAP gives you a filing cabinet with labeled drawers, All of Us gives you a bucket of blobs. Technically everything you need is in there. Somewhere. In blob form. The official Google Cloud Storage documentation uses the word &amp;quot;blob&amp;quot; without apparent embarrassment. I have thoughts about this. They are not printable.&lt;/p&gt;
+&lt;p&gt;Yes, &amp;quot;blobs&amp;quot; is the technical term for flat storage objects, organized by path conventions rather than a true directory hierarchy. There are no folders, just prefixes that cosplay as folders. Until you internalize this, you may spend a lot of time fishing in the bucket.&lt;/p&gt;
+&lt;h2&gt;Quick Overview: What&amp;#39;s Available&lt;/h2&gt;
+&lt;figure class=&quot;my-8 mx-auto !max-w-lg&quot;&gt;
+&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/aou_genetic_data.png&quot; alt=&quot;Woman with a flashlight searching through a dark basement packed with disorganized filing cabinets, papers, and boxes, representing the scattered data organization within All of Us.&quot; class=&quot;!max-w-none mx-auto w-full&quot; &gt;
+&lt;figcaption class=&quot;text-center text-sm opacity-80 mt-2&quot;&gt;
+   &lt;em&gt;Working with All of Us data can feel like searching a dim warehouse. Valuable datasets are everywhere, but finding the right files requires some exploration.&lt;/em&gt;
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The All of Us documentation assures us that the data exists. Somewhere. In some format. Accessible via... &lt;a href=&quot;https://support.researchallofus.org/hc/en-us/articles/29475233432212-Controlled-CDR-Directory&quot;&gt;environment variables&lt;/a&gt;? Googling variations of &amp;quot;all of us wgs sequencing data&amp;quot; will lead you to get increasingly creative with &lt;code&gt;gsutil ls&lt;/code&gt; commands. Let me save you some time. Here&amp;#39;s where the genotype data actually lives.&lt;/p&gt;
+&lt;p&gt;Similar to the &lt;a href=&quot;../07-genotypeUKB&quot;&gt;recent WGS releases in UK Biobank&lt;/a&gt;, All of Us provides whole genome sequencing data in phased and unphased VCF formats. The concepts covered there, what “phased” means and when you’d choose one format over the other, carry over directly so I won’t re-explain them here. What’s different is where the files live and how you get data out of them.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Format&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;th&gt;Path&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;Phased VCFs&lt;/td&gt;
+&lt;td&gt;By chromosome, easiest to access&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;gs://fc-aou-datasets-controlled/v8/wgs/short_read/snpindel/aux/phasing/chr${CHROM}_AOU_v8.2_allsamples_phased.vcf.gz&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unphased VCFs&lt;/td&gt;
+&lt;td&gt;Sharded into 20,016 files&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;gs://fc-aou-datasets-controlled/v8/wgs/short_read/snpindel/exome/vcf/${BATCH}.vcf.bgz&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Hail MatrixTable&lt;/td&gt;
+&lt;td&gt;For distributed computing&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$WGS_EXOME_MULTI_HAIL_PATH&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Variant Annotation Table (VAT)&lt;/td&gt;
+&lt;td&gt;Gene-level annotations&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;gs://fc-aou-datasets-controlled/v8/wgs/short_read/snpindel/aux/vat/vat_complete.bgz.tsv.gz&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;h2&gt;Streaming VCFs from GCS&lt;/h2&gt;
+&lt;p&gt;On UKB RAP, we worked around &lt;code&gt;dx cat&lt;/code&gt; buffering problems by generating a temporary HTTPS URL with &lt;code&gt;dx make_download_url&lt;/code&gt; and pointing bcftools at that directly (see &lt;a href=&quot;../02-hardwareOnUKBandAoU&quot;&gt;post 02&lt;/a&gt;). On AoU, &lt;code&gt;gsutil cat&lt;/code&gt; actually streams without buffering, so you can pipe it straight into bcftools. No URL workaround needed. If your environment is authenticated via &lt;code&gt;GOOGLE_APPLICATION_CREDENTIALS&lt;/code&gt; or &lt;code&gt;gcloud auth&lt;/code&gt;, bcftools may be able to read gs:// paths directly, though I haven&amp;#39;t tested this.&lt;/p&gt;
+&lt;details open&gt;
+&lt;summary&gt;Code&lt;/summary&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Phased VCF
+PHASED_VCF=&amp;quot;gs://fc-aou-datasets-controlled/v8/wgs/short_read/snpindel/aux/phasing/chr${CHROM}_AOU_v8.2_allsamples_phased.vcf.gz&amp;quot;
+gsutil -u $GOOGLE_PROJECT cat ${PHASED_VCF} \
+  | bcftools view -t ${CHROM}:${REGION_START}-${REGION_END} -O z -o phased_region.vcf.gz
+
+# Unphased VCF shard
+UNPHASED_VCF=&amp;quot;gs://fc-aou-datasets-controlled/v8/wgs/short_read/snpindel/exome/vcf/${BATCH}.vcf.bgz&amp;quot;
+gsutil -u $GOOGLE_PROJECT cat ${UNPHASED_VCF} \
+  | bcftools view -t ${CHROM}:${REGION_START}-${REGION_END} -O z -o unphased_region.vcf.gz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+
+&lt;p&gt;The phased files do come with &lt;code&gt;.tbi&lt;/code&gt; indexes, but since piped input isn&amp;#39;t seekable, bcftools can&amp;#39;t use them. The &lt;code&gt;-t&lt;/code&gt; flag streams and filters for both file types. The index is there if you ever download a file locally and query it repeatedly, but for the streaming workflow it doesn&amp;#39;t factor in.&lt;/p&gt;
+&lt;h2&gt;Finding Your Unphased Shard&lt;/h2&gt;
+&lt;p&gt;The unphased VCF files live at &lt;code&gt;gs://fc-aou-datasets-controlled/v8/wgs/short_read/snpindel/exome/vcf&lt;/code&gt;, sharded by genomic position into files numbered &lt;code&gt;0000000000&lt;/code&gt; to &lt;code&gt;0000020016&lt;/code&gt;. There is no chromosome in the filename and no documented estimate of how many base pairs each shard covers. Each shard has a companion &lt;code&gt;.interval_list&lt;/code&gt; file that tells you what regions it contains, which means the only way to find your region is to open interval lists until you find it.&lt;/p&gt;
+&lt;p&gt;The internet has fancy solutions for finding your regions of choice, but if you only need one region and you&amp;#39;re willing to be a little scrappy, a manual binary search is often faster than building proper infrastructure: jump to the middle of the file range, check the interval list with gsutil, then halve the range again based on whether your region fell above or below. Looping through all 20,016 files programmatically would be painfully slow. Use the script below as a verification tool, not a search engine, unless you have a long weekend and a lot of patience.&lt;/p&gt;
+&lt;details open&gt;
+&lt;summary&gt;Code&lt;/summary&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;import pandas as pd
+import subprocess
+from tqdm import tqdm
+
+# SET YOUR REGION OF INTEREST HERE
+chrom = &amp;quot;11&amp;quot;
+region_start = 47331406
+region_end = 47352702
+
+vcf_filelist = []
+start = False
+for i in tqdm(range(0, 20016)):
+    file_int = str(i).zfill(10)
+    interval_f = f&amp;quot;gs://fc-aou-datasets-controlled/v8/wgs/short_read/snpindel/exome/vcf/{file_int}.interval_list&amp;quot;
+    cmd = f&amp;quot;gsutil -u $GOOGLE_PROJECT cat {interval_f} | grep &amp;#39;^chr&amp;#39;&amp;quot;
+    p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
+    range_df = pd.read_csv(p.stdout, header=None, sep=&amp;quot;\t&amp;quot;)
+    range_df.columns = [&amp;#39;chrom&amp;#39;, &amp;#39;start&amp;#39;, &amp;#39;stop&amp;#39;, &amp;#39;strand&amp;#39;, &amp;#39;score&amp;#39;]
+    if not start:
+        region_count = (
+            (range_df[&amp;#39;chrom&amp;#39;].str.contains(chrom)) &amp;amp;
+            (range_df[&amp;#39;start&amp;#39;] &amp;gt;= region_start)
+        ).sum()
+        if region_count &amp;gt; 0:
+            vcf_filelist.append(file_int)
+            print(file_int)
+            start = True
+    else:
+        region_count = (
+            (range_df[&amp;#39;chrom&amp;#39;].str.contains(chrom)) &amp;amp;
+            (range_df[&amp;#39;stop&amp;#39;] &amp;lt;= region_end)
+        ).sum()
+        vcf_filelist.append(file_int)
+        if region_count &amp;gt; 0:
+            print(file_int)
+            break
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+
+&lt;p&gt;If you&amp;#39;re planning to do this repeatedly, build an index of shard positions once and query that instead. Why one doesn&amp;#39;t already exist is a great question.&lt;/p&gt;
+&lt;h2&gt;Extracting and Merging Your Region&lt;/h2&gt;
+&lt;p&gt;Once you have your shard list, stream each one through bcftools to subset to your region, then merge:&lt;/p&gt;
+&lt;details open&gt;
+&lt;summary&gt;Code&lt;/summary&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# SET YOUR REGION OF INTEREST HERE
+chrom=&amp;quot;11&amp;quot;
+region_start=47331406
+region_end=47352702
+
+shard1=0000002366  # FIRST_SHARD_NUMBER
+shard2=0000002367  # LAST_SHARD_NUMBER
+
+BASE=&amp;quot;gs://fc-aou-datasets-controlled/v8/wgs/short_read/snpindel/exome/vcf&amp;quot;
+
+# 1. Subset each shard to your region
+gsutil -u $GOOGLE_PROJECT cat ${BASE}/${shard1}.vcf.bgz \
+  | bcftools view -t ${chrom}:${region_start}-${region_end} -O z -o ${shard1}_region.vcf.gz
+
+gsutil -u $GOOGLE_PROJECT cat ${BASE}/${shard2}.vcf.bgz \
+  | bcftools view -t ${chrom}:${region_start}-${region_end} -O z -o ${shard2}_region.vcf.gz
+
+# 2. Index the filtered VCFs
+tabix -p vcf ${shard1}_region.vcf.gz
+tabix -p vcf ${shard2}_region.vcf.gz
+
+# 3. Concatenate
+bcftools concat -a -O z \
+  -o merged_AOU_v8_unphased.vcf.gz \
+  ${shard1}_region.vcf.gz \
+  ${shard2}_region.vcf.gz
+
+# 4. Index the merged VCF
+tabix -p vcf merged_AOU_v8_unphased.vcf.gz
+
+# 5. Save to your workspace bucket
+gsutil -u $GOOGLE_PROJECT cp merged_AOU_v8_unphased.vcf.gz $WORKSPACE_BUCKET/data/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+
+&lt;h2&gt;What About Hail?&lt;/h2&gt;
+&lt;p&gt;As I mentioned in &lt;a href=&quot;../02-hardwareOnUKBandAoU&quot;&gt;post 02&lt;/a&gt;, Hail requires an expensive Spark cluster and is overkill for single-gene or single-region work. For those cases, bcftools is faster and cheaper. If you&amp;#39;re doing something genuinely genome-wide that needs distributed computing, the MatrixTable is available at &lt;code&gt;$WGS_EXOME_MULTI_HAIL_PATH&lt;/code&gt;. If you go that route, always filter at read time using the &lt;code&gt;_intervals&lt;/code&gt; parameter. Loading the full genome MatrixTable on the default cluster will crash it.&lt;/p&gt;
+&lt;details open&gt;
+&lt;summary&gt;Code&lt;/summary&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;import hail as hl
+import os
+
+chrom = &amp;quot;11&amp;quot;
+region_start = 47331406
+region_end = 47352702
+
+aou_wgs_mt = os.getenv(&amp;quot;WGS_EXOME_MULTI_HAIL_PATH&amp;quot;)
+
+# Filter at READ time, not after loading
+your_interval = hl.eval(hl.parse_locus_interval(f&amp;#39;{chrom}:{region_start}-{region_end}&amp;#39;))
+mt = hl.read_matrix_table(
+    aou_wgs_mt,
+    _intervals=[your_interval]  # Only load this region!
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+
+&lt;h2&gt;Bonus: The Variant Annotation Table (VAT)&lt;/h2&gt;
+&lt;p&gt;If you need variant annotations like gene names and predicted consequences, All of Us provides a massive TSV file you can grep by gene name:&lt;/p&gt;
+&lt;details open&gt;
+&lt;summary&gt;Code&lt;/summary&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;#!/bin/bash
+
+# SET YOUR GENE OF INTEREST HERE
+gene=&amp;quot;MYBPC3&amp;quot;
+
+project=$GOOGLE_PROJECT
+bucket=$WORKSPACE_BUCKET
+vat_f=&amp;quot;gs://fc-aou-datasets-controlled/v8/wgs/short_read/snpindel/aux/vat/vat_complete.bgz.tsv.gz&amp;quot;
+
+echo &amp;quot;Starting ${gene} extraction at $(date)&amp;quot;
+gsutil -u $project cat $vat_f | gunzip | head -1 &amp;gt; ${gene}_vat_v8.tsv
+echo &amp;quot;Header retrieved at $(date)&amp;quot;
+
+echo &amp;quot;Extracting ${gene} variants...&amp;quot;
+gsutil -u $project cat $vat_f | gunzip | grep $&amp;#39;\t&amp;#39;&amp;quot;${gene}&amp;quot;$&amp;#39;\t&amp;#39; &amp;gt;&amp;gt; ${gene}_vat_v8.tsv
+echo &amp;quot;Done at $(date)&amp;quot;
+
+wc -l ${gene}_vat_v8.tsv
+
+echo &amp;quot;Uploading to workspace bucket...&amp;quot;
+gsutil -u $project cp ${gene}_vat_v8.tsv ${bucket}/data/${gene}_vat_v8.tsv
+echo &amp;quot;Upload complete at $(date)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+
+&lt;p&gt;&lt;strong&gt;Before you run this:&lt;/strong&gt; set your idle timeout to at least 8 hours. The file is ~150 GB compressed, grepping through it takes 45 minutes or more, and if your instance sleeps halfway through you&amp;#39;re starting over. The output is human-readable and easy to work with, but it&amp;#39;s not indexed, so tabix isn&amp;#39;t an option. What you see above is about as fast as it gets without an index.&lt;/p&gt;
+&lt;h2&gt;Putting It All Together&lt;/h2&gt;
+&lt;p&gt;If there&amp;#39;s a theme to this post, it&amp;#39;s this: All of Us has enormous data and almost no indexes to help you navigate it. The unphased VCFs are sharded into 20,016 files with no chromosome in the filename. The VAT is 150 GB compressed with no tabix support. The documentation points you to environment variables and leaves the rest to you. You&amp;#39;re not doing something wrong when it takes a while. That&amp;#39;s just the deal. Start the script, set your idle timeout, and go do something else.&lt;/p&gt;
+&lt;p&gt;Could someone build proper indexes for all of this? Yes. Should they? Absolutely. Is that a job for a skilled computational biologist who understands the data well enough to do it right? Also yes. If you&amp;#39;re reading this and thinking &amp;quot;someone should fix that,&amp;quot; that someone could be you.&lt;/p&gt;
+&lt;p&gt;Go forth and blob on.&lt;/p&gt;
+</content:encoded><category>biobank</category><category>all-of-us</category><category>genotype-data</category><category>variant-calls</category><category>variant-annotation</category></item><item><title>Biobank Intro Series: UK Biobank Genetic Data</title><link>https://boston-wib.org/blog/biobank-intro-series/07-ukb-genetic-data</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/07-ukb-genetic-data</guid><pubDate>Tue, 07 Apr 2026 04:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/ukb_genetic_timeline.png&quot; alt=&quot;A tree ring visualization where each ring is a relevant UKB release&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;Traversing genetic data on the UK Biobank RAP (Research Analysis Platform) environment&lt;/em&gt;&lt;/p&gt;
 
@@ -1321,7 +1528,7 @@ They’ll ask: &amp;quot;Do we have agents that can actually &lt;strong&gt;close
 &lt;p&gt;💠 Curious how this evolves in 2026 and beyond clinically, operationally, and ethically!&lt;/p&gt;
 </content:encoded><category>clinical-data</category><category>artificial-intelligence</category><category>ai</category><category>ai-agents</category><category>data-science</category><category>health-informatics</category><category>health-tech</category></item><item><title>I Fixed the Same Bug Three Times (No One Noticed)</title><link>https://boston-wib.org/blog/quicktake/i-fixed-the-same-bug-three-times</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/i-fixed-the-same-bug-three-times</guid><pubDate>Thu, 20 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-20-i-fixed-the-same-bug-three-times.png&quot; alt=&quot;Infographic showing a repeating life cycle: a bug occurs, a fix is applied, the solution is documented, turnover happens, documentation is forgotten, and the cycle repeats.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
-</content:encoded><category>biotech</category><category>data-engineering</category><category>bioinformatics</category><category>technical-debt</category><category>software-engineering</category></item><item><title>Tuesday Tactics: The 3-Question Requirements Filter</title><link>https://boston-wib.org/blog/quicktake/tuesday-tactics-3-question-requirements-filter</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/tuesday-tactics-3-question-requirements-filter</guid><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded/><category>data-science</category><category>data-engineering</category><category>bioinformatics</category><category>product-management</category><category>biotech</category><category>tuesday-tactics</category></item><item><title>Work Life Decoded: Understanding Your Manager&apos;s World</title><link>https://boston-wib.org/blog/work-life-decoded/understanding-your-managers-world</link><guid isPermaLink="true">https://boston-wib.org/blog/work-life-decoded/understanding-your-managers-world</guid><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/Work-Life-Decoded.png&quot; alt=&quot;Work Life Decoded Video Series Thumbnail&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>biotech</category><category>data-engineering</category><category>bioinformatics</category><category>technical-debt</category><category>software-engineering</category></item><item><title>Work Life Decoded: Understanding Your Manager&apos;s World</title><link>https://boston-wib.org/blog/work-life-decoded/understanding-your-managers-world</link><guid isPermaLink="true">https://boston-wib.org/blog/work-life-decoded/understanding-your-managers-world</guid><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/Work-Life-Decoded.png&quot; alt=&quot;Work Life Decoded Video Series Thumbnail&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;How to Building a Strategic Partnership with Your Boss&lt;/em&gt;&lt;/p&gt;
 
@@ -1340,7 +1547,7 @@ They’ll ask: &amp;quot;Do we have agents that can actually &lt;strong&gt;close
 &lt;li&gt;How to build trust and advocate for yourself strategically&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Watch the full episode &lt;a href=&quot;https://www.patreon.com/posts/new-video-your-143734360&quot;&gt;Work Life Decoded: Understanding Your Manager&amp;#39;s World)&lt;/a&gt; on Patreon.&lt;/p&gt;
-</content:encoded><category>career-advice</category><category>career-development</category><category>manager-relationships</category><category>workplace-strategy</category><category>professional-growth</category><category>work-life-decoded</category></item><item><title>Write the Test First (Even for Your Science)</title><link>https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</guid><pubDate>Mon, 17 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-17-write-the-test-first-even-for-your-science.png&quot; alt=&quot;Side‑by‑side flowcharts comparing traditional vs. test‑driven development (TDD) approaches.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+</content:encoded><category>career-advice</category><category>career-development</category><category>manager-relationships</category><category>workplace-strategy</category><category>professional-growth</category><category>work-life-decoded</category></item><item><title>Tuesday Tactics: The 3-Question Requirements Filter</title><link>https://boston-wib.org/blog/quicktake/tuesday-tactics-3-question-requirements-filter</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/tuesday-tactics-3-question-requirements-filter</guid><pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate><content:encoded/><category>data-science</category><category>data-engineering</category><category>bioinformatics</category><category>product-management</category><category>biotech</category><category>tuesday-tactics</category></item><item><title>Write the Test First (Even for Your Science)</title><link>https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/write-the-test-first-even-for-your-science</guid><pubDate>Mon, 17 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/2025-11-17-write-the-test-first-even-for-your-science.png&quot; alt=&quot;Side‑by‑side flowcharts comparing traditional vs. test‑driven development (TDD) approaches.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;Why data scientists should design error messages that guide users straight to solutions.&lt;/em&gt;&lt;/p&gt;
 
