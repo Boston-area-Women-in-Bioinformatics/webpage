@@ -1,4 +1,178 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Newsletter</title><description>Stay updated with our latest newsletters</description><link>https://boston-wib.org</link><item><title>🌸 Fresh Commits: The BWIB Spring Edition</title><link>https://boston-wib.org/issue-004</link><guid isPermaLink="true">https://boston-wib.org/issue-004</guid><pubDate>Thu, 05 Feb 2026 00:00:01 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//photos/2026/DataDrivenPharmaForum_20260211_0768.jpg&quot; alt=&quot;A group of Boston Women in Bioinformatics members gathered together at a community AI event.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Newsletter</title><description>Stay updated with our latest newsletters</description><link>https://boston-wib.org</link><item><title>🪴 Branching Out: The BWIB April 2026 Edition</title><link>https://boston-wib.org/issue-005</link><guid isPermaLink="true">https://boston-wib.org/issue-005</guid><pubDate>Wed, 08 Apr 2026 04:00:01 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//photos/2026/biteNbyte_march2026.jpeg&quot; alt=&quot;Boston Women in Bioinformatics Bite &amp; Byte Lunch&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Reflections, events, and new opportunities shaping our community this month.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;We&amp;#39;re back with another edition of the BWIB newsletter. This month we&amp;#39;re saying a fond farewell to our LinkedIn Group as we consolidate our online home, shining a spotlight on another leader in our community, and reflecting on a packed season of events. We&amp;#39;ve also got career wisdom from the other side of the interview table, fresh blogs, partner events, and plenty of ways to get involved. Grab your boba and dig in.&lt;/p&gt;
+&lt;p&gt;Here&amp;#39;s what&amp;#39;s inside this month:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#farewell&quot;&gt;Farewell to our Linked in Group&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#member-spotlight&quot;&gt;Member Spotlight: Aysheh Alrfooh&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#events-recap&quot;&gt;Events Reflections&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#upcoming-events&quot;&gt;Events on the Horizon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#podcast&quot;&gt;Coffee with CompBio: Behind the Interview Table&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#blogs&quot;&gt;Blogs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#partner-events&quot;&gt;Partner Events&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#get-involved&quot;&gt;Get Involved&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#exec-board&quot;&gt;Executive Board&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#social-media&quot;&gt;Social Media&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;A Farewell to our Linked in Group&lt;/h2&gt;
+&lt;div id=&quot;farewell&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Group chat left on read&lt;/em&gt;&lt;br&gt;&lt;em&gt;Company page glows brand new&lt;/em&gt;&lt;br&gt;&lt;em&gt;&lt;a href=&quot;https://www.linkedin.com/company/boston-women-in-bioinformatics&quot;&gt;Follow us. We&amp;#39;re here.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Member Spotlight: &lt;a href=&quot;https://www.linkedin.com/in/aysheh-alrfooh&quot;&gt;Aysheh Alrfooh&lt;/a&gt;&lt;/h2&gt;
+&lt;div id=&quot;member-spotlight&quot;&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h2&gt;Events Reflections&lt;/h2&gt;
+&lt;div id=&quot;events-recap&quot;&gt;&lt;/div&gt;
+
+&lt;h3&gt;NF-Core hackathon — A First-Timer&amp;#39;s Reflection&lt;/h3&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;https://boston-wib.org//photos/2026/nextflow-hackathon-march-2026-02.jpeg&quot; alt=&quot;Nine nf-core Hackathon attendees pose for a selfie-style group photo, with the Seqera representative holding the camera.&quot;&gt;
+  &lt;figcaption&gt;Cambridge, MA participants at the BWIB-hosted nf-core Hackathon, sponsored by Seqera&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://www.linkedin.com/in/emrunali/&quot;&gt;Mrunali Thokadiwala&lt;/a&gt;&lt;/em&gt; • March 11-13,2026&lt;/p&gt;
+&lt;p&gt;I walked into the nf-core Hackathon with more questions than answers. The goal was to contribute, though I wasn&amp;#39;t yet sure what I had to offer. The first two days were humbling: hours of scanning issues, looking for something I could meaningfully address, and quietly closing tabs on threads I couldn&amp;#39;t yet navigate. With guidance from Lei Ma (our Boston event host), I submitted my first-ever pull request and finally found my footing. By Day 3, I was implementing a fix rooted in my own single-cell RNA-sequencing experience, which led maintainers to evaluate a more elegant, universal solution within Nextflow itself. Looks like I brought something worth noticing after all.&lt;/p&gt;
+&lt;p&gt;I&amp;#39;m so glad this was hosted in-person by Lei Ma and the BWIB team. Meeting fellow beginners, talking through first issues, and walking each other through those initial roadblocks made me feel far less alone in the process. Even hearing from experienced folks, some with conventional paths but interesting stories of finding opportunities and others with slightly unconventional trajectories, opened my eyes to just how many ways there are to carve your own path in this field.&lt;/p&gt;
+&lt;p&gt;Two words for someone on the fence about their first hackathon — just go!&lt;/p&gt;
+&lt;h3&gt;Byte &amp;amp; Bite @ Shy Bird&lt;/h3&gt;
+&lt;figure&gt;
+  &lt;img
+    src=&quot;https://boston-wib.org//photos/2026/biteNbyte_march2026.jpeg&quot;
+    alt=&quot;Seventeen BWIB members seated along a long wooden table, smiling at the camera over grain bowls and water carafes.&quot;
+  /&gt;
+  &lt;figcaption&gt;BWIB&apos;s Byte &amp;amp; Bite lunch at Shy Bird in Kendall Square, hosted by BWIB.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://www.linkedin.com/in/emily-lachtara/&quot;&gt;Emily Lachtara&lt;/a&gt;&lt;/em&gt; • March 16,2026&lt;/p&gt;
+&lt;p&gt;Our latest Byte &amp;amp; Bite lunch was a great success! We had 17 attendees from across the bioinformatics field, including industry professionals, academic researchers, postdocs, and graduate students. It was my first time hosting, and I really couldn’t have asked for a better experience. Everyone was so kind and welcoming, which made it feel easy and fun. The conversations were lively and insightful, and the food made it even better. Huge thanks to Shy Bird for hosting us. I’m already looking forward to the next one!&lt;/p&gt;
+&lt;h3&gt;Single Cell Basics Workshop&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://www.linkedin.com/in/prisni-r/&quot;&gt;Prisni Rath&lt;/a&gt;, &lt;a href=&quot;https://www.linkedin.com/in/liyang-diao-90933461/&quot;&gt;Liyang Diao&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://www.linkedin.com/in/maryanne-muchuki-b49905207/&quot;&gt;Maryanne Muchuki&lt;/a&gt;&lt;/em&gt; • April 2-3,2026&lt;/p&gt;
+&lt;p&gt;We recently hosted our first beginner-friendly, hands-on, virtual workshop on single-cell RNA-seq analysis in collaboration with BWiB and Sprout Informatics. It was incredibly rewarding to see the level of participation and engagement throughout the sessions.&lt;/p&gt;
+&lt;p&gt;What stood out most was the depth of the questions participants asked — not just about how to run the analysis, but also about why we make certain decisions. From choosing QC thresholds to understanding clustering, and even exploring how different visualization methods like t-SNE and UMAP shape our interpretation of cellular relationships, the discussions were thoughtful and insightful. Together, we worked toward the central biological question: identifying the most abundant cell type in the dataset.&lt;/p&gt;
+&lt;p&gt;These conversations made the workshop highly interactive and pushed us, as instructors, to reflect more deeply on the science behind each step. From setting up the computational environment to interpreting plots, the experience felt like true data storytelling.&lt;/p&gt;
+&lt;p&gt;As our first workshop of this kind, we learned just as much as we taught. We&amp;#39;re excited to continue building on this experience — exploring more complex datasets and tackling deeper biological questions in future sessions.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Events on the Horizon&lt;/h2&gt;
+&lt;div id=&quot;upcoming-events&quot;&gt;&lt;/div&gt;
+
+&lt;h3&gt;Networking Without the Ick Workshop with Jenn&lt;/h3&gt;
+&lt;table class=&quot;not-prose&quot; style=&quot;border-collapse: collapse; border: none; margin-top: 0.5rem; margin-bottom: 0.5rem;&quot;&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;vertical-align: top; border: none;&quot;&gt;
+      &lt;img src=&quot;https://boston-wib.org//photos/2026/20260421_BWIB_Networking-Without-The-Ick.png&quot; alt=&quot;Speaker: Dr. Jenn Felsted-Knight, Felsted Coaching &amp; Consulting&quot; width=&quot;250px&quot;/&gt;
+    &lt;/td&gt;
+    &lt;td style=&quot;vertical-align: middle; padding-left: 20px; border: none;&quot;&gt;
+      &lt;ul style=&quot;list-style-type: none; padding-left: 0;&quot;&gt;
+        &lt;li&gt;April 21, 2026 @ 5:30 PM&lt;/li&gt;
+        &lt;li&gt;CambridgeSide Mall, Cambridge, MA&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;https://givebutter.com/networking-without-the-ick?utm_source=boston-wib.org&quot; class=&quot;btn-primary&quot;&gt;Register&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;You&amp;#39;ve built pipelines, analyzed datasets, and figured out problems most people don&amp;#39;t even know exist. Now let&amp;#39;s make it easier to talk about. Dr. Jenn Felsted-Knight, a former neuroscientist and certified professional coach, will walk us through building a networking pitch that actually sounds like you: no personal branding buzzwords, no cringe, just a clear and honest way to communicate the impact you&amp;#39;ve had. You&amp;#39;ll practice out loud in small group rounds and leave with something ready to use. Only 9 spots left. And if you know someone who could use this too, bring them along. Tickets are $10.61. Click &amp;quot;Donate &amp;amp; Tickets&amp;quot; on the &lt;a href=&quot;https://givebutter.com/networking-without-the-ick?utm_source=boston-wib.org&quot;&gt;givebutter registration page&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Bits &amp;amp; Brews&lt;/h3&gt;
+&lt;table class=&quot;not-prose&quot; style=&quot;border-collapse: collapse; border: none; margin-top: 0.5rem; margin-bottom: 0.5rem;&quot;&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;vertical-align: top; border: none;&quot;&gt;
+      &lt;img src=&quot;https://boston-wib.org//photos/bitsandbrews.png&quot; alt=&quot;Happy Hour&quot; width=&quot;250px&quot;/&gt;
+    &lt;/td&gt;
+    &lt;td style=&quot;vertical-align: middle; padding-left: 20px; border: none;&quot;&gt;
+      &lt;ul style=&quot;list-style-type: none; padding-left: 0;&quot;&gt;
+        &lt;li&gt;April 24, 2026 @ 4:00 PM&lt;/li&gt;
+        &lt;li&gt;Tap 151 Bar and Grill, Cambridge, MA&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;https://luma.com/event/evt-e9zwBBgALsy7NPT?utm_source=boston-wib.org&quot; class=&quot;btn-primary&quot;&gt;Register&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Swap your terminal for a barstool and join us for a casual happy hour where bioinformaticians (and bioinformatics-curious folks) come together to laugh, swap stories, and make the kinds of connections that don’t require a p-value. Come as you are. Leave with new friends, new ideas, and maybe a few good recommendations for your next pipeline. Each guest will be responsible for purchasing their own meal and/or beverages.&lt;/p&gt;
+&lt;h3&gt;Festival of Genomics Networking&lt;/h3&gt;
+&lt;table class=&quot;not-prose&quot; style=&quot;border-collapse: collapse; border: none; margin-top: 0.5rem; margin-bottom: 0.5rem;&quot;&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;vertical-align: top; border: none;&quot;&gt;
+      &lt;img src=&quot;https://boston-wib.org//photos/2025/genomicsFestival.jpg&quot; alt=&quot;Festival of Genomics Logo&quot; width=&quot;250px&quot;/&gt;
+    &lt;/td&gt;
+    &lt;td style=&quot;vertical-align: middle; padding-left: 20px; border: none;&quot;&gt;
+      &lt;ul style=&quot;list-style-type: none; padding-left: 0;&quot;&gt;
+        &lt;li&gt;June 4, 2026 @ 11:30 AM&lt;/li&gt;
+        &lt;li&gt;Genome Dome, Boston Convention and Exhibition Center&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;https://boston-wib.org/events/20260604_event?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=april-2026&quot; class=&quot;btn-primary&quot;&gt;Event Page&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;If you’re attending the Festival of Genomics in Boston, come find us in the Genome Dome. We’re hosting a structured speed networking session with women working across bioinformatics, research, and industry. The format is simple: fast, one-on-one conversations with one goal: walk away with one memorable detail about every person you meet. Not just a new connection, but a real reason to follow up. Bring something to write with.&lt;/p&gt;
+&lt;h3&gt;Workshop with Joanna&lt;/h3&gt;
+&lt;p&gt;June 9, 2026&lt;/p&gt;
+&lt;h3&gt;BCBB &amp;amp; BWIB Lightning Talks&lt;/h3&gt;
+&lt;table class=&quot;not-prose&quot; style=&quot;border-collapse: collapse; border: none; margin-top: 0.5rem; margin-bottom: 0.5rem;&quot;&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;vertical-align: top; border: none;&quot;&gt;
+      &lt;img src=&quot;https://boston-wib.org//photos/2026/lightning_talks.png&quot; alt=&quot;BCBB &amp; BWIB Lightning Talks&quot; width=&quot;250px&quot;/&gt;
+    &lt;/td&gt;
+    &lt;td style=&quot;vertical-align: middle; padding-left: 20px; border: none;&quot;&gt;
+      &lt;ul style=&quot;list-style-type: none; padding-left: 0;&quot;&gt;
+        &lt;li&gt;June 2026, date T.B.A.&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;BWIB is teaming up with Boston Computational Biology &amp;amp; Bioinformatics for an evening of community Lightning Talks this June, and we’re especially excited to spotlight the rockstar women in bioinformatics across both communities. Five minutes, any topic: your current research, a workflow that changed how you work, the AI agent you’ve been obsessing over, a dataset you think everyone should know about, or a tool you wish someone had shown you sooner. Start thinking now about what you’d talk about if you had five minutes and a room full of people who get it. Stay tuned for the venue, date, and submission form.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Coffee with CompBio: Behind the Interview Table&lt;/h2&gt;
+&lt;div id=&quot;podcast&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;Ever wonder what hiring managers are actually looking for when they review your application or conduct an interview? In our April episode, we sit down with Lauren Fitch and Kaye Guerard-Hatziioannou from ArkeaBio for an honest conversation about the interview process from the interviewer&amp;#39;s perspective.&lt;/p&gt;
+&lt;p&gt;Now here&amp;#39;s where you come in. Got a burning question about hiring, interviews, or breaking into the field? Drop it in this &lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSceuJ0l9Y8lVgR3vSx1LbHH4R8d5zrrcF7Ewew4E9P-jZ9fCA/viewform?usp=header&quot;&gt;Google Form&lt;/a&gt;. We&amp;#39;ll pick the best one, answer it live on the episode, and give you a shoutout.
+One question per person · Deadline: April 25, 11:59 PM EST
+And stay tuned until the end of the episode for a surprise!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Blogs&lt;/h2&gt;
+&lt;div id=&quot;blogs&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://boston-wib.org/series/biobank-intro-series?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=april-2026&quot;&gt;&lt;strong&gt;Getting Started with UK Biobank and All of Us&lt;/strong&gt;&lt;/a&gt; &lt;span class=&quot;text-muted&quot;&gt;&lt;br&gt;&lt;em&gt;Tutorial Series by &lt;a href=&quot;https://www.linkedin.com/in/samantha-klasfeld&quot;&gt;Samantha J. Klasfeld, Ph.D.&lt;/a&gt;&lt;/em&gt;&lt;/span&gt;&lt;br&gt;This series provides a practical guide to working with UK Biobank and All of Us. Written for researchers who are new to working with these environments, it covers cloud hardware, phenotype data, OMOP concepts, and genetic variant extraction. A wrap-up post is planned to close out the series.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://boston-wib.org/blog/quicktake/wgs-analysis-poem?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=april-2026&quot;&gt;&lt;strong&gt;The Rite of Process&lt;/strong&gt;&lt;/a&gt; &lt;span class=&quot;text-muted&quot;&gt;&lt;br&gt;&lt;em&gt;Quick Take by &lt;a href=&quot;https://www.linkedin.com/in/sharvarinarendra/&quot;&gt;Sharvari Narendra&lt;/a&gt;&lt;/em&gt;&lt;/span&gt;&lt;br&gt;What does it feel like to be a DNA sample moving through a whole genome sequencing pipeline? Reimagine the process from the inside out in this evocative poem.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Want to see your name here?&lt;/strong&gt; We&amp;#39;re always looking for new voices. You don&amp;#39;t need citations, a polished draft, or even a complete idea — just something you&amp;#39;ve been thinking about. Reach out to the us at the &lt;a href=&quot;https://boston-wib.org/about/committees/communications?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=april-2026&quot;&gt;communications committee&lt;/a&gt; to get started.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Partner Events&lt;/h2&gt;
+&lt;div id=&quot;partner-events&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;AI Agents for Biological Discovery: From Spatial Omics to Therapeutics&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;https://luma.com/bioinfoclub&quot;&gt;Bioinformatics XChange&lt;/a&gt; | Virtual | April 18, 10:00 AM&lt;br&gt;Spatial omics datasets are growing faster than teams can analyze them. In this virtual talk, Dr. Ilknur Icke (Head of R&amp;amp;D, Symbiont-AI Cognitive Labs) presents a landscape analysis of 37 AI agent systems, with a deep dive into multi-agent approaches for spatial biology and their links to therapeutic reasoning. &lt;a href=&quot;https://boston-wib.org/events/20260418_bxc_event?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=april-2026&quot;&gt;Register here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nextflow Summit Boston 2026&lt;/strong&gt;
+&lt;a href=&quot;https://seqera.io/&quot;&gt;Seqera&lt;/a&gt; | Boston &amp;amp; Online | April 30 – May 1
+The annual Nextflow Summit, presented by Seqera, brings together scientists and computational biologists to advance data science and workflow development. This year&amp;#39;s Boston edition includes the nf-core Hackathon and Nextflow Training (April 28-29) ahead of the main summit. Academic registration is $100; online attendance is free. In-person registration closes April 17, but you can reach out to &lt;a href=&quot;mailto:communications@boston-wib.org&quot;&gt;communications@boston-wib.org&lt;/a&gt; for a promo code. &lt;a href=&quot;https://summit.nextflow.io/2026/boston/overview&quot;&gt;Learn more and register here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Get Involved&lt;/h2&gt;
+&lt;div id=&quot;get-involved&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;BWIB runs entirely on volunteer energy, and we&amp;#39;re always looking for passionate people to join us. From organizing events and producing the podcast to managing finances and advocating for equity in the field, there&amp;#39;s a place for every skill set. Learn more at &lt;a href=&quot;https://boston-wib.org/about/committees?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=april-2026&quot;&gt;boston-wib.org/about/committees&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;div id=&quot;exec-board&quot;&gt;&lt;/div&gt;
+
+&lt;h2&gt;🏛️ Executive Board&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://boston-wib.org//team/executiveBoard_2026.png&quot; alt=&quot;Executive Board Team&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Social Media&lt;/h2&gt;
+&lt;div id=&quot;social-media&quot;&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Slack:&lt;/strong&gt; &lt;a href=&quot;https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ&quot;&gt;boston-women-bioinfo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Email:&lt;/strong&gt; &lt;a href=&quot;mailto:communications@boston-wib.org&quot;&gt;communications@boston-wib.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LinkedIn:&lt;/strong&gt; &lt;a href=&quot;https://www.linkedin.com/company/boston-women-in-bioinformatics&quot;&gt;Boston-area Women in Bioinformatics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lu.ma:&lt;/strong&gt; &lt;a href=&quot;https://luma.com/bwib&quot;&gt;Boston Women in Bioinformatics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Blue Sky&lt;/strong&gt; &lt;a href=&quot;https://bsky.app/profile/boston-wib.bsky.social&quot;&gt;Boston Women in Bioinformatics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Location:&lt;/strong&gt; Boston Area, Massachusetts&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>🌸 Fresh Commits: The BWIB Spring Edition</title><link>https://boston-wib.org/issue-004</link><guid isPermaLink="true">https://boston-wib.org/issue-004</guid><pubDate>Thu, 05 Feb 2026 00:00:01 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//photos/2026/DataDrivenPharmaForum_20260211_0768.jpg&quot; alt=&quot;A group of Boston Women in Bioinformatics members gathered together at a community AI event.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;New faces, big updates, and data that matters.&lt;/em&gt;&lt;/p&gt;
 
