@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-08T00:00:01-04:00
+publishDate: 2026-04-13T00:00:01-04:00
 issue: 5
 title: '🪴 Branching Out: The BWIB April 2026 Edition'
 excerpt: Reflections, events, and new opportunities shaping our community this month.
@@ -8,8 +8,6 @@ imageAlt: 'Boston Women in Bioinformatics Bite & Byte Lunch'
 authors:
   - name: 'Sakina Saif, M.S.'
     url: 'https://www.linkedin.com/in/sakinasaif'
-  - name: 'Liyang Diao'
-    url: 'https://www.linkedin.com/in/liyang-diao-90933461/'
   - name: 'Anushka Dongaonkar'
     url: 'https://www.linkedin.com/in/anushka-dongaonkar/'
   - name: 'Emily Lachtara'
@@ -60,7 +58,15 @@ _[Follow us. We're here.](https://www.linkedin.com/company/boston-women-in-bioin
 
 ## Member Spotlight: [Aysheh Alrfooh](https://www.linkedin.com/in/aysheh-alrfooh)
 
+_An interview as intriguing as her name_
+
 <div id="member-spotlight"></div>
+
+She walked away from a career on her second day. She calls a molecule her first love. She’s the co-chair of the BWiB Career-Sponsorship Committee. Somewhere out there, 6.2 million strangers may have already seen the world through her eyes — and they don’t even know it.
+
+In our next Member Spotlight, [Sharvari Narendra](https://www.linkedin.com/in/sharvarinarendra/) sits down with Aysheh for a glimpse into a life that refuses to sit still: the choices she almost made, the one she’d make again in a heartbeat, and the quiet philosophy holding it all together. Along the way, she takes us from the lab bench — where she’s chased signals hidden in DNA, from the roots of mental illness to the biology of aging — to the leap from academia into industry, and what AI is quietly rewriting about the field along the way. There’s a trek, a spreadsheet, a family you’ll want to count, and a truth hiding between two others. You’ll think you’ve figured her out. You won’t have.
+
+Coming soon. Bring your curiosity.
 
 ---
 
@@ -171,10 +177,6 @@ Swap your terminal for a barstool and join us for a casual happy hour where bioi
 </table>
 
 If you’re attending the Festival of Genomics in Boston, come find us in the Genome Dome. We’re hosting a structured speed networking session with women working across bioinformatics, research, and industry. The format is simple: fast, one-on-one conversations with one goal: walk away with one memorable detail about every person you meet. Not just a new connection, but a real reason to follow up. Bring something to write with.
-
-### Workshop with Joanna
-
-June 9, 2026
 
 ### BCBB & BWIB Lightning Talks
 
