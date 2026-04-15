@@ -1,6 +1,7 @@
 ---
 publishDate: 2026-04-14T10:00:00-04:00
-title: 'Living Up to Her Name: A Conversation with Aysheh Alrfooh'
+title: 'Member Spotlight: Aysheh Alrfooh'
+excerpt: "An interview on methylation, mentorship, and movies"
 slug: blog/quicktake/interview-aysheh-alrfooh
 image: /blog_images/20260414-Aysheh-Interview-02.png
 imageAlt: 'Aysheh Alrfooh sits on a mountain rock in her hiking outfit, sunlight glowing behind her like a spotlight.'
@@ -21,8 +22,8 @@ tags:
   - career-advice
   - sponsorship
 metadata:
-  title: 'Living Up to Her Name: A Conversation with Aysheh Alrfooh'
-  description: 'An interview with Aysheh Alrfooh'
+  title: 'Member Spotlight: Aysheh Alrfooh'
+  description: 'An interview on methylation, mentorship, and movies'
 ---
 
 _When I first decided to interview [Aysheh Alrfooh](https://www.linkedin.com/in/aysheh-alrfooh/) for the BWiB Member Spotlight, I did what most of us do \- I opened her LinkedIn, clicked through her webpage, and tried to piece together a sense of who she was. What I had to go on was this: she co-chairs BWiB's Career-Sponsorship Committee, and as someone who was selected as a mentor in BWiB's inaugural mentorship program this year, that alone was enough to pique my curiosity. But by the end of our conversation, I realized that her role at BWiB is just one thread in a much richer story._
