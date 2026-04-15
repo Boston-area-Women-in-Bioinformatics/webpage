@@ -131,17 +131,17 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 
 1. **Update `AGENTS.md` after every significant change** — after adding a new component, content collection field, utility pattern, naming convention, or local norm, update the relevant section of this file before closing the task. Do not batch updates — write them as the changes are made.
 2. **No auto-commit** — never commit unless the user explicitly asks.
-2. **No force-push** — always create new commits rather than amending, especially after hook failures.
-3. **`prettier` enforced** — run `npm run fix` (eslint + prettier) before committing; CI will fail otherwise.
-4. **Tailwind only** — style with Tailwind classes. Avoid arbitrary CSS except for dark-mode overrides on inline-styled HTML in Markdown content (use `<style>` with `:global(.dark) ...`).
-5. **`getPermalink` for all URLs** — never hardcode `/blog/...` URLs; use `getPermalink(slug, type)` from `~/utils/permalinks`.
-5a. **Public image paths in components** — `isRemoteImage` checks in `SinglePost.astro`, `PostGridItem.astro`, and `PostListItem.astro` must include `/team/` and `/photos/` so they render as plain `<img>` tags. `common/Image.astro` also bypasses `astroAsseetsOptimizer` for these paths. When adding a new `public/` subdirectory used as a blog image source, add it to all four places.
-6. **Props flow through static path generators** — to pass new data to a page, add it to the `props` object in the relevant `getStaticPaths*` function in `src/utils/blog.ts`.
-7. **Series back links are category-aware** — the series page reads `categorySlug` from props and renders "All Podcasts", "All Videos", or "All Categories" accordingly.
-8. **Dark mode** — Tailwind `dark:` variants throughout. For inline-styled HTML in Markdown (e.g. newsletter tables), use a scoped `<style>` block with `:global(.dark) element[style*="..."] { ... !important }`.
-9. **`BLOG_EXCLUDED_CATEGORIES`** — Podcast and Video posts are excluded from the main blog list and category filter but appear on their own category pages at `/blog/podcast` and `/blog/video`. On the homepage, the latest Podcast is shown in its own card (top row, right column) and Video posts appear in the "Recent Media" grid. The homepage fetches via `findLatestPosts({ count: 20 })` and splits by `category.slug`.
-10. **Search data attributes** — client-side search uses `data-search` on `<li>` elements; sort uses `data-date` (milliseconds); series filter uses `data-in-series` and `data-series-card`.
-11. **Archive `DEFAULT_START`** — `src/pages/events/archive/index.astro` has a hardcoded `DEFAULT_START = '2025-08-08'` used as the default "From" date. Update this when the desired default window changes. The date picker `min="2024-08-08"` is the first-ever event date and should stay fixed.
+3. **No force-push** — always create new commits rather than amending, especially after hook failures.
+4. **`prettier` enforced** — run `npm run fix` (eslint + prettier) before committing; CI will fail otherwise.
+5. **Tailwind only** — style with Tailwind classes. Avoid arbitrary CSS except for dark-mode overrides on inline-styled HTML in Markdown content (use `<style>` with `:global(.dark) ...`).
+6. **`getPermalink` for all URLs** — never hardcode `/blog/...` URLs; use `getPermalink(slug, type)` from `~/utils/permalinks`.
+   5a. **Public image paths in components** — `isRemoteImage` checks in `SinglePost.astro`, `PostGridItem.astro`, and `PostListItem.astro` must include `/team/` and `/photos/` so they render as plain `<img>` tags. `common/Image.astro` also bypasses `astroAsseetsOptimizer` for these paths. When adding a new `public/` subdirectory used as a blog image source, add it to all four places.
+7. **Props flow through static path generators** — to pass new data to a page, add it to the `props` object in the relevant `getStaticPaths*` function in `src/utils/blog.ts`.
+8. **Series back links are category-aware** — the series page reads `categorySlug` from props and renders "All Podcasts", "All Videos", or "All Categories" accordingly.
+9. **Dark mode** — Tailwind `dark:` variants throughout. For inline-styled HTML in Markdown (e.g. newsletter tables), use a scoped `<style>` block with `:global(.dark) element[style*="..."] { ... !important }`.
+10. **`BLOG_EXCLUDED_CATEGORIES`** — Podcast and Video posts are excluded from the main blog list and category filter but appear on their own category pages at `/blog/podcast` and `/blog/video`. On the homepage, the latest Podcast is shown in its own card (top row, right column) and Video posts appear in the "Recent Media" grid. The homepage fetches via `findLatestPosts({ count: 20 })` and splits by `category.slug`.
+11. **Search data attributes** — client-side search uses `data-search` on `<li>` elements; sort uses `data-date` (milliseconds); series filter uses `data-in-series` and `data-series-card`.
+12. **Archive `DEFAULT_START`** — `src/pages/events/archive/index.astro` has a hardcoded `DEFAULT_START = '2025-08-08'` used as the default "From" date. Update this when the desired default window changes. The date picker `min="2024-08-08"` is the first-ever event date and should stay fixed.
 
 ---
 

@@ -59,7 +59,17 @@ if (
 } else if (_image && !isPublicAsset) {
   image = await getImagesOptimized(_image, props, astroAsseetsOptimizer);
 } else if (isPublicAsset) {
-  image = { src: _image as string, attributes: { alt: props.alt, width: props.width, height: props.height, class: props.class, loading: props.loading, decoding: props.decoding } };
+  image = {
+    src: _image as string,
+    attributes: {
+      alt: props.alt,
+      width: props.width,
+      height: props.height,
+      class: props.class,
+      loading: props.loading,
+      decoding: props.decoding,
+    },
+  };
 }
 ---
 
