@@ -21,7 +21,7 @@ const SCRIPT_URL =
   <p id="newsletter-message" class="text-sm m-0 min-h-[1.25rem]" aria-live="polite"></p>
 </div>
 
-<script define:vars={{ SCRIPT_URL }}>
+<script is:inline define:vars={{ SCRIPT_URL }}>
   const input = document.getElementById('newsletter-email');
   const button = document.getElementById('newsletter-submit');
   const message = document.getElementById('newsletter-message');

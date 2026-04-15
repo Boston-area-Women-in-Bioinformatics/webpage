@@ -50,12 +50,12 @@ src/
 
 | Collection   | Description        | Key Fields                                                                                                                                                                                         |
 | ------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `post`       | Blog posts         | `publishDate`, `category`, `series`, `tags`, `authors`, `draft`, `hiddenFromFeed`                                                                                                                  |
-| `newsletter` | Newsletter issues  | `publishDate`, `issue`, `title`, `authors`                                                                                                                                                         |
+| `post`       | Blog posts         | `publishDate`, `updateDate`, `category`, `series`, `tags`, `authors`, `draft`, `hiddenFromFeed`, `hideHeroImage`, `imageAlt`, `imageDescription`, `imagePosition`, `url`, `listeningTime`          |
+| `newsletter` | Newsletter issues  | `publishDate`, `issue`, `title`, `authors`, `imageAlt`, `imageDescription`, `imagePosition`                                                                                                        |
 | `event`      | Events             | `title`, `dateTime`, `endDate`, `location`, `tags`, `image`, `imgpos`, `partnerEvent`, `partnerOrganization` — **files live in `src/content/meetups/`** (folder name differs from collection name) |
 | `committees` | Committee pages    | `title`, `chairs`, `members`                                                                                                                                                                       |
 | `resources`  | Resource directory | `category`, `tags`, `featured`                                                                                                                                                                     |
-| `series`     | Series metadata    | `title`, `description`, `image`, `imageFit`                                                                                                                                                        |
+| `series`     | Series metadata    | `title`, `description`, `image`, `imageAlt`, `imageFit`                                                                                                                                            |
 
 ### Key Utility Files (`src/utils/`)
 
@@ -63,7 +63,7 @@ src/
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `blog.ts`        | All static path generators (`getStaticPathsBlogListAll`, `getStaticPathsBlogCategory`, `getStaticPathsBlogSeries`, `getStaticPathsBlogPost`, etc.), post normalization, series metadata, filtering |
 | `permalinks.ts`  | URL generation — `getPermalink(slug, type)` where `type` is `'post' \| 'category' \| 'tag' \| 'series'`; also exports `BLOG_BASE`, `CATEGORY_BASE`, `TAG_BASE`, `SERIES_BASE`                      |
-| `images.ts`      | Image lookup (`findImage`)                                                                                                                                                                         |
+| `images.ts`      | Image lookup (`findImage`) and `adaptOpenGraphImages` — public paths (`/team/`, `/photos/`, `/blog_images/`, `/sponsors/`) are returned as-is with default OG dimensions, bypassing optimization   |
 | `utils.ts`       | Formatting helpers (`getFormattedDate`, etc.)                                                                                                                                                      |
 | `newsletter.ts`  | Newsletter-specific fetch helpers                                                                                                                                                                  |
 | `frontmatter.ts` | Remark plugins: reading time, responsive tables, lazy images                                                                                                                                       |
@@ -82,8 +82,9 @@ src/components/
 
 **Event-specific components:**
 
-- `widgets/UpcomingEvents.astro` — shows the **single next upcoming event** in a hero layout; used on the homepage
+- `widgets/UpcomingEvents.astro` — shows the **single next upcoming event** in a hero layout; used on the homepage. Has two buttons: "Learn More" (`btn-primary`) and "Browse Events" (`btn-secondary`), wrapped in a flex container.
 - `EventsTable.astro` — shows **all upcoming events** as cards on the `/events` page; past events section only renders when there are no upcoming events
+- `FormattedDate.astro` — renders event dates in New York time. `isMultiDay` compares dates using `toNYDateString` (NY timezone) to avoid UTC boundary bugs. All three branches (multi-day, same-day-with-end, single) append the timezone abbreviation (EDT/EST).
 
 ### Navigation (`src/navigation.ts`)
 
@@ -121,23 +122,37 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 - **Content files**: kebab-case filenames under `src/content/<collection>/`
 - **Series slugs**: match the series frontmatter title converted to kebab-case (used in `getPermalink(slug, 'series')`)
 - **Categories excluded from the main blog feed**: listed in `BLOG_EXCLUDED_CATEGORIES` in `blog.ts` (currently `['Podcast', 'Video']`). These categories are excluded from the paginated blog list but are surfaced on the homepage separately — Podcast gets its own "Latest Podcast" card, Video appears in the "Recent Media" grid alongside regular blog posts.
+- **`Interview` category**: active category with its own category card on `/blog`. Card uses LinkedIn blue (`#0077b5`). Do not mark it `comingSoon`.
 - **`hiddenFromFeed`**: posts that exist but should not appear in list pages (e.g. short Tuesday Tactics entries — shown only via their series card)
 
 ---
 
 ## Local Norms
 
-1. **No auto-commit** — never commit unless the user explicitly asks.
-2. **No force-push** — always create new commits rather than amending, especially after hook failures.
-3. **`prettier` enforced** — run `npm run fix` (eslint + prettier) before committing; CI will fail otherwise.
-4. **Tailwind only** — style with Tailwind classes. Avoid arbitrary CSS except for dark-mode overrides on inline-styled HTML in Markdown content (use `<style>` with `:global(.dark) ...`).
-5. **`getPermalink` for all URLs** — never hardcode `/blog/...` URLs; use `getPermalink(slug, type)` from `~/utils/permalinks`.
-6. **Props flow through static path generators** — to pass new data to a page, add it to the `props` object in the relevant `getStaticPaths*` function in `src/utils/blog.ts`.
-7. **Series back links are category-aware** — the series page reads `categorySlug` from props and renders "All Podcasts", "All Videos", or "All Categories" accordingly.
-8. **Dark mode** — Tailwind `dark:` variants throughout. For inline-styled HTML in Markdown (e.g. newsletter tables), use a scoped `<style>` block with `:global(.dark) element[style*="..."] { ... !important }`.
-9. **`BLOG_EXCLUDED_CATEGORIES`** — Podcast and Video posts are excluded from the main blog list and category filter but appear on their own category pages at `/blog/podcast` and `/blog/video`. On the homepage, the latest Podcast is shown in its own card (top row, right column) and Video posts appear in the "Recent Media" grid. The homepage fetches via `findLatestPosts({ count: 20 })` and splits by `category.slug`.
-10. **Search data attributes** — client-side search uses `data-search` on `<li>` elements; sort uses `data-date` (milliseconds); series filter uses `data-in-series` and `data-series-card`.
-11. **Archive `DEFAULT_START`** — `src/pages/events/archive/index.astro` has a hardcoded `DEFAULT_START = '2025-08-08'` used as the default "From" date. Update this when the desired default window changes. The date picker `min="2024-08-08"` is the first-ever event date and should stay fixed.
+1. **Update `AGENTS.md` after every significant change** — after adding a new component, content collection field, utility pattern, naming convention, or local norm, update the relevant section of this file before closing the task. Do not batch updates — write them as the changes are made.
+2. **No auto-commit** — never commit unless the user explicitly asks.
+3. **No force-push** — always create new commits rather than amending, especially after hook failures.
+4. **`prettier` enforced** — run `npm run fix` (eslint + prettier) before committing; CI will fail otherwise.
+5. **Tailwind only** — style with Tailwind classes. Avoid arbitrary CSS except for dark-mode overrides on inline-styled HTML in Markdown content (use `<style>` with `:global(.dark) ...`).
+6. **`getPermalink` for all URLs** — never hardcode `/blog/...` URLs; use `getPermalink(slug, type)` from `~/utils/permalinks`.
+   5a. **Public image paths in components** — `isRemoteImage` checks in `SinglePost.astro`, `PostGridItem.astro`, and `PostListItem.astro` must include `/team/` and `/photos/` so they render as plain `<img>` tags. `common/Image.astro` also bypasses `astroAsseetsOptimizer` for these paths. When adding a new `public/` subdirectory used as a blog image source, add it to all four places.
+7. **Props flow through static path generators** — to pass new data to a page, add it to the `props` object in the relevant `getStaticPaths*` function in `src/utils/blog.ts`.
+8. **Series back links are category-aware** — the series page reads `categorySlug` from props and renders "All Podcasts", "All Videos", or "All Categories" accordingly.
+9. **Dark mode** — Tailwind `dark:` variants throughout. For inline-styled HTML in Markdown (e.g. newsletter tables), use a scoped `<style>` block with `:global(.dark) element[style*="..."] { ... !important }`.
+10. **`BLOG_EXCLUDED_CATEGORIES`** — Podcast and Video posts are excluded from the main blog list and category filter but appear on their own category pages at `/blog/podcast` and `/blog/video`. On the homepage, the latest Podcast is shown in its own card (top row, right column) and Video posts appear in the "Recent Media" grid. The homepage fetches via `findLatestPosts({ count: 20 })` and splits by `category.slug`.
+11. **Search data attributes** — client-side search uses `data-search` on `<li>` elements; sort uses `data-date` (milliseconds); series filter uses `data-in-series` and `data-series-card`.
+12. **Archive `DEFAULT_START`** — `src/pages/events/archive/index.astro` has a hardcoded `DEFAULT_START = '2025-08-08'` used as the default "From" date. Update this when the desired default window changes. The date picker `min="2024-08-08"` is the first-ever event date and should stay fixed.
+
+---
+
+## Newsletter Conventions
+
+- Table of contents links use `#anchor-id`; each section gets `<div id="..."></div>` placed immediately after the `##` heading.
+- Event tables in newsletters use `<table class="not-prose" style="...">` to escape prose plugin margins. The `not-prose` class is required — inline `margin` styles alone are overridden by Tailwind Typography.
+- Register/Event Page buttons inside newsletter tables use `class="btn-primary"` on the `<a>` tag (works because `not-prose` is set on the parent table).
+- UTM tags on internal links: `?utm_source=newsletter&utm_medium=email&utm_campaign=<month>-<year>`. Apply to all `boston-wib.org` links; skip external links (givebutter, luma, LinkedIn, etc.).
+- `metadata.image` in blog post frontmatter does nothing — the Open Graph image is derived from the top-level `image` field, not `metadata.image`. Do not add `metadata.image` to posts.
+- Newsletter `<SinglePost>` scoped styles: `[&_strong_a]:font-bold [&_a_strong]:font-bold` is applied to force bold weight on links wrapped in `**...**` since prose overrides it.
 
 ---
 

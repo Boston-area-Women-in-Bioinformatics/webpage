@@ -83,7 +83,9 @@ export const adaptOpenGraphImages = async (
           typeof resolvedImage === 'string' &&
           (resolvedImage.startsWith('/assets/') ||
             resolvedImage.startsWith('/blog_images/') ||
-            resolvedImage.startsWith('/photos/'))
+            resolvedImage.startsWith('/photos/') ||
+            resolvedImage.startsWith('/team/') ||
+            resolvedImage.startsWith('/sponsors/'))
         ) {
           // For public assets, return as-is without optimization
           return {
