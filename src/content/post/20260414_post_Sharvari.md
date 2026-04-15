@@ -2,9 +2,9 @@
 publishDate: 2026-04-14T10:00:00-04:00
 title: 'Living Up to Her Name: A Conversation with Aysheh Alrfooh'
 slug: blog/quicktake/interview-aysheh-alrfooh
-image: /team/aysheh.jpg
-imageAlt: 'Aysheh Alrfooh'
-imagePosition: contain
+image: /blog_images/20260414-Aysheh-Interview-02.png
+imageAlt: 'Aysheh Alrfooh sits on a mountain rock in her hiking outfit, sunlight glowing behind her like a spotlight.'
+imagePosition: center
 authors:
   - name: Sharvari Narendra
     url: https://linkedin.com/in/sharvarinarendra
@@ -13,7 +13,6 @@ tags:
   - member-spotlight
   - interview
   - career-development
-  - academia-to-industry
   - epigenetics
   - computational-biology
   - bioinformatics
@@ -26,11 +25,15 @@ metadata:
   description: 'An interview with Aysheh Alrfooh'
 ---
 
-_When I first decided to interview Aysheh Alrfooh for the BWiB Member Spotlight, I did what most of us do \- I opened her LinkedIn, clicked through her webpage, and tried to piece together a sense of who she was. What I had to go on was this: she co-chairs BWiB's Career-Sponsorship Committee, and as someone who was selected as a mentor in BWiB's inaugural mentorship program this year, that alone was enough to pique my curiosity. But by the end of our conversation, I realized that her role at BWiB is just one thread in a much richer story._
+_When I first decided to interview [Aysheh Alrfooh](https://www.linkedin.com/in/aysheh-alrfooh/) for the BWiB Member Spotlight, I did what most of us do \- I opened her LinkedIn, clicked through her webpage, and tried to piece together a sense of who she was. What I had to go on was this: she co-chairs BWiB's Career-Sponsorship Committee, and as someone who was selected as a mentor in BWiB's inaugural mentorship program this year, that alone was enough to pique my curiosity. But by the end of our conversation, I realized that her role at BWiB is just one thread in a much richer story._
 
 _Aysheh holds a PhD from the University of Iowa, where her research in epigenetics centered on identifying methylation profiles in individuals with mental health disorders \- work that sits at the intersection of computation, biology, and a deeply human question: how do we better understand what's happening inside the minds of people who are suffering? After her PhD, she completed a Computational Biologist co-op at Biogen before joining Diagonal Therapeutics in Watertown, Massachusetts, where she now works as a Scientist. Diagonal is developing a new class of clustering antibody medicines aimed at addressing the root causes of severe genetic diseases._
 
 _There's a quiet stereotype that follows scientists around, especially the ones who are serious about their craft \- that they are one-dimensional, that conversations with them will inevitably loop back to pipelines and p-values. I'll admit, I walked into this interview half-expecting exactly that, given the breadth of Aysheh's expertise. But what I've learned over the years is that the most accomplished people are usually the most layered. They carry within them whole worlds of curiosity, humor, conviction, and warmth that you don't see on a CV. Aysheh is one of those people. By the end of our conversation, I wasn't just impressed by her credentials \- I was genuinely charmed by who she is._
+
+<figure style="max-width: 400px; margin: 0 auto;">
+<img src="/blog_images/20260414-Aysheh-Interview-01.jpg" alt="Aysheh Alrfooh smiling at her desk" style="width: 100%; height: auto;" />
+</figure>
 
 **Sharvari:** First of all, you have such a beautiful name\! What does it mean, and how do you pronounce it?  
 **Aysheh:** My name comes from an Arabic root (asha) which means 'to live,' so my name means 'alive' or 'living,' which totally describes me as a person, as I am very passionate and I want to live life to the fullest. My name is pronounced in standard Arabic as 'AA-ee-sha,' and in a simpler, less formal Arabic it is 'AH-isha'.
