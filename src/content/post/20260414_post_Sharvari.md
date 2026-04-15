@@ -1,7 +1,7 @@
 ---
-publishDate: 2026-04-14T10:00:00-04:00
+publishDate: 2026-04-15T10:00:00-04:00
 title: 'Member Spotlight: Aysheh Alrfooh'
-excerpt: "An interview on methylation, mentorship, and movies"
+excerpt: 'An interview on methylation, mentorship, and movies'
 slug: blog/quicktake/interview-aysheh-alrfooh
 image: /blog_images/20260414-Aysheh-Interview-02.png
 imageAlt: 'Aysheh Alrfooh sits on a mountain rock in her hiking outfit, sunlight glowing behind her like a spotlight.'
