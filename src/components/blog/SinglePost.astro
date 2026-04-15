@@ -126,7 +126,14 @@ const getCanonicalSourceName = () => {
       <h1
         class="px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-gray-900 dark:text-slate-100"
       >
-        {post.title}
+        {post.title.startsWith('Member Spotlight:') ? (
+          <>
+            <span class="block" style="font-size: 1.875rem;">Member Spotlight:</span>
+            {post.title.replace(/^Member Spotlight:[\u00a0 ]/, '')}
+          </>
+        ) : (
+          post.title
+        )}
       </h1>
       <p class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-300">
         {post.excerpt}
