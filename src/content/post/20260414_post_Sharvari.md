@@ -1,6 +1,6 @@
 ---
-publishDate: 2026-04-15T10:00:00-04:00
-title: 'Member Spotlight: Aysheh Alrfooh'
+publishDate: 2026-04-14T10:00:00-04:00
+title: 'Member Spotlight: Aysheh Alrfooh'
 excerpt: 'An interview on methylation, mentorship, and movies'
 slug: blog/quicktake/interview-aysheh-alrfooh
 image: /blog_images/20260414-Aysheh-Interview-02.png
@@ -22,7 +22,7 @@ tags:
   - career-advice
   - sponsorship
 metadata:
-  title: 'Member Spotlight: Aysheh Alrfooh'
+  title: 'Member Spotlight: Aysheh Alrfooh'
   description: 'An interview on methylation, mentorship, and movies'
 ---
 
