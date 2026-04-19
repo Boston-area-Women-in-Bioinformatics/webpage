@@ -19,7 +19,11 @@ const { post, url } = Astro.props;
 
 const isRemoteImage =
   typeof post.image === 'string' &&
-  (post.image.startsWith('http') || post.image.startsWith('/assets/') || post.image.startsWith('/blog_images/'));
+  (post.image.startsWith('http') ||
+    post.image.startsWith('/assets/') ||
+    post.image.startsWith('/blog_images/') ||
+    post.image.startsWith('/team/') ||
+    post.image.startsWith('/photos/'));
 
 // Determine the canonical source name
 const getCanonicalSourceName = () => {
@@ -122,7 +126,18 @@ const getCanonicalSourceName = () => {
       <h1
         class="px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-gray-900 dark:text-slate-100"
       >
-        {post.title}
+        {
+          post.title.startsWith('Member Spotlight:') ? (
+            <>
+              <span class="block" style="font-size: 1.875rem;">
+                Member Spotlight:
+              </span>
+              {post.title.replace(/^Member Spotlight:[\u00a0 ]/, '')}
+            </>
+          ) : (
+            post.title
+          )
+        }
       </h1>
       <p class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-300">
         {post.excerpt}
@@ -130,11 +145,11 @@ const getCanonicalSourceName = () => {
 
       {
         post.image && !post.hideHeroImage ? (
-          <div class="max-w-3xl mx-auto px-4 sm:px-6 mb-6 flex justify-center bg-white rounded-md">
+          <div class="max-w-3xl mx-auto px-4 sm:px-6 mb-6 flex justify-center rounded-md">
             {isRemoteImage ? (
               <img
                 src={post.image}
-                class="w-3/4 sm:max-w-full h-auto sm:rounded-md"
+                class="w-3/4 sm:max-w-full h-auto max-h-[80vh] object-contain sm:rounded-md"
                 alt={post?.excerpt || ''}
                 loading="eager"
                 decoding="async"
@@ -142,7 +157,7 @@ const getCanonicalSourceName = () => {
             ) : (
               <Image
                 src={post.image}
-                class="w-3/4 sm:max-w-full h-auto sm:rounded-md"
+                class="w-3/4 sm:max-w-full h-auto max-h-[80vh] object-contain sm:rounded-md"
                 widths={[400, 600, 900]}
                 sizes="(max-width: 900px) 100vw, 900px"
                 alt={post?.excerpt || ''}

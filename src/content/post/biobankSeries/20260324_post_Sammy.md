@@ -2,7 +2,7 @@
 publishDate: 2026-03-24T00:00:00-04:00
 title: 'Biobank Intro Series: All of Us Observational Data (Part I)'
 excerpt: 'Finding concept IDs for the All of Us Researcher Workbench'
-slug: blog/biobank-intro-series/04-aou-observational-data-partI
+slug: blog/biobank-intro-series/05-aou-observational-data-partI
 image: /blog_images/biobank1/source_to_standard_omop_square.png
 imageAlt: 'Flowchart showing hospital data being extracted, transformed via OHDSI vocabularies, and loaded into OMOP relational tables.'
 imageDescription: 'When you finally know which field IDs you need and suddenly the whole dataset smells delicious.'
@@ -20,10 +20,10 @@ tags:
   - ehr-data
   - observational-data
 draft: false
-seo:
-  image:
-    src: '/blog_images/biobank1/source_to_standard_omop_square.png'
-    alt: 'Flowchart showing hospital data being extracted, transformed via OHDSI vocabularies, and loaded into OMOP relational tables.'
+metadata:
+  title: 'Biobank Intro Series: All of Us Observational Data (Part I)'
+  description: 'How to find and use concept IDs in the All of Us Researcher Workbench to query OMOP-structured clinical and survey data.'
+  canonical: https://sklasfeld.netlify.app/blog/biobank-intro-series/05-aou-omop/
 ---
 
 All of Us has returned to the chat (she made her first appearance in the [hardware post](../02-hardwareOnUKBandAoU)) and she's bringing noble intentions and absolutely feral data provenance. UK Biobank is a well-organized remarkable resource, but with >93% European ancestry, it was never designed to represent global genetic diversity. On the other hand, All of Us was explicitly built to oversample underrepresented populations. [With almost 50% of participants identifying as a racial or ethnic minority](https://www.researchallofus.org/data-tools/data-snapshots/), "All of Us" isn't just a pun. It's a mission statement. (I wrote more about why that matters [here](https://boston-wib.org/blog/deepdive/deigenomics)).
