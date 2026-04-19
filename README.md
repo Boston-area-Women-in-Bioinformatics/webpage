@@ -376,7 +376,7 @@ Copy this template and fill in the details:
 title: 'Name of the Resource'
 description: 'A concise description of what this resource offers (1-2 sentences)'
 url: 'https://example.com'
-category: 'bioinformatics' # Current available options: bioinformatics, machine-learning,professional-development, coding, math, biology. 
+category: 'bioinformatics' # Current available options: bioinformatics, machine-learning,professional-development, coding, math, biology.
 tags:
   - 'Python'
   - 'genomics'
@@ -384,6 +384,7 @@ tags:
 featured: false # Set to true only for exceptional resources
 ---
 ```
+
 ### 4. Add a NEW Resource Category (Optional)
 
 The Resources collection uses a strict list of categories to ensure data consistency and to power website filters. If you are adding a resource that doesn't fit into the existing categories, follow these steps to update the schema.
