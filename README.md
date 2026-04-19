@@ -376,7 +376,7 @@ Copy this template and fill in the details:
 title: 'Name of the Resource'
 description: 'A concise description of what this resource offers (1-2 sentences)'
 url: 'https://example.com'
-category: 'courses' # Options: courses, tutorials, tools, documentation
+category: 'bioinformatics' # Current available options: bioinformatics, machine-learning,professional-development, coding, math, biology. 
 tags:
   - 'Python'
   - 'genomics'
@@ -384,8 +384,16 @@ tags:
 featured: false # Set to true only for exceptional resources
 ---
 ```
+### 4. Add a NEW Resource Category (Optional)
 
-### 4. Push to website
+The Resources collection uses a strict list of categories to ensure data consistency and to power website filters. If you are adding a resource that doesn't fit into the existing categories, follow these steps to update the schema.
+
+1. Open the configuration file by navigating to `src/content/config.ts`.
+2. Locate the `resourcesCollection` definition by scrolling down to the `resourcesCollection` definition (**around line 142**). You will see the category field defined with `z.enum([...])`.
+3. Add your new category string to the array inside the `z.enum` list. **Note:** Use kebab-case (e.g.data-visualization) for the value.
+4. Once you save the file, the TypeScript compiler/Astro build will now allow this new string in your Markdown frontmatter.
+
+### 5. Push to website
 
 1. Commit your changes: `git commit -m "Add {new_resource}"`
 2. Push to your fork: `git push -u origin add-resource-{new_resource}`
