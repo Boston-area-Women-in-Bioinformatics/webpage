@@ -66,7 +66,11 @@ const errors = [];
 // 1. Every chair in team.js must appear in the matching committee .md
 for (const { name, title } of teamChairs) {
   // Find which committee this title refers to (normalize hyphens/spaces for matching)
-  const normalize = (s) => s.toLowerCase().replace(/\s*&\s*/g, ' and ').replace(/[-\s]+/g, ' ');
+  const normalize = (s) =>
+    s
+      .toLowerCase()
+      .replace(/\s*&\s*/g, ' and ')
+      .replace(/[-\s]+/g, ' ');
   const matched = [...committeeChairs.keys()].find((committeeTitle) =>
     normalize(title).includes(normalize(committeeTitle))
   );
@@ -85,7 +89,11 @@ for (const { name, title } of teamChairs) {
 }
 
 // 2. Every chair in a committee .md must have a matching chair title in team.js
-const normalize = (s) => s.toLowerCase().replace(/\s*&\s*/g, ' and ').replace(/[-\s]+/g, ' ');
+const normalize = (s) =>
+  s
+    .toLowerCase()
+    .replace(/\s*&\s*/g, ' and ')
+    .replace(/[-\s]+/g, ' ');
 for (const [committeeTitle, chairs] of committeeChairs) {
   for (const chairName of chairs) {
     const found = teamChairs.some(
