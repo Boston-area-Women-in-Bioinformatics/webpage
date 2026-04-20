@@ -74,12 +74,29 @@ See [Getting started without write-access](#getting-started-without-write-access
 
 ### 2. Create a markdown file in the `src/content/meetups` directory.
 
-The markdown file should follow a specific format. In between the top two `---` you must fill out the event parameters. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The metadata should include fields like `title`, `dateTime`, `location`, `url`, `image`, `tags`, and `imgpos`. The `imgpos` parameter is for the css on the main events page. See https://tailwindcss.com/docs/object-position for options. `tags` are not currently in use, but may be in the future.
+The markdown file should follow a specific format. In between the top two `---` you must fill out the event parameters. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference.
 
-For the `dateTime` field, use New York time:
+**Required fields:**
 
-- `-04:00` (EDT) from the second Sunday of March through the first Saturday of November
-- `-05:00` (EST) from the first Sunday of November through the second Saturday of March
+- `title`: name of the event
+- `dateTime`: start date and time of the event. Use New York time:
+  - `YYYY-MM-DDTHH:mm:ss-04:00` (EDT) from the second Sunday of March through the first Saturday of November
+  - `YYYY-MM-DDTHH:mm:ss-05:00` (EST) from the first Sunday of November through the second Saturday of March
+- `location`: list of location strings (e.g., `["123 Main St", "Boston, MA"]`)
+- `image`: object with two fields:
+  - `src`: path to the image (e.g., `/photos/my-event.jpg`)
+  - `alt`: alt text for the image — describe the purpose, not the appearance. Do not include the words "image" or "photo".
+- `tags`: list of tags (not currently displayed, but required — can be an empty list `[]`)
+
+**Optional fields:**
+
+- `endDate`: end date and time of the event, in the same format as `dateTime`. Required if the event spans multiple days or you want the end time to display.
+- `url`: registration or event link (e.g., a Lu.ma URL)
+- `data_luma_event_id`: Lu.ma event ID, used to embed a registration button
+- `imgpos`: controls which part of the image is visible on the events listing page. Defaults to `object-top object-cover`. See [Tailwind object-position](https://tailwindcss.com/docs/object-position) for options.
+- `cost`: ticket price in dollars as a number (e.g., `10`). Omit for free events.
+- `partnerEvent`: set to `true` if this event is hosted by a partner organization rather than BWIB directly. Defaults to `false`.
+- `partnerOrganization`: name of the partner organization hosting the event (only used when `partnerEvent: true`)
 
 ### 3. Add an image
 
