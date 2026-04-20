@@ -218,6 +218,8 @@ imageFit: cover # Use 'contain' if your image is an infographic that should not 
 
 The `imageFit` field is optional and defaults to `cover`. Use `contain` when the image is an infographic or diagram that should not be cropped.
 
+- `defaultOrder`: order in which posts in the series are listed. Options: `asc` (oldest first) or `desc` (newest first, default).
+
 ### 3. Tag your blog posts with the series
 
 In each post's frontmatter, add a `series` field referencing the series slug:
