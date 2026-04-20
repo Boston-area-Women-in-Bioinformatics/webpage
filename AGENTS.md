@@ -129,7 +129,8 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 
 ## Local Norms
 
-1. **Update `AGENTS.md` after every significant change** — after adding a new component, content collection field, utility pattern, naming convention, or local norm, update the relevant section of this file before closing the task. Do not batch updates — write them as the changes are made.
+1. **Update `AGENTS.md` after every file added or updated** — after adding or modifying any component, utility, script, content collection field, naming convention, or local norm, update the relevant section of this file before closing the task. Do not batch updates — write them as the changes are made. If a new frontmatter field is added or changed, also update `README.md` (see norm 2a below).
+   1a. **Update `README.md` when frontmatter changes** — whenever a frontmatter field is added, removed, or its behavior changes for any content collection (`post`, `newsletter`, `event`, `series`, `committees`, `resources`), update the corresponding section in `README.md` to reflect the change.
 2. **No auto-commit** — never commit unless the user explicitly asks.
 3. **No force-push** — always create new commits rather than amending, especially after hook failures.
 4. **`prettier` enforced** — run `npm run fix` (eslint + prettier) before committing; CI will fail otherwise.
@@ -142,6 +143,10 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 10. **`BLOG_EXCLUDED_CATEGORIES`** — Podcast and Video posts are excluded from the main blog list and category filter but appear on their own category pages at `/blog/podcast` and `/blog/video`. On the homepage, the latest Podcast is shown in its own card (top row, right column) and Video posts appear in the "Recent Media" grid. The homepage fetches via `findLatestPosts({ count: 20 })` and splits by `category.slug`.
 11. **Search data attributes** — client-side search uses `data-search` on `<li>` elements; sort uses `data-date` (milliseconds); series filter uses `data-in-series` and `data-series-card`.
 12. **Archive `DEFAULT_START`** — `src/pages/events/archive/index.astro` has a hardcoded `DEFAULT_START = '2025-08-08'` used as the default "From" date. Update this when the desired default window changes. The date picker `min="2024-08-08"` is the first-ever event date and should stay fixed.
+13. **Committee chair validation** — `scripts/check-committee-chairs.mjs` cross-checks that every chair in `src/content/committees/*.md` has a matching "Chair" title in `src/config/components/team.js`, and vice versa. Run with `npm run check:committees`. Committees with `hidden: true` are skipped. The script normalizes hyphens, spaces, and `&`/`and` for matching. Run this script after editing either file.
+14. **Team member title line breaks** — in `src/config/components/team.js`, use ` & ` as the separator between multiple roles for a single person. `Team.astro` splits on ` & ` and renders each part on its own line. Example: `'Treasurer & Finance Committee Chair & Events Committee Co-chair'`.
+15. **Newsletter issue validation** — `src/utils/newsletter.ts` throws a build error at load time if two newsletters share the same `issue` number. The `issue` field must be set manually in each newsletter's frontmatter.
+16. **Member Spotlight post titles** — use `'Member Spotlight: First\u00a0Last'` (Unicode non-breaking space U+00A0 between first and last name) so the name never wraps mid-name. `SinglePost.astro` detects the `Member Spotlight:` prefix and renders "Member Spotlight:" at smaller size (`!text-2xl`) on its own line above the name.
 
 ---
 
