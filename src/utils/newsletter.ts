@@ -94,6 +94,16 @@ const load = async function (): Promise<Array<Newsletter>> {
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
     .filter((newsletter) => !newsletter.draft);
 
+  const seen = new Map<number, string>();
+  for (const newsletter of results) {
+    if (seen.has(newsletter.issue)) {
+      throw new Error(
+        `Duplicate newsletter issue number ${newsletter.issue}: found in "${newsletter.id}" and "${seen.get(newsletter.issue)}"`
+      );
+    }
+    seen.set(newsletter.issue, newsletter.id);
+  }
+
   return results;
 };
 
