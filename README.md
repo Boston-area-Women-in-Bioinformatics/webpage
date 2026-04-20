@@ -257,17 +257,27 @@ See [Getting started without write-access](#getting-started-without-write-access
 
 After you enter a new branch, you need to create a markdown file in the `src/content/newsletter` directory.
 
-The markdown file should follow a specific format. In between the top two `---` you must fill out the parameters for the newsletter. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The parameters include:
+The markdown file should follow a specific format. In between the top two `---` you must fill out the parameters for the newsletter. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference.
+
+**Required fields:**
 
 - `publishDate`: date when the newsletter was published. Use New York time, so the format will always be one of:
   - `YYYY-MM-DDTHH:mm:ss-04:00` (EDT) from the second Sunday of March through the first Saturday of November
   - `YYYY-MM-DDTHH:mm:ss-05:00` (EST) from the first Sunday of November through the second Saturday of March
-- `title`: name of the newsletter
-- `excerpt`: appears on the website front page to describe the newsletter (should be a sentence or less)
-- `image`: path to the image that will be displayed on the newsletter page
-- `authors`: list of authors if there are multiple authors, each with their name and LinkedIn URL
-- `metadata`: controls what appears when someone searches for the page on Google or shares it on social media. Key fields:
-  - `title`: the page title shown in Google search results
+- `issue`: issue number as an integer (e.g., `5`)
+- `title`: name of the newsletter issue
+
+**Optional fields:**
+
+- `draft`: set to `true` to prevent the newsletter from appearing on the site until it is ready. Omit or set to `false` to publish.
+- `excerpt`: short description that appears on the newsletter listing page (should be a sentence or less)
+- `image`: path to the hero image displayed at the top of the newsletter page (e.g., `/photos/my-image.jpg`)
+- `imageAlt`: alt text for the hero image. Describe the purpose, not the appearance. Do not include the words "image" or "photo".
+- `imageDescription`: caption or citation text shown below the hero image
+- `imagePosition`: controls which part of the image is most visible when cropped. Options: `top`, `center` (default), `bottom`, `left`, `right`, `contain`.
+- `authors`: list of authors, each with a `name` and optional `url` (LinkedIn profile)
+- `metadata`: controls what appears when someone searches for the page on Google or shares it on social media:
+  - `title`: the page title shown in Google search results (overrides the newsletter title)
   - `description`: the text snippet shown under the title in Google search results. Keep it under two sentences. Often can just match what was written in `excerpt`.
 
 ### 3. Add an image
