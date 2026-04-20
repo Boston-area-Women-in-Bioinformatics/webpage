@@ -439,7 +439,7 @@ See [Getting started without write-access](#getting-started-without-write-access
 
 ### 2. Create a new file
 
-Navigate to `src/content/communities/` and create a new markdown file:
+Navigate to `src/content/partnerCommunities/` and create a new markdown file:
 
 ```
 r-ladies.md
