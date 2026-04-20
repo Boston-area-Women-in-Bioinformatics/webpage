@@ -74,12 +74,29 @@ See [Getting started without write-access](#getting-started-without-write-access
 
 ### 2. Create a markdown file in the `src/content/meetups` directory.
 
-The markdown file should follow a specific format. In between the top two `---` you must fill out the event parameters. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The metadata should include fields like `title`, `dateTime`, `location`, `url`, `image`, `tags`, and `imgpos`. The `imgpos` parameter is for the css on the main events page. See https://tailwindcss.com/docs/object-position for options. `tags` are not currently in use, but may be in the future.
+The markdown file should follow a specific format. In between the top two `---` you must fill out the event parameters. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference.
 
-For the `dateTime` field, use New York time:
+**Required fields:**
 
-- `-04:00` (EDT) from the second Sunday of March through the first Saturday of November
-- `-05:00` (EST) from the first Sunday of November through the second Saturday of March
+- `title`: name of the event
+- `dateTime`: start date and time of the event. Use New York time:
+  - `YYYY-MM-DDTHH:mm:ss-04:00` (EDT) from the second Sunday of March through the first Saturday of November
+  - `YYYY-MM-DDTHH:mm:ss-05:00` (EST) from the first Sunday of November through the second Saturday of March
+- `location`: list of location strings (e.g., `["123 Main St", "Boston, MA"]`)
+- `image`: object with two fields:
+  - `src`: path to the image (e.g., `/photos/my-event.jpg`)
+  - `alt`: alt text for the image — describe the purpose, not the appearance. Do not include the words "image" or "photo".
+- `tags`: list of tags (not currently displayed, but required — can be an empty list `[]`)
+
+**Optional fields:**
+
+- `endDate`: end date and time of the event, in the same format as `dateTime`. Required if the event spans multiple days or you want the end time to display.
+- `url`: registration or event link (e.g., a Lu.ma URL)
+- `data_luma_event_id`: Lu.ma event ID, used to embed a registration button
+- `imgpos`: controls which part of the image is visible on the events listing page. Defaults to `object-top object-cover`. See [Tailwind object-position](https://tailwindcss.com/docs/object-position) for options.
+- `cost`: ticket price in dollars as a number (e.g., `10`). Omit for free events.
+- `partnerEvent`: set to `true` if this event is hosted by a partner organization rather than BWIB directly. Defaults to `false`.
+- `partnerOrganization`: name of the partner organization hosting the event (only used when `partnerEvent: true`)
 
 ### 3. Add an image
 
@@ -201,6 +218,8 @@ imageFit: cover # Use 'contain' if your image is an infographic that should not 
 
 The `imageFit` field is optional and defaults to `cover`. Use `contain` when the image is an infographic or diagram that should not be cropped.
 
+- `defaultOrder`: order in which posts in the series are listed. Options: `asc` (oldest first) or `desc` (newest first, default).
+
 ### 3. Tag your blog posts with the series
 
 In each post's frontmatter, add a `series` field referencing the series slug:
@@ -240,17 +259,27 @@ See [Getting started without write-access](#getting-started-without-write-access
 
 After you enter a new branch, you need to create a markdown file in the `src/content/newsletter` directory.
 
-The markdown file should follow a specific format. In between the top two `---` you must fill out the parameters for the newsletter. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference. The parameters include:
+The markdown file should follow a specific format. In between the top two `---` you must fill out the parameters for the newsletter. Everything below the second `---` can be in markdown format. Look at the other markdown files for reference.
+
+**Required fields:**
 
 - `publishDate`: date when the newsletter was published. Use New York time, so the format will always be one of:
   - `YYYY-MM-DDTHH:mm:ss-04:00` (EDT) from the second Sunday of March through the first Saturday of November
   - `YYYY-MM-DDTHH:mm:ss-05:00` (EST) from the first Sunday of November through the second Saturday of March
-- `title`: name of the newsletter
-- `excerpt`: appears on the website front page to describe the newsletter (should be a sentence or less)
-- `image`: path to the image that will be displayed on the newsletter page
-- `authors`: list of authors if there are multiple authors, each with their name and LinkedIn URL
-- `metadata`: controls what appears when someone searches for the page on Google or shares it on social media. Key fields:
-  - `title`: the page title shown in Google search results
+- `issue`: issue number as an integer (e.g., `5`)
+- `title`: name of the newsletter issue
+
+**Optional fields:**
+
+- `draft`: set to `true` to prevent the newsletter from appearing on the site until it is ready. Omit or set to `false` to publish.
+- `excerpt`: short description that appears on the newsletter listing page (should be a sentence or less)
+- `image`: path to the hero image displayed at the top of the newsletter page (e.g., `/photos/my-image.jpg`)
+- `imageAlt`: alt text for the hero image. Describe the purpose, not the appearance. Do not include the words "image" or "photo".
+- `imageDescription`: caption or citation text shown below the hero image
+- `imagePosition`: controls which part of the image is most visible when cropped. Options: `top`, `center` (default), `bottom`, `left`, `right`, `contain`.
+- `authors`: list of authors, each with a `name` and optional `url` (LinkedIn profile)
+- `metadata`: controls what appears when someone searches for the page on Google or shares it on social media:
+  - `title`: the page title shown in Google search results (overrides the newsletter title)
   - `description`: the text snippet shown under the title in Google search results. Keep it under two sentences. Often can just match what was written in `excerpt`.
 
 ### 3. Add an image
@@ -376,7 +405,7 @@ Copy this template and fill in the details:
 title: 'Name of the Resource'
 description: 'A concise description of what this resource offers (1-2 sentences)'
 url: 'https://example.com'
-category: 'courses' # Options: courses, tutorials, tools, documentation
+category: 'bioinformatics' # Current available options: bioinformatics, machine-learning,professional-development, coding, math, biology.
 tags:
   - 'Python'
   - 'genomics'
@@ -385,7 +414,16 @@ featured: false # Set to true only for exceptional resources
 ---
 ```
 
-### 4. Push to website
+### 4. Add a NEW Resource Category (Optional)
+
+The Resources collection uses a strict list of categories to ensure data consistency and to power website filters. If you are adding a resource that doesn't fit into the existing categories, follow these steps to update the schema.
+
+1. Open the configuration file by navigating to `src/content/config.ts`.
+2. Locate the `resourcesCollection` definition by scrolling down to the `resourcesCollection` definition (**around line 142**). You will see the category field defined with `z.enum([...])`.
+3. Add your new category string to the array inside the `z.enum` list. **Note:** Use kebab-case (e.g.data-visualization) for the value.
+4. Once you save the file, the TypeScript compiler/Astro build will now allow this new string in your Markdown frontmatter.
+
+### 5. Push to website
 
 1. Commit your changes: `git commit -m "Add {new_resource}"`
 2. Push to your fork: `git push -u origin add-resource-{new_resource}`
@@ -401,7 +439,7 @@ See [Getting started without write-access](#getting-started-without-write-access
 
 ### 2. Create a new file
 
-Navigate to `src/content/communities/` and create a new markdown file:
+Navigate to `src/content/partnerCommunities/` and create a new markdown file:
 
 ```
 r-ladies.md

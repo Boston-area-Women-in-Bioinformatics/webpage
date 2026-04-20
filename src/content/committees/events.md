@@ -5,12 +5,11 @@ description: 'Organizes and hosts professional and community-focused events from
 icon: 'tabler:calendar'
 chairs:
   - 'Diveena Becker'
-  - 'Lina Faller'
+  - 'Liyang Diao'
 members:
   - 'Shayna Stein'
   - 'Ozge Tasdemir Yilmaz'
   - 'Lakshmi Kuttippurathu'
-  - 'Liyang Diao'
   - 'Samantha Klasfeld'
 ---
 

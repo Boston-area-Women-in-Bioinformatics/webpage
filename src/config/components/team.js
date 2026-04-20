@@ -55,7 +55,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/linafaller/',
       // Job Title
-      title: 'Vice President',
+      title: 'Vice President & Nominating and Governance Committee Chair',
       // Leadership team member Photo
       avatar: '/team/lina.jpg',
       // Social links
@@ -74,7 +74,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/diveena-becker-5945a771/',
       // Job Title
-      title: 'Treasurer, Finance Committee Chair & Events Committee Co-chair',
+      title: 'Treasurer & Finance Committee Chair & Events Committee Co-chair',
       // Leadership team member Photo
       avatar: '/team/diveena.jpg',
       // Social links
