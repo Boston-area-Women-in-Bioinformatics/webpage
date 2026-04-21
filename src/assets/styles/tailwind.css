@@ -140,6 +140,25 @@
   color: #d1d5db; /* Tailwind gray-300 */
 }
 
+/* Task list checkboxes */
+.prose ul:has(li > input[type='checkbox']) {
+  list-style: none;
+  padding-left: 0;
+}
+.prose ul li:has(> input[type='checkbox']) {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.prose ul li > input[type='checkbox'] {
+  margin: 0;
+  margin-top: 0.4em;
+  flex-shrink: 0;
+  accent-color: var(--aw-color-primary);
+  width: 1em;
+  height: 1em;
+}
+
 /* #header.scroll > div:last-child {
   @apply py-3;
 } */
