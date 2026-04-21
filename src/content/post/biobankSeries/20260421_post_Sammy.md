@@ -5,7 +5,7 @@ excerpt: 'A wrap-up of the series and a checklist before you start your analysis
 slug: blog/biobank-intro-series/09-wrapping-up
 image: '/blog_images/biobank1/square_blogseries_graphic.png'
 imageAlt: 'Subway-map style illustration of the Biobank Intro Series showing the journey through UK Biobank and All of Us topics.'
-imageDescription: 'The full Biobank Intro Series, visualized as a subway map: each stop builds the foundation you need before diving into biobank analysis.'
+imageDescription: 'The Biobank Intro Series, visualized as a subway map: each stop builds the foundation you need before diving into biobank analysis.'
 imagePosition: 'contain'
 hideHeroImage: false
 author: Samantha J. Klasfeld, Ph.D.
