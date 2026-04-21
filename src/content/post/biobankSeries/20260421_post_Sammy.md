@@ -3,11 +3,11 @@ publishDate: 2026-04-21T00:00:00-04:00
 title: 'Biobank Intro Series: You Have What You Need'
 excerpt: 'A wrap-up of the series and a checklist before you start your analysis'
 slug: blog/biobank-intro-series/09-wrapping-up
-image: '/blog_images/biobank1/square_blogseries_graphic.png'
+image: '/blog_images/biobank1/full_blogseries_graphic.png'
 imageAlt: 'Subway-map style illustration of the Biobank Intro Series showing the journey through UK Biobank and All of Us topics.'
 imageDescription: 'The Biobank Intro Series, visualized as a subway map: each stop builds the foundation you need before diving into biobank analysis.'
 imagePosition: 'contain'
-hideHeroImage: false
+hideHeroImage: true
 author: Samantha J. Klasfeld, Ph.D.
 authorUrl: 'https://linkedin.com/in/samantha-klasfeld'
 category: Tutorial
@@ -23,6 +23,13 @@ metadata:
   description: 'A wrap-up of the Biobank Intro Series with a practical pre-analysis checklist covering platform setup, phenotype selection, and genetic data access for UK Biobank and All of Us.'
   canonical: https://sklasfeld.netlify.app/blog/biobank-intro-series/09-wrapping-up/
 ---
+
+<figure class="my-8 mx-auto">
+<img src="/blog_images/biobank1/square_blogseries_graphic.png" alt="Subway-map style illustration of the Biobank Intro Series showing the journey through UK Biobank and All of Us topics." class="mx-auto w-full" >
+<figcaption class="text-center text-sm opacity-80 mt-2">
+   <em>The Biobank Intro Series, visualized as a subway map: each stop builds the foundation you need before diving into biobank analysis.</em>
+ </figcaption>
+</figure>
 
 If you've made it here, you've covered a lot of ground in UK Biobank and All of Us:
 
