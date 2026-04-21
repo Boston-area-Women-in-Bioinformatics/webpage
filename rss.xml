@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Member Spotlight: Sharvari Narendra</title><link>https://boston-wib.org/blog/quicktake/interview-sharvari-narendra</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/interview-sharvari-narendra</guid><pubDate>Thu, 16 Apr 2026 14:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//team/Sharvari_Narendra.jpg&quot; alt=&quot;Sharvari Narendra&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boston Women in Bioinformatics&apos;s Blog</title><description>The online presence of Women in Bioinformatics in the Boston Area</description><link>https://boston-wib.org</link><item><title>Biobank Intro Series: You Have What You Need</title><link>https://boston-wib.org/blog/biobank-intro-series/09-wrapping-up</link><guid isPermaLink="true">https://boston-wib.org/blog/biobank-intro-series/09-wrapping-up</guid><pubDate>Tue, 21 Apr 2026 04:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/full_blogseries_graphic.png&quot; alt=&quot;Subway-map style illustration of the Biobank Intro Series showing the journey through UK Biobank and All of Us topics.&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;A wrap-up of the series and a checklist before you start your analysis&lt;/em&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;my-8 mx-auto&quot;&gt;
+&lt;img src=&quot;https://boston-wib.org//blog_images/biobank1/square_blogseries_graphic.png&quot; alt=&quot;Subway-map style illustration of the Biobank Intro Series showing the journey through UK Biobank and All of Us topics.&quot; class=&quot;mx-auto w-full&quot; &gt;
+&lt;figcaption class=&quot;text-center text-sm opacity-80 mt-2&quot;&gt;
+   &lt;em&gt;The Biobank Intro Series, visualized as a subway map: each stop builds the foundation you need before diving into biobank analysis.&lt;/em&gt;
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;If you&amp;#39;ve made it here, you&amp;#39;ve covered a lot of ground in UK Biobank and All of Us:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The research environments&lt;/li&gt;
+&lt;li&gt;The observational data&lt;/li&gt;
+&lt;li&gt;The genetic data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This series was never meant to be exhaustive, but I hope it compressed your learning curve.&lt;/p&gt;
+&lt;h2&gt;Before You Start Analysis&lt;/h2&gt;
+&lt;p&gt;Use this as a gut check. If you can answer yes to everything here, you&amp;#39;re ready.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Platform&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; Identified the compute model you&amp;#39;re working in (DNAnexus vs. Google Cloud)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; A plan is made for saving outputs that won&amp;#39;t disappear when your session ends&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Phenotypes and Covariates&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; Identified the right fields or concepts for your phenotypes of interest and covariates&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; Checked for data quality warnings and understand what they mean for your analysis&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; Know which timepoints or visits have data and which one you&amp;#39;re using (instances on UKB, enrollment/EHR timing on AoU)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; Confirmed the sample size is sufficient for your question&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Genetic Data&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; Located the genotype data format you need (unphased WGS, phased WGS, or exome sequencing)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; Confirmed files are indexed (.tbi or .csi) before running any region queries&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; Subset to your region or variant list&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; Confirmed sample overlap between your phenotype and genotype data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;What Comes Next&lt;/h2&gt;
+&lt;p&gt;These posts will update if I find mistakes. If something looks off, feel free to reach out to me.&lt;/p&gt;
+&lt;p&gt;This series ends here, but, as the cliché goes, the journey is only beginning. Depending on your question, you might be headed toward GWAS, PheWAS, rare variant burden testing, or cross-biobank comparisons. Topics that may appear in a future series.&lt;/p&gt;
+&lt;p&gt;For now: you have the data, you know where it lives, and you know enough to not be too surprised by what you find. That&amp;#39;s further than a lot of people get before they start. Good luck!&lt;/p&gt;
+&lt;h2&gt;Reflections&lt;/h2&gt;
+&lt;p&gt;None of these posts would have happened without a few people.&lt;/p&gt;
+&lt;p&gt;Thank you to Sneha Grandhi who helped me recognize my strengths in this field. The biobank work I did at Genscience with her is what this series is built on.&lt;/p&gt;
+&lt;p&gt;Almost a year ago, &lt;a href=&quot;https://www.linkedin.com/in/linafaller/&quot;&gt;Lina Faller&amp;#39;s&lt;/a&gt; dedication to sharing her data management work on the Boston Women in Bioinformatics website was the push I needed to finally write something of my own.&lt;/p&gt;
+&lt;p&gt;Thank you to Mitibketa Ilboudo and &lt;a href=&quot;https://www.linkedin.com/in/sharvarinarendra/&quot;&gt;Sharvari Narendra&lt;/a&gt; for editing. Taking time to give feedback on a stranger&amp;#39;s blog posts is not a small thing, and it&amp;#39;s the reason I could post these with confidence.&lt;/p&gt;
+&lt;p&gt;Thank you to Lance and my family for the blind support. They may never understand what it is that I do, but I still love them.&lt;/p&gt;
+</content:encoded><category>biobank</category><category>research-strategy</category><category>ukb</category><category>all-of-us</category></item><item><title>Member Spotlight: Sharvari Narendra</title><link>https://boston-wib.org/blog/quicktake/interview-sharvari-narendra</link><guid isPermaLink="true">https://boston-wib.org/blog/quicktake/interview-sharvari-narendra</guid><pubDate>Thu, 16 Apr 2026 14:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://boston-wib.org//team/Sharvari_Narendra.jpg&quot; alt=&quot;Sharvari Narendra&quot; style=&quot;max-width: 100%; height: auto;&quot; /&gt;
 
 &lt;p&gt;&lt;em&gt;Finding Her Voice, One Pipeline at a Time&lt;/em&gt;&lt;/p&gt;
 
