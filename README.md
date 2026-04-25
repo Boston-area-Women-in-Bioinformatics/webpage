@@ -79,9 +79,7 @@ The markdown file should follow a specific format. In between the top two `---` 
 **Required fields:**
 
 - `title`: name of the event
-- `dateTime`: start date and time of the event. Use New York time:
-  - `YYYY-MM-DDTHH:mm:ss-04:00` (EDT) from the second Sunday of March through the first Saturday of November
-  - `YYYY-MM-DDTHH:mm:ss-05:00` (EST) from the first Sunday of November through the second Saturday of March
+- `dateTime`: start date and time of the event in New York time. Use `YYYY-MM-DDTHH:mm` (e.g., `2026-09-15T18:00`). The timezone is applied automatically — no offset needed.
 - `location`: list of location strings (e.g., `["123 Main St", "Boston, MA"]`)
 - `image`: object with two fields:
   - `src`: path to the image (e.g., `/photos/my-event.jpg`)
@@ -90,7 +88,7 @@ The markdown file should follow a specific format. In between the top two `---` 
 
 **Optional fields:**
 
-- `endDate`: end date and time of the event, in the same format as `dateTime`. Required if the event spans multiple days or you want the end time to display.
+- `endDate`: end date and time of the event, in the same `YYYY-MM-DDTHH:mm` format as `dateTime`. Required if the event spans multiple days or you want the end time to display.
 - `url`: registration or event link (e.g., a Lu.ma URL)
 - `data_luma_event_id`: Lu.ma event ID, used to embed a registration button
 - `imgpos`: controls which part of the image is visible on the events listing page. Defaults to `object-top object-cover`. See [Tailwind object-position](https://tailwindcss.com/docs/object-position) for options.

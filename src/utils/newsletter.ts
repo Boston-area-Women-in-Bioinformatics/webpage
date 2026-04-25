@@ -86,7 +86,12 @@ const getNormalizedNewsletter = async (newsletter: CollectionEntry<'newsletter'>
 
 const load = async function (): Promise<Array<Newsletter>> {
   // only post newsletters published before today
-  const newsletters = await getCollection('newsletter', ({ data }) => new Date(data.publishDate) <= new Date());
+  const nyNow = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }));
+  const newsletters = await getCollection('newsletter', ({ data }) => {
+    const pubDate = new Date(data.publishDate);
+    const nyPubDate = new Date(pubDate.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+    return nyPubDate <= nyNow;
+  });
   //const posts = await getCollection('post')
   const normalizedNewsletters = newsletters.map(async (newsletter) => await getNormalizedNewsletter(newsletter));
 

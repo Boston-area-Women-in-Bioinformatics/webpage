@@ -10,7 +10,7 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 //import { Icon } from 'astro-icon/components';
 
 // Get all future events, excluding partner events for homepage display
-const now = new Date();
+const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }));
 const future_events = (
   await getCollection('event', ({ data }: CollectionEntry<'event'>) => {
     const eventEnd = data.endDate ? new Date(data.endDate) : new Date(data.dateTime);

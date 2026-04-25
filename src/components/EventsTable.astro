@@ -10,7 +10,7 @@ import Button from '~/components/ui/Button.astro';
 import Card from '~/components/ui/Card.astro';
 //import { Icon } from 'astro-icon/components';
 
-const now = new Date();
+const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }));
 
 const future_events = (
   await getCollection('event', ({ data }: CollectionEntry<'event'>) => {
