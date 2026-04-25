@@ -1,7 +1,7 @@
 ---
 title: 'Biotech Data and Beers'
-dateTime: 2026-04-13T17:30:00-04:00
-endDate: '2026-04-13T20:00-04:00'
+dateTime: 2026-04-13T17:30
+endDate: '2026-04-13T20:00'
 location: ['Lamplighter Brewing Co.', '284 Broadway', 'Cambridge, MA 02139']
 url: 'https://luma.com/event/evt-E1PiOJKkm6SvUCZ'
 data_luma_event_id: 'evt-E1PiOJKkm6SvUCZ'
