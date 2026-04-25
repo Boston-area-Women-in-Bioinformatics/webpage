@@ -139,14 +139,12 @@ The markdown file should follow a specific format. In between the top two `---` 
 
 **Required fields:**
 
-- `publishDate`: date when the blog post was published. Use New York time, so the format will always be one of:
-  - `YYYY-MM-DDTHH:mm:ss-04:00` (EDT) from the second Sunday of March through the first Saturday of November
-  - `YYYY-MM-DDTHH:mm:ss-05:00` (EST) from the first Sunday of November through the second Saturday of March
+- `publishDate`: date when the blog post was published. Use `YYYY-MM-DD` (e.g., `2026-04-21`). Posts dated in the future will not appear on the site until that date.
 - `title`: name of the blog post
 
 **Optional fields:**
 
-- `updateDate`: date the post was last updated, in the same ISO format as `publishDate`
+- `updateDate`: date the post was last updated, in the same `YYYY-MM-DD` format as `publishDate`
 - `draft`: set to `true` to prevent the post from appearing on the site until it is ready. Omit or set to `false` to publish.
 - `slug`: a unique identifier for the blog post used in the URL (e.g., `blog/deep-dive/my-post-title`)
 - `excerpt`: short description that appears on the blog listing pages to summarize the post
