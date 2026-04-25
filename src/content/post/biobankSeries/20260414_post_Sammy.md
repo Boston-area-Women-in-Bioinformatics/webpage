@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-14T00:00:00-04:00
+publishDate: 2026-04-14
 title: 'Biobank Intro Series: All of Us Genetic Data'
 excerpt: 'Navigating All of Us genotype data for variant extraction and analysis'
 slug: blog/biobank-intro-series/08-aou-genetic-data
