@@ -107,7 +107,8 @@ src/components/
 ### CI/CD (`.github/workflows/`)
 
 - **`actions.yaml`**: Runs on PRs and pushes to `main` — matrix build (Node 18/20/22) + ESLint + Prettier check
-- **`publish.yaml`**: Deploys to GitHub Pages on push to `main` and on a **daily cron at 8 AM US Eastern** (this keeps future/past event splits current without a manual deploy); publishes from `./dist`
+- **`daily-build.yml`**: Triggers a Netlify build daily at 6 AM UTC via the Netlify build hook (keeps future-dated posts and past/upcoming event splits current)
+- The site is hosted on **Netlify**, which builds and deploys automatically on push to `main`. There is no GitHub Pages deployment.
 
 ### Tests
 

@@ -6,7 +6,7 @@ import Headline from '~/components/ui/Headline.astro';
 
 export const prerender = true;
 
-const now = new Date();
+const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }));
 const allPastEvents = (
   await getCollection('event', ({ data }: CollectionEntry<'event'>) => {
     const eventEnd = data.endDate ? new Date(data.endDate) : new Date(data.dateTime);

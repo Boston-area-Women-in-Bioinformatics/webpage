@@ -91,7 +91,13 @@ const secondLine = hasBreak ? title.slice(breakIndex + 1).trim() : '';
             </div>
           )
         }
-        {(endDate || date) < new Date() ? ' ' : <Signup url={url} data_luma_event_id={data_luma_event_id} />}
+        {
+          (endDate || date) < new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })) ? (
+            ' '
+          ) : (
+            <Signup url={url} data_luma_event_id={data_luma_event_id} />
+          )
+        }
       </div>
     </div>
   </div>

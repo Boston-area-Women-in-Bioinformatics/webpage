@@ -1,6 +1,36 @@
 import { z, defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 
+// Parses a datetime as New York time if no timezone offset is present.
+// Accepts a Date object (from unquoted YAML), "YYYY-MM-DDTHH:mm", "YYYY-MM-DD",
+// or a full ISO string with offset.
+const nyDate = () =>
+  z.union([z.date(), z.string()]).transform((val) => {
+    // Already a Date object (Astro parsed an unquoted YAML date as UTC) — return as-is
+    if (val instanceof Date) return val;
+    // Already has a timezone offset — parse as-is
+    if (/[Z+-]\d*:?\d*$/.test(val.trim()) && val.includes('T')) {
+      return new Date(val);
+    }
+    // Date-only or local datetime — interpret as NY midnight / NY time
+    const hasTime = val.includes('T');
+    const localStr = hasTime ? val : `${val}T00:00:00`;
+    // Get the NY offset at this moment by formatting a reference date
+    const ref = new Date(localStr + 'Z');
+    const nyOffset =
+      new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/New_York',
+        timeZoneName: 'shortOffset',
+      })
+        .formatToParts(ref)
+        .find((p) => p.type === 'timeZoneName')?.value ?? 'GMT-5';
+    const offsetMatch = nyOffset.match(/GMT([+-])(\d+)(?::(\d+))?/);
+    const offsetStr = offsetMatch
+      ? `${offsetMatch[1]}${offsetMatch[2].padStart(2, '0')}:${(offsetMatch[3] ?? '00').padStart(2, '0')}`
+      : '-05:00';
+    return new Date(`${localStr}${offsetStr}`);
+  });
+
 const metadataDefinition = () =>
   z
     .object({
@@ -49,8 +79,8 @@ const metadataDefinition = () =>
 
 const postCollection = defineCollection({
   schema: z.object({
-    publishDate: z.date(),
-    updateDate: z.date().optional(),
+    publishDate: z.coerce.date(),
+    updateDate: z.coerce.date().optional(),
     draft: z.boolean().optional(),
 
     title: z.string(),
@@ -109,8 +139,8 @@ const eventCollection = defineCollection({
   loader: glob({ pattern: '**/*.md', base: 'src/content/meetups' }),
   schema: z.object({
     title: z.string(),
-    dateTime: z.coerce.date(),
-    endDate: z.coerce.date().optional(),
+    dateTime: nyDate(),
+    endDate: nyDate().optional(),
     location: z.array(z.string()),
     url: z.string().optional(),
     data_luma_event_id: z.string().optional(),

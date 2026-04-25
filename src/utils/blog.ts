@@ -146,10 +146,12 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
 
 const load = async function (): Promise<Array<Post>> {
   // only post blogs published before today
-  const posts = await getCollection(
-    'post',
-    ({ data }: CollectionEntry<'post'>) => new Date(data.publishDate) <= new Date()
-  );
+  const nyNow = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }));
+  const posts = await getCollection('post', ({ data }: CollectionEntry<'post'>) => {
+    const pubDate = new Date(data.publishDate);
+    const nyPubDate = new Date(pubDate.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+    return nyPubDate <= nyNow;
+  });
   //const posts = await getCollection('post')
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
 

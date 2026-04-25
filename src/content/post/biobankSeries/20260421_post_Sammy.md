@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-21T00:00:00-04:00
+publishDate: 2026-04-21
 title: 'Biobank Intro Series: You Have What You Need'
 excerpt: 'A wrap-up of the series and a checklist before you start your analysis'
 slug: blog/biobank-intro-series/09-wrapping-up
