@@ -1,10 +1,10 @@
 ---
 publishDate: 2026-05-12T00:00:01-04:00
 issue: 6
-title: 'Boston Women in Bioinformatics: May 2026 Issue 006'
-excerpt: Reflections, events, and new opportunities shaping our community this month.
+title: 'Issue 006: May 2026'
+excerpt: Community, connections, and what's coming next.
 image: '/photos/2026/biteNbyte_April2026.jpg'
-imageAlt: 'Boston Women in Bioinformatics Bite & Byte Lunch'
+imageAlt: 'Women at Boston Women in Bioinformatics Bits & Brews'
 authors:
   - name: 'Sakina Saif, M.S.'
     url: 'https://www.linkedin.com/in/sakinasaif'
@@ -46,14 +46,14 @@ _[Samantha Klasfeld, Ph.D.](https://www.linkedin.com/in/samantha-klasfeld)_ • 
 
 From networking to interviews to meetings with new collaborators, introducing yourself is something we all have to do in professional settings, and the vocabulary we choose can shape how others understand our strengths. However, finding language that feels both accurate and authentic is surprisingly challenging. In this professional development workshop facilitated by Jenn Felsted-Knight, PhD, PCC of Felsted Coaching & Consulting, we approached this task as a group. We practiced out loud, gave each other feedback, and brainstormed ways to project confidence. A huge thank you to Jenn for her generosity and expertise, Viveka for coordinating our partnership with Northeastern, and Northeastern GWISE and the Graduate Biotechnology-Bioinformatics Association (GBBA) for sponsoring free tickets for Northeastern students. Participants left with introductions shaped in their own voice and a deeper sense of identity to carry into the moments that define us as professionals.
 
-### Byte & Brews @ Tap 151
+### Bits & Brews @ Tap 151
 
 <figure>
   <img
     src="/photos/2026/biteNbyte_April2026.jpg"
-    alt="Seventeen BWIB members seated along a long wooden table, smiling at the camera over grain bowls and water carafes."
+    alt="Boston Women in Bioinformatics members seated along a long wooden table, smiling at the camera over drinks."
   />
-  <figcaption>BWIB's Byte &amp; Brews at Tap 151 in Kendall Square, hosted by BWIB.</figcaption>
+  <figcaption>Boston Women in Bioinformatics's Bits &amp; Brews at Tap 151 in Cambridge Crossing.</figcaption>
 </figure>
 
 _[Valisha Shah](https://www.linkedin.com/in/valisha/)_ • April 24,2026
@@ -91,22 +91,22 @@ placeholder
 
 If you’re attending the Festival of Genomics in Boston, come find us in the Genome Dome. We’re hosting a structured speed networking session with women working across bioinformatics, research, and industry. The format is simple: fast, one-on-one conversations with one goal: walk away with one memorable detail about every person you meet. Not just a new connection, but a real reason to follow up. Bring something to write with.
 
-### BCBB & BWIB Lightning Talks
+### Lightning Talks with Boston Computational Biology and Bioinformatics
 
 <table class="not-prose" style="border-collapse: collapse; border: none; margin-top: 0.5rem; margin-bottom: 0.5rem;">
   <tr>
     <td style="vertical-align: top; border: none;">
-      <img src="/photos/2026/lightning_talks.png" alt="BCBB & BWIB Lightning Talks" width="250px"/>
+      <img src="/photos/2026/lightning_talks.png" alt="Boston Computational Biology and Bioinformatics & Boston Women in Bioinformatics Lightning Talks" width="250px"/>
     </td>
     <td style="vertical-align: middle; padding-left: 20px; border: none;">
       <ul style="list-style-type: none; padding-left: 0;">
-        <li>June 2026, date T.B.A.</li>
+        <li>June 29, 2026</li>
       </ul>
     </td>
   </tr>
 </table>
 
-BWIB is teaming up with Boston Computational Biology & Bioinformatics for an evening of community Lightning Talks this June, and we’re especially excited to spotlight the rockstar women in bioinformatics across both communities. Five minutes, any topic: your current research, a workflow that changed how you work, the AI agent you’ve been obsessing over, a dataset you think everyone should know about, or a tool you wish someone had shown you sooner. Start thinking now about what you’d talk about if you had five minutes and a room full of people who get it. Stay tuned for the venue, date, and submission form.
+Boston Women in Bioinformatics is teaming up with Boston Computational Biology & Bioinformatics for an evening of community Lightning Talks, and we’re especially excited to spotlight the rockstar women in bioinformatics across both communities. Five minutes, any topic: your current research, a workflow that changed how you work, the AI agent you’ve been obsessing over, a dataset you think everyone should know about, or a tool you wish someone had shown you sooner. Start thinking now about what you’d talk about if you had five minutes and a room full of people who get it. Stay tuned for the venue, date, and submission form.
 
 ---
 
@@ -155,7 +155,7 @@ what to post, how to tell your story, and why that blog from 10 years ago still 
 
 <div id="get-involved"></div>
 
-BWIB runs entirely on volunteer energy, and we're always looking for passionate people to join us. From organizing events and producing the podcast to managing finances and advocating for equity in the field, there's a place for every skill set. Learn more at [boston-wib.org/about/committees](https://boston-wib.org/about/committees?utm_source=newsletter&utm_medium=email&utm_campaign=april-2026)
+Boston Women in Bioinformatics runs entirely on volunteer energy, and we're always looking for passionate people to join us. From organizing events and producing the podcast to managing finances and advocating for equity in the field, there's a place for every skill set. Learn more at [boston-wib.org/about/committees](https://boston-wib.org/about/committees?utm_source=newsletter&utm_medium=email&utm_campaign=april-2026)
 
 ---
 
