@@ -127,11 +127,11 @@ _Tutorial Series by [Samantha J. Klasfeld, Ph.D.](https://www.linkedin.com/in/sa
 The Biobank Intro Series is complete. All posts, covering everything from compute setup to genetic data extraction in the UK Biobank Research Analysis Platform and All of Us Researcher Workbench, two trusted research environments (secure, access-controlled platforms for analyzing sensitive health data), are now collected in one place. If you've been following along, feel free to reach out to Samantha Klasfeld on our slack if you liked it or have any questions. If you're just finding it, this is your sign to get started.
 
 [**Member Spotlight: Sharvari Narendra**](https://boston-wib.org/blog/interview/sharvari-narendra) <span class="text-muted">  
-_Quick Take by [Dana Moochnick](https://www.linkedin.com/in/dana-moochnick/)_</span>
+_Interview by [Dana Moochnick](https://www.linkedin.com/in/dana-moochnick/)_</span>  
 She moved across the world, questioned everything, and stayed anyway. Dana sits down with podcast co-chair Sharvari Narendra for a conversation about what finding your footing in bioinformatics actually looks like when nothing about the path feels certain.
 
 [**Member Spotlight: Aysheh Alrfooh**](https://boston-wib.org/blog/interview/aysheh-alrfooh) <span class="text-muted">  
-_Quick Take by [Sharvari Narendra](https://www.linkedin.com/in/sharvarinarendra/)_</span>
+_Interview by [Sharvari Narendra](https://www.linkedin.com/in/sharvarinarendra/)_</span>  
 Sharvari sits down with Career-Sponsorship co-chair Aysheh Alrfooh for a wide-ranging conversation on methylation, mentorship, and movies, and she leaves us with a two-truths-and-a-lie that we are still thinking about.
 
 **Want to see your name here?** We're always looking for new voices. You don't need citations, a polished draft, or even a complete idea — just something you've been thinking about. Reach out to the us at the [communications committee](https://boston-wib.org/about/committees/communications?utm_source=newsletter&utm_medium=email&utm_campaign=april-2026) to get started.
