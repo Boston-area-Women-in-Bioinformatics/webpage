@@ -144,12 +144,7 @@ Sharvari sits down with Career-Sponsorship co-chair Aysheh Alrfooh for a wide-ra
 
 **The Scientist's Guide to Personal Branding by ​Tommy Tang**  
 [Bioinformatics and AI XChange](https://luma.com/bioinfoclub) | Virtual | May 16, 10:00 AM  
-Tommy Tang, Director of Bioinformatics at AstraZeneca, has spent 800+ days posting daily on LinkedIn.
-
-The results: inbound interest from VCs, founders, and advisory board invitations. In this talk, he breaks down the three habits behind it: consistent social media presence, blogging, and building the right professional connections.
-
-​Expect practical tactics most scientists don't hear about:
-what to post, how to tell your story, and why that blog from 10 years ago still matters. [Register here](https://luma.com/uzwcykzn).
+What if showing up online consistently could change the trajectory of your career? Tommy Tang, Director of Bioinformatics at AstraZeneca, has spent 800+ days posting daily on LinkedIn, and the results speak for themselves: inbound interest from VCs, founders, and advisory board invitations. In his upcoming talk, he breaks down the three habits behind it, covering consistent social media presence, blogging, and building the right professional connections. You can expect practical tactics most scientists never hear about, including what to post, how to tell your story, and why that blog you wrote 10 years ago still matters. Register here.
 
 ## Get Involved
 
