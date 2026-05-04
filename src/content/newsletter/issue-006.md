@@ -44,7 +44,7 @@ Here's what's inside this month:
 
 _[Samantha Klasfeld, Ph.D.](https://www.linkedin.com/in/samantha-klasfeld)_ • April 21,2026
 
-BWIB hosted "Networking Without the Ick," a professional development workshop facilitated by Jenn Felsted-Knight, PhD, PCC of Felsted Coaching & Consulting. The session focused on something many of us quietly struggle with: finding the words to introduce ourselves in a way that feels authentic and highlights our impact. We practiced out loud, gave each other feedback, and brainstormed ways to use precise language to project confidence. A huge thank you to Jenn for her generosity and expertise, to Viveka for coordinating our partnership with Northeastern, and to Northeastern GWISE and the Graduate Biotechnology-Bioinformatics Association (GBBA) for sponsoring free tickets for Northeastern students.
+From networking to interviews to meetings with new collaborators, introducing yourself is something we all have to do in professional settings, and the vocabulary we choose can shape how others understand our strengths. However, finding language that feels both accurate and authentic is surprisingly challenging. In this professional development workshop facilitated by Jenn Felsted-Knight, PhD, PCC of Felsted Coaching & Consulting, we approached this task as a group. We practiced out loud, gave each other feedback, and brainstormed ways to project confidence. A huge thank you to Jenn for her generosity and expertise, Viveka for coordinating our partnership with Northeastern, and Northeastern GWISE and the Graduate Biotechnology-Bioinformatics Association (GBBA) for sponsoring free tickets for Northeastern students. Participants left with introductions shaped in their own voice and a deeper sense of identity to carry into the moments that define us as professionals.
 
 ### Byte & Brews @ Tap 151
 
@@ -62,7 +62,7 @@ placeholder
 
 ### Seqera Nexflow Summit
 
-\_[Genevieve Baddoo](https://www.linkedin.com/in/genevievebaddoo/)• April 30-May 1,2026
+_[Genevieve Baddoo](https://www.linkedin.com/in/genevievebaddoo/)_• April 30-May 1,2026
 
 placeholder
 
