@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-05-12T00:00:01-04:00
+publishDate: 2026-05-12
 issue: 6
 title: 'Issue 006: May 2026'
 excerpt: Community, connections, and what's coming next.
@@ -100,13 +100,34 @@ If you’re attending the Festival of Genomics in Boston, come find us in the Ge
     </td>
     <td style="vertical-align: middle; padding-left: 20px; border: none;">
       <ul style="list-style-type: none; padding-left: 0;">
-        <li>June 29, 2026</li>
+        <li>June 29, 2026 @ 6-8 PM</li>
+        <li><a href="https://cic.com/cambridge">Cambridge Innovation Center (CIC)</a> </li>
+        <li>5th floor, 1 Broadway</li>
+        <li>Cambridge, MA 02142</li>
       </ul>
     </td>
   </tr>
 </table>
 
-Boston Women in Bioinformatics is teaming up with Boston Computational Biology & Bioinformatics for an evening of community Lightning Talks, and we’re especially excited to spotlight the rockstar women in bioinformatics across both communities. Five minutes, any topic: your current research, a workflow that changed how you work, the AI agent you’ve been obsessing over, a dataset you think everyone should know about, or a tool you wish someone had shown you sooner. Start thinking now about what you’d talk about if you had five minutes and a room full of people who get it. Stay tuned for the venue, date, and submission form.
+Boston Women in Bioinformatics is teaming up with [Seqera](https://seqera.io) and [Boston Computational Biology & Bioinformatics](https://www.meetup.com/boston-computational-biology-and-bioinformatics-meetup) for an evening of community Lightning Talks, and we're especially excited to spotlight the rockstar women in bioinformatics across both communities. Speakers have five minutes to present on any topic in bioinformatics: your current research, a workflow that changed how you work, the AI agent you've been obsessing over, a dataset you think everyone should know about, or a tool you wish someone had shown you sooner. Start thinking now about what you'd talk about if you had five minutes and a room full of people who get it. Stay tuned for the submission form.
+
+## Boston Women in Bioinformatics Family Day at Danehy Park
+
+<table class="not-prose" style="border-collapse: collapse; border: none; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+  <tr>
+    <td style="vertical-align: top; border: none;">
+      <img src="/photos/BWiB Family Event.png" alt="Boston Women in Bioinformatics Family Event" width="250px"/>
+    </td>
+    <td style="vertical-align: middle; padding-left: 20px; border: none;">
+      <ul style="list-style-type: none; padding-left: 0;">
+        <li>Date & Time: TBA</li>
+        <li>Danehy Park</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+Pack your sunscreen because Boston Women In Bioinformatics is hosting an outdoor hangout at Danehy Park in Cambridge this spring!  Whether you're flying solo or bringing the whole crew, soak in the fresh air and catch up with your fellow bioinformatics peers. Free parking is available right at the park, and the Alewife Red Line stop is a short walk away for those taking the T. Date and time coming soon, keep an eye on your inbox and our socials!
 
 ---
 
