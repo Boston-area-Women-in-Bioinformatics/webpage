@@ -64,7 +64,14 @@ placeholder
 
 _[Genevieve Baddoo](https://www.linkedin.com/in/genevievebaddoo/)_• April 30-May 1,2026
 
-placeholder
+A few weeks ago, I had the privilege of attending the Seqera Nextflow Summit 2026 in Boston representing Boston Women in Bioinformatics - and it was honestly one of the most fun and energizing conferences I've been to!
+
+Beyond the incredible speaker talks, keynote insights, and exciting updates in the Nextflow ecosystem, the highlight for me was the community. The summit had a smaller, more intimate feel, which made it so much easier to have real, meaningful conversations with the people around you - something that's hard to replicate at a massive conference. The Nextflow community seems really welcoming and friendly online, and I felt that during the summit. Whether you're new to Nextflow or an expert, there's a place for everyone to learn and grow together!
+If you're on the job market or just thinking about your next career move, bioinformatics conferences like this one are invaluable for networking. One of my biggest takeaways: talk to people at companies you're curious about. You'll learn so much more about a role or a team through a conversation than hours of Googling. Networking for the sake of genuine connection is what makes you memorable when opportunities do come up.
+
+In a field where so much of our work happens behind a screen, being in a room with like-minded people is a reminder that we're not figuring this out alone. I usually attend the Nextflow summits virtually, but I highly recommend attending in person whenever you can.
+
+To everyone I met at the summit, it was great meeting you. I hope to see more BWIB members at a Nextflow Summit or other events in the future!
 
 ---
 
