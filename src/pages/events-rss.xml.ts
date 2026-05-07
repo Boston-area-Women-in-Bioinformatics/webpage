@@ -36,7 +36,7 @@ export const GET = async () => {
 <p><strong>Where:</strong> ${event.data.location.join(', ')}</p>
 ${bodyHtml}`;
         return {
-          link: `${import.meta.env.SITE}/events/${event.id}`,
+          link: `${import.meta.env.SITE}/events/${event.data.slug ?? event.id}`,
           title: event.data.title,
           content,
           pubDate: event.data.dateTime,

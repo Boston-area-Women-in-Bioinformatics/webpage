@@ -153,6 +153,7 @@ const eventCollection = defineCollection({
     tags: z.array(z.string()),
     partnerEvent: z.boolean().optional().default(false),
     partnerOrganization: z.string().optional(),
+    slug: z.string().optional(),
   }),
 });
 
