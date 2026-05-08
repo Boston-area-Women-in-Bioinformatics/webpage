@@ -95,6 +95,9 @@ The markdown file should follow a specific format. In between the top two `---` 
 - `cost`: ticket price in dollars as a number (e.g., `10`). Omit for free events.
 - `partnerEvent`: set to `true` if this event is hosted by a partner organization rather than BWIB directly. Defaults to `false`.
 - `partnerOrganization`: name of the partner organization hosting the event (only used when `partnerEvent: true`)
+- `slug`: a human-readable URL identifier for the event page (e.g., `byte-and-bite-may-2026`). If omitted, the filename is used instead. Use lowercase words separated by hyphens. Follow these conventions:
+  - For events that occur once a year, include the year: `fall-fundraiser-2026`
+  - For events that occur multiple times a year (at most once a month), include the month and year: `byte-and-bite-may-2026`
 
 ### 3. Add an image
 
