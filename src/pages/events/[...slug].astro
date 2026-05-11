@@ -5,7 +5,7 @@ import EventLayout from '~/layouts/EventLayout.astro';
 export async function getStaticPaths() {
   const events = await getCollection('event');
   return events.map((meeting) => ({
-    params: { slug: meeting.id },
+    params: { slug: meeting.data.slug ?? meeting.id },
     props: { meeting },
   }));
 }

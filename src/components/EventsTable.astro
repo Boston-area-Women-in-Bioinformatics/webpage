@@ -70,7 +70,7 @@ const past_events = all_past_events.slice(0, 3);
               <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
                 <EventAddress artists={event.data.location || []} />
               </div>
-              <Button variant="primary" href={`/events/${event.id}`} text="MORE INFO" />
+              <Button variant="primary" href={`/events/${event.data.slug ?? event.id}`} text="MORE INFO" />
             </div>
           </Card>
         );
@@ -108,7 +108,7 @@ const past_events = all_past_events.slice(0, 3);
                 <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
                   <EventAddress artists={event.data.location || []} />
                 </div>
-                <Button variant="primary" href={`/events/${event.id}`} text="MORE INFO" />
+                <Button variant="primary" href={`/events/${event.data.slug ?? event.id}`} text="MORE INFO" />
               </div>
             </Card>
           ))

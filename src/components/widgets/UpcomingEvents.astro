@@ -108,7 +108,7 @@ if (next_event) {
         <div class="flex flex-wrap gap-4 justify-center xs:justify-start">
           <Button
             variant="primary"
-            href={`/events/${next_event.id}`}
+            href={`/events/${next_event.data.slug ?? next_event.id}`}
             text="Learn More"
             icon="tabler:square-rounded-arrow-right"
           />

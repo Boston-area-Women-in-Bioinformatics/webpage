@@ -24,7 +24,7 @@ const eventsForClient = allPastEvents.map((e) => ({
   imageSrc: e.data.image.src,
   imageAlt: e.data.image.alt,
   imgpos: e.data.imgpos ?? '',
-  href: `/events/${e.id}`,
+  href: `/events/${e.data.slug ?? e.id}`,
   isPartner: e.data.partnerEvent ?? false,
   partnerOrganization: e.data.partnerOrganization ?? null,
 }));
