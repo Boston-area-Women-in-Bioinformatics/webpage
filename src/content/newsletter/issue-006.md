@@ -79,6 +79,25 @@ To everyone I met at the summit, it was great meeting you. I hope to see more BW
 
 <div id="upcoming-events"></div>
 
+### ​​Byte and Bite: Bioinformatics Lunch Meetup
+
+<table style="border-collapse: collapse; border: none;">
+  <tr>
+    <td style="vertical-align: top; border: none;">
+      <img src="/photos/byteAndBiteLogo1.png" alt="Boston Women in Bioinformatics Byte and Bite" width="250px"/>
+    </td>
+    <td style="vertical-align: middle; padding-left: 20px; border: none;">
+      <ul style="list-style-type: none; padding-left: 0;">
+        <li>Mar 16, 2025, 12:00 PM</li>
+        <li>Shy Bird - Kendall Square, Cambridge, MA</li>
+        <li><a href="hhttps://boston-wib.org/events/2026/20260529_event?utm_source=newsletter&utm_medium=email&utm_campaign=byte-and-bite">Register</a></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+Shake off the last of winter and grab lunch with your fellow bioinformaticians at Shy Bird in Kendall Square! Whether you're deep in pipelines or just bioinformatics-curious, join us for a relaxed afternoon of good food, great company, and springtime vibes.
+
 ### Festival of Genomics Networking
 
 <table class="not-prose" style="border-collapse: collapse; border: none; margin-top: 0.5rem; margin-bottom: 0.5rem;">
@@ -90,13 +109,32 @@ To everyone I met at the summit, it was great meeting you. I hope to see more BW
       <ul style="list-style-type: none; padding-left: 0;">
         <li>June 4, 2026 @ 11:30 AM</li>
         <li>Genome Dome, Boston Convention and Exhibition Center</li>
-        <li><a href="https://boston-wib.org/events/20260604_event?utm_source=newsletter&utm_medium=email&utm_campaign=april-2026" class="btn-primary">Event Page</a></li>
+        <li><a href="https://boston-wib.org/events/20260604_event?utm_source=newsletter&utm_medium=email&utm_campaign=festival-of-genomics" class="btn-primary">Event Page</a></li>
       </ul>
     </td>
   </tr>
 </table>
 
 If you’re attending the Festival of Genomics in Boston, come find us in the Genome Dome. We’re hosting a structured speed networking session with women working across bioinformatics, research, and industry. The format is simple: fast, one-on-one conversations with one goal: walk away with one memorable detail about every person you meet. Not just a new connection, but a real reason to follow up. Bring something to write with.
+
+### Take Up Space: Building Presence and Confidence in High-Stakes Moments
+
+<table class="not-prose" style="border-collapse: collapse; border: none; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+  <tr>
+    <td style="vertical-align: top; border: none;">
+      <img src="/photos/2026/takeupspace.png" alt="Joanna Ghayad, Leadership and Business Coaching for Scientists" width="250px"/>
+    </td>
+    <td style="vertical-align: middle; padding-left: 20px; border: none;">
+      <ul style="list-style-type: none; padding-left: 0;">
+        <li>June 9, 2026 @ 4-6 PM</li>
+        <li>Northeastern Crossing, 1175 Tremont St, Boston, MA 02120</li>
+        <li><a href="https://boston-wib.org/events/take-up-space-2026?utm_source=newsletter&utm_medium=email&utm_campaign=take-up-space-2026" class="btn-primary">Event Page</a></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+Getting taken seriously in high-stakes moments like tough Q&As, senior stakeholder meetings, and make-or-break conversations is its own skill. Executive career coach Joanna Ghayad is back to help you build it. Early career or seasoned, this one is for you.
 
 ### Lightning Talks with Boston Computational Biology and Bioinformatics
 
@@ -172,7 +210,11 @@ Sharvari sits down with Career-Sponsorship co-chair Aysheh Alrfooh for a wide-ra
 
 **The Scientist's Guide to Personal Branding by ​Tommy Tang**  
 [Bioinformatics and AI XChange](https://luma.com/bioinfoclub) | Virtual | May 16, 10:00 AM  
-What if showing up online consistently could change the trajectory of your career? Tommy Tang, Director of Bioinformatics at AstraZeneca, has spent 800+ days posting daily on LinkedIn, and the results speak for themselves: inbound interest from VCs, founders, and advisory board invitations. In his upcoming talk, he breaks down the three habits behind it, covering consistent social media presence, blogging, and building the right professional connections. You can expect practical tactics most scientists never hear about, including what to post, how to tell your story, and why that blog you wrote 10 years ago still matters. Register here.
+What if showing up online consistently could change the trajectory of your career? Tommy Tang, Director of Bioinformatics at AstraZeneca, has spent 800+ days posting daily on LinkedIn, and the results speak for themselves: inbound interest from VCs, founders, and advisory board invitations. In his upcoming talk, he breaks down the three habits behind it, covering consistent social media presence, blogging, and building the right professional connections. You can expect practical tactics most scientists never hear about, including what to post, how to tell your story, and why that blog you wrote 10 years ago still matters. Register [here](https://luma.com/bioinfoclub?e=evt-A2hOf6INeTpP5Bw).
+
+**_No Recombination without Representation_**  
+MIT Museum, Central Square Theater, and the City of Cambridge | Central Square Theater | June 13, June 14, & June 21  
+Where science meets the stage, history becomes unforgettable. Step back in time with a theatrical staging about discovery, trust in science, and the importance of civic engagement in honor of the 50th anniversary of the impassioned Recombinant DNA Debates at Cambridge’s City Hall. You can find more info on performances [here](https://www.centralsquaretheater.org/free/no-recombination-without-representation-rdna-project/).
 
 ## Get Involved
 
