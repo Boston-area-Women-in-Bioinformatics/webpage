@@ -21,7 +21,7 @@ metadata:
   description: Reflections, events, and new opportunities shaping our community this month.
 ---
 
-placeholder
+The show must go on, and it turns out so must our event calendar. This month we're giving you the full production: casual networking, professional development, our first-ever family day, lightning talks with a competitive edge, and a literal theater partnership because apparently the history of science is the drama. Oh, and April was genuinely great. We've got the reflections to prove it. Here's your program.
 
 Here's what's inside this month:
 
