@@ -95,7 +95,7 @@ To everyone I met at the summit, it was great meeting you. I hope to see more BW
     </td>
     <td style="vertical-align: middle; padding-left: 20px; border: none;">
       <ul style="list-style-type: none; padding-left: 0;">
-        <li>Mar 16, 2025, 12:00 PM</li>
+        <li>May 29, 2026, 12:00 PM</li>
         <li>Bow Market, Somerville, MA</li>
         <li><a href="http://localhost:4321/events/2026/20260529_event?utm_source=newsletter&utm_medium=email&utm_campaign=byte-and-bite">Register</a></li>
       </ul>
