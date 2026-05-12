@@ -10,8 +10,6 @@ authors:
     url: 'https://www.linkedin.com/in/sakinasaif'
   - name: 'Sharvari Narendra'
     url: 'https://www.linkedin.com/in/sharvarinarendra/'
-  - name: 'Valisha Shah'
-    url: 'https://www.linkedin.com/in/valisha/'
   - name: 'Vishwa Talati'
     url: 'https://www.linkedin.com/in/vishwa-talati/'
   - name: 'Samantha Klasfeld, Ph.D.'
@@ -56,11 +54,19 @@ From networking to interviews to meetings with new collaborators, introducing yo
   <figcaption>Boston Women in Bioinformatics's Bits &amp; Brews at Tap 151 in Cambridge Crossing.</figcaption>
 </figure>
 
-_[Valisha Shah](https://www.linkedin.com/in/valisha/)_ • April 24,2026
+_[Samantha Klasfeld, Ph.D.](https://www.linkedin.com/in/samantha-klasfeld)_ • April 24,2026
 
-placeholder
+Bits & Brews was exactly what it promised: sugary drinks, tasty apps, and an excuse to put faces to Slack handles. I migrated from one end of the long wooden table to the other (and helped myself to some abandoned fried pickles and chips along the way) to squeeze in conversations with as many people as possible. The corporate tea was refreshing, straight from the women in the trenches of biotech and pharma's transition to AI, but for the full exclusive you'll just have to come to our next networking event.
 
 ### Seqera Nexflow Summit
+
+<figure>
+  <img
+    src="/photos/2026/nextflow_summit.jpeg"
+    alt="Boston Women in Bioinformatics members at nextflow summit"
+  />
+  <figcaption>Boston Women in Bioinformatics's at Nextflow Summit in Boston</figcaption>
+</figure>
 
 _[Genevieve Baddoo](https://www.linkedin.com/in/genevievebaddoo/)_• April 30-May 1,2026
 
@@ -180,7 +186,7 @@ Pack your sunscreen because Boston Women In Bioinformatics is hosting an outdoor
 
 <div id="podcast"></div>
 
-placeholder
+Turns out "we'll be in touch" is not just a villain origin story, it's a whole process, and ArkeaBio's Lauren Fitch and Kaye Guerard-Hatziioannou are here to explain every step of it. Consider this your cheat code for the bioinformatics job market.
 
 ---
 
