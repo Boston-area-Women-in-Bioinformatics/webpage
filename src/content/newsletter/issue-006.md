@@ -42,23 +42,25 @@ Here's what's inside this month:
 
 _[Samantha Klasfeld, Ph.D.](https://www.linkedin.com/in/samantha-klasfeld)_ • April 21,2026
 
-From networking to interviews to meetings with new collaborators, introducing yourself is something we all have to do in professional settings, and the vocabulary we choose can shape how others understand our strengths. However, finding language that feels both accurate and authentic is surprisingly challenging. In this professional development workshop facilitated by Jenn Felsted-Knight, PhD, PCC of Felsted Coaching & Consulting, we approached this task as a group. We practiced out loud, gave each other feedback, and brainstormed ways to project confidence. A huge thank you to Jenn for her generosity and expertise, Viveka for coordinating our partnership with Northeastern, and Northeastern GWISE and the Graduate Biotechnology-Bioinformatics Association (GBBA) for sponsoring free tickets for Northeastern students. Participants left with introductions shaped in their own voice and a deeper sense of identity to carry into the moments that define us as professionals.
+From networking to interviews to meetings with new collaborators, introducing yourself is something we all have to do in professional settings, and the vocabulary we choose can shape how others understand our strengths. However, finding language that feels both accurate and authentic is surprisingly challenging. In this professional development workshop facilitated by [Jenn Felsted-Knight, PhD, PCC of Felsted Coaching & Consulting](https://felstedcoaching.com/), we approached this task as a group. We practiced out loud, gave each other feedback, and brainstormed ways to project confidence. A huge thank you to Jenn for her generosity and expertise, [Viveka Patil](https://www.linkedin.com/in/viveka-patil-934b3123b/) for coordinating our partnerships, and [Northeastern GWISE](https://web.northeastern.edu/gwise/) and the [Northeastern Graduate Biotechnology-Bioinformatics Association (GBBA)](https://engage.northeastern.edu/gbba/club_signup) for sponsoring free tickets for students. Participants left with introductions shaped in their own voice and a deeper sense of identity to carry into the moments that define us as professionals.
 
 ### Bits & Brews @ Tap 151
+
+_[Samantha Klasfeld, Ph.D.](https://www.linkedin.com/in/samantha-klasfeld)_ • April 24,2026
 
 <figure>
   <img
     src="/photos/2026/biteNbyte_April2026.jpg"
     alt="Boston Women in Bioinformatics members seated along a long wooden table, smiling at the camera over drinks."
   />
-  <figcaption>Boston Women in Bioinformatics's Bits &amp; Brews at Tap 151 in Cambridge Crossing.</figcaption>
+  <figcaption>Boston Women in Bioinformatics's Bits and Brews at Tap 151 in Cambridge Crossing.</figcaption>
 </figure>
 
-_[Samantha Klasfeld, Ph.D.](https://www.linkedin.com/in/samantha-klasfeld)_ • April 24,2026
-
-Bits & Brews was exactly what it promised: sugary drinks, tasty apps, and an excuse to put faces to Slack handles. I migrated from one end of the long wooden table to the other (and helped myself to some abandoned fried pickles and chips along the way) to squeeze in conversations with as many people as possible. The corporate tea was refreshing, straight from the women in the trenches of biotech and pharma's transition to AI, but for the full exclusive you'll just have to come to our next networking event.
+Bits & Brews was exactly what it promised: sugary drinks, tasty apps, and an excuse to finally put faces to Slack handles. I migrated from one end of the long wooden table to the other (and helped myself to some abandoned fried pickles and chips along the way) to squeeze in conversations with as many people as possible. The "tea" was flowing, straight from the women in the trenches of biotech and pharma's AI transition, but for the full scoop you'll just have to come to our next networking event. Thank you to [Emily Lachtara](https://www.linkedin.com/in/emily-lachtara/) and [Valisha Shah](https://www.linkedin.com/in/valisha/) for organizing!
 
 ### Seqera Nexflow Summit
+
+_[Genevieve Baddoo](https://www.linkedin.com/in/genevievebaddoo/)_ • April 30-May 1,2026
 
 <figure>
   <img
@@ -68,11 +70,10 @@ Bits & Brews was exactly what it promised: sugary drinks, tasty apps, and an exc
   <figcaption>Boston Women in Bioinformatics's at Nextflow Summit in Boston</figcaption>
 </figure>
 
-_[Genevieve Baddoo](https://www.linkedin.com/in/genevievebaddoo/)_• April 30-May 1,2026
-
 A few weeks ago, I had the privilege of attending the Seqera Nextflow Summit 2026 in Boston representing Boston Women in Bioinformatics - and it was honestly one of the most fun and energizing conferences I've been to!
 
 Beyond the incredible speaker talks, keynote insights, and exciting updates in the Nextflow ecosystem, the highlight for me was the community. The summit had a smaller, more intimate feel, which made it so much easier to have real, meaningful conversations with the people around you - something that's hard to replicate at a massive conference. The Nextflow community seems really welcoming and friendly online, and I felt that during the summit. Whether you're new to Nextflow or an expert, there's a place for everyone to learn and grow together!
+
 If you're on the job market or just thinking about your next career move, bioinformatics conferences like this one are invaluable for networking. One of my biggest takeaways: talk to people at companies you're curious about. You'll learn so much more about a role or a team through a conversation than hours of Googling. Networking for the sake of genuine connection is what makes you memorable when opportunities do come up.
 
 In a field where so much of our work happens behind a screen, being in a room with like-minded people is a reminder that we're not figuring this out alone. I usually attend the Nextflow summits virtually, but I highly recommend attending in person whenever you can.
@@ -90,19 +91,19 @@ To everyone I met at the summit, it was great meeting you. I hope to see more BW
 <table style="border-collapse: collapse; border: none;">
   <tr>
     <td style="vertical-align: top; border: none;">
-      <img src="/photos/byteAndBiteLogo1.png" alt="Boston Women in Bioinformatics Byte and Bite" width="250px"/>
+      <img src="/photos/byteAndBiteLogo2.png" alt="Boston Women in Bioinformatics Byte and Bite" width="250px"/>
     </td>
     <td style="vertical-align: middle; padding-left: 20px; border: none;">
       <ul style="list-style-type: none; padding-left: 0;">
         <li>Mar 16, 2025, 12:00 PM</li>
-        <li>Shy Bird - Kendall Square, Cambridge, MA</li>
-        <li><a href="hhttps://boston-wib.org/events/2026/20260529_event?utm_source=newsletter&utm_medium=email&utm_campaign=byte-and-bite">Register</a></li>
+        <li>Bow Market, Somerville, MA</li>
+        <li><a href="http://localhost:4321/events/2026/20260529_event?utm_source=newsletter&utm_medium=email&utm_campaign=byte-and-bite">Register</a></li>
       </ul>
     </td>
   </tr>
 </table>
 
-Shake off the last of winter and grab lunch with your fellow bioinformaticians at Shy Bird in Kendall Square! Whether you're deep in pipelines or just bioinformatics-curious, join us for a relaxed afternoon of good food, great company, and springtime vibes.
+Tired of eating lunch alone at your desk? Whether you're deep in pipelines or just bioinformatics-curious, join us for a relaxed afternoon of good food, great company, and vibes.
 
 ### Festival of Genomics Networking
 
@@ -216,10 +217,10 @@ Sharvari sits down with Career-Sponsorship co-chair Aysheh Alrfooh for a wide-ra
 
 **The Scientist's Guide to Personal Branding by ​Tommy Tang**  
 [Bioinformatics and AI XChange](https://luma.com/bioinfoclub) | Virtual | May 16, 10:00 AM  
-What if showing up online consistently could change the trajectory of your career? Tommy Tang, Director of Bioinformatics at AstraZeneca, has spent 800+ days posting daily on LinkedIn, and the results speak for themselves: inbound interest from VCs, founders, and advisory board invitations. In his upcoming talk, he breaks down the three habits behind it, covering consistent social media presence, blogging, and building the right professional connections. You can expect practical tactics most scientists never hear about, including what to post, how to tell your story, and why that blog you wrote 10 years ago still matters. Register [here](https://luma.com/bioinfoclub?e=evt-A2hOf6INeTpP5Bw).
+What if showing up online consistently could change the trajectory of your career? [Ming "Tommy" Tang](https://www.linkedin.com/in/%F0%9F%8E%AF-ming-tommy-tang-40650014/), Director of Bioinformatics at AstraZeneca, has spent 800+ days posting daily on LinkedIn, and the results speak for themselves: inbound interest from VCs, founders, and advisory board invitations. In his upcoming talk, he breaks down the three habits behind it, covering consistent social media presence, blogging, and building the right professional connections. You can expect practical tactics most scientists never hear about, including what to post, how to tell your story, and why that blog you wrote 10 years ago still matters. Register [here](https://luma.com/bioinfoclub?e=evt-A2hOf6INeTpP5Bw).
 
 **_No Recombination without Representation_**  
-MIT Museum, Central Square Theater, and the City of Cambridge | Central Square Theater | June 13, June 14, & June 21  
+MIT Museum, [Central Square Theater](https://bit.ly/2zmdzpe), and the City of Cambridge | Central Square Theater | June 13, June 14, & June 21  
 Where science meets the stage, history becomes unforgettable. Step back in time with a theatrical staging about discovery, trust in science, and the importance of civic engagement in honor of the 50th anniversary of the impassioned Recombinant DNA Debates at Cambridge’s City Hall. You can find more info on performances [here](https://www.centralsquaretheater.org/free/no-recombination-without-representation-rdna-project/).
 
 ## Get Involved
