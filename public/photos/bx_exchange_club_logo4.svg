@@ -5,9 +5,9 @@
    role="img"
    version="1.1"
    id="svg42"
-   sodipodi:docname="bx_exchange_club_logo4.svg"
+   sodipodi:docname="bx_exchange_club_logo5.svg"
    inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
-   inkscape:export-filename="bx_exchange_club_logo4.png"
+   inkscape:export-filename="bx_exchange_club_logo5.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    style=""
@@ -29,12 +29,12 @@
      inkscape:pagecheckerboard="false"
      inkscape:deskcolor="#505050"
      inkscape:zoom="0.84"
-     inkscape:cx="129.7619"
-     inkscape:cy="406.54762"
+     inkscape:cx="130.35714"
+     inkscape:cy="502.38095"
      inkscape:window-width="1920"
-     inkscape:window-height="930"
-     inkscape:window-x="2028"
-     inkscape:window-y="110"
+     inkscape:window-height="925"
+     inkscape:window-x="1920"
+     inkscape:window-y="30"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg42"
      inkscape:export-bgcolor="#ffffffff" />
@@ -308,21 +308,21 @@
   <text
      xml:space="preserve"
      id="text60"
-     style="font-size:66.6667px;line-height:1.1;font-family:'PT Sans';-inkscape-font-specification:'PT Sans';text-align:center;text-decoration-color:#000000;letter-spacing:6px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
-     transform="translate(-0.46838714,0.7874016)"><textPath
+     style="font-size:66.6667px;line-height:1.1;font-family:'PT Sans';-inkscape-font-specification:'PT Sans';text-align:center;text-decoration-color:#000000;letter-spacing:6px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;fill:#010119;fill-opacity:1;fill-rule:evenodd;stroke:#090920;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+     transform="matrix(0.92470105,0,0,0.92470105,24.968409,23.908614)"><textPath
        xlink:href="#path53"
        startOffset="50%"
        id="textPath61"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif Bold';letter-spacing:6px;fill:#000000;stroke:#008080;stroke-width:1;stroke-dasharray:none;stroke-opacity:1">BIOINFORMATICS &amp; AI</textPath></text>
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif Bold';letter-spacing:6px;fill:#010119;fill-opacity:1;stroke:#090920;stroke-width:1;stroke-dasharray:none;stroke-opacity:1">BIOINFORMATICS &amp; AI</textPath></text>
   <text
      xml:space="preserve"
      id="text61"
-     style="font-size:60.8315px;line-height:1;font-family:'PT Sans';-inkscape-font-specification:'PT Sans';text-align:center;text-decoration-color:#000000;letter-spacing:10.00069122px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.912472;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
-     transform="matrix(1.1151454,0,0,1.0770344,-35.154177,6.0758899)"><textPath
+     style="font-size:60.8315px;line-height:1;font-family:'PT Sans';-inkscape-font-specification:'PT Sans';text-align:center;text-decoration-color:#000000;letter-spacing:10.0007px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;fill:#010119;fill-opacity:1;fill-rule:evenodd;stroke:#010119;stroke-width:0.912472;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+     transform="matrix(1.0311761,0,0,0.99593482,-7.1055767,28.798884)"><textPath
        xlink:href="#path53-1"
        startOffset="50%"
        id="textPath62"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:60.8315px;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif Semi-Bold';fill:#000000;stroke:#000000;stroke-width:0.912472;stroke-dasharray:none;stroke-opacity:1;letter-spacing:10.00069122px">XCHANGE</textPath></text>
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:60.8315px;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif Semi-Bold';letter-spacing:10.0007px;fill:#010119;fill-opacity:1;stroke:#010119;stroke-width:0.912472;stroke-dasharray:none;stroke-opacity:1">XCHANGE</textPath></text>
   <text
      text-anchor="middle"
      x="343.96649"
