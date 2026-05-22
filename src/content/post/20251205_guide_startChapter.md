@@ -1,10 +1,10 @@
 ---
 publishDate: 2025-12-05T00:00:00Z
-title: 'Starting a Women in Bioinformatics Chapter: A Practical Guide'
+title: "Starting a Women in Bioinformatics Chapter: A Practical Guide"
 slug: blog/tutorial/starting-a-women-in-bioinformatics-chapter
 excerpt: '"Been There, Done That" advice from established chapters'
 image: ~/assets/images/WIB_Logo.jpg
-imageAlt: 'Boston Women in Bioinformatics Logo'
+imageAlt: "Boston Women in Bioinformatics Logo"
 category: Tutorial
 tags:
   - computational-biology
@@ -13,7 +13,7 @@ tags:
   - group-organization
 
 metadata:
-  title: 'Starting a Women in Bioinformatics Chapter: A Practical Guide'
+  title: "Starting a Women in Bioinformatics Chapter: A Practical Guide"
   description: '"Been There, Done That" advice from established chapters'
 ---
 
@@ -21,17 +21,17 @@ metadata:
 
 ## Table of Contents
 
-- [Table of Contents](table-of-contents)
-- [Getting Started: The Foundation](getting-started:-the-foundation)
-- [Digital Infrastructure: Setting Up Your Online Presence](digital-infrastructure:-setting-up-your-online-presence)
-- [Committee Structure: Learning from Boston WiB](committee-structure:-learning-from-boston-wib)
-- [Event Planning: What We Wish We'd Known](event-planning:-what-we-wish-we'd-known)
-- [Funding and Sponsorship: Making It Sustainable](funding-and-sponsorship:-making-it-sustainable)
-- [Community Building: The Soft Skills](community-building:-the-soft-skills)
-- [Common Pitfalls and How to Avoid Them](common-pitfalls-and-how-to-avoid-them)
-- [Timeline: First Year Milestones](timeline:-first-year-milestones)
-- [Resources and Templates](resources-and-templates)
-- [Final Words of Encouragement](final-words-of-encouragement)
+- [Table of Contents](#table-of-contents)
+- [Getting Started: The Foundation](#getting-started-the-foundation)
+- [Digital Infrastructure: Setting Up Your Online Presence](#digital-infrastructure-setting-up-your-online-presence)
+- [Committee Structure: Learning from Boston WiB](#committee-structure-learning-from-boston-wib)
+- [Event Planning: What We Wish We'd Known](#event-planning-what-we-wish-wed-known)
+- [Funding and Sponsorship: Making It Sustainable](#funding-and-sponsorship-making-it-sustainable)
+- [Community Building: The Soft Skills](#community-building-the-soft-skills)
+- [Common Pitfalls and How to Avoid Them](#common-pitfalls-and-how-to-avoid-them)
+- [Timeline: First Year Milestones](#timeline-first-year-milestones)
+- [Resources and Templates](#resources-and-templates)
+- [Final Words of Encouragement](#final-words-of-encouragement)
 
 ## Getting Started: The Foundation
 
@@ -104,7 +104,6 @@ Based on Boston WiB's successful model, consider establishing these committees a
 ### Essential Committees (Start Here)
 
 1. **Web/Digital and Communication Committee** - Technical infrastructure
-
    - Handle communications workflows
    - Maintain website and online resources
    - Manage digital tools and platforms
