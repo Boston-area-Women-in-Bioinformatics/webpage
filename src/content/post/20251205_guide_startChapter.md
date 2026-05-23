@@ -1,10 +1,10 @@
 ---
 publishDate: 2025-12-05T00:00:00Z
-title: "Starting a Women in Bioinformatics Chapter: A Practical Guide"
+title: 'Starting a Women in Bioinformatics Chapter: A Practical Guide'
 slug: blog/tutorial/starting-a-women-in-bioinformatics-chapter
 excerpt: '"Been There, Done That" advice from established chapters'
 image: ~/assets/images/WIB_Logo.jpg
-imageAlt: "Boston Women in Bioinformatics Logo"
+imageAlt: 'Boston Women in Bioinformatics Logo'
 category: Tutorial
 tags:
   - computational-biology
@@ -13,7 +13,7 @@ tags:
   - group-organization
 
 metadata:
-  title: "Starting a Women in Bioinformatics Chapter: A Practical Guide"
+  title: 'Starting a Women in Bioinformatics Chapter: A Practical Guide'
   description: '"Been There, Done That" advice from established chapters'
 ---
 
