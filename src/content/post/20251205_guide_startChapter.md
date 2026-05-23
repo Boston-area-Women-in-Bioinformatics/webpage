@@ -104,6 +104,7 @@ Based on Boston WiB's successful model, consider establishing these committees a
 ### Essential Committees (Start Here)
 
 1. **Web/Digital and Communication Committee** - Technical infrastructure
+
    - Handle communications workflows
    - Maintain website and online resources
    - Manage digital tools and platforms
