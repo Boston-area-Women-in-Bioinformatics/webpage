@@ -1,0 +1,161 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'FAQ | Boston Women in Bioinformatics',
+  description:
+    'Frequently asked questions about Boston Women in Bioinformatics — membership, events, committees, sponsorship, and more.',
+};
+
+const faqs = [
+  {
+    category: 'Membership',
+    items: [
+      {
+        question: 'How do I join?',
+        answer:
+          'There is no formal membership process. You can start by signing up for our newsletter, joining our Slack workspace, and following us on social media. Attending an event is the best way to get connected.',
+      },
+      {
+        question: "Can I join if I don't live in Boston?",
+        answer:
+          'Yes! While our in-person events are held in the Boston area, our newsletter, Slack community, and some virtual programming are open to anyone regardless of location.',
+      },
+      {
+        question: 'Is BWIB only for women?',
+        answer:
+          'BWIB is a women++ organization, meaning we center and prioritize women and non-binary people in our programming, but we welcome anyone who supports our mission. All are encouraged to attend events and engage with the community.',
+      },
+      {
+        question: "I'm not in bioinformatics specifically, can I still join?",
+        answer:
+          'Absolutely. Our community includes people working in computational biology, biostatistics, data science, informatics, and adjacent fields. If you work at the intersection of biology and computation, you belong here.',
+      },
+    ],
+  },
+  {
+    category: 'Events',
+    items: [
+      {
+        question: 'Are events free to attend?',
+        answer:
+          'Most of our events are free. Some workshops or special programs may have a small fee or require registration. We always aim to keep events accessible and will note any costs on the event page.',
+      },
+      {
+        question: 'Are events recorded or is there a way to participate remotely?',
+        answer:
+          'Some events are recorded and shared on our YouTube channel. Remote participation availability varies by event. Check the event page or our newsletter for details on each event.',
+      },
+      {
+        question: 'How do I find out about upcoming events?',
+        answer:
+          'Subscribe to our newsletter, join our Slack workspace, follow us on LinkedIn and Bluesky, and check our events page at boston-wib.org/events. We announce all upcoming events across these channels.',
+      },
+      {
+        question: 'How do I suggest a new event or program idea?',
+        answer:
+          'We love community-driven ideas! Reach out to us through our Slack workspace or contact the Events Committee via communications@boston-wib.org.',
+      },
+    ],
+  },
+  {
+    category: 'Getting Involved',
+    items: [
+      {
+        question: 'How can I join a committee?',
+        answer:
+          'We welcome volunteers across all of our committees, including Events, Communications, Career Sponsorship, Podcast, and more. Visit our Committees page to learn about each one, then reach out to us at communications@boston-wib.org to express your interest.',
+      },
+      {
+        question: 'How do I start my own chapter?',
+        answer:
+          'We are happy to advise groups looking to start a Women in Bioinformatics chapter in their area. Check out our guide at boston-wib.org/blog/tutorial/starting-a-women-in-bioinformatics-chapter and reach out to connect with our leadership team.',
+      },
+    ],
+  },
+  {
+    category: 'Partnerships & Funding',
+    items: [
+      {
+        question: 'How do I sponsor BWIB?',
+        answer:
+          'We partner with companies and organizations that share our commitment to equity in science and technology. Sponsorships help us keep events free and accessible. Reach out to us at communications@boston-wib.org to learn about current sponsorship opportunities.',
+      },
+      {
+        question: 'How can I promote an event I am organizing for a different group?',
+        answer:
+          'We regularly share partner events with our community. Send the details to communications@boston-wib.org and our team will review it for inclusion in our newsletter or social channels.',
+      },
+      {
+        question: 'How is BWIB funded?',
+        answer:
+          'BWIB is funded through a combination of event sponsorships, corporate partnerships, and individual donations. We are a 501(c)(3) nonprofit organization and rely on community support to sustain our programming.',
+      },
+      {
+        question: 'Is BWIB affiliated with any university or company?',
+        answer:
+          'No. BWIB is an independent nonprofit organization. We partner with universities, companies, and other organizations for specific events and programs, but we are not affiliated with or sponsored by any single institution.',
+      },
+      {
+        question: 'How do I donate?',
+        answer:
+          'You can make a tax-deductible donation at givebutter.com/BWIBdonate. Every contribution helps us keep our events free and our community growing.',
+      },
+    ],
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    title="Frequently Asked Questions"
+    subtitle="Everything you want to know about BWIB — membership, events, getting involved, and more."
+  />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-12">
+    {
+      faqs.map((section) => (
+        <section>
+          <h2 class="text-2xl font-bold font-heading text-gray-900 dark:text-white mb-6">{section.category}</h2>
+          <div class="space-y-3">
+            {section.items.map((faq) => (
+              <details class="group border border-gray-200 dark:border-slate-700 rounded-lg overflow-hidden">
+                <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer list-none bg-white dark:bg-slate-900 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors">
+                  <span class="font-medium text-gray-900 dark:text-white">{faq.question}</span>
+                  <span class="flex-shrink-0 text-primary transition-transform duration-200 group-open:rotate-45">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-5 h-5"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="px-6 py-4 text-gray-600 dark:text-slate-300 bg-gray-50 dark:bg-slate-800 border-t border-gray-200 dark:border-slate-700">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+      ))
+    }
+
+    <div class="text-center pt-4 pb-8">
+      <p class="text-gray-600 dark:text-slate-300">
+        Still have questions? Reach out to us at <a
+          href="mailto:communications@boston-wib.org"
+          class="text-primary hover:underline">communications@boston-wib.org</a
+        >.
+      </p>
+    </div>
+  </div>
+</Layout>
