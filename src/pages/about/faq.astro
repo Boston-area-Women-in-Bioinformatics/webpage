@@ -8,19 +8,19 @@ const metadata = {
     'Frequently asked questions about Boston Women in Bioinformatics — membership, events, committees, sponsorship, and more.',
 };
 
+const link = (href: string, text: string) => `<a href="${href}" class="text-primary hover:underline">${text}</a>`;
+
 const faqs = [
   {
     category: 'Membership',
     items: [
       {
         question: 'How do I join?',
-        answer:
-          'There is no formal membership process. You can start by signing up for our newsletter, joining our Slack workspace, and following us on social media. Attending an event is the best way to get connected.',
+        answer: `There is no formal membership process. You can start by signing up for our ${link('/newsletter', 'newsletter')}, joining our ${link('https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ', 'Slack workspace')}, and following us on social media. Attending an event is the best way to get connected.`,
       },
       {
         question: "Can I join if I don't live in Boston?",
-        answer:
-          'Yes! While our in-person events are held in the Boston area, our newsletter, Slack community, and some virtual programming are open to anyone regardless of location.',
+        answer: `Yes! While our in-person events are held in the Boston area, our ${link('/newsletter', 'newsletter')}, Slack community, and some virtual programming are open to anyone regardless of location.`,
       },
       {
         question: 'Is BWIB only for women?',
@@ -39,23 +39,19 @@ const faqs = [
     items: [
       {
         question: 'Are events free to attend?',
-        answer:
-          'Most of our events are free. Some workshops or special programs may have a small fee or require registration. We always aim to keep events accessible and will note any costs on the event page.',
+        answer: `Most of our events are free. Some workshops or special programs may have a small fee or require registration. We always aim to keep events accessible and will note any costs on the ${link('/events', 'event page')}.`,
       },
       {
         question: 'Are events recorded or is there a way to participate remotely?',
-        answer:
-          'Some events are recorded and shared on our YouTube channel. Remote participation availability varies by event. Check the event page or our newsletter for details on each event.',
+        answer: `Some events are recorded and shared on our ${link('https://m.youtube.com/channel/UCzgmQ4uoTNq_MayiwAQ448Q', 'YouTube channel')}. Remote participation availability varies by event. Check the event page or our newsletter for details on each event.`,
       },
       {
         question: 'How do I find out about upcoming events?',
-        answer:
-          'Subscribe to our newsletter, join our Slack workspace, follow us on LinkedIn and Bluesky, and check our events page at boston-wib.org/events. We announce all upcoming events across these channels.',
+        answer: `Subscribe to our ${link('/newsletter', 'newsletter')}, join our ${link('https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ', 'Slack workspace')}, follow us on ${link('https://www.linkedin.com/company/boston-women-in-bioinformatics', 'LinkedIn')} and ${link('https://bsky.app/profile/boston-wib.bsky.social', 'Bluesky')}, and check our ${link('/events', 'events page')}. We announce all upcoming events across these channels.`,
       },
       {
         question: 'How do I suggest a new event or program idea?',
-        answer:
-          'We love community-driven ideas! Reach out to us through our Slack workspace or contact the Events Committee via communications@boston-wib.org.',
+        answer: `We love community-driven ideas! Reach out to us through our ${link('https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ', 'Slack workspace')} or contact the Events Committee via ${link('mailto:communications@boston-wib.org', 'communications@boston-wib.org')}.`,
       },
     ],
   },
@@ -64,13 +60,11 @@ const faqs = [
     items: [
       {
         question: 'How can I join a committee?',
-        answer:
-          'We welcome volunteers across all of our committees, including Events, Communications, Career Sponsorship, Podcast, and more. Visit our Committees page to learn about each one, then reach out to us at communications@boston-wib.org to express your interest.',
+        answer: `We welcome volunteers across all of our committees, including Events, Communications, Career Sponsorship, Podcast, and more. Visit our ${link('/about/committees', 'Committees page')} to learn about each one, then reach out to us at ${link('mailto:communications@boston-wib.org', 'communications@boston-wib.org')} to express your interest.`,
       },
       {
         question: 'How do I start my own chapter?',
-        answer:
-          'We are happy to advise groups looking to start a Women in Bioinformatics chapter in their area. Check out our guide at boston-wib.org/blog/tutorial/starting-a-women-in-bioinformatics-chapter and reach out to connect with our leadership team.',
+        answer: `We are happy to advise groups looking to start a Women in Bioinformatics chapter in their area. Check out our ${link('/blog/tutorial/starting-a-women-in-bioinformatics-chapter', 'chapter guide')} and reach out to connect with our leadership team.`,
       },
     ],
   },
@@ -79,13 +73,11 @@ const faqs = [
     items: [
       {
         question: 'How do I sponsor BWIB?',
-        answer:
-          'We partner with companies and organizations that share our commitment to equity in science and technology. Sponsorships help us keep events free and accessible. Reach out to us at communications@boston-wib.org to learn about current sponsorship opportunities.',
+        answer: `We partner with companies and organizations that share our commitment to equity in science and technology. Sponsorships help us keep events free and accessible. Reach out to us at ${link('mailto:communications@boston-wib.org', 'communications@boston-wib.org')} to learn about current sponsorship opportunities.`,
       },
       {
         question: 'How can I promote an event I am organizing for a different group?',
-        answer:
-          'We regularly share partner events with our community. Send the details to communications@boston-wib.org and our team will review it for inclusion in our newsletter or social channels.',
+        answer: `We regularly share partner events with our community. Send the details to ${link('mailto:communications@boston-wib.org', 'communications@boston-wib.org')} and our team will review it for inclusion in our newsletter or social channels.`,
       },
       {
         question: 'How is BWIB funded?',
@@ -99,8 +91,7 @@ const faqs = [
       },
       {
         question: 'How do I donate?',
-        answer:
-          'You can make a tax-deductible donation at givebutter.com/BWIBdonate. Every contribution helps us keep our events free and our community growing.',
+        answer: `You can make a tax-deductible donation at ${link('https://givebutter.com/BWIBdonate', 'givebutter.com/BWIBdonate')}. Every contribution helps us keep our events free and our community growing.`,
       },
     ],
   },
@@ -139,9 +130,10 @@ const faqs = [
                     </svg>
                   </span>
                 </summary>
-                <div class="px-6 py-4 text-gray-600 dark:text-slate-300 bg-gray-50 dark:bg-slate-800 border-t border-gray-200 dark:border-slate-700">
-                  {faq.answer}
-                </div>
+                <div
+                  class="px-6 py-4 text-gray-600 dark:text-slate-300 bg-gray-50 dark:bg-slate-800 border-t border-gray-200 dark:border-slate-700"
+                  set:html={faq.answer}
+                />
               </details>
             ))}
           </div>
