@@ -30,7 +30,7 @@ metadata:
 - [Community Building: The Soft Skills](community-building:-the-soft-skills)
 - [Common Pitfalls and How to Avoid Them](common-pitfalls-and-how-to-avoid-them)
 - [Timeline: First Year Milestones](timeline:-first-year-milestones)
-- [Resources and Templates](resources-and-templates)
+- [Resources and Templates](#resources-and-templates)
 - [Final Words of Encouragement](final-words-of-encouragement)
 
 ## Getting Started: The Foundation
