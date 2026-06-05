@@ -89,6 +89,7 @@ src/components/
 ### Survey Results Page (`src/pages/resources/survey-results.astro`)
 
 A Chart.js-based interactive dashboard showing aggregate survey results for bioinformaticians in the US. Key details:
+
 - Gated behind an honor-system lock: visitors must submit the Google Form (or click "I've already submitted") to unlock. Gate state stored in `localStorage` under key `wib_survey_unlocked`. Unlocked via `?unlocked=true` URL param (set in Google Form confirmation message).
 - All chart data is aggregate only — no individual records, no cross-tabulations, no PII. Small cells (n<3) are merged into "Other" categories.
 - Chart.js loaded via CDN (`cdn.jsdelivr.net`). All chart initialization in `<script is:inline>`.
