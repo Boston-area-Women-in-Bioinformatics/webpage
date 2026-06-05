@@ -86,6 +86,16 @@ src/components/
 - `EventsTable.astro` — shows **all upcoming events** as cards on the `/events` page; past events section only renders when there are no upcoming events
 - `FormattedDate.astro` — renders event dates in New York time. `isMultiDay` compares dates using `toNYDateString` (NY timezone) to avoid UTC boundary bugs. All three branches (multi-day, same-day-with-end, single) append the timezone abbreviation (EDT/EST).
 
+### Survey Results Page (`src/pages/resources/survey-results.astro`)
+
+A Chart.js-based interactive dashboard showing aggregate survey results for bioinformaticians in the US. Key details:
+- Gated behind an honor-system lock: visitors must submit the Google Form (or click "I've already submitted") to unlock. Gate state stored in `localStorage` under key `wib_survey_unlocked`. Unlocked via `?unlocked=true` URL param (set in Google Form confirmation message).
+- All chart data is aggregate only — no individual records, no cross-tabulations, no PII. Small cells (n<3) are merged into "Other" categories.
+- Chart.js loaded via CDN (`cdn.jsdelivr.net`). All chart initialization in `<script is:inline>`.
+- Uses `<style is:global>` for dynamically-created JS bar-list elements and the hero dot-pattern background (`.survey-hero-bg`).
+- WIB logo served from `public/photos/WIB_Logo.jpg`.
+- Added to nav under Resources in `src/navigation.ts`.
+
 ### Navigation (`src/navigation.ts`)
 
 `headerData.links` drives the top nav. Each item is either a flat link `{ text, href }` or a dropdown `{ text, href, links: [...] }`. The current top-level items are: **Home, Who we are, Resources, Newsletter, Team, Events, Media, Contact, Donate**. The **Events** dropdown currently contains: Upcoming Events, Fall Fundraiser 2026, Past Events Archive, Recorded Events. To add a link (e.g. Past Events Archive), add an entry to the relevant `links` array using `getPermalink('/events/archive')`.

@@ -37,6 +37,10 @@ export const headerData = {
           text: 'Partner Communities',
           href: getPermalink('/resources/partner-communities'),
         },
+        {
+          text: 'Survey Results',
+          href: getPermalink('/resources/survey-results'),
+        },
       ],
     },
     {
