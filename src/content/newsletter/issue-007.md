@@ -3,7 +3,7 @@ publishDate: 2026-06-16
 issue: 7
 title: 'Issue 007: June 2026'
 excerpt: Community, connections, and what's coming next.
-image: '/photos/2026/biteNbyte_April2026.jpg'
+image: '/photos/2026/bwib_fog2026.jpg'
 imageAlt: 'Women at Boston Women in Bioinformatics Bits & Brews'
 authors:
   - name: 'Sakina Saif, M.S.'
@@ -54,10 +54,10 @@ _[Samantha Klasfeld, Ph.D.](https://www.linkedin.com/in/samantha-klasfeld)_ • 
 
 <figure>
   <img
-    src="/photos/2026/byteNbite_may2026.jpeg"
+    src="/photos/2026/biteNbyte_May2026.jpg"
     alt="Boston Women in Bioinformatics members seated along a round wooden table, sharing bites and bytes."
   />
-  <figcaption>Boston Women in Bioinformatics's Bites and Bytes Lunch </figcaption>
+  <figcaption>Boston Women in Bioinformatics Bites and Bytes Lunch in Bow Market, Somerville </figcaption>
 </figure>
 
 placeholder
@@ -68,8 +68,8 @@ _[Genevieve Baddoo](https://www.linkedin.com/in/genevievebaddoo/)_ • June 4, 2
 
 <figure>
   <img
-    src="/photos/2026/nextflow_summit.jpeg"
-    alt="Boston Women in Bioinformatics members at FoG 2026"
+    src="/photos/2026/bwib_fog2026.jpg"
+    alt="Boston Women in Bioinformatics members at Festival of Genomics (FoG) 2026"
   />
   <figcaption>Boston Women in Bioinformatics's at FoG Boston 2026</figcaption>
 </figure>
