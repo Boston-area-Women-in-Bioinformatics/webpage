@@ -9,6 +9,7 @@ Before asking for any information, read the files in `src/content/newsletter/` a
 Ask the user for the following. Use `$ARGUMENTS` as context if the user already provided some details.
 
 **Required:**
+
 - `issue` — issue number as an integer (must be unique)
 - `title` — name of the newsletter issue (typically `'Issue NNN: Month YYYY'`)
 - `publishDate` — publication date and time in New York time with timezone offset:
@@ -16,9 +17,10 @@ Ask the user for the following. Use `$ARGUMENTS` as context if the user already 
   - EST (Nov first Sunday → Mar second Saturday): `YYYY-MM-DDTHH:mm:ss-05:00`
 
 **Optional (omit from file if not provided):**
+
 - `excerpt` — one-sentence description shown on the newsletter listing page
 - `image` — path to the hero image (e.g. `/photos/my-image.jpg`)
-- `imageAlt` — alt text describing the image's *purpose*, not its appearance. Do not include "image" or "photo".
+- `imageAlt` — alt text describing the image's _purpose_, not its appearance. Do not include "image" or "photo".
 - `imageDescription` — caption or citation shown below the hero image
 - `imagePosition` — `top`, `center` (default), `bottom`, `left`, `right`, or `contain`
 - `authors` — list of authors, each with `name` and optional `url` (LinkedIn profile)
@@ -51,11 +53,11 @@ metadata:
   title: '...'
   description: '...'
 ---
-
 MARKDOWN BODY (newsletter content goes here)
 ```
 
 **Newsletter formatting conventions** (apply these to the body):
+
 - Table of contents links: `#anchor-id` anchors, each section gets `<div id="..."></div>` after the `##` heading
 - Event tables: use `<table class="not-prose" style="...">` — the `not-prose` class is required
 - Register/Event Page buttons: use `class="btn-primary"` on `<a>` tags inside `not-prose` tables

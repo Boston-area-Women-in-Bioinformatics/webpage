@@ -5,6 +5,7 @@ Add a new partner community to the BWIB website. Communities include organizatio
 Ask the user for the following. Use `$ARGUMENTS` as context if the user already provided some details.
 
 **Required:**
+
 - `name` — organization name
 - `description` — clear description of the organization's mission and activities
 - `website` — organization's website URL

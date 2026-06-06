@@ -5,16 +5,18 @@ Add a new blog post to the BWIB website. Blog posts live in `src/content/post/` 
 Ask the user for the following. Use `$ARGUMENTS` as context if the user already provided some details.
 
 **Required:**
+
 - `publishDate` — publication date in `YYYY-MM-DD` format. Posts dated in the future won't appear until that date.
 - `title` — name of the blog post
 
 **Optional (omit from file if not provided):**
+
 - `updateDate` — date the post was last updated (`YYYY-MM-DD`)
 - `draft` — `true` to hide the post until ready; omit or `false` to publish
 - `slug` — custom URL identifier (e.g. `blog/deep-dive/my-post-title`)
 - `excerpt` — short summary shown on listing pages
 - `image` — path to the hero image (e.g. `/blog_images/my-image.png`)
-- `imageAlt` — alt text (≤125 chars). Describe the *purpose*, not the appearance. Do not include "image" or "logo".
+- `imageAlt` — alt text (≤125 chars). Describe the _purpose_, not the appearance. Do not include "image" or "logo".
   - Good: `"Bioinformatics job postings by field in 2024"`
   - Bad: `"A blue and green bar chart showing data"`
 - `imageDescription` — caption or citation shown below the hero image
@@ -40,10 +42,12 @@ Ask the user for the following. Use `$ARGUMENTS` as context if the user already 
 ## Step 2 — Determine File Path and Extension
 
 **File extension:**
+
 - `.mdx` if `category: Podcast` (MDX is needed for React icon imports — Spotify, Apple, RSS)
 - `.md` for all other categories
 
 **Subdirectory:**
+
 - `category: Podcast` → `src/content/post/coffeewithcompbio/`
 - `category: Video` (Work Life Decoded series) → `src/content/post/worklifedecoded/`
 - `series: 'Tuesday Tactics'` → `src/content/post/tuesdaytactics/`
@@ -51,15 +55,18 @@ Ask the user for the following. Use `$ARGUMENTS` as context if the user already 
 - Everything else → `src/content/post/`
 
 **Filename convention:** `{YYYYMMDD}_{description}.{ext}`
+
 - Use the date from `publishDate`
 - Keep the description short and descriptive (e.g. `20260415_post_Dana.md`, `20260530_podcast_coffeeWithCompBio.mdx`)
 
 ## Step 3 — Special Formatting Rules
 
 **Member Spotlight posts:**
+
 - Title format: `'Member Spotlight: First Last'` — use a Unicode non-breaking space (U+00A0) between first and last name so the name never wraps mid-name.
 
 **Podcast posts (.mdx):**
+
 - Include the Spotify embed iframe and Apple/Spotify/RSS listen links using React icons. Model after existing files in `src/content/post/coffeewithcompbio/`.
 - Import pattern at top of MDX body:
   ```
@@ -102,7 +109,6 @@ metadata:
   canonical: 'https://...'
   canonicalSource: '...'
 ---
-
 MARKDOWN BODY
 ```
 

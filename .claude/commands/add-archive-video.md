@@ -7,6 +7,7 @@ Note: This skill handles the archive page only. If you also want a `category: Vi
 Ask the user for the following. Use `$ARGUMENTS` as context if the user already provided some details.
 
 **Required:**
+
 - YouTube video URL or video ID — if a full URL is provided, extract the video ID (the part after `v=` or the last path segment for `youtu.be` links). Example: `https://www.youtube.com/watch?v=YO5VTjImlck` → ID is `YO5VTjImlck`.
 - `title` — title of the recorded meeting/talk
 - `description` — 1–3 sentence description of the video content
@@ -14,6 +15,7 @@ Ask the user for the following. Use `$ARGUMENTS` as context if the user already 
 ## Step 2 — Derive Embed Fields
 
 From the video ID, construct:
+
 - `url`: `https://www.youtube.com/embed/{id}`
 - `thumbnail`: `https://i.ytimg.com/vi/{id}/hqdefault.jpg`
 
@@ -32,6 +34,7 @@ Read `src/config/components/archive_meetings.js`. Append the new entry to the **
 ```
 
 Add a comment line above the entry with the video title, matching the style of existing comments in the file:
+
 ```js
 // Title of the Talk or Event
 ```

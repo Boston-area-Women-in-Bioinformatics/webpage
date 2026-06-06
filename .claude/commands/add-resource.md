@@ -5,17 +5,19 @@ Add a new resource to the BWIB website. Resources include courses, tutorials, to
 Ask the user for the following. Use `$ARGUMENTS` as context if the user already provided some details.
 
 **Required:**
+
 - `title` — name of the resource
 - `description` — 1–2 sentence description of what the resource offers
 - `url` — link to the resource
 - `category` — must be one of the existing options:
+
   - `bioinformatics`
   - `machine-learning`
   - `professional-development`
   - `coding`
   - `math`
   - `biology`
-  
+
   If the resource doesn't fit any of these, tell the user they'll need to add a new category to `src/content/config.ts` (the `resourcesCollection` definition, `z.enum([...])` around line 142) before the file can be used. Use kebab-case for any new category value.
 
 - `tags` — list of relevant tags (e.g. `Python`, `genomics`, `visualization`)

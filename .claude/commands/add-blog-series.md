@@ -7,12 +7,14 @@ The series metadata file lives in `src/content/series/`.
 Ask the user for the following. Use `$ARGUMENTS` as context if the user already provided some details.
 
 **Required:**
+
 - `title` — series title. This must match the `series:` field in every post that belongs to this series (exact string match).
 - `description` — short description of what the series covers, shown on the series card
 - `image` — path to the series cover image (e.g. `/blog_images/your-series-image.png`)
-- `imageAlt` — alt text describing the image's *purpose*, not its appearance. Do not include "image" or "logo".
+- `imageAlt` — alt text describing the image's _purpose_, not its appearance. Do not include "image" or "logo".
 
 **Optional (omit if not provided):**
+
 - `imageFit` — `cover` (default) or `contain`. Use `contain` for infographics or diagrams that should not be cropped.
 - `defaultOrder` — `asc` (oldest first) or `desc` (newest first, default)
 

@@ -25,9 +25,9 @@ When creating the Luma event, add the following **registration questions** so we
    - Harvard Biotech Newsletter
    - Other email listserv
    - Other
-5. **Would you like to subscribe to the BWiB newsletter?** 
-   - Already subscribed 
-   - Yes, add me 
+5. **Would you like to subscribe to the BWiB newsletter?**
+   - Already subscribed
+   - Yes, add me
    - No thanks
 
 Once the Luma event is created, copy the **registration URL** and the **Luma event embed ID** (found in the Luma event settings under "Embed") — you'll need both below.
@@ -39,14 +39,16 @@ Once the Luma event is created, copy the **registration URL** and the **Luma eve
 Ask the user for the following. Collect all required fields before proceeding. Use `$ARGUMENTS` as context if the user already provided some details.
 
 **Required:**
+
 - `title` — name of the event
 - `dateTime` — start date and time in New York time, format `YYYY-MM-DDTHH:mm` (e.g. `2026-09-15T18:00`). No timezone offset — it is applied automatically.
 - `location` — one or more address lines (e.g. `["123 Main St", "Boston, MA"]`)
 - `image.src` — path to the event image (e.g. `/photos/my-event.jpg`)
-- `image.alt` — alt text describing the image's *purpose*, not its appearance. Do not include the words "image" or "photo".
+- `image.alt` — alt text describing the image's _purpose_, not its appearance. Do not include the words "image" or "photo".
 - `tags` — list of tags (can be an empty list `[]`)
 
 **Optional (ask if not provided; omit from file if not provided):**
+
 - `endDate` — end date and time, same format as `dateTime`. Required if the event spans multiple days or the end time should display.
 - `url` — registration or event link (e.g. a Lu.ma URL)
 - `data_luma_event_id` — Lu.ma event ID for embedding a registration button
@@ -90,21 +92,23 @@ partnerOrganization: '...'
 cost: 10
 slug: 'event-name-month-year'
 ---
-
 MARKDOWN BODY (event description goes here — see prompts below)
 ```
 
 When writing the markdown body, ask the user for the following and incorporate the answers into the description:
 
 **What attendees will get out of it:**
+
 - What will attendees learn, experience, or walk away with?
 - Who is this event for? (e.g. students, early-career professionals, anyone in bioinformatics)
 
 **Logistics (for in-person events):**
+
 - How do attendees get there? Include public transit directions (T stop, bus lines), parking notes, or building entrance instructions if the venue is hard to find.
 - Is there a check-in process, name badge, or anything to look for at the door?
 
 **What to prepare beforehand:**
+
 - Anything attendees should bring (laptop, notebook, student ID for discounts, etc.)?
 - Any pre-reading, pre-registration steps, or software to install ahead of time?
 - Any dietary or accessibility accommodations to be aware of?
