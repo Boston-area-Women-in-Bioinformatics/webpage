@@ -40,7 +40,7 @@ The BWIB [Advocacy Committee](https://boston-wib.org/about/committees/advocacy) 
 
 We are looking for professionals to share their experiences after having taken a break in their careers, whether it was voluntary or involuntary (also includes professionals who were on maternity leaves). We are hoping that your experience will help women going through the same right now and give them a direction on how they can navigate their careers. If you are interested in being a panelist, please fill this [form](https://docs.google.com/forms/d/e/1FAIpQLScctmpIoZAUm_UgvOlpy2sovMamLJf7FsFjZxl9fLL9liFkUw/viewform?usp=header).
 
-Application deadline: **August 31, 2026 at 11:59 pm EST** 
+Application deadline: **August 31, 2026 at 11:59 pm EST**
 
 ---
 
@@ -77,6 +77,7 @@ _[Genevieve Baddoo](https://www.linkedin.com/in/genevievebaddoo/)_ • June 4, 2
 placeholder
 
 ---
+
 ### Take Up Space: Building Presence and Confidence in High-Stakes Moments
 
 _[Genevieve Baddoo](https://www.linkedin.com/in/genevievebaddoo/)_ • June 9,2026
@@ -169,6 +170,7 @@ Host Dina Issakova sits down with Isabella Charroon and Lorena Pantano to talk a
 Also check out the patient-centred work happening at CAMH's WPPM Lab, which Isabella highlights in the episode!
 
 ---
+
 ## Blogs
 
 ## Member Spotlight: [Meeta Mistry](linkedin.com/in/meeta-mistry-53591110)
