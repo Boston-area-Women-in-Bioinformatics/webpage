@@ -55,7 +55,7 @@ _[Samantha Klasfeld, Ph.D.](https://www.linkedin.com/in/samantha-klasfeld)_ • 
 <figure>
   <img
     src="/photos/2026/biteNbyte_May2026.jpg"
-    alt="Boston Women in Bioinformatics members seated along a round wooden table, sharing bites and bytes."
+    alt="Boston Women in Bioinformatics members smiling seated along a round wooden table."
   />
   <figcaption>Boston Women in Bioinformatics Bites and Bytes Lunch in Bow Market, Somerville </figcaption>
 </figure>
@@ -64,17 +64,21 @@ placeholder
 
 ### Festival of Genomics Networking
 
-_[Genevieve Baddoo](https://www.linkedin.com/in/genevievebaddoo/)_ • June 4, 2026
+_[Samantha Klasfeld, Ph.D.](https://www.linkedin.com/in/samantha-klasfeld)_ • June 4, 2026
 
 <figure>
   <img
     src="/photos/2026/bwib_fog2026.jpg"
-    alt="Boston Women in Bioinformatics members at Festival of Genomics (FoG) 2026"
+    alt="Attendees of Boston Women in Bioinformatics networking event in front of Festival of Genomics backdrop"
   />
-  <figcaption>Boston Women in Bioinformatics's at FoG Boston 2026</figcaption>
+  <figcaption>Boston Women in Bioinformatics's at Festival of Genomics (FoG) Boston 2026</figcaption>
 </figure>
 
-placeholder
+Like a storm rolling in, our networking event started quietly, but after some last-minute logistics, the room was absolutely buzzing. Several brilliant women even joined us spontaneously straight off the conference floor, staying to engage in deep professional conversations that will hopefully lead to lasting connections.
+
+Thank you to everyone who carved out time to show up in the middle of a busy conference morning! For over ten years, BWIB has grown as a powerful network where women at all career stages lift each other as they rise. Our conversations pulsed with the energy of being at the center of something much bigger, ranging from tackling the gap in women's healthcare outcomes to how female leadership across medicine will change the game.
+
+Ultimately, the event was a powerful reminder that when women in bioinformatics connect, we don't just share a space, we drive the entire field forward.
 
 ---
 
