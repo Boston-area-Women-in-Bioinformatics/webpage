@@ -131,7 +131,7 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 ## Local Norms
 
 1. **Update `AGENTS.md` after every file added or updated** — after adding or modifying any component, utility, script, content collection field, naming convention, or local norm, update the relevant section of this file before closing the task. Do not batch updates — write them as the changes are made. If a new frontmatter field is added or changed, also update `README.md` (see norm 2a below).
-   1a. **Update `README.md` when frontmatter changes** — whenever a frontmatter field is added, removed, or its behavior changes for any content collection (`post`, `newsletter`, `event`, `series`, `committees`, `resources`), update the corresponding section in `README.md` to reflect the change.
+   1a. **Update `MANUAL.md` when frontmatter changes** — whenever a frontmatter field is added, removed, or its behavior changes for any content collection (`post`, `newsletter`, `event`, `series`, `committees`, `resources`), update the corresponding section in `MANUAL.md` to reflect the change. (`README.md` no longer contains field-level documentation — it lives in `MANUAL.md`.)
 2. **No auto-commit** — never commit unless the user explicitly asks.
 3. **No force-push** — always create new commits rather than amending, especially after hook failures.
 4. **`prettier` enforced** — run `npm run fix` (eslint + prettier) before committing; CI will fail otherwise.
