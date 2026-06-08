@@ -12,9 +12,7 @@ Ask the user for the following. Use `$ARGUMENTS` as context if the user already 
 
 - `issue` — issue number as an integer (must be unique)
 - `title` — name of the newsletter issue (typically `'Issue NNN: Month YYYY'`)
-- `publishDate` — publication date and time in New York time with timezone offset:
-  - EDT (Mar second Sunday → Nov first Saturday): `YYYY-MM-DDTHH:mm:ss-04:00`
-  - EST (Nov first Sunday → Mar second Saturday): `YYYY-MM-DDTHH:mm:ss-05:00`
+- `publishDate` — publication date in `YYYY-MM-DD` format (no time or timezone)
 
 **Optional (omit from file if not provided):**
 
@@ -38,7 +36,7 @@ Write the file using only the fields that were provided. Omit optional fields th
 
 ```yaml
 ---
-publishDate: YYYY-MM-DDTHH:mm:ss-04:00
+publishDate: YYYY-MM-DD
 issue: N
 title: 'Issue NNN: Month YYYY'
 excerpt: '...'

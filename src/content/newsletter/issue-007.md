@@ -4,7 +4,7 @@ issue: 7
 title: 'Issue 007: June 2026'
 excerpt: Community, connections, and what's coming next.
 image: '/photos/2026/bwib_fog2026.jpg'
-imageAlt: 'Women at Boston Women in Bioinformatics Bits & Brews'
+imageAlt: 'Attendees of Boston Women in Bioinformatics networking event in front of Festival of Genomics backdrop'
 authors:
   - name: 'Sakina Saif, M.S.'
     url: 'https://www.linkedin.com/in/sakinasaif'
@@ -15,7 +15,7 @@ authors:
   - name: 'Samantha Klasfeld, Ph.D.'
     url: 'https://www.linkedin.com/in/samantha-klasfeld'
 metadata:
-  title: 'Boston Women in Bioinformatics: May 2026 Issue 006'
+  title: 'Boston Women in Bioinformatics: May 2026 Issue 007'
   description: Reflections, events, and new opportunities shaping our community this month.
 ---
 
@@ -38,9 +38,11 @@ Here's what's inside this month:
 
 The BWIB [Advocacy Committee](https://boston-wib.org/about/committees/advocacy) is looking for women in the Bioinformatics field to join our "Return to Work" panel in October 2026 (Date TBD).
 
-We are looking for professionals to share their experiences after having taken a break in their careers, whether it was voluntary or involuntary (also includes professionals who were on maternity leaves). We are hoping that your experience will help women going through the same right now and give them a direction on how they can navigate their careers. If you are interested in being a panelist, please fill this [form](https://docs.google.com/forms/d/e/1FAIpQLScctmpIoZAUm_UgvOlpy2sovMamLJf7FsFjZxl9fLL9liFkUw/viewform?usp=header).
+We are looking for professionals to share their experiences after having taken a break in their careers, whether it was voluntary or involuntary (also includes professionals who were on maternity leaves). We are hoping that your experience will help women going through the same right now and give them a direction on how they can navigate their careers. If you are interested in being a panelist, [please fill this form](https://docs.google.com/forms/d/e/1FAIpQLScctmpIoZAUm_UgvOlpy2sovMamLJf7FsFjZxl9fLL9liFkUw/viewform?usp=header).
 
 Application deadline: **August 31, 2026 at 11:59 pm EST**
+
+If you have any questions about the panel, please feel free to reach out to the advocacy team [ashastry@boston-wib.org](mailto:ashastry@boston-wib.org) or [advocacy@boston-wib.org](mailto:advocacy@boston-wib.org)
 
 ---
 
@@ -50,7 +52,7 @@ Application deadline: **August 31, 2026 at 11:59 pm EST**
 
 ### Byte and Bite: Bioinformatics Lunch Meetup
 
-_[Samantha Klasfeld, Ph.D.](https://www.linkedin.com/in/samantha-klasfeld)_ • May 29,2026
+_[Samantha Klasfeld, Ph.D.](https://www.linkedin.com/in/samantha-klasfeld)_ • May 29, 2026
 
 <figure>
   <img
@@ -84,7 +86,7 @@ Ultimately, the event was a powerful reminder that when women in bioinformatics 
 
 ### Take Up Space: Building Presence and Confidence in High-Stakes Moments
 
-_[Genevieve Baddoo](https://www.linkedin.com/in/genevievebaddoo/)_ • June 9,2026
+_[Genevieve Baddoo](https://www.linkedin.com/in/genevievebaddoo/)_ • June 9, 2026
 
 <figure>
   <img
@@ -177,6 +179,8 @@ Also check out the patient-centred work happening at CAMH's WPPM Lab, which Isab
 
 ## Blogs
 
+<div id="blogs"></div>
+
 ## Member Spotlight: [Meeta Mistry](linkedin.com/in/meeta-mistry-53591110)
 
 _An interview as intriguing as her name_
@@ -185,7 +189,7 @@ _An interview as intriguing as her name_
 
 placeholder
 
-**Want to see your name here?** We're always looking for new voices. You don't need citations, a polished draft, or even a complete idea — just something you've been thinking about. Reach out to the us at the [communications committee](https://boston-wib.org/about/committees/communications?utm_source=newsletter&utm_medium=email&utm_campaign=april-2026) to get started.
+**Want to see your name here?** We're always looking for new voices. You don't need citations, a polished draft, or even a complete idea — just something you've been thinking about. Reach out to the us at [communications@boston-wib.org](mailto:communications@boston-wib.org) to get started.
 
 ---
 
@@ -205,7 +209,7 @@ Where science meets the stage, history becomes unforgettable. Step back in time 
 
 <div id="get-involved"></div>
 
-Boston Women in Bioinformatics runs entirely on volunteer energy, and we're always looking for passionate people to join us. From organizing events and producing the podcast to managing finances and advocating for equity in the field, there's a place for every skill set. Learn more at [boston-wib.org/about/committees](https://boston-wib.org/about/committees?utm_source=newsletter&utm_medium=email&utm_campaign=april-2026)
+Boston Women in Bioinformatics runs entirely on volunteer energy, and we're always looking for passionate people to join us. From organizing events and producing the podcast to managing finances and advocating for equity in the field, there's a place for every skill set. Learn more at [boston-wib.org/about/committees](https://boston-wib.org/about/committees?utm_source=newsletter&utm_medium=email)
 
 ---
 
