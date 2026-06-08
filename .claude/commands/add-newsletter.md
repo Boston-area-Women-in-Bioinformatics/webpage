@@ -56,10 +56,44 @@ MARKDOWN BODY (newsletter content goes here)
 
 **Newsletter formatting conventions** (apply these to the body):
 
-- Table of contents links: `#anchor-id` anchors, each section gets `<div id="..."></div>` after the `##` heading
-- Event tables: use `<table class="not-prose" style="...">` — the `not-prose` class is required
+- Table of contents links: `#anchor-id` anchors, each `##` section gets `<div id="..."></div>` immediately after the heading. Every `##` heading must have a corresponding TOC entry — verify this before finalizing the file.
+- UTM tags on internal `boston-wib.org` links: `?utm_source=newsletter&utm_medium=email&utm_campaign=<campaign>`. Ask the developer for the `utm_campaign` value before writing the file. Naming conventions:
+  - Lowercase, hyphens only (no spaces or underscores)
+  - Pick a name that describes the initiative and keep it consistent across every channel so GA can aggregate across sources
+  - Recurring events: `byte-and-bite`, `bits-and-brews`
+  - One-off events: `networking-without-the-ick`, `lightning-talks-2026`, `festival-of-genomics-2026`
+  - Newsletter issues: `newsletter-005`
+  - Resource/committee pages (`boston-wib.org/about/committees/*`): `resource-page`
+  - Podcast: `a-coffee-with-compbio`
 - Register/Event Page buttons: use `class="btn-primary"` on `<a>` tags inside `not-prose` tables
-- UTM tags on internal `boston-wib.org` links: `?utm_source=newsletter&utm_medium=email&utm_campaign=<month>-<year>`
+
+**Upcoming Events section (`## Events on the Horizon`):**
+
+- Each event is a `###` heading (never `##`)
+- Each event uses a two-column `not-prose` table: image on the left, event details (date, time, location) as a plain `<ul>` on the right
+- Optionally followed by a register/RSVP button using `class="btn-primary"`
+
+```html
+### Event Name
+
+<table class="not-prose" style="border-collapse: collapse; border: none; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+  <tr>
+    <td style="vertical-align: top; border: none;">
+      <img src="/photos/..." alt="..." width="250px"/>
+    </td>
+    <td style="vertical-align: middle; padding-left: 20px; border: none;">
+      <ul style="list-style-type: none; padding-left: 0;">
+        <li>Date & Time: ...</li>
+        <li>Venue Name</li>
+        <li>Address line</li>
+        <li>City, State ZIP</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+Event description paragraph.
+```
 
 ## Step 5 — Run Prettier
 

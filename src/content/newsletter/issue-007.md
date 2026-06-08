@@ -15,7 +15,7 @@ authors:
   - name: 'Samantha Klasfeld, Ph.D.'
     url: 'https://www.linkedin.com/in/samantha-klasfeld'
 metadata:
-  title: 'Boston Women in Bioinformatics: May 2026 Issue 007'
+  title: 'Boston Women in Bioinformatics: June 2026 Issue 007'
   description: Reflections, events, and new opportunities shaping our community this month.
 ---
 
@@ -23,10 +23,12 @@ add opening blurb
 
 Here's what's inside this month:
 
+- [Call for Speakers](#call-for-speakers)
 - [Events Reflections](#events-recap)
 - [Events on the Horizon](#upcoming-events)
 - [Coffee with CompBio](#podcast)
 - [Blogs](#blogs)
+- [Member Spotlight](#member-spotlight)
 - [Partner Events](#partner-events)
 - [Get Involved](#get-involved)
 - [Executive Board](#exec-board)
@@ -36,7 +38,9 @@ Here's what's inside this month:
 
 ## Call for Speakers
 
-The BWIB [Advocacy Committee](https://boston-wib.org/about/committees/advocacy) is looking for women in the Bioinformatics field to join our "Return to Work" panel in October 2026 (Date TBD).
+<div id="call-for-speakers"></div>
+
+The BWIB [Advocacy Committee](https://boston-wib.org/about/committees/advocacy?utm_source=newsletter&utm_medium=email&utm_campaign=resource-page) is looking for women in the Bioinformatics field to join our "Return to Work" panel in October 2026 (Date TBD).
 
 We are looking for professionals to share their experiences after having taken a break in their careers, whether it was voluntary or involuntary (also includes professionals who were on maternity leaves). We are hoping that your experience will help women going through the same right now and give them a direction on how they can navigate their careers. If you are interested in being a panelist, [please fill this form](https://docs.google.com/forms/d/e/1FAIpQLScctmpIoZAUm_UgvOlpy2sovMamLJf7FsFjZxl9fLL9liFkUw/viewform?usp=header).
 
@@ -124,7 +128,7 @@ placeholder
 
 Boston Women in Bioinformatics is teaming up with [Seqera](https://seqera.io) and [Boston Computational Biology & Bioinformatics](https://www.meetup.com/boston-computational-biology-and-bioinformatics-meetup) for an evening of community Lightning Talks, and we're especially excited to spotlight the rockstar women in bioinformatics across both communities. Speakers have five minutes to present on any topic in bioinformatics: your current research, a workflow that changed how you work, the AI agent you've been obsessing over, a dataset you think everyone should know about, or a tool you wish someone had shown you sooner. Start thinking now about what you'd talk about if you had five minutes and a room full of people who get it. Stay tuned for the submission form.
 
-## Boston Women in Bioinformatics Family Day at Danehy Park
+### Boston Women in Bioinformatics Family Day at Danehy Park
 
 <table class="not-prose" style="border-collapse: collapse; border: none; margin-top: 0.5rem; margin-bottom: 0.5rem;">
   <tr>
@@ -144,7 +148,7 @@ Pack your sunscreen because Boston Women In Bioinformatics is hosting an outdoor
 
 ---
 
-## Fall Fundraiser
+### Fall Fundraiser
 
 <table class="not-prose" style="border-collapse: collapse; border: none; margin-top: 0.5rem; margin-bottom: 0.5rem;">
   <tr>
@@ -209,7 +213,7 @@ Where science meets the stage, history becomes unforgettable. Step back in time 
 
 <div id="get-involved"></div>
 
-Boston Women in Bioinformatics runs entirely on volunteer energy, and we're always looking for passionate people to join us. From organizing events and producing the podcast to managing finances and advocating for equity in the field, there's a place for every skill set. Learn more at [boston-wib.org/about/committees](https://boston-wib.org/about/committees?utm_source=newsletter&utm_medium=email)
+Boston Women in Bioinformatics runs entirely on volunteer energy, and we're always looking for passionate people to join us. From organizing events and producing the podcast to managing finances and advocating for equity in the field, there's a place for every skill set. Learn more at [boston-wib.org/about/committees](https://boston-wib.org/about/committees?utm_source=newsletter&utm_medium=email&utm_campaign=resource-page)
 
 ---
 
