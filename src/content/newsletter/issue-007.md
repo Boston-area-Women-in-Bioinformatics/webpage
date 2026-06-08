@@ -25,7 +25,7 @@ Here's what's inside this month:
 
 - [Events Reflections](#events-recap)
 - [Events on the Horizon](#upcoming-events)
-- [Coffee with CompBio: Behind the Interview Table](#podcast)
+- [Coffee with CompBio](#podcast)
 - [Blogs](#blogs)
 - [Partner Events](#partner-events)
 - [Get Involved](#get-involved)
