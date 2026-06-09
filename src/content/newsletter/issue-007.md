@@ -19,7 +19,11 @@ metadata:
   description: Reflections, events, and new opportunities shaping our community this month.
 ---
 
-add opening blurb
+Summer is in full swing, and as our community continues to grow, we're excited to bring you another edition of the Boston Women in Bioinformatics newsletter packed with inspiration, opportunities, and ways to connect.
+
+This month, we're shining a spotlight on another one of our incredible members, reflecting on the wonderful connections made at our Lunch Meetup and Festival of Genomics networking events, inviting speakers to participate in an upcoming Return-to-Work Panel, gearing up for an exciting Lightning Talks event, and unveiling the inaugural BWIB Fall Fundraiser!
+
+Thank you for being such an important part of this vibrant community. We hope you enjoy this month’s light reading and feel energized to engage and share in the excitement of helping BWIB continue to thrive.
 
 Here's what's inside this month:
 
