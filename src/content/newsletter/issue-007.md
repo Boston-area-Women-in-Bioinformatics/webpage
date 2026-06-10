@@ -161,17 +161,16 @@ Pack your sunscreen because Boston Women In Bioinformatics is hosting an outdoor
     </td>
     <td style="vertical-align: middle; padding-left: 20px; border: none;">
       <ul style="list-style-type: none; padding-left: 0;">
-        <li>Date & Time: September 29, 2026 @5-9 pm</li>
+        <li>Date & Time: September 29, 2026 @ 5:00–8:00 PM</li>
         <li>Venue TBA</li>
       </ul>
     </td>
   </tr>
 </table>
 
-Our 2026 Fall Fundraiser, "Where Women Are Leading the Next Wave of Bioinformatics", is shaping up to be the biggest BWIB event of the year, and you do not want to sit this one out. We're talking about a workshop, a panel discussion over dinner, and a raffle, all centered on the idea that inclusion of the female lived experience in bioinformatics isn't just good science, it's what better medicine and smarter drug development actually look like.
+Women's health is one of the fastest-growing sectors in biotech, and the science driving that growth runs on data. This fall, Boston Women in Bioinformatics is gathering to celebrate what our community is building and to connect the people building it. Join us on September 29th for a panel discussion over dinner, networking, and a raffle with researchers, industry scientists, and data professionals who are shaping what comes next.
 
-This is one of our rare ticketed events; ticket sales directly fund the community programming and resources we provide year-round.
-Want to help make it happen? We're looking for volunteers! Reach out to Sammy or Liyang on Slack, or email events@boston-wib.org.
+This is one of our rare ticketed events. Ticket sales directly fund the community programming and resources we provide year-round. Want to help make it happen? We're looking for volunteers! Reach out to Sammy or Liyang on Slack, or email events@boston-wib.org.
 
 ## Coffee with CompBio: Wired Different - An Exploration of Neurodiversity in Bioinformatics
 
