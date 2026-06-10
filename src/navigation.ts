@@ -20,6 +20,10 @@ export const headerData = {
           text: 'Committees',
           href: getPermalink('/about/committees'),
         },
+        {
+          text: 'FAQ',
+          href: getPermalink('/about/faq'),
+        },
       ],
     },
     {
