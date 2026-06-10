@@ -21,7 +21,7 @@ metadata:
 
 Summer is in full swing, and as our community continues to grow, we're excited to bring you another edition of the Boston Women in Bioinformatics newsletter packed with inspiration, opportunities, and ways to connect.
 
-This month, we're shining a spotlight on another one of our incredible members, reflecting on the wonderful connections made at our Lunch Meetup and Festival of Genomics networking events, inviting speakers to participate in an upcoming Return-to-Work Panel, gearing up for an exciting Lightning Talks event, and unveiling the inaugural BWIB Fall Fundraiser!
+This month, we're reflecting on the wonderful connections made at our Lunch Meetup and Festival of Genomics networking events, inviting speakers to participate in an upcoming Return-to-Work Panel, gearing up for an exciting Lightning Talks event, and unveiling the inaugural BWIB Fall Fundraiser!
 
 Thank you for being such an important part of this vibrant community. We hope you enjoy this month’s light reading and feel energized to engage and share in the excitement of helping BWIB continue to thrive.
 
@@ -32,7 +32,6 @@ Here's what's inside this month:
 - [Events on the Horizon](#upcoming-events)
 - [Coffee with CompBio](#podcast)
 - [Blogs](#blogs)
-- [Member Spotlight](#member-spotlight)
 - [Partner Events](#partner-events)
 - [Get Involved](#get-involved)
 - [Executive Board](#exec-board)
@@ -188,15 +187,7 @@ Also check out the patient-centred work happening at CAMH's WPPM Lab, which Isab
 
 <div id="blogs"></div>
 
-## Member Spotlight: [Meeta Mistry](linkedin.com/in/meeta-mistry-53591110)
-
-_An interview as intriguing as her name_
-
-<div id="member-spotlight"></div>
-
-placeholder
-
-**Want to see your name here?** We're always looking for new voices. You don't need citations, a polished draft, or even a complete idea — just something you've been thinking about. Reach out to the us at [communications@boston-wib.org](mailto:communications@boston-wib.org) to get started.
+No new blogs this month, but we're always looking for new voices. If you have something to say about bioinformatics, whether it's a tool you've been exploring, a career reflection, or a topic you think the community should be talking about, we want to hear from you. Reach out to us at [communications@boston-wib.org](mailto:communications@boston-wib.org) to get started.
 
 ---
 
