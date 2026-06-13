@@ -65,7 +65,22 @@ MARKDOWN BODY (newsletter content goes here)
   - Newsletter issues: `newsletter-005`
   - Resource/committee pages (`boston-wib.org/about/committees/*`): `resource-page`
   - Podcast: `a-coffee-with-compbio`
-- Register/Event Page buttons: use `class="btn-primary"` on `<a>` tags inside `not-prose` tables
+**Button patterns:**
+
+- **Register/Event Page buttons** — use `class="btn-primary"` on `<a>` tags inside `not-prose` tables. Works because the `not-prose` parent disables Tailwind Typography overrides.
+
+  ```html
+  <a href="https://boston-wib.org/events/my-event?utm_source=newsletter&utm_medium=email&utm_campaign=my-event" class="btn-primary">Register</a>
+  ```
+
+- **Podcast/Audio "Listen" buttons** — do NOT use `btn-primary` (blue). Use inline styles with the site's accent purple (`#6d28d9`) to distinguish podcast CTAs from event registration buttons. Include the 🎙️ emoji.
+
+  ```html
+  <a
+    href="https://boston-wib.org/blog/coffeewithcompbio/s2-eN?utm_source=newsletter&utm_medium=email&utm_campaign=a-coffee-with-compbio"
+    style="display:inline-block; padding:0.75rem 1.5rem; border-radius:9999px; background-color:#6d28d9; color:#ffffff; font-weight:600; text-decoration:none;"
+  >🎙️ Listen on our Site</a>
+  ```
 
 **Upcoming Events section (`## Events on the Horizon`):**
 

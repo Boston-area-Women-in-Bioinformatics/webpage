@@ -312,6 +312,26 @@ The Button component uses the **primary** color by default (`#0161EF` blue). For
 - Standard CTAs
 - Professional/informational actions
 
+**Podcast/Audio Button (Newsletter Only)**:
+
+Used exclusively for podcast CTAs in newsletter Markdown content, where Tailwind classes are unavailable (the newsletter renders inside a `not-prose` context but inline styles are still required for links). Uses `--aw-color-accent` (`#6d28d9`, deep violet) to visually distinguish podcast links from the standard blue `btn-primary` registration/event buttons.
+
+```html
+<a
+  href="https://..."
+  style="display:inline-block; padding:0.75rem 1.5rem; border-radius:9999px; background-color:#6d28d9; color:#ffffff; font-weight:600; text-decoration:none;"
+>
+  🎙️ Listen on our Site
+</a>
+```
+
+**When to use**:
+
+- Podcast episode CTAs inside newsletter `.md` files
+- Anywhere a link button must visually signal "audio content" and can't use Tailwind classes
+
+**Color**: `#6d28d9` — same as `--aw-color-accent` / `accent` token. Do not use a different purple shade.
+
 ### Button Styles (Defined in tailwind.css)
 
 ```css
