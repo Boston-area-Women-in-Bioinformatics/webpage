@@ -21,17 +21,17 @@ metadata:
 
 ## Table of Contents
 
-- [Table of Contents](table-of-contents)
-- [Getting Started: The Foundation](getting-started:-the-foundation)
-- [Digital Infrastructure: Setting Up Your Online Presence](digital-infrastructure:-setting-up-your-online-presence)
-- [Committee Structure: Learning from Boston WiB](committee-structure:-learning-from-boston-wib)
-- [Event Planning: What We Wish We'd Known](event-planning:-what-we-wish-we'd-known)
-- [Funding and Sponsorship: Making It Sustainable](funding-and-sponsorship:-making-it-sustainable)
-- [Community Building: The Soft Skills](community-building:-the-soft-skills)
-- [Common Pitfalls and How to Avoid Them](common-pitfalls-and-how-to-avoid-them)
-- [Timeline: First Year Milestones](timeline:-first-year-milestones)
-- [Resources and Templates](resources-and-templates)
-- [Final Words of Encouragement](final-words-of-encouragement)
+- [Table of Contents](#table-of-contents)
+- [Getting Started: The Foundation](#getting-started-the-foundation)
+- [Digital Infrastructure: Setting Up Your Online Presence](#digital-infrastructure-setting-up-your-online-presence)
+- [Committee Structure: Learning from Boston WiB](#committee-structure-learning-from-boston-wib)
+- [Event Planning: What We Wish We'd Known](#event-planning-what-we-wish-wed-known)
+- [Funding and Sponsorship: Making It Sustainable](#funding-and-sponsorship-making-it-sustainable)
+- [Community Building: The Soft Skills](#community-building-the-soft-skills)
+- [Common Pitfalls and How to Avoid Them](#common-pitfalls-and-how-to-avoid-them)
+- [Timeline: First Year Milestones](#timeline-first-year-milestones)
+- [Resources and Templates](#resources-and-templates)
+- [Final Words of Encouragement](#final-words-of-encouragement)
 
 ## Getting Started: The Foundation
 
@@ -56,44 +56,62 @@ metadata:
 
 #### Luma vs. Meetup: Our Experience
 
-- Meetup: Great for getting started, has built-in discovery features, costs ~$15-20/month
-  - Pros: Established user base, good for finding your initial community
-  - Cons: Limited customization, ongoing costs, platform dependency, cannot access member email addresses
-- Luma: Better for established groups, more professional appearance, free tier available
-  - Pros: More polished interface, better integration options, free for most events that we host so far, can access member email addresses
-  - Cons: Less discovery, need to drive your own traffic
+|                        | Meetup                           | Luma                                       |
+| ---------------------- | -------------------------------- | ------------------------------------------ |
+| Cost                   | ~$15-20/month                    | Free tier covers most events               |
+| Discovery              | Built-in, great for starting out | Limited, you drive your own traffic        |
+| Customization          | Limited                          | Polished, more professional                |
+| Member emails          | No access                        | Full access                                |
+| Registration questions | No                               | Yes, great for sponsor data                |
+| Event creation         | Admin only                       | Anyone can create and add to your calendar |
+| Newsletter             | No                               | Free for groups under 500 members          |
+| Direct outreach        | No                               | Yes, via "Blast" feature                   |
 
-<span style="color: red;"><i>BWiB BTDT advice: BWiB started with Meetup but we have recently transitioned to Luma.</i></span>
+<span style="color: red;"><i>BWiB BTDT advice: BWiB started with Meetup but has fully transitioned to Luma and highly recommend it for established groups.</i></span>
 
 ### Communication Channels
 
-#### LinkedIn Group
+#### LinkedIn Company Page
 
-- Create a LinkedIn group early for professional networking
-- Post job opportunities, industry news, and event announcements
-- Encourage members to share their professional achievements
+- A LinkedIn company page is more outward-facing than a group and better represents
+  your organization professionally
+- Post a mix of content: your own events, newsletters, and blog posts as well as
+  relevant industry news and events
+- Encourage members to share and engage with your posts to help with reach
 - Use LinkedIn Events to promote your gatherings
-- <span style="color: red;"><i>BWiB BTDT advice: we get a lot of traffic from our LI group postings </i></span>
+- <span style="color: red;"><i>BWiB BTDT advice: we transitioned from a LinkedIn group to a company page. It looks more professional but the algorithm for company pages can be tough and it may not be your primary driver of traffic. We recommend using UTM parameters to track where people are actually finding you before investing too heavily in any one platform.\* </i></span>
 
 #### Slack Channel
 
-- Essential for real-time communication and community building
-- Create channels for: #general, #jobs, #events, #resources, #introductions
-- Consider topic-specific channels as you grow (#r-users, #python, #career-advice)
+- Essential for real-time communication among your leadership team and community
+- Consider organizing channels into categories as you grow:
+  - **Team channels** for each committee (e.g. #team-events, #team-communications,
+    #team-executive)
+  - **Project channels** for specific initiatives (e.g. #project-fall-fundraiser,
+    #project-shirts)
+  - **Community channels** for members (#jobs, #share-events-and-conferences, #random)
+- Community channels can get creative based on what your members need: for example
+  we have #job-seekers-support for when the market is rough, and #help-practice-talk
+  for members who want feedback on upcoming presentations
 - Establish community guidelines and moderation policies from day one
-- <span style="color: red;"><i>BWiB BTDT advice: we have one and it’s mostly being used by the executive team, less so by the members</i></span>
+- <span style="color: red;"><i>BWiB BTDT advice: our Slack is most active among the leadership team. Getting broader member engagement in community channels takes intentional effort.</i></span>
 
 #### Email List
 
-- Don't rely solely on social platforms - build an email list
-- Send monthly newsletters with event updates, job postings, and community highlights
-- <span style="color: red;"><i>BWiB BTDT advice: we are still working on the best way to do this </i></span>
+- Do not rely solely on social platforms: build an email list early
+- We use Google Groups as our mailing list backend so anyone can subscribe and
+  receive emails directly
+- Send a regular newsletter with event recaps, upcoming events, community highlights,
+  podcasts, blogs, and partner events
+- Write your newsletter in a Google Doc, then copy and paste into an email to your
+  google group.
+- <span style="color: red;"><i>BWiB BTDT advice: we send out our newsletter via Google Groups. It is a lightweight free setup but deliverability can be a real challenge: emails can end up in spam, especially for first-time recipients. Ask your subscribers to add you to their contacts and check their spam folder after signing up. Luma also has a free newsletter feature for groups under 500 members if you want to keep everything in one platform. </i></span>
 
 ### Website Considerations
 
 - Start simple: a basic website with your mission, upcoming events, and contact info
 - Free options: GitHub Pages, Netlify, or basic WordPress
-- Include: About page, Events calendar, Resources section, Committee information
+- Include: About page, Events calendar, Executive Team information
 - Make it mobile-friendly from day one
 - <span style="color: red;"><i>BWiB BTDT advice: it took some effort to get the first version off the ground but we like it a lot now that it’s there! </i></span>
 
@@ -242,7 +260,7 @@ Track metrics that matter:
 
 ### BWiB Code of Conduct
 
-This lunch event is dedicated to providing a harassment-free experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices. We do not tolerate harassment in any form. Anyone violating these rules may be sanctioned or banned from attending at the discretion of the conference organizers. Please contact the organizers through meet-up messaging/Slack, if you feel someone has broken the code of conduct.
+This lunch event is dedicated to providing a harassment-free experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices. We do not tolerate harassment in any form. Anyone violating these rules may be sanctioned or banned from attending at the discretion of the conference organizers. Please contact the organizers through Luma/Slack, if you feel someone has broken the code of conduct.
 
 Original source and credit:
 
@@ -282,7 +300,7 @@ The timeline below is a suggestion based on our experience. If you want to grow 
 
 - Assemble core team
 - Define mission and basic structure
-- Set up digital infrastructure (Meetup/Luma, LinkedIn, Slack)
+- Set up digital infrastructure (Meetup/Luma, LinkedIn, Slack, BlueSky)
 - Plan first event
 - Brainstorm the next 3 or 4 events
 
@@ -314,7 +332,7 @@ The timeline below is a suggestion based on our experience. If you want to grow 
 
 - **Event Management**: Luma, Meetup, Eventbrite
 - **Communication**: Slack (free up to 10,000 messages), Discord
-- **Email Marketing**: Mailchimp, ConvertKit
+- **Email Marketing**: Google groups, Mailchimp, ConvertKit
 - **Project Management**: Trello, Notion, Google Workspace
 - **Design**: Canva for social media graphics and flyers
 
