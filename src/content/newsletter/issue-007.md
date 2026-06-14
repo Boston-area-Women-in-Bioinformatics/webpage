@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-06-06
+publishDate: 2026-06-16
 issue: 7
 title: 'Issue 007: June 2026'
 excerpt: Community, connections, and what's coming next.
