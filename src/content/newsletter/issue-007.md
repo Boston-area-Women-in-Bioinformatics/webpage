@@ -232,7 +232,7 @@ Boston Women in Bioinformatics runs entirely on volunteer energy, and we're alwa
 
 ## 🏛️ Executive Board
 
-![Executive Board Team](/team/executiveBoard_2026.png)
+![Headshots of the Boston Women in Bioinformatics executive team. Row 1: Lorena Pantano, Immediate Past President and Founder; Yevgenia Khodor Tolan, President; Lina Faller, Vice President; Diveena Becker, Treasurer. Row 2: Minita Shah, Secretary; Katie Hughes, Board Member; Francine Camacho, Board Member; Liyang Diao, Events Committee Co-chair. Row 3: Sakina Saif, Communications Committee Co-chair; Samantha Klasfeld, Communications Committee Co-chair; Aysheh Alrfooh, Career-Sponsorship Committee Co-chair; Peili Zhang, Career-Sponsorship Committee Co-chair. Row 4: Amulya Shastry, Enabling Advocacy Committee Co-chair; Viveka Patil, Enabling Advocacy Committee Co-chair; Saba Nafees, Podcast Committee Co-chair; Sharvari Narendra, Podcast Committee Co-chair.](/team/executiveBoard_2026.png)
 
 ---
 
