@@ -32,7 +32,6 @@ Here's what's inside this month:
 - [Events on the Horizon](#upcoming-events)
 - [Partner Events](#partner-events)
 - [Events Reflections](#events-recap)
-- [Blogs](#blogs)
 - [Get Involved](#get-involved)
 - [Executive Board](#exec-board)
 - [Social Media](#social-media)
@@ -209,14 +208,6 @@ Led by Joanna Ghayad, PharmD, PCC and attended by a diverse group of women from 
 Beyond that, though, the workshop provided a wonderful opportunity to connect with other women in the bioinformatics (and adjacent!) community, and to discuss with candor shared challenges, offering support and solutions.
 
 Please stay connected!
-
----
-
-## Blogs
-
-<div id="blogs"></div>
-
-No new blogs this month, but we're always looking for new voices. If you have something to say about bioinformatics, whether it's a tool you've been exploring, a career reflection, or a topic you think the community should be talking about, we want to hear from you. Reach out to us at [communications@boston-wib.org](mailto:communications@boston-wib.org) to get started.
 
 ---
 
