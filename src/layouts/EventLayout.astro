@@ -21,6 +21,7 @@ export interface Props {
   cost?: number;
   partnerEvent?: boolean;
   partnerOrganization?: string;
+  slug?: string;
 }
 
 const {
@@ -35,6 +36,7 @@ const {
   cost,
   partnerEvent = false,
   partnerOrganization,
+  slug,
 } = Astro.props;
 
 // Using template literals
@@ -95,7 +97,7 @@ const secondLine = hasBreak ? title.slice(breakIndex + 1).trim() : '';
           (endDate || date) < new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })) ? (
             ' '
           ) : (
-            <Signup url={url} data_luma_event_id={data_luma_event_id} />
+            <Signup url={url} data_luma_event_id={data_luma_event_id} slug={slug} />
           )
         }
       </div>

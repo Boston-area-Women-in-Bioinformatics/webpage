@@ -15,6 +15,7 @@ export default {
         muted: 'var(--aw-color-text-muted)',
         gold: 'var(--aw-color-tier-gold)',
         silver: 'var(--aw-color-tier-silver)',
+        bronze: 'var(--aw-color-tier-bronze)',
         'social-linkedin': 'var(--aw-color-social-linkedin)',
         'social-instagram': 'var(--aw-color-social-instagram)',
         'social-facebook': 'var(--aw-color-social-facebook)',
