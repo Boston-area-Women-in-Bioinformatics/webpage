@@ -2,7 +2,7 @@
 id: 'sponsorship'
 title: 'Sponsorship'
 description: 'Cultivates and stewards partnerships with industry, academia, and mission-aligned organizations to secure the financial support that powers BWIBs events, programs, and community initiatives.'
-icon: 'tabler:handshake'
+icon: 'tabler:heart-handshake'
 chairs:
   - 'Emily Lachtara'
   - 'Prisni Rath'
