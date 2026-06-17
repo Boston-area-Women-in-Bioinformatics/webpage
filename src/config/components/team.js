@@ -206,7 +206,7 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'https://www.linkedin.com/in/aysheh-alrfooh/',
       // Job Title
-      title: 'Career-Sponsorship Committee Co-chair',
+      title: 'Career Mentorship Committee Co-chair',
       // Leadership team member Photo
       avatar: '/team/aysheh.jpg',
       // Social links
@@ -221,13 +221,33 @@ const exec = {
       // Namelink: Member's Personal Website
       nameLink: 'http://www.linkedin.com/in/peili-zhang',
       // Job Title
-      title: 'Career-Sponsorship Committee Co-chair',
+      title: 'Career Mentorship Committee Co-chair',
       // Leadership team member Photo
       avatar: '/team/peili_zhang.jpg',
       // Social links
       social: {
         linkedin: 'http://www.linkedin.com/in/peili-zhang',
         //github: '#',
+      },
+    },
+    // Emily Lachtara
+    {
+      name: 'Emily Lachtara',
+      nameLink: 'https://www.linkedin.com/in/emily-lachtara/',
+      title: 'Sponsorship Committee Co-chair',
+      avatar: '/team/emily_lachtara.jpeg',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/emily-lachtara/',
+      },
+    },
+    // Prisni Rath
+    {
+      name: 'Prisni Rath',
+      nameLink: 'https://www.linkedin.com/in/prisni-r/',
+      title: 'Sponsorship Committee Co-chair',
+      avatar: '/team/prisni_rath.png',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/prisni-r/',
       },
     },
     // Amulya Shastry
@@ -483,7 +503,7 @@ const team = {
     {
       name: 'Marissa Sumathipala',
       nameLink: 'https://www.linkedin.com/in/marissa-sumathipala',
-      title: 'Career-Sponsorship Committee',
+      title: 'Career Mentorship Committee',
       avatar: '/team/MarissaSumathipala.jpg',
       social: {
         // website: '#',
