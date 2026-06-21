@@ -112,10 +112,7 @@ const hasBwibEvents = bwib_events.length > 0;
           <Headline title="Partner Events" />
           <div class="grid grid-cols-1 gap-6 mb-8 md:mt-3 md:mb-12 text-center">
             {partner_future_events.map((event) => (
-              <Card
-                padding="p-0"
-                class="flex flex-col md:flex-row"
-              >
+              <Card padding="p-0" class="flex flex-col md:flex-row">
                 <img
                   src={event.data.image.src}
                   alt={event.data.image.alt}
@@ -149,10 +146,7 @@ const hasBwibEvents = bwib_events.length > 0;
       <Headline title="Upcoming Events" />
       <div class="grid grid-cols-1 gap-6 mb-8 md:mt-3 md:mb-12 text-center">
         {future_events.map((event) => (
-          <Card
-            padding="p-0"
-            class="flex flex-col md:flex-row"
-          >
+          <Card padding="p-0" class="flex flex-col md:flex-row">
             <img
               src={event.data.image.src}
               alt={event.data.image.alt}
