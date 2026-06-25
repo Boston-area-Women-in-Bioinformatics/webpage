@@ -1,5 +1,6 @@
 ---
 import Button from '~/components/ui/Button.astro';
+import { LUMA_URL } from '~/config/social';
 
 interface Props {
   url?: string;
@@ -8,7 +9,7 @@ interface Props {
 }
 
 const { url, data_luma_event_id, slug } = Astro.props;
-const defaultUrl = 'https://luma.com/bwib';
+const defaultUrl = LUMA_URL;
 const isDefault = !url;
 
 function addUtmParams(rawUrl: string, eventSlug?: string): string {

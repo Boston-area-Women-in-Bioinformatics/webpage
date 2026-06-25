@@ -8,6 +8,7 @@ import EventAddress from 'src/components/EventAddress.astro';
 import Button from '~/components/ui/Button.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 //import { Icon } from 'astro-icon/components';
+import { SLACK_INVITE_URL } from '~/config/social';
 
 // Get all future events, excluding partner events for homepage display
 const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }));
@@ -60,7 +61,7 @@ if (next_event) {
         {
           variant: 'primary',
           text: 'Join Our Community',
-          href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ',
+          href: SLACK_INVITE_URL,
           icon: 'tabler:brand-slack',
           target: '_blank',
         },

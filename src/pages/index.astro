@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { SITE } from '~/config/site/config.js';
+import { SLACK_INVITE_URL, LINKEDIN_URL, LUMA_URL } from '~/config/social';
 // import Hero2 from '~/components/widgets/Hero2.astro'; // restore with mentorship section below
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -78,7 +79,7 @@ const metadata = {
       </p>
       <div class="flex justify-center gap-6 mt-6">
         <a
-          href="https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ"
+          href={SLACK_INVITE_URL}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Join our Slack community"
@@ -87,7 +88,7 @@ const metadata = {
           <Icon name="tabler:brand-slack" class="w-8 h-8" />
         </a>
         <a
-          href="https://www.linkedin.com/company/boston-women-in-bioinformatics"
+          href={LINKEDIN_URL}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Connect with us on LinkedIn"
@@ -96,7 +97,7 @@ const metadata = {
           <Icon name="tabler:brand-linkedin" class="w-8 h-8" />
         </a>
         <a
-          href="https://lu.ma/bwib"
+          href={LUMA_URL}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="View our events on Luma"
@@ -516,7 +517,7 @@ const metadata = {
           icon: 'tabler:brand-slack',
           callToAction: {
             target: '_blank',
-            href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ',
+            href: SLACK_INVITE_URL,
           },
         },
         {
@@ -534,7 +535,7 @@ const metadata = {
           icon: 'tabler:brand-linkedin',
           callToAction: {
             target: '_blank',
-            href: 'https://www.linkedin.com/company/boston-women-in-bioinformatics',
+            href: LINKEDIN_URL,
           },
         },
         {
@@ -543,7 +544,7 @@ const metadata = {
           icon: 'tabler:calendar-event',
           callToAction: {
             target: '_blank',
-            href: 'https://luma.com/bwib',
+            href: LUMA_URL,
           },
         },
       ]}

@@ -1,4 +1,5 @@
 import { getPermalink, getBlogPermalink, getNewsletterPermalink } from './utils/permalinks';
+import { SLACK_INVITE_URL, LINKEDIN_URL } from './config/social';
 export const headerData = {
   links: [
     {
@@ -271,12 +272,12 @@ export const footerData = {
     {
       ariaLabel: 'Slack',
       icon: 'tabler:brand-slack',
-      href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ',
+      href: SLACK_INVITE_URL,
     },
     {
       ariaLabel: 'LinkedIn',
       icon: 'tabler:brand-linkedin',
-      href: 'https://www.linkedin.com/company/boston-women-in-bioinformatics',
+      href: LINKEDIN_URL,
     },
 
     //{
