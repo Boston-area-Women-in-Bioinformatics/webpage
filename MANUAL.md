@@ -16,6 +16,10 @@ This document covers how to contribute to the BWIB website without using Claude 
 - [Adding a Community](#adding-a-community)
 - [Adding and Editing Committees](#adding-and-editing-committees)
 - [Update the banner](#update-the-banner-that-appears-on-every-page)
+- [Update social/community links](#update-socialcommunity-links)
+- [Update navigation links](#update-navigation-links)
+- [Set up the annual fundraiser page](#set-up-the-annual-fundraiser-page)
+- [Update the events archive default date](#update-the-events-archive-default-date)
 - [Image Organization](#image-organization)
 
 ## Add a new event
@@ -446,6 +450,8 @@ git commit -m "<Add committ message>"
 git push -u origin <new-branch-name>
 ```
 
+After editing committee files or `team.js`, `npm run fix` also runs `check:committees`, which cross-checks that every chair listed in a committee file has a matching "Chair" title in `team.js` and vice versa. If there's a mismatch the script will report it.
+
 **To add a new committee**:
 
 1. Create a new .md file in `src/content/committees/` directory.
@@ -474,6 +480,152 @@ To add or remove the banner, go to `src/layouts/PageLayout.astro` and add or rem
 ```
 
 To edit the banner, go to `src/components/Banner.jsx` and edit the text inside the `<p>` tag. You can also change the text and link in the `<a>` tag to point to a different page.
+
+## Update social/community links
+
+The Slack invite link, LinkedIn page URL, and Luma calendar URL are each defined once in `src/config/social.ts` and imported wherever they appear on the site. To update any of them, edit only that file.
+
+```ts
+// src/config/social.ts
+export const SLACK_INVITE_URL = 'https://docs.google.com/forms/d/e/...'; // registration form — fills out before joining Slack
+export const LINKEDIN_URL = 'https://www.linkedin.com/company/boston-women-in-bioinformatics';
+export const LUMA_URL = 'https://luma.com/bwib';
+```
+
+**When to update each constant:**
+
+- `SLACK_INVITE_URL` — points to the Google Form people fill out before being admitted to Slack. Update this if the form URL changes (e.g., a new form is created for a new year's cohort).
+- `LINKEDIN_URL` — update if the LinkedIn company page URL ever changes.
+- `LUMA_URL` — update if the organization's Luma calendar slug changes.
+
+**What is not covered here:**
+
+- Individual event registration URLs (set in each event's `url` frontmatter field — see [Add a new event](#add-a-new-event))
+- Email addresses (see `EMAIL_AUDIT.md` in the project root for a full list of where each address appears)
+- Newsletter footers (issues 1–7) contain hardcoded links and are historical — do not update them
+
+**Push changes to website:**
+
+```
+npx prettier --write src/config/social.ts
+git add src/config/social.ts
+git commit -m "Update social link"
+git push
+```
+
+## Update navigation links
+
+All header navigation is defined in `src/navigation.ts` in the `headerData.links` array. Each item is either a flat link or a dropdown.
+
+**Flat link:**
+
+```ts
+{
+  text: 'Contact',
+  href: getPermalink('/contact'),
+},
+```
+
+**Dropdown:**
+
+```ts
+{
+  text: 'Events',
+  href: getPermalink('/events'),   // where the top-level label links to
+  links: [
+    { text: 'Upcoming Events', href: getPermalink('/events') },
+    { text: 'Archive', href: getPermalink('/events/archive') },
+  ],
+},
+```
+
+Always use `getPermalink('/path')` for internal pages rather than hardcoding the URL. External URLs (e.g. Givebutter) can be used as plain strings.
+
+To temporarily hide a link without deleting it, comment it out:
+
+```ts
+// { text: 'Old Event', href: getPermalink('/events/old-event') },
+```
+
+After editing, run:
+
+```
+npx prettier --write src/navigation.ts
+git add src/navigation.ts
+git commit -m "Update navigation"
+git push
+```
+
+## Set up the annual fundraiser page
+
+> **Using Claude Code?** Run `/update-fundraiser` instead — it walks through all the steps interactively.
+
+The fundraiser is a standalone `.astro` page under `src/pages/events/` (e.g. `fall-fundraiser-2026.astro`). Each year a new page is created by adapting the previous year's file.
+
+### 1. Open a new branch
+
+Give it the format `update-fundraiser-{year}` (e.g. `update-fundraiser-2027`).
+
+### 2. Create the new page file
+
+Copy the current year's page (e.g. `fall-fundraiser-2026.astro`) to a new file with the new year's slug (e.g. `fall-fundraiser-2027.astro`). Then update:
+
+- `eventTitle`, `theme`, and `themeDescription` in the hero section
+- `date`, `location`, and ticket price
+- `givebutter_url` for the register button
+- Sponsorship tier names, prices, and benefits
+- The `subject=` parameter in the "Become a Sponsor" email link
+
+Sections that aren't ready yet (speakers, agenda, waitlist form) can be left commented out and uncommented as details are confirmed. The email sign-up form should always be active from the start.
+
+### 3. Create a speakers config file (when speakers are confirmed)
+
+Create `src/config/components/{pageSlug}Speakers.js` modeled after `src/config/components/tenyearannSpeakers.js`. Each speaker entry includes `name`, `title`, `avatar` (path in `/team/`), and optional social links.
+
+### 4. Update the navigation link
+
+In `src/navigation.ts`, update the fundraiser entry in the Events dropdown to point to the new page and update the label text:
+
+```ts
+{ text: 'Fall Fundraiser 2027', href: getPermalink('/events/fall-fundraiser-2027') },
+```
+
+### 5. Handle the old page
+
+Decide whether to delete the old page or keep it as an archive at its existing URL. If deleting: `git rm src/pages/events/fall-fundraiser-2026.astro`.
+
+### 6. Upload logos
+
+Upload the light-mode and dark-mode event logos to `public/photos/{year}/` and update the paths in the new page file.
+
+### 7. Push changes
+
+```
+npx prettier --write src/pages/events/{pageSlug}.astro
+npx prettier --write src/navigation.ts
+git add src/pages/events/{pageSlug}.astro src/navigation.ts
+git add public/photos/{year}/
+git push -u origin update-fundraiser-{year}
+```
+
+## Update the events archive default date
+
+The archive page (`src/pages/events/archive/index.astro`) has a hardcoded `DEFAULT_START` date used as the default "From" date in the date range filter. Update it annually so the archive doesn't open showing several years of past events by default.
+
+Find this line near the top of the client-side script block and update the date:
+
+```js
+const DEFAULT_START = '2025-08-08';
+```
+
+Use the date roughly one year before today in `YYYY-MM-DD` format. The `min` attribute on the date picker (`min="2024-08-08"`) is the date of the first-ever BWIB event and should never be changed.
+
+```
+npx prettier --write src/pages/events/archive/index.astro
+git add src/pages/events/archive/index.astro
+git commit -m "Update archive default start date"
+git push
+```
 
 ## Image Organization
 
