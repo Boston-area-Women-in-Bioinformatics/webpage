@@ -143,7 +143,7 @@ We've expanded the Boston Women in Bioinformatics website with two new pages des
 - _For Upskilling Resources_: Name, description, URL, category (bioinformatics, machine-learning, math, biology, coding, professional-development, or other), and tags (e.g., free, beginner-friendly)
 - _For Partner Communities_: Name, description, website, category (bioinformatics, biotech, data-science, or other), location, whether it's female-only, Boston-based, and relevant tags
 
-Reach out to someone on the [web-development committee](/about/committees/web-page) on [slack](https://boston-women-bioinfo.slack.com) and help us build a comprehensive resource hub for our community!
+Reach out to someone on the [web-development committee](/about/committees/web-page) on [Slack](https://docs.google.com/forms/d/e/1FAIpQLSfcgDtmTKBtN1YkLRYGMdJ5Rq_IekJ9DyXlGyh5N1ZyVUoddQ/viewform) and help us build a comprehensive resource hub for our community!
 
 ---
 
@@ -165,7 +165,7 @@ As the year draws to a close, our various committees have diligently compiled th
 
 ## Social Media
 
-- **Slack:** [boston-women-bioinfo](https://boston-women-bioinfo.slack.com)
+- **Slack:** [Join our Slack](https://docs.google.com/forms/d/e/1FAIpQLSfcgDtmTKBtN1YkLRYGMdJ5Rq_IekJ9DyXlGyh5N1ZyVUoddQ/viewform)
 - **Email:** [communications@boston-wib.org](mailto:communications@boston-wib.org)
 - **LinkedIn:** [Boston-area Women in Bioinformatics](https://www.linkedin.com/company/boston-women-in-bioinformatics)
 - **Lu.ma:** [Boston Women in Bioinformatics](https://luma.com/bwib)

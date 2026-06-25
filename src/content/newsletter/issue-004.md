@@ -292,7 +292,7 @@ Our bloggers have been busy! Here's what's been published recently:
 
 ## Social Media
 
-- **Slack:** [boston-women-bioinfo](https://boston-women-bioinfo.slack.com)
+- **Slack:** [Join our Slack](https://docs.google.com/forms/d/e/1FAIpQLSfcgDtmTKBtN1YkLRYGMdJ5Rq_IekJ9DyXlGyh5N1ZyVUoddQ/viewform)
 - **Email:** [communications@boston-wib.org](mailto:communications@boston-wib.org)
 - **LinkedIn:** [Boston-area Women in Bioinformatics](https://www.linkedin.com/company/boston-women-in-bioinformatics)
 - **Lu.ma:** [Boston Women in Bioinformatics](https://luma.com/bwib)
