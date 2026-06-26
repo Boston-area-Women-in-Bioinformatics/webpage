@@ -97,14 +97,14 @@ src/components/
 
 ### Configuration Files
 
-| File                   | Role                                                                                                                   |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `src/config.yaml`      | Blog/newsletter settings (posts per page, permalink patterns, paths)                                                   |
-| `src/config/social.ts` | Central social/community URL constants: `SLACK_INVITE_URL`, `LINKEDIN_URL`, `LUMA_URL` — update here when links change |
-| `astro.config.ts`      | Integrations (Tailwind, MDX, Sitemap, Icons, React), image domains                                                     |
-| `tailwind.config.js`   | Custom colors (`primary`, `secondary`, `accent`, social colors), fonts (`font-heading`), `intersect` variant           |
-| `.prettierrc.cjs`      | Print width 120, single quotes, `prettier-plugin-astro`                                                                |
-| `eslint.config.js`     | ESLint 9 flat config — Astro + TypeScript recommended                                                                  |
+| File                   | Role                                                                                                                                                                                                |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/config.yaml`      | Blog/newsletter settings (posts per page, permalink patterns, paths)                                                                                                                                |
+| `src/config/social.ts` | Central social/community URL constants: `SLACK_INVITE_URL`, `LINKEDIN_URL`, `BLUESKY_URL`, `YOUTUBE_URL`, `GITHUB_URL`, `TWITTER_URL`, `LUMA_URL`, `GIVEBUTTER_URL` — update here when links change |
+| `astro.config.ts`      | Integrations (Tailwind, MDX, Sitemap, Icons, React), image domains                                                                                                                                  |
+| `tailwind.config.js`   | Custom colors (`primary`, `secondary`, `accent`, social colors), fonts (`font-heading`), `intersect` variant                                                                                        |
+| `.prettierrc.cjs`      | Print width 120, single quotes, `prettier-plugin-astro`                                                                                                                                             |
+| `eslint.config.js`     | ESLint 9 flat config — Astro + TypeScript recommended                                                                                                                                               |
 
 ### CI/CD (`.github/workflows/`)
 

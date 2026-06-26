@@ -1,7 +1,7 @@
 ---
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import { SLACK_INVITE_URL, LINKEDIN_URL } from '~/config/social';
+import { SLACK_INVITE_URL, LINKEDIN_URL, BLUESKY_URL, YOUTUBE_URL, GIVEBUTTER_URL } from '~/config/social';
 
 const metadata = {
   title: 'FAQ | Boston Women in Bioinformatics',
@@ -43,11 +43,11 @@ const faqs = [
       },
       {
         question: 'Are events recorded or is there a way to participate remotely?',
-        answer: `Some events are recorded and shared on our ${link('https://m.youtube.com/channel/UCzgmQ4uoTNq_MayiwAQ448Q', 'YouTube channel')}. Remote participation availability varies by event. Check the event page or our newsletter for details on each event.`,
+        answer: `Some events are recorded and shared on our ${link(YOUTUBE_URL, 'YouTube channel')}. Remote participation availability varies by event. Check the event page or our newsletter for details on each event.`,
       },
       {
         question: 'How do I find out about upcoming events?',
-        answer: `Subscribe to our ${link('/newsletter', 'newsletter')}, join our ${link(SLACK_INVITE_URL, 'Slack workspace')}, follow us on ${link(LINKEDIN_URL, 'LinkedIn')} and ${link('https://bsky.app/profile/boston-wib.bsky.social', 'Bluesky')}, and check our ${link('/events', 'events page')}. We announce all upcoming events across these channels.`,
+        answer: `Subscribe to our ${link('/newsletter', 'newsletter')}, join our ${link(SLACK_INVITE_URL, 'Slack workspace')}, follow us on ${link(LINKEDIN_URL, 'LinkedIn')} and ${link(BLUESKY_URL, 'Bluesky')}, and check our ${link('/events', 'events page')}. We announce all upcoming events across these channels.`,
       },
       {
         question: 'How do I suggest a new event or program idea?',
@@ -91,7 +91,7 @@ const faqs = [
       },
       {
         question: 'How do I donate?',
-        answer: `You can make a tax-deductible donation at ${link('https://givebutter.com/BWIBdonate', 'givebutter.com/BWIBdonate')}. Every contribution helps us keep our events free and our community growing.`,
+        answer: `You can make a tax-deductible donation at ${link(GIVEBUTTER_URL, 'givebutter.com/BWIBdonate')}. Every contribution helps us keep our events free and our community growing.`,
       },
     ],
   },
