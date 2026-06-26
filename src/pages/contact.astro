@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { SITE } from '~/config/site/config.js';
+import { SLACK_INVITE_URL, LINKEDIN_URL, LUMA_URL } from '~/config/social';
 import HeroText from '~/components/widgets/HeroText.astro';
 // import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -65,11 +66,11 @@ const metadata = {
       // },
       {
         title: 'Slack',
-        description: 'Join our Slack community',
+        description: 'Register to join our Slack community',
         icon: 'tabler:brand-slack',
         callToAction: {
           target: '_blank',
-          href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ',
+          href: SLACK_INVITE_URL,
         },
       },
       {
@@ -87,7 +88,7 @@ const metadata = {
         icon: 'tabler:brand-linkedin',
         callToAction: {
           target: '_blank',
-          href: 'https://www.linkedin.com/company/boston-women-in-bioinformatics',
+          href: LINKEDIN_URL,
         },
       },
       {
@@ -96,7 +97,7 @@ const metadata = {
         icon: 'tabler:calendar-event',
         callToAction: {
           target: '_blank',
-          href: 'https://luma.com/bwib',
+          href: LUMA_URL,
         },
       },
       {
