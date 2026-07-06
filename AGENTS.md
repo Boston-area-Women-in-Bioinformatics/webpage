@@ -8,10 +8,10 @@ Guidance for AI agents working in this repository.
 
 ### Tech Stack
 
-- **Framework**: Astro 5.x (static output) + TypeScript (strict)
-- **Styling**: Tailwind CSS 3 (class-based dark mode, custom theme vars)
+- **Framework**: Astro 7.x (static output) + TypeScript (strict)
+- **Styling**: Tailwind CSS 3 via a plain `postcss.config.cjs` (class-based dark mode, custom theme vars) — no `@astrojs/tailwind` integration
 - **Interactive components**: React 19 (`.tsx` files)
-- **Content**: Astro Content Collections with Zod schemas (MDX + Markdown)
+- **Content**: Astro Content Collections (Content Layer API — every collection uses an explicit `loader: glob(...)`) with Zod schemas (MDX + Markdown)
 - **Path alias**: `~` → `src/` (configured in `tsconfig.json` and `vite`)
 
 ### Top-Level `src/` Layout
@@ -25,11 +25,15 @@ src/
 ├── pages/           # File-based routes (Astro pages)
 ├── styles/          # Global CSS
 ├── utils/           # Pure TypeScript helpers
+├── vendor/          # Vendored src-level packages (e.g. seo/) — see dependency-upgrades skill
 ├── config.yaml      # Site-wide config (name, URL, blog/newsletter settings)
+├── content.config.ts # Content Collections schema/loader definitions
 ├── navigation.ts    # Header/footer nav structure — edit this to add/remove nav links
 ├── types.d.ts       # Shared TypeScript types (Post, Newsletter, Taxonomy, MetaData…)
 └── env.d.ts         # Astro env types
 ```
+
+Root-level `vendor/` (outside `src/`) holds build-time Astro integrations (e.g. `vendor/integration`); `src/vendor/` is for runtime components imported via the normal `~/*` alias (e.g. `~/vendor/seo`).
 
 ### Entry Points
 
@@ -46,7 +50,9 @@ src/
 | `src/pages/events/index.astro`                   | Events listing (past events section hidden when upcoming events exist)          |
 | `src/pages/events/archive/index.astro`           | Past events archive (client-side search, sort, date range, hide-partner filter) |
 
-### Content Collections (`src/content/config.ts`)
+### Content Collections (`src/content.config.ts`)
+
+Every collection uses the Content Layer API (`loader: glob(...)`) — see the dependency-upgrades skill for the `id`/`render()` migration pattern this implies for `CollectionEntry` consumers.
 
 | Collection   | Description        | Key Fields                                                                                                                                                                                         |
 | ------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -101,7 +107,8 @@ src/components/
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `src/config.yaml`      | Blog/newsletter settings (posts per page, permalink patterns, paths)                                                                                                                                |
 | `src/config/social.ts` | Central social/community URL constants: `SLACK_INVITE_URL`, `LINKEDIN_URL`, `BLUESKY_URL`, `YOUTUBE_URL`, `GITHUB_URL`, `TWITTER_URL`, `LUMA_URL`, `GIVEBUTTER_URL` — update here when links change |
-| `astro.config.ts`      | Integrations (Tailwind, MDX, Sitemap, Icons, React), image domains                                                                                                                                  |
+| `astro.config.ts`      | Integrations (Sitemap, MDX, Icons, React, Partytown, astro-compress), image domains — Tailwind is wired via `postcss.config.cjs`, not an integration                                                |
+| `postcss.config.cjs`   | Registers `tailwindcss` + `autoprefixer` as PostCSS plugins (replaces the deprecated `@astrojs/tailwind` integration; see Local Norm 17)                                                            |
 | `tailwind.config.js`   | Custom colors (`primary`, `secondary`, `accent`, social colors), fonts (`font-heading`), `intersect` variant                                                                                        |
 | `.prettierrc.cjs`      | Print width 120, single quotes, `prettier-plugin-astro`                                                                                                                                             |
 | `eslint.config.js`     | ESLint 9 flat config — Astro + TypeScript recommended                                                                                                                                               |
@@ -150,6 +157,10 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 14. **Team member title line breaks** — in `src/config/components/team.js`, use `&` as the separator between multiple roles for a single person. `Team.astro` splits on `&` and renders each part on its own line. Example: `'Treasurer & Finance Committee Chair & Events Committee Co-chair'`.
 15. **Newsletter issue validation** — `src/utils/newsletter.ts` throws a build error at load time if two newsletters share the same `issue` number. The `issue` field must be set manually in each newsletter's frontmatter.
 16. **Member Spotlight post titles** — use `'Member Spotlight: First\u00a0Last'` (Unicode non-breaking space U+00A0 between first and last name) so the name never wraps mid-name. `SinglePost.astro` detects the `Member Spotlight:` prefix and renders "Member Spotlight:" at smaller size (`!text-2xl`) on its own line above the name.
+17. **No `@astrojs/tailwind` or `@astrolib/*` packages** — they cap the installable `astro` version and block security patches. See the dependency-upgrades skill before adding any astro-ecosystem package back or running a major `astro` upgrade.
+18. **Content Collections use the Content Layer API** — every collection has an explicit `loader: glob(...)` in `src/content.config.ts`; entries use `id`/`render(entry)`, not `slug`/`.render()`. See the dependency-upgrades skill for the migration pattern.
+19. **`define:vars` inline scripts can't use a bare top-level `return`** — wrap the script body in an IIFE if early-return logic is needed (see `src/components/common/BasicScripts.astro`).
+20. **Path aliases must not collide** — any new alias added to `tsconfig.json` `paths` or `vite.resolve.alias` in `astro.config.ts` must not share a prefix with an existing alias (e.g. don't add `~vendor` alongside `~`). Reuse `~/*` for anything importable from `src/`, including `src/vendor/`.
 
 ---
 
@@ -157,17 +168,18 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 
 When the user's request involves any of the topics below, read the corresponding skill file before responding. Each file contains required field definitions, formatting conventions, and step-by-step instructions that must be followed exactly.
 
-| Topic             | Trigger keywords                                   | Skill file                              |
-| ----------------- | -------------------------------------------------- | --------------------------------------- |
-| Newsletter        | newsletter, newsletter issue, TOC                  | `.claude/commands/add-newsletter.md`    |
-| Blog post         | blog post, write a post                            | `.claude/commands/add-blog-post.md`     |
-| Blog series       | blog series, add series                            | `.claude/commands/add-blog-series.md`   |
-| Event             | event, meetup, add event                           | `.claude/commands/add-event.md`         |
-| Team member       | team member, add member, board member              | `.claude/commands/add-team-member.md`   |
-| Partner community | partner community, add community, partner org      | `.claude/commands/add-community.md`     |
-| Resource          | resource, tool, course, tutorial                   | `.claude/commands/add-resource.md`      |
-| Archive video     | recorded meeting, archive video, meeting recording | `.claude/commands/add-archive-video.md` |
-| Fundraiser        | fundraiser, fundraiser page                        | `.claude/commands/update-fundraiser.md` |
+| Topic               | Trigger keywords                                                          | Skill file                                 |
+| ------------------- | ------------------------------------------------------------------------- | ------------------------------------------ |
+| Newsletter          | newsletter, newsletter issue, TOC                                         | `.claude/commands/add-newsletter.md`       |
+| Blog post           | blog post, write a post                                                   | `.claude/commands/add-blog-post.md`        |
+| Blog series         | blog series, add series                                                   | `.claude/commands/add-blog-series.md`      |
+| Event               | event, meetup, add event                                                  | `.claude/commands/add-event.md`            |
+| Team member         | team member, add member, board member                                     | `.claude/commands/add-team-member.md`      |
+| Partner community   | partner community, add community, partner org                             | `.claude/commands/add-community.md`        |
+| Resource            | resource, tool, course, tutorial                                          | `.claude/commands/add-resource.md`         |
+| Archive video       | recorded meeting, archive video, meeting recording                        | `.claude/commands/add-archive-video.md`    |
+| Fundraiser          | fundraiser, fundraiser page                                               | `.claude/commands/update-fundraiser.md`    |
+| Dependency upgrades | npm audit, npm install, upgrade astro, security vulnerabilities, ERESOLVE | `.claude/commands/upgrade-dependencies.md` |
 
 ---
 
