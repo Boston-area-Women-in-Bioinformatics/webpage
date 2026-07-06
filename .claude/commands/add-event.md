@@ -43,7 +43,7 @@ Ask the user for the following. Collect all required fields before proceeding. U
 - `title` — name of the event
 - `dateTime` — start date and time in New York time, format `YYYY-MM-DDTHH:mm` (e.g. `2026-09-15T18:00`). No timezone offset — it is applied automatically.
 - `location` — one or more address lines (e.g. `["123 Main St", "Boston, MA"]`)
-- `image.src` — path to the event image (e.g. `/photos/my-event.jpg`)
+- `image.src` — path to the event image: a photo of the event goes in `public/photos/{YYYY}/` matching the event's year (e.g. `/photos/2026/my-event.jpg`); a sponsor/partner organization's logo goes in `public/sponsors/` instead (e.g. `/sponsors/acme-logo.png`)
 - `image.alt` — alt text describing the image's _purpose_, not its appearance. Do not include the words "image" or "photo".
 - `tags` — list of tags (can be an empty list `[]`)
 
@@ -77,7 +77,7 @@ title: 'TITLE'
 dateTime: 'YYYY-MM-DDTHH:mm'
 endDate: 'YYYY-MM-DDTHH:mm'
 image:
-  src: '/photos/...'
+  src: '/photos/{YYYY}/...' # or '/sponsors/...' for a sponsor/partner logo
   alt: '...'
 location:
   - '...'
@@ -110,9 +110,11 @@ Print the following commands for the user to run (do not run them automatically)
 ```
 git checkout -b add-event-YYYY-MM-DD
 git add src/content/meetups/{YYYY}/{YYYYMMDD}_event.md
-# If you uploaded an image:
-git add public/photos/<your_image_name>
+# If you uploaded an event photo:
+git add public/photos/{YYYY}/<your_image_name>
+# If you uploaded a sponsor/partner logo instead:
+git add public/sponsors/<your_image_name>
 git push -u origin add-event-YYYY-MM-DD
 ```
 
-Remind the user to upload their event image to `public/photos/` before committing (see Image Organization in README.md).
+Remind the user to upload their image before committing: a photo of the event goes in `public/photos/{YYYY}/`, a sponsor/partner logo goes in `public/sponsors/` (see Image Organization in README.md).

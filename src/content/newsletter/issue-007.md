@@ -96,7 +96,7 @@ The speakers are in, the schedule is set, and seats are going fast. Join BWIB an
 <table class="not-prose" style="border-collapse: collapse; border: none; margin-top: 0.5rem; margin-bottom: 0.5rem;">
   <tr>
     <td style="vertical-align: top; border: none;">
-      <img src="/photos/BWiB Family Event.png" alt="Boston Women in Bioinformatics Family Event" width="250px"/>
+      <img src="/photos/2026/BWiB Family Event.png" alt="Boston Women in Bioinformatics Family Event" width="250px"/>
     </td>
     <td style="vertical-align: middle; padding-left: 20px; border: none;">
       <ul style="list-style-type: none; padding-left: 0;">

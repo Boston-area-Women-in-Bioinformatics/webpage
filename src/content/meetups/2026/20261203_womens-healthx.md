@@ -3,7 +3,7 @@ title: "Women's HealthX Conference"
 dateTime: '2026-12-03T09:00'
 endDate: '2026-12-04T17:00'
 image:
-  src: '/photos/womens_healthx_logo.png'
+  src: '/sponsors/womens_healthx_logo.png'
   alt: "Women's HealthX Conference logo"
 location:
   - 'Encore Boston Harbor'

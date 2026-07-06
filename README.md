@@ -183,7 +183,7 @@ The markdown file should follow a specific format. In between the top two `---` 
 
 #### 3. Add an image
 
-Upload image to the `public/photos` directory of your cloned repository (see [Image Organization](#image-organization)). The image should be referenced in the markdown file using the `image` field in the metadata.
+If the image is a photo of the event, upload it to `public/photos/{year}/` (e.g., `public/photos/2026/`) matching the event's year. If the image is a sponsor or partner organization's logo, upload it to `public/sponsors/` instead (see [Image Organization](#image-organization)). Either way, reference the uploaded path in the markdown file's `image` field.
 
 #### 4. Push changes to website
 
@@ -192,8 +192,8 @@ After creating the markdown file and uploading the image, you can run the follow
 ```
 # Run 'npx --prettier' to fix any astro specific formatting issues
 npx prettier --write src/content/meetups/{newevent}.md
-# Stage the changes to commit :
-git add /public/photos/<your_image_name>
+# Stage the changes to commit (use public/sponsors/ instead of public/photos/{year}/ for a sponsor/partner logo):
+git add public/photos/{year}/<your_image_name>
 git add src/content/meetups/{newevent}.md
 #  Commit new changes
 git push -u origin add-event-{date}
@@ -757,12 +757,12 @@ git push
 
 Store images in the `public/` directory following these conventions:
 
-- **General photos** → `public/photos/` (organize event photos by date, e.g., `photos/2024-03-15-workshop/`)
+- **General/event photos** → `public/photos/{year}/` (e.g., `public/photos/2026/20260822_BAX_event.png`)
 - **Team member headshots** → `public/team/`
-- **Sponsor logos** → `public/sponsors/`
+- **Sponsor/partner organization logos** → `public/sponsors/` — used as an event's `image` field when the image is the sponsoring organization's logo rather than a photo of the event itself
 - **Blog post images** → `public/blog_images/`
 
-When organizing event photos, create dated subdirectories within `public/photos/` using the format `YYYY-MM-DD-event-name` (e.g., `public/photos/2026/20260822_BAX_event.png`). This keeps our photo archive organized chronologically and makes it easy to find images from specific events.
+When adding an event photo, upload it into the `public/photos/{year}/` folder matching the event's year (create the folder if it's the first event of a new year). This keeps our photo archive organized chronologically and makes it easy to find images from specific events.
 
 Logos are found in the `src/assets/favicons` directory.
 
