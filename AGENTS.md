@@ -113,6 +113,15 @@ src/components/
 | `.prettierrc.cjs`      | Print width 120, single quotes, `prettier-plugin-astro`                                                                                                                                             |
 | `eslint.config.js`     | ESLint 9 flat config — Astro + TypeScript recommended                                                                                                                                               |
 
+### Design Documentation
+
+| File               | Role                                                                                                                                    |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `COLOR_PALETTE.md` | Full color system reference — design tokens, Tailwind utility classes, usage examples, dark mode behavior                               |
+| `DESIGN_SYSTEM.md` | Layout patterns, spacing scale, component library, typography, buttons, forms — cross-references `COLOR_PALETTE.md` for color specifics |
+
+Both derive from the design tokens in `src/components/CustomStyles.astro` and the color/font values in `tailwind.config.js` — see Local Norm 21 to keep them in sync.
+
 ### CI/CD (`.github/workflows/`)
 
 - **`actions.yaml`**: Runs on PRs and pushes to `main` — matrix build (Node 18/20/22) + ESLint + Prettier check
@@ -139,8 +148,9 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 
 ## Local Norms
 
-1. **Update `AGENTS.md` after every file added or updated** — after adding or modifying any component, utility, script, content collection field, naming convention, or local norm, update the relevant section of this file before closing the task. Do not batch updates — write them as the changes are made. If a new frontmatter field is added or changed, also update `README.md` (see norm 2a below).
+1. **Update `AGENTS.md` after every file added or updated** — after adding or modifying any component, utility, script, content collection field, naming convention, or local norm, update the relevant section of this file before closing the task. Do not batch updates — write them as the changes are made. If a new frontmatter field is added or changed, also update `MANUAL.md` (see norm 1a below).
    1a. **Update `MANUAL.md` when frontmatter changes** — whenever a frontmatter field is added, removed, or its behavior changes for any content collection (`post`, `newsletter`, `event`, `series`, `committees`, `resources`), update the corresponding section in `MANUAL.md` to reflect the change. (`README.md` no longer contains field-level documentation — it lives in `MANUAL.md`.)
+   1b. **Keep `.claude/commands/` and `.claude/skills/` references in sync** — whenever a command or skill file is added, renamed, removed, or moved between `.claude/commands/` (scaffolding) and `.claude/skills/` (content-writing/auto-triggered), update this file's Contextual Skills table, `README.md`'s "Available Commands" table and "Skills that trigger automatically" list, and `MANUAL.md`'s "No Claude Code? Start here" section so all three stay pointed at the right files.
 2. **No auto-commit** — never commit unless the user explicitly asks.
 3. **No force-push** — always create new commits rather than amending, especially after hook failures.
 4. **`prettier` enforced** — run `npm run fix` (eslint + prettier) before committing; CI will fail otherwise.
@@ -161,6 +171,7 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 18. **Content Collections use the Content Layer API** — every collection has an explicit `loader: glob(...)` in `src/content.config.ts`; entries use `id`/`render(entry)`, not `slug`/`.render()`. See the dependency-upgrades skill for the migration pattern.
 19. **`define:vars` inline scripts can't use a bare top-level `return`** — wrap the script body in an IIFE if early-return logic is needed (see `src/components/common/BasicScripts.astro`).
 20. **Path aliases must not collide** — any new alias added to `tsconfig.json` `paths` or `vite.resolve.alias` in `astro.config.ts` must not share a prefix with an existing alias (e.g. don't add `~vendor` alongside `~`). Reuse `~/*` for anything importable from `src/`, including `src/vendor/`.
+21. **Keep `COLOR_PALETTE.md` and `DESIGN_SYSTEM.md` in sync** — whenever a design token, brand/social color, spacing value, or reusable component pattern changes (in `src/components/CustomStyles.astro`, `tailwind.config.js`, or a shared UI component), update the corresponding section in both docs. `DESIGN_SYSTEM.md` links out to `COLOR_PALETTE.md` for color detail — don't duplicate color specifics into `DESIGN_SYSTEM.md`, keep that split.
 
 ---
 
@@ -168,44 +179,37 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 
 When the user's request involves any of the topics below, read the corresponding skill file before responding. Each file contains required field definitions, formatting conventions, and step-by-step instructions that must be followed exactly.
 
-| Topic               | Trigger keywords                                                          | Skill file                                 |
-| ------------------- | ------------------------------------------------------------------------- | ------------------------------------------ |
-| Newsletter          | newsletter, newsletter issue, TOC                                         | `.claude/commands/add-newsletter.md`       |
-| Blog post           | blog post, write a post                                                   | `.claude/commands/add-blog-post.md`        |
-| Blog series         | blog series, add series                                                   | `.claude/commands/add-blog-series.md`      |
-| Event               | event, meetup, add event                                                  | `.claude/commands/add-event.md`            |
-| Team member         | team member, add member, board member                                     | `.claude/commands/add-team-member.md`      |
-| Partner community   | partner community, add community, partner org                             | `.claude/commands/add-community.md`        |
-| Resource            | resource, tool, course, tutorial                                          | `.claude/commands/add-resource.md`         |
-| Archive video       | recorded meeting, archive video, meeting recording                        | `.claude/commands/add-archive-video.md`    |
-| Fundraiser          | fundraiser, fundraiser page                                               | `.claude/commands/update-fundraiser.md`    |
-| Dependency upgrades | npm audit, npm install, upgrade astro, security vulnerabilities, ERESOLVE | `.claude/commands/upgrade-dependencies.md` |
+Commands (`.claude/commands/*.md`) scaffold new files/frontmatter — invoke with `/name` or by topic. Skills (`.claude/skills/<name>/SKILL.md`) cover writing/revising body content and auto-trigger by description; use them once the file already exists.
+
+| Topic                        | Trigger keywords                                                          | Location                                       |
+| ---------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------- |
+| Newsletter (new issue)       | new newsletter, newsletter outline, newsletter issue number               | `.claude/commands/add-newsletter.md`           |
+| Newsletter (content/publish) | edit newsletter, newsletter content, TOC, UTM, newsletter buttons         | `.claude/skills/edit-newsletter/SKILL.md`      |
+| Blog post (new)              | blog post, write a post                                                   | `.claude/commands/add-blog-post.md`            |
+| Blog post (content/format)   | edit blog post, member spotlight, podcast embed, blog formatting          | `.claude/skills/edit-blog-post/SKILL.md`       |
+| Blog series                  | blog series, add series                                                   | `.claude/commands/add-blog-series.md`          |
+| Event (new)                  | event, meetup, add event                                                  | `.claude/commands/add-event.md`                |
+| Event (description/content)  | edit event, event description, event logistics                            | `.claude/skills/edit-event/SKILL.md`           |
+| Team member                  | team member, add member, board member                                     | `.claude/commands/add-team-member.md`          |
+| Partner community            | partner community, add community, partner org                             | `.claude/commands/add-community.md`            |
+| Resource                     | resource, tool, course, tutorial                                          | `.claude/commands/add-resource.md`             |
+| Archive video                | recorded meeting, archive video, meeting recording                        | `.claude/commands/add-archive-video.md`        |
+| Fundraiser                   | fundraiser, fundraiser page                                               | `.claude/skills/update-fundraiser/SKILL.md`    |
+| Dependency upgrades          | npm audit, npm install, upgrade astro, security vulnerabilities, ERESOLVE | `.claude/skills/upgrade-dependencies/SKILL.md` |
 
 ---
 
 ## Newsletter Conventions
 
-- Table of contents links use `#anchor-id`; each section gets `<div id="..."></div>` placed immediately after the `##` heading.
-- Event tables in newsletters use `<table class="not-prose" style="...">` to escape prose plugin margins. The `not-prose` class is required — inline `margin` styles alone are overridden by Tailwind Typography.
-- Register/Event Page buttons inside newsletter tables use `class="btn-primary"` on the `<a>` tag (works because `not-prose` is set on the parent table).
-- UTM tags on internal links: `?utm_source=newsletter&utm_medium=email&utm_campaign=<month>-<year>`. Apply to all `boston-wib.org` links; skip external links (givebutter, luma, LinkedIn, etc.).
-- `metadata.image` in blog post frontmatter does nothing — the Open Graph image is derived from the top-level `image` field, not `metadata.image`. Do not add `metadata.image` to posts.
+TOC anchors, event tables, buttons, and UTM tagging rules moved to the `edit-newsletter` skill (`.claude/skills/edit-newsletter/SKILL.md`). Remaining implementation details not covered there:
+
 - Newsletter `<SinglePost>` scoped styles: `[&_strong_a]:font-bold [&_a_strong]:font-bold` is applied to force bold weight on links wrapped in `**...**` since prose overrides it.
 
 ---
 
 ## Markdown Formatting Conventions (Blog Posts)
 
-Use the following conventions consistently in blog post `.md` files:
-
-| Element                                   | Format                               | Example                                                      |
-| ----------------------------------------- | ------------------------------------ | ------------------------------------------------------------ |
-| Variable/field names, IDs, numeric values | Inline code (backticks)              | `` `22420` ``, `` `1` ``, `` `-3` ``                         |
-| UI tab names, button labels, page names   | Bold                                 | `**Data** tab`, `**Settings** page`, `**Check for Updates**` |
-| Key domain terms being defined            | Bold (first use) or `###` subheading | `**Coding**` or `### Coding`                                 |
-| File paths, code identifiers              | Inline code (backticks)              | `` `src/utils/blog.ts` ``                                    |
-
-Inline code renders with a styled pill background (gray-100 light / slate-800 dark) via `.prose :not(pre) > code` in `tailwind.css`. The Tailwind Typography quote pseudo-elements are suppressed.
+Moved to the `edit-blog-post` skill (`.claude/skills/edit-blog-post/SKILL.md`) along with Member Spotlight and podcast-embed formatting rules — read that skill when writing or revising blog post body content.
 
 ---
 
