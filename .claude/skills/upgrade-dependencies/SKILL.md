@@ -1,3 +1,8 @@
+---
+name: upgrade-dependencies
+description: Upgrade npm dependencies in the BWIB website repo, including major-version bumps of astro itself. Use this whenever npm audit, npm install <pkg>@latest, or a general "reduce vulnerabilities" request surfaces peer-dependency (ERESOLVE) conflicts, or when astro/its ecosystem packages need updating. Trigger this automatically the moment an ERESOLVE error or an astro-related CVE shows up in npm audit output, even if the user didn't explicitly ask for this skill by name.
+---
+
 Upgrade npm dependencies in the BWIB website repo, including major-version bumps of `astro` itself. Use this whenever `npm audit`, `npm install <pkg>@latest`, or a general "reduce vulnerabilities" request surfaces peer-dependency (`ERESOLVE`) conflicts.
 
 ## Background: why `astro` upgrades get blocked

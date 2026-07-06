@@ -1,4 +1,4 @@
-Add a new event to the BWIB website. The event will be created as a Markdown file in `src/content/meetups/YYYY/`.
+Add a new event to the BWIB website. The event will be created as a Markdown file in `src/content/meetups/YYYY/`. This scaffolds the frontmatter and file; use the `edit-event` skill to write or revise the event description body.
 
 ## Before You Start — Set Up Luma First (if using Luma for registration)
 
@@ -92,28 +92,10 @@ partnerOrganization: '...'
 cost: 10
 slug: 'event-name-month-year'
 ---
-MARKDOWN BODY (event description goes here — see prompts below)
+MARKDOWN BODY (event description goes here)
 ```
 
-When writing the markdown body, ask the user for the following and incorporate the answers into the description:
-
-**What attendees will get out of it:**
-
-- What will attendees learn, experience, or walk away with?
-- Who is this event for? (e.g. students, early-career professionals, anyone in bioinformatics)
-
-**Logistics (for in-person events):**
-
-- How do attendees get there? Include public transit directions (T stop, bus lines), parking notes, or building entrance instructions if the venue is hard to find.
-- Is there a check-in process, name badge, or anything to look for at the door?
-
-**What to prepare beforehand:**
-
-- Anything attendees should bring (laptop, notebook, student ID for discounts, etc.)?
-- Any pre-reading, pre-registration steps, or software to install ahead of time?
-- Any dietary or accessibility accommodations to be aware of?
-
-Omit any of these sections if the information is not applicable or not yet known. Don't add placeholder text — only write what the user confirms.
+For the body content — what attendees will get out of it, logistics, what to prepare — use the `edit-event` skill.
 
 ## Step 4 — Run Prettier
 
