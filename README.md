@@ -605,7 +605,7 @@ To add or remove the banner, go to `src/layouts/PageLayout.astro` and add or rem
 </slot>
 ```
 
-To edit the banner, go to `src/components/Banner.jsx` and edit the text inside the `<p>` tag. You can also change the text and link in the `<a>` tag to point to a different page.
+To edit the banner, go to `src/components/common/Banner.astro` and edit the text inside the `<p>` tag. You can also change the text and link in the `<a>` tag to point to a different page.
 
 ### Update social/community links
 

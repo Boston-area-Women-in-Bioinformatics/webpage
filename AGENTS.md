@@ -78,20 +78,22 @@ Every collection uses the Content Layer API (`loader: glob(...)`) — see the de
 
 ```
 src/components/
-├── blog/          # Blog-specific: SinglePost, RelatedPosts, ToBlogLink, Pagination, Tags
+├── blog/          # Blog-specific: SinglePost, RelatedPosts, ToBlogLink, Pagination, Tags, Quiz
+├── events/        # Event-specific: EventsTable, FormattedDate, EventAddress, Signup, AddToCalendarButton
 ├── ui/            # Primitives: Headline, PostListItem, PostList, PostGridItem, Button, Card, NewBadge…
-├── widgets/       # Page sections: Hero, Features, BlogLatestPosts, UpcomingEvents, Contact…
-├── common/        # Infra: Metadata, Analytics, ToggleTheme, Image, SocialShare
-├── newsletter/    # SinglePost.astro — renders newsletter issue HTML
-└── *.astro/.tsx   # Root-level: Banner, Logo, Signup, Sponsors, Quiz, EventsTable…
+├── widgets/       # Page sections: Hero, Features, BlogLatestPosts, UpcomingEvents, Contact, Sponsors…
+├── common/        # Infra: Metadata, Analytics, ToggleTheme, Image, SocialShare, Banner, Logo, Favicons, CustomStyles
+└── newsletter/    # SinglePost.astro — renders newsletter issue HTML
 ```
 
-**Event-specific components:**
+There is no root-level catch-all anymore — every component lives in a folder grouped by content-type (`blog/`, `events/`, `newsletter/`) or role (`ui/` primitives, `widgets/` page sections, `common/` site infra). See `src/components/README.md` for the full organization rationale; keep it in sync with this table (Local Norm 1).
+
+**Event-specific components (`src/components/events/`):**
 
 - `widgets/UpcomingEvents.astro` — shows the **single next upcoming event** in a hero layout; used on the homepage. Has two buttons: "Learn More" (`btn-primary`) and "Browse Events" (`btn-secondary`), wrapped in a flex container.
-- `EventsTable.astro` — shows **all upcoming events** as cards on the `/events` page; past events section only renders when there are no upcoming events
-- `FormattedDate.astro` — renders event dates in New York time. `isMultiDay` compares dates using `toNYDateString` (NY timezone) to avoid UTC boundary bugs. All three branches (multi-day, same-day-with-end, single) append the timezone abbreviation (EDT/EST).
-- `Signup.astro` — renders the registration button on event pages. Accepts `url`, `data_luma_event_id`, and `slug` props. Automatically appends `utm_source=boston-wib&utm_medium=event-page&utm_campaign=<slug>` to the registration URL — **do not manually add UTM params to the `url` field in event frontmatter**. The slug is passed from `[...slug].astro` as `meeting.data.slug ?? meeting.id`.
+- `events/EventsTable.astro` — shows **all upcoming events** as cards on the `/events` page; past events section only renders when there are no upcoming events
+- `events/FormattedDate.astro` — renders event dates in New York time. `isMultiDay` compares dates using `toNYDateString` (NY timezone) to avoid UTC boundary bugs. All three branches (multi-day, same-day-with-end, single) append the timezone abbreviation (EDT/EST).
+- `events/Signup.astro` — renders the registration button on event pages. Accepts `url`, `data_luma_event_id`, and `slug` props. Automatically appends `utm_source=boston-wib&utm_medium=event-page&utm_campaign=<slug>` to the registration URL — **do not manually add UTM params to the `url` field in event frontmatter**. The slug is passed from `[...slug].astro` as `meeting.data.slug ?? meeting.id`.
 
 ### Navigation (`src/navigation.ts`)
 
@@ -120,7 +122,7 @@ src/components/
 | `COLOR_PALETTE.md` | Full color system reference — design tokens, Tailwind utility classes, usage examples, dark mode behavior                               |
 | `DESIGN_SYSTEM.md` | Layout patterns, spacing scale, component library, typography, buttons, forms — cross-references `COLOR_PALETTE.md` for color specifics |
 
-Both derive from the design tokens in `src/components/CustomStyles.astro` and the color/font values in `tailwind.config.js` — see Local Norm 21 to keep them in sync.
+Both derive from the design tokens in `src/components/common/CustomStyles.astro` and the color/font values in `tailwind.config.js` — see Local Norm 21 to keep them in sync.
 
 ### CI/CD (`.github/workflows/`)
 
@@ -171,7 +173,7 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 18. **Content Collections use the Content Layer API** — every collection has an explicit `loader: glob(...)` in `src/content.config.ts`; entries use `id`/`render(entry)`, not `slug`/`.render()`. See the dependency-upgrades skill for the migration pattern.
 19. **`define:vars` inline scripts can't use a bare top-level `return`** — wrap the script body in an IIFE if early-return logic is needed (see `src/components/common/BasicScripts.astro`).
 20. **Path aliases must not collide** — any new alias added to `tsconfig.json` `paths` or `vite.resolve.alias` in `astro.config.ts` must not share a prefix with an existing alias (e.g. don't add `~vendor` alongside `~`). Reuse `~/*` for anything importable from `src/`, including `src/vendor/`.
-21. **Keep `COLOR_PALETTE.md` and `DESIGN_SYSTEM.md` in sync** — whenever a design token, brand/social color, spacing value, or reusable component pattern changes (in `src/components/CustomStyles.astro`, `tailwind.config.js`, or a shared UI component), update the corresponding section in both docs. `DESIGN_SYSTEM.md` links out to `COLOR_PALETTE.md` for color detail — don't duplicate color specifics into `DESIGN_SYSTEM.md`, keep that split.
+21. **Keep `COLOR_PALETTE.md` and `DESIGN_SYSTEM.md` in sync** — whenever a design token, brand/social color, spacing value, or reusable component pattern changes (in `src/components/common/CustomStyles.astro`, `tailwind.config.js`, or a shared UI component), update the corresponding section in both docs. `DESIGN_SYSTEM.md` links out to `COLOR_PALETTE.md` for color detail — don't duplicate color specifics into `DESIGN_SYSTEM.md`, keep that split.
 
 ---
 
