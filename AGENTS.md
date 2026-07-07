@@ -86,7 +86,7 @@ src/components/
 └── newsletter/    # SinglePost.astro — renders newsletter issue HTML
 ```
 
-There is no root-level catch-all anymore — every component lives in a folder grouped by content-type (`blog/`, `events/`, `newsletter/`) or role (`ui/` primitives, `widgets/` page sections, `common/` site infra). See `src/components/README.md` for the full organization rationale; keep it in sync with this table (Local Norm 1).
+Every component lives in a folder grouped by content-type (`blog/`, `events/`, `newsletter/`) or role (`ui/` primitives, `widgets/` page sections, `common/` site infra). See `src/components/README.md` for the full organization rationale; keep it in sync with this table (Local Norm 1).
 
 **Event-specific components (`src/components/events/`):**
 
