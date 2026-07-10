@@ -105,15 +105,15 @@ Every component lives in a folder grouped by content-type (`blog/`, `events/`, `
 
 ### Configuration Files
 
-| File                   | Role                                                                                                                                                                                                |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `src/config.yaml`      | Blog/newsletter settings (posts per page, permalink patterns, paths)                                                                                                                                |
-| `src/config/social.ts` | Central social/community URL constants: `SLACK_INVITE_URL`, `LINKEDIN_URL`, `BLUESKY_URL`, `YOUTUBE_URL`, `GITHUB_URL`, `TWITTER_URL`, `LUMA_URL`, `GIVEBUTTER_URL` — update here when links change |
-| `astro.config.ts`      | Integrations (Sitemap, MDX, Icons, React, Partytown, astro-compress), image domains — Tailwind is wired via `postcss.config.cjs`, not an integration                                                |
-| `postcss.config.cjs`   | Registers `tailwindcss` + `autoprefixer` as PostCSS plugins (replaces the deprecated `@astrojs/tailwind` integration; see Local Norm 17)                                                            |
-| `tailwind.config.js`   | Custom colors (`primary`, `secondary`, `accent`, social colors), fonts (`font-heading`), `intersect` variant                                                                                        |
-| `.prettierrc.cjs`      | Print width 120, single quotes, `prettier-plugin-astro`                                                                                                                                             |
-| `eslint.config.js`     | ESLint 9 flat config — Astro + TypeScript recommended                                                                                                                                               |
+| File                   | Role                                                                                                                                                                                                  |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/config.yaml`      | Blog/newsletter settings (posts per page, permalink patterns, paths)                                                                                                                                  |
+| `src/config/social.ts` | Central social/community URL constants: `SLACK_INVITE_URL`, `LINKEDIN_URL`, `BLUESKY_URL`, `YOUTUBE_URL`, `GITHUB_URL`, `TWITTER_URL`, `LUMA_URL`, `GIVEBUTTER_URL` — update here when links change   |
+| `astro.config.ts`      | Integrations (Sitemap, MDX, Icons, React, Partytown, astro-compress), image domains — Tailwind's global stylesheet is precompiled by the `build:css` script (Local Norm 22), not processed by Vite    |
+| `postcss.config.cjs`   | Registers `tailwindcss` + `autoprefixer` as PostCSS plugins for component-scoped `<style>` blocks only (replaces the deprecated `@astrojs/tailwind` integration; see Local Norm 17 and Local Norm 22) |
+| `tailwind.config.js`   | Custom colors (`primary`, `secondary`, `accent`, social colors), fonts (`font-heading`), `intersect` variant                                                                                          |
+| `.prettierrc.cjs`      | Print width 120, single quotes, `prettier-plugin-astro`                                                                                                                                               |
+| `eslint.config.js`     | ESLint 9 flat config — Astro + TypeScript recommended                                                                                                                                                 |
 
 ### Design Documentation
 
@@ -174,6 +174,7 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 19. **`define:vars` inline scripts can't use a bare top-level `return`** — wrap the script body in an IIFE if early-return logic is needed (see `src/components/common/BasicScripts.astro`).
 20. **Path aliases must not collide** — any new alias added to `tsconfig.json` `paths` or `vite.resolve.alias` in `astro.config.ts` must not share a prefix with an existing alias (e.g. don't add `~vendor` alongside `~`). Reuse `~/*` for anything importable from `src/`, including `src/vendor/`.
 21. **Keep `COLOR_PALETTE.md` and `DESIGN_SYSTEM.md` in sync** — whenever a design token, brand/social color, spacing value, or reusable component pattern changes (in `src/components/common/CustomStyles.astro`, `tailwind.config.js`, or a shared UI component), update the corresponding section in both docs. `DESIGN_SYSTEM.md` links out to `COLOR_PALETTE.md` for color detail — don't duplicate color specifics into `DESIGN_SYSTEM.md`, keep that split.
+22. **Global Tailwind CSS is precompiled, not Vite-bundled** — as of the `astro@7`/`vite@8` pairing, Vite's build (Rolldown-based) silently drops every responsive (`sm:`/`md:`/`lg:`/`xl:`) `@media` rule when `src/assets/styles/tailwind.css` is bundled via a normal JS `import` (confirmed by direct PostCSS instrumentation: Tailwind/PostCSS itself generates the correct output; Vite's bundling step discards it). Workaround: the `build:css` npm script runs the `tailwindcss` CLI directly (`tailwindcss -i ./src/assets/styles/tailwind.css -o ./public/tailwind-built.css --minify`), and `Layout.astro` loads the result via a plain `<link rel="stylesheet" href="/tailwind-built.css" />` instead of importing the source file — this bypasses Vite's CSS pipeline entirely for the global stylesheet. `predev`/`prebuild` scripts run `build:css` automatically. `public/tailwind-built.css` is gitignored (generated). Component-scoped `<style>` blocks are unaffected (still Vite/PostCSS-processed normally) since they're small and don't hit this bug. If a future `astro`/`vite` upgrade fixes the underlying Rolldown CSS bug, this workaround can likely be reverted to a plain `import '~/assets/styles/tailwind.css';` in `Layout.astro` — verify with `grep -c "@media" dist/_astro/*.css` on a clean build first.
 
 ---
 
