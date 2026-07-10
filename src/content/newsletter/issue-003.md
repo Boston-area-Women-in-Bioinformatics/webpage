@@ -77,7 +77,7 @@ Dr. Jenn Felsted-Knight from [Felsted Coaching & Consulting](https://www.felsted
 <table style="border-collapse: collapse; border: none;">
   <tr>
     <td style="vertical-align: top; border: none;">
-      <img src="/photos/WIB_Cups_ChatGPT3.png" alt="Glass cup with Boston Women in Bioinformatics Logo" width="250px"/>
+      <img src="/photos/2026/WIB_Cups_ChatGPT3.png" alt="Glass cup with Boston Women in Bioinformatics Logo" width="250px"/>
     </td>
     <td style="vertical-align: middle; padding-left: 20px; border: none;">
       <ul style="list-style-type: none; padding-left: 0;">

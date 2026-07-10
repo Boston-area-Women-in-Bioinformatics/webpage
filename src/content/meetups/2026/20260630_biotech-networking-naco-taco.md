@@ -3,7 +3,7 @@ title: 'Cambridge Biotech Club: Biotech Networking at Naco Taco'
 dateTime: '2026-06-30T18:30'
 endDate: '2026-06-30T20:30'
 image:
-  src: '/photos/cambridge_biotech_club_networking.png'
+  src: '/photos/2026/cambridge_biotech_club_networking.png'
   alt: 'People dressed in lab coats smiling and chatting over tacos'
 location:
   - '297 Massachusetts Ave'

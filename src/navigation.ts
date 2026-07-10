@@ -112,27 +112,6 @@ export const headerData = {
       text: 'Donate',
       href: GIVEBUTTER_URL,
     },
-    // {
-    //   text: 'Homes',
-    //   links: [
-    //     // {
-    //     //   text: 'SaaS',
-    //     //   href: getPermalink('/homes/saas'),
-    //     // },
-    //     {
-    //       text: 'Startup',
-    //       href: getPermalink('/homes/startup'),
-    //     },
-    //     // {
-    //     //   text: 'Mobile App',
-    //     //   href: getPermalink('/homes/mobile-app'),
-    //     // },
-    //     // {
-    //     //   text: 'Personal',
-    //     //   href: getPermalink('/homes/personal'),
-    //     // },
-    //   ],
-    // },
     //{
     //  text: 'Community',
     //  links: [

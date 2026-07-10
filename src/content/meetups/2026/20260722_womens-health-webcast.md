@@ -3,7 +3,7 @@ title: "Advances in the Development of Therapeutics and Diagnostics for Women's 
 dateTime: '2026-07-22T11:30'
 endDate: '2026-07-22T17:30'
 image:
-  src: '/photos/women_in_bio_logo.png'
+  src: '/sponsors/women_in_bio_logo.png'
   alt: 'Women in Bio logo'
 location:
   - 'Online via Zoom'

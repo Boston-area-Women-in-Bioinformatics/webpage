@@ -104,7 +104,7 @@ Grab lunch and meet fellow bioinformaticians at our casual networking meetup at 
 <table style="border-collapse: collapse; border: none;">
   <tr>
     <td style="vertical-align: top; border: none;">
-      <img src="/photos/github_bwib.png" alt="Github and Boston Women in Bioinformatics Logo Mashup" width="250px"/>
+      <img src="/photos/2025/github_bwib.png" alt="Github and Boston Women in Bioinformatics Logo Mashup" width="250px"/>
     </td>
     <td style="vertical-align: middle; padding-left: 20px; border: none;">
       <ul style="list-style-type: none; padding-left: 0;">

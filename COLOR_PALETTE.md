@@ -55,7 +55,7 @@ This document describes the complete color system for the Boston Women in Bioinf
 
 ## Design Tokens Reference
 
-All colors are defined in [`src/components/CustomStyles.astro`](src/components/CustomStyles.astro) as CSS custom properties.
+All colors are defined in [`src/components/common/CustomStyles.astro`](src/components/common/CustomStyles.astro) as CSS custom properties.
 
 ### Brand Colors
 
@@ -317,7 +317,7 @@ All design tokens are exposed as Tailwind utility classes via [`tailwind.config.
 
 ### Changing an Existing Color
 
-1. Open [`src/components/CustomStyles.astro`](src/components/CustomStyles.astro)
+1. Open [`src/components/common/CustomStyles.astro`](src/components/common/CustomStyles.astro)
 2. Find the CSS variable you want to change (e.g., `--aw-color-primary`)
 3. Update the color value in **both** `:root` (light mode) and `.dark` (dark mode) sections if applicable
 4. Save the file - the change will apply site-wide automatically
@@ -334,7 +334,7 @@ All design tokens are exposed as Tailwind utility classes via [`tailwind.config.
 
 ### Adding a New Color
 
-1. **Add the CSS variable** in [`src/components/CustomStyles.astro`](src/components/CustomStyles.astro):
+1. **Add the CSS variable** in [`src/components/common/CustomStyles.astro`](src/components/common/CustomStyles.astro):
 
    ```css
    :root {
@@ -511,7 +511,7 @@ When choosing or updating colors, ensure sufficient contrast ratios:
 
 ### Key Files
 
-1. **[`src/components/CustomStyles.astro`](src/components/CustomStyles.astro)** - All CSS custom properties (design tokens)
+1. **[`src/components/common/CustomStyles.astro`](src/components/common/CustomStyles.astro)** - All CSS custom properties (design tokens)
 2. **[`tailwind.config.js`](tailwind.config.js)** - Tailwind color mappings
 3. **[`src/styles/global.css`](src/styles/global.css)** - Global CSS classes (`.gold`, `.silver`, etc.)
 

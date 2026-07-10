@@ -17,7 +17,7 @@ This document defines the complete design system for the Boston Women in Bioinfo
 
 ## Design Tokens
 
-All design tokens are defined in [`src/components/CustomStyles.astro`](src/components/CustomStyles.astro). For detailed color documentation, see [COLOR_PALETTE.md](COLOR_PALETTE.md).
+All design tokens are defined in [`src/components/common/CustomStyles.astro`](src/components/common/CustomStyles.astro). For detailed color documentation, see [COLOR_PALETTE.md](COLOR_PALETTE.md).
 
 ### Color Strategy
 
@@ -605,7 +605,7 @@ import Button from '~/components/ui/Button.astro';
 
 When making changes to the design system:
 
-1. **Update tokens** in `src/components/CustomStyles.astro`
+1. **Update tokens** in `src/components/common/CustomStyles.astro`
 2. **Update documentation** in this file and `COLOR_PALETTE.md`
 3. **Test across the site** to ensure consistency
 4. **Build the site** to verify no errors: `npm run build`

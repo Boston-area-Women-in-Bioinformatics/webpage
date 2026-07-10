@@ -174,7 +174,7 @@ We look forward to sharing updates and highlights from the program throughout th
 <table style="border-collapse: collapse; border: none;">
   <tr>
     <td style="vertical-align: top; border: none;">
-      <img src="/photos/nf-core-logo-square.png" alt="nf-core logo" width="250px"/>
+      <img src="/sponsors/nf-core-logo-square.png" alt="nf-core logo" width="250px"/>
     </td>
     <td style="vertical-align: middle; padding-left: 20px; border: none;">
       <ul style="list-style-type: none; padding-left: 0;">
@@ -212,7 +212,7 @@ Shake off the last of winter and grab lunch with your fellow bioinformaticians a
 <table style="border-collapse: collapse; border: none;">
   <tr>
     <td style="vertical-align: top; border: none;">
-      <img src="/photos/sprout_bwib_logo.jpg" alt="Boston Women in Bioinformatics and Sprout Informatics Logos" width="250px"/>
+      <img src="/photos/2026/sprout_bwib_logo.jpg" alt="Boston Women in Bioinformatics and Sprout Informatics Logos" width="250px"/>
     </td>
     <td style="vertical-align: middle; padding-left: 20px; border: none;">
       <ul style="list-style-type: none; padding-left: 0;">
