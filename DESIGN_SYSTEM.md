@@ -239,6 +239,8 @@ Use responsive text sizing with Tailwind classes:
 | **Body Large**      | 16px   | 18px   | 20px    | `text-base sm:text-lg md:text-xl`  |
 | **Body**            | 14px   | 16px   | -       | `text-sm md:text-base`             |
 | **Small**           | 12px   | 14px   | -       | `text-xs md:text-sm`               |
+| **Extra Small**     | 10px   | -      | -       | `text-xxs` (custom, see `tailwind.config.js`)  |
+| **Micro**           | 8px    | -      | -       | `text-xxxs` (custom, see `tailwind.config.js`) |
 
 ### Font Weights
 
