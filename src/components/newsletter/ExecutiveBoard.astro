@@ -26,10 +26,10 @@ const { members = exec.members } = Astro.props;
             decoding="async"
           />
         )}
-        <p class="font-semibold text-sm sm:text-base text-gray-900 dark:text-white">{member.name}</p>
+        <p class="font-semibold text-base sm:text-lg text-gray-900 dark:text-white">{member.name}</p>
         {member.title && (
           <p
-            class="text-xs sm:text-sm"
+            class="text-sm sm:text-base"
             set:html={member.title
               .split(' & ')
               .map((line) => line.replace(/\bCo-chair\b/g, '<span style="white-space:nowrap">Co-chair</span>'))
