@@ -113,7 +113,7 @@ const postCollection = defineCollection({
 });
 
 const newsletterCollection = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: 'src/content/newsletter' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: 'src/content/newsletter' }),
   schema: z.object({
     publishDate: z.date(),
     issue: z.number(),

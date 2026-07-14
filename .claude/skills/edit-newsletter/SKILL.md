@@ -76,29 +76,56 @@ If not already clear from context, ask which issue (e.g. by issue number) is bei
 
 ## Step 2 — Write or Revise Section Content
 
-Apply the conventions above to any section the user wants written or changed. Do not touch the three boilerplate closing sections (`Get Involved`, `Executive Board`, `Social Media`) unless the user explicitly mentions a board change, Slack invite update, or other adjustment to them.
+Apply the conventions above to any section the user wants written or changed. Do not touch the three boilerplate closing sections (`Get Involved`, `Executive Board`, `Social Media`) unless the user explicitly mentions a Slack invite update or other adjustment to `Get Involved`/`Social Media`.
+
+**Executive Board is special** — in `.mdx` issues (008+), it renders live via `<ExecutiveBoard />` (`~/components/newsletter/ExecutiveBoard.astro`), which sources the current board directly from `exec` in `src/config/components/team.js`. It never needs manual edits — a board change is fixed by updating `team.js`, not the newsletter. Never replace it with a static image, and never add `<ExecutiveBoard />` to a plain `.md` issue (component imports only work in `.mdx` — see the `add-newsletter` command for why). Older issues (001–007) are `.md` and still use the static image; leave them as-is unless asked to migrate one.
 
 ## Step 3 — Verify Before Publishing
 
 Before finalizing, confirm:
 
 - Every `##` heading has a matching TOC entry, and every TOC entry points to a heading that exists
-- The three boilerplate sections are present, verbatim, in order, at the end of the file, and listed in the TOC
+- The three boilerplate sections are present, in order, at the end of the file, and listed in the TOC (`Get Involved` and `Social Media` verbatim; `Executive Board` as the `import ExecutiveBoard ...` + `<ExecutiveBoard />` component usage for `.mdx` issues, or the static image for legacy `.md` issues)
 - Every internal `boston-wib.org` link has the correct `utm_campaign` for this issue
 
-## Step 4 — Run Prettier
+## Step 4 — Freeze the Executive Board Snapshot (`.mdx` issues only, final step before sending)
+
+Only do this once, right when the issue is truly ready to publish/send — not on every content edit. Until then, leave the bare `<ExecutiveBoard />` in place so it keeps tracking the live board while the issue is still a draft (the board can change during the drafting period). This gives each published issue a historical record of who was on the board at send time, per the user's request — see Local Norm 23 in `AGENTS.md`.
+
+1. Get the current board data:
+   ```bash
+   node -e "import('./src/config/components/team.js').then(({ exec }) => console.log(JSON.stringify(exec.members.map(m => ({ name: m.name, avatar: m.avatar, title: m.title })), null, 2)))"
+   ```
+2. Write the output to a new sibling file, `src/content/newsletter/issue-{NNN}-execboard.json`.
+3. In the issue's Executive Board section, change:
+   ```mdx
+   import ExecutiveBoard from '~/components/newsletter/ExecutiveBoard.astro';
+
+   <ExecutiveBoard />
+   ```
+   to:
+   ```mdx
+   import ExecutiveBoard from '~/components/newsletter/ExecutiveBoard.astro';
+   import execBoardSnapshot from './issue-{NNN}-execboard.json';
+
+   <ExecutiveBoard members={execBoardSnapshot} />
+   ```
+
+## Step 5 — Run Prettier
 
 ```bash
-npx prettier --write src/content/newsletter/issue-{NNN}.md
+npx prettier --write src/content/newsletter/issue-{NNN}.mdx src/content/newsletter/issue-{NNN}-execboard.json
 ```
 
-## Step 5 — Output Git Instructions
+(Use `.md` instead of `.mdx`, and skip the JSON file, if editing one of the legacy issues 001–007.)
+
+## Step 6 — Output Git Instructions
 
 Print the following commands for the user to run (do not run them automatically):
 
 ```
 git checkout -b add-newsletter-{issue}
-git add src/content/newsletter/issue-{NNN}.md
+git add src/content/newsletter/issue-{NNN}.mdx src/content/newsletter/issue-{NNN}-execboard.json
 # If you uploaded a hero image:
 git add public/photos/<your_image_name>
 git push -u origin add-newsletter-{issue}

@@ -231,14 +231,16 @@ All text uses **Inter Variable** font.
 
 Use responsive text sizing with Tailwind classes:
 
-| Element             | Mobile | Tablet | Desktop | Classes                            |
-| ------------------- | ------ | ------ | ------- | ---------------------------------- |
-| **H1 (Hero)**       | 30px   | 36px   | 48px    | `text-3xl sm:text-4xl md:text-5xl` |
-| **H2 (Section)**    | 30px   | 36px   | -       | `text-3xl md:text-4xl`             |
-| **H3 (Card Title)** | 20px   | 24px   | -       | `text-xl md:text-2xl`              |
-| **Body Large**      | 16px   | 18px   | 20px    | `text-base sm:text-lg md:text-xl`  |
-| **Body**            | 14px   | 16px   | -       | `text-sm md:text-base`             |
-| **Small**           | 12px   | 14px   | -       | `text-xs md:text-sm`               |
+| Element             | Mobile | Tablet | Desktop | Classes                                        |
+| ------------------- | ------ | ------ | ------- | ---------------------------------------------- |
+| **H1 (Hero)**       | 30px   | 36px   | 48px    | `text-3xl sm:text-4xl md:text-5xl`             |
+| **H2 (Section)**    | 30px   | 36px   | -       | `text-3xl md:text-4xl`                         |
+| **H3 (Card Title)** | 20px   | 24px   | -       | `text-xl md:text-2xl`                          |
+| **Body Large**      | 16px   | 18px   | 20px    | `text-base sm:text-lg md:text-xl`              |
+| **Body**            | 14px   | 16px   | -       | `text-sm md:text-base`                         |
+| **Small**           | 12px   | 14px   | -       | `text-xs md:text-sm`                           |
+| **Extra Small**     | 10px   | -      | -       | `text-xxs` (custom, see `tailwind.config.js`)  |
+| **Micro**           | 8px    | -      | -       | `text-xxxs` (custom, see `tailwind.config.js`) |
 
 ### Font Weights
 

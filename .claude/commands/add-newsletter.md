@@ -1,4 +1,6 @@
-Generate a new newsletter issue **outline** as a Markdown file in `src/content/newsletter/` — frontmatter, a table-of-contents skeleton, and the required boilerplate closing sections. This only scaffolds the file; use the `edit-newsletter` skill afterward to write the section content and prepare the issue for publication.
+Generate a new newsletter issue **outline** as an MDX file in `src/content/newsletter/` — frontmatter, a table-of-contents skeleton, and the required boilerplate closing sections. This only scaffolds the file; use the `edit-newsletter` skill afterward to write the section content and prepare the issue for publication.
+
+Newsletter issues are `.mdx` (not `.md`) because the Executive Board boilerplate section embeds a live Astro component (`~/components/newsletter/ExecutiveBoard.astro`) — the newsletter collection's loader in `src/content.config.ts` accepts both `**/*.{md,mdx}`, but only `.mdx` can import/render components. Older issues (001–007) remain plain `.md` and are unaffected.
 
 ## Step 1 — Check Existing Issue Numbers
 
@@ -29,8 +31,8 @@ Also ask what content sections this issue will cover (e.g. "Events on the Horizo
 
 ## Step 3 — Determine File Path
 
-File path: `src/content/newsletter/issue-{NNN}.md`  
-Zero-pad the issue number to 3 digits (e.g. issue 7 → `issue-007.md`).
+File path: `src/content/newsletter/issue-{NNN}.mdx`  
+Zero-pad the issue number to 3 digits (e.g. issue 8 → `issue-008.mdx`).
 
 ## Step 4 — Create the File
 
@@ -40,7 +42,7 @@ Write the frontmatter using only the fields that were provided (omit unsupplied 
 - One empty `## Section Name` heading + `<div id="anchor"></div>` per planned content section, left for the author to fill in during editing
 - The three required boilerplate sections below, copied verbatim (these must appear at the end of every newsletter, in this order):
 
-```markdown
+```mdx
 ## Get Involved
 
 <div id="get-involved"></div>
@@ -53,7 +55,9 @@ Boston Women in Bioinformatics runs entirely on volunteer energy, and we're alwa
 
 ## 🏛️ Executive Board
 
-![Headshots of the Boston Women in Bioinformatics executive team. Row 1: Lorena Pantano, Immediate Past President and Founder; Yevgenia Khodor Tolan, President; Lina Faller, Vice President; Diveena Becker, Treasurer. Row 2: Minita Shah, Secretary; Katie Hughes, Board Member; Francine Camacho, Board Member; Liyang Diao, Events Committee Co-chair. Row 3: Sakina Saif, Communications Committee Co-chair; Samantha Klasfeld, Communications Committee Co-chair; Aysheh Alrfooh, Career-Sponsorship Committee Co-chair; Peili Zhang, Career-Sponsorship Committee Co-chair. Row 4: Amulya Shastry, Enabling Advocacy Committee Co-chair; Viveka Patil, Enabling Advocacy Committee Co-chair; Saba Nafees, Podcast Committee Co-chair; Sharvari Narendra, Podcast Committee Co-chair.](/team/executiveBoard_2026.png)
+import ExecutiveBoard from '~/components/newsletter/ExecutiveBoard.astro';
+
+<ExecutiveBoard />
 
 ---
 
@@ -69,14 +73,14 @@ Boston Women in Bioinformatics runs entirely on volunteer energy, and we're alwa
 - **Location:** Boston Area, Massachusetts
 ```
 
-> **Note:** These sections are copied from the most recent issue. If the user mentions a board change, Slack invite link update, or other adjustment, apply it before writing the file — otherwise use the boilerplate exactly as above.
+> **Note:** The Get Involved and Social Media copy is taken from the most recent issue — if the user mentions a Slack invite link update or other adjustment, apply it before writing the file. The Executive Board section renders live from `src/config/components/team.js`'s `exec` export via the bare `<ExecutiveBoard />` component while the issue is still a draft, so it always reflects the current board during editing — do not replace it with a static image. Right before publication, the `edit-newsletter` skill freezes this into a per-issue JSON snapshot (`<ExecutiveBoard members={...} />`) so the published issue is a historical record of who was on the board at send time — don't do that snapshotting step here; it happens at finalization, not at outline creation.
 
 ## Step 5 — Run Prettier
 
 ```bash
-npx prettier --write src/content/newsletter/issue-{NNN}.md
+npx prettier --write src/content/newsletter/issue-{NNN}.mdx
 ```
 
 ## Step 6 — Hand Off
 
-Tell the user the outline is ready at `src/content/newsletter/issue-{NNN}.md`, and that the `edit-newsletter` skill should be used next to write the section content and finalize the issue for publication.
+Tell the user the outline is ready at `src/content/newsletter/issue-{NNN}.mdx`, and that the `edit-newsletter` skill should be used next to write the section content and finalize the issue for publication.
