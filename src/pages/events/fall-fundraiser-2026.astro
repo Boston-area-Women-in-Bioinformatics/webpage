@@ -4,7 +4,7 @@ import Layout from '~/layouts/PageLayout.astro';
 // import AddToCalendarButton from '~/components/events/AddToCalendarButton.tsx';
 // import speakers from '~/config/components/tenyearannSpeakers';
 // import TeamWidget from '~/components/widgets/Team.astro';
-// import SponsorSection from '~/components/widgets/Sponsors.astro';
+import SponsorSection from '~/components/widgets/Sponsors.astro';
 import { SITE } from '~/config/site/config.js';
 
 // import Image from '~/components/common/Image.astro';
@@ -99,6 +99,7 @@ const metadata = {
             alt="Women in Bioinformatics Fall Fundraiser Event logo"
           />
         </div>
+        <SponsorSection />
       </div>
     </div>
     <!-- Previous event description - uncomment and update when ready
@@ -235,9 +236,6 @@ const metadata = {
         </div>
       </div>
     </div>
-    -->
-    <!-- Sponsors 
-    <SponsorSection />
     -->
     <!-- <div class="py-4 relative items-center max-w-7xl mx-auto px-4 sm:px-6">
       <div>
