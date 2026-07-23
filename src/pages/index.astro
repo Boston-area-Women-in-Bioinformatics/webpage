@@ -1,11 +1,12 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { SITE } from '~/config/site/config.js';
+import { SLACK_INVITE_URL, LINKEDIN_URL, LUMA_URL } from '~/config/social';
 // import Hero2 from '~/components/widgets/Hero2.astro'; // restore with mentorship section below
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 //import eventImg from '~/../public/photos/2025/WIB_10Year_group_photo1.jpg'; // adjust path as needed
-//import AddToCalendarButton from '~/components/AddToCalendarButton.tsx';
+//import AddToCalendarButton from '~/components/events/AddToCalendarButton.tsx';
 import Button from '~/components/ui/Button.astro';
 import Card from '~/components/ui/Card.astro';
 import UpcomingEvents from '~/components/widgets/UpcomingEvents.astro';
@@ -17,6 +18,7 @@ import { getBlogPermalink } from '~/utils/permalinks';
 import Image from '~/components/common/Image.astro';
 import NewBadge from '~/components/ui/NewBadge.astro';
 import NewsletterSignup from '~/components/newsletter/NewsletterSignup.astro';
+import { Icon } from 'astro-icon/components';
 
 const latestNewsletter = APP_NEWSLETTER.isEnabled ? (await findLatestNewsletters({ count: 1 }))[0] : null;
 const allLatestPosts = APP_BLOG.isEnabled ? (await findLatestPosts({ count: 20 })) || [] : [];
@@ -69,12 +71,40 @@ const metadata = {
   <section class="py-16 md:py-20 bg-white dark:bg-dark">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h1 class="text-4xl sm:text-5xl md:text-6xl dark:text-gray-100 font-bold mb-4 leading-tight">
-        Boston Women in
-        <span class="text-accent dark:text-gray-100 highlight">Bioinformatics</span>
+        Boston Women in <span class="text-accent dark:text-gray-100 highlight">Bioinformatics</span>
       </h1>
       <p class="text-lg sm:text-xl text-gray-700 dark:text-gray-300">
         Advancing Women in Bioinformatics by Creating Networks of Support, Collaboration, and Empowerment.
       </p>
+      <div class="flex justify-center gap-6 mt-6">
+        <a
+          href={SLACK_INVITE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Register to join our Slack community"
+          class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors duration-200"
+        >
+          <Icon name="tabler:brand-slack" class="w-8 h-8" />
+        </a>
+        <a
+          href={LINKEDIN_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Connect with us on LinkedIn"
+          class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors duration-200"
+        >
+          <Icon name="tabler:brand-linkedin" class="w-8 h-8" />
+        </a>
+        <a
+          href={LUMA_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View our events on Luma"
+          class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors duration-200"
+        >
+          <Icon name="tabler:calendar-event" class="w-8 h-8" />
+        </a>
+      </div>
     </div>
   </section>
 
@@ -482,11 +512,11 @@ const metadata = {
         // },
         {
           title: 'Slack',
-          description: 'Join our Slack community',
+          description: 'Register to join our Slack community',
           icon: 'tabler:brand-slack',
           callToAction: {
             target: '_blank',
-            href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ',
+            href: SLACK_INVITE_URL,
           },
         },
         {
@@ -504,7 +534,7 @@ const metadata = {
           icon: 'tabler:brand-linkedin',
           callToAction: {
             target: '_blank',
-            href: 'https://www.linkedin.com/company/boston-women-in-bioinformatics',
+            href: LINKEDIN_URL,
           },
         },
         {
@@ -513,7 +543,7 @@ const metadata = {
           icon: 'tabler:calendar-event',
           callToAction: {
             target: '_blank',
-            href: 'https://luma.com/bwib',
+            href: LUMA_URL,
           },
         },
       ]}

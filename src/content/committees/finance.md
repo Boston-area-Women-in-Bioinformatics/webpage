@@ -29,4 +29,4 @@ BWIB funds its operations through ticketed events, corporate sponsorships, and i
 Continued donor support allows us to expand our programming and reach more members of our community. Your contribution directly helps sustain and grow BWIB's impact.
 
 - **Donate**: Consider making a contribution [here](https://givebutter.com/BWIBdonate)
-- **Become a Sponsor**: If your company would like to sponsor future events, reach out to us at [communications@boston-wib.org](mailto:communications@boston-wib.org)
+- **Become a Sponsor**: If your company would like to sponsor future events, reach out to us at [sponsorship@boston-wib.org](mailto:sponsorship@boston-wib.org)

@@ -29,6 +29,11 @@ export default {
         heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
       },
 
+      fontSize: {
+        xxs: ['0.625rem', { lineHeight: '0.75rem' }], // 10px, smaller than Tailwind's default text-xs (0.75rem/12px)
+        xxxs: ['0.5rem', { lineHeight: '0.625rem' }], // 8px, smaller than xxs
+      },
+
       animation: {
         fade: 'fadeInUp 1s both',
       },

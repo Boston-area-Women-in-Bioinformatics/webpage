@@ -1,6 +1,11 @@
+---
+name: update-fundraiser
+description: Set up or continue building the annual BWIB fundraiser page for a new year — a new .astro page under src/pages/events/, a speakers config file, and a navigation update. Use this whenever the user wants to create next year's fundraiser page, or wants to add details (date, sponsors, speakers, register link) to a fundraiser page that's already in progress. This is an ongoing, multi-session task: some details (speakers, date, register link) often aren't known yet and get filled in over several conversations as they're confirmed — re-trigger this skill each time the user has new fundraiser details to add.
+---
+
 Set up the annual BWIB fundraiser page for a new year. This creates a new `.astro` page under `src/pages/events/`, creates a speakers config file, and updates the navigation link.
 
-The fundraiser happens once a year but the page name and theme change each year (e.g. `fall-fundraiser-2026.astro`, `tenyearanniversary.astro`). Work through the sections below in order — some details won't be known yet, and the page has commented-out sections that get uncommented as details are confirmed.
+The fundraiser happens once a year but the page name and theme change each year (e.g. `fall-fundraiser-2026.astro`, `tenyearanniversary.astro`). Work through the sections below in order — some details won't be known yet, and the page has commented-out sections that get uncommented as details are confirmed. If the page already exists, treat this as a continuation: figure out what's already there and fill in only what's new.
 
 ## Step 1 — Gather Core Event Info
 
@@ -148,7 +153,7 @@ npx prettier --write src/navigation.ts
 npx prettier --write src/config/components/{pageSlug}Speakers.js
 ```
 
-## Step 10 — Output Git Instructionss
+## Step 10 — Output Git Instructions
 
 Print the following for the user to run:
 

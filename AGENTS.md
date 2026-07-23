@@ -8,10 +8,10 @@ Guidance for AI agents working in this repository.
 
 ### Tech Stack
 
-- **Framework**: Astro 5.x (static output) + TypeScript (strict)
-- **Styling**: Tailwind CSS 3 (class-based dark mode, custom theme vars)
+- **Framework**: Astro 7.x (static output) + TypeScript (strict)
+- **Styling**: Tailwind CSS 3 via a plain `postcss.config.cjs` (class-based dark mode, custom theme vars) — no `@astrojs/tailwind` integration
 - **Interactive components**: React 19 (`.tsx` files)
-- **Content**: Astro Content Collections with Zod schemas (MDX + Markdown)
+- **Content**: Astro Content Collections (Content Layer API — every collection uses an explicit `loader: glob(...)`) with Zod schemas (MDX + Markdown)
 - **Path alias**: `~` → `src/` (configured in `tsconfig.json` and `vite`)
 
 ### Top-Level `src/` Layout
@@ -25,11 +25,15 @@ src/
 ├── pages/           # File-based routes (Astro pages)
 ├── styles/          # Global CSS
 ├── utils/           # Pure TypeScript helpers
+├── vendor/          # Vendored src-level packages (e.g. seo/) — see dependency-upgrades skill
 ├── config.yaml      # Site-wide config (name, URL, blog/newsletter settings)
+├── content.config.ts # Content Collections schema/loader definitions
 ├── navigation.ts    # Header/footer nav structure — edit this to add/remove nav links
 ├── types.d.ts       # Shared TypeScript types (Post, Newsletter, Taxonomy, MetaData…)
 └── env.d.ts         # Astro env types
 ```
+
+Root-level `vendor/` (outside `src/`) holds build-time Astro integrations (e.g. `vendor/integration`); `src/vendor/` is for runtime components imported via the normal `~/*` alias (e.g. `~/vendor/seo`).
 
 ### Entry Points
 
@@ -46,16 +50,18 @@ src/
 | `src/pages/events/index.astro`                   | Events listing (past events section hidden when upcoming events exist)          |
 | `src/pages/events/archive/index.astro`           | Past events archive (client-side search, sort, date range, hide-partner filter) |
 
-### Content Collections (`src/content/config.ts`)
+### Content Collections (`src/content.config.ts`)
 
-| Collection   | Description        | Key Fields                                                                                                                                                                                         |
-| ------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `post`       | Blog posts         | `publishDate`, `updateDate`, `category`, `series`, `tags`, `authors`, `draft`, `hiddenFromFeed`, `hideHeroImage`, `imageAlt`, `imageDescription`, `imagePosition`, `url`, `listeningTime`          |
-| `newsletter` | Newsletter issues  | `publishDate`, `issue`, `title`, `authors`, `imageAlt`, `imageDescription`, `imagePosition`                                                                                                        |
-| `event`      | Events             | `title`, `dateTime`, `endDate`, `location`, `tags`, `image`, `imgpos`, `partnerEvent`, `partnerOrganization` — **files live in `src/content/meetups/`** (folder name differs from collection name) |
-| `committees` | Committee pages    | `title`, `chairs`, `members`                                                                                                                                                                       |
-| `resources`  | Resource directory | `category`, `tags`, `featured`                                                                                                                                                                     |
-| `series`     | Series metadata    | `title`, `description`, `image`, `imageAlt`, `imageFit`                                                                                                                                            |
+Every collection uses the Content Layer API (`loader: glob(...)`) — see the dependency-upgrades skill for the `id`/`render()` migration pattern this implies for `CollectionEntry` consumers.
+
+| Collection   | Description        | Key Fields                                                                                                                                                                                                                 |
+| ------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `post`       | Blog posts         | `publishDate`, `updateDate`, `category`, `series`, `tags`, `authors`, `draft`, `hiddenFromFeed`, `hideHeroImage`, `imageAlt`, `imageDescription`, `imagePosition`, `url`, `listeningTime`                                  |
+| `newsletter` | Newsletter issues  | `publishDate`, `issue`, `title`, `authors`, `imageAlt`, `imageDescription`, `imagePosition` — loader accepts `.md` **and** `.mdx` (issues 008+ are `.mdx`, to embed the `<ExecutiveBoard />` component; see Local Norm 23) |
+| `event`      | Events             | `title`, `dateTime`, `endDate`, `location`, `tags`, `image`, `imgpos`, `partnerEvent`, `partnerOrganization` — **files live in `src/content/meetups/`** (folder name differs from collection name)                         |
+| `committees` | Committee pages    | `title`, `chairs`, `members`                                                                                                                                                                                               |
+| `resources`  | Resource directory | `category`, `tags`, `featured`                                                                                                                                                                                             |
+| `series`     | Series metadata    | `title`, `description`, `image`, `imageAlt`, `imageFit`                                                                                                                                                                    |
 
 ### Key Utility Files (`src/utils/`)
 
@@ -72,20 +78,22 @@ src/
 
 ```
 src/components/
-├── blog/          # Blog-specific: SinglePost, RelatedPosts, ToBlogLink, Pagination, Tags
+├── blog/          # Blog-specific: SinglePost, RelatedPosts, ToBlogLink, Pagination, Tags, Quiz
+├── events/        # Event-specific: EventsTable, FormattedDate, EventAddress, Signup, AddToCalendarButton
 ├── ui/            # Primitives: Headline, PostListItem, PostList, PostGridItem, Button, Card, NewBadge…
-├── widgets/       # Page sections: Hero, Features, BlogLatestPosts, UpcomingEvents, Contact…
-├── common/        # Infra: Metadata, Analytics, ToggleTheme, Image, SocialShare
-├── newsletter/    # SinglePost.astro — renders newsletter issue HTML
-└── *.astro/.tsx   # Root-level: Banner, Logo, Signup, Sponsors, Quiz, EventsTable…
+├── widgets/       # Page sections: Hero, Features, BlogLatestPosts, UpcomingEvents, Contact, Sponsors…
+├── common/        # Infra: Metadata, Analytics, ToggleTheme, Image, SocialShare, Banner, Logo, Favicons, CustomStyles
+└── newsletter/    # SinglePost.astro (renders newsletter issue HTML), ExecutiveBoard.astro (live board grid)
 ```
 
-**Event-specific components:**
+Every component lives in a folder grouped by content-type (`blog/`, `events/`, `newsletter/`) or role (`ui/` primitives, `widgets/` page sections, `common/` site infra). See `src/components/README.md` for the full organization rationale; keep it in sync with this table (Local Norm 1).
+
+**Event-specific components (`src/components/events/`):**
 
 - `widgets/UpcomingEvents.astro` — shows the **single next upcoming event** in a hero layout; used on the homepage. Has two buttons: "Learn More" (`btn-primary`) and "Browse Events" (`btn-secondary`), wrapped in a flex container.
-- `EventsTable.astro` — shows **all upcoming events** as cards on the `/events` page; past events section only renders when there are no upcoming events
-- `FormattedDate.astro` — renders event dates in New York time. `isMultiDay` compares dates using `toNYDateString` (NY timezone) to avoid UTC boundary bugs. All three branches (multi-day, same-day-with-end, single) append the timezone abbreviation (EDT/EST).
-- `Signup.astro` — renders the registration button on event pages. Accepts `url`, `data_luma_event_id`, and `slug` props. Automatically appends `utm_source=boston-wib&utm_medium=event-page&utm_campaign=<slug>` to the registration URL — **do not manually add UTM params to the `url` field in event frontmatter**. The slug is passed from `[...slug].astro` as `meeting.data.slug ?? meeting.id`.
+- `events/EventsTable.astro` — shows **all upcoming events** as cards on the `/events` page; past events section only renders when there are no upcoming events
+- `events/FormattedDate.astro` — renders event dates in New York time. `isMultiDay` compares dates using `toNYDateString` (NY timezone) to avoid UTC boundary bugs. All three branches (multi-day, same-day-with-end, single) append the timezone abbreviation (EDT/EST).
+- `events/Signup.astro` — renders the registration button on event pages. Accepts `url`, `data_luma_event_id`, and `slug` props. Automatically appends `utm_source=boston-wib&utm_medium=event-page&utm_campaign=<slug>` to the registration URL — **do not manually add UTM params to the `url` field in event frontmatter**. The slug is passed from `[...slug].astro` as `meeting.data.slug ?? meeting.id`.
 
 ### Survey Results Page (`src/pages/resources/survey-results.astro`)
 
@@ -108,13 +116,24 @@ A Chart.js-based interactive dashboard showing aggregate survey results for bioi
 
 ### Configuration Files
 
-| File                 | Role                                                                                                         |
-| -------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `src/config.yaml`    | Blog/newsletter settings (posts per page, permalink patterns, paths)                                         |
-| `astro.config.ts`    | Integrations (Tailwind, MDX, Sitemap, Icons, React), image domains                                           |
-| `tailwind.config.js` | Custom colors (`primary`, `secondary`, `accent`, social colors), fonts (`font-heading`), `intersect` variant |
-| `.prettierrc.cjs`    | Print width 120, single quotes, `prettier-plugin-astro`                                                      |
-| `eslint.config.js`   | ESLint 9 flat config — Astro + TypeScript recommended                                                        |
+| File                   | Role                                                                                                                                                                                                  |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/config.yaml`      | Blog/newsletter settings (posts per page, permalink patterns, paths)                                                                                                                                  |
+| `src/config/social.ts` | Central social/community URL constants: `SLACK_INVITE_URL`, `LINKEDIN_URL`, `BLUESKY_URL`, `YOUTUBE_URL`, `GITHUB_URL`, `TWITTER_URL`, `LUMA_URL`, `GIVEBUTTER_URL` — update here when links change   |
+| `astro.config.ts`      | Integrations (Sitemap, MDX, Icons, React, Partytown, astro-compress), image domains — Tailwind's global stylesheet is precompiled by the `build:css` script (Local Norm 22), not processed by Vite    |
+| `postcss.config.cjs`   | Registers `tailwindcss` + `autoprefixer` as PostCSS plugins for component-scoped `<style>` blocks only (replaces the deprecated `@astrojs/tailwind` integration; see Local Norm 17 and Local Norm 22) |
+| `tailwind.config.js`   | Custom colors (`primary`, `secondary`, `accent`, social colors), fonts (`font-heading`), `intersect` variant                                                                                          |
+| `.prettierrc.cjs`      | Print width 120, single quotes, `prettier-plugin-astro`                                                                                                                                               |
+| `eslint.config.js`     | ESLint 9 flat config — Astro + TypeScript recommended                                                                                                                                                 |
+
+### Design Documentation
+
+| File               | Role                                                                                                                                    |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `COLOR_PALETTE.md` | Full color system reference — design tokens, Tailwind utility classes, usage examples, dark mode behavior                               |
+| `DESIGN_SYSTEM.md` | Layout patterns, spacing scale, component library, typography, buttons, forms — cross-references `COLOR_PALETTE.md` for color specifics |
+
+Both derive from the design tokens in `src/components/common/CustomStyles.astro` and the color/font values in `tailwind.config.js` — see Local Norm 21 to keep them in sync.
 
 ### CI/CD (`.github/workflows/`)
 
@@ -142,8 +161,9 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 
 ## Local Norms
 
-1. **Update `AGENTS.md` after every file added or updated** — after adding or modifying any component, utility, script, content collection field, naming convention, or local norm, update the relevant section of this file before closing the task. Do not batch updates — write them as the changes are made. If a new frontmatter field is added or changed, also update `README.md` (see norm 2a below).
-   1a. **Update `MANUAL.md` when frontmatter changes** — whenever a frontmatter field is added, removed, or its behavior changes for any content collection (`post`, `newsletter`, `event`, `series`, `committees`, `resources`), update the corresponding section in `MANUAL.md` to reflect the change. (`README.md` no longer contains field-level documentation — it lives in `MANUAL.md`.)
+1. **Update `AGENTS.md` after every file added or updated** — after adding or modifying any component, utility, script, content collection field, naming convention, or local norm, update the relevant section of this file before closing the task. Do not batch updates — write them as the changes are made. If a new frontmatter field is added or changed, also update `README.md` (see norm 1a below).
+   1a. **Update `README.md` when frontmatter changes** — whenever a frontmatter field is added, removed, or its behavior changes for any content collection (`post`, `newsletter`, `event`, `series`, `committees`, `resources`), update the corresponding section under "Manual Instructions" in `README.md` to reflect the change.
+   1b. **Keep `.claude/commands/` and `.claude/skills/` references in sync** — whenever a command or skill file is added, renamed, removed, or moved between `.claude/commands/` (scaffolding) and `.claude/skills/` (content-writing/auto-triggered), update this file's Contextual Skills table and `README.md`'s "Available Commands" table / "Skills that trigger automatically" list so both stay pointed at the right files.
 2. **No auto-commit** — never commit unless the user explicitly asks.
 3. **No force-push** — always create new commits rather than amending, especially after hook failures.
 4. **`prettier` enforced** — run `npm run fix` (eslint + prettier) before committing; CI will fail otherwise.
@@ -160,6 +180,13 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 14. **Team member title line breaks** — in `src/config/components/team.js`, use `&` as the separator between multiple roles for a single person. `Team.astro` splits on `&` and renders each part on its own line. Example: `'Treasurer & Finance Committee Chair & Events Committee Co-chair'`.
 15. **Newsletter issue validation** — `src/utils/newsletter.ts` throws a build error at load time if two newsletters share the same `issue` number. The `issue` field must be set manually in each newsletter's frontmatter.
 16. **Member Spotlight post titles** — use `'Member Spotlight: First\u00a0Last'` (Unicode non-breaking space U+00A0 between first and last name) so the name never wraps mid-name. `SinglePost.astro` detects the `Member Spotlight:` prefix and renders "Member Spotlight:" at smaller size (`!text-2xl`) on its own line above the name.
+17. **No `@astrojs/tailwind` or `@astrolib/*` packages** — they cap the installable `astro` version and block security patches. See the dependency-upgrades skill before adding any astro-ecosystem package back or running a major `astro` upgrade.
+18. **Content Collections use the Content Layer API** — every collection has an explicit `loader: glob(...)` in `src/content.config.ts`; entries use `id`/`render(entry)`, not `slug`/`.render()`. See the dependency-upgrades skill for the migration pattern.
+19. **`define:vars` inline scripts can't use a bare top-level `return`** — wrap the script body in an IIFE if early-return logic is needed (see `src/components/common/BasicScripts.astro`).
+20. **Path aliases must not collide** — any new alias added to `tsconfig.json` `paths` or `vite.resolve.alias` in `astro.config.ts` must not share a prefix with an existing alias (e.g. don't add `~vendor` alongside `~`). Reuse `~/*` for anything importable from `src/`, including `src/vendor/`.
+21. **Keep `COLOR_PALETTE.md` and `DESIGN_SYSTEM.md` in sync** — whenever a design token, brand/social color, spacing value, or reusable component pattern changes (in `src/components/common/CustomStyles.astro`, `tailwind.config.js`, or a shared UI component), update the corresponding section in both docs. `DESIGN_SYSTEM.md` links out to `COLOR_PALETTE.md` for color detail — don't duplicate color specifics into `DESIGN_SYSTEM.md`, keep that split.
+22. **Global Tailwind CSS is precompiled, not Vite-bundled** — as of the `astro@7`/`vite@8` pairing, Vite's build (Rolldown-based) silently drops every responsive (`sm:`/`md:`/`lg:`/`xl:`) `@media` rule when `src/assets/styles/tailwind.css` is bundled via a normal JS `import` (confirmed by direct PostCSS instrumentation: Tailwind/PostCSS itself generates the correct output; Vite's bundling step discards it). Workaround: the `build:css` npm script runs the `tailwindcss` CLI directly (`tailwindcss -i ./src/assets/styles/tailwind.css -o ./public/tailwind-built.css --minify`), and `Layout.astro` loads the result via a plain `<link rel="stylesheet" href="/tailwind-built.css" />` instead of importing the source file — this bypasses Vite's CSS pipeline entirely for the global stylesheet. `predev`/`prebuild` scripts run `build:css` automatically. `public/tailwind-built.css` is gitignored (generated). Component-scoped `<style>` blocks are unaffected (still Vite/PostCSS-processed normally) since they're small and don't hit this bug. If a future `astro`/`vite` upgrade fixes the underlying Rolldown CSS bug, this workaround can likely be reverted to a plain `import '~/assets/styles/tailwind.css';` in `Layout.astro` — verify with `grep -c "@media" dist/_astro/*.css` on a clean build first.
+23. **Newsletter Executive Board renders live, then freezes to a per-issue snapshot at publish time** — `src/components/newsletter/ExecutiveBoard.astro` renders a photo grid from an optional `members` prop, defaulting to the `exec` named export from `src/config/components/team.js` when the prop isn't passed. While an issue is a draft, use the bare `<ExecutiveBoard />` so it tracks board changes live with zero manual maintenance. Right before an issue is finalized for publication, `edit-newsletter`'s Step 4 snapshots the current board into a sibling JSON file (`issue-{NNN}-execboard.json`) and switches the issue to `<ExecutiveBoard members={execBoardSnapshot} />`, so the published issue is a historical record of who was on the board at send time. Newsletter issues that use this component must be `.mdx` (the newsletter collection's loader in `content.config.ts` accepts `**/*.{md,mdx}`, mirroring `post`) since plain `.md` can't embed components or import JSON as a component prop — see the `add-newsletter` command and `edit-newsletter` skill for the exact usage pattern. Issues 001–007 predate this and remain `.md` with the old static image; don't migrate them unless asked. Uses two custom Tailwind font sizes, `text-xxs` (10px) and `text-xxxs` (8px), defined in `tailwind.config.js`'s `theme.extend.fontSize` (documented in `DESIGN_SYSTEM.md`'s Text Sizes table per Local Norm 21).
 
 ---
 
@@ -167,43 +194,37 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 
 When the user's request involves any of the topics below, read the corresponding skill file before responding. Each file contains required field definitions, formatting conventions, and step-by-step instructions that must be followed exactly.
 
-| Topic             | Trigger keywords                                   | Skill file                              |
-| ----------------- | -------------------------------------------------- | --------------------------------------- |
-| Newsletter        | newsletter, newsletter issue, TOC                  | `.claude/commands/add-newsletter.md`    |
-| Blog post         | blog post, write a post                            | `.claude/commands/add-blog-post.md`     |
-| Blog series       | blog series, add series                            | `.claude/commands/add-blog-series.md`   |
-| Event             | event, meetup, add event                           | `.claude/commands/add-event.md`         |
-| Team member       | team member, add member, board member              | `.claude/commands/add-team-member.md`   |
-| Partner community | partner community, add community, partner org      | `.claude/commands/add-community.md`     |
-| Resource          | resource, tool, course, tutorial                   | `.claude/commands/add-resource.md`      |
-| Archive video     | recorded meeting, archive video, meeting recording | `.claude/commands/add-archive-video.md` |
-| Fundraiser        | fundraiser, fundraiser page                        | `.claude/commands/update-fundraiser.md` |
+Commands (`.claude/commands/*.md`) scaffold new files/frontmatter — invoke with `/name` or by topic. Skills (`.claude/skills/<name>/SKILL.md`) cover writing/revising body content and auto-trigger by description; use them once the file already exists.
+
+| Topic                        | Trigger keywords                                                          | Location                                       |
+| ---------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------- |
+| Newsletter (new issue)       | new newsletter, newsletter outline, newsletter issue number               | `.claude/commands/add-newsletter.md`           |
+| Newsletter (content/publish) | edit newsletter, newsletter content, TOC, UTM, newsletter buttons         | `.claude/skills/edit-newsletter/SKILL.md`      |
+| Blog post (new)              | blog post, write a post                                                   | `.claude/commands/add-blog-post.md`            |
+| Blog post (content/format)   | edit blog post, member spotlight, podcast embed, blog formatting          | `.claude/skills/edit-blog-post/SKILL.md`       |
+| Blog series                  | blog series, add series                                                   | `.claude/commands/add-blog-series.md`          |
+| Event (new)                  | event, meetup, add event                                                  | `.claude/commands/add-event.md`                |
+| Event (description/content)  | edit event, event description, event logistics                            | `.claude/skills/edit-event/SKILL.md`           |
+| Team member                  | team member, add member, board member                                     | `.claude/commands/add-team-member.md`          |
+| Partner community            | partner community, add community, partner org                             | `.claude/commands/add-community.md`            |
+| Resource                     | resource, tool, course, tutorial                                          | `.claude/commands/add-resource.md`             |
+| Archive video                | recorded meeting, archive video, meeting recording                        | `.claude/commands/add-archive-video.md`        |
+| Fundraiser                   | fundraiser, fundraiser page                                               | `.claude/skills/update-fundraiser/SKILL.md`    |
+| Dependency upgrades          | npm audit, npm install, upgrade astro, security vulnerabilities, ERESOLVE | `.claude/skills/upgrade-dependencies/SKILL.md` |
 
 ---
 
 ## Newsletter Conventions
 
-- Table of contents links use `#anchor-id`; each section gets `<div id="..."></div>` placed immediately after the `##` heading.
-- Event tables in newsletters use `<table class="not-prose" style="...">` to escape prose plugin margins. The `not-prose` class is required — inline `margin` styles alone are overridden by Tailwind Typography.
-- Register/Event Page buttons inside newsletter tables use `class="btn-primary"` on the `<a>` tag (works because `not-prose` is set on the parent table).
-- UTM tags on internal links: `?utm_source=newsletter&utm_medium=email&utm_campaign=<month>-<year>`. Apply to all `boston-wib.org` links; skip external links (givebutter, luma, LinkedIn, etc.).
-- `metadata.image` in blog post frontmatter does nothing — the Open Graph image is derived from the top-level `image` field, not `metadata.image`. Do not add `metadata.image` to posts.
+TOC anchors, event tables, buttons, and UTM tagging rules moved to the `edit-newsletter` skill (`.claude/skills/edit-newsletter/SKILL.md`). Remaining implementation details not covered there:
+
 - Newsletter `<SinglePost>` scoped styles: `[&_strong_a]:font-bold [&_a_strong]:font-bold` is applied to force bold weight on links wrapped in `**...**` since prose overrides it.
 
 ---
 
 ## Markdown Formatting Conventions (Blog Posts)
 
-Use the following conventions consistently in blog post `.md` files:
-
-| Element                                   | Format                               | Example                                                      |
-| ----------------------------------------- | ------------------------------------ | ------------------------------------------------------------ |
-| Variable/field names, IDs, numeric values | Inline code (backticks)              | `` `22420` ``, `` `1` ``, `` `-3` ``                         |
-| UI tab names, button labels, page names   | Bold                                 | `**Data** tab`, `**Settings** page`, `**Check for Updates**` |
-| Key domain terms being defined            | Bold (first use) or `###` subheading | `**Coding**` or `### Coding`                                 |
-| File paths, code identifiers              | Inline code (backticks)              | `` `src/utils/blog.ts` ``                                    |
-
-Inline code renders with a styled pill background (gray-100 light / slate-800 dark) via `.prose :not(pre) > code` in `tailwind.css`. The Tailwind Typography quote pseudo-elements are suppressed.
+Moved to the `edit-blog-post` skill (`.claude/skills/edit-blog-post/SKILL.md`) along with Member Spotlight and podcast-embed formatting rules — read that skill when writing or revising blog post body content.
 
 ---
 

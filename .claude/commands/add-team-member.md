@@ -8,7 +8,7 @@ Ask the user for the following. Use `$ARGUMENTS` as context if the user already 
 
 - `name` — full name (first and last)
 - `title` — role title(s). If the person holds multiple roles, separate them with `&` (e.g., `Treasurer & Finance Committee Chair`). This is how `Team.astro` splits roles onto separate lines.
-- `committee` — which committee they belong to. Options: `advocacy`, `bioinformatics-sisters`, `career-sponsorship`, `communications`, `events`, `finance`, `nominating-governance`, `podcast`. Ask if unclear.
+- `committee` — which committee they belong to. Options: `advocacy`, `bioinformatics-sisters`, `career-sponsorship`, `communications`, `events`, `finance`, `nominating-governance`, `podcast`, `sponsorship`. Ask if unclear.
 - `role` — are they a **chair/co-chair** (goes in `exec`) or a **committee member** (goes in `team`)?
 
 **Optional (omit if not provided):**

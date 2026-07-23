@@ -1,4 +1,13 @@
 import { getPermalink, getBlogPermalink, getNewsletterPermalink } from './utils/permalinks';
+import {
+  SLACK_INVITE_URL,
+  LINKEDIN_URL,
+  BLUESKY_URL,
+  YOUTUBE_URL,
+  GITHUB_URL,
+  TWITTER_URL,
+  GIVEBUTTER_URL,
+} from './config/social';
 export const headerData = {
   links: [
     {
@@ -105,29 +114,8 @@ export const headerData = {
     },
     {
       text: 'Donate',
-      href: 'https://givebutter.com/BWIBdonate',
+      href: GIVEBUTTER_URL,
     },
-    // {
-    //   text: 'Homes',
-    //   links: [
-    //     // {
-    //     //   text: 'SaaS',
-    //     //   href: getPermalink('/homes/saas'),
-    //     // },
-    //     {
-    //       text: 'Startup',
-    //       href: getPermalink('/homes/startup'),
-    //     },
-    //     // {
-    //     //   text: 'Mobile App',
-    //     //   href: getPermalink('/homes/mobile-app'),
-    //     // },
-    //     // {
-    //     //   text: 'Personal',
-    //     //   href: getPermalink('/homes/personal'),
-    //     // },
-    //   ],
-    // },
     //{
     //  text: 'Community',
     //  links: [
@@ -275,12 +263,17 @@ export const footerData = {
     {
       ariaLabel: 'Slack',
       icon: 'tabler:brand-slack',
-      href: 'https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ',
+      href: SLACK_INVITE_URL,
     },
     {
       ariaLabel: 'LinkedIn',
       icon: 'tabler:brand-linkedin',
-      href: 'https://www.linkedin.com/company/boston-women-in-bioinformatics',
+      href: LINKEDIN_URL,
+    },
+    {
+      ariaLabel: 'Bluesky',
+      icon: 'tabler:brand-bluesky',
+      href: BLUESKY_URL,
     },
 
     //{
@@ -291,17 +284,17 @@ export const footerData = {
     {
       ariaLabel: 'YouTube',
       icon: 'tabler:brand-youtube',
-      href: 'https://m.youtube.com/channel/UCzgmQ4uoTNq_MayiwAQ448Q',
+      href: YOUTUBE_URL,
     },
     {
       ariaLabel: 'Github',
       icon: 'tabler:brand-github',
-      href: 'https://github.com/Boston-area-Women-in-Bioinformatics',
+      href: GITHUB_URL,
     },
     {
       ariaLabel: 'X (formerly Twitter)',
       icon: 'tabler:brand-x',
-      href: 'https://x.com/BWIBioinfo',
+      href: TWITTER_URL,
     },
   ],
   footNote: `Boston Women in Bioinformatics is a nonprofit, tax-exempt charitable organization under Section 501(c)(3) of the Internal Revenue Code. Donations are tax-deductible as allowed by law. Logos were designed by Siobhan Keegan and <a href="https://www.monikamistry.com/creative-design/">Monika Mistry</a>.`,
