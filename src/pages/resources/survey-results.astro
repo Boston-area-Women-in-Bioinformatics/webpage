@@ -98,7 +98,7 @@ const metadata = {
     <div class="mx-auto max-w-2xl px-4 py-16 text-center">
       <div class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-2xl p-10 shadow-lg">
         <div
-          class="w-16 h-16 rounded-full bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-3xl mx-auto mb-6"
+          class="w-16 h-16 rounded-full bg-gray-100 dark:bg-slate-700 flex items-center justify-center text-3xl mx-auto mb-6"
         >
           🔒
         </div>
@@ -121,7 +121,7 @@ const metadata = {
           <p class="text-xs text-muted dark:text-slate-200 mb-3">Already submitted? Click below to unlock.</p>
           <button
             id="unlock-btn"
-            class="text-sm font-semibold text-primary hover:underline bg-transparent border-none cursor-pointer"
+            class="text-sm font-semibold text-primary dark:text-sky-300 hover:underline bg-transparent border-none cursor-pointer"
           >
             I've already submitted my data →
           </button>
@@ -742,8 +742,11 @@ const metadata = {
   const MULTI = [BLUE, PURPLE, SUCCESS, SECONDARY, GOLD, ERROR, INFO, INDIGO, PINK, TEAL];
 
   // Legend/tick text and gridlines need an explicit theme-appropriate color — Chart.js's own
-  // default is a mid-gray that doesn't have enough contrast in either theme.
-  Chart.defaults.color = isDarkMode ? '#e2e8f0' : '#334155';
+  // default is a mid-gray that doesn't have enough contrast in either theme. Axis ticks get
+  // `tickColor` set directly (not just via Chart.defaults.color) so contrast is guaranteed
+  // regardless of Chart.js's default-resolution behavior.
+  let tickColor = isDarkMode ? '#e2e8f0' : '#334155';
+  Chart.defaults.color = tickColor;
   const gridColor = isDarkMode ? '#334155' : '#f1f5f9';
   const allCharts = [];
 
@@ -839,7 +842,7 @@ const metadata = {
             // 'right' squeezes long labels into a narrow side column and truncates them —
             // 'bottom' gets the chart's full width to wrap across lines instead.
             position: 'bottom',
-            labels: { font: { size: chartFontSize() }, padding: 10, boxWidth: 14 },
+            labels: { color: tickColor, font: { size: chartFontSize() }, padding: 10, boxWidth: 14 },
           },
           tooltip: {
             callbacks: {
@@ -873,8 +876,12 @@ const metadata = {
           },
         },
         scales: {
-          x: { grid: { color: gridColor }, ticks: { font: { size: chartFontSize() - 1 } }, beginAtZero: true },
-          y: { grid: { display: false }, ticks: { font: { size: chartFontSize() } } },
+          x: {
+            grid: { color: gridColor },
+            ticks: { color: tickColor, font: { size: chartFontSize() - 1 } },
+            beginAtZero: true,
+          },
+          y: { grid: { display: false }, ticks: { color: tickColor, font: { size: chartFontSize() } } },
         },
       },
     });
@@ -911,8 +918,12 @@ const metadata = {
           },
         },
         scales: {
-          x: { grid: { display: false }, ticks: { font: { size: chartFontSize() - 1 } } },
-          y: { grid: { color: gridColor }, ticks: { font: { size: chartFontSize() - 1 } }, beginAtZero: true },
+          x: { grid: { display: false }, ticks: { color: tickColor, font: { size: chartFontSize() - 1 } } },
+          y: {
+            grid: { color: gridColor },
+            ticks: { color: tickColor, font: { size: chartFontSize() - 1 } },
+            beginAtZero: true,
+          },
         },
       },
     });
@@ -968,11 +979,21 @@ const metadata = {
   hbar('expertiseChart', DATA.expertise.labels, DATA.expertise.values, BLUE);
 
   // Chart dataset colors are baked in at creation, but legend/tick text color can be updated
-  // live so it stays legible if the user toggles theme without reloading the page.
+  // live so it stays legible if the user toggles theme without reloading the page. Legend and
+  // axis tick colors are set explicitly per-chart (not just via Chart.defaults.color), so each
+  // has to be reassigned individually here too.
   new MutationObserver(function () {
     const nowDark = document.documentElement.classList.contains('dark');
-    Chart.defaults.color = nowDark ? '#e2e8f0' : '#334155';
+    tickColor = nowDark ? '#e2e8f0' : '#334155';
+    Chart.defaults.color = tickColor;
     allCharts.forEach(function (chart) {
+      const legendLabels = chart.options.plugins && chart.options.plugins.legend && chart.options.plugins.legend.labels;
+      if (legendLabels) legendLabels.color = tickColor;
+      const scales = chart.options.scales;
+      if (scales) {
+        if (scales.x) scales.x.ticks.color = tickColor;
+        if (scales.y) scales.y.ticks.color = tickColor;
+      }
       chart.update();
     });
   }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
