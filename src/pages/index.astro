@@ -14,7 +14,7 @@ import { findLatestNewsletters } from '~/utils/newsletter';
 import { findLatestPosts } from '~/utils/blog';
 import { getCollection } from 'astro:content';
 import { APP_NEWSLETTER, APP_BLOG } from 'astrowind:config';
-import { getBlogPermalink } from '~/utils/permalinks';
+import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
 import Image from '~/components/common/Image.astro';
 import NewBadge from '~/components/ui/NewBadge.astro';
 import NewsletterSignup from '~/components/newsletter/NewsletterSignup.astro';
@@ -469,8 +469,8 @@ const metadata = {
     >
       <Fragment slot="subtitle">
         <p class="text-gray-700 dark:text-slate-300 mb-6">
-          Our data already shows it: <span class="text-primary dark:text-white font-semibold">21% of men</span> vs. <span
-            class="text-primary dark:text-white font-semibold">14% of women</span
+          Our data already shows it: <span class="text-accent dark:text-white font-semibold">21% of men</span> vs. <span
+            class="text-accent dark:text-white font-semibold">14% of women</span
           > report holding leadership positions.<br />
           Help us build the evidence base our community deserves.
         </p>
@@ -481,6 +481,14 @@ const metadata = {
         </ul>
       </Fragment>
     </CallToAction>
+    <p class="text-center mt-2">
+      <a
+        href={`${getPermalink('/resources/survey-results')}?unlocked=true`}
+        class="text-sm font-semibold text-primary dark:text-sky-300 hover:underline"
+      >
+        I've already submitted my data →
+      </a>
+    </p>
   </section>
 
   <!-- Let's Connect Section -->
