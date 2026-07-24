@@ -1,6 +1,9 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Button from '~/components/ui/Button.astro';
+import Image from '~/components/common/Image.astro';
+import Banner from '~/components/common/Banner.astro';
+import WIBLogo from '~/assets/images/WIB_Logo.jpg';
 import { SITE } from '~/config/site/config.js';
 
 const metadata = {
@@ -12,85 +15,69 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Page Header -->
-  <section class="py-12 md:py-16 text-center">
+  <section class="py-12 md:py-20 text-center">
     <div class="mx-auto max-w-6xl px-4 md:px-6">
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight text-default dark:text-slate-100">
         Bioinformaticians in the US
       </h1>
-      <p class="text-base sm:text-lg md:text-xl text-muted dark:text-slate-300 mb-2">
+      <p class="text-base sm:text-lg md:text-xl text-muted dark:text-slate-200 mb-2">
         A Survey of Workforce Demographics, Career Trajectories &amp; Compensation
       </p>
-      <p class="text-sm text-muted dark:text-slate-400">260 respondents &nbsp;·&nbsp; Fully anonymous</p>
+      <p class="text-sm text-muted dark:text-slate-200">260 respondents &nbsp;·&nbsp; Fully anonymous</p>
     </div>
   </section>
 
   <!-- Fact Banner -->
-  <div
-    class="bg-accent-warm text-white text-center py-3.5 px-6 text-sm font-semibold tracking-wide relative overflow-hidden"
-  >
-    <div
-      class="absolute inset-0"
-      style="background: repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0px,rgba(255,255,255,.04) 1px,transparent 1px,transparent 40px);"
-    >
-    </div>
-    <div class="relative flex items-center justify-center flex-wrap gap-4">
-      <span class="inline-flex items-center gap-2 whitespace-nowrap">
-        <span
-          class="w-2 h-2 rounded-full bg-yellow-300 flex-shrink-0"
-          style="box-shadow:0 0 0 0 rgba(253,224,71,.7);animation:pulse-dot 1.8s infinite;"></span>
-        <strong>Did you know?</strong> Bioinformatician salaries range from under $80K to over $200K. Where do you fit?
-      </span>
-      <span class="opacity-40 hidden sm:inline">|</span>
-      <a
-        href="https://forms.gle/8fRqmTBeJCcFaLFo8"
-        target="_blank"
-        rel="noopener"
-        class="inline-flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold py-1.5 px-4 rounded-full transition-transform hover:-translate-y-px whitespace-nowrap no-underline"
-      >
-        <svg viewBox="0 0 16 16" fill="currentColor" class="w-3 h-3 flex-shrink-0"
-          ><path
-            d="M8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v3.5H3.75a.75.75 0 000 1.5h3.5v3.5a.75.75 0 001.5 0v-3.5h3.5a.75.75 0 000-1.5h-3.5v-3.5z"
-          ></path></svg
-        >
-        Add Your Data
-      </a>
-    </div>
-  </div>
+  <Banner id="survey-fact-banner" linkHref="https://forms.gle/8fRqmTBeJCcFaLFo8" linkText="Add Your Data">
+    <strong>Did you know?</strong> Bioinformatician salaries range from under $80K to over $200K. Where do you fit?
+  </Banner>
 
   <!-- Hero Stats -->
-  <div class="bg-slate-800 dark:bg-slate-900 text-white py-12 px-6 text-center relative overflow-hidden">
+  <div class="py-12 px-6 text-center relative overflow-hidden">
     <div class="survey-hero-bg absolute inset-0 opacity-5"></div>
     <div class="relative mx-auto max-w-6xl">
-      <img
-        src="/photos/WIB_Logo.jpg"
+      <Image
+        src={WIBLogo}
         alt="Boston Women in Bioinformatics logo"
-        class="w-24 h-24 object-contain block mx-auto mb-4 rounded-lg"
+        width="192"
+        height="192"
+        class="w-48 h-48 object-contain block mx-auto mb-4 rounded-lg"
       />
       <span
-        class="inline-block bg-white/10 border border-white/20 text-blue-300 text-xs font-semibold tracking-widest uppercase py-1 px-3.5 rounded-full mb-5"
+        class="inline-block bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 text-primary dark:text-blue-200 text-xs font-semibold tracking-widest uppercase py-1 px-3.5 rounded-full mb-5"
       >
         Boston Women in Bioinformatics
       </span>
       <div class="flex justify-center flex-wrap gap-5 mb-8">
-        <div class="bg-white/[.07] border border-white/10 rounded-2xl py-4 px-6 min-w-[130px]">
-          <span class="block text-3xl font-extrabold text-accent-warm">260</span>
-          <span class="block text-xs text-slate-400 mt-0.5">Total Responses</span>
+        <div
+          class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl py-4 px-6 min-w-[130px]"
+        >
+          <span class="block text-3xl font-extrabold text-blue-600 dark:text-blue-400">260</span>
+          <span class="block text-xs text-muted dark:text-slate-200 mt-0.5">Total Responses</span>
         </div>
-        <div class="bg-white/[.07] border border-white/10 rounded-2xl py-4 px-6 min-w-[130px]">
-          <span class="block text-3xl font-extrabold text-accent-warm">80.4%</span>
-          <span class="block text-xs text-slate-400 mt-0.5">Identify as Female</span>
+        <div
+          class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl py-4 px-6 min-w-[130px]"
+        >
+          <span class="block text-3xl font-extrabold text-pink-600 dark:text-pink-400">80.4%</span>
+          <span class="block text-xs text-muted dark:text-slate-200 mt-0.5">Identify as Female</span>
         </div>
-        <div class="bg-white/[.07] border border-white/10 rounded-2xl py-4 px-6 min-w-[130px]">
-          <span class="block text-3xl font-extrabold text-accent-warm">69%</span>
-          <span class="block text-xs text-slate-400 mt-0.5">Currently Employed</span>
+        <div
+          class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl py-4 px-6 min-w-[130px]"
+        >
+          <span class="block text-3xl font-extrabold text-green-600 dark:text-green-400">69%</span>
+          <span class="block text-xs text-muted dark:text-slate-200 mt-0.5">Currently Employed</span>
         </div>
-        <div class="bg-white/[.07] border border-white/10 rounded-2xl py-4 px-6 min-w-[130px]">
-          <span class="block text-3xl font-extrabold text-accent-warm">29</span>
-          <span class="block text-xs text-slate-400 mt-0.5">States Represented</span>
+        <div
+          class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl py-4 px-6 min-w-[130px]"
+        >
+          <span class="block text-3xl font-extrabold text-purple-600 dark:text-purple-400">29</span>
+          <span class="block text-xs text-muted dark:text-slate-200 mt-0.5">States Represented</span>
         </div>
-        <div class="bg-white/[.07] border border-white/10 rounded-2xl py-4 px-6 min-w-[130px]">
-          <span class="block text-3xl font-extrabold text-accent-warm">44%</span>
-          <span class="block text-xs text-slate-400 mt-0.5">PhD or Higher</span>
+        <div
+          class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl py-4 px-6 min-w-[130px]"
+        >
+          <span class="block text-3xl font-extrabold text-teal-500 dark:text-teal-400">44%</span>
+          <span class="block text-xs text-muted dark:text-slate-200 mt-0.5">PhD or Higher</span>
         </div>
       </div>
       <Button
@@ -100,52 +87,41 @@ const metadata = {
         rel="noopener"
         text="Take the Survey and Add Your Voice"
         icon="tabler:edit"
-        class="bg-accent-warm hover:bg-orange-600 dark:hover:bg-lime-600 text-white border-accent-warm"
+        class="bg-accent hover:bg-gray-700 dark:bg-gray-200 dark:hover:bg-slate-100 text-white dark:text-slate-900 border-accent dark:border-white"
       />
-      <p class="mt-3 text-xs text-slate-400">Takes ~3 minutes &nbsp;·&nbsp; Fully anonymous</p>
+      <p class="mt-3 text-xs text-muted dark:text-slate-200">Takes ~3 minutes &nbsp;·&nbsp; Fully anonymous</p>
     </div>
   </div>
 
   <!-- Gate Overlay (shown when locked) -->
   <div id="survey-gate" class="hidden">
     <div class="mx-auto max-w-2xl px-4 py-16 text-center">
-      <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl p-10 shadow-lg">
+      <div class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-2xl p-10 shadow-lg">
         <div
           class="w-16 h-16 rounded-full bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-3xl mx-auto mb-6"
         >
           🔒
         </div>
         <h2 class="text-2xl font-bold text-default dark:text-slate-100 mb-3">Add Your Data to Unlock Results</h2>
-        <p class="text-muted dark:text-slate-300 mb-2">
+        <p class="text-muted dark:text-slate-200 mb-2">
           This dashboard is built from community contributions. To keep the data current and inclusive, we ask that you
           share your own information before viewing the full results.
         </p>
-        <p class="text-sm text-muted dark:text-slate-400 mb-8">Takes ~3 minutes &nbsp;·&nbsp; Fully anonymous</p>
-        <a
+        <p class="text-sm text-muted dark:text-slate-200 mb-8">Takes ~3 minutes &nbsp;·&nbsp; Fully anonymous</p>
+        <Button
+          variant="primary"
           href="https://forms.gle/8fRqmTBeJCcFaLFo8"
           target="_blank"
           rel="noopener"
-          class="inline-flex items-center gap-2 bg-accent-warm hover:bg-orange-600 text-white font-bold py-3.5 px-8 rounded-full transition-colors no-underline text-base"
-        >
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            ><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"></path><path
-              d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg
-          >
-          Take the Survey
-        </a>
+          text="Take the Survey"
+          icon="tabler:edit"
+          class="bg-accent hover:bg-gray-700 dark:bg-gray-200 dark:hover:bg-slate-100 text-white dark:text-slate-900 border-accent dark:border-white"
+        />
         <div class="mt-6 pt-6 border-t border-gray-100 dark:border-slate-700">
-          <p class="text-xs text-muted dark:text-slate-400 mb-3">Already submitted? Click below to unlock.</p>
+          <p class="text-xs text-muted dark:text-slate-200 mb-3">Already submitted? Click below to unlock.</p>
           <button
             id="unlock-btn"
-            class="text-sm font-semibold text-primary dark:text-blue-400 hover:underline bg-transparent border-none cursor-pointer"
+            class="text-sm font-semibold text-primary hover:underline bg-transparent border-none cursor-pointer"
           >
             I've already submitted my data →
           </button>
@@ -157,30 +133,30 @@ const metadata = {
   <!-- Dashboard (hidden until unlocked) -->
   <div id="survey-dashboard" class="hidden">
     <!-- Sticky Tab Nav -->
-    <nav class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-700 shadow-sm">
+    <nav class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-gray-300 dark:border-slate-700 shadow-sm">
       <div class="flex overflow-x-auto scrollbar-none max-w-6xl mx-auto px-4">
         <button
-          class="survey-tab-btn active flex-shrink-0 py-3.5 px-5 text-xs font-semibold text-muted dark:text-slate-400 border-b-[3px] border-transparent bg-transparent cursor-pointer transition-colors whitespace-nowrap"
+          class="survey-tab-btn active flex-shrink-0 py-3.5 px-5 text-sm lg:text-base xl:text-lg font-semibold text-muted dark:text-slate-200 border-b-[3px] border-transparent bg-transparent cursor-pointer transition-colors whitespace-nowrap"
           onclick="showSurveySection('s-demographics', this)">Demographics</button
         >
         <button
-          class="survey-tab-btn flex-shrink-0 py-3.5 px-5 text-xs font-semibold text-muted dark:text-slate-400 border-b-[3px] border-transparent bg-transparent cursor-pointer transition-colors whitespace-nowrap"
+          class="survey-tab-btn flex-shrink-0 py-3.5 px-5 text-sm lg:text-base xl:text-lg font-semibold text-muted dark:text-slate-200 border-b-[3px] border-transparent bg-transparent cursor-pointer transition-colors whitespace-nowrap"
           onclick="showSurveySection('s-education', this)">Education</button
         >
         <button
-          class="survey-tab-btn flex-shrink-0 py-3.5 px-5 text-xs font-semibold text-muted dark:text-slate-400 border-b-[3px] border-transparent bg-transparent cursor-pointer transition-colors whitespace-nowrap"
+          class="survey-tab-btn flex-shrink-0 py-3.5 px-5 text-sm lg:text-base xl:text-lg font-semibold text-muted dark:text-slate-200 border-b-[3px] border-transparent bg-transparent cursor-pointer transition-colors whitespace-nowrap"
           onclick="showSurveySection('s-career', this)">Career &amp; Compensation</button
         >
         <button
-          class="survey-tab-btn flex-shrink-0 py-3.5 px-5 text-xs font-semibold text-muted dark:text-slate-400 border-b-[3px] border-transparent bg-transparent cursor-pointer transition-colors whitespace-nowrap"
+          class="survey-tab-btn flex-shrink-0 py-3.5 px-5 text-sm lg:text-base xl:text-lg font-semibold text-muted dark:text-slate-200 border-b-[3px] border-transparent bg-transparent cursor-pointer transition-colors whitespace-nowrap"
           onclick="showSurveySection('s-companies', this)">Companies</button
         >
         <button
-          class="survey-tab-btn flex-shrink-0 py-3.5 px-5 text-xs font-semibold text-muted dark:text-slate-400 border-b-[3px] border-transparent bg-transparent cursor-pointer transition-colors whitespace-nowrap"
+          class="survey-tab-btn flex-shrink-0 py-3.5 px-5 text-sm lg:text-base xl:text-lg font-semibold text-muted dark:text-slate-200 border-b-[3px] border-transparent bg-transparent cursor-pointer transition-colors whitespace-nowrap"
           onclick="showSurveySection('s-expertise', this)">Expertise</button
         >
         <button
-          class="survey-tab-btn flex-shrink-0 py-3.5 px-5 text-xs font-semibold text-muted dark:text-slate-400 border-b-[3px] border-transparent bg-transparent cursor-pointer transition-colors whitespace-nowrap"
+          class="survey-tab-btn flex-shrink-0 py-3.5 px-5 text-sm lg:text-base xl:text-lg font-semibold text-muted dark:text-slate-200 border-b-[3px] border-transparent bg-transparent cursor-pointer transition-colors whitespace-nowrap"
           onclick="showSurveySection('s-community', this)">Community</button
         >
       </div>
@@ -192,69 +168,69 @@ const metadata = {
         <!-- DEMOGRAPHICS -->
         <section class="survey-section" id="s-demographics">
           <h2 class="text-2xl font-bold text-default dark:text-slate-100 mb-1">Demographics</h2>
-          <p class="text-sm text-muted dark:text-slate-400 mb-7">
+          <p class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-7">
             Gender identity and geographic distribution of survey respondents.
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-7">
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-5 flex items-center gap-4 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-5 flex items-center gap-4 shadow-sm"
             >
               <div
-                class="w-12 h-12 rounded-xl bg-pink-50 dark:bg-pink-900/20 flex items-center justify-center text-2xl flex-shrink-0"
+                class="w-12 h-12 rounded-xl bg-pink-50 dark:bg-slate-700 flex items-center justify-center text-2xl flex-shrink-0"
               >
                 👩
               </div>
               <div>
                 <div class="text-2xl font-extrabold text-default dark:text-slate-100 leading-none">209</div><div
-                  class="text-xs text-muted dark:text-slate-400 mt-1"
+                  class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mt-1"
                 >
                   Identify as Female
                 </div>
               </div>
             </div>
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-5 flex items-center gap-4 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-5 flex items-center gap-4 shadow-sm"
             >
               <div
-                class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-2xl flex-shrink-0"
+                class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-2xl flex-shrink-0"
               >
                 👨
               </div>
               <div>
                 <div class="text-2xl font-extrabold text-default dark:text-slate-100 leading-none">48</div><div
-                  class="text-xs text-muted dark:text-slate-400 mt-1"
+                  class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mt-1"
                 >
                   Identify as Male
                 </div>
               </div>
             </div>
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-5 flex items-center gap-4 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-5 flex items-center gap-4 shadow-sm"
             >
               <div
-                class="w-12 h-12 rounded-xl bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-2xl flex-shrink-0"
+                class="w-12 h-12 rounded-xl bg-green-50 dark:bg-slate-700 flex items-center justify-center text-2xl flex-shrink-0"
               >
                 📍
               </div>
               <div>
                 <div class="text-2xl font-extrabold text-default dark:text-slate-100 leading-none">29</div><div
-                  class="text-xs text-muted dark:text-slate-400 mt-1"
+                  class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mt-1"
                 >
                   States Represented
                 </div>
               </div>
             </div>
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-5 flex items-center gap-4 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-5 flex items-center gap-4 shadow-sm"
             >
               <div
-                class="w-12 h-12 rounded-xl bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-2xl flex-shrink-0"
+                class="w-12 h-12 rounded-xl bg-orange-50 dark:bg-slate-700 flex items-center justify-center text-2xl flex-shrink-0"
               >
                 🏙️
               </div>
               <div>
                 <div class="text-2xl font-extrabold text-default dark:text-slate-100 leading-none">65%</div><div
-                  class="text-xs text-muted dark:text-slate-400 mt-1"
+                  class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mt-1"
                 >
                   Based in Massachusetts
                 </div>
@@ -263,34 +239,40 @@ const metadata = {
           </div>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm"
             >
-              <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">Gender Identity</div>
-              <div class="text-xs text-muted dark:text-slate-400 mb-5">n = 260</div>
+              <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
+                Gender Identity
+              </div>
+              <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">n = 260</div>
               <div class="relative h-48"><canvas id="genderChart"></canvas></div>
             </div>
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm"
             >
-              <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">Geographic Distribution</div>
-              <div class="text-xs text-muted dark:text-slate-400 mb-5">Top states represented (n = 255)</div>
+              <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
+                Geographic Distribution
+              </div>
+              <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">
+                Top states represented (n = 255)
+              </div>
               <ul class="s-bar-list list-none flex flex-col gap-2.5" id="locationBars"></ul>
             </div>
           </div>
           <div class="flex flex-wrap gap-4 mt-6">
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>Massachusetts dominates:</strong> 165 of 255 respondents (65%) are based in MA, reflecting the survey's
               Boston roots.
             </div>
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>National reach:</strong> Respondents span 29 states including CA, NY, TX, NJ, CT, PA, GA, MD, and DE.
             </div>
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>Highly female:</strong> 80.4% of respondents identify as female, consistent with the community's focus
               on women in bioinformatics.
@@ -301,54 +283,64 @@ const metadata = {
         <!-- EDUCATION -->
         <section class="survey-section hidden" id="s-education">
           <h2 class="text-2xl font-bold text-default dark:text-slate-100 mb-1">Education</h2>
-          <p class="text-sm text-muted dark:text-slate-400 mb-7">
+          <p class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-7">
             Highest degree attained, field of study, graduation era, and degree origin.
           </p>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm"
             >
-              <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">Highest Level of Education</div>
-              <div class="text-xs text-muted dark:text-slate-400 mb-5">n = 260</div>
+              <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
+                Highest Level of Education
+              </div>
+              <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">n = 260</div>
               <div class="relative h-64"><canvas id="educationChart"></canvas></div>
             </div>
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm"
             >
-              <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">Degree Concentration</div>
-              <div class="text-xs text-muted dark:text-slate-400 mb-5">n = 260</div>
-              <div class="relative h-64"><canvas id="concentrationChart"></canvas></div>
+              <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
+                Degree Concentration
+              </div>
+              <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">n = 260</div>
+              <div class="relative h-80"><canvas id="concentrationChart"></canvas></div>
             </div>
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm"
             >
-              <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">Graduation Era</div>
-              <div class="text-xs text-muted dark:text-slate-400 mb-5">n = 257 — graduation era for highest degree</div>
+              <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
+                Graduation Era
+              </div>
+              <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">
+                n = 257 — graduation era for highest degree
+              </div>
               <div class="relative h-48"><canvas id="gradYearChart"></canvas></div>
             </div>
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm"
             >
-              <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">Degree Origin</div>
-              <div class="text-xs text-muted dark:text-slate-400 mb-5">n = 260</div>
+              <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
+                Degree Origin
+              </div>
+              <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">n = 260</div>
               <div class="relative h-48"><canvas id="degreeOriginChart"></canvas></div>
             </div>
           </div>
           <div class="flex flex-wrap gap-4 mt-6">
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>Masters &amp; PhD nearly even:</strong> 102 Masters vs 103 PhDs — the community spans both research
               and applied tracks.
             </div>
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>Recent graduates:</strong> 62% earned their highest degree between 2020–2025, reflecting a young and
               growing workforce.
             </div>
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>International talent:</strong> 20% received their degree outside the US, highlighting the global nature
               of bioinformatics talent.
@@ -359,69 +351,69 @@ const metadata = {
         <!-- CAREER -->
         <section class="survey-section hidden" id="s-career">
           <h2 class="text-2xl font-bold text-default dark:text-slate-100 mb-1">Career &amp; Compensation</h2>
-          <p class="text-sm text-muted dark:text-slate-400 mb-7">
+          <p class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-7">
             Employment status, work arrangement, experience levels, and salary distribution.
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-7">
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-5 flex items-center gap-4 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-5 flex items-center gap-4 shadow-sm"
             >
               <div
-                class="w-12 h-12 rounded-xl bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-2xl flex-shrink-0"
+                class="w-12 h-12 rounded-xl bg-green-50 dark:bg-slate-700 flex items-center justify-center text-2xl flex-shrink-0"
               >
                 ✅
               </div>
               <div>
                 <div class="text-2xl font-extrabold text-default dark:text-slate-100 leading-none">179</div><div
-                  class="text-xs text-muted dark:text-slate-400 mt-1"
+                  class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mt-1"
                 >
                   Currently Employed
                 </div>
               </div>
             </div>
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-5 flex items-center gap-4 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-5 flex items-center gap-4 shadow-sm"
             >
               <div
-                class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-900/20 flex items-center justify-center text-2xl flex-shrink-0"
+                class="w-12 h-12 rounded-xl bg-red-50 dark:bg-slate-700 flex items-center justify-center text-2xl flex-shrink-0"
               >
                 🔍
               </div>
               <div>
                 <div class="text-2xl font-extrabold text-default dark:text-slate-100 leading-none">81</div><div
-                  class="text-xs text-muted dark:text-slate-400 mt-1"
+                  class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mt-1"
                 >
                   Job Seeking
                 </div>
               </div>
             </div>
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-5 flex items-center gap-4 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-5 flex items-center gap-4 shadow-sm"
             >
               <div
-                class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-2xl flex-shrink-0"
+                class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-slate-700 flex items-center justify-center text-2xl flex-shrink-0"
               >
                 🏆
               </div>
               <div>
                 <div class="text-2xl font-extrabold text-default dark:text-slate-100 leading-none">24%</div><div
-                  class="text-xs text-muted dark:text-slate-400 mt-1"
+                  class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mt-1"
                 >
                   In Leadership Roles
                 </div>
               </div>
             </div>
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-5 flex items-center gap-4 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-5 flex items-center gap-4 shadow-sm"
             >
               <div
-                class="w-12 h-12 rounded-xl bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-2xl flex-shrink-0"
+                class="w-12 h-12 rounded-xl bg-orange-50 dark:bg-slate-700 flex items-center justify-center text-2xl flex-shrink-0"
               >
                 💼
               </div>
               <div>
                 <div class="text-2xl font-extrabold text-default dark:text-slate-100 leading-none">45%</div><div
-                  class="text-xs text-muted dark:text-slate-400 mt-1"
+                  class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mt-1"
                 >
                   Hybrid Work
                 </div>
@@ -430,65 +422,73 @@ const metadata = {
           </div>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm"
             >
-              <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">Employment Status</div>
-              <div class="text-xs text-muted dark:text-slate-400 mb-5">n = 260</div>
+              <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
+                Employment Status
+              </div>
+              <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">n = 260</div>
               <div class="relative h-48"><canvas id="employmentChart"></canvas></div>
             </div>
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm"
             >
-              <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">Work Arrangement (Employed)</div>
-              <div class="text-xs text-muted dark:text-slate-400 mb-5">n = 179</div>
+              <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
+                Work Arrangement (Employed)
+              </div>
+              <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">n = 179</div>
               <div class="relative h-48"><canvas id="jobTypeChart"></canvas></div>
             </div>
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm"
             >
-              <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">Years of Post-Degree Experience</div>
-              <div class="text-xs text-muted dark:text-slate-400 mb-5">n = 260</div>
+              <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
+                Years of Post-Degree Experience
+              </div>
+              <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">n = 260</div>
               <div class="relative h-64"><canvas id="experienceChart"></canvas></div>
             </div>
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm"
             >
-              <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">Total Annual Compensation (USD)</div>
-              <div class="text-xs text-muted dark:text-slate-400 mb-5">
+              <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
+                Total Annual Compensation (USD)
+              </div>
+              <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">
                 n = 168 — among currently employed respondents who shared salary
               </div>
               <div class="relative h-64"><canvas id="compensationChart"></canvas></div>
             </div>
           </div>
           <div
-            class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm mt-5"
+            class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm mt-5"
           >
-            <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">
+            <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
               Job Search Duration (Unemployed Respondents)
             </div>
-            <div class="text-xs text-muted dark:text-slate-400 mb-5">
+            <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">
               n = 80 — how long respondents have been searching
             </div>
             <div class="relative h-48"><canvas id="jobSearchChart"></canvas></div>
           </div>
           <div class="flex flex-wrap gap-4 mt-6">
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>Hybrid leads:</strong> 45% of employed respondents work hybrid, with only 23% fully remote.
             </div>
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>Early-career majority:</strong> 61% have 5 or fewer years of post-degree experience.
             </div>
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>Salary spread:</strong> The largest salary band is &lt;$80K (39%), but 23% earn above $180K.
             </div>
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>Active job seekers:</strong> 49% of unemployed respondents have been searching for 3 months or less.
             </div>
@@ -498,55 +498,65 @@ const metadata = {
         <!-- COMPANIES -->
         <section class="survey-section hidden" id="s-companies">
           <h2 class="text-2xl font-bold text-default dark:text-slate-100 mb-1">Companies &amp; Organizations</h2>
-          <p class="text-sm text-muted dark:text-slate-400 mb-7">
+          <p class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-7">
             Where respondents work — sector, size, and strategic involvement.
           </p>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm"
             >
-              <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">Employer Type</div>
-              <div class="text-xs text-muted dark:text-slate-400 mb-5">n = 178</div>
-              <div class="relative h-64"><canvas id="companyTypeChart"></canvas></div>
+              <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
+                Employer Type
+              </div>
+              <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">n = 178</div>
+              <div class="relative h-80"><canvas id="companyTypeChart"></canvas></div>
             </div>
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm"
             >
-              <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">Company Size (Employees)</div>
-              <div class="text-xs text-muted dark:text-slate-400 mb-5">n = 172</div>
+              <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
+                Company Size (Employees)
+              </div>
+              <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">n = 172</div>
               <div class="relative h-64"><canvas id="companySizeChart"></canvas></div>
             </div>
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm"
             >
-              <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">Leadership Role</div>
-              <div class="text-xs text-muted dark:text-slate-400 mb-5">n = 179 employed respondents</div>
+              <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
+                Leadership Role
+              </div>
+              <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">
+                n = 179 employed respondents
+              </div>
               <div class="relative h-48"><canvas id="leadershipChart"></canvas></div>
             </div>
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm"
             >
-              <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">
+              <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
                 Involved in Business / Strategic Planning
               </div>
-              <div class="text-xs text-muted dark:text-slate-400 mb-5">n = 43 — among those in leadership roles</div>
+              <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">
+                n = 43 — among those in leadership roles
+              </div>
               <div class="relative h-48"><canvas id="strategicChart"></canvas></div>
             </div>
           </div>
           <div class="flex flex-wrap gap-4 mt-6">
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>Academia &amp; Biotech dominate:</strong> Together they account for 68% of employed respondents.
             </div>
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>Polarized org sizes:</strong> Respondents skew toward both very small (&lt;100) and very large (&gt;10,000)
               organizations.
             </div>
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>Limited leadership pipeline:</strong> Only 24% hold leadership roles, and of those, 33% are not yet
               involved in strategic planning.
@@ -557,29 +567,31 @@ const metadata = {
         <!-- EXPERTISE -->
         <section class="survey-section hidden" id="s-expertise">
           <h2 class="text-2xl font-bold text-default dark:text-slate-100 mb-1">Professional Expertise</h2>
-          <p class="text-sm text-muted dark:text-slate-400 mb-7">
+          <p class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-7">
             Self-reported areas of expertise across all respondents (multi-select).
           </p>
-          <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm">
-            <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">Areas of Expertise</div>
-            <div class="text-xs text-muted dark:text-slate-400 mb-5">
+          <div class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm">
+            <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
+              Areas of Expertise
+            </div>
+            <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">
               n = 258 — respondents could select multiple areas
             </div>
             <div class="relative h-80"><canvas id="expertiseChart"></canvas></div>
           </div>
           <div class="flex flex-wrap gap-4 mt-6">
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>Computational Biology is universal:</strong> 78% of respondents list it as an area of expertise.
             </div>
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>NGS Analysis nearly as common:</strong> 73% work with Next Generation Sequencing.
             </div>
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>AI emerging:</strong> 18% already list AI/ML as expertise — a rapidly growing skill set in bioinformatics.
             </div>
@@ -589,48 +601,56 @@ const metadata = {
         <!-- COMMUNITY -->
         <section class="survey-section hidden" id="s-community">
           <h2 class="text-2xl font-bold text-default dark:text-slate-100 mb-1">Community &amp; Platforms</h2>
-          <p class="text-sm text-muted dark:text-slate-400 mb-7">
+          <p class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-7">
             Social media and communication platforms used by respondents — key for event outreach.
           </p>
-          <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm">
-            <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">Platforms Used (Multi-select)</div>
-            <div class="text-xs text-muted dark:text-slate-400 mb-5">
+          <div class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm">
+            <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
+              Platforms Used (Multi-select)
+            </div>
+            <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">
               n = 252 — where respondents can be reached for event announcements
             </div>
             <ul class="s-bar-list list-none flex flex-col gap-2.5" id="platformBars"></ul>
           </div>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm"
             >
-              <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">Platform Reach</div>
-              <div class="text-xs text-muted dark:text-slate-400 mb-5">Percentage of respondents on each platform</div>
+              <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
+                Platform Reach
+              </div>
+              <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">
+                Percentage of respondents on each platform
+              </div>
               <div class="relative h-64"><canvas id="platformChart"></canvas></div>
             </div>
             <div
-              class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-6 shadow-sm"
+              class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl p-6 shadow-sm"
             >
-              <div class="text-sm font-bold text-default dark:text-slate-100 mb-1">
+              <div class="text-sm lg:text-base xl:text-lg font-bold text-default dark:text-slate-100 mb-1">
                 Targeting Role Level (Job Seekers)
               </div>
-              <div class="text-xs text-muted dark:text-slate-400 mb-5">n = 77 — unemployed respondents</div>
+              <div class="text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 mb-5">
+                n = 77 — unemployed respondents
+              </div>
               <div class="relative h-64"><canvas id="targetRoleChart"></canvas></div>
             </div>
           </div>
           <div class="flex flex-wrap gap-4 mt-6">
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>LinkedIn is everything:</strong> 98% of respondents use LinkedIn — the primary channel for outreach
               and event promotion.
             </div>
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>Bluesky rising:</strong> 13% use Bluesky, making it the #2 platform in the scientific community.
             </div>
             <div
-              class="flex-1 basis-52 border-l-4 border-accent-warm bg-orange-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm text-slate-800 dark:text-slate-200"
+              class="flex-1 basis-52 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 text-sm lg:text-base xl:text-lg text-slate-800 dark:text-slate-200"
             >
               <strong>X is fading:</strong> Only 9% use X (formerly Twitter), reflecting widespread exodus within the scientific
               community.
@@ -640,7 +660,9 @@ const metadata = {
       </div>
     </div>
 
-    <div class="text-center text-xs text-muted dark:text-slate-500 py-8 border-t border-gray-200 dark:border-slate-800">
+    <div
+      class="text-center text-sm lg:text-base xl:text-lg text-muted dark:text-slate-200 py-8 border-t border-gray-200 dark:border-slate-800"
+    >
       Boston Women in Bioinformatics &mdash; Survey of Bioinformaticians in the US &nbsp;|&nbsp; 260 respondents
       &nbsp;|&nbsp; Dashboard built with Chart.js
     </div>
@@ -678,16 +700,52 @@ const metadata = {
     }
   })();
 
-  const WARM = '#e36d1d';
-  const BLUE = '#0161ef';
-  const PURPLE = '#6d28d9';
-  const AMBER = '#f59e0b';
-  const EMERALD = '#10b981';
-  const ORANGE = '#fb923c';
-  const SKY = '#0ea5e9';
-  const ROSE = '#ec4899';
-  const VIOLET = '#6366f1';
-  const MULTI = [WARM, BLUE, AMBER, EMERALD, PURPLE, ORANGE, SKY, ROSE, VIOLET, '#94a3b8'];
+  // Dashboard uses cool tones (blue/purple/teal) as the default palette, with warm accent-warm
+  // orange reserved for the one place it's semantically meaningful (job-seeking status). Light
+  // mode uses pastel tints of the same tokens; dark mode uses the fully-saturated brand colors,
+  // since pastels wash out against a dark background.
+  const isDarkMode = document.documentElement.classList.contains('dark');
+  // TEAL and INDIGO fill the "residual/other" chart slots that would otherwise default to a
+  // flat gray — every slot gets an actual pastel hue instead of an achromatic one.
+  const PALETTE = {
+    light: {
+      WARM: '#f3a973',
+      BLUE: '#93c5fd',
+      SECONDARY: '#7dd3fc',
+      PURPLE: '#c4b5fd',
+      PINK: '#f9a8d4',
+      GOLD: '#e8d48a',
+      TEAL: '#5eead4',
+      INDIGO: '#a5b4fc',
+      SUCCESS: '#86efac',
+      WARNING: '#fdba74',
+      ERROR: '#f5a3a3',
+      INFO: '#a5d8ff',
+    },
+    dark: {
+      WARM: '#e36d1d',
+      BLUE: '#0161ef',
+      SECONDARY: '#0154cf',
+      PURPLE: '#6d28d9',
+      PINK: '#db2777',
+      GOLD: '#d4af37',
+      TEAL: '#0d9488',
+      INDIGO: '#4f46e5',
+      SUCCESS: '#22c55e',
+      WARNING: '#fb923c',
+      ERROR: '#e74c3c',
+      INFO: '#3b82f6',
+    },
+  };
+  const C = isDarkMode ? PALETTE.dark : PALETTE.light;
+  const { WARM, BLUE, SECONDARY, PURPLE, PINK, GOLD, TEAL, INDIGO, SUCCESS, WARNING, ERROR, INFO } = C;
+  const MULTI = [BLUE, PURPLE, SUCCESS, SECONDARY, GOLD, ERROR, INFO, INDIGO, PINK, TEAL];
+
+  // Legend/tick text and gridlines need an explicit theme-appropriate color — Chart.js's own
+  // default is a mid-gray that doesn't have enough contrast in either theme.
+  Chart.defaults.color = isDarkMode ? '#e2e8f0' : '#334155';
+  const gridColor = isDarkMode ? '#334155' : '#f1f5f9';
+  const allCharts = [];
 
   const DATA = {
     gender: { labels: ['Female', 'Male', 'Other / Prefer not to say'], values: [209, 48, 3] },
@@ -698,12 +756,12 @@ const metadata = {
     education: { labels: ['Bachelors', 'Masters', 'PhD', 'MD/PhD', 'Other'], values: [40, 102, 103, 10, 5] },
     concentration: {
       labels: [
-        'Bioinformatics &\nComp. Biology',
+        'Bioinformatics & Computational Biology',
         'Biology',
-        'Computer\nScience',
+        'Computer Science',
         'Biophysics',
         'Biotechnology',
-        'Biostatistics /\nEpidemiology',
+        'Biostatistics / Epidemiology',
         'Other',
       ],
       values: [148, 57, 4, 3, 5, 5, 38],
@@ -753,11 +811,22 @@ const metadata = {
     return Math.round((v / t) * 100) + '%';
   }
 
+  // Legend and axis text get more room on larger screens, so scale it up to match rather than
+  // leaving it fixed at the same small size on every viewport.
+  // Matches the text-sm/lg:text-base/xl:text-lg scale used for the rest of the dashboard's
+  // small text, so canvas-rendered chart text is the same size as the surrounding HTML.
+  function chartFontSize() {
+    const w = window.innerWidth;
+    if (w >= 1280) return 18;
+    if (w >= 1024) return 16;
+    return 14;
+  }
+
   function donut(id, labels, values, colors) {
     const total = values.reduce(function (a, b) {
       return a + b;
     }, 0);
-    new Chart(document.getElementById(id), {
+    const chart = new Chart(document.getElementById(id), {
       type: 'doughnut',
       data: {
         labels: labels,
@@ -766,7 +835,12 @@ const metadata = {
       options: {
         cutout: '60%',
         plugins: {
-          legend: { position: 'right', labels: { font: { size: 12 }, padding: 10, boxWidth: 14 } },
+          legend: {
+            // 'right' squeezes long labels into a narrow side column and truncates them —
+            // 'bottom' gets the chart's full width to wrap across lines instead.
+            position: 'bottom',
+            labels: { font: { size: chartFontSize() }, padding: 10, boxWidth: 14 },
+          },
           tooltip: {
             callbacks: {
               label: function (ctx) {
@@ -777,13 +851,14 @@ const metadata = {
         },
       },
     });
+    allCharts.push(chart);
   }
   function hbar(id, labels, values, color) {
-    new Chart(document.getElementById(id), {
+    const chart = new Chart(document.getElementById(id), {
       type: 'bar',
       data: {
         labels: labels,
-        datasets: [{ data: values, backgroundColor: color || WARM, borderRadius: 6, borderSkipped: false }],
+        datasets: [{ data: values, backgroundColor: color || BLUE, borderRadius: 6, borderSkipped: false }],
       },
       options: {
         indexAxis: 'y',
@@ -798,15 +873,16 @@ const metadata = {
           },
         },
         scales: {
-          x: { grid: { color: '#f1f5f9' }, ticks: { font: { size: 11 } }, beginAtZero: true },
-          y: { grid: { display: false }, ticks: { font: { size: 12 } } },
+          x: { grid: { color: gridColor }, ticks: { font: { size: chartFontSize() - 1 } }, beginAtZero: true },
+          y: { grid: { display: false }, ticks: { font: { size: chartFontSize() } } },
         },
       },
     });
+    allCharts.push(chart);
   }
   function vbar(id, labels, values, colors) {
     const isArr = Array.isArray(colors);
-    new Chart(document.getElementById(id), {
+    const chart = new Chart(document.getElementById(id), {
       type: 'bar',
       data: {
         labels: labels,
@@ -816,7 +892,7 @@ const metadata = {
             backgroundColor: isArr
               ? colors
               : values.map(function () {
-                  return colors || WARM;
+                  return colors || BLUE;
                 }),
             borderRadius: 6,
             borderSkipped: false,
@@ -835,18 +911,19 @@ const metadata = {
           },
         },
         scales: {
-          x: { grid: { display: false }, ticks: { font: { size: 11 } } },
-          y: { grid: { color: '#f1f5f9' }, ticks: { font: { size: 11 } }, beginAtZero: true },
+          x: { grid: { display: false }, ticks: { font: { size: chartFontSize() - 1 } } },
+          y: { grid: { color: gridColor }, ticks: { font: { size: chartFontSize() - 1 } }, beginAtZero: true },
         },
       },
     });
+    allCharts.push(chart);
   }
   function barList(containerId, labels, values, color) {
     const max = Math.max.apply(null, values);
     const ul = document.getElementById(containerId);
     labels.forEach(function (lbl, i) {
       const li = document.createElement('li');
-      li.className = 's-bar-item';
+      li.className = 's-bar-item text-sm lg:text-base xl:text-lg';
       li.innerHTML =
         '<div class="s-bl-label"><span>' +
         lbl +
@@ -855,38 +932,76 @@ const metadata = {
         '</span></div><div class="s-bar-track"><div class="s-bar-fill" style="width:' +
         (values[i] / max) * 100 +
         '%;background:' +
-        (color || WARM) +
+        (color || BLUE) +
         '"></div></div>';
       ul.appendChild(li);
     });
   }
 
-  donut('genderChart', DATA.gender.labels, DATA.gender.values, [WARM, BLUE, PURPLE, '#94a3b8']);
-  barList('locationBars', DATA.location.labels, DATA.location.values, WARM);
+  donut('genderChart', DATA.gender.labels, DATA.gender.values, [PINK, BLUE, PURPLE, TEAL]);
+  barList('locationBars', DATA.location.labels, DATA.location.values, BLUE);
   vbar('educationChart', DATA.education.labels, DATA.education.values, MULTI);
   donut('concentrationChart', DATA.concentration.labels, DATA.concentration.values);
   vbar('gradYearChart', DATA.gradYear.labels, DATA.gradYear.values, ['#bfdbfe', '#93c5fd', '#60a5fa', BLUE]);
-  donut('degreeOriginChart', DATA.degreeOrigin.labels, DATA.degreeOrigin.values, [WARM, '#94a3b8']);
-  donut('employmentChart', DATA.employment.labels, DATA.employment.values, [EMERALD, WARM]);
-  donut('jobTypeChart', DATA.jobType.labels, DATA.jobType.values, [WARM, BLUE, SKY]);
-  vbar('experienceChart', DATA.experience.labels, DATA.experience.values, WARM);
+  donut('degreeOriginChart', DATA.degreeOrigin.labels, DATA.degreeOrigin.values, [BLUE, TEAL]);
+  // Warm accent-warm orange is reserved for "Job Seeking" — the one place on this page where
+  // drawing attention with the warm accent is semantically appropriate (see COLOR_PALETTE.md).
+  donut('employmentChart', DATA.employment.labels, DATA.employment.values, [SUCCESS, WARM]);
+  donut('jobTypeChart', DATA.jobType.labels, DATA.jobType.values, [PURPLE, BLUE, INFO]);
+  vbar('experienceChart', DATA.experience.labels, DATA.experience.values, BLUE);
   vbar('compensationChart', DATA.compensation.labels, DATA.compensation.values, [
     '#bfdbfe',
     '#93c5fd',
-    WARM,
-    ORANGE,
-    AMBER,
+    BLUE,
+    WARNING,
+    GOLD,
     '#1e3a5f',
   ]);
   vbar('jobSearchChart', DATA.jobSearch.labels, DATA.jobSearch.values, BLUE);
   donut('companyTypeChart', DATA.companyType.labels, DATA.companyType.values);
   vbar('companySizeChart', DATA.companySize.labels, DATA.companySize.values, ['#bfdbfe', '#60a5fa', BLUE, '#1e3a5f']);
-  donut('leadershipChart', DATA.leadership.labels, DATA.leadership.values, ['#94a3b8', WARM]);
-  donut('strategicChart', DATA.strategic.labels, DATA.strategic.values, [EMERALD, '#94a3b8']);
-  donut('targetRoleChart', DATA.targetRole.labels, DATA.targetRole.values, [WARM, BLUE, PURPLE]);
+  donut('leadershipChart', DATA.leadership.labels, DATA.leadership.values, [TEAL, GOLD]);
+  donut('strategicChart', DATA.strategic.labels, DATA.strategic.values, [SUCCESS, TEAL]);
+  donut('targetRoleChart', DATA.targetRole.labels, DATA.targetRole.values, [SECONDARY, BLUE, PURPLE]);
   barList('platformBars', DATA.platforms.labels, DATA.platforms.values, BLUE);
   hbar('platformChart', DATA.platforms.labels, DATA.platforms.values, BLUE);
-  hbar('expertiseChart', DATA.expertise.labels, DATA.expertise.values, WARM);
+  hbar('expertiseChart', DATA.expertise.labels, DATA.expertise.values, BLUE);
+
+  // Chart dataset colors are baked in at creation, but legend/tick text color can be updated
+  // live so it stays legible if the user toggles theme without reloading the page.
+  new MutationObserver(function () {
+    const nowDark = document.documentElement.classList.contains('dark');
+    Chart.defaults.color = nowDark ? '#e2e8f0' : '#334155';
+    allCharts.forEach(function (chart) {
+      chart.update();
+    });
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+  // Re-scale legend and axis text if the viewport crosses a breakpoint (resize or rotation),
+  // not just at initial load.
+  let resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      const size = chartFontSize();
+      allCharts.forEach(function (chart) {
+        const legendLabels =
+          chart.options.plugins && chart.options.plugins.legend && chart.options.plugins.legend.labels;
+        if (legendLabels) {
+          legendLabels.font.size = size;
+        }
+        const scales = chart.options.scales;
+        if (scales) {
+          // hbar puts category labels on the y-axis (full chartFontSize, matching donut legends);
+          // its numeric x-axis, and both axes on vbar, use one size smaller.
+          const isHbar = chart.options.indexAxis === 'y';
+          if (scales.x) scales.x.ticks.font.size = size - 1;
+          if (scales.y) scales.y.ticks.font.size = isHbar ? size : size - 1;
+        }
+        chart.update();
+      });
+    }, 150);
+  });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   function showSurveySection(id, btn) {
@@ -914,21 +1029,6 @@ const metadata = {
 <style is:global>
   .survey-hero-bg {
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-rule='evenodd'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/svg%3E");
-  }
-  @keyframes pulse-dot {
-    0% {
-      box-shadow: 0 0 0 0 rgba(253, 224, 71, 0.7);
-    }
-    70% {
-      box-shadow: 0 0 0 8px rgba(253, 224, 71, 0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 rgba(253, 224, 71, 0);
-    }
-  }
-  /* Bar list items created dynamically by JS */
-  .s-bar-item {
-    font-size: 13px;
   }
   .s-bl-label {
     display: flex;
