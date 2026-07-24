@@ -1,47 +1,77 @@
 ---
-// Banner component - Dismissable site-wide announcement banner
+// Banner component - Dismissable announcement banner. Pass a unique `id` when using more
+// than one on the same page so dismissal state doesn't collide between instances.
 import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  id?: string;
+  bgClass?: string;
+  textClass?: string;
+  showBlobs?: boolean;
+  linkHref?: string;
+  linkText?: string;
+  linkClass?: string;
+  arrowClass?: string;
+}
+
+const {
+  id = 'site-banner',
+  bgClass = 'bg-violet-100 dark:bg-slate-700',
+  textClass = 'text-accent dark:text-white',
+  showBlobs = true,
+  linkHref,
+  linkText,
+  linkClass = 'flex-none rounded-full bg-accent dark:bg-white px-3.5 py-1 text-sm font-semibold text-white dark:text-slate-900 shadow-xs hover:bg-gray-700 dark:hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900',
+  // Must match linkClass's text color pairing — the arrow sets its own color rather than
+  // relying on inheritance so it can't be dimmed by a differently-colored ancestor.
+  arrowClass = 'font-bold text-white dark:text-slate-900',
+} = Astro.props;
 ---
 
 <div
-  id="site-banner"
-  class="relative isolate flex items-center gap-x-6 overflow-hidden bg-violet-100 dark:bg-slate-700 px-6 py-2 sm:mb-16 sm:px-3.5 sm:before:flex-1"
+  id={id}
+  class={`relative isolate flex items-center gap-x-6 overflow-hidden ${bgClass} px-6 py-2 sm:mb-16 sm:px-3.5 sm:before:flex-1`}
   data-banner
+  data-banner-id={id}
 >
-  <div
-    class="absolute top-1/2 left-[max(-7rem,calc(50%-52rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl"
-    aria-hidden="true"
-  >
-    <div
-      class="aspect-577/310 w-144.25 bg-linear-to-r from-[#ff80b5] to-[#9089fc] opacity-30"
-      style="clip-path: polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)"
-    >
-    </div>
-  </div>
-  <div
-    class="absolute top-1/2 left-[max(45rem,calc(50%+8rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl"
-    aria-hidden="true"
-  >
-    <div
-      class="aspect-577/310 w-144.25 bg-linear-to-r from-[#ff80b5] to-[#9089fc] opacity-30"
-      style="clip-path: polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)"
-    >
-    </div>
-  </div>
+  {
+    showBlobs && (
+      <>
+        <div
+          class="absolute top-1/2 left-[max(-7rem,calc(50%-52rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl"
+          aria-hidden="true"
+        >
+          <div
+            class="aspect-577/310 w-144.25 bg-linear-to-r from-[#ff80b5] to-[#9089fc] opacity-30"
+            style="clip-path: polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)"
+          />
+        </div>
+        <div
+          class="absolute top-1/2 left-[max(45rem,calc(50%+8rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl"
+          aria-hidden="true"
+        >
+          <div
+            class="aspect-577/310 w-144.25 bg-linear-to-r from-[#ff80b5] to-[#9089fc] opacity-30"
+            style="clip-path: polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)"
+          />
+        </div>
+      </>
+    )
+  }
   <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-    <p class="text-lg text-accent dark:text-white">
-      <strong class="font-semibold">10th Year Anniversary</strong>
-      <svg viewBox="0 0 2 2" class="mx-2 inline size-0.5 fill-current" aria-hidden="true">
-        <circle cx="1" cy="1" r="1"></circle>
-      </svg>
-      Join us in celebrating on September 30th at Boynton Yards.
+    <p class={`text-lg ${textClass}`}>
+      <slot />
     </p>
-    <a
-      href="/events/tenyearanniversary"
-      class="flex-none rounded-full bg-accent dark:bg-white px-3.5 py-1 text-sm font-semibold text-white dark:text-slate-900 shadow-xs hover:bg-gray-700 dark:hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
-    >
-      More information <span aria-hidden="true">&rarr;</span>
-    </a>
+    {
+      linkHref && linkText && (
+        <a href={linkHref} class={linkClass}>
+          {linkText}{' '}
+          <span aria-hidden="true" class={arrowClass}>
+            &rarr;
+          </span>
+        </a>
+      )
+    }
   </div>
   <div class="flex flex-1 justify-end">
     <button type="button" class="-m-3 p-3 focus-visible:-outline-offset-4" data-banner-dismiss>
@@ -52,24 +82,24 @@ import { Icon } from 'astro-icon/components';
 </div>
 
 <script>
-  // Client-side script for banner dismiss functionality
+  // Client-side script for banner dismiss functionality. Handles every [data-banner] instance
+  // on the page independently, keyed by its data-banner-id, so multiple banners can coexist.
   function initBanner() {
-    const banner = document.querySelector('[data-banner]') as HTMLElement | null;
-    const dismissButton = document.querySelector('[data-banner-dismiss]');
+    document.querySelectorAll<HTMLElement>('[data-banner]').forEach((banner) => {
+      const bannerId = banner.dataset.bannerId || 'site-banner';
+      const storageKey = `bannerDismissed:${bannerId}`;
+      const dismissButton = banner.querySelector<HTMLElement>('[data-banner-dismiss]');
 
-    if (!banner || !dismissButton) return;
+      if (localStorage.getItem(storageKey) === 'true') {
+        banner.style.display = 'none';
+        return;
+      }
 
-    // Check if banner was previously dismissed
-    const dismissed = localStorage.getItem('bannerDismissed');
-    if (dismissed === 'true') {
-      banner.style.display = 'none';
-      return;
-    }
-
-    // Handle dismiss click
-    dismissButton.addEventListener('click', () => {
-      banner.style.display = 'none';
-      localStorage.setItem('bannerDismissed', 'true');
+      if (!dismissButton) return;
+      dismissButton.addEventListener('click', () => {
+        banner.style.display = 'none';
+        localStorage.setItem(storageKey, 'true');
+      });
     });
   }
 
