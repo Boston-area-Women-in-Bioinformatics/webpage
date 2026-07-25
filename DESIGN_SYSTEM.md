@@ -290,7 +290,7 @@ The Button component uses the **primary** color by default (`#0161EF` blue). For
 **Featured/Warm Accent Button**:
 
 ```astro
-<!-- Automatically coral in light mode, lime green in dark mode -->
+<!-- Automatically orange in light mode, lime green in dark mode -->
 <Button
   variant="primary"
   href="/register"
@@ -299,7 +299,7 @@ The Button component uses the **primary** color by default (`#0161EF` blue). For
 />
 ```
 
-**Note**: The `bg-accent-warm` class automatically switches between coral (`#FF6B6B`) in light mode and lime green (`#84cc16`) in dark mode. You only need to specify hover states for each mode.
+**Note**: The `bg-accent-warm` class automatically switches between orange (`#e36d1d`) in light mode and lime green (`#84cc16`) in dark mode. You only need to specify hover states for each mode.
 
 **When to use warm accent buttons**:
 

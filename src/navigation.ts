@@ -2,6 +2,7 @@ import { getPermalink, getBlogPermalink, getNewsletterPermalink } from './utils/
 import {
   SLACK_INVITE_URL,
   LINKEDIN_URL,
+  INSTAGRAM_URL,
   BLUESKY_URL,
   YOUTUBE_URL,
   GITHUB_URL,
@@ -269,6 +270,11 @@ export const footerData = {
       ariaLabel: 'LinkedIn',
       icon: 'tabler:brand-linkedin',
       href: LINKEDIN_URL,
+    },
+    {
+      ariaLabel: 'Instagram',
+      icon: 'tabler:brand-instagram',
+      href: INSTAGRAM_URL,
     },
     {
       ariaLabel: 'Bluesky',

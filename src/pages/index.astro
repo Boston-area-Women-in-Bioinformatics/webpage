@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { SITE } from '~/config/site/config.js';
-import { SLACK_INVITE_URL, LINKEDIN_URL, LUMA_URL } from '~/config/social';
+import { SLACK_INVITE_URL, LINKEDIN_URL, INSTAGRAM_URL, LUMA_URL } from '~/config/social';
 // import Hero2 from '~/components/widgets/Hero2.astro'; // restore with mentorship section below
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -96,6 +96,15 @@ const metadata = {
           <Icon name="tabler:brand-linkedin" class="w-8 h-8" />
         </a>
         <a
+          href={INSTAGRAM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Follow us on Instagram"
+          class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors duration-200"
+        >
+          <Icon name="tabler:brand-instagram" class="w-8 h-8" />
+        </a>
+        <a
           href={LUMA_URL}
           target="_blank"
           rel="noopener noreferrer"
@@ -188,14 +197,14 @@ const metadata = {
   }
 
   <!-- Upcoming Events Section -->
-  <section class="py-10 md:py-14 bg-white dark:bg-dark dark:text-gray-200">
+  <section class="py-10 md:py-14 bg-blue-50 dark:bg-blue-950 dark:text-gray-200">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <UpcomingEvents />
     </div>
   </section>
 
   <!-- From Our Committees Section (Newsletter + Podcast) -->
-  <section class="py-10 md:py-14 bg-gray-50 dark:bg-slate-800 dark:text-gray-200">
+  <section class="py-10 md:py-14 bg-white dark:bg-dark dark:text-gray-200">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8 text-center">Updates</h2>
       <div class="grid md:grid-cols-2 gap-8 md:items-stretch">
@@ -356,7 +365,7 @@ const metadata = {
   </section>
 
   <!-- Latest from Our Community Section (blogs + videos) -->
-  <section class="py-10 md:py-14 bg-white dark:bg-dark dark:text-gray-200">
+  <section class="py-10 md:py-14 bg-gray-50 dark:bg-slate-800 dark:text-gray-200">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-center">Latest from Our Community</h2>
       <p class="text-center text-gray-500 dark:text-gray-400 mb-8">
@@ -453,8 +462,48 @@ const metadata = {
     </div>
   </section>
 
+  <!-- Call for Speakers Section -->
+  <section class="py-10 md:py-14 bg-blue-50 dark:bg-blue-950 dark:text-gray-200">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div class="mx-auto max-w-xs w-full">
+          <img src="/photos/women_panel_ai.png" alt="An illustration for the panel of women" class="rounded-lg" />
+        </div>
+        <div>
+          <h2
+            class="text-3xl sm:text-4xl font-bold leading-tighter tracking-tighter font-heading text-gray-900 dark:text-slate-100 mb-3"
+          >
+            Call for Speakers
+          </h2>
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+            The BWIB <a href="/about/committees/advocacy" class="text-primary dark:text-blue-400 hover:underline"
+              >Advocacy Committee</a
+            > is looking for women in the bioinformatics field to join our "Return to Work" panel in October 2026 (Date TBD).
+          </p>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            We are seeking professionals to share their experiences after having taken a break in their careers, whether
+            it was voluntary or involuntary (also includes professionals who have taken maternity leaves). We are hoping
+            that your stories will help women going through the same journey right now and give them a direction on how
+            they can navigate their careers.
+          </p>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Application deadline: <strong>August 31, 2026 at 11:59 pm EST</strong>
+          </p>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScctmpIoZAUm_UgvOlpy2sovMamLJf7FsFjZxl9fLL9liFkUw/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary"
+          >
+            Apply to Be a Panelist
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Community Survey Section -->
-  <section class="py-16 md:py-20 bg-blue-50 dark:bg-blue-950 border-l-4 border-primary">
+  <section class="py-16 md:py-20 bg-white dark:bg-dark">
     <CallToAction
       title="Help Us Close the Gender Gap<br/><span class='text-2xl font-normal'>(and win a $25 gift card!)</span>"
       actions={[
