@@ -191,7 +191,7 @@ const exec = {
       avatar: '/team/samanthaklasfeld.jpeg',
       // Social links
       social: {
-        website: 'http://sklasfeld.github.io/',
+        website: 'https://sklasfeld.netlify.app/',
         // twitter: '#',
         // instagram: '#',
         // facebook: '#',
