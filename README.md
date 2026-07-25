@@ -59,6 +59,7 @@ A few workflows aren't typed commands — Claude recognizes them from what you a
 - Writing or finishing the content of a newsletter, blog post, or event description (once the file already exists)
 - Setting up the annual fundraiser page for a new year
 - Upgrading dependencies or resolving `npm audit`/install errors
+- Adding, removing, or updating a social media link (Slack, LinkedIn, Instagram, Bluesky, etc.) across the site and newsletters
 
 You can also pass details upfront:
 

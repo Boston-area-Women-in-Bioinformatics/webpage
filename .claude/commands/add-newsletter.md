@@ -68,6 +68,7 @@ import ExecutiveBoard from '~/components/newsletter/ExecutiveBoard.astro';
 - **Slack:** [boston-women-bioinfo](https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ)
 - **Email:** [communications@boston-wib.org](mailto:communications@boston-wib.org)
 - **LinkedIn:** [Boston-area Women in Bioinformatics](https://www.linkedin.com/company/boston-women-in-bioinformatics)
+- **Instagram:** [@boston_wib](https://www.instagram.com/boston_wib)
 - **Lu.ma:** [Boston Women in Bioinformatics](https://luma.com/bwib)
 - **Blue Sky** [Boston Women in Bioinformatics](https://bsky.app/profile/boston-wib.bsky.social)
 - **Location:** Boston Area, Massachusetts

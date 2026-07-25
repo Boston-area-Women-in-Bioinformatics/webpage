@@ -10,20 +10,20 @@ This document is for designing **outside the website** — flyers, social media 
 
 Use these for anything meant to carry BWIB's identity — headers, buttons, key callouts.
 
-| Color           | Hex       | RGB               | Use                                                                  |
-| --------------- | --------- | ------------------ | --------------------------------------------------------------------- |
-| **Primary**     | `#0161EF` | `rgb(1, 97, 239)`  | Main brand blue — logos, headers, primary CTAs                        |
-| **Secondary**   | `#0154CF` | `rgb(1, 84, 207)`  | Darker blue — secondary emphasis, supporting elements                 |
-| **Accent**      | `#6D28D9` | `rgb(109, 40, 217)`| Purple — highlights, special callouts                                 |
-| **Accent Warm** | `#E36D1D` | `rgb(227, 109, 29)`| Orange — urgent/featured CTAs only. Use sparingly (10–20% of designs) |
+| Color           | Hex       | RGB                 | Use                                                                   |
+| --------------- | --------- | ------------------- | --------------------------------------------------------------------- |
+| **Primary**     | `#0161EF` | `rgb(1, 97, 239)`   | Main brand blue — logos, headers, primary CTAs                        |
+| **Secondary**   | `#0154CF` | `rgb(1, 84, 207)`   | Darker blue — secondary emphasis, supporting elements                 |
+| **Accent**      | `#6D28D9` | `rgb(109, 40, 217)` | Purple — highlights, special callouts                                 |
+| **Accent Warm** | `#E36D1D` | `rgb(227, 109, 29)` | Orange — urgent/featured CTAs only. Use sparingly (10–20% of designs) |
 
 ## Neutrals
 
-| Color        | Hex       | Use                                              |
-| ------------ | --------- | ------------------------------------------------- |
-| White        | `#FFFFFF` | Primary background                                 |
-| Light Gray   | `#F9FAFB` | Soft background / card fill                        |
-| Near-Black   | `#0F172A` | Body text, headlines on light backgrounds          |
+| Color      | Hex       | Use                                       |
+| ---------- | --------- | ----------------------------------------- |
+| White      | `#FFFFFF` | Primary background                        |
+| Light Gray | `#F9FAFB` | Soft background / card fill               |
+| Near-Black | `#0F172A` | Body text, headlines on light backgrounds |
 
 ---
 
@@ -31,14 +31,14 @@ Use these for anything meant to carry BWIB's identity — headers, buttons, key 
 
 The website uses a second, wider set of colors when a design needs to tell several same-level items apart — category tags, a row of stats, chart legend entries. Each hue has a light tint for fills and a solid shade for text/icons/borders:
 
-| Hue    | Light Tint | Solid     | Use                                    |
-| ------ | ---------- | --------- | --------------------------------------- |
-| Blue   | `#EFF6FF`  | `#2563EB` | Category 1 / series 1                   |
-| Green  | `#F0FDF4`  | `#16A34A` | Category 2 / series 2                   |
-| Purple | `#FAF5FF`  | `#9333EA` | Category 3 / series 3                   |
-| Pink   | `#FDF2F8`  | `#DB2777` | Category 4 / series 4                   |
-| Orange | `#FFF7ED`  | `#EA580C` | Category 5 / series 5                   |
-| Teal   | `#F0FDFA`  | `#0D9488` | Category 6 / series 6                   |
+| Hue    | Light Tint | Solid     | Use                   |
+| ------ | ---------- | --------- | --------------------- |
+| Blue   | `#EFF6FF`  | `#2563EB` | Category 1 / series 1 |
+| Green  | `#F0FDF4`  | `#16A34A` | Category 2 / series 2 |
+| Purple | `#FAF5FF`  | `#9333EA` | Category 3 / series 3 |
+| Pink   | `#FDF2F8`  | `#DB2777` | Category 4 / series 4 |
+| Orange | `#FFF7ED`  | `#EA580C` | Category 5 / series 5 |
+| Teal   | `#F0FDFA`  | `#0D9488` | Category 6 / series 6 |
 
 Reach for this set when a piece has multiple parallel items that need distinct colors (e.g. a stats infographic, a multi-track event flyer). Don't use it for a single-color piece — use the Core Brand Colors above instead.
 
@@ -54,4 +54,4 @@ The website's warm-accent orange is explicitly designed as one note pulled from 
 
 - All values above are screen-calibrated (hex/RGB), meant for digital use (web, social, slides).
 - For anything physically printed (posters, business cards, banners), don't hand-convert RGB to CMYK — import the hex codes into your design software and let it convert using a proper color profile, then proof a physical sample before a full print run. Saturated blues and purples in particular often shift when printed.
-- `accent-warm` becomes lime green (`#84CC16`) specifically for the website's *dark mode* UI — that swap is a screen-contrast decision, not a general "dark version of the brand." Promotional material on a dark background should still default to the Core Brand Colors above unless you're deliberately recreating the website's dark mode look.
+- `accent-warm` becomes lime green (`#84CC16`) specifically for the website's _dark mode_ UI — that swap is a screen-contrast decision, not a general "dark version of the brand." Promotional material on a dark background should still default to the Core Brand Colors above unless you're deliberately recreating the website's dark mode look.

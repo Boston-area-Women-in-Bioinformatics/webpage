@@ -207,21 +207,22 @@ When the user's request involves any of the topics below, read the corresponding
 
 Commands (`.claude/commands/*.md`) scaffold new files/frontmatter — invoke with `/name` or by topic. Skills (`.claude/skills/<name>/SKILL.md`) cover writing/revising body content and auto-trigger by description; use them once the file already exists.
 
-| Topic                        | Trigger keywords                                                          | Location                                       |
-| ---------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------- |
-| Newsletter (new issue)       | new newsletter, newsletter outline, newsletter issue number               | `.claude/commands/add-newsletter.md`           |
-| Newsletter (content/publish) | edit newsletter, newsletter content, TOC, UTM, newsletter buttons         | `.claude/skills/edit-newsletter/SKILL.md`      |
-| Blog post (new)              | blog post, write a post                                                   | `.claude/commands/add-blog-post.md`            |
-| Blog post (content/format)   | edit blog post, member spotlight, podcast embed, blog formatting          | `.claude/skills/edit-blog-post/SKILL.md`       |
-| Blog series                  | blog series, add series                                                   | `.claude/commands/add-blog-series.md`          |
-| Event (new)                  | event, meetup, add event                                                  | `.claude/commands/add-event.md`                |
-| Event (description/content)  | edit event, event description, event logistics                            | `.claude/skills/edit-event/SKILL.md`           |
-| Team member                  | team member, add member, board member                                     | `.claude/commands/add-team-member.md`          |
-| Partner community            | partner community, add community, partner org                             | `.claude/commands/add-community.md`            |
-| Resource                     | resource, tool, course, tutorial                                          | `.claude/commands/add-resource.md`             |
-| Archive video                | recorded meeting, archive video, meeting recording                        | `.claude/commands/add-archive-video.md`        |
-| Fundraiser                   | fundraiser, fundraiser page                                               | `.claude/skills/update-fundraiser/SKILL.md`    |
-| Dependency upgrades          | npm audit, npm install, upgrade astro, security vulnerabilities, ERESOLVE | `.claude/skills/upgrade-dependencies/SKILL.md` |
+| Topic                        | Trigger keywords                                                                              | Location                                       |
+| ---------------------------- | --------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| Newsletter (new issue)       | new newsletter, newsletter outline, newsletter issue number                                   | `.claude/commands/add-newsletter.md`           |
+| Newsletter (content/publish) | edit newsletter, newsletter content, TOC, UTM, newsletter buttons                             | `.claude/skills/edit-newsletter/SKILL.md`      |
+| Blog post (new)              | blog post, write a post                                                                       | `.claude/commands/add-blog-post.md`            |
+| Blog post (content/format)   | edit blog post, member spotlight, podcast embed, blog formatting                              | `.claude/skills/edit-blog-post/SKILL.md`       |
+| Blog series                  | blog series, add series                                                                       | `.claude/commands/add-blog-series.md`          |
+| Event (new)                  | event, meetup, add event                                                                      | `.claude/commands/add-event.md`                |
+| Event (description/content)  | edit event, event description, event logistics                                                | `.claude/skills/edit-event/SKILL.md`           |
+| Team member                  | team member, add member, board member                                                         | `.claude/commands/add-team-member.md`          |
+| Partner community            | partner community, add community, partner org                                                 | `.claude/commands/add-community.md`            |
+| Resource                     | resource, tool, course, tutorial                                                              | `.claude/commands/add-resource.md`             |
+| Archive video                | recorded meeting, archive video, meeting recording                                            | `.claude/commands/add-archive-video.md`        |
+| Fundraiser                   | fundraiser, fundraiser page                                                                   | `.claude/skills/update-fundraiser/SKILL.md`    |
+| Dependency upgrades          | npm audit, npm install, upgrade astro, security vulnerabilities, ERESOLVE                     | `.claude/skills/upgrade-dependencies/SKILL.md` |
+| Social links                 | social link, social media, Instagram, add social, remove social, footer icon, social platform | `.claude/skills/manage-social-links/SKILL.md`  |
 
 ---
 
