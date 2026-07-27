@@ -230,9 +230,9 @@ const exec = {
         //github: '#',
       },
     },
-    // Emily Lachtara
+    // Emily Brodd
     {
-      name: 'Emily Lachtara',
+      name: 'Emily Brodd',
       nameLink: 'https://www.linkedin.com/in/emily-lachtara/',
       title: 'Sponsorship Committee Co-chair',
       avatar: '/team/emily_lachtara.jpeg',
