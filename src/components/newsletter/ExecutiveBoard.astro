@@ -11,7 +11,7 @@ export interface Props {
 const { members = exec.members } = Astro.props;
 ---
 
-<div class="not-prose grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-x-2 gap-y-4 sm:gap-x-3 sm:gap-y-5">
+<div class="not-prose grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-x-1 gap-y-4 sm:gap-x-3 sm:gap-y-5">
   {
     members.map((member) => (
       <div class="text-center text-gray-500 dark:text-slate-400">
@@ -29,7 +29,7 @@ const { members = exec.members } = Astro.props;
         <p class="font-semibold text-base sm:text-lg text-gray-900 dark:text-white">{member.name}</p>
         {member.title && (
           <p
-            class="text-sm sm:text-base"
+            class="text-xs sm:text-sm"
             set:html={member.title
               .split(' & ')
               .map((line) => line.replace(/\bCo-chair\b/g, '<span style="white-space:nowrap">Co-chair</span>'))
