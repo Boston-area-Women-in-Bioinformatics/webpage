@@ -9,7 +9,9 @@ Write or revise the body content of an existing newsletter issue in `src/content
 
 Apply these when writing or revising section content:
 
-- **Table of contents**: links use `#anchor-id`; each `##` section gets `<div id="..."></div>` immediately after the heading. Every `##` heading must have a corresponding TOC entry.
+- **After adding any Tailwind class not already used elsewhere in the codebase** (arbitrary values like `bg-[#6d28d9]` or `scroll-mt-[80px]` are the common case), run `npm run build:css` before checking your work in the browser. This site precompiles Tailwind into a static `public/tailwind-built.css` rather than compiling it live (Local Norm 22 in `AGENTS.md`), so a first-time class has no visual effect — not even after a hard refresh — until that rebuild runs.
+
+- **Table of contents**: links use `#anchor-id`; each `##` section gets `<div id="..." class="scroll-mt-[80px]"></div>` immediately **before** the heading (not after). Anchor scrolling puts the anchor element at the top of the viewport — if the div comes after the heading, clicking the TOC link scrolls the heading itself out of view above the fold. The `scroll-mt-[80px]` class is required too: the site's sticky header covers the top of the viewport, and headings elsewhere get scroll offset via `prose-headings:scroll-mt-[80px]` on the prose wrapper, but that Tailwind Typography modifier only targets actual heading elements — since the anchor is a plain `<div>`, not a heading, it needs the same offset applied directly or the target lands underneath the header. Every `##` heading must have a corresponding TOC entry.
 - **UTM tags**: internal `boston-wib.org` links get `?utm_source=newsletter&utm_medium=email&utm_campaign=<campaign>`. Ask the developer for the `utm_campaign` value before writing links. Naming conventions:
   - Lowercase, hyphens only (no spaces or underscores)
   - Pick a name that describes the initiative and keep it consistent across every channel so GA can aggregate across sources
@@ -32,12 +34,12 @@ Apply these when writing or revising section content:
   >
   ```
 
-- **Podcast/Audio "Listen" buttons** — do NOT use `btn-primary` (blue). Use inline styles with the site's accent purple (`#6d28d9`) to distinguish podcast CTAs from event registration buttons. Include the 🎙️ emoji.
+- **Podcast/Audio "Listen" buttons** — do NOT use `btn-primary` (blue). Use Tailwind classes with the site's accent purple (`#6d28d9`, via arbitrary value `bg-[#6d28d9]`) to distinguish podcast CTAs from event registration buttons. Include the 🎙️ emoji. Use `class`, not an inline `style` string — in `.mdx` files this tag compiles through the JSX pipeline, where a `style` attribute is conventionally an object rather than a CSS string, and it can silently fail to apply (or apply inconsistently) even though the identical markup works fine in a plain `.md` issue. Include `not-prose` in the class list: unlike Register buttons (wrapped in a `not-prose` table), this button isn't wrapped in one, so without it Tailwind Typography's `prose-a:text-primary` can still win the cascade over `text-white` depending on rule order, and the button reads as a plain blue link instead of a white-on-purple pill. Also include `leading-none`, or the button inherits `prose`'s line-height and renders much taller than its padding suggests. After adding this class to a content file, run `npm run build:css` — the site precompiles Tailwind CSS into a static file rather than compiling it live (Local Norm 22 in `AGENTS.md`), so a class used for the first time anywhere in the codebase has no effect until that rebuild runs; a plain browser refresh isn't enough.
 
   ```html
   <a
     href="https://boston-wib.org/blog/coffeewithcompbio/s2-eN?utm_source=newsletter&utm_medium=email&utm_campaign=a-coffee-with-compbio"
-    style="display:inline-block; padding:0.75rem 1.5rem; border-radius:9999px; background-color:#6d28d9; color:#ffffff; font-weight:600; text-decoration:none;"
+    class="not-prose inline-block rounded-full bg-[#6d28d9] px-6 py-3 font-semibold leading-none text-white no-underline"
     >🎙️ Listen on our Site</a
   >
   ```

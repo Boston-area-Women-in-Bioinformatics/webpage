@@ -39,19 +39,19 @@ Zero-pad the issue number to 3 digits (e.g. issue 8 → `issue-008.mdx`).
 Write the frontmatter using only the fields that were provided (omit unsupplied optional fields; no placeholder comments). Then write the body skeleton:
 
 - A table of contents: one `- [Section](#anchor)` entry per planned content section, followed by entries for the three required boilerplate sections (`Get Involved`, `Executive Board`, `Social Media`)
-- One empty `## Section Name` heading + `<div id="anchor"></div>` per planned content section, left for the author to fill in during editing
+- One `<div id="anchor" class="scroll-mt-[80px]"></div>` + empty `## Section Name` heading (anchor div comes *before* the heading, not after — anchor scrolling puts the div at the top of the viewport, so a div placed after the heading scrolls the heading itself out of view) per planned content section, left for the author to fill in during editing. The `scroll-mt-[80px]` offsets for the site's sticky header, which otherwise covers the anchor target — headings elsewhere get this via `prose-headings:scroll-mt-[80px]` on the prose wrapper, but that only targets real heading elements, not a plain `<div>`.
 - The three required boilerplate sections below, copied verbatim (these must appear at the end of every newsletter, in this order):
 
 ```mdx
-## Get Involved
+<div id="get-involved" class="scroll-mt-[80px]"></div>
 
-<div id="get-involved"></div>
+## Get Involved
 
 Boston Women in Bioinformatics runs entirely on volunteer energy, and we're always looking for passionate people to join us. From organizing events and producing the podcast to managing finances and advocating for equity in the field, there's a place for every skill set. Learn more at [boston-wib.org/about/committees](https://boston-wib.org/about/committees?utm_source=newsletter&utm_medium=email&utm_campaign=resource-page)
 
 ---
 
-<div id="exec-board"></div>
+<div id="exec-board" class="scroll-mt-[80px]"></div>
 
 ## 🏛️ Executive Board
 
@@ -61,9 +61,9 @@ import ExecutiveBoard from '~/components/newsletter/ExecutiveBoard.astro';
 
 ---
 
-## Social Media
+<div id="social-media" class="scroll-mt-[80px]"></div>
 
-<div id="social-media"></div>
+## Social Media
 
 - **Slack:** [boston-women-bioinfo](https://join.slack.com/t/boston-women-bioinfo/shared_invite/zt-2y78bc7n7-W4TE7kuz8HGz4pzShTeZMQ)
 - **Email:** [communications@boston-wib.org](mailto:communications@boston-wib.org)
