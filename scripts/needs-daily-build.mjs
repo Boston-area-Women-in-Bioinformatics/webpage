@@ -2,9 +2,10 @@
 /**
  * Decides whether today's scheduled Netlify build is actually necessary.
  *
- * The site is static output, so two kinds of content need a rebuild to
+ * The site is static output, so three kinds of content need a rebuild to
  * take effect on their own, without a human pushing a commit:
  * - A blog post whose publishDate is today (it should start appearing).
+ * - A newsletter issue whose publishDate is today (it should start appearing).
  * - An event whose end date (endDate, falling back to dateTime) was
  *   yesterday (it should move from "upcoming" to the past/archive split).
  *
@@ -68,6 +69,17 @@ for (const file of walk(postsDir, ['.md', '.mdx'])) {
   }
 }
 
+// --- Newsletter issues publishing today ---
+const newsletterDir = join(root, 'src/content/newsletter');
+for (const file of walk(newsletterDir, ['.md', '.mdx'])) {
+  const content = readFileSync(file, 'utf-8');
+  if (frontmatterField(content, 'draft') === 'true') continue;
+  const publishDate = datePart(frontmatterField(content, 'publishDate'));
+  if (publishDate === today) {
+    reasons.push(`newsletter issue publishing today: ${file}`);
+  }
+}
+
 // --- Events crossing into the past as of today ---
 const meetupsDir = join(root, 'src/content/meetups');
 for (const file of walk(meetupsDir, ['.md'])) {
@@ -88,7 +100,7 @@ if (needsBuild) {
     console.error(`  - ${reason}`);
   }
 } else {
-  console.error('No post going live today and no event crossing into the past — skipping build.');
+  console.error('No post, newsletter issue, or event crossing into the past today — skipping build.');
 }
 
 console.log(needsBuild ? 'true' : 'false');
