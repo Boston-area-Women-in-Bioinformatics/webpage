@@ -55,17 +55,25 @@ const metadata = {
             <p>Location: Eli Lilly Gateway Labs, Seaport, Boston, MA</p>
             <p class="font-semibold">Ticket Cost: TBD</p>
           </div>
-          <AddToCalendarButton
-            client:only="react"
-            name="Boston Women in Bioinformatics 2026 Fall Fundraiser"
-            location="Eli Lilly Gateway Labs, Seaport, Boston, MA"
-            startDate="2026-10-01"
-            endDate="2026-10-01"
-            startTime="17:00"
-            endTime="21:00"
-            styleLight="--btn-background: #d97706; --btn-text: #fff; --btn-shadow: 0 4px 12px rgba(217, 119, 6, 0.35); --btn-hover-background: #7c2d12; --btn-hover-text: #fff; --btn-hover-shadow: 0 6px 18px rgba(124, 45, 18, 0.5); --btn-border: none; --btn-border-radius: 9999px; --btn-font-weight: 600;"
-            styleDark="--btn-background: #65742a; --btn-text: #fff; --btn-shadow: 0 4px 14px rgba(0, 0, 0, 0.5); --btn-hover-background: #a3e635; --btn-hover-text: #000; --btn-hover-shadow: 0 6px 20px rgba(163, 230, 53, 0.45); --btn-border: none; --btn-border-radius: 9999px; --btn-font-weight: 600;"
-          />
+          <div class="group relative inline-block m-4">
+            <div
+              class="absolute -inset-2 rounded-full bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 opacity-75 blur-lg animate-pulse"
+            >
+            </div>
+            <div class="relative">
+              <AddToCalendarButton
+                client:only="react"
+                name="Boston Women in Bioinformatics 2026 Fall Fundraiser"
+                location="Eli Lilly Gateway Labs, Seaport, Boston, MA"
+                startDate="2026-10-01"
+                endDate="2026-10-01"
+                startTime="17:00"
+                endTime="21:00"
+                styleLight="--btn-background: #d97706; --btn-text: #fff; --btn-shadow: 0 4px 12px rgba(217, 119, 6, 0.2); --btn-hover-background: #7c2d12; --btn-hover-text: #fff; --btn-hover-shadow: 0 6px 18px rgba(217, 119, 6, 0.35); --btn-border: none; --btn-border-radius: 9999px; --btn-font-weight: 600;"
+                styleDark="--btn-background: #65742a; --btn-text: #fff; --btn-shadow: 0 4px 14px rgba(163, 230, 53, 0.2); --btn-hover-background: #a3e635; --btn-hover-text: #000; --btn-hover-shadow: 0 6px 20px rgba(163, 230, 53, 0.45); --btn-border: none; --btn-border-radius: 9999px; --btn-font-weight: 600;"
+              />
+            </div>
+          </div>
         </div>
         <div
           class="text-lg text-muted mb-12 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
@@ -93,7 +101,7 @@ const metadata = {
               </tr>
               <tr>
                 <td class="py-1.5 pr-4 align-top whitespace-nowrap font-medium">7:30–9:00 PM</td>
-                <td class="py-1.5">Dinner, Networking, &amp; Raffle</td>
+                <td class="py-1.5">Dinner, Networking, Raffle &amp; Silent Auction</td>
               </tr>
             </tbody>
           </table>
@@ -101,25 +109,19 @@ const metadata = {
         <p
           class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
         >
-          Join Boston Women in Bioinformatics on <b>Thursday, October 1st, 2026, 5:00–9:00 PM</b> at Eli Lilly Gateway Labs
-          in Seaport for an evening of panel discussion, dinner, networking, and a raffle with researchers, industry scientists,
-          and data professionals who are shaping what comes next.
+          Join Boston Women in Bioinformatics on <b>Thursday, October 1, 2026, 5:00–9:00 PM</b> at <b
+            >Eli Lilly Gateway Labs in Seaport
+          </b> for an evening of panel discussion, dinner, networking, and a raffle and silent auction with researchers, industry
+          scientists, and data professionals who are shaping what comes next.
         </p>
         <p
           class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
         >
-          Women's health is one of the fastest-growing sectors in biotech. According to Silicon Valley Bank's 2025
-          Innovation in Women's Health Report, VC investment hit $2.6 billion in 2024, a 55% jump from the year before,
-          outpacing the broader healthcare sector. The growth is increasingly in therapeutics and data-intensive
-          science. Integrated genomics, transcriptomics, proteomics, and metabolomics are being applied to conditions
-          that have been understudied for decades.
-        </p>
-        <p
-          class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
-        >
-          Boston Women in Bioinformatics brings together the researchers, industry professionals, and students who are
-          already, and want to be, part of where the field is heading. This fall, we're gathering to celebrate what our
-          community is building and to connect the people building it.
+          Every dataset, pipeline, and model reflects the assumptions of its creators. <b
+            >What scientific knowledge might we have today if women’s perspectives had been fully represented throughout
+            history?</b
+          > Hear from senior women leaders as they explore this question across federal policy, data infrastructure, reproductive
+          health research, the $2.6B women’s health VC landscape, and the future of the field.
         </p>
         <p
           class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
@@ -127,7 +129,10 @@ const metadata = {
           <b
             >This is one of our rare ticketed events. Proceeds support BWiB's year-round programming, networking events,
             and community resources.</b
-          >
+          > Student attendees will also be entered to win tickets to the <a
+            href="/events/womens-healthx-december-2026"
+            class="underline hover:text-primary dark:hover:text-blue-300">Women's HealthX Conference</a
+          > this December.
         </p>
         <p
           class="text-base text-muted mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
@@ -330,8 +335,8 @@ const metadata = {
             industry professionals, and students at one of our signature annual events. Sponsors who commit early are
             featured in all save-the-date and announcement materials. Explore the tiers below and reach out to
             <a
-              href="mailto:communications@boston-wib.org?subject=Fall%20Fundraiser%20Sponsor"
-              class="text-blue-600 dark:text-blue-400 hover:underline font-medium">communications@boston-wib.org</a
+              href="mailto:sponsorship@boston-wib.org?subject=Fall%20Fundraiser%20Sponsor"
+              class="text-blue-600 dark:text-blue-400 hover:underline font-medium">sponsorship@boston-wib.org</a
             >
             with the subject <span class="font-medium">"Fall Fundraiser Sponsor"</span> to get started.
           </p>
@@ -345,15 +350,16 @@ const metadata = {
               <tr class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200">
                 <th class="px-5 py-4 font-semibold w-1/2">Benefit</th>
                 <th class="px-5 py-4 font-semibold text-center">
-                  <span class="text-gold font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">Gold</span> DNA Sponsor
+                  <span class="!text-gold font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">Gold</span> DNA Sponsor
                   <div class="text-red-600 dark:text-red-400 font-bold mt-1">$2,000</div>
                 </th>
                 <th class="px-5 py-4 font-semibold text-center">
-                  <span class="text-silver font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">Silver</span> RNA Sponsor
+                  <span class="!text-silver font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">Silver</span> RNA
+                  Sponsor
                   <div class="text-red-600 dark:text-red-400 font-bold mt-1">$1,000</div>
                 </th>
                 <th class="px-5 py-4 font-semibold text-center">
-                  <span class="text-bronze font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">Bronze</span> Protein
+                  <span class="!text-bronze font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">Bronze</span> Protein
                   Sponsor
                   <div class="text-red-600 dark:text-red-400 font-bold mt-1">$500</div>
                 </th>
@@ -442,13 +448,13 @@ const metadata = {
                   <span class="mr-2">🎟️</span><strong>Complimentary Tickets</strong>
                 </td>
                 <td class="px-5 py-4 text-center font-semibold">
-                  <span class="text-gold font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">4</span> tickets
+                  <span class="!text-gold font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">4</span> tickets
                 </td>
                 <td class="px-5 py-4 text-center font-semibold">
-                  <span class="text-silver font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">2</span> tickets
+                  <span class="!text-silver font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">2</span> tickets
                 </td>
                 <td class="px-5 py-4 text-center font-semibold">
-                  <span class="text-bronze font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">1</span> ticket
+                  <span class="!text-bronze font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">1</span> ticket
                 </td>
               </tr>
             </tbody>
