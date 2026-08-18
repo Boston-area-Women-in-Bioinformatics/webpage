@@ -36,12 +36,20 @@ export default {
 
       animation: {
         fade: 'fadeInUp 1s both',
+        'confetti-burst': 'confettiBurst 0.7s ease-out forwards',
       },
 
       keyframes: {
         fadeInUp: {
           '0%': { opacity: 0, transform: 'translateY(2rem)' },
           '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+        confettiBurst: {
+          '0%': { transform: 'translate(0, 0) rotate(0deg) scale(1)', opacity: '1' },
+          '100%': {
+            transform: 'translate(var(--confetti-x, 20px), var(--confetti-y, -20px)) rotate(360deg) scale(0)',
+            opacity: '0',
+          },
         },
       },
     },
