@@ -34,14 +34,44 @@ const conversation = yaml.load(conversationYaml) as ChatTurn[];
 const instanceId = `ichat-${Math.random().toString(36).slice(2, 9)}`;
 ---
 
-<div class="ichat-terminal-heading" id={`${instanceId}-terminal-heading`}>
-  <span id={`${instanceId}-terminal-title`}></span>
-  <span id={`${instanceId}-terminal-cursor`} class="ichat-terminal-cursor">█</span>
+{
+  /* Purely decorative: the typing animation and chat bubbles are inserted by
+    the client script below with no aria-live region, so a screen reader has
+    no way to follow them. The real content is the static transcript below. */
+}
+<div aria-hidden="true">
+  <div class="ichat-terminal-heading" id={`${instanceId}-terminal-heading`}>
+    <span id={`${instanceId}-terminal-title`}></span>
+    <span id={`${instanceId}-terminal-cursor`} class="ichat-terminal-cursor">█</span>
+  </div>
+
+  <div class="ichat-phone-screen" id={`${instanceId}-phone-screen`}>
+    <div id={`${instanceId}-imessage-chat`} class="ichat-imessage-chat"></div>
+  </div>
 </div>
 
-<div class="ichat-phone-screen" id={`${instanceId}-phone-screen`}>
-  <div id={`${instanceId}-imessage-chat`} class="ichat-imessage-chat"></div>
-</div>
+{
+  /* No wrapping <div> around these — a bare div gets exposed to screen
+    readers as an unlabeled "group" that VoiceOver stops on before letting
+    you continue into its contents. Marking each element sr-only directly
+    keeps the heading/paragraphs as plain sequential content instead. */
+}
+<h2 class="sr-only">{terminalTitle}</h2>
+<p class="sr-only">
+  A conversation between {asker.name} and {responder.name}.
+</p>
+{
+  conversation.map((turn) => (
+    <>
+      <p class="sr-only">
+        <strong>{asker.name} asks:</strong> {turn.q}
+      </p>
+      <p class="sr-only">
+        <strong>{responder.name} responds:</strong> {turn.a}
+      </p>
+    </>
+  ))
+}
 
 <style is:global>
   /* Dynamically created by the client script below (document.createElement /
