@@ -12,9 +12,9 @@ export interface ChatParticipant {
 }
 
 interface Props {
-  /** Terminal command typed before the title animates in, e.g. "./social_analysis.sh khushbu" */
-  terminalCommand: string;
-  /** Title that types in after the terminal command is erased */
+  /** Optional terminal command typed and erased before the title animates in, e.g. "./social_analysis.sh khushbu". Omit to type the title directly. */
+  terminalCommand?: string;
+  /** Title that types in (after the terminal command is erased, if one is given) */
   terminalTitle: string;
   /** Sends messages on the right in the blue bubble */
   asker: ChatParticipant;
@@ -24,7 +24,7 @@ interface Props {
   conversationYaml: string;
 }
 
-const { terminalCommand, terminalTitle, asker, responder, conversationYaml } = Astro.props;
+const { terminalCommand = '', terminalTitle, asker, responder, conversationYaml } = Astro.props;
 
 const conversation = yaml.load(conversationYaml) as ChatTurn[];
 
@@ -263,10 +263,12 @@ const instanceId = `ichat-${Math.random().toString(36).slice(2, 9)}`;
   }
 
   async function animateTitle() {
-    await typeText(terminalCommand, 90);
-    await sleep(1400);
-    await eraseText(terminalCommand.length, 50);
-    await sleep(500);
+    if (terminalCommand) {
+      await typeText(terminalCommand, 90);
+      await sleep(1400);
+      await eraseText(terminalCommand.length, 50);
+      await sleep(500);
+    }
     await typeText(terminalTitle, 90);
     await sleep(700);
     // Hide cursor while title stays visible
