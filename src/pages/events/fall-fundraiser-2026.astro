@@ -6,6 +6,7 @@ import NewsletterSignup from '~/components/newsletter/NewsletterSignup.astro';
 import speakers from '~/config/components/tenyearannSpeakers';
 import TeamWidget from '~/components/widgets/Team.astro';
 import SponsorSection from '~/components/widgets/Sponsors.astro';
+import { GIVEBUTTER_URL } from '~/config/social';
 import { SITE } from '~/config/site/config.js';
 
 // import Image from '~/components/common/Image.astro';
@@ -55,12 +56,8 @@ if (speakers?.enabled === true) {
             <p>Location: Eli Lilly, Seaport, Boston, MA</p>
             <p class="font-semibold">Ticket Cost: TBD</p>
           </div>
-          <div class="group relative inline-block m-4">
-            <div
-              class="absolute -inset-2 rounded-full bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 opacity-75 blur-lg animate-pulse"
-            >
-            </div>
-            <div class="relative">
+          <div class="flex flex-wrap items-center gap-4">
+            <div class="m-4">
               <AddToCalendarButton
                 client:only="react"
                 name="Boston Women in Bioinformatics 2026 Fall Fundraiser"
@@ -69,9 +66,22 @@ if (speakers?.enabled === true) {
                 endDate="2026-10-01"
                 startTime="17:00"
                 endTime="21:00"
-                styleLight="--btn-background: #d97706; --btn-text: #fff; --btn-shadow: 0 4px 12px rgba(217, 119, 6, 0.2); --btn-hover-background: #7c2d12; --btn-hover-text: #fff; --btn-hover-shadow: 0 6px 18px rgba(217, 119, 6, 0.35); --btn-border: none; --btn-border-radius: 9999px; --btn-font-weight: 600;"
-                styleDark="--btn-background: #65742a; --btn-text: #fff; --btn-shadow: 0 4px 14px rgba(163, 230, 53, 0.2); --btn-hover-background: #a3e635; --btn-hover-text: #000; --btn-hover-shadow: 0 6px 20px rgba(163, 230, 53, 0.45); --btn-border: none; --btn-border-radius: 9999px; --btn-font-weight: 600;"
+                description={'Join Boston Women in Bioinformatics for an evening of dinner, a panel discussion, networking, and a raffle &amp; silent auction.[br][br][b]Agenda:[/b][ul][li]5:00–5:45 PM: Registration &amp; Networking[/li][li]5:45–6:30 PM: Opening Remarks (Yevgenia Khodor, BWIB President; Gold Sponsor Spotlights; Eli Lilly)[/li][li]6:30–7:30 PM: Panel &amp; Q&amp;A[/li][li]7:30–9:00 PM: Dinner, Networking, Raffle &amp; Silent Auction[/li][/ul]'}
+                styleLight="--btn-background: #d97706; --btn-text: #fff; --btn-shadow: 0 4px 12px rgba(217, 119, 6, 0.2); --btn-hover-background: #7c2d12; --btn-hover-text: #fff; --btn-hover-shadow: 0 6px 18px rgba(217, 119, 6, 0.35); --btn-border: none; --btn-border-radius: 12px; --btn-font-weight: 600; --btn-padding-y: 1rem; --base-font-size-l: 20px; --base-font-size-m: 20px; --base-font-size-s: 20px;"
+                styleDark="--btn-background: #65742a; --btn-text: #fff; --btn-shadow: 0 4px 14px rgba(163, 230, 53, 0.2); --btn-hover-background: #a3e635; --btn-hover-text: #000; --btn-hover-shadow: 0 6px 20px rgba(163, 230, 53, 0.45); --btn-border: none; --btn-border-radius: 12px; --btn-font-weight: 600; --btn-padding-y: 1rem; --base-font-size-l: 20px; --base-font-size-m: 20px; --base-font-size-s: 20px;"
               />
+            </div>
+            <div class="group relative inline-block m-4">
+              <div
+                class="absolute -inset-2 rounded-full bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 opacity-75 blur-lg animate-pulse"
+              >
+              </div>
+              <a
+                href={GIVEBUTTER_URL}
+                class="relative inline-flex items-center justify-center px-8 py-4 rounded-full text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.6)] text-xl font-extrabold tracking-wide bg-gradient-to-r from-pink-500 via-amber-500 to-pink-500 shadow-lg shadow-pink-400/40 transition-all ease-in-out transform hover:scale-110 hover:rotate-1 hover:shadow-yellow-500/60 ring-4 ring-pink-300 dark:from-fuchsia-600 dark:via-amber-500 dark:to-fuchsia-600 dark:shadow-fuchsia-500/50 dark:ring-amber-500 dark:drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]"
+              >
+                💝 Donate Now
+              </a>
             </div>
           </div>
         </div>
@@ -189,7 +199,7 @@ if (speakers?.enabled === true) {
         🥳 Register Now! 🎉
       </a>-->
 
-      <!-- Waitlist Sign-Up - uncomment and update when ready 
+      <!-- Waitlist Sign-Up - uncomment and update when ready
       <form id="waitlistForm">
         <label>
           <p class="text-red-500 text-xl my-4">
@@ -207,7 +217,7 @@ if (speakers?.enabled === true) {
           class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
           >Submit</button
         >
-      </form>-->
+      </form>
 
       <script is:inline>
         const waitlistform = document.getElementById('waitlistForm');
@@ -235,7 +245,7 @@ if (speakers?.enabled === true) {
               alert('Oops! Something went wrong.');
             });
         });
-      </script>
+      </script>-->
     </div>
     <!-- Agenda Table - uncomment and update when ready
     <div class="min-h-screen flex flex-col items-center justify-center px-4 py-4">
