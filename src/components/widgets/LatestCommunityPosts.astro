@@ -73,8 +73,11 @@ const latestMediaPosts = nonPodcastPosts
 const thirtyDaysAgo = new Date();
 thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
 
-function getPostCardData(post: (typeof latestMediaPosts)[number]) {
-  const seriesMeta = post.series?.slug ? seriesImageMap.get(post.series.slug) : undefined;
+// useSeriesImage: grid (homepage) points series posts at the series image/page so
+// readers can browse the whole series; carousel (blog page) only cares about the
+// latest post itself, so it uses the post's own image and links straight to it.
+function getPostCardData(post: (typeof latestMediaPosts)[number], useSeriesImage = true) {
+  const seriesMeta = useSeriesImage && post.series?.slug ? seriesImageMap.get(post.series.slug) : undefined;
   const cardImage = seriesMeta?.image ?? post.image;
   const cardImageAlt = seriesMeta?.imageAlt ?? post.imageAlt;
   const cardImageFit = post.imagePosition === 'contain' ? 'contain' : (seriesMeta?.imageFit ?? 'cover');
@@ -83,7 +86,7 @@ function getPostCardData(post: (typeof latestMediaPosts)[number]) {
     typeof cardImage === 'string' &&
     (cardImage.startsWith('http') || cardImage.startsWith('/assets/') || cardImage.startsWith('/blog_images/'));
   const isNew = new Date(post.publishDate) >= thirtyDaysAgo;
-  const href = post.series ? `/series/${post.series.slug}` : post.permalink;
+  const href = useSeriesImage && post.series ? `/series/${post.series.slug}` : post.permalink;
 
   return { cardImage, cardImageAlt, cardImageFit, objectPosition, isRemoteImage, isNew, href };
 }
@@ -182,9 +185,9 @@ const instanceId = `carousel-${Math.random().toString(36).slice(2, 9)}`;
             <div id={`${instanceId}-track`} class="flex transition-transform duration-500 ease-in-out">
               {latestMediaPosts.map((post) => {
                 const { cardImage, cardImageAlt, cardImageFit, objectPosition, isRemoteImage, isNew, href } =
-                  getPostCardData(post);
+                  getPostCardData(post, false);
                 return (
-                  <a href={href} class="relative block w-full flex-shrink-0 bg-white dark:bg-slate-700">
+                  <a href={href} class="relative flex w-full flex-shrink-0 flex-col bg-white dark:bg-slate-700">
                     {isNew && <NewBadge />}
                     {cardImage &&
                       (isRemoteImage ? (
@@ -208,13 +211,14 @@ const instanceId = `carousel-${Math.random().toString(36).slice(2, 9)}`;
                           loading="lazy"
                         />
                       ))}
-                    <div class="p-4 text-center">
-                      {post.series ? (
-                        <span class="inline-block text-xs font-semibold text-primary dark:text-blue-400 uppercase tracking-wide">
-                          Series: {post.series.title}
-                        </span>
-                      ) : (
-                        <h4 class="text-lg font-bold leading-tight">{post.title}</h4>
+                    <div class="flex flex-1 flex-col justify-center p-4 text-center">
+                      <h4 class="text-lg font-bold leading-tight">{post.title}</h4>
+                      {post.series && (
+                        <div class="mt-1 text-right">
+                          <span class="inline-block text-xs font-semibold text-primary dark:text-blue-400 uppercase tracking-wide">
+                            Series: {post.series.title}
+                          </span>
+                        </div>
                       )}
                     </div>
                   </a>
