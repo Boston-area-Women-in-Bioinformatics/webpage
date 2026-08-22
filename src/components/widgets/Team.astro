@@ -18,12 +18,14 @@ interface Props {
       github?: string;
     };
   }>;
+  /** Overrides the default placeholder-avatar palette (e.g. to match a themed event page). Defaults to the site-wide WIB logo rainbow. */
+  placeholderColors?: string[];
 }
 
-const { members } = Astro.props;
+const { members, placeholderColors } = Astro.props;
 
 // Rainbow colors inspired by the WIB logo
-const rainbowColors = [
+const rainbowColors = placeholderColors ?? [
   'bg-purple-500',
   'bg-pink-500',
   'bg-rose-500',
