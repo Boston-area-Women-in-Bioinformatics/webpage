@@ -271,7 +271,10 @@ if (speakers?.enabled === true) {
           </h3>
         </div>
         <div class={speakerColCss}>
-          <TeamWidget members={speakers.members} />
+          <TeamWidget
+            members={speakers.members}
+            placeholderColors={['bg-orange-600', 'bg-lime-700', 'bg-yellow-600', 'bg-red-700', 'bg-amber-700']}
+          />
         </div>
       </div>
     </div>
