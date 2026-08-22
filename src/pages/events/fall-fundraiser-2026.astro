@@ -3,8 +3,8 @@ import Layout from '~/layouts/PageLayout.astro';
 // import { Image } from 'astro:assets';
 import AddToCalendarButton from '~/components/events/AddToCalendarButton.tsx';
 import NewsletterSignup from '~/components/newsletter/NewsletterSignup.astro';
-// import speakers from '~/config/components/tenyearannSpeakers';
-// import TeamWidget from '~/components/widgets/Team.astro';
+import speakers from '~/config/components/tenyearannSpeakers';
+import TeamWidget from '~/components/widgets/Team.astro';
 import SponsorSection from '~/components/widgets/Sponsors.astro';
 import { SITE } from '~/config/site/config.js';
 
@@ -16,17 +16,17 @@ const metadata = {
   dontUseTitleTemplate: true,
 };
 
-// var speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4';
-//
-// if (speakers?.enabled === true) {
-//   if (speakers.members.length === 1) {
-//     speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1';
-//   } else if (speakers.members.length === 2) {
-//     speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2';
-//   } else if (speakers.members.length === 3) {
-//     speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3';
-//   }
-// }
+var speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4';
+
+if (speakers?.enabled === true) {
+  if (speakers.members.length === 1) {
+    speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1';
+  } else if (speakers.members.length === 2) {
+    speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2';
+  } else if (speakers.members.length === 3) {
+    speakerColCss = 'pb-8 grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3';
+  }
+}
 ---
 
 <Layout metadata={metadata}>
@@ -261,7 +261,6 @@ const metadata = {
       </div>
     </div>
     -->
-    <!-- Keynote speakers - uncomment and update when ready
     <div>
       <div class="px-4 mx-auto max-w-screen-xl text-center lg:py-2 lg:px-6">
         <div class="mx-auto mb-8 max-w-screen-sm lg:mb-12">
@@ -276,7 +275,6 @@ const metadata = {
         </div>
       </div>
     </div>
-    -->
     <!-- <div class="py-4 relative items-center max-w-7xl mx-auto px-4 sm:px-6">
       <div>
         <div
