@@ -32,7 +32,7 @@ if (speakers?.enabled === true) {
 
 <Layout metadata={metadata}>
   <section>
-    <div class="grid md:grid-cols-3 gap-8 items-center max-w-6xl mx-auto px-4 pt-8">
+    <div class="grid md:grid-cols-3 gap-8 items-center max-w-screen-xl mx-auto px-4 pt-8">
       <!-- Text content (takes 2/3 on desktop) -->
       <div class="md:col-span-2 text-center md:text-left">
         <h1
@@ -56,7 +56,7 @@ if (speakers?.enabled === true) {
             <p>Location: Eli Lilly, Seaport, Boston, MA</p>
             <p class="font-semibold">Ticket Cost: TBD</p>
           </div>
-          <div class="flex flex-wrap items-center gap-4">
+          <div class="flex flex-wrap items-center justify-center gap-4 md:justify-start">
             <div class="m-4">
               <AddToCalendarButton
                 client:only="react"
