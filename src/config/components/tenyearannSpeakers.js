@@ -41,6 +41,8 @@ const speakers = {
       name: 'Sheri Simmons, Ph.D.',
       // Job Title
       title: 'CSO, MaaT Pharma; Founder, KMS Bioinnovation Consulting, LLC',
+      // Speaker Photo
+      avatar: '/team/sheri_simmons.jpeg',
     },
     // Jennifer Wortman
     {
