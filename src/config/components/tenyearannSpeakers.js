@@ -18,6 +18,8 @@ const speakers = {
       name: 'Ashley Abel, Ph.D.',
       // Job Title
       title: 'CEO & Co-Founder, Metri Bio',
+      // Speaker Photo
+      avatar: '/team/Ashley_Abel.jpeg',
     },
     // Brandi Davis-Dusenbery
     {
