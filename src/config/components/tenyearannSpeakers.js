@@ -20,6 +20,10 @@ const speakers = {
       title: 'CEO & Co-Founder, Metri Bio',
       // Speaker Photo
       avatar: '/team/Ashley_Abel.jpeg',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/ashleyabel/',
+        website: 'https://metri.bio/',
+      },
     },
     // Brandi Davis-Dusenbery
     {
@@ -27,6 +31,9 @@ const speakers = {
       name: 'Brandi Davis-Dusenbery, Ph.D.',
       // Job Title
       title: 'Principal, ZS',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/davis-dusenbery/',
+      },
     },
     // Shruthi Mahalingaiah
     {
@@ -36,6 +43,10 @@ const speakers = {
       title: 'Associate Professor, Harvard T.H. Chan School of Public Health',
       // Speaker Photo
       avatar: '/team/Shruthi-Mahalingaiah.avif',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/shruthimahalingaiahmd/',
+        website: 'https://hsph.harvard.edu/research/mahalingaiah-lab/',
+      },
     },
     // Sheri Simmons
     {
@@ -45,6 +56,10 @@ const speakers = {
       title: 'CSO, MaaT Pharma; Founder, KMS Bioinnovation Consulting, LLC',
       // Speaker Photo
       avatar: '/team/sheri_simmons.jpeg',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/sheri-simmons/',
+        website: 'https://kmsbioinnovation.com/',
+      },
     },
     // Jennifer Wortman
     {
@@ -52,6 +67,9 @@ const speakers = {
       name: 'Jennifer Wortman, Ph.D.',
       // Job Title
       title: 'President & Managing Director, BioTeam',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/jenniferwortman/',
+      },
     },
   ],
 };
