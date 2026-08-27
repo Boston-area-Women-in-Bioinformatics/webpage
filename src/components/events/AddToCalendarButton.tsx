@@ -17,11 +17,13 @@ export default function atcb(props: AddToCalendarButtonType) {
       lightMode="bodyScheme"
       hideBackground
       name={props.name}
+      organizer="Boston Women in Bioinformatics|events@boston-wib.org"
       location={props.location}
       startDate={props.startDate}
       endDate={props.endDate}
       startTime={props.startTime}
       endTime={props.endTime}
+      description={props.description}
       timeZone="America/New_York"
       options="'Apple','Google','iCal','Microsoft365','MicrosoftTeams'"
     ></AddToCalendarButton>
