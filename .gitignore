@@ -22,6 +22,7 @@ pnpm-debug.log*
 
 # R session history
 .Rhistory
+config/components/.Rhistory
 
 pnpm-lock.yaml
 
