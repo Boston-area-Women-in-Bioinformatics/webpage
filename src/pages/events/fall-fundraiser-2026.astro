@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 // import { Image } from 'astro:assets';
-import AddToCalendarButton from '~/components/events/AddToCalendarButton.tsx';
+// import AddToCalendarButton from '~/components/events/AddToCalendarButton.tsx';
 // import NewsletterSignup from '~/components/newsletter/NewsletterSignup.astro';
 import speakers from '~/config/components/tenyearannSpeakers';
 import TeamWidget from '~/components/widgets/Team.astro';
@@ -32,7 +32,13 @@ if (speakers?.enabled === true) {
 
 <Layout metadata={metadata}>
   <section>
-    <div class="grid md:grid-cols-3 gap-8 items-center max-w-screen-xl mx-auto px-4 pt-8">
+    <div class="relative grid md:grid-cols-3 gap-8 items-center max-w-screen-xl mx-auto px-4 pt-8">
+      <a
+        href={GIVEBUTTER_URL}
+        class="hidden sm:inline-flex absolute top-4 right-4 md:top-6 z-10 items-center justify-center px-5 py-2 rounded-full text-lg text-white font-semibold bg-primary hover:bg-blue-800 dark:bg-lime-400 dark:hover:bg-lime-500 dark:text-black dark:hover:text-black transition"
+      >
+        Donate
+      </a>
       <!-- Text content (takes 2/3 on desktop) -->
       <div class="md:col-span-2 text-center md:text-left">
         <h1
@@ -51,43 +57,47 @@ if (speakers?.enabled === true) {
           Women’s Health: Research, Investment, and What Comes Next
         </p>
         <div class="mb-8">
-          <div class="text-lg text-muted dark:text-slate-300 mb-4">
-            <p>Date: Thursday, October 1st, 2026</p>
-            <p>Location: Eli Lilly, Seaport, Boston, MA</p>
-          </div>
-          <div
-            class="inline-block border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 mb-4 text-lg text-muted dark:text-slate-300"
-          >
-            <p class="font-semibold">Early Bird Pricing (through Sept 18)</p>
-            <p>Professional: $70</p>
-            <p>Student: $45</p>
-          </div>
-          <div class="flex flex-wrap items-center justify-center gap-4 md:justify-start">
-            <div class="m-4">
-              <AddToCalendarButton
-                client:only="react"
-                name="Boston Women in Bioinformatics 2026 Fall Fundraiser"
-                location="Eli Lilly, Seaport, Boston, MA"
-                startDate="2026-10-01"
-                endDate="2026-10-01"
-                startTime="17:00"
-                endTime="21:00"
-                description={'Join Boston Women in Bioinformatics for an evening of dinner, a panel discussion, networking, and a raffle &amp; silent auction.[br][br][b]Agenda:[/b][ul][li]5:00–5:45 PM: Registration &amp; Networking[/li][li]5:45–6:30 PM: Opening Remarks (Yevgenia Khodor, BWIB President; Gold Sponsor Spotlights; Eli Lilly)[/li][li]6:30–7:30 PM: Panel &amp; Q&amp;A[/li][li]7:30–9:00 PM: Dinner, Networking, Raffle &amp; Silent Auction[/li][/ul]'}
-                styleLight="--btn-background: #d97706; --btn-text: #fff; --btn-shadow: 0 4px 12px rgba(217, 119, 6, 0.2); --btn-hover-background: #7c2d12; --btn-hover-text: #fff; --btn-hover-shadow: 0 6px 18px rgba(217, 119, 6, 0.35); --btn-border: none; --btn-border-radius: 12px; --btn-font-weight: 600; --btn-padding-y: 1rem; --base-font-size-l: 20px; --base-font-size-m: 20px; --base-font-size-s: 20px;"
-                styleDark="--btn-background: #65742a; --btn-text: #fff; --btn-shadow: 0 4px 14px rgba(163, 230, 53, 0.2); --btn-hover-background: #a3e635; --btn-hover-text: #000; --btn-hover-shadow: 0 6px 20px rgba(163, 230, 53, 0.45); --btn-border: none; --btn-border-radius: 12px; --btn-font-weight: 600; --btn-padding-y: 1rem; --base-font-size-l: 20px; --base-font-size-m: 20px; --base-font-size-s: 20px;"
-              />
-            </div>
-            <div class="group relative inline-block m-4">
-              <div
-                class="absolute -inset-2 rounded-full bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 opacity-75 blur-lg animate-pulse"
-              >
+          <div class="md:inline-grid md:grid-cols-1">
+            <div class="flex flex-col items-center md:flex-row md:items-start gap-4 mb-4">
+              <div class="text-lg text-muted dark:text-slate-300">
+                <p>Date: Thursday, October 1st, 2026</p>
+                <p>Location: Eli Lilly, Seaport, Boston, MA</p>
               </div>
-              <a
-                href={GIVEBUTTER_URL}
-                class="relative inline-flex items-center justify-center px-8 py-4 rounded-full text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.6)] text-xl font-extrabold tracking-wide bg-gradient-to-r from-pink-500 via-amber-500 to-pink-500 shadow-lg shadow-pink-400/40 transition-all ease-in-out transform hover:scale-110 hover:rotate-1 hover:shadow-yellow-500/60 ring-4 ring-pink-300 dark:from-fuchsia-600 dark:via-amber-500 dark:to-fuchsia-600 dark:shadow-fuchsia-500/50 dark:ring-amber-500 dark:drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]"
-              >
-                💝 Donate Now
-              </a>
+              <!-- Add to Calendar - uncomment once folks can add it after registering on Luma
+              <div>
+                <AddToCalendarButton
+                  client:only="react"
+                  name="Boston Women in Bioinformatics 2026 Fall Fundraiser"
+                  location="Eli Lilly, Seaport, Boston, MA"
+                  startDate="2026-10-01"
+                  endDate="2026-10-01"
+                  startTime="17:00"
+                  endTime="21:00"
+                  description={'Join Boston Women in Bioinformatics for an evening of dinner, a panel discussion, networking, and a raffle &amp; silent auction.[br][br][b]Agenda:[/b][ul][li]5:00–5:45 PM: Registration &amp; Networking[/li][li]5:45–6:30 PM: Opening Remarks (Yevgenia Khodor, BWIB President; Gold Sponsor Spotlights; Eli Lilly)[/li][li]6:30–7:30 PM: Panel &amp; Q&amp;A[/li][li]7:30–9:00 PM: Dinner, Networking, Raffle &amp; Silent Auction[/li][/ul]'}
+                />
+              </div>
+              -->
+            </div>
+            <div
+              class="inline-block border-l-4 border-primary bg-blue-50 dark:bg-slate-800 rounded-r-xl px-4 py-3.5 mb-4 text-lg text-muted dark:text-slate-300"
+            >
+              <p class="font-semibold">Early Bird Pricing (through Sept 18)</p>
+              <p>Professional: $70</p>
+              <p>Student: $45</p>
+            </div>
+            <div class="text-center">
+              <div class="group relative inline-block m-4">
+                <div
+                  class="absolute -inset-2 rounded-full bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 opacity-75 blur-lg animate-pulse"
+                >
+                </div>
+                <a
+                  href="https://luma.com/event/evt-Fu54jD1N4eMuW2G?utm_source=boston-wib&utm_medium=event-page&utm_campaign=fall-fundraiser-2026"
+                  class="inline-flex items-center justify-center my-8 px-8 py-4 rounded-full text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.6)] text-xl font-extrabold tracking-wide bg-gradient-to-r from-pink-500 via-amber-500 to-pink-500 shadow-lg shadow-pink-400/40 transition-all ease-in-out transform hover:scale-110 hover:rotate-1 hover:shadow-yellow-500/60 ring-4 ring-pink-300 dark:from-fuchsia-600 dark:via-amber-500 dark:to-fuchsia-600 dark:shadow-fuchsia-500/50 dark:ring-amber-500 dark:drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]"
+                >
+                  🥳 Register Now! 🎉
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -195,14 +205,6 @@ if (speakers?.enabled === true) {
     -->
 
     <div class="text-center">
-      <!-- Register Button - uncomment and update when ready
-      <a
-        href="https://givebutter.com/BWIB10YRS"
-        class="inline-flex items-center justify-center my-8 px-8 py-4 rounded-full text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.6)] text-xl font-extrabold tracking-wide bg-gradient-to-r from-pink-500 via-amber-500 to-pink-500 shadow-lg shadow-pink-400/40 transition-all ease-in-out transform hover:scale-110 hover:rotate-1 hover:shadow-yellow-500/60 ring-4 ring-pink-300 dark:from-fuchsia-600 dark:via-amber-500 dark:to-fuchsia-600 dark:shadow-fuchsia-500/50 dark:ring-amber-500 dark:drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]"
-      >
-        🥳 Register Now! 🎉
-      </a>-->
-
       <!-- Waitlist Sign-Up - uncomment and update when ready
       <form id="waitlistForm">
         <label>
@@ -336,6 +338,14 @@ if (speakers?.enabled === true) {
     </div>
     -->
 
+    <div class="sm:hidden text-center px-4 mt-8">
+      <a
+        href={GIVEBUTTER_URL}
+        class="inline-flex items-center justify-center px-5 py-2 rounded-full text-lg text-white font-semibold bg-primary hover:bg-blue-800 dark:bg-lime-400 dark:hover:bg-lime-500 dark:text-black dark:hover:text-black transition"
+      >
+        Donate
+      </a>
+    </div>
     <div class="text-center text-sm text-muted dark:text-slate-400 mt-4 mb-2 px-4">
       Boston Women in Bioinformatics is a 501(c)(3) nonprofit. Donations are tax-deductible as allowed by law.
     </div>
