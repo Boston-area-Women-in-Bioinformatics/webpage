@@ -9,6 +9,7 @@ location:
   - 'Kendall/MIT Open Space'
   - 'Cambridge, MA'
 url: 'https://cambridgesciencecarnival.org'
+url-button-label: 'Learn More'
 tags: ['Community', 'Outreach', 'Family', 'STEM', 'CambridgeScienceCarnival']
 ---
 

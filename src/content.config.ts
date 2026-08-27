@@ -145,6 +145,7 @@ const eventCollection = defineCollection({
     endDate: nyDate().optional(),
     location: z.array(z.string()),
     url: z.string().optional(),
+    'url-button-label': z.string().optional(),
     data_luma_event_id: z.string().optional(),
     image: z.object({
       src: z.string(),
