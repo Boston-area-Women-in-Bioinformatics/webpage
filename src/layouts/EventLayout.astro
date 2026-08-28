@@ -17,6 +17,7 @@ export interface Props {
   imgsrc: string;
   imgalt: string;
   url?: string;
+  urlButtonLabel?: string;
   data_luma_event_id?: string;
   cost?: number;
   partnerEvent?: boolean;
@@ -30,6 +31,7 @@ const {
   endDate,
   location,
   url,
+  urlButtonLabel,
   data_luma_event_id,
   imgsrc,
   imgalt,
@@ -97,7 +99,7 @@ const secondLine = hasBreak ? title.slice(breakIndex + 1).trim() : '';
           (endDate || date) < new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })) ? (
             ' '
           ) : (
-            <Signup url={url} data_luma_event_id={data_luma_event_id} slug={slug} />
+            <Signup url={url} urlButtonLabel={urlButtonLabel} data_luma_event_id={data_luma_event_id} slug={slug} />
           )
         }
       </div>

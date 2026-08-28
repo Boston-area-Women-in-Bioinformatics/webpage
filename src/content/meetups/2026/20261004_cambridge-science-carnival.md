@@ -9,7 +9,10 @@ location:
   - 'Kendall/MIT Open Space'
   - 'Cambridge, MA'
 url: 'https://cambridgesciencecarnival.org'
+url-button-label: 'Event Website'
 tags: ['Community', 'Outreach', 'Family', 'STEM', 'CambridgeScienceCarnival']
+slug: 'CambridgeScienceCarnival2026'
+imgpos: 'object-left'
 ---
 
 Come celebrate Cambridge's diverse, creative STEAM community together at the annual Cambridge Science Carnival. An "adventure playground" for inquisitive visitors of all ages, this family-friendly science extravaganza features more than 100 activity booths, demonstrations, and performances in just four hours.

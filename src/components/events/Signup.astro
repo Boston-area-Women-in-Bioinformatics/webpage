@@ -4,11 +4,12 @@ import { LUMA_URL } from '~/config/social';
 
 interface Props {
   url?: string;
+  urlButtonLabel?: string;
   data_luma_event_id?: string;
   slug?: string;
 }
 
-const { url, data_luma_event_id, slug } = Astro.props;
+const { url, urlButtonLabel, data_luma_event_id, slug } = Astro.props;
 const defaultUrl = LUMA_URL;
 const isDefault = !url;
 
@@ -31,7 +32,7 @@ function addUtmParams(rawUrl: string, eventSlug?: string): string {
 }
 
 const finalUrl = addUtmParams(url ?? defaultUrl, slug);
-const buttonText = isDefault ? 'Link coming soon — click to subscribe to our calendar' : 'Sign Up';
+const buttonText = isDefault ? 'Link coming soon — click to subscribe to our calendar' : (urlButtonLabel ?? 'Sign Up');
 const showBothButtons = data_luma_event_id && url && !url.endsWith(data_luma_event_id);
 ---
 
