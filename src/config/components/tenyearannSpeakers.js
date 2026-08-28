@@ -31,6 +31,8 @@ const speakers = {
       name: 'Brandi Davis-Dusenbery, Ph.D.',
       // Job Title
       title: 'Principal, ZS',
+      // Speaker Photo
+      avatar: '/team/Brandi_Davis-Dusenbery.jpg',
       social: {
         linkedin: 'https://www.linkedin.com/in/davis-dusenbery/',
       },
