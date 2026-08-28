@@ -173,6 +173,7 @@ The markdown file should follow a specific format. In between the top two `---` 
 
 - `endDate`: end date and time of the event, in the same `YYYY-MM-DDTHH:mm` format as `dateTime`. Required if the event spans multiple days or you want the end time to display.
 - `url`: registration or event link (e.g., a Lu.ma URL)
+- `url-button-label`: overrides the registration button's text (defaults to "Sign Up"). Use this for events where `url` isn't a registration link (e.g., `'Learn More'` for a link to a partner org's event page).
 - `data_luma_event_id`: Lu.ma event ID, used to embed a registration button
 - `imgpos`: controls which part of the image is visible on the events listing page. Defaults to `object-top object-cover`. See [Tailwind object-position](https://tailwindcss.com/docs/object-position) for options.
 - `cost`: ticket price in dollars as a number (e.g., `10`). Omit for free events.
