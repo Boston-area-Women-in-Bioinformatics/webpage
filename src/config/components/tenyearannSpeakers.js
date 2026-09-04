@@ -12,88 +12,65 @@ const speakers = {
 
   // Ambassador Profiles
   members: [
-    // Eleanor Howe
+    // Ashley Abel
     {
       // Name: First and last name
-      name: 'Eleanor Howe',
-      // Namelink: Ambassador's Personal Website
-      nameLink: 'https://www.linkedin.com/in/eleanorahowe/',
+      name: 'Ashley Abel, Ph.D.',
       // Job Title
-      title: 'Founder and CEO, Diamond Age Data Science, LLC',
-      // Ambassador Member Photo
-      avatar: '/team/eleanorahowe.jpeg',
-      // Social links
+      title: 'CEO & Co-Founder, Metri Bio',
+      // Speaker Photo
+      avatar: '/team/Ashley_Abel.jpeg',
       social: {
-        // website: '#',
-        // twitter: ''#'',
-        // instagram: '#',
-        // facebook: '#',
-        linkedin: 'https://www.linkedin.com/in/eleanorahowe/',
-        //github: '#',
-        //bluesky: '#',
+        linkedin: 'https://www.linkedin.com/in/ashleyabel/',
+        website: 'https://metri.bio/',
       },
     },
-    // Lorena Pantano
+    // Brandi Davis-Dusenbery
     {
       // Name: First and last name
-      name: 'Lorena Pantano',
-      // Namelink: Member's Personal Website
-      nameLink: 'https://www.linkedin.com/in/lpantano/',
+      name: 'Brandi Davis-Dusenbery, Ph.D.',
       // Job Title
-      title: 'Director of Platform @ Harvard Chan School | Co-chair & Founder of BWIB',
-      // Leadership Leadership team member Photo
-      avatar: '/team/lpantano.jpg',
-      // Social links
+      title: 'Principal, ZS',
+      // Speaker Photo
+      avatar: '/team/Brandi_Davis-Dusenbery.jpg',
       social: {
-        // website: '#',
-        // twitter: ''#'',
-        // instagram: '#',
-        // facebook: '#',
-        linkedin: 'https://www.linkedin.com/in/lpantano/',
-        github: 'https://lpantano.github.io/',
-        //bluesky: 'https://bsky.app/profile/lpantano.bsky.social',
+        linkedin: 'https://www.linkedin.com/in/davis-dusenbery/',
       },
     },
-    // Geraldine Van der Auwera
+    // Shruthi Mahalingaiah
     {
       // Name: First and last name
-      name: 'Geraldine Van der Auwera',
-      // Namelink: Ambassador's Personal Website
-      nameLink: 'https://www.linkedin.com/in/geraldine-van-der-auwera-5a5811/',
+      name: 'Shruthi Mahalingaiah, M.D., M.S.',
       // Job Title
-      title: 'Lead Developer Advocate at Seqera | Author of "Genomics in the Cloud" (OReilly, 2020)',
-      // Ambassador Photo
-      avatar: '/team/GeraldineVanderAuwera.jpeg',
-      // Social links
+      title: 'Associate Professor, Harvard T.H. Chan School of Public Health',
+      // Speaker Photo
+      avatar: '/team/Shruthi-Mahalingaiah.avif',
       social: {
-        // website: '#',
-        // twitter: ''#'',
-        // instagram: '#',
-        // facebook: '#',
-        linkedin: 'https://www.linkedin.com/in/geraldine-van-der-auwera-5a5811/',
-        //github: '#',
-        //bluesky: '#',
+        linkedin: 'https://www.linkedin.com/in/shruthimahalingaiahmd/',
+        website: 'https://hsph.harvard.edu/research/mahalingaiah-lab/',
       },
     },
-    // Grace Tiao
+    // Sheri Simmons
     {
       // Name: First and last name
-      name: 'Grace Tiao',
-      // Namelink: Member's Personal Website
-      nameLink: 'https://www.linkedin.com/in/grace-tiao',
+      name: 'Sheri Simmons, Ph.D.',
       // Job Title
-      title: 'Co-founder and CEO of E9 Genomics',
-      // Member Photo
-      avatar: '/team/GraceTiao.jpeg',
-      // Social links
+      title: 'CSO, MaaT Pharma; Founder, KMS Bioinnovation Consulting, LLC',
+      // Speaker Photo
+      avatar: '/team/sheri_simmons.jpeg',
       social: {
-        // website: '#',
-        // twitter: ''#'',
-        // instagram: '#',
-        // facebook: '#',
-        linkedin: 'https://www.linkedin.com/in/grace-tiao',
-        //github: '#',
-        //bluesky: '#',
+        linkedin: 'https://www.linkedin.com/in/sheri-simmons/',
+        website: 'https://kmsbioinnovation.com/',
+      },
+    },
+    // Jennifer Wortman
+    {
+      // Name: First and last name
+      name: 'Jennifer Wortman, Ph.D.',
+      // Job Title
+      title: 'President & Managing Director, BioTeam',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/jenniferwortman/',
       },
     },
   ],
