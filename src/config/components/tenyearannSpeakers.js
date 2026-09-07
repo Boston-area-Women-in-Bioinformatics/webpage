@@ -30,7 +30,7 @@ const speakers = {
       // Name: First and last name
       name: 'Brandi Davis-Dusenbery, Ph.D.',
       // Job Title
-      title: 'Principal, ZS',
+      title: 'Principal (Partner), ZS',
       // Speaker Photo
       avatar: '/team/Brandi_Davis-Dusenbery.jpg',
       social: {
@@ -42,7 +42,7 @@ const speakers = {
       // Name: First and last name
       name: 'Shruthi Mahalingaiah, M.D., M.S.',
       // Job Title
-      title: 'Associate Professor, Harvard T.H. Chan School of Public Health',
+      title: 'Associate Professor & Harvard T.H. Chan School of Public Health',
       // Speaker Photo
       avatar: '/team/Shruthi-Mahalingaiah.avif',
       social: {
@@ -50,27 +50,29 @@ const speakers = {
         website: 'https://hsph.harvard.edu/research/mahalingaiah-lab/',
       },
     },
+    // Ida Moeller.
+    {
+      // Name: First and last name
+      name: 'Ida Moeller, Ph.D.',
+      // Job Title
+      title: 'Vice President, Head of Data Science and Computational Biology & Eli Lilly and Company',
+      // Speaker Photo
+      avatar: '/team/IdaMoeller.png',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/idahatoum/',
+      },
+    },
     // Sheri Simmons
     {
       // Name: First and last name
       name: 'Sheri Simmons, Ph.D.',
       // Job Title
-      title: 'CSO, MaaT Pharma; Founder, KMS Bioinnovation Consulting, LLC',
+      title: 'CSO, MaaT Pharma & Founder, KMS Bioinnovation Consulting, LLC',
       // Speaker Photo
       avatar: '/team/sheri_simmons.jpeg',
       social: {
         linkedin: 'https://www.linkedin.com/in/sheri-simmons/',
         website: 'https://kmsbioinnovation.com/',
-      },
-    },
-    // Jennifer Wortman
-    {
-      // Name: First and last name
-      name: 'Jennifer Wortman, Ph.D.',
-      // Job Title
-      title: 'President & Managing Director, BioTeam',
-      social: {
-        linkedin: 'https://www.linkedin.com/in/jenniferwortman/',
       },
     },
   ],
