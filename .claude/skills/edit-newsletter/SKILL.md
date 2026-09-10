@@ -72,6 +72,14 @@ Apply these when writing or revising section content:
 Event description paragraph.
 ```
 
+## Finding Source Content
+
+When a section needs real content pulled from the site rather than invented, use these locations:
+
+- **Upcoming events**: `src/content/meetups/<year>/<YYYYMMDD>*.md` — the leading `<YYYYMMDD>` in the filename is the event date. Filter to files dated after this issue's `publishDate` to find events still upcoming at send time; frontmatter (`title`, `dateTime`, `endDate`, `location`, `url`, `partnerEvent`, `partnerOrganization`, `slug`) has everything needed for the event table or Partner Events entry (partner events are the ones with `partnerEvent: true`).
+- **Latest podcast episode**: `src/content/post/coffeewithcompbio/` — the most recently dated file (filename prefix `YYYYMMDD`) is the latest episode; its frontmatter (`title`, `excerpt`, `slug`) and body give the description and Spotify/Apple links for the podcast section.
+- **A specific blog post**: if the user names a file directly (e.g. `src/content/post/20260821_post_Isha.mdx`), read that file's frontmatter (`title`, `slug`, `authors`, `image`) and body for the Blog Spotlight section instead of searching.
+
 ## Step 1 — Identify the File
 
 If not already clear from context, ask which issue (e.g. by issue number) is being edited.
