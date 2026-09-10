@@ -3,9 +3,8 @@ publishDate: 2026-09-09
 title: 'No One Owns My Calendar (Mostly)'
 excerpt: A reflection on co-founding a biotech consultancy one year in
 slug: blog/quicktake/no-one-owns-my-calendar
-image: 'https://images.unsplash.com/photo-1723740683543-d394ba1d4366?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-imageAlt: 'Citrus plant seedling with leaves covered with water drops growing in the soil'
-imageDescription: 'Photo by <a href="https://unsplash.com/@pixelesse">Ksenia Pixelesse</a> on <a href="https://unsplash.com/photos/a-young-plant-sprouts-from-the-ground-TBjNbj1sdAE">Unsplash</a>'
+image: '/blog_images/liyang_sprout_blog.png'
+imageAlt: 'Professional photo of Liyang Diao, the Sprout Informatics logo, and a leafy backdrop'
 imagePosition: center
 authors:
   - name: Liyang Diao, Ph.D.
