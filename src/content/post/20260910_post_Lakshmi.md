@@ -2,9 +2,10 @@
 publishDate: 2026-09-10
 title: 'Blind Spots: The Data Crisis in Women’s Healthcare'
 excerpt: Why better diagnostics, longitudinal data, and female-specific biology are changing medicine's understanding of risk
-slug: blog/blind-spots-data-crisis-womens-health
+slug: blog/deepdive/blind-spots-data-crisis-womens-health
 author: 'Lakshmi Kuttippurathu'
 authorUrl: 'https://www.linkedin.com/in/lakshmikc/'
+category: 'Deep Dive'
 ---
 
 _**Why better diagnostics, longitudinal data, and female-specific biology are changing medicine’s understanding of risk**_
