@@ -44,7 +44,7 @@ One of the clearest shifts looks like the movement away from single measurements
 
 This is an example of the fact that how easily high-risk individuals can disappear inside apparently reasonable screening rules.
 
-Risk-based care is not simply “more screening.” For some people it may mean earlier or more frequent assessment. For others it may mean avoiding unnecessary procedures. Precision should reduce both neglect and overtreatment.
+Risk-based care is not one-size-fits-all.  For some people it may mean earlier or more frequent assessment. For others it may mean avoiding unnecessary procedures. Precision should reduce both neglect and overtreatment.
 
 **What menstruation can teach medicine about inflammation**
 
