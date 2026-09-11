@@ -54,7 +54,7 @@ One of the most striking reframes in this topic came from the use of menstrual b
 
 In a healthy cycle, inflammation transitions into repair!
 
-We know that many inflammatory therapies are designed to suppress immune activity. They are less effective at restoring the programs that rebuild tissue. A disease can therefore become quieter without becoming resolved.
+Many inflammatory therapies are designed to suppress immune activity and less effective at restoring the programs that rebuild tissue. A disease can therefore become quieter without becoming resolved.
 
 The work described by their team proposes that longitudinal menstrual samples may reveal where an inflammatory process stays along the path from breakdown to repair. Menstrual fluid contains immune, stromal and epithelial information and can be collected repeatedly without surgery. The reported Inflammatory Resolution Score was designed to identify biological state rather than simply disease severity or elapsed time. In a cohort of patients with ulcerative colitis, the score reportedly provided information that was largely distinct from the standard clinical score and helped separate patients with different probabilities of steroid-free remission.
 
