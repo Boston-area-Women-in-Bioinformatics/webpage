@@ -42,7 +42,7 @@ One of the clearest shifts looks like the movement away from single measurements
 
 [Laura Esserman](https://www.linkedin.com/in/laura-esserman-97b77484/)’s work in breast cancer illustrates what changes when risk is treated as individual rather than average. In the WISDOM study, screening strategies incorporated clinical risk, breast density, inherited variants and polygenic risk rather than recommending the same schedule for every woman. According to their report, approximately 30% of women with pathogenic variants had no family history that would have identified them through conventional triage.
 
-This is an example of the fact that how easily high-risk individuals can disappear inside apparently reasonable screening rules.
+This is an example of how easily high-risk individuals can disappear inside apparently reasonable screening rules.
 
 Risk-based care is not one-size-fits-all.  For some people it may mean earlier or more frequent assessment. For others it may mean avoiding unnecessary procedures. Precision should reduce both neglect and overtreatment.
 
