@@ -40,7 +40,7 @@ This leads to the problem of **Correct number, but wrong interpretation!**
 
 One of the clearest shifts looks like the movement away from single measurements and population averages toward **biological trajectories**.
 
-[Laura Esserman](https://www.linkedin.com/in/laura-esserman-97b77484/)’s work in breast cancer illustrates what changes when risk is treated as individual rather than average. In the WISDOM study, screening strategies incorporated clinical risk, breast density, inherited variants and polygenic risk rather than recommending the same schedule for every woman. According to their report, approximately 30% of women with pathogenic variants had no family history that would have identified them through conventional triage.
+[Laura Esserman](https://www.linkedin.com/in/laura-esserman-97b77484/)’s work in breast cancer illustrates what changes when risk is treated in the context of the individual rather than average. In the WISDOM (Women Informed to Screen Depending On Measures of risk) study, clinical strategies incorporated clinical risk, breast density, inherited variants and polygenic risk rather than recommending the same schedule for every woman. According to their report, approximately 30% of women with pathogenic variants had no family history that would have identified them through conventional triage.
 
 This is an example of how easily high-risk individuals can disappear inside apparently reasonable screening rules.
 
