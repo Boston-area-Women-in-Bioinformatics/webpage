@@ -88,7 +88,7 @@ A treatment that allows someone to work, sleep, care for a child, travel indepen
 
 The discussion offered an instructive example: some patients with endometriosis may reject therapies that chemically induce menopause because the trade-off feels worse than living with the disease. Meanwhile a trial can demonstrate biological activity and still produce an intervention patients do not want.
 
-This comes from failure to ask the right scientific question.
+This comes from misaligned evaluation criteria.
 
 Patient-reported outcomes, daily function, treatment burden and quality of life should not be decorative additions placed near the end of a development program. They help determine whether the intervention solves the problem it claims to solve.
 
