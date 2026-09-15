@@ -26,16 +26,26 @@ Spend an intimate evening exploring data analysis in women's health research. Le
 
 Additionally, see great family-friendly volunteering opportunities such as the Cambridge Science Festival, learn about the new podcast episodes and spotlights on our members, and plan for a few upcoming partner events and conferences. Happy Reading!
 
-- [Fall Fundraiser: REGISTRATION OPEN](#fall-fundraiser)
-- [Call for Volunteers: Cambridge Science Carnival](#science-carnival)
-- [Coffee with CompBio: Academia or Industry?](#podcast)
-- [BWIB on the MicroBinfie Podcast](#microbinfie)
-- [Blog Bytes](#blog-interview)
-- [Partner Events](#partner-events)
-- [Events Reflections](#events-recap)
-- [Get Involved](#get-involved)
-- [Executive Board](#exec-board)
-- [Social Media](#social-media)
+import TableOfContents from '~/components/newsletter/TableOfContents.astro';
+import HighlightBox from '~/components/newsletter/HighlightBox.astro';
+import SponsorTierList from '~/components/newsletter/SponsorTierList.astro';
+import CTABox from '~/components/newsletter/CTABox.astro';
+
+<TableOfContents
+  items={[
+    { href: '#fall-fundraiser', label: 'Fall Fundraiser: REGISTRATION OPEN' },
+    { href: '#science-carnival', label: 'Call for Volunteers: Cambridge Science Carnival' },
+    { href: '#podcast', label: 'Coffee with CompBio: Academia or Industry?' },
+    { href: '#microbinfie', label: 'BWIB on the MicroBinfie Podcast' },
+    { href: '#blog-interview', label: 'Blog Bytes' },
+    { href: '#partner-events', label: 'Partner Events' },
+    { href: '#events-recap', label: 'Events Reflections' },
+    { href: '#get-involved', label: 'Get Involved' },
+    { href: '#avoid-spam', label: "Don't Lose Us in Spam" },
+    { href: '#exec-board', label: 'Executive Board' },
+    { href: '#social-media', label: 'Social Media' },
+  ]}
+/>
 
 ---
 
@@ -61,7 +71,7 @@ Additionally, see great family-friendly volunteering opportunities such as the C
     </td>
     <td style="vertical-align: middle; padding-left: 20px; border: none;">
       <ul style="list-style-type: none; padding-left: 0;">
-        <li>Date & Time: October 1st, 2026 @ 5–9 PM ET</li>
+        <li>October 1st, 2026 @ 5–9 PM ET</li>
         <li>Eli Lilly Gateway Labs, Seaport</li>
         <li>Boston, MA</li>
         <li>
@@ -83,13 +93,43 @@ Every dataset, pipeline, and model reflects the assumptions of its creators. **W
 
 **Early Bird pricing ($70 professional / $45 student) ends September 18th** — after that, prices go up to $80/$55, so grab your ticket now. This is one of our rare ticketed events, and proceeds directly support BWIB's year-round programming, networking events, and community resources.
 
-**Student perk:** the first 25 student registrants get a FREE ticket to the [Women's HealthX Conference](https://boston-wib.org/events/womens-healthx-december-2026?utm_source=newsletter&utm_medium=email&utm_campaign=fall-fundraiser-2026) this December ($99 value), including Career Zone access.
+<HighlightBox
+  tone="warm"
+  html={`<strong>Student perk:</strong> the first 25 student registrants get a FREE ticket to the <a href="https://boston-wib.org/events/womens-healthx-december-2026?utm_source=newsletter&utm_medium=email&utm_campaign=fall-fundraiser-2026" class="font-semibold text-primary dark:text-blue-300">Women's HealthX Conference</a> this December ($99 value), including Career Zone access.`}
+/>
 
 Boston Women in Bioinformatics extends our sincere thanks to the sponsors of our Fall Fundraiser:
 
-- Gold sponsors: [Seqera](https://seqera.io/), [Diamond Age](https://diamondage.com/), and [Zifo Technologies](https://zifo.com/)
-- Silver sponsors: [Benchling](https://www.benchling.com/) and [ZS](https://www.zs.com/)
-- Bronze sponsors: [Sprout Informatics](https://www.sproutinformatics.com/), [Brandeis University](https://www.brandeis.edu/online), and [BioTeam](https://www.bioteam.net/).
+<SponsorTierList
+  tiers={[
+    {
+      tier: 'gold',
+      label: 'Gold',
+      sponsors: [
+        { name: 'Seqera', url: 'https://seqera.io/' },
+        { name: 'Diamond Age', url: 'https://diamondage.com/' },
+        { name: 'Zifo Technologies', url: 'https://zifo.com/' },
+      ],
+    },
+    {
+      tier: 'silver',
+      label: 'Silver',
+      sponsors: [
+        { name: 'Benchling', url: 'https://www.benchling.com/' },
+        { name: 'ZS', url: 'https://www.zs.com/' },
+      ],
+    },
+    {
+      tier: 'bronze',
+      label: 'Bronze',
+      sponsors: [
+        { name: 'Sprout Informatics', url: 'https://www.sproutinformatics.com/' },
+        { name: 'Brandeis University', url: 'https://www.brandeis.edu/online' },
+        { name: 'BioTeam', url: 'https://www.bioteam.net/' },
+      ],
+    },
+  ]}
+/>
 
 Their support makes our programming, events, and community possible, and we're grateful for their investment into our organization.
 
@@ -278,11 +318,49 @@ Missed out? No problem. Join our new [Slack](https://docs.google.com/forms/d/e/1
 
 <div id="get-involved" class="scroll-mt-[80px]"></div>
 
-## Get Involved
+<CTABox
+  heading="Get Involved"
+  html={`Boston Women in Bioinformatics runs entirely on volunteer energy, and we're always looking for passionate people to join us. From organizing events and producing the podcast to managing finances and advocating for equity in the field, there's a place for every skill set.<br /><br /><b>Looking to volunteer?</b> Join our <a href="https://docs.google.com/forms/d/e/1FAIpQLSfcgDtmTKBtN1YkLRYGMdJ5Rq_IekJ9DyXlGyh5N1ZyVUoddQ/viewform" class="text-primary hover:underline dark:text-blue-300">Slack</a> group and send a message to co-chairs of the committees you want to be a part of.`}
+  buttonHref="https://boston-wib.org/about/committees?utm_source=newsletter&utm_medium=email&utm_campaign=resource-page"
+  buttonLabel="Explore our committees"
+/>
 
-Boston Women in Bioinformatics runs entirely on volunteer energy, and we're always looking for passionate people to join us. From organizing events and producing the podcast to managing finances and advocating for equity in the field, there's a place for every skill set. Learn more at [boston-wib.org/about/committees](https://boston-wib.org/about/committees?utm_source=newsletter&utm_medium=email&utm_campaign=resource-page).
+---
 
-Looking to volunteer? Join the BWIB [Slack](https://docs.google.com/forms/d/e/1FAIpQLSfcgDtmTKBtN1YkLRYGMdJ5Rq_IekJ9DyXlGyh5N1ZyVUoddQ/viewform) group and feel free to send a message to co-chairs of the committees you want to be a part of.
+<div id="avoid-spam" class="scroll-mt-[80px]"></div>
+
+## Don't Lose Us in Spam
+
+To ensure you never miss an update, add **newsletter@boston-wib.org** and **communications@boston-wib.org** to your email contacts.
+
+For guaranteed delivery, click below to see specific steps for your provider:
+
+<details class="image-description">
+<summary>Instructions</summary>
+
+### Gmail (Desktop)
+
+1. Click **Settings (Gear icon)** > **See all settings**.
+2. Go to **Filters and Blocked Addresses** > **Create a new filter**.
+3. In the **From** field, paste: `newsletter@boston-wib.org OR communications@boston-wib.org`
+4. Click **Create filter**, check **Never send it to Spam**, and click **Create filter** again.
+
+### Outlook (Web)
+
+1. Click **Settings (Gear icon)** > **Mail** > **Junk email**.
+2. Under **Safe senders and domains**, click **Add**.
+3. Type `boston-wib.org` and press **Enter**.
+4. Click **Save**.
+
+### Apple Mail (iPhone/Mac)
+
+1. Open the **Contacts** app and click **+** to create a new contact.
+2. Name it **Boston WIB**.
+3. Add both email addresses to the contact card and save.
+
+</details>
+
+_Tip: If an email is already in your Spam folder, open it and select **Not Spam** or drag it to your Primary inbox to train your provider._
 
 ---
 
