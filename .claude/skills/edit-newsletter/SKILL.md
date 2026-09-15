@@ -11,7 +11,22 @@ Apply these when writing or revising section content:
 
 - **After adding any Tailwind class not already used elsewhere in the codebase** (arbitrary values like `bg-[#6d28d9]` or `scroll-mt-[80px]` are the common case), run `npm run build:css` before checking your work in the browser. This site precompiles Tailwind into a static `public/tailwind-built.css` rather than compiling it live (Local Norm 22 in `AGENTS.md`), so a first-time class has no visual effect — not even after a hard refresh — until that rebuild runs.
 
-- **Table of contents**: links use `#anchor-id`; each `##` section gets `<div id="..." class="scroll-mt-[80px]"></div>` immediately **before** the heading (not after). Anchor scrolling puts the anchor element at the top of the viewport — if the div comes after the heading, clicking the TOC link scrolls the heading itself out of view above the fold. The `scroll-mt-[80px]` class is required too: the site's sticky header covers the top of the viewport, and headings elsewhere get scroll offset via `prose-headings:scroll-mt-[80px]` on the prose wrapper, but that Tailwind Typography modifier only targets actual heading elements — since the anchor is a plain `<div>`, not a heading, it needs the same offset applied directly or the target lands underneath the header. Every `##` heading must have a corresponding TOC entry.
+- **Table of contents**: render it with the `<TableOfContents />` component (`~/components/newsletter/TableOfContents.astro`), not hand-written HTML — this keeps the `.mdx` source readable instead of ~50 lines of repeated `<li><a>` markup. Import it once near the top of the body and pass one `{ href, label }` entry per `##` section, in the order the sections appear:
+
+  ```mdx
+  import TableOfContents from '~/components/newsletter/TableOfContents.astro';
+
+  <TableOfContents
+    items={[
+      { href: '#fall-fundraiser', label: 'Fall Fundraiser: REGISTRATION OPEN' },
+      { href: '#get-involved', label: 'Get Involved' },
+    ]}
+  />
+  ```
+
+  It renders the "Here's what's inside this month" styled box (`border-l-4 border-primary bg-blue-50 dark:bg-slate-800`) — pass a `title` prop only if an issue needs different heading text than the default. `.mdx`-only (component import), so this doesn't apply to legacy `.md` issues (001–007), which keep the plain markdown bullet-list TOC.
+
+  Independently of how the TOC box itself is rendered, each `##` section still needs its own anchor target: `<div id="..." class="scroll-mt-[80px]"></div>` immediately **before** the heading (not after). Anchor scrolling puts the anchor element at the top of the viewport — if the div comes after the heading, clicking the TOC link scrolls the heading itself out of view above the fold. The `scroll-mt-[80px]` class is required too: the site's sticky header covers the top of the viewport, and headings elsewhere get scroll offset via `prose-headings:scroll-mt-[80px]` on the prose wrapper, but that Tailwind Typography modifier only targets actual heading elements — since the anchor is a plain `<div>`, not a heading, it needs the same offset applied directly or the target lands underneath the header. Every `##` heading must have a corresponding TOC entry.
 - **UTM tags**: internal `boston-wib.org` links get `?utm_source=newsletter&utm_medium=email&utm_campaign=<campaign>`. Ask the developer for the `utm_campaign` value before writing links. Naming conventions:
   - Lowercase, hyphens only (no spaces or underscores)
   - Pick a name that describes the initiative and keep it consistent across every channel so GA can aggregate across sources
@@ -44,6 +59,53 @@ Apply these when writing or revising section content:
   >
   ```
 
+**Callout boxes** — for a short highlighted note, a sponsor/tier list, or a closing CTA, render one of the three components below rather than hand-writing raw `<div>`/`<p>`/`<a>` HTML in the `.mdx` body.
+
+> **Why components, not raw HTML** — MDX's markdown parser (remark) decides paragraph boundaries by line position, not by JSX tag nesting. A hand-written block like `<div><p>text <a>link</a> more text</p></div>`, when its children span multiple lines, gets its text silently re-parented into stray sibling `<p>` tags (sometimes empty ones) instead of staying inside the `<p>` you wrote — this drops the class you put on that `<p>`, breaks inline flow (a link can end up outside the sentence entirely), and doesn't error at build time, so it's easy to ship. This bit an earlier draft of issue 010's Student Perk/Sponsor Tier boxes: `astro build` succeeded, but the built HTML had unstyled empty `<p>` tags. Passing content through a component **prop** (a string or a data array, as below) sidesteps this — remark never touches prop values, only literal JSX children — which is also why `<TableOfContents />` above never hit this problem. Never hand-roll one of these three patterns as inline `.mdx` HTML; add a prop to the component instead if it needs to support something new.
+
+All three live in `src/components/newsletter/` and use pastel tints (`bg-*-50` light / `dark:bg-slate-800` dark), never a solid brand-color fill — see `COLOR_PALETTE.md`'s rule that the four brand colors are text/border/icon colors, not section backgrounds.
+
+- **`<HighlightBox />`** (`HighlightBox.astro`) — a short highlighted note (e.g. a student discount, a deadline reminder): `border-l-4` accent bar + pastel fill. `tone="warm"` (`border-accent-warm bg-orange-50`, default) for a perk/discount, `tone="primary"` (`border-primary bg-blue-50`) for a neutral heads-up. `html` is a raw HTML string (may include an `<a>`), rendered via `set:html` — write it as a JS template literal (backticks) so plain double quotes can be used for the nested HTML attributes.
+
+  ```mdx
+  import HighlightBox from '~/components/newsletter/HighlightBox.astro';
+
+  <HighlightBox
+    tone="warm"
+    html={`<strong>Student perk:</strong> the first 25 student registrants get a FREE ticket to the <a href="https://boston-wib.org/events/womens-healthx-december-2026?utm_source=newsletter&utm_medium=email&utm_campaign=fall-fundraiser-2026" class="font-semibold text-primary dark:text-blue-300">Women's HealthX Conference</a> this December ($99 value).`}
+  />
+  ```
+
+- **`<SponsorTierList />`** (`SponsorTierList.astro`) — a `bg-slate-50 dark:bg-slate-800` box containing a table, one row per tier. Tier labels reuse the site's existing tier-color pattern from `Sponsors.astro` (`!text-{gold,silver,bronze}` plus a text-shadow inline style for contrast on light backgrounds) rather than inventing new tier colors. Pass `tiers` as structured data — the component joins each tier's sponsors with `, ` and a trailing `, and ` itself, so don't include separators in the sponsor names.
+
+  ```mdx
+  import SponsorTierList from '~/components/newsletter/SponsorTierList.astro';
+
+  <SponsorTierList
+    tiers={[
+      {
+        tier: 'gold',
+        label: 'Gold',
+        sponsors: [
+          { name: 'Sponsor Name', url: 'https://example.com/' },
+        ],
+      },
+    ]}
+  />
+  ```
+
+- **`<CTABox />`** (`CTABox.astro`) — a closing CTA box (e.g. Get Involved): bordered pastel box, centered text, ending in a `btn-primary` button. Use for a boilerplate section that ends in a single clear action rather than leaving it as bare paragraphs. `html` is a template-literal string (same reasoning as `HighlightBox`); `buttonHref`/`buttonLabel` render the button.
+
+  ```mdx
+  import CTABox from '~/components/newsletter/CTABox.astro';
+
+  <CTABox
+    html={`Message text with an inline <a href="https://example.com/" class="text-primary hover:underline dark:text-blue-300">link</a> if needed.`}
+    buttonHref="https://boston-wib.org/about/committees?utm_source=newsletter&utm_medium=email&utm_campaign=resource-page"
+    buttonLabel="Call to Action"
+  />
+  ```
+
 **Upcoming Events section (`## Events on the Horizon`):**
 
 - Each event is a `###` heading (never `##`)
@@ -71,6 +133,14 @@ Apply these when writing or revising section content:
 
 Event description paragraph.
 ```
+
+## Finding Source Content
+
+When a section needs real content pulled from the site rather than invented, use these locations:
+
+- **Upcoming events**: `src/content/meetups/<year>/<YYYYMMDD>*.md` — the leading `<YYYYMMDD>` in the filename is the event date. Filter to files dated after this issue's `publishDate` to find events still upcoming at send time; frontmatter (`title`, `dateTime`, `endDate`, `location`, `url`, `partnerEvent`, `partnerOrganization`, `slug`) has everything needed for the event table or Partner Events entry (partner events are the ones with `partnerEvent: true`).
+- **Latest podcast episode**: `src/content/post/coffeewithcompbio/` — the most recently dated file (filename prefix `YYYYMMDD`) is the latest episode; its frontmatter (`title`, `excerpt`, `slug`) and body give the description and Spotify/Apple links for the podcast section.
+- **A specific blog post**: if the user names a file directly (e.g. `src/content/post/20260821_post_Isha.mdx`), read that file's frontmatter (`title`, `slug`, `authors`, `image`) and body for the Blog Spotlight section instead of searching.
 
 ## Step 1 — Identify the File
 
