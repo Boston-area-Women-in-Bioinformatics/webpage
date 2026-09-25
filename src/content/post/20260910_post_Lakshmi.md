@@ -7,6 +7,7 @@ authors:
   - name: 'Lakshmi Kuttippurathu, Ph.D.'
     url: 'https://www.linkedin.com/in/lakshmikc/'
 image: '/blog_images/WH-blog-image.png'
+imagePosition: 'contain'
 category: 'Deep Dive'
 draft: false
 tags:
@@ -28,13 +29,13 @@ We have frequently measured women using tools, thresholds, disease definitions a
 
 Rather than focusing solely on representation, may be it is time to rethink and redesign the scientific frameworks through which women’s health is studied.
 
-**The “default patient” is being retired**
+## The “default patient” is being retired
 
 The old model of medical research most of the time began with an implicit reference patient: male, hormonally stable and biologically consistent over time. Women were then added as a subgroup.
 
 That approach assumes that female biology is a variation on the standard model. However, across cardiovascular disease, autoimmunity, neurological disease, cancer and inflammatory disorders, we are seeing a different reality: sex can influence disease mechanisms, symptom presentation, immune activity, drug exposure, toxicity and treatment response.
 
-Women’s stronger type 1 interferon responses, for example, may offer protection against some infections while increasing susceptibility to autoimmune disease. X-chromosome biology may help explain why conditions such as lupus disproportionately affect women. Hormonal transitions can modify immune activation, vascular tone, pain, metabolism and tissue repair. Menopause may change the trajectory of diseases far beyond the reproductive system. _(Ref: Symposium: Advances in the Development of Therapeutics and Diagnostics for Women’s Health: [https://pbss.org/eventDetails/1074](https://pbss.org/eventDetails/1074))_
+Women’s stronger type 1 interferon responses, for example, may offer protection against some infections while increasing susceptibility to autoimmune disease. X-chromosome biology may help explain why conditions such as lupus disproportionately affect women. Hormonal transitions can modify immune activation, vascular tone, pain, metabolism and tissue repair. Menopause may change the trajectory of diseases far beyond the reproductive system. _([Ref: Symposium: Advances in the Development of Therapeutics and Diagnostics for Women’s Health](https://pbss.org/eventDetails/1074))_
 
 The point is not that every condition requires a completely separate branch of medicine for women and men. We just need to acknowledge that sex and hormonal state can be biologically consequential variables! And this distinction becomes especially important when medicine relies only on thresholds.
 
@@ -42,7 +43,7 @@ A standard angiogram may show no obstructive disease while dysfunction stays in 
 
 This leads to the problem of **Correct number, but wrong interpretation!**
 
-**From snapshots to trajectories**
+## From snapshots to trajectories
 
 One of the clearest shifts looks like the movement away from single measurements and population averages toward **biological trajectories**.
 
@@ -52,11 +53,11 @@ This is an example of how easily high-risk individuals can disappear inside appa
 
 Risk-based care is not one-size-fits-all. For some people it may mean earlier or more frequent assessment. For others it may mean avoiding unnecessary procedures. Precision should reduce both neglect and overtreatment.
 
-**What menstruation can teach medicine about inflammation**
+## What menstruation can teach medicine about inflammation
 
 One of the most striking reframes in this topic came from the use of menstrual biology as a model of inflammation and repair.
 
-[Ridhi Tariyal](https://www.linkedin.com/in/ridhitariyal/) talked about this topic. Menstruation has traditionally been treated as a reproductive event, an inconvenience or a variable to be controlled. But biologically, it is a recurring, accessible example of tissue breakdown, immune activation, clearance and regeneration. (https://www.medrxiv.org/content/10.64898/2025.12.30.25343168v1.full)
+[Ridhi Tariyal](https://www.linkedin.com/in/ridhitariyal/) talked about this topic. Menstruation has traditionally been treated as a reproductive event, an inconvenience or a variable to be controlled. But biologically, it is a recurring, accessible example of tissue breakdown, immune activation, clearance and regeneration ([Ref: Publication: Gire & Tariyal 2026](https://www.medrxiv.org/content/10.64898/2025.12.30.25343168v1.full)).
 
 In a healthy cycle, inflammation transitions into repair!
 
@@ -72,7 +73,7 @@ This “confounding variable” may turn out to be the biology we needed to unde
 
 I found this fascinating!
 
-**A word of caution: AI can integrate the data, but it cannot invent the missing labels**
+## A word of caution: AI can integrate the data, but it cannot invent the missing labels
 
 Women’s health is entering a transformative period just as biomedical science is generating unprecedented amounts of data. Single-cell sequencing, spatial technologies, multi-omics, multimodal analysis, wearables, and electronic health records now allow us to capture biological changes across tissues, life stages, and time.
 
@@ -82,7 +83,7 @@ The next challenge is to create better datasets: longitudinal rather than episod
 
 The field needs scientists, clinicians and patients to decide what the data should represent.
 
-**The endpoint is not always a cure**
+## The endpoint is not always a cure
 
 Another important change is occurring in how success is defined.
 
@@ -100,7 +101,7 @@ Patient-reported outcomes, daily function, treatment burden and quality of life 
 
 “Patient-centered” should mean treating lived experience as evidence that shapes the protocol.
 
-**The opportunity is larger than reproductive health**
+## The opportunity is larger than reproductive health
 
 Women’s health is still too often used as shorthand for fertility, pregnancy and reproductive organs.
 
@@ -114,7 +115,7 @@ Cardiovascular disease is a particularly important example. There is a possibili
 
 The future of women’s health requires willingness to question the test if the results do not agree with the symptoms.
 
-**What progress could look like**
+## What progress could look like
 
 Ten years from now, success should also be measured by the structure of medicine in addition to the number of women’s health companies launched or the amount of capital invested.
 
