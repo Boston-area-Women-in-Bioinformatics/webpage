@@ -12,19 +12,20 @@ tags:
   - 'machine-learning'
   - 'in-person'
   - 'networking'
-imgpos: object-center
+imgpos: object-fill
 partnerEvent: true
 partnerOrganization: 'PyData Boston'
 slug: 'pydata-boston-ai-week-2026'
 ---
 
-We're back in action with a special three-speaker bonanza for Boston AI Week! 
+We're back in action with a special three-speaker bonanza for Boston AI Week!
 
 We'll start with an intro to building agents in multiple frameworks, move on to considerations for testing those agents, and finish with a spotlight on a promising new framework for building agents in Python: PydanticAI.
 
-Join us at **Moderna HQ** for talks, food, and socializing with fellow data science and machine learning enthusiasts. 
+Join us at **Moderna HQ** for talks, food, and socializing with fellow data science and machine learning enthusiasts.
 
 **Schedule:**
+
 - 6:30 PM: Doors open, food, and socializing
 - 7:00 PM: Talks begin
 - 8:30 PM: More socializing
