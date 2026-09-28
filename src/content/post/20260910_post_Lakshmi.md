@@ -7,6 +7,7 @@ authors:
   - name: 'Lakshmi Kuttippurathu, Ph.D.'
     url: 'https://www.linkedin.com/in/lakshmikc/'
 image: '/blog_images/WH-blog-image.png'
+imagePosition: 'contain'
 category: 'Deep Dive'
 draft: false
 tags:
