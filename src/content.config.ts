@@ -139,25 +139,49 @@ const newsletterCollection = defineCollection({
 const eventCollection = defineCollection({
   // Load data from Markdown files on disk
   loader: glob({ pattern: '**/*.md', base: 'src/content/meetups' }),
-  schema: z.object({
-    title: z.string(),
-    dateTime: nyDate(),
-    endDate: nyDate().optional(),
-    location: z.array(z.string()),
-    url: z.string().optional(),
-    'url-button-label': z.string().optional(),
-    data_luma_event_id: z.string().optional(),
-    image: z.object({
-      src: z.string(),
-      alt: z.string(),
-    }),
-    imgpos: z.string().optional().default('object-top object-cover'),
-    cost: z.number().optional(),
-    tags: z.array(z.string()),
-    partnerEvent: z.boolean().optional().default(false),
-    partnerOrganization: z.string().optional(),
-    slug: z.string().optional(),
-  }),
+  schema: z
+    .object({
+      title: z.string(),
+      dateTime: nyDate(),
+      endDate: nyDate().optional(),
+      location: z.array(z.string()),
+      url: z.string().optional(),
+      'url-button-label': z.string().optional(),
+      data_luma_event_id: z.string().optional(),
+      image: z.object({
+        src: z.string(),
+        alt: z.string(),
+      }),
+      imgpos: z.string().optional().default('object-top object-cover'),
+      cost: z.number().optional(),
+      tags: z.array(z.string()),
+      partnerEvent: z.boolean().optional().default(false),
+      partnerOrganization: z.string().optional(),
+      slug: z.string().optional(),
+      // Multi-part series (e.g. a 4-part workshop): series is the shared
+      // title shown on every part; seriesPart/seriesTotal render as
+      // "Part <seriesPart> of <seriesTotal>" on the event page. All three
+      // fields are set explicitly per event (no auto-counting across the
+      // collection) so a series' size/order never depends on which other
+      // event files happen to exist — see the add-event command.
+      series: z.string().optional(),
+      seriesPart: z.number().int().positive().optional(),
+      seriesTotal: z.number().int().positive().optional(),
+    })
+    .refine(
+      (data) => {
+        const hasAnySeriesField =
+          data.series !== undefined || data.seriesPart !== undefined || data.seriesTotal !== undefined;
+        if (!hasAnySeriesField) return true;
+        return (
+          data.series !== undefined &&
+          data.seriesPart !== undefined &&
+          data.seriesTotal !== undefined &&
+          data.seriesPart <= data.seriesTotal
+        );
+      },
+      { message: 'series, seriesPart, and seriesTotal must all be set together, with seriesPart <= seriesTotal' }
+    ),
 });
 
 const committeeCollection = defineCollection({

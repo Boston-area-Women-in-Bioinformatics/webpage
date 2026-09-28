@@ -28,6 +28,9 @@ const { Content } = await render(meeting);
   partnerEvent={meeting.data.partnerEvent}
   partnerOrganization={meeting.data.partnerOrganization}
   slug={meeting.data.slug ?? meeting.id}
+  series={meeting.data.series}
+  seriesPart={meeting.data.seriesPart}
+  seriesTotal={meeting.data.seriesTotal}
 >
   <Content />
 </EventLayout>

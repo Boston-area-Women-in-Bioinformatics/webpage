@@ -182,6 +182,7 @@ The markdown file should follow a specific format. In between the top two `---` 
 - `slug`: a human-readable URL identifier for the event page (e.g., `byte-and-bite-may-2026`). If omitted, the filename is used instead. Use lowercase words separated by hyphens. Follow these conventions:
   - For events that occur once a year, include the year: `fall-fundraiser-2026`
   - For events that occur multiple times a year (at most once a month), include the month and year: `byte-and-bite-may-2026`
+- `series` / `seriesPart` / `seriesTotal`: for a multi-part series (e.g. a 4-part workshop), create one event file per part and set all three fields on each: `series` is the name shared by every part, `seriesPart` is that part's position, `seriesTotal` is the total number of parts. Must be set together (all three or none), and `seriesPart` must be less than or equal to `seriesTotal`. Renders as "Part `seriesPart` of `seriesTotal`" on the event page and as "(Part `seriesPart` of `seriesTotal`)" next to the title on the `/events` listing.
 
 #### 3. Add an image
 

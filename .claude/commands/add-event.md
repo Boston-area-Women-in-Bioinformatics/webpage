@@ -60,6 +60,9 @@ Ask the user for the following. Collect all required fields before proceeding. U
   - Events that occur once a year: `fall-fundraiser-2026`
   - Events that occur multiple times a year: `byte-and-bite-may-2026`
   - Omit to use the filename instead.
+- `series` / `seriesPart` / `seriesTotal` — for a multi-part series (e.g. a 4-part workshop), set all three together: `series` is the shared name shown on every part, `seriesPart` is this event's position, `seriesTotal` is the number of parts. Renders as "Part `seriesPart` of `seriesTotal`" on the event page and as "(Part `seriesPart` of `seriesTotal`)" next to the title on `/events` listing cards. All three fields must be set together (the schema rejects a partial set) and `seriesPart` must be ≤ `seriesTotal`. There's no shared series collection or auto-numbering — each part is its own independent event file with these three fields set explicitly, so ask the user for each part's own date/time/location/etc. individually.
+
+**Creating multiple parts of a series at once:** if the user asks for several events that are part of the same series (e.g. "make 4 events part of a series"), gather the shared `title` and `series` name once, then ask for each part's own `dateTime` (and any other per-part details that differ, like `location`) individually — don't assume every part shares the same date/location. Create one file per part, each with the same `title`/`series`, `seriesTotal` set to the total count, and `seriesPart` set to that file's position (1, 2, 3, …).
 
 ## Step 2 — Determine File Path
 
@@ -91,6 +94,9 @@ partnerEvent: false
 partnerOrganization: '...'
 cost: 10
 slug: 'event-name-month-year'
+series: 'Series Name'
+seriesPart: 1
+seriesTotal: 4
 ---
 MARKDOWN BODY (event description goes here)
 ```

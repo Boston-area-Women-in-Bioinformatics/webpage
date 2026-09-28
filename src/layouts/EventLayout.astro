@@ -23,6 +23,9 @@ export interface Props {
   partnerEvent?: boolean;
   partnerOrganization?: string;
   slug?: string;
+  series?: string;
+  seriesPart?: number;
+  seriesTotal?: number;
 }
 
 const {
@@ -39,6 +42,9 @@ const {
   partnerEvent = false,
   partnerOrganization,
   slug,
+  series,
+  seriesPart,
+  seriesTotal,
 } = Astro.props;
 
 // Using template literals
@@ -70,6 +76,13 @@ const secondLine = hasBreak ? title.slice(breakIndex + 1).trim() : '';
     <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
       <img src={imgsrc} alt={imgalt} class={imgcss} />
       <div class="p-1">
+        {
+          series && seriesPart && seriesTotal && (
+            <div class="mb-1 inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary dark:bg-slate-800 dark:text-blue-300">
+              {series} · Part {seriesPart} of {seriesTotal}
+            </div>
+          )
+        }
         <h2
           class="text-2xl font-bold mb-2 font-heading leading-tighter tracking-tighter text-gray-900 dark:text-slate-100"
         >

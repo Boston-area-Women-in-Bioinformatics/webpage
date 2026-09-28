@@ -60,6 +60,11 @@ const hasBwibEvents = bwib_events.length > 0;
                   transition:name="playlist ${event.id} title"
                 >
                   {event.data.title}
+                  {event.data.series && event.data.seriesPart && event.data.seriesTotal && (
+                    <span class="ml-2 text-xs font-normal text-gray-500 dark:text-gray-400">
+                      (Part {event.data.seriesPart} of {event.data.seriesTotal})
+                    </span>
+                  )}
                 </h3>
                 <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
                   <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} />
@@ -95,6 +100,11 @@ const hasBwibEvents = bwib_events.length > 0;
                 transition:name={`playlist ${event.id} title`}
               >
                 {event.data.title}
+                {event.data.series && event.data.seriesPart && event.data.seriesTotal && (
+                  <span class="ml-2 text-xs font-normal text-gray-500 dark:text-gray-400">
+                    (Part {event.data.seriesPart} of {event.data.seriesTotal})
+                  </span>
+                )}
               </h3>
               <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
                 <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} />
@@ -125,6 +135,11 @@ const hasBwibEvents = bwib_events.length > 0;
                     transition:name={`playlist ${event.id} title`}
                   >
                     {event.data.title}
+                    {event.data.series && event.data.seriesPart && event.data.seriesTotal && (
+                      <span class="ml-2 text-xs font-normal text-gray-500 dark:text-gray-400">
+                        (Part {event.data.seriesPart} of {event.data.seriesTotal})
+                      </span>
+                    )}
                     <span class="ml-2 text-xs font-normal text-gray-500 dark:text-gray-400">(Partner Event)</span>
                   </h3>
                   <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
@@ -159,6 +174,11 @@ const hasBwibEvents = bwib_events.length > 0;
                 transition:name={`playlist ${event.id} title`}
               >
                 {event.data.title}
+                {event.data.series && event.data.seriesPart && event.data.seriesTotal && (
+                  <span class="ml-2 text-xs font-normal text-gray-500 dark:text-gray-400">
+                    (Part {event.data.seriesPart} of {event.data.seriesTotal})
+                  </span>
+                )}
                 <span class="ml-2 text-xs font-normal text-gray-500 dark:text-gray-400">(Partner Event)</span>
               </h3>
               <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
