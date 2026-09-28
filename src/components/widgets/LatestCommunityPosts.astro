@@ -120,7 +120,7 @@ const instanceId = `carousel-${Math.random().toString(36).slice(2, 9)}`;
                         <img
                           src={cardImage}
                           alt={cardImageAlt}
-                          class={`w-full h-48 object-${cardImageFit}`}
+                          class={`w-full h-48 object-${cardImageFit} ${cardImageFit === 'contain' ? 'p-4 bg-white dark:bg-slate-700' : ''}`}
                           style={`object-position: ${objectPosition};`}
                           loading="lazy"
                         />
@@ -128,7 +128,7 @@ const instanceId = `carousel-${Math.random().toString(36).slice(2, 9)}`;
                         <Image
                           src={cardImage}
                           alt={cardImageAlt || post.title || 'Post image'}
-                          class={`w-full h-48 object-${cardImageFit}`}
+                          class={`w-full h-48 object-${cardImageFit} ${cardImageFit === 'contain' ? 'p-4 bg-white dark:bg-slate-700' : ''}`}
                           style={`object-position: ${objectPosition};`}
                           widths={[400, 600]}
                           width={600}
