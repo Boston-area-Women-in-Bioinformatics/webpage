@@ -1,0 +1,47 @@
+---
+// Boxed sponsor list grouped by tier for a newsletter issue. Tier labels reuse
+// the site's existing tier-color pattern from Sponsors.astro (!text-{tier}
+// plus a text-shadow for contrast on light backgrounds). Sponsors are passed
+// as structured props (not JSX children) for the same reason as HighlightBox.
+export interface Props {
+  tiers: Array<{
+    tier: 'gold' | 'silver' | 'bronze';
+    label: string;
+    sponsors: Array<{ name: string; url: string }>;
+  }>;
+}
+
+const { tiers } = Astro.props;
+
+// Written as literal class strings (not a template-literal interpolation) so
+// Tailwind's content scanner can statically discover them.
+const tierLabelClasses = {
+  gold: 'w-20 py-1 pr-4 align-top text-lg font-bold uppercase tracking-wide !text-gold',
+  silver: 'w-20 py-1 pr-4 align-top text-lg font-bold uppercase tracking-wide !text-silver',
+  bronze: 'w-20 py-1 pr-4 align-top text-lg font-bold uppercase tracking-wide !text-bronze',
+};
+---
+
+<div class="not-prose my-4 rounded-lg bg-slate-50 p-5 dark:bg-slate-800">
+  <table class="w-full text-lg">
+    {
+      tiers.map((t) => (
+        <tr>
+          <td class={tierLabelClasses[t.tier]} style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">
+            {t.label}
+          </td>
+          <td class="py-1 text-slate-800 dark:text-slate-100">
+            {t.sponsors.map((s, i) => (
+              <>
+                <a href={s.url} class="text-primary hover:underline dark:text-blue-300">
+                  {s.name}
+                </a>
+                {i < t.sponsors.length - 1 && (i === t.sponsors.length - 2 ? ', and ' : ', ')}
+              </>
+            ))}
+          </td>
+        </tr>
+      ))
+    }
+  </table>
+</div>

@@ -4,6 +4,7 @@ import type { GetStaticPaths } from 'astro';
 import Layout from '~/layouts/PageLayout.astro';
 import PostListItem from '~/components/ui/PostListItem.astro';
 import Headline from '~/components/ui/Headline.astro';
+import LatestCommunityPosts from '~/components/widgets/LatestCommunityPosts.astro';
 
 import { blogListRobots, getStaticPathsBlogListAll } from '~/utils/blog';
 import { getPermalink } from '~/utils/permalinks';
@@ -145,6 +146,11 @@ const metadata = {
         </span>
         Series only
       </label>
+    </div>
+
+    <!-- Latest Posts: auto-advancing carousel of the 4 newest posts -->
+    <div class="mb-10">
+      <LatestCommunityPosts showHeading={false} showViewAllButton={false} variant="carousel" />
     </div>
 
     <!-- Category Cards (shown when not searching) -->
