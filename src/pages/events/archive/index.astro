@@ -14,20 +14,74 @@ const allPastEvents = (
   })
 ).sort((a, b) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
 
-const eventsForClient = allPastEvents.map((e) => ({
-  id: e.id,
-  title: e.data.title,
-  tags: e.data.tags || [],
-  dateTime: e.data.dateTime.toISOString(),
-  endDate: e.data.endDate?.toISOString() ?? null,
-  location: e.data.location || [],
-  imageSrc: e.data.image.src,
-  imageAlt: e.data.image.alt,
-  imgpos: e.data.imgpos ?? '',
-  href: `/events/${e.data.slug ?? e.id}`,
-  isPartner: e.data.partnerEvent ?? false,
-  partnerOrganization: e.data.partnerOrganization ?? null,
-}));
+function toClientEvent(e: CollectionEntry<'event'>) {
+  return {
+    id: e.id,
+    title: e.data.title,
+    tags: e.data.tags || [],
+    dateTime: e.data.dateTime.toISOString(),
+    endDate: e.data.endDate?.toISOString() ?? null,
+    location: e.data.location || [],
+    imageSrc: e.data.image.src,
+    imageAlt: e.data.image.alt,
+    imgpos: e.data.imgpos ?? '',
+    href: `/events/${e.data.slug ?? e.id}`,
+    isPartner: e.data.partnerEvent ?? false,
+    partnerOrganization: e.data.partnerOrganization ?? null,
+    seriesPart: e.data.seriesPart ?? null,
+    seriesTotal: e.data.seriesTotal ?? null,
+    isSeriesSummary: false,
+  };
+}
+
+// A series (matched by its shared `series` name) is only merged into a single
+// archive card once every one of its `seriesTotal` parts has passed — while
+// still in progress, its completed parts keep showing individually (see
+// AGENTS.md's "Multi-part event series" note).
+const standalone: CollectionEntry<'event'>[] = [];
+const seriesGroups = new Map<string, CollectionEntry<'event'>[]>();
+for (const e of allPastEvents) {
+  if (e.data.series) {
+    if (!seriesGroups.has(e.data.series)) seriesGroups.set(e.data.series, []);
+    seriesGroups.get(e.data.series)!.push(e);
+  } else {
+    standalone.push(e);
+  }
+}
+
+const eventsForClient = standalone.map(toClientEvent);
+
+for (const [seriesName, parts] of seriesGroups) {
+  const seriesTotal = parts[0].data.seriesTotal;
+  if (parts.length === seriesTotal) {
+    // Every part has passed — collapse into one summary card.
+    const sorted = [...parts].sort((a, b) => (a.data.seriesPart ?? 0) - (b.data.seriesPart ?? 0));
+    const first = sorted[0];
+    const last = sorted[sorted.length - 1];
+    eventsForClient.push({
+      id: first.id,
+      title: seriesName,
+      tags: [...new Set(parts.flatMap((p) => p.data.tags || []))],
+      dateTime: first.data.dateTime.toISOString(),
+      endDate: (last.data.endDate ?? last.data.dateTime).toISOString(),
+      location: first.data.location || [],
+      imageSrc: first.data.image.src,
+      imageAlt: first.data.image.alt,
+      imgpos: first.data.imgpos ?? '',
+      href: `/events/${first.data.slug ?? first.id}`,
+      isPartner: first.data.partnerEvent ?? false,
+      partnerOrganization: first.data.partnerOrganization ?? null,
+      seriesPart: null,
+      seriesTotal,
+      isSeriesSummary: true,
+    });
+  } else {
+    // Series still in progress — keep completed parts as individual cards.
+    eventsForClient.push(...parts.map(toClientEvent));
+  }
+}
+
+eventsForClient.sort((a, b) => new Date(b.dateTime).valueOf() - new Date(a.dateTime).valueOf());
 
 const metadata = {
   title: 'Past Events',
@@ -188,13 +242,24 @@ const metadata = {
       ? `<span class="text-xs font-medium text-gray-500 dark:text-slate-400 italic mb-1 block">Hosted by ${event.partnerOrganization || 'Partner Organization'}</span>`
       : '';
 
+    const seriesBadge = event.isSeriesSummary
+      ? `<span class="text-xs font-medium text-primary dark:text-blue-400 mb-1 block">${event.seriesTotal}-Part Series</span>`
+      : event.seriesPart && event.seriesTotal
+        ? `<span class="text-xs font-medium text-gray-500 dark:text-slate-400 mb-1 block">Part ${event.seriesPart} of ${event.seriesTotal}</span>`
+        : '';
+
+    const dateHtml = event.isSeriesSummary
+      ? `${formatDate(event.dateTime)} – ${formatDate(event.endDate)}`
+      : formatDate(event.dateTime);
+
     return `
       <div class="rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-700 shadow overflow-hidden flex flex-col md:flex-row">
         <img src="${event.imageSrc}" alt="${event.imageAlt}" class="w-full md:h-48 md:w-48 h-auto object-cover ${event.imgpos}" loading="lazy" />
         <div class="p-4 flex-1">
+          ${seriesBadge}
           ${partnerBadge}
           <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-slate-100">${event.title}</h3>
-          <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">${formatDate(event.dateTime)}</div>
+          <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">${dateHtml}</div>
           ${locationHtml}
           ${tagsHtml}
           <a href="${event.href}" class="inline-block px-4 py-2 text-sm font-semibold rounded-lg bg-primary text-white hover:bg-blue-700 transition">MORE INFO</a>

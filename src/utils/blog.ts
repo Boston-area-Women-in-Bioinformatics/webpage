@@ -1,5 +1,5 @@
 import type { PaginateFunction } from 'astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { Post } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
@@ -49,8 +49,8 @@ const generatePermalink = async ({
 };
 
 const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
-  const { id, slug: rawSlug = '', data } = post;
-  const { Content, remarkPluginFrontmatter } = await post.render();
+  const { id, data } = post;
+  const { Content, remarkPluginFrontmatter } = await render(post);
 
   const {
     publishDate: rawPublishDate = new Date(),
@@ -75,7 +75,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     url,
   } = data;
 
-  const slug = cleanSlug(rawSlug); // cleanSlug(rawSlug.split('/').pop());
+  const slug = cleanSlug(id);
   const publishDate = new Date(rawPublishDate);
   const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined;
 
@@ -310,12 +310,45 @@ export const getStaticPathsBlogListAll = async () => {
 /** */
 export const getStaticPathsBlogPost = async () => {
   if (!isBlogEnabled || !isBlogPostRouteEnabled) return [];
-  return (await fetchPosts()).flatMap((post) => ({
-    params: {
-      blog: post.permalink,
-    },
-    props: { post },
-  }));
+  const posts = await fetchPosts();
+
+  // Group each series' posts in chronological (publishDate ascending) order, so every
+  // post can link to the adjacent previous/next post in its series (SinglePost.astro's
+  // "part of a series" note + prev/next nav). A post with no seriesPrevPost is the
+  // earliest in its series; a post with no seriesNextPost is the latest.
+  const seriesPostsChrono = new Map<string, Post[]>();
+  posts.forEach((post) => {
+    if (post.series?.slug) {
+      const list = seriesPostsChrono.get(post.series.slug) ?? [];
+      list.push(post);
+      seriesPostsChrono.set(post.series.slug, list);
+    }
+  });
+  seriesPostsChrono.forEach((list) => list.sort((a, b) => a.publishDate.valueOf() - b.publishDate.valueOf()));
+
+  return posts.flatMap((post) => {
+    let seriesPrevPost: { title: string; permalink: string } | undefined;
+    let seriesNextPost: { title: string; permalink: string } | undefined;
+    if (post.series?.slug) {
+      const list = seriesPostsChrono.get(post.series.slug) ?? [];
+      const index = list.findIndex((p) => p.permalink === post.permalink);
+      if (index > 0) {
+        const prev = list[index - 1];
+        seriesPrevPost = { title: prev.title, permalink: prev.permalink };
+      }
+      if (index >= 0 && index < list.length - 1) {
+        const next = list[index + 1];
+        seriesNextPost = { title: next.title, permalink: next.permalink };
+      }
+    }
+
+    return {
+      params: {
+        blog: post.permalink,
+      },
+      props: { post, seriesPrevPost, seriesNextPost },
+    };
+  });
 };
 
 /** Load series metadata from the series content collection, keyed by slug */

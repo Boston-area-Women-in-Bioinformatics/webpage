@@ -1,0 +1,21 @@
+---
+// Short highlighted note (e.g. a student discount, a deadline reminder) for a
+// newsletter issue. `html` is raw HTML (may include an <a> link) rendered via
+// set:html — passing content as a prop rather than JSX children avoids MDX's
+// remark parser splitting multi-line JSX children into stray/empty <p> tags.
+export interface Props {
+  tone?: 'warm' | 'primary';
+  html: string;
+}
+
+const { tone = 'warm', html } = Astro.props;
+
+const toneClasses = {
+  warm: 'border-accent-warm bg-orange-50',
+  primary: 'border-primary bg-blue-50',
+};
+---
+
+<div class={`not-prose my-4 rounded-lg border-l-4 p-4 dark:bg-slate-800 ${toneClasses[tone]}`}>
+  <p class="m-0 text-md text-slate-800 dark:text-slate-200" set:html={html} />
+</div>
