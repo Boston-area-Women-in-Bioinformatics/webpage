@@ -12,6 +12,7 @@ tags:
   - 'virtual'
 slug: 'return-to-work-panel-2026'
 data_luma_event_id: 'evt-ew18gzfxOFB5XSS'
+hideFromHomepageHero: true
 ---
 
 Career pauses aren't career endings.
