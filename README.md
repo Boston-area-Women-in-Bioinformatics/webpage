@@ -183,6 +183,8 @@ The markdown file should follow a specific format. In between the top two `---` 
   - For events that occur once a year, include the year: `fall-fundraiser-2026`
   - For events that occur multiple times a year (at most once a month), include the month and year: `byte-and-bite-may-2026`
 - `series` / `seriesPart` / `seriesTotal`: for a multi-part series (e.g. a 4-part workshop), create one event file per part and set all three fields on each: `series` is the name shared by every part, `seriesPart` is that part's position, `seriesTotal` is the total number of parts. Must be set together (all three or none), and `seriesPart` must be less than or equal to `seriesTotal`. Renders as "Part `seriesPart` of `seriesTotal`" on the event page and as "(Part `seriesPart` of `seriesTotal`)" next to the title on the `/events` listing.
+- `hideFromHomepageHero`: set to `true` if this event already has its own dedicated homepage promo section (e.g. Return to Work Panel) so it isn't also featured as the "next event" in the homepage hero widget. Defaults to `false`. Only affects that one widget — the event still shows normally on the `/events` page, its own page, and (once past) the archive.
+- `detailsUrl`: overrides the link used by listing cards' "MORE INFO"/"Learn More" buttons, which otherwise point at the event's own `/events/{slug}` page. Use this when a richer, hand-built page already exists for the event elsewhere on the site and this collection entry exists mainly so the event appears in the past-events archive once it's over (e.g. `detailsUrl: '/events/fall-fundraiser-2026'`, pointing at a custom `.astro` page, while the collection entry itself quietly tracks the event for the archive). Once the custom page is retired, drop `detailsUrl` and give the collection entry's own `slug` the reclaimed URL instead.
 
 #### 3. Add an image
 
@@ -721,7 +723,13 @@ In `src/navigation.ts`, update the fundraiser entry in the Events dropdown to po
 
 #### 5. Handle the old page
 
-Decide whether to delete the old page or keep it as an archive at its existing URL. If deleting: `git rm src/pages/events/fall-fundraiser-2026.astro`.
+Once the old year's event has passed, retire its custom `.astro` page and fold it into the `event` content collection instead of just deleting it outright, so it still shows up in `/events/archive`:
+
+1. If a `src/content/meetups/{year}/{date}_fall-fundraiser-{year}.md` entry doesn't already exist for that year's event (see `detailsUrl` in the frontmatter docs above — it's common to create this entry while the event is still upcoming, pointing `detailsUrl` at the custom page so listing cards keep using the nicer page in the meantime), create one now with the event's real details.
+2. Remove the old custom page from the live site, but keep its source as a template for next year rather than deleting it outright: rename it with a leading underscore, e.g. `git mv src/pages/events/fall-fundraiser-{year}.astro src/pages/events/_fall-fundraiser-{year}.astro`. Astro excludes any file or directory under `src/pages/` whose name starts with `_` from routing entirely, so it no longer builds a page or competes for the URL, but the markup stays in the repo to copy from when building next year's page (Step 2 above).
+3. On the content-collection entry, add `slug: 'fall-fundraiser-{year}'` (reclaiming the page's old URL) and remove `detailsUrl` if it was set.
+
+This keeps the event's URL stable across the swap, gives it a permanent home in the archive, and keeps the old page's design/copy around as a starting point for next year — rather than losing it entirely or leaving a stale custom page live indefinitely.
 
 #### 6. Upload logos
 
