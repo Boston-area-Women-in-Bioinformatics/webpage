@@ -139,10 +139,12 @@ Also update the link label text if it changed (e.g. `Fall Fundraiser 2027`).
 
 ## Step 8 — Handle the Old Page
 
-Ask the user: **Should the old fundraiser page be deleted, or kept as an archive?**
+Once the old year's event has passed, retire its custom page and fold it into the `event` content collection (`src/content/meetups/`) instead of deleting it outright or leaving a stale custom page live indefinitely — this keeps the event's URL stable and gives it a permanent home in `/events/archive`.
 
-- If deleted: `git rm src/pages/events/{oldPageSlug}.astro`
-- If kept: leave it in place (it will remain accessible at its old URL)
+1. Check for an existing `src/content/meetups/{year}/{date}_{oldPageSlug}.md` entry for that event. If none exists, create one with the event's real details (title, date, location, image, schedule, pricing, speakers, sponsors — pulled from the old `.astro` page). While the event was still upcoming, this entry may already have had `detailsUrl: '/events/{oldPageSlug}'` set (see `detailsUrl` in `AGENTS.md`'s event fields) so listing cards linked to the nicer custom page in the meantime — if so, remove that field now.
+2. Remove the old custom page from the live site without losing its source: rename it with a leading underscore, e.g. `git mv src/pages/events/{oldPageSlug}.astro src/pages/events/_{oldPageSlug}.astro`. Astro excludes any file or directory under `src/pages/` whose name starts with `_` from routing — it builds no page and no longer competes for the URL — but the file stays in the repo as a copy-from template for next year's page (Step 2 of this skill).
+3. Add `slug: '{oldPageSlug}'` to the content-collection entry's frontmatter, reclaiming the page's old URL.
+4. Run `npx astro build` and spot-check that `/events/{oldPageSlug}` now renders from the content-collection entry with no route-collision error, and that no page was built for the underscore-prefixed file.
 
 ## Step 9 — Run Prettier
 
@@ -163,8 +165,9 @@ git add src/pages/events/{pageSlug}.astro
 git add src/navigation.ts
 # If speakers file created:
 git add src/config/components/{pageSlug}Speakers.js
-# If old page deleted:
-git rm src/pages/events/{oldPageSlug}.astro
+# If the old fundraiser page was retired to the archive (Step 8):
+git add src/pages/events/_{oldPageSlug}.astro
+git add src/content/meetups/{year}/{date}_{oldPageSlug}.md
 # If logos uploaded:
 git add public/photos/{year}/
 git push -u origin update-fundraiser-{year}
