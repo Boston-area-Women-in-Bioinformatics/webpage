@@ -15,7 +15,7 @@ const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New
 const future_events = (
   await getCollection('event', ({ data }: CollectionEntry<'event'>) => {
     const eventEnd = data.endDate ? new Date(data.endDate) : new Date(data.dateTime);
-    return eventEnd > now && !data.partnerEvent;
+    return eventEnd > now && !data.partnerEvent && !data.hideFromHomepageHero;
   })
 ).sort((b, a) => b.data.dateTime.valueOf() - a.data.dateTime.valueOf());
 
@@ -109,7 +109,7 @@ if (next_event) {
         <div class="flex flex-wrap gap-4 justify-center xs:justify-start">
           <Button
             variant="primary"
-            href={`/events/${next_event.data.slug ?? next_event.id}`}
+            href={next_event.data.detailsUrl ?? `/events/${next_event.data.slug ?? next_event.id}`}
             text="Learn More"
             icon="tabler:square-rounded-arrow-right"
           />

@@ -158,6 +158,22 @@ const eventCollection = defineCollection({
       partnerEvent: z.boolean().optional().default(false),
       partnerOrganization: z.string().optional(),
       slug: z.string().optional(),
+      // Set true for an event that already has its own dedicated homepage
+      // promo section (e.g. Return to Work Panel) so it doesn't also appear
+      // as the featured "next event" in UpcomingEvents.astro's homepage
+      // hero. It still shows normally everywhere else — the /events page
+      // (EventsTable.astro), the individual event page, and the past-events
+      // archive are all unaffected.
+      hideFromHomepageHero: z.boolean().optional().default(false),
+      // Overrides the link target used by listing cards ("MORE INFO"/"Learn
+      // More" buttons in EventsTable.astro, UpcomingEvents.astro, and
+      // archive/index.astro) that would otherwise point to this event's own
+      // auto-generated /events/{slug} page. Use this when a richer bespoke
+      // page already exists for the event (e.g. a custom .astro page like
+      // src/pages/events/fall-fundraiser-2026.astro) and this collection
+      // entry exists mainly so the event still appears in the past-events
+      // archive once it's over.
+      detailsUrl: z.string().optional(),
       // Multi-part series (e.g. a 4-part workshop): series is the shared
       // title shown on every part; seriesPart/seriesTotal render as
       // "Part <seriesPart> of <seriesTotal>" on the event page. All three
