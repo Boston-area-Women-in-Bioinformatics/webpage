@@ -6,7 +6,8 @@ icon: 'tabler:speakerphone'
 chairs:
   - 'Amulya Shastry'
   - 'Viveka Patil'
-members: []
+members:
+  - 'Preshita Dave'
 ---
 
 ## About
