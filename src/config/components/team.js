@@ -358,23 +358,6 @@ const team = {
         //linkedin: 'https://www.linkedin.com/in/nishita-kalepalli/',
       },
     },
-    // Emily Kibbler
-    {
-      // Name: First and last name
-      name: 'Emily Kibbler',
-      // Namelink: Member's Personal Website
-      nameLink: 'https://www.linkedin.com/in/emily-kibbler/',
-      // Job Title
-      title: 'Communications Committee',
-      // Leadership team member Photo
-      avatar: '/team/EmilyKibbler.jpg',
-      // Social links
-      social: {
-        linkedin: 'https://www.linkedin.com/in/emily-kibbler/',
-        github: 'https://github.com/emilykibbler',
-        tiktok: 'https://www.tiktok.com/@emilylovessoup',
-      },
-    },
     // Lakshmi Kuttippurathu
     {
       // Name: First and last name
@@ -526,6 +509,25 @@ const team = {
       social: {
         linkedin: 'https://www.linkedin.com/in/sharvarinarendra',
         bluesky: 'https://bsky.app/profile/sharvarinarendra.bsky.social',
+      },
+    },
+    // Davie Slocum
+    {
+      name: 'Davie Slocum',
+      nameLink: 'linkedin.com/in/davie-slocum-92a60a166',
+      title: 'Communications Committee',
+      social: {
+        linkedin: 'linkedin.com/in/davie-slocum-92a60a166',
+      },
+    },
+    // Tracy A. Vu
+    {
+      name: 'Tracy A. Vu',
+      nameLink: 'https://www.linkedin.com/in/tracyavu',
+      title: 'Communications Committee',
+      avatar: '/team/Tracy_Vu.jpg',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/tracyavu',
       },
     },
   ],
