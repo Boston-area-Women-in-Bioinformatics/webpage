@@ -343,6 +343,16 @@ const team = {
         //bluesky: '#',
       },
     },
+    // Preshita Dave
+    {
+      name: 'Preshita Dave',
+      nameLink: 'https://www.linkedin.com/in/preshitadave/',
+      title: 'Advocacy Committee',
+      avatar: '/team/PreshitaDave.jpg',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/preshitadave/',
+      },
+    },
     // Dina Issakova
     {
       // Name: First and last name
