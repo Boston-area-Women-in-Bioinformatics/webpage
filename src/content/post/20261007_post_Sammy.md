@@ -2,9 +2,9 @@
 publishDate: 2026-10-07
 title: "Behind the Scenes: A Village for Women's Health"
 slug: blog/eventreflections/a-village-for-womens-health
-excerpt: "How a reading list, a volunteer team, and a history of excluded data shaped BWIB's first annual Fall Fundraiser on women's health."
-image: '/photos/2026/WIB_Logo_FallFundraiser_lightmode.png'
-imageAlt: "Boston Women in Bioinformatics 2026 Fall Fundraiser, themed around women's health research"
+excerpt: 'The people and lessons that made our Fall Fundraiser a success.'
+image: '/photos/2026/fall-fundraiser-2026-organizers.jpg'
+imageAlt: 'Group photo of organizers at Boston Women in Bioinformatics 2026 Fall Fundraiser'
 imagePosition: 'contain'
 author: Samantha J. Klasfeld, Ph.D.
 authorUrl: 'https://www.linkedin.com/in/samantha-klasfeld/'
@@ -16,14 +16,14 @@ tags:
   - community
   - behind-the-scenes
 metadata:
-  description: "How a reading list, a volunteer team, and a history of excluded data shaped BWIB's first annual Fall Fundraiser on women's health."
+  description: 'The people and lessons that made our Fall Fundraiser a success.'
 ---
 
 Almost a year ago, I sat in a room full of brilliant people at a free data meetup. Honestly, I can't remember the specifics. What I do remember is the frustration I felt listening to a male speaker talk about pregnancy. Being the social justice warrior I sometimes fancy myself, I started venting to the women around me about how men don't know anything. I was basically back in elementary school. I might as well have been saying the man had cooties and we'd catch them if we got too close.
 
 ## A Reading List Instead of an Echo Chamber
 
-I'm so thankful the women of Boston are not an echo chamber. Instead of simply validating my feelings, they acknowledged them and then pointed out that I have never been pregnant and had no more expertise on the topic than the speaker, probably less. Without saying it in so many words, they suggested my anger might really be ignorance. Then they handed me a reading list: _Expecting Better_, _Invisible Women_, and _Weapons of Math Destruction_.
+I'm so thankful the women of Boston are not an echo chamber. Instead of simply validating my feelings, they acknowledged them and then pointed out that I have never been pregnant and had no more expertise on the topic than the speaker, probably less. Without saying it in so many words, they suggested my anger might really be ignorance. Then they handed me a reading list: [_Expecting Better_](https://www.penguinrandomhouse.com/books/310896/expecting-better-by-emily-oster/), [_Invisible Women_](https://carolinecriadoperez.com/book/invisible-women/), and [_Weapons of Math Destruction_](https://www.penguinrandomhouse.com/books/241363/weapons-of-math-destruction-by-cathy-oneil/).
 
 I've finished two of the three and I'm still working through _Weapons of Math Destruction_, but I already recommend all of them. _Expecting Better_ and _Invisible Women_ showed me how often "standard" quietly means "designed for men." Some of it is obvious, like the unisex t-shirt that's really just a men's shirt (with no room for breasts). But most of it is so woven into everyday life that we never think to question it. The line for the women's restroom isn't a random chance occurrence. It's what happens when buildings give men's and women's rooms the same floor space, even though women need more time (e.g., to change a tampon) and more stalls (since we don't use urinals). _Weapons of Math Destruction_ goes broader, into the assumptions baked into data analysis in general. Together, they've made me a lot more careful about asking who is missing from the data and what assumptions are being considered before I decide who is wrong about it.
 
