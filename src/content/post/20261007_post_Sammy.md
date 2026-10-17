@@ -3,9 +3,10 @@ publishDate: 2026-10-07
 title: "Behind the Scenes: A Village for Women's Health"
 slug: blog/eventreflections/a-village-for-womens-health
 excerpt: 'The people and lessons that made our Fall Fundraiser a success.'
-image: '/photos/2026/fall-fundraiser-2026-organizers.jpg'
-imageAlt: 'Group photo of organizers at Boston Women in Bioinformatics 2026 Fall Fundraiser'
-imagePosition: 'contain'
+image: '/photos/2026/fall-fundraiser-2026-panel-1.jpg'
+imageAlt: "Samantha Klasfeld moderating the Fall Fundraiser women's health panel as the panelists listen"
+imageDescription: 'Samantha Klasfeld speaks to the panel at the 2026 Fall Fundraiser, as seen from the audience. From left to right: Ashley Abel, Shruthi Mahalingaiah, Sheri Simmons, Brandi Davis-Dusenbery, Samantha Klasfeld, and Liyang Diao.'
+imagePosition: 'center'
 author: Samantha J. Klasfeld, Ph.D.
 authorUrl: 'https://www.linkedin.com/in/samantha-klasfeld/'
 category: Event Reflections
@@ -29,20 +30,25 @@ I've finished two of the three and I'm still working through _Weapons of Math De
 
 ## Why a Fundraiser
 
-That shift in perspective followed me into my work with BWIB's events team, where we've learned that good intentions only get you so far when funding is a constant struggle. Last year, our 10th anniversary celebration was the only event that brought in revenue. It was inspiring and joyful, and it raised enough to keep us afloat through 2026, but those funds were never meant to sustain us forever. We needed a more consistent revenue stream, and as a nonprofit run entirely by volunteers, we needed one that wouldn't burn out our team. So I proposed an annual fundraiser that would take place every year in the fall.
+That shift in perspective followed me into my work with Boston Women in Bioinformatics' events team, where we've learned that good intentions only get you so far when funding is a constant struggle. Last year, our 10th anniversary celebration was the only event that brought in revenue. It was inspiring and joyful, and it raised enough to keep us afloat through 2026, but those funds were never meant to sustain us forever. We needed a more consistent revenue stream, and as a nonprofit run entirely by volunteers, we needed one that wouldn't burn out our team. So I proposed an annual fundraiser that would take place every year in the fall.
 
 ## It Takes a Team
 
 When I first proposed the fundraiser, I was the only one planning it. Then I ran the lightning talks with help from the Boston Computational Biology and Bioinformatics organizers, and I gained a new perspective on how much time and energy it takes to plan, organize, and fund an event. For the fundraiser, I polled our community on what they wanted, and they asked for a panel and a workshop. On top of that, we needed sponsors and a raffle, because, well, it's a fundraiser. In a moment of desperation, I went to Liyang, our events co-chair, and told her we couldn't do it. Instead of letting me pull the plug, she volunteered the entire events committee. Even then, we realized we needed more hands, so we asked the executive team to join us. We could never have done this without every one of these leaders:
 
 - **Liyang Diao**, events co-chair, who refused to let this event die and rallied the whole organization behind it
-- **Yevgenia Khodor**, president of BWIB, whose steady hand and level head helped us overcome challenges at every step
+- **Yevgenia Khodor**, president of Boston Women in Bioinformatics, whose steady hand and level head helped us overcome challenges at every step
 - **Emily Brodd**, entrepreneur and sponsorship liaison extraordinaire, who led our sponsorship efforts and helped bring in eight sponsors
 - **Sakina Saif, M.S.**, our day-of organizer, whose attention to detail kept us all on track (and kept me from being an anxious wreck)
 - **Iqra Amin**, who, despite recently joining the community, created nearly all of our flyers, posters, and social media graphics, and then acted as our photographer
 - **Diveena Becker**, who kept the books for our largest fundraising effort to date, ran the raffle without breaking a sweat, and helped with day-of logistics
 - **Yaseswini Neelamraju, Ph.D.**, who designed our very first promotional flyer and many more after it
 - **Nandeeni Suryawanshi**, who tag-teamed emails with potential vendors
+
+<figure>
+  <img src="/photos/2026/fall-fundraiser-2026-organizers.jpg" alt="Group photo of the organizers of the Boston Women in Bioinformatics 2026 Fall Fundraiser" />
+  <figcaption>Organizers and volunteers of the 2026 Fall Fundraiser. From left to right: Iqra Amin, Viveka Patil, Amulya Shastry, Liyang Diao, Yevgenia Khodor, Samantha Klasfeld, Sakina Saif, Lina Faller, Diveena Becker, Francine Camacho, and Genevieve Baddoo. Photo by Iqra Amin.</figcaption>
+</figure>
 
 ## Finding the Theme
 
@@ -64,7 +70,7 @@ With all of this in mind, framing the Fall Fundraiser was a challenge. I didn't 
 
 ## Our Sponsors
 
-Once we had the vision, we needed the support to make it real. Our gold sponsors included two longtime partners we're endlessly grateful for. **Diamond Age**, founded by longtime BWIB member Eleanor Howe, has always been a champion of our community, and **Seqera**, who also sponsored our lightning talks, continues to be an incredible partner. Their steady support gave us the confidence to push beyond our comfort zone, and we were thrilled to welcome **Zifo** as our third gold sponsor. Zifo turns fragmented lab and R&D data into connected, usable data across the full drug lifecycle, which is exactly the kind of work women's health research needs. Thank you to Eleanor Howe and Martha Delaney at Diamond Age, Geraldine Van der Auwera and Chris Deschenes at Seqera, and Tina Aiello at Zifo.
+Once we had the vision, we needed the support to make it real. Our gold sponsors included two longtime partners we're endlessly grateful for. **Diamond Age**, founded by longtime Boston Women in Bioinformatics member Eleanor Howe, has always been a champion of our community, and **Seqera**, who also sponsored our lightning talks, continues to be an incredible partner. Their steady support gave us the confidence to push beyond our comfort zone, and we were thrilled to welcome **Zifo** as our third gold sponsor. Zifo turns fragmented lab and R&D data into connected, usable data across the full drug lifecycle, which is exactly the kind of work women's health research needs. Thank you to Eleanor Howe and Martha Delaney at Diamond Age, Geraldine Van der Auwera and Chris Deschenes at Seqera, and Tina Aiello at Zifo.
 
 Our silver sponsors were just as aligned with the story. **ZS**, a global consulting and technology firm, connects data across complex healthcare and life sciences ecosystems, which is exactly what fragmented women's health data needs. **Benchling**, a Boston company, provided my first online electronic lab notebook and can be seen by many as an icon of science communication and reproducibility. Many thanks to Melissa DiTucci and Summer Frundel for their partnership.
 
