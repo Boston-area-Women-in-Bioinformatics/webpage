@@ -46,8 +46,8 @@ When I first proposed the fundraiser, I was the only one planning it. Then I ran
 - **Nandeeni Suryawanshi, M.S.** who tag-teamed emails with potential vendors
 
 <figure>
-  <img src="/photos/2026/fall-fundraiser-2026-organizers.jpg" alt="Group photo of the organizers of the Boston Women in Bioinformatics 2026 Fall Fundraiser" />
-  <figcaption>Organizers and volunteers of the 2026 Fall Fundraiser. From left to right: Iqra Amin, Viveka Patil, Amulya Shastry, M.S., Liyang Diao, Ph.D., Yevgenia Khodor, Ph.D., Samantha Klasfeld, Ph.D., Sakina Saif, M.S., Lina Faller, Ph.D., Diveena Becker, Ph.D., Francine Camacho, Ph.D., and Genevieve Baddoo, M.S. Photo by Iqra Amin.</figcaption>
+  <img src="/photos/2026/fall-fundraiser-2026-organizers.jpg" alt="Group photo of Boston Women in Bioinformatics leadership at the 2026 Fall Fundraiser" />
+  <figcaption>Boston Women in Bioinformatics leadership at the 2026 Fall Fundraiser. From left to right: Iqra Amin, Viveka Patil, Amulya Shastry, M.S., Liyang Diao, Ph.D., Yevgenia Khodor, Ph.D., Samantha Klasfeld, Ph.D., Sakina Saif, M.S., Lina Faller, Ph.D., Diveena Becker, Ph.D., Francine Camacho, Ph.D., and Genevieve Baddoo, M.S. Photo by Iqra Amin.</figcaption>
 </figure>
 
 ## Finding the Theme
