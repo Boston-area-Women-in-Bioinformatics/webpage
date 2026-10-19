@@ -9,6 +9,8 @@ Guidance for AI agents working in this repository.
 ### Tech Stack
 
 - **Framework**: Astro 7.x (static output) + TypeScript (strict)
+- **Markdown processor**: `@astrojs/markdown-remark` is an explicit dependency — Astro 7.4+ defaults to the Sätteri processor and no longer installs it, but `astro.config.ts`'s `markdown.remarkPlugins`/`rehypePlugins` (reading time, GFM, responsive tables, lazy images) need it. Removing it fails the build at config load. Frontmatter YAML is also parsed strictly since 7.4 (an unclosed quote is now a build error, not silently tolerated).
+- **`overrides` in `package.json`**: `astro-compress` pins its own vulnerable `sharp`/`svgo`; the override points them at the top-level `sharp` and `svgo@^4.1.0`. Drop it once an `astro-compress` release ships patched versions.
 - **Styling**: Tailwind CSS 3 via a plain `postcss.config.cjs` (class-based dark mode, custom theme vars) — no `@astrojs/tailwind` integration
 - **Interactive components**: React 19 (`.tsx` files)
 - **Content**: Astro Content Collections (Content Layer API — every collection uses an explicit `loader: glob(...)`) with Zod schemas (MDX + Markdown)
