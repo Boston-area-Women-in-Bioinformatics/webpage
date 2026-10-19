@@ -1,7 +1,7 @@
 ---
 title: 'Ask Us Anything (Except Our Five-Year Plan): Sprout Informatics’ First Twelve Months'
-dateTime: '2026-11-11T12:00'
-endDate: '2026-11-11T13:00'
+dateTime: '2026-11-18T12:00'
+endDate: '2026-11-18T13:00'
 image:
   src: '/photos/2026/sprout_bwib_logo.jpg'
   alt: 'Sprout Informatics and Boston Women in Bioinformatics Ask Us Anything session'
@@ -21,7 +21,7 @@ You might be wondering: after the initial honeymoon period, how did it go?
 
 ## What to Expect
 
-Join us for a candid conversation about what the first year actually looked like. Topics could include:
+Join us for a candid conversation about what the first year actually looked like, moderated by Boston Women in Bioinformatics members [Isha Parikh, M.S.](https://www.linkedin.com/in/isha2106), who interviews bioinformaticians about their career paths for our [blog](/category/interview), and [Lakshmi Kuttippurathu, Ph.D.](https://www.linkedin.com/in/lakshmikc/), a fellow entrepreneur starting her own company. Topics could include:
 
 - Finding their niche
 - Pricing, scoping, and other things they did wrong

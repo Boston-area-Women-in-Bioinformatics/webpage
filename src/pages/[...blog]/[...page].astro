@@ -33,14 +33,16 @@ const { posts, seriesList = [] } = Astro.props as { posts: Post[]; seriesList: S
 const thirtyDaysAgo = new Date();
 thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
 
+// Card colors follow the WIB logo rainbow (same order as Team.astro / CommitteeGrid.astro / LatestCommunityPosts.astro);
+// yellow is skipped because yellow text fails contrast on a white card.
 const categories = [
   {
     label: 'Quick Takes',
     href: getPermalink('quick-take', 'category'),
     description: 'Short, punchy perspectives on bioinformatics news and ideas.',
     comingSoon: false,
-    borderColor: 'border-[rgb(1_97_239)]',
-    textColor: 'text-[rgb(1_97_239)]',
+    borderColor: 'border-purple-500',
+    textColor: 'text-purple-600 dark:text-purple-400',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 opacity-80">
       <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
     </svg>`,
@@ -50,8 +52,8 @@ const categories = [
     href: getPermalink('deep-dive', 'category'),
     description: 'In-depth explorations of complex topics in computational biology.',
     comingSoon: false,
-    borderColor: 'border-[rgb(109_40_217)]',
-    textColor: 'text-[rgb(109_40_217)]',
+    borderColor: 'border-pink-500',
+    textColor: 'text-pink-600 dark:text-pink-400',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 opacity-80">
       <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21a48.309 48.309 0 01-8.135-.687c-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
     </svg>`,
@@ -61,8 +63,8 @@ const categories = [
     href: getPermalink('tutorial', 'category'),
     description: 'Step-by-step guides to build your bioinformatics skills.',
     comingSoon: false,
-    borderColor: 'border-[#e36d1d]',
-    textColor: 'text-[#e36d1d]',
+    borderColor: 'border-orange-500',
+    textColor: 'text-orange-600 dark:text-orange-400',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 opacity-80">
       <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
     </svg>`,
@@ -72,10 +74,21 @@ const categories = [
     href: getPermalink('interview', 'category'),
     description: 'Conversations with leaders and innovators in the field.',
     comingSoon: false,
-    borderColor: 'border-[#0077b5]',
-    textColor: 'text-[#0077b5]',
+    borderColor: 'border-green-500',
+    textColor: 'text-green-600 dark:text-green-400',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 opacity-80">
       <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+    </svg>`,
+  },
+  {
+    label: 'Event Reflections',
+    href: getPermalink('event-reflections', 'category'),
+    description: 'Recaps and lessons learned from the events, talks, and seminars our community attends and hosts.',
+    comingSoon: false,
+    borderColor: 'border-sky-500',
+    textColor: 'text-sky-600 dark:text-sky-400',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 opacity-80">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8M3 3v5h5M12 7v5l4 2" />
     </svg>`,
   },
 ];
@@ -154,7 +167,7 @@ const metadata = {
     </div>
 
     <!-- Category Cards (shown when not searching) -->
-    <div id="category-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+    <div id="category-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
       {
         categories.map((cat) =>
           cat.comingSoon ? (
