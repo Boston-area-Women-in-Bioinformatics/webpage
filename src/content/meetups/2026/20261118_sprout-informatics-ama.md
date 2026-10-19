@@ -21,7 +21,7 @@ You might be wondering: after the initial honeymoon period, how did it go?
 
 ## What to Expect
 
-Join us for a candid conversation about what the first year actually looked like. Topics could include:
+Join us for a candid conversation about what the first year actually looked like, moderated by Boston Women in Bioinformatics members [Isha Parikh, M.S.](https://www.linkedin.com/in/isha2106), who interviews bioinformaticians about their career paths for our [blog](/category/interview), and [Lakshmi Kuttippurathu, Ph.D.](https://www.linkedin.com/in/lakshmikc/), a fellow entrepreneur starting her own company. Topics could include:
 
 - Finding their niche
 - Pricing, scoping, and other things they did wrong
