@@ -25,7 +25,7 @@ Ask the user for the following. Use `$ARGUMENTS` as context if the user already 
 - Author (use one form, not both):
   - Single author: `author` (name) + `authorUrl` (LinkedIn URL)
   - Multiple authors: `authors` list, each with `name` and optional `url`
-- `category` — e.g. `Deep Dive`, `Quick Take`, `Tutorial`, `Video`, `Podcast`, `Interview`
+- `category` — e.g. `Deep Dive`, `Quick Take`, `Tutorial`, `Video`, `Podcast`, `Interview`, `Event Reflections`
 - `series` — title of the series (must match the `title` field in the corresponding `src/content/series/` file exactly)
 - `tags` — list of tags (e.g. `bioinformatics`, `career-advice`)
 - `url` — external URL where the original post lives (for cross-posts)
