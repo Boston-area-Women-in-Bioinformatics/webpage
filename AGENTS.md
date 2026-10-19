@@ -171,7 +171,9 @@ No test suite (no Jest/Vitest/Playwright config). Quality is enforced via `astro
 - **Content files**: kebab-case filenames under `src/content/<collection>/`
 - **Series slugs**: match the series frontmatter title converted to kebab-case (used in `getPermalink(slug, 'series')`)
 - **Categories excluded from the main blog feed**: listed in `BLOG_EXCLUDED_CATEGORIES` in `blog.ts` (currently `['Podcast', 'Video']`). These categories are excluded from the paginated blog list but are surfaced on the homepage separately — Podcast gets its own "Latest Podcast" card, Video appears in the "Recent Media" grid alongside regular blog posts.
-- **`Interview` category**: active category with its own category card on `/blog`. Card uses LinkedIn blue (`#0077b5`). Do not mark it `comingSoon`.
+- **`Interview` category**: active category with its own category card on `/blog`. Do not mark it `comingSoon`.
+- **`Event Reflections` category** (slug `event-reflections`): recaps of events, talks, and seminars; card uses a "turn back the clock" icon. Two older posts (`20260211_post_Dana.md`, `20260708_post_Dana.md`) keep their original `blog/deepdive/...`/`blog/quicktake/...` slugs on purpose so shared links don't break — don't "fix" them. New posts use `blog/eventreflections/...`.
+- **`/blog` category card colors** follow the WIB logo rainbow in order (same palette as `Team.astro`/`CommitteeGrid.astro`), skipping yellow for text contrast. A new category takes the next unused rainbow hue.
 - **`hiddenFromFeed`**: posts that exist but should not appear in list pages (e.g. short Tuesday Tactics entries — shown only via their series card)
 
 ---

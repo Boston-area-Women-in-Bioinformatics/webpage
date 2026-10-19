@@ -246,7 +246,7 @@ The markdown file should follow a specific format. In between the top two `---` 
 - author information (use one of the following, not both):
   - `author` + `authorUrl`: name and LinkedIn URL of a single author
   - `authors`: list of authors when there are multiple contributors, each with a `name` and optional `url`
-- `category`: category label for the post, e.g., `Deep Dive`, `Quick Take`, `Tutorial`, `Video`, `Podcast`
+- `category`: category label for the post, e.g., `Deep Dive`, `Quick Take`, `Tutorial`, `Interview`, `Event Reflections`, `Video`, `Podcast`
 - `series`: title of the series this post belongs to (must match the `title` in the corresponding `src/content/series/` file). See [Add a new series](#add-a-new-series).
 - `tags`: list of tags associated with the post, e.g., `bioinformatics`, `career-advice`, `software-engineering`
 - `url`: external URL where the original post lives (used when cross-posting from another site)
