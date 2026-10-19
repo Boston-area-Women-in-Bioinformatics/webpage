@@ -1,7 +1,7 @@
 ---
 title: 'Ask Us Anything (Except Our Five-Year Plan): Sprout Informatics’ First Twelve Months'
-dateTime: '2026-18-11T12:00'
-endDate: '2026-18-11T13:00'
+dateTime: '2026-11-18T12:00'
+endDate: '2026-11-18T13:00'
 image:
   src: '/photos/2026/sprout_bwib_logo.jpg'
   alt: 'Sprout Informatics and Boston Women in Bioinformatics Ask Us Anything session'
