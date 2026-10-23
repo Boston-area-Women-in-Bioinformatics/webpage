@@ -8,6 +8,7 @@ image:
 location:
   - 'Laugh Boston, 425 Summer St, Boston, MA 02210 (Westin Boston Seaport)'
 url: 'https://superdebate.org/events/boston-debate-showcase-2026'
+imgpos: 'object-contain'
 tags:
   - 'ai'
   - 'debate'
