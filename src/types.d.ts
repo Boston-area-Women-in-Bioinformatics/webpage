@@ -6,6 +6,11 @@ export interface PostAuthor {
   url?: string;
 }
 
+export interface PostAcknowledgement extends PostAuthor {
+  /** Contribution verb, rendered as "{role} by …" (e.g. "Edited", "Reviewed") */
+  role: string;
+}
+
 export interface Newsletter {
   id: string;
   slug: string;
@@ -64,6 +69,8 @@ export interface Post {
   tags?: Taxonomy[];
   /** Author List */
   authors?: PostAuthor[];
+  /** People credited at the end of the post (e.g. editors, reviewers) */
+  acknowledgements?: PostAcknowledgement[];
 
   /** Author Name */
   author?: string; // legacy fallback

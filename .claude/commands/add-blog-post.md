@@ -25,6 +25,7 @@ Ask the user for the following. Use `$ARGUMENTS` as context if the user already 
 - Author (use one form, not both):
   - Single author: `author` (name) + `authorUrl` (LinkedIn URL)
   - Multiple authors: `authors` list, each with `name` and optional `url`
+- `acknowledgements` — people credited at the end of the post (editors, reviewers), each with `name`, optional `url` (LinkedIn), and `role` (e.g. `Edited`, `Reviewed`); renders above the tags as "Edited by … · Reviewed by …"
 - `category` — e.g. `Deep Dive`, `Quick Take`, `Tutorial`, `Video`, `Podcast`, `Interview`, `Event Reflections`
 - `series` — title of the series (must match the `title` field in the corresponding `src/content/series/` file exactly)
 - `tags` — list of tags (e.g. `bioinformatics`, `career-advice`)
@@ -83,6 +84,10 @@ authorUrl: 'https://www.linkedin.com/in/...'
 authors:
   - name: '...'
     url: 'https://www.linkedin.com/in/...'
+acknowledgements:
+  - name: '...'
+    url: 'https://www.linkedin.com/in/...'
+    role: 'Edited'
 category: '...'
 series: '...'
 tags:

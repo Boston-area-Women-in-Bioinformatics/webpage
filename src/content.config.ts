@@ -104,6 +104,15 @@ const postCollection = defineCollection({
         })
       )
       .optional(),
+    acknowledgements: z
+      .array(
+        z.object({
+          name: z.string(),
+          url: z.string().url().optional(),
+          role: z.string(),
+        })
+      )
+      .optional(),
     metadata: metadataDefinition(),
     listeningTime: z.string().optional(),
     hiddenFromFeed: z.boolean().optional(),

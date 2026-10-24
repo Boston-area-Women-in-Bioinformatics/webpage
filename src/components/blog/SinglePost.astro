@@ -45,6 +45,18 @@ const getCanonicalSourceName = () => {
   }
   return 'Original Source';
 };
+
+// Group acknowledgements by role, preserving frontmatter order: "Edited by A and B · Reviewed by C"
+const acknowledgementGroups = [
+  ...(post.acknowledgements ?? [])
+    .reduce(
+      (groups, ack) => groups.set(ack.role, [...(groups.get(ack.role) ?? []), ack]),
+      new Map<string, NonNullable<Post['acknowledgements']>>()
+    )
+    .entries(),
+];
+const nameSeparator = (index: number, total: number) =>
+  index === 0 ? '' : index === total - 1 ? (total > 2 ? ', and ' : ' and ') : ', ';
 ---
 
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">
@@ -212,6 +224,38 @@ const getCanonicalSourceName = () => {
       {/* Instead of <slot />, render the content component and pass needed components */}
       {post.Content ? <post.Content components={{ FaApple, FaSpotify }} /> : <slot />}
     </div>
+    {
+      acknowledgementGroups.length > 0 && (
+        <aside aria-label="Acknowledgements" class="mx-auto px-6 sm:px-6 max-w-3xl mt-10">
+          <p class="border-t dark:border-slate-700 pt-4 text-sm md:text-base text-muted dark:text-slate-400">
+            <Icon name="tabler:edit" class="w-4 h-4 inline-block -mt-0.5 mr-1" />
+            {acknowledgementGroups.map(([role, people], groupIndex) => (
+              <span class="inline">
+                {groupIndex > 0 && ' · '}
+                {role} by{' '}
+                {people.map((person, index) => (
+                  <>
+                    {nameSeparator(index, people.length)}
+                    {person.url ? (
+                      <a
+                        href={person.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-primary dark:text-blue-300 hover:underline"
+                      >
+                        {person.name}
+                      </a>
+                    ) : (
+                      <span>{person.name}</span>
+                    )}
+                  </>
+                ))}
+              </span>
+            ))}
+          </p>
+        </aside>
+      )
+    }
     <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row">
       <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
       <SocialShare url={url} text={post.title} class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600" />
