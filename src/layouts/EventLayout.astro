@@ -14,6 +14,7 @@ export interface Props {
   date: Date;
   endDate?: Date;
   location: string[];
+  locationUrl?: string;
   imgsrc: string;
   imgalt: string;
   url?: string;
@@ -33,6 +34,7 @@ const {
   date,
   endDate,
   location,
+  locationUrl,
   url,
   urlButtonLabel,
   data_luma_event_id,
@@ -99,7 +101,7 @@ const secondLine = hasBreak ? title.slice(breakIndex + 1).trim() : '';
           <FormattedDate date={date} endDate={endDate} />
         </div>
         <div class="text-lg mb-4 text-gray-700 dark:text-slate-300">
-          <EventAddress artists={location || []} />
+          <EventAddress artists={location || []} url={locationUrl} />
         </div>
         {
           cost !== undefined && (

@@ -50,6 +50,7 @@ Ask the user for the following. Collect all required fields before proceeding. U
 **Optional (ask if not provided; omit from file if not provided):**
 
 - `endDate` — end date and time, same format as `dateTime`. Required if the event spans multiple days or the end time should display.
+- `locationUrl` — link for the address (e.g. a venue or directions page). When set, the address renders as a link with a map-pin icon on the event page, `/events` cards, and the homepage hero (the past-events archive keeps it as plain text).
 - `url` — registration or event link (e.g. a Lu.ma URL). **Do not manually add UTM parameters to this URL** — the `Signup.astro` component automatically appends `utm_source=boston-wib&utm_medium=event-page&utm_campaign=<slug>` using the event's slug at build time.
 - `data_luma_event_id` — Lu.ma event ID for embedding a registration button
 - `imgpos` — Tailwind object-position class. Defaults to `object-top object-cover`. Common options: `object-center object-cover`, `object-bottom object-cover`, `object-contain`.
@@ -87,6 +88,7 @@ image:
 location:
   - '...'
   - '...'
+locationUrl: 'https://...'
 url: 'https://...'
 data_luma_event_id: '...'
 imgpos: 'object-top object-cover'
