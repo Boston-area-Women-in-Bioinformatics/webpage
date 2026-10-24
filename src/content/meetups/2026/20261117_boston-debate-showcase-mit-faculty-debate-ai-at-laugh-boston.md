@@ -8,7 +8,6 @@ image:
 location:
   - 'Laugh Boston, 425 Summer St, Boston, MA 02210 (Westin Boston Seaport)'
 url: 'https://superdebate.org/events/boston-debate-showcase-2026'
-imgpos: 'object-contain'
 tags:
   - 'ai'
   - 'debate'
@@ -20,6 +19,7 @@ cost: 40
 partnerEvent: true
 partnerOrganization: 'SuperDebate and the Modus Ponens Institute'
 slug: 'boston-debate-showcase-mit-faculty-debate-ai-at-laugh-boston-november-2026'
+imgpos: 'object-scale-down'
 ---
 
 **Boston Debate Showcase: MIT faculty debate AI at Laugh Boston**
