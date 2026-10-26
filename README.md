@@ -164,6 +164,7 @@ The markdown file should follow a specific format. In between the top two `---` 
 - `title`: name of the event
 - `dateTime`: start date and time of the event in New York time. Use `YYYY-MM-DDTHH:mm` (e.g., `2026-09-15T18:00`). The timezone is applied automatically — no offset needed.
 - `location`: list of location strings (e.g., `["123 Main St", "Boston, MA"]`)
+- `locationUrl` (optional): link for the address, e.g. a venue or directions page. The address shows as a link with a map-pin icon on the event page, `/events` cards, and the homepage hero.
 - `image`: object with two fields:
   - `src`: path to the image (e.g., `/photos/my-event.jpg`)
   - `alt`: alt text for the image — describe the purpose, not the appearance. Do not include the words "image" or "photo".

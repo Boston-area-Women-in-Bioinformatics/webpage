@@ -70,7 +70,7 @@ const hasBwibEvents = bwib_events.length > 0;
                   <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} />
                 </div>
                 <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
-                  <EventAddress artists={event.data.location || []} />
+                  <EventAddress artists={event.data.location || []} url={event.data.locationUrl} />
                 </div>
                 <Button
                   variant="primary"
@@ -114,7 +114,7 @@ const hasBwibEvents = bwib_events.length > 0;
                 <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} />
               </div>
               <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
-                <EventAddress artists={event.data.location || []} />
+                <EventAddress artists={event.data.location || []} url={event.data.locationUrl} />
               </div>
               <Button
                 variant="primary"
@@ -154,7 +154,7 @@ const hasBwibEvents = bwib_events.length > 0;
                     <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} />
                   </div>
                   <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
-                    <EventAddress artists={event.data.location || []} />
+                    <EventAddress artists={event.data.location || []} url={event.data.locationUrl} />
                   </div>
                   <Button
                     variant="primary"
@@ -197,7 +197,7 @@ const hasBwibEvents = bwib_events.length > 0;
                 <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} />
               </div>
               <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
-                <EventAddress artists={event.data.location || []} />
+                <EventAddress artists={event.data.location || []} url={event.data.locationUrl} />
               </div>
               <Button
                 variant="primary"

@@ -154,6 +154,9 @@ const eventCollection = defineCollection({
       dateTime: nyDate(),
       endDate: nyDate().optional(),
       location: z.array(z.string()),
+      // Optional link for the location lines (e.g. a venue/directions page);
+      // EventAddress.astro renders the address as a link when set.
+      locationUrl: z.string().url().optional(),
       url: z.string().optional(),
       'url-button-label': z.string().optional(),
       data_luma_event_id: z.string().optional(),
