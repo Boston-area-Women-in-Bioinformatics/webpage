@@ -67,6 +67,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     authors: rawAuthors, // new format
     author, // legacy fallback
     authorUrl = '#', // legacy fallback
+    acknowledgements,
     listeningTime,
     draft = false,
     hiddenFromFeed = false,
@@ -127,6 +128,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     series: series,
     tags: tags,
     authors, // updated field
+    acknowledgements,
 
     draft: draft,
     hiddenFromFeed: hiddenFromFeed,
