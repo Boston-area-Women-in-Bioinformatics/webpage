@@ -18,6 +18,13 @@ tags:
   - behind-the-scenes
 metadata:
   description: 'The people and lessons that made our Fall Fundraiser a success.'
+acknowledgements:
+  - name: 'Casey Ho'
+    url: 'https://www.linkedin.com/in/caseykyho/'
+    role: 'Edited'
+  - name: 'Liyang Diao'
+    url: 'https://www.linkedin.com/in/liyang-diao-90933461/'
+    role: 'Reviewed'
 ---
 
 Almost a year ago, I sat in a room full of brilliant people at a free data meetup. Honestly, I can't remember the specifics. What I do remember is the frustration I felt listening to a male speaker talk about pregnancy. Being the social justice warrior I sometimes fancy myself, I started venting to the women around me about how men don't know anything. I was basically back in elementary school. I might as well have been saying the man had cooties and we'd catch them if we got too close.

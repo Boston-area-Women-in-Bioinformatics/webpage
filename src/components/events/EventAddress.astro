@@ -1,18 +1,23 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 interface Props {
   artists: string[];
+  /** Optional link (e.g. venue or directions page); wraps the whole address when set. */
+  url?: string;
 }
 
-const { artists } = Astro.props;
+const { artists, url } = Astro.props;
+const address = artists.join(', ');
 ---
 
 {
-  artists.map((artist, index) => {
-    return (
-      <>
-        {artist}
-        <span>{index === artists.length - 1 ? ' ' : ', '}</span>
-      </>
-    );
-  })
+  url ? (
+    <a href={url} target="_blank" rel="noopener noreferrer" class="text-primary dark:text-blue-300 hover:underline">
+      <Icon name="tabler:map-pin" class="w-4 h-4 inline-block -mt-0.5 mr-0.5" />
+      {address}
+    </a>
+  ) : (
+    <>{address} </>
+  )
 }

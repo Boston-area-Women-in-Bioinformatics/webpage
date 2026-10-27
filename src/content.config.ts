@@ -104,6 +104,15 @@ const postCollection = defineCollection({
         })
       )
       .optional(),
+    acknowledgements: z
+      .array(
+        z.object({
+          name: z.string(),
+          url: z.string().url().optional(),
+          role: z.string(),
+        })
+      )
+      .optional(),
     metadata: metadataDefinition(),
     listeningTime: z.string().optional(),
     hiddenFromFeed: z.boolean().optional(),
@@ -145,6 +154,9 @@ const eventCollection = defineCollection({
       dateTime: nyDate(),
       endDate: nyDate().optional(),
       location: z.array(z.string()),
+      // Optional link for the location lines (e.g. a venue/directions page);
+      // EventAddress.astro renders the address as a link when set.
+      locationUrl: z.string().url().optional(),
       url: z.string().optional(),
       'url-button-label': z.string().optional(),
       data_luma_event_id: z.string().optional(),

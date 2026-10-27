@@ -164,6 +164,7 @@ The markdown file should follow a specific format. In between the top two `---` 
 - `title`: name of the event
 - `dateTime`: start date and time of the event in New York time. Use `YYYY-MM-DDTHH:mm` (e.g., `2026-09-15T18:00`). The timezone is applied automatically — no offset needed.
 - `location`: list of location strings (e.g., `["123 Main St", "Boston, MA"]`)
+- `locationUrl` (optional): link for the address, e.g. a venue or directions page. The address shows as a link with a map-pin icon on the event page, `/events` cards, and the homepage hero.
 - `image`: object with two fields:
   - `src`: path to the image (e.g., `/photos/my-event.jpg`)
   - `alt`: alt text for the image — describe the purpose, not the appearance. Do not include the words "image" or "photo".
@@ -246,6 +247,7 @@ The markdown file should follow a specific format. In between the top two `---` 
 - author information (use one of the following, not both):
   - `author` + `authorUrl`: name and LinkedIn URL of a single author
   - `authors`: list of authors when there are multiple contributors, each with a `name` and optional `url`
+- `acknowledgements`: optional list of people to credit at the end of the post (like a paper's acknowledgements), each with a `name`, optional `url` (LinkedIn profile), and `role` (e.g. `Edited`, `Reviewed`). Renders above the tags as "Edited by Jane Doe and Sam Lee · Reviewed by Alex Kim" — people sharing a `role` are grouped together, in the order listed.
 - `category`: category label for the post, e.g., `Deep Dive`, `Quick Take`, `Tutorial`, `Interview`, `Event Reflections`, `Video`, `Podcast`
 - `series`: title of the series this post belongs to (must match the `title` in the corresponding `src/content/series/` file). See [Add a new series](#add-a-new-series).
 - `tags`: list of tags associated with the post, e.g., `bioinformatics`, `career-advice`, `software-engineering`
