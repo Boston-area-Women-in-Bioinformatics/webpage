@@ -8,8 +8,10 @@ imagePosition: contain
 authors:
   - name: 'Nikitha Sundaresha'
     url: 'https://www.linkedin.com/in/nsundaresha/'
+acknowledgements:
   - name: 'Casey Ho'
     url: 'http://linkedin.com/in/caseykyho'
+    role: 'Reviewed'
 category: 'Deep Dive'
 series: 'Beyond the Pipeline'
 tags:
