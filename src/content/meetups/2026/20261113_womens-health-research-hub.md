@@ -11,7 +11,7 @@ location:
   - 'Cambridge, MA 02139'
 locationUrl: 'https://sites.mit.edu/whrh/2026-whrh-symposium/'
 url: 'https://cglink.me/2cy/r918042'
-imgpos: 'object-contain'
+imgpos: 'object-scale-down'
 tags:
   - 'conference'
   - 'womens-health'
