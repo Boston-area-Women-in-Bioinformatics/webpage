@@ -85,7 +85,7 @@ src/components/
 ├── ui/            # Primitives: Headline, PostListItem, PostList, PostGridItem, Button, Card, NewBadge…
 ├── widgets/       # Page sections: Hero, Features, BlogLatestPosts, UpcomingEvents, Contact, Sponsors…
 ├── common/        # Infra: Metadata, Analytics, ToggleTheme, Image, SocialShare, Banner, Logo, Favicons, CustomStyles
-└── newsletter/    # SinglePost.astro (renders newsletter issue HTML), ExecutiveBoard.astro (live board grid), TableOfContents.astro (styled TOC box), HighlightBox.astro / SponsorTierList.astro / CTABox.astro (styled callout boxes, see edit-newsletter skill)
+└── newsletter/    # SinglePost.astro (renders newsletter issue HTML), ExecutiveBoard.astro (live board grid), TableOfContents.astro (styled TOC box), HighlightBox.astro / SponsorTierList.astro / CTABox.astro (styled callout boxes, see edit-newsletter skill), BlogCard.astro (Blog Bytes post preview card)
 ```
 
 Every component lives in a folder grouped by content-type (`blog/`, `events/`, `newsletter/`) or role (`ui/` primitives, `widgets/` page sections, `common/` site infra). See `src/components/README.md` for the full organization rationale; keep it in sync with this table (Local Norm 1).
