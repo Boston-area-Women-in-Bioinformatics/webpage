@@ -106,6 +106,23 @@ All three live in `src/components/newsletter/` and use pastel tints (`bg-*-50` l
   />
   ```
 
+**Blog Bytes section (`## Blog Bytes`):** render each post as a `<BlogCard />` (`~/components/newsletter/BlogCard.astro`), not a hand-written image + text flex block with a separate button below it. The card replaces the per-post `###` heading (its title is rendered as an `<h3>` inside the card). Cover image on the left (on top on mobile) is cropped with `object-cover` to the card's height, so a short blurb doesn't leave empty space beside a small image. `eyebrow` (optional) is the series/category line, e.g. `'Beyond the Pipeline · Part 1'`. `html` is a template-literal string (same reasoning as `HighlightBox`). Posts in a series with its own campaign use that campaign's `utm_campaign` (e.g. `beyond-the-pipeline`, `women-leader-spotlight`) instead of `newsletter-NNN`.
+
+```mdx
+import BlogCard from '~/components/newsletter/BlogCard.astro';
+
+<BlogCard
+  href="https://boston-wib.org/blog/deepdive/my-post?utm_source=newsletter&utm_medium=email&utm_campaign=newsletter-012"
+  image="/blog_images/my-post.png"
+  imageAlt="Cover art for My Post"
+  eyebrow="Deep Dive"
+  title="My Post"
+  author="Author Name"
+  authorUrl="https://www.linkedin.com/in/author/"
+  html={`One-paragraph blurb, may include an <a href="https://example.com/" class="text-primary hover:underline dark:text-blue-300">link</a>.`}
+/>
+```
+
 **Upcoming Events section (`## Events on the Horizon`):**
 
 - Each event is a `###` heading (never `##`)
