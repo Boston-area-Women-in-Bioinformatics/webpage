@@ -388,6 +388,16 @@ git add src/content/post/{newblog}.md
 git push -u origin add-newsletter-{issue}
 ```
 
+#### 5. Build the email version
+
+To send the issue by email (e.g. from Gmail), build an email-ready copy from the same file:
+
+```
+npm run email -- {issue number}   # e.g. npm run email -- 12
+```
+
+This writes `newsletter-email/issue-{NNN}.html` (gitignored), opens a preview, and on a Mac copies it to the clipboard — open a new Gmail compose window (not a Gmail layout) and paste. The preview that opens uses your local images, so it works right away. The copied email loads images from the live site, so merge and deploy the issue before sending; the script lists any image that isn't live yet. To send yourself a test before merging, open a PR, copy its Netlify deploy preview URL, and run `npm run email -- {issue number} --site <deploy preview URL>` — then rebuild without `--site` before the real send. Wrap any section that shouldn't be in the email (e.g. "Don't Lose Us in Spam") in `<WebOnly>` and mark its table-of-contents entry `webOnly: true`.
+
 ### Modify Newsletter template
 
 To modify the newsletter template, go to `src/components/newsletter/SinglePost.astro`.

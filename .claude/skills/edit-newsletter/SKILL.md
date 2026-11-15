@@ -106,7 +106,7 @@ All three live in `src/components/newsletter/` and use pastel tints (`bg-*-50` l
   />
   ```
 
-**Blog Bytes section (`## Blog Bytes`):** render each post as a `<BlogCard />` (`~/components/newsletter/BlogCard.astro`), not a hand-written image + text flex block with a separate button below it. The card replaces the per-post `###` heading (its title is rendered as an `<h3>` inside the card). Cover image on the left (on top on mobile) is cropped with `object-cover` to the card's height, so a short blurb doesn't leave empty space beside a small image. `eyebrow` (optional) is the series/category line, e.g. `'Beyond the Pipeline · Part 1'`. `html` is a template-literal string (same reasoning as `HighlightBox`). Posts in a series with its own campaign use that campaign's `utm_campaign` (e.g. `beyond-the-pipeline`, `women-leader-spotlight`) instead of `newsletter-NNN`.
+**Blog Bytes section (`## Blog Bytes`):** (also used for the Women+ Leader Spotlight intro, with `emailImageWidth={200}` for the square headshot) render each post as a `<BlogCard />` (`~/components/newsletter/BlogCard.astro`), not a hand-written image + text flex block with a separate button below it. The card replaces the per-post `###` heading (its title is rendered as an `<h3>` inside the card). Cover image on the left (on top on mobile) is cropped with `object-cover` to the card's height, so a short blurb doesn't leave empty space beside a small image. `eyebrow` (optional) is the series/category line, e.g. `'Beyond the Pipeline · Part 1'`. `html` is a template-literal string (same reasoning as `HighlightBox`). Posts in a series with its own campaign use that campaign's `utm_campaign` (e.g. `beyond-the-pipeline`, `women-leader-spotlight`) instead of `newsletter-NNN`.
 
 ```mdx
 import BlogCard from '~/components/newsletter/BlogCard.astro';
@@ -199,6 +199,20 @@ Only do this once, right when the issue is truly ready to publish/send — not o
 
    <ExecutiveBoard members={execBoardSnapshot} />
    ```
+
+## Step 4b — Build the Email Version
+
+The issue is also sent by email (pasted into Gmail). The email is built from the same `.mdx` — see Local Norm 27 in `AGENTS.md`:
+
+```bash
+npm run email -- {issue}
+```
+
+- Check the script's warnings: images not live yet (the issue must be merged and deployed before sending, since images load from boston-wib.org) and the ~102 KB Gmail clipping limit. The preview it opens uses local images, so it's fine to review before deploy.
+- For a pre-merge test send, pass the PR's Netlify deploy preview: `npm run email -- {issue} --site <deploy preview URL>`, paste into Gmail, and send it to yourself. Rebuild without `--site` before the real send.
+- Sections that make no sense in the email (e.g. "Don't Lose Us in Spam" — anyone reading the email already got past spam) go inside `<WebOnly>` (`import WebOnly from '~/components/newsletter/WebOnly.astro';`, blank line after the opening tag and before the closing tag), with `webOnly: true` on that section's TOC entry.
+- For a `<BlogCard />` with a square/portrait image (e.g. a headshot), pass `emailImageWidth={200}` so it doesn't render 600px tall in the email.
+- Never hand-write email-specific HTML in the issue; if something renders badly in the email, fix the component's email branch or the email page's `<style>` block.
 
 ## Step 5 — Run Prettier
 
