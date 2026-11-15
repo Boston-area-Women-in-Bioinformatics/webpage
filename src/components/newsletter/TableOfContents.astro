@@ -1,26 +1,60 @@
 ---
 // Renders the "Here's what's inside this month" styled TOC box for a
 // newsletter issue. Pass one { href, label } entry per `##` section anchor,
-// in the order the sections appear (see edit-newsletter skill).
+// in the order the sections appear (see edit-newsletter skill). Entries with
+// `webOnly: true` (sections wrapped in <WebOnly>) are left out of the email version.
 export interface Props {
-  items: Array<{ href: string; label: string }>;
+  items: Array<{ href: string; label: string; webOnly?: boolean }>;
   title?: string;
 }
 
+import { EMAIL, isNewsletterEmailRender } from '~/utils/newsletterEmail';
+
 const { items, title = "Here's what's inside this month" } = Astro.props;
+const isEmail = isNewsletterEmailRender(Astro.url);
 ---
 
-<div class="not-prose rounded-lg border-l-4 border-teal-600 bg-teal-50 p-5 dark:bg-slate-800">
-  <p class="mb-3 text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-500">{title}</p>
-  <ul class="m-0 list-none space-y-1.5 pl-0">
-    {
-      items.map((item) => (
-        <li>
-          <a href={item.href} class="text-slate-600 hover:underline dark:text-slate-300">
-            {item.label}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-</div>
+{
+  isEmail ? (
+    <table
+      role="presentation"
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      style={`border-collapse:collapse;background-color:${EMAIL.teal50};border-left:4px solid ${EMAIL.teal600};border-radius:8px;margin:0 0 16px;`}
+    >
+      <tr>
+        <td style={`padding:20px;font-family:${EMAIL.font};`}>
+          <p
+            style={`margin:0 0 12px;font-size:14px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:${EMAIL.muted};`}
+          >
+            {title}
+          </p>
+          {items
+            .filter((item) => !item.webOnly)
+            .map((item) => (
+              <p style="margin:0 0 6px;font-size:16px;line-height:1.5;">
+                <a href={item.href} style="color:#475569;text-decoration:none;">
+                  {item.label}
+                </a>
+              </p>
+            ))}
+        </td>
+      </tr>
+    </table>
+  ) : (
+    <div class="not-prose rounded-lg border-l-4 border-teal-600 bg-teal-50 p-5 dark:bg-slate-800">
+      <p class="mb-3 text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-500">{title}</p>
+      <ul class="m-0 list-none space-y-1.5 pl-0">
+        {items.map((item) => (
+          <li>
+            <a href={item.href} class="text-slate-600 hover:underline dark:text-slate-300">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}

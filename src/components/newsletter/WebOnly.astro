@@ -1,0 +1,13 @@
+---
+// Wraps newsletter content that should appear on the website but not in the
+// email version (src/pages/newsletter-email/), e.g. the "Don't Lose Us in
+// Spam" section, which is moot for someone already reading the email. Leave a
+// blank line after the opening tag and before the closing tag so the markdown
+// inside is still parsed as markdown. Pair with `webOnly: true` on the
+// section's TableOfContents entry.
+import { isNewsletterEmailRender } from '~/utils/newsletterEmail';
+
+const isEmail = isNewsletterEmailRender(Astro.url);
+---
+
+{!isEmail && <slot />}

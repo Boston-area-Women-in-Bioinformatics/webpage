@@ -10,6 +10,10 @@
 // to 36px at the `lg:` breakpoint (i.e. text-3xl lg:text-4xl), with prose's
 // forced font-weight 700, `tracking-tighter`, and heading color (gray-900
 // light / the layout's `dark:prose-headings:text-slate-300` dark).
+// On the newsletter email route it renders the same box as an inline-styled
+// table instead (see src/utils/newsletterEmail.ts).
+import { EMAIL, emailButtonStyle, isNewsletterEmailRender } from '~/utils/newsletterEmail';
+
 export interface Props {
   heading?: string;
   html: string;
@@ -18,20 +22,44 @@ export interface Props {
 }
 
 const { heading, html, buttonHref, buttonLabel } = Astro.props;
+const isEmail = isNewsletterEmailRender(Astro.url);
 ---
 
-<div
-  class="not-prose my-4 rounded-lg border border-blue-200 bg-blue-50 p-6 text-center dark:border-slate-700 dark:bg-slate-800"
->
-  {
-    heading && (
-      <h2 class="font-heading mb-3 text-3xl font-bold tracking-tighter text-gray-900 dark:text-slate-300 lg:text-4xl">
-        {heading}
-      </h2>
-    )
-  }
-  <p class="mb-3 text-slate-800 dark:text-slate-100" set:html={html} />
-  <a href={buttonHref} class="btn-primary not-prose mt-2">
-    {buttonLabel}
-  </a>
-</div>
+{
+  isEmail ? (
+    <table
+      role="presentation"
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      style={`border-collapse:separate;background-color:${EMAIL.blue50};border:1px solid ${EMAIL.blue200};border-radius:8px;margin:16px 0;`}
+    >
+      <tr>
+        <td align="center" style={`padding:24px;font-family:${EMAIL.font};color:${EMAIL.text};`}>
+          {heading && (
+            <h2 style={`margin:0 0 12px;font-size:26px;line-height:1.25;font-weight:700;color:${EMAIL.heading};`}>
+              {heading}
+            </h2>
+          )}
+          <p style="margin:0 0 20px;font-size:16px;line-height:1.6;" set:html={html} />
+          <a href={buttonHref} style={emailButtonStyle}>
+            {buttonLabel}
+          </a>
+        </td>
+      </tr>
+    </table>
+  ) : (
+    <div class="not-prose my-4 rounded-lg border border-blue-200 bg-blue-50 p-6 text-center dark:border-slate-700 dark:bg-slate-800">
+      {heading && (
+        <h2 class="font-heading mb-3 text-3xl font-bold tracking-tighter text-gray-900 dark:text-slate-300 lg:text-4xl">
+          {heading}
+        </h2>
+      )}
+      <p class="mb-3 text-slate-800 dark:text-slate-100" set:html={html} />
+      <a href={buttonHref} class="btn-primary not-prose mt-2">
+        {buttonLabel}
+      </a>
+    </div>
+  )
+}
