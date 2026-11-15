@@ -5,7 +5,14 @@
 // then an optional eyebrow (series/category), linked title, byline, blurb, and
 // a "Read the post →" link. `html` is raw HTML (may include an <a> link)
 // rendered via set:html — see HighlightBox for why content is passed as a prop
-// rather than JSX children.
+// rather than JSX children. On the newsletter email route the image always
+// stacks on top (side-by-side columns don't survive email clients' narrow
+// mobile layouts) and everything is inline-styled (see
+// src/utils/newsletterEmail.ts). Email clients can't crop with object-fit, so
+// for a square/portrait image (e.g. a headshot) pass `emailImageWidth` to show
+// it centered at that width instead of stretched across the full card.
+import { EMAIL, isNewsletterEmailRender } from '~/utils/newsletterEmail';
+
 export interface Props {
   href: string;
   image: string;
@@ -16,43 +23,125 @@ export interface Props {
   authorUrl?: string;
   html: string;
   ctaLabel?: string;
+  emailImageWidth?: number;
 }
 
-const { href, image, imageAlt, title, eyebrow, author, authorUrl, html, ctaLabel = 'Read the post' } = Astro.props;
+const {
+  href,
+  image,
+  imageAlt,
+  title,
+  eyebrow,
+  author,
+  authorUrl,
+  html,
+  ctaLabel = 'Read the post',
+  emailImageWidth,
+} = Astro.props;
+const isEmail = isNewsletterEmailRender(Astro.url);
 ---
 
-<div
-  class="not-prose my-6 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md dark:border-slate-700 dark:bg-slate-800 sm:flex"
->
-  <a href={href} class="block sm:w-2/5 sm:flex-shrink-0">
-    <img src={image} alt={imageAlt} class="aspect-video h-full w-full object-cover" loading="lazy" />
-  </a>
-  <div class="flex flex-col p-5 sm:p-6">
-    {
-      eyebrow && (
-        <p class="mb-1 text-sm font-semibold uppercase tracking-wide text-primary dark:text-blue-300">{eyebrow}</p>
-      )
-    }
-    <h3 class="font-heading text-xl font-bold leading-snug text-gray-900 dark:text-slate-100 lg:text-2xl">
-      <a href={href} class="hover:underline">{title}</a>
-    </h3>
-    {
-      author && (
-        <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-          By{' '}
-          {authorUrl ? (
-            <a href={authorUrl} class="hover:underline">
-              {author}
+{
+  isEmail ? (
+    <table
+      role="presentation"
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      style={`border-collapse:separate;background-color:#ffffff;border:1px solid ${EMAIL.border};border-radius:12px;margin:24px 0;`}
+    >
+      <tr>
+        {emailImageWidth ? (
+          <td align="center" style="padding:24px 24px 0;">
+            <a href={href}>
+              <img
+                src={image}
+                alt={imageAlt}
+                width={emailImageWidth}
+                style={`display:block;width:${emailImageWidth}px;max-width:100%;height:auto;border:0;border-radius:12px;`}
+              />
             </a>
-          ) : (
-            author
+          </td>
+        ) : (
+          <td style="padding:0;">
+            <a href={href}>
+              <img
+                src={image}
+                alt={imageAlt}
+                width={EMAIL.width}
+                style="display:block;width:100%;max-width:600px;height:auto;border:0;border-radius:12px 12px 0 0;"
+              />
+            </a>
+          </td>
+        )}
+      </tr>
+      <tr>
+        <td style={`padding:20px 24px 24px;font-family:${EMAIL.font};`}>
+          {eyebrow && (
+            <p
+              style={`margin:0 0 4px;font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:${EMAIL.primary};`}
+            >
+              {eyebrow}
+            </p>
           )}
-        </p>
-      )
-    }
-    <p class="mt-3 text-base text-slate-800 dark:text-slate-200" set:html={html} />
-    <a href={href} class="mt-4 font-semibold text-primary hover:underline dark:text-blue-300">
-      {ctaLabel} &rarr;
-    </a>
-  </div>
-</div>
+          <h3 style={`margin:0;font-size:22px;line-height:1.3;font-weight:700;color:${EMAIL.heading};`}>
+            <a href={href} style={`color:${EMAIL.heading};text-decoration:none;`}>
+              {title}
+            </a>
+          </h3>
+          {author && (
+            <p style={`margin:4px 0 0;font-size:14px;color:${EMAIL.muted};`}>
+              By{' '}
+              {authorUrl ? (
+                <a href={authorUrl} style={`color:${EMAIL.muted};`}>
+                  {author}
+                </a>
+              ) : (
+                author
+              )}
+            </p>
+          )}
+          <p style={`margin:12px 0 0;font-size:16px;line-height:1.6;color:${EMAIL.text};`} set:html={html} />
+          <p style="margin:16px 0 0;font-size:16px;">
+            <a href={href} style={`color:${EMAIL.primary};font-weight:600;text-decoration:none;`}>
+              {ctaLabel} &rarr;
+            </a>
+          </p>
+        </td>
+      </tr>
+    </table>
+  ) : (
+    <div class="not-prose my-6 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md dark:border-slate-700 dark:bg-slate-800 sm:flex">
+      <a href={href} class="block sm:w-2/5 sm:flex-shrink-0">
+        <img src={image} alt={imageAlt} class="aspect-video h-full w-full object-cover" loading="lazy" />
+      </a>
+      <div class="flex flex-col p-5 sm:p-6">
+        {eyebrow && (
+          <p class="mb-1 text-sm font-semibold uppercase tracking-wide text-primary dark:text-blue-300">{eyebrow}</p>
+        )}
+        <h3 class="font-heading text-xl font-bold leading-snug text-gray-900 dark:text-slate-100 lg:text-2xl">
+          <a href={href} class="hover:underline">
+            {title}
+          </a>
+        </h3>
+        {author && (
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
+            By{' '}
+            {authorUrl ? (
+              <a href={authorUrl} class="hover:underline">
+                {author}
+              </a>
+            ) : (
+              author
+            )}
+          </p>
+        )}
+        <p class="mt-3 text-base text-slate-800 dark:text-slate-200" set:html={html} />
+        <a href={href} class="mt-4 font-semibold text-primary hover:underline dark:text-blue-300">
+          {ctaLabel} &rarr;
+        </a>
+      </div>
+    </div>
+  )
+}
