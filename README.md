@@ -390,13 +390,25 @@ git push -u origin add-newsletter-{issue}
 
 #### 5. Build the email version
 
-To send the issue by email (e.g. from Gmail), build an email-ready copy from the same file:
+For the email version wrap any section that shouldn't be in the email (e.g. "Don't Lose Us in Spam") in `<WebOnly>` and mark its table-of-contents entry `webOnly: true`.
+
+To send the issue by email (e.g. from Gmail), build an email-ready copy from the same file using `npm`.
+
+To first test, what the email will look like before the PR is merged to main you can run
+
+```
+npm run email -- {newsletter_issue_number} --site https://deploy-preview-{pr_id}--bwib.netlify.app
+```
+
+`pr_id` is the pull-request number. This writes `newsletter-email/issue-{NNN}.html` (gitignored), opens a preview, and on a Mac copies it to the clipboard. To test it, open a new Gmail compose window (not a Gmail layout) and paste. **DO NOT COPY FROM THE PREVIEW. ITS ALREADY ON YOUR CLIPBOARD**.
+
+Once the issue has been merged to main, run:
 
 ```
 npm run email -- {issue number}   # e.g. npm run email -- 12
 ```
 
-This writes `newsletter-email/issue-{NNN}.html` (gitignored), opens a preview, and on a Mac copies it to the clipboard — open a new Gmail compose window (not a Gmail layout) and paste. The preview that opens uses your local images, so it works right away. The copied email loads images from the live site, so merge and deploy the issue before sending; the script lists any image that isn't live yet. To send yourself a test before merging, open a PR, copy its Netlify deploy preview URL, and run `npm run email -- {issue number} --site <deploy preview URL>` — then rebuild without `--site` before the real send. Wrap any section that shouldn't be in the email (e.g. "Don't Lose Us in Spam") in `<WebOnly>` and mark its table-of-contents entry `webOnly: true`.
+If some images aren't live yet, the preview that opens uses your local images and has a yellow banner. Again, don't copy from that page, paste from the clipboard instead. The copied email loads images from the live site, so merge and deploy the issue before sending; the script lists any image that isn't live yet.
 
 ### Modify Newsletter template
 

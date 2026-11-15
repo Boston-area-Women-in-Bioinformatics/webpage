@@ -11,9 +11,10 @@
  *    URLs, and points in-page #anchor links (the TOC) at the web version.
  * 3. Writes newsletter-email/issue-NNN.html, warns if it's over Gmail's ~102KB
  *    clipping limit or if any image isn't live yet, and on macOS copies it to
- *    the clipboard as rich HTML and opens a preview. The preview
- *    (issue-NNN.preview.html) loads images from the local public/ folder, so
- *    it works before the issue's new photos are deployed.
+ *    the clipboard as rich HTML and opens a preview. If some images aren't
+ *    live yet, the preview is issue-NNN.preview.html instead, which loads
+ *    images from the local public/ folder and carries a "don't copy from this
+ *    page" banner (copying it would paste file:// images Gmail can't load).
  *
  * --site <url> points every boston-wib.org link and image at another host
  * (e.g. a Netlify deploy preview) so a test email can be sent before merging.
@@ -92,13 +93,9 @@ if (siteOverride) html = html.replaceAll(LIVE_SITE, SITE);
 
 const outDir = path.join(ROOT, 'newsletter-email');
 const outFile = path.join(outDir, `${slug}.html`);
-const previewFile = path.join(outDir, `${slug}.preview.html`);
+const localPreviewFile = path.join(outDir, `${slug}.preview.html`);
 fs.mkdirSync(outDir, { recursive: true });
 fs.writeFileSync(outFile, html);
-fs.writeFileSync(
-  previewFile,
-  html.replace(new RegExp(`(<img[^>]+src=")${SITE}/`, 'g'), `$1file://${path.join(ROOT, 'public')}/`)
-);
 
 const bytes = Buffer.byteLength(html);
 console.log(`\nWrote ${path.relative(ROOT, outFile)} (${(bytes / 1024).toFixed(0)} KB)`);
@@ -125,6 +122,24 @@ await Promise.all(
 if (missing.length) {
   console.warn(`\n⚠️  These images are not live on ${SITE} yet (deploy before sending):`);
   missing.forEach((url) => console.warn(`   ${url}`));
+}
+
+// With every image live, preview the real email. Otherwise preview a copy that
+// loads images from public/, bannered so nobody copies it into Gmail.
+let previewFile = outFile;
+if (missing.length) {
+  previewFile = localPreviewFile;
+  const banner =
+    '<div style="background:#fef3c7;color:#92400e;font-family:sans-serif;font-size:14px;padding:12px;text-align:center;">' +
+    "LOCAL PREVIEW: images load from your computer. Don't copy from this page; paste from the clipboard instead.</div>";
+  fs.writeFileSync(
+    localPreviewFile,
+    html
+      .replace(new RegExp(`(<img[^>]+src=")${SITE}/`, 'g'), `$1file://${path.join(ROOT, 'public')}/`)
+      .replace(/<body([^>]*)>/, `<body$1>${banner}`)
+  );
+} else {
+  fs.rmSync(localPreviewFile, { force: true });
 }
 
 if (process.platform === 'darwin') {

@@ -208,7 +208,7 @@ The issue is also sent by email (pasted into Gmail). The email is built from the
 npm run email -- {issue}
 ```
 
-- Check the script's warnings: images not live yet (the issue must be merged and deployed before sending, since images load from boston-wib.org) and the ~102 KB Gmail clipping limit. The preview it opens uses local images, so it's fine to review before deploy.
+- Check the script's warnings: images not live yet (the issue must be merged and deployed before sending, since images load from boston-wib.org) and the ~102 KB Gmail clipping limit. When images aren't live yet, the preview it opens uses local images (yellow banner) — fine for reviewing, but never copy from it; paste from the clipboard the script set.
 - For a pre-merge test send, pass the PR's Netlify deploy preview: `npm run email -- {issue} --site <deploy preview URL>`, paste into Gmail, and send it to yourself. Rebuild without `--site` before the real send.
 - Sections that make no sense in the email (e.g. "Don't Lose Us in Spam" — anyone reading the email already got past spam) go inside `<WebOnly>` (`import WebOnly from '~/components/newsletter/WebOnly.astro';`, blank line after the opening tag and before the closing tag), with `webOnly: true` on that section's TOC entry.
 - For a `<BlogCard />` with a square/portrait image (e.g. a headshot), pass `emailImageWidth={200}` so it doesn't render 600px tall in the email.
