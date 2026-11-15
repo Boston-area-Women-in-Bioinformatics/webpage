@@ -75,7 +75,7 @@ if (next_event) {
     />
   ) : (
     <div class="relative m-auto max-w-6xl intersect-once intercept-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter lg:flex lg:items-center">
-      <div class="lg:w-2/5 {image_class}">
+      <div class="lg:w-2/5">
         <img
           src={next_event.data.image.src}
           alt={next_event.data.image.alt}
@@ -119,7 +119,7 @@ if (next_event) {
       <img
         src={next_event.data.image.src}
         alt={next_event.data.image.alt}
-        class={`${image_class} mt-6 block lg:hidden max-w-sm mx-auto`}
+        class={`${image_class} mt-6 block lg:hidden w-full max-w-sm mx-auto`}
         transition:name="playlist ${event.id} image"
       />
     </div>
