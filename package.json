@@ -20,6 +20,7 @@
     "check:eslint": "eslint .",
     "check:prettier": "prettier --check .",
     "check:committees": "node scripts/check-committee-chairs.mjs",
+    "email": "node scripts/build-newsletter-email.mjs",
     "fix": "npm run fix:eslint && npm run fix:prettier",
     "fix:eslint": "eslint --fix .",
     "fix:prettier": "prettier -w ."
@@ -71,6 +72,7 @@
     "eslint-plugin-astro": "^1.2.4",
     "globals": "^15.11.0",
     "js-yaml": "^4.1.0",
+    "juice": "^12.2.3",
     "mdast-util-to-string": "^4.0.0",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
