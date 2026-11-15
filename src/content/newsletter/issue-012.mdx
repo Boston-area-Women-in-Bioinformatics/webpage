@@ -10,6 +10,7 @@ imagePosition: contain
 import TableOfContents from '~/components/newsletter/TableOfContents.astro';
 import CTABox from '~/components/newsletter/CTABox.astro';
 import BlogCard from '~/components/newsletter/BlogCard.astro';
+import WebOnly from '~/components/newsletter/WebOnly.astro';
 
 <TableOfContents
   items={[
@@ -19,7 +20,7 @@ import BlogCard from '~/components/newsletter/BlogCard.astro';
     { href: '#blog-bytes', label: 'Blog Bytes' },
     { href: '#events-recap', label: 'Events Reflections' },
     { href: '#get-involved', label: 'Get Involved' },
-    { href: '#avoid-spam', label: "Don't Lose Us in Spam" },
+    { href: '#avoid-spam', label: "Don't Lose Us in Spam", webOnly: true },
     { href: '#exec-board', label: 'Executive Board' },
     { href: '#social-media', label: 'Social Media' },
   ]}
@@ -43,6 +44,7 @@ The Boston Women in Bioinformatics (BWIB) Mentorship Committee is excited to int
   title="Leading with Curiosity: Dr. Brandi Davis-Dusenbery on Career Growth and Leadership"
   html={`For our inaugural spotlight, we featured <a href="https://www.linkedin.com/in/davis-dusenbery/" class="text-primary hover:underline dark:text-blue-300">Dr. Brandi Davis-Dusenbery</a>, who shared her journey from academic research to executive leadership, along with valuable perspectives on mentorship, embracing change, and pursuing new opportunities.`}
   ctaLabel="Read the interview"
+  emailImageWidth={200}
 />
 
 We look forward to sharing more inspiring stories with our community in the coming months!
@@ -201,6 +203,8 @@ The panel closed with an audience Q&A that highlighted red flags to watch for du
 
 ---
 
+<WebOnly>
+
 <div id="avoid-spam" class="scroll-mt-[80px]"></div>
 
 ## Don't Lose Us in Spam
@@ -237,6 +241,8 @@ For guaranteed delivery, click below to see specific steps for your provider:
 _Tip: If an email is already in your Spam folder, open it and select **Not Spam** or drag it to your Primary inbox to train your provider._
 
 ---
+
+</WebOnly>
 
 <div id="exec-board" class="scroll-mt-[80px]"></div>
 
