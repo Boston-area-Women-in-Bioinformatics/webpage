@@ -192,3 +192,19 @@ export const getStaticPathsNewsletterPost = async () => {
     props: { post },
   }));
 };
+
+/** Email version of one issue (src/pages/newsletter-email/). Only generated when
+ * scripts/build-newsletter-email.mjs sets NEWSLETTER_EMAIL_ISSUE, so normal and
+ * Netlify builds never emit it. Skips load()'s publish-date filter on purpose, so
+ * an email can be prepared before the issue's publish date. */
+export const getStaticPathsNewsletterEmail = async () => {
+  const issue = Number(process.env.NEWSLETTER_EMAIL_ISSUE);
+  if (!issue) return [];
+  const entries = await getCollection('newsletter', ({ data }) => data.issue === issue);
+  return Promise.all(
+    entries.map(async (entry) => {
+      const post = await getNormalizedNewsletter(entry);
+      return { params: { slug: post.permalink.replace(`${NEWSLETTER_BASE}/`, '') }, props: { post } };
+    })
+  );
+};

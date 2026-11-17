@@ -22,7 +22,8 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { post } = Astro.props as Props;
 
-const url = getCanonical(getPermalink(post.permalink, 'newsletter'));
+// 'page', not 'newsletter': getPermalink(_, 'newsletter') returns the list page URL.
+const url = getCanonical(getPermalink(post.permalink, 'page'));
 const image = (await findImage(post.image)) as ImageMetadata | string | undefined;
 
 const metadata = merge(

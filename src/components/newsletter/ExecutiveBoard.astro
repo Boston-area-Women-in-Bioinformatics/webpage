@@ -1,42 +1,91 @@
 ---
 // Renders an executive board photo grid. Defaults to the live board from
 // `exec` in `~/config/components/team`; pass `members` to render a frozen
-// per-issue snapshot instead (see Local Norm 23 in AGENTS.md).
+// per-issue snapshot instead (see Local Norm 23 in AGENTS.md). On the
+// newsletter email route the grid becomes a fixed 4-column table (CSS grid
+// doesn't work in email; see src/utils/newsletterEmail.ts).
 import { exec } from '~/config/components/team';
+import { EMAIL, isNewsletterEmailRender } from '~/utils/newsletterEmail';
 
 export interface Props {
   members?: Array<{ name: string; avatar?: string; title?: string }>;
 }
 
 const { members = exec.members } = Astro.props;
+const isEmail = isNewsletterEmailRender(Astro.url);
+
+const titleHtml = (title: string) =>
+  title
+    .split(' & ')
+    .map((line) => line.replace(/\bCo-chair\b/g, '<span style="white-space:nowrap">Co-chair</span>'))
+    .join('<br />');
+
+const EMAIL_COLUMNS = 4;
+const emailRows = Array.from({ length: Math.ceil(members.length / EMAIL_COLUMNS) }, (_, i) =>
+  members.slice(i * EMAIL_COLUMNS, (i + 1) * EMAIL_COLUMNS)
+);
 ---
 
-<div class="not-prose grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-x-1 gap-y-4 sm:gap-x-3 sm:gap-y-5">
-  {
-    members.map((member) => (
-      <div class="text-center text-gray-500 dark:text-slate-400">
-        {member.avatar && (
-          <img
-            class="mx-auto mb-1 w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover object-center"
-            src={member.avatar}
-            alt={`${member.name} headshot`}
-            width={80}
-            height={80}
-            loading="lazy"
-            decoding="async"
-          />
-        )}
-        <p class="font-semibold text-base sm:text-lg text-gray-900 dark:text-white">{member.name}</p>
-        {member.title && (
-          <p
-            class="text-xs sm:text-sm"
-            set:html={member.title
-              .split(' & ')
-              .map((line) => line.replace(/\bCo-chair\b/g, '<span style="white-space:nowrap">Co-chair</span>'))
-              .join('<br />')}
-          />
-        )}
-      </div>
-    ))
-  }
-</div>
+{
+  isEmail ? (
+    <table
+      role="presentation"
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      style="border-collapse:collapse;"
+    >
+      {emailRows.map((row) => (
+        <tr>
+          {row.map((member) => (
+            <td
+              align="center"
+              valign="top"
+              style={`width:25%;padding:8px 4px 16px;font-family:${EMAIL.font};color:${EMAIL.muted};`}
+            >
+              {member.avatar && (
+                <img
+                  src={member.avatar}
+                  alt={`${member.name} headshot`}
+                  width="72"
+                  height="72"
+                  style="display:block;margin:0 auto 6px;width:72px;height:72px;border-radius:50%;border:0;"
+                />
+              )}
+              <p style={`margin:0;font-size:14px;font-weight:600;line-height:1.3;color:${EMAIL.heading};`}>
+                {member.name}
+              </p>
+              {member.title && (
+                <p style="margin:2px 0 0;font-size:12px;line-height:1.4;" set:html={titleHtml(member.title)} />
+              )}
+            </td>
+          ))}
+          {Array.from({ length: EMAIL_COLUMNS - row.length }, () => (
+            <td style="width:25%;" />
+          ))}
+        </tr>
+      ))}
+    </table>
+  ) : (
+    <div class="not-prose grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-x-1 gap-y-4 sm:gap-x-3 sm:gap-y-5">
+      {members.map((member) => (
+        <div class="text-center text-gray-500 dark:text-slate-400">
+          {member.avatar && (
+            <img
+              class="mx-auto mb-1 w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover object-center"
+              src={member.avatar}
+              alt={`${member.name} headshot`}
+              width={80}
+              height={80}
+              loading="lazy"
+              decoding="async"
+            />
+          )}
+          <p class="font-semibold text-base sm:text-lg text-gray-900 dark:text-white">{member.name}</p>
+          {member.title && <p class="text-xs sm:text-sm" set:html={titleHtml(member.title)} />}
+        </div>
+      ))}
+    </div>
+  )
+}
