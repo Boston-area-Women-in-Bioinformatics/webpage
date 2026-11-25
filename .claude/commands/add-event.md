@@ -41,7 +41,7 @@ Ask the user for the following. Collect all required fields before proceeding. U
 **Required:**
 
 - `title` — name of the event
-- `dateTime` — start date and time in New York time, format `YYYY-MM-DDTHH:mm` (e.g. `2026-09-15T18:00`). No timezone offset — it is applied automatically.
+- `dateTime` — start date and time in New York time, format `YYYY-MM-DDTHH:mm` (e.g. `2026-09-15T18:00`). No timezone offset — it is applied automatically. If times aren't known, use `YYYY-MM-DD` alone: the event is treated as all-day and shows dates only.
 - `location` — one or more address lines (e.g. `["123 Main St", "Boston, MA"]`)
 - `image.src` — path to the event image: a photo of the event goes in `public/photos/{YYYY}/` matching the event's year (e.g. `/photos/2026/my-event.jpg`); a sponsor/partner organization's logo goes in `public/sponsors/` instead (e.g. `/sponsors/acme-logo.png`)
 - `image.alt` — alt text describing the image's _purpose_, not its appearance. Do not include the words "image" or "photo".
@@ -49,10 +49,11 @@ Ask the user for the following. Collect all required fields before proceeding. U
 
 **Optional (ask if not provided; omit from file if not provided):**
 
-- `endDate` — end date and time, same format as `dateTime`. Required if the event spans multiple days or the end time should display.
+- `endDate` — end date and time, same format as `dateTime`. Required if the event spans multiple days or the end time should display. A date-only `endDate` counts as the end of that day.
 - `locationUrl` — link for the address (e.g. a venue or directions page). When set, the address renders as a link with a map-pin icon on the event page, `/events` cards, and the homepage hero (the past-events archive keeps it as plain text).
 - `url` — registration or event link (e.g. a Lu.ma URL). **Do not manually add UTM parameters to this URL** — the `Signup.astro` component automatically appends `utm_source=boston-wib&utm_medium=event-page&utm_campaign=<slug>` using the event's slug at build time.
 - `data_luma_event_id` — Lu.ma event ID for embedding a registration button
+- `posterImage` — `{ src, alt }`, a poster/flyer for the event's own page: it replaces `image` there; listing cards keep using `image`. Put it in `public/photos/{YYYY}/`. Since a flyer is mostly text, its `alt` should repeat the flyer's key details.
 - `imgpos` — Tailwind object-position class. Defaults to `object-top object-cover`. Common options: `object-center object-cover`, `object-bottom object-cover`, `object-contain`.
 - `cost` — ticket price in dollars as a number (omit for free events)
 - `partnerEvent` — `true` if hosted by a partner org rather than BWIB directly. Defaults to `false`.
@@ -92,6 +93,9 @@ locationUrl: 'https://...'
 url: 'https://...'
 data_luma_event_id: '...'
 imgpos: 'object-top object-cover'
+posterImage:
+  src: '/photos/{YYYY}/...'
+  alt: '...'
 tags:
   - '...'
 partnerEvent: false

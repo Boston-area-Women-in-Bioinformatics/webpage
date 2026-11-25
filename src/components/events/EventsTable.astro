@@ -67,7 +67,7 @@ const hasBwibEvents = bwib_events.length > 0;
                   )}
                 </h3>
                 <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
-                  <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} />
+                  <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} allDay={event.data.allDay} />
                 </div>
                 <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
                   <EventAddress artists={event.data.location || []} url={event.data.locationUrl} />
@@ -111,7 +111,7 @@ const hasBwibEvents = bwib_events.length > 0;
                 )}
               </h3>
               <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
-                <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} />
+                <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} allDay={event.data.allDay} />
               </div>
               <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
                 <EventAddress artists={event.data.location || []} url={event.data.locationUrl} />
@@ -151,7 +151,7 @@ const hasBwibEvents = bwib_events.length > 0;
                     <span class="ml-2 text-xs font-normal text-gray-500 dark:text-gray-400">(Partner Event)</span>
                   </h3>
                   <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
-                    <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} />
+                    <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} allDay={event.data.allDay} />
                   </div>
                   <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
                     <EventAddress artists={event.data.location || []} url={event.data.locationUrl} />
@@ -194,7 +194,7 @@ const hasBwibEvents = bwib_events.length > 0;
                 <span class="ml-2 text-xs font-normal text-gray-500 dark:text-gray-400">(Partner Event)</span>
               </h3>
               <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
-                <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} />
+                <FormattedDate date={event.data.dateTime} endDate={event.data.endDate} allDay={event.data.allDay} />
               </div>
               <div class="text-sm mb-4 text-gray-700 dark:text-slate-300">
                 <EventAddress artists={event.data.location || []} url={event.data.locationUrl} />

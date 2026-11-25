@@ -145,71 +145,101 @@ const newsletterCollection = defineCollection({
   }),
 });
 
+// Events may leave out times (attendees get them when they register): a bare
+// 'YYYY-MM-DD' dateTime marks the event allDay, so date displays skip the time.
+// A bare endDate (or a missing one on an allDay event) is rewritten to the end
+// of that day, so the event stays "upcoming" — and its Sign Up button visible —
+// through its last day instead of flipping to past at midnight.
+const isDateOnly = (val: unknown): val is string => typeof val === 'string' && !val.includes('T');
+const withAllDayDefaults = (raw: unknown) => {
+  if (!raw || typeof raw !== 'object') return raw;
+  const data = raw as Record<string, unknown>;
+  const allDay = isDateOnly(data.dateTime);
+  let endDate = data.endDate;
+  if (isDateOnly(endDate)) endDate = `${endDate}T23:59:59`;
+  else if (allDay && endDate === undefined) endDate = `${data.dateTime}T23:59:59`;
+  return { ...data, allDay, endDate };
+};
+
 const eventCollection = defineCollection({
   // Load data from Markdown files on disk
   loader: glob({ pattern: '**/*.md', base: 'src/content/meetups' }),
-  schema: z
-    .object({
-      title: z.string(),
-      dateTime: nyDate(),
-      endDate: nyDate().optional(),
-      location: z.array(z.string()),
-      // Optional link for the location lines (e.g. a venue/directions page);
-      // EventAddress.astro renders the address as a link when set.
-      locationUrl: z.string().url().optional(),
-      url: z.string().optional(),
-      'url-button-label': z.string().optional(),
-      data_luma_event_id: z.string().optional(),
-      image: z.object({
-        src: z.string(),
-        alt: z.string(),
-      }),
-      imgpos: z.string().optional().default('object-top object-cover'),
-      cost: z.number().optional(),
-      tags: z.array(z.string()),
-      partnerEvent: z.boolean().optional().default(false),
-      partnerOrganization: z.string().optional(),
-      slug: z.string().optional(),
-      // Set true for an event that already has its own dedicated homepage
-      // promo section (e.g. Return to Work Panel) so it doesn't also appear
-      // as the featured "next event" in UpcomingEvents.astro's homepage
-      // hero. It still shows normally everywhere else — the /events page
-      // (EventsTable.astro), the individual event page, and the past-events
-      // archive are all unaffected.
-      hideFromHomepageHero: z.boolean().optional().default(false),
-      // Overrides the link target used by listing cards ("MORE INFO"/"Learn
-      // More" buttons in EventsTable.astro, UpcomingEvents.astro, and
-      // archive/index.astro) that would otherwise point to this event's own
-      // auto-generated /events/{slug} page. Use this when a richer bespoke
-      // page already exists for the event (e.g. a custom .astro page like
-      // src/pages/events/fall-fundraiser-2026.astro) and this collection
-      // entry exists mainly so the event still appears in the past-events
-      // archive once it's over.
-      detailsUrl: z.string().optional(),
-      // Multi-part series (e.g. a 4-part workshop): series is the shared
-      // title shown on every part; seriesPart/seriesTotal render as
-      // "Part <seriesPart> of <seriesTotal>" on the event page. All three
-      // fields are set explicitly per event (no auto-counting across the
-      // collection) so a series' size/order never depends on which other
-      // event files happen to exist — see the add-event command.
-      series: z.string().optional(),
-      seriesPart: z.number().int().positive().optional(),
-      seriesTotal: z.number().int().positive().optional(),
-    })
-    .refine(
-      (data) => {
-        const hasAnySeriesField =
-          data.series !== undefined || data.seriesPart !== undefined || data.seriesTotal !== undefined;
-        if (!hasAnySeriesField) return true;
-        return (
-          data.series !== undefined &&
-          data.seriesPart !== undefined &&
-          data.seriesTotal !== undefined &&
-          data.seriesPart <= data.seriesTotal
-        );
-      },
-      { message: 'series, seriesPart, and seriesTotal must all be set together, with seriesPart <= seriesTotal' }
-    ),
+  schema: z.preprocess(
+    withAllDayDefaults,
+    z
+      .object({
+        title: z.string(),
+        // Set by withAllDayDefaults, not written in frontmatter.
+        allDay: z.boolean(),
+        dateTime: nyDate(),
+        endDate: nyDate().optional(),
+        location: z.array(z.string()),
+        // Optional link for the location lines (e.g. a venue/directions page);
+        // EventAddress.astro renders the address as a link when set.
+        locationUrl: z.string().url().optional(),
+        url: z.string().optional(),
+        'url-button-label': z.string().optional(),
+        data_luma_event_id: z.string().optional(),
+        image: z.object({
+          src: z.string(),
+          alt: z.string(),
+        }),
+        imgpos: z.string().optional().default('object-top object-cover'),
+        // Optional poster/flyer shown only on the individual event page
+        // (EventLayout.astro), full width above the description. Listing cards
+        // (/events, homepage hero, archive) keep using `image`.
+        posterImage: z
+          .object({
+            src: z.string(),
+            alt: z.string(),
+          })
+          .optional(),
+        cost: z.number().optional(),
+        tags: z.array(z.string()),
+        partnerEvent: z.boolean().optional().default(false),
+        partnerOrganization: z.string().optional(),
+        slug: z.string().optional(),
+        // Set true for an event that already has its own dedicated homepage
+        // promo section (e.g. Return to Work Panel) so it doesn't also appear
+        // as the featured "next event" in UpcomingEvents.astro's homepage
+        // hero. It still shows normally everywhere else — the /events page
+        // (EventsTable.astro), the individual event page, and the past-events
+        // archive are all unaffected.
+        hideFromHomepageHero: z.boolean().optional().default(false),
+        // Overrides the link target used by listing cards ("MORE INFO"/"Learn
+        // More" buttons in EventsTable.astro, UpcomingEvents.astro, and
+        // archive/index.astro) that would otherwise point to this event's own
+        // auto-generated /events/{slug} page. Use this when a richer bespoke
+        // page already exists for the event (e.g. a custom .astro page like
+        // src/pages/events/fall-fundraiser-2026.astro) and this collection
+        // entry exists mainly so the event still appears in the past-events
+        // archive once it's over.
+        detailsUrl: z.string().optional(),
+        // Multi-part series (e.g. a 4-part workshop): series is the shared
+        // title shown on every part; seriesPart/seriesTotal render as
+        // "Part <seriesPart> of <seriesTotal>" on the event page. All three
+        // fields are set explicitly per event (no auto-counting across the
+        // collection) so a series' size/order never depends on which other
+        // event files happen to exist — see the add-event command.
+        series: z.string().optional(),
+        seriesPart: z.number().int().positive().optional(),
+        seriesTotal: z.number().int().positive().optional(),
+      })
+      .refine(
+        (data) => {
+          const hasAnySeriesField =
+            data.series !== undefined || data.seriesPart !== undefined || data.seriesTotal !== undefined;
+          if (!hasAnySeriesField) return true;
+          return (
+            data.series !== undefined &&
+            data.seriesPart !== undefined &&
+            data.seriesTotal !== undefined &&
+            data.seriesPart <= data.seriesTotal
+          );
+        },
+        { message: 'series, seriesPart, and seriesTotal must all be set together, with seriesPart <= seriesTotal' }
+      )
+  ),
 });
 
 const committeeCollection = defineCollection({

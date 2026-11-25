@@ -100,7 +100,11 @@ if (next_event) {
         </h2>
         <div class="text-md sm:text-lg md:text-xl lg:text-2xl">
           <div class="mb-4">
-            <FormattedDate date={next_event.data.dateTime} endDate={next_event.data.endDate} />
+            <FormattedDate
+              date={next_event.data.dateTime}
+              endDate={next_event.data.endDate}
+              allDay={next_event.data.allDay}
+            />
           </div>
           <div class="mb-4">
             <EventAddress artists={next_event.data.location || []} url={next_event.data.locationUrl} />
