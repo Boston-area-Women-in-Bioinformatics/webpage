@@ -13,10 +13,12 @@ export interface Props {
   };
   date: Date;
   endDate?: Date;
+  allDay?: boolean;
   location: string[];
   locationUrl?: string;
   imgsrc: string;
   imgalt: string;
+  posterImage?: { src: string; alt: string };
   url?: string;
   urlButtonLabel?: string;
   data_luma_event_id?: string;
@@ -33,6 +35,7 @@ const {
   frontmatter,
   date,
   endDate,
+  allDay,
   location,
   locationUrl,
   url,
@@ -40,6 +43,7 @@ const {
   data_luma_event_id,
   imgsrc,
   imgalt,
+  posterImage,
   cost,
   partnerEvent = false,
   partnerOrganization,
@@ -71,57 +75,84 @@ const breakIndex = [colonIndex, dashIndex].filter((i) => i !== -1).sort((a, b) =
 const hasBreak = breakIndex !== undefined;
 const firstLine = hasBreak ? title.slice(0, breakIndex + 1) : title;
 const secondLine = hasBreak ? title.slice(breakIndex + 1).trim() : '';
+
+const Wrap = posterImage ? 'div' : Fragment;
+const Column = posterImage ? 'div' : Fragment;
+const headerClass = posterImage ? '-mx-1' : 'px-4 py-4 sm:px-6 mx-auto lg:px-8 max-w-4xl';
+const sectionClass = posterImage
+  ? `px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-6xl ${partnerEvent ? 'mb-16' : ''}`
+  : `px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-4xl ${partnerEvent ? 'mb-16' : ''}`;
 ---
 
 <Layout metadata={metadata}>
-  <div class="px-4 py-4 sm:px-6 mx-auto lg:px-8 max-w-4xl">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-      <img src={imgsrc} alt={imgalt} class={imgcss} />
-      <div class="p-1">
-        {
-          series && seriesPart && seriesTotal && (
-            <div class="mb-1 inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary dark:bg-slate-800 dark:text-blue-300">
-              {series} · Part {seriesPart} of {seriesTotal}
-            </div>
-          )
-        }
-        <h2
-          class="text-2xl font-bold mb-2 font-heading leading-tighter tracking-tighter text-gray-900 dark:text-slate-100"
-        >
-          {firstLine}
-          {secondLine && <br />}
-          {secondLine}
-        </h2>
-        {
-          partnerEvent && partnerOrganization && (
-            <div class="text-base mb-3 text-gray-600 dark:text-gray-400 italic">Hosted by {partnerOrganization}</div>
-          )
-        }
-        <div class="text-lg mb-4 text-gray-700 dark:text-slate-300">
-          <FormattedDate date={date} endDate={endDate} />
+  {
+    /* With a posterImage, the poster replaces the header image and takes the left half (stacked on top on
+      mobile) with the event details to its right; the description runs full width below both. Without one,
+      Wrap/Column render as Fragments, so the page is unchanged. */
+  }
+  <Wrap
+    {...posterImage ? { class: 'px-4 py-4 sm:px-6 lg:px-8 mx-auto max-w-6xl md:flex md:items-start md:gap-10' } : {}}
+  >
+    {
+      posterImage && (
+        <div class="mb-6 md:mb-0 md:w-1/2 md:flex-shrink-0">
+          <img src={posterImage.src} alt={posterImage.alt} class="w-full h-auto rounded-xl shadow-md" />
         </div>
-        <div class="text-lg mb-4 text-gray-700 dark:text-slate-300">
-          <EventAddress artists={location || []} url={locationUrl} />
-        </div>
-        {
-          cost !== undefined && (
-            <div class="text-lg font-semibold mb-4 text-gray-900 dark:text-slate-100">
-              Ticket Cost: ${cost.toFixed(2)}
+      )
+    }
+    <Column {...posterImage ? { class: 'min-w-0 md:flex-1' } : {}}>
+      <div class={headerClass}>
+        <div class={`grid grid-cols-1 gap-2 ${posterImage ? '' : 'md:grid-cols-2'}`}>
+          {!posterImage && <img src={imgsrc} alt={imgalt} class={imgcss} />}
+          <div class="p-1">
+            {
+              series && seriesPart && seriesTotal && (
+                <div class="mb-1 inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary dark:bg-slate-800 dark:text-blue-300">
+                  {series} · Part {seriesPart} of {seriesTotal}
+                </div>
+              )
+            }
+            <h2
+              class="text-2xl font-bold mb-2 font-heading leading-tighter tracking-tighter text-gray-900 dark:text-slate-100"
+            >
+              {firstLine}
+              {secondLine && <br />}
+              {secondLine}
+            </h2>
+            {
+              partnerEvent && partnerOrganization && (
+                <div class="text-base mb-3 text-gray-600 dark:text-gray-400 italic">
+                  Hosted by {partnerOrganization}
+                </div>
+              )
+            }
+            <div class="text-lg mb-4 text-gray-700 dark:text-slate-300">
+              <FormattedDate date={date} endDate={endDate} allDay={allDay} />
             </div>
-          )
-        }
-        {
-          (endDate || date) < new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })) ? (
-            ' '
-          ) : (
-            <Signup url={url} urlButtonLabel={urlButtonLabel} data_luma_event_id={data_luma_event_id} slug={slug} />
-          )
-        }
+            <div class="text-lg mb-4 text-gray-700 dark:text-slate-300">
+              <EventAddress artists={location || []} url={locationUrl} />
+            </div>
+            {
+              cost !== undefined && (
+                <div class="text-lg font-semibold mb-4 text-gray-900 dark:text-slate-100">
+                  Ticket Cost: ${cost.toFixed(2)}
+                </div>
+              )
+            }
+            {
+              (endDate || date) < new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })) ? (
+                ' '
+              ) : (
+                <Signup url={url} urlButtonLabel={urlButtonLabel} data_luma_event_id={data_luma_event_id} slug={slug} />
+              )
+            }
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    </Column>
+  </Wrap>
 
-  <section class={`px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-4xl ${partnerEvent ? 'mb-16' : ''}`}>
+  <section class={sectionClass}>
     <div
       class="prose prose-lg dark:prose-invert max-w-none
   prose-h1:font-bold prose-h1:text-xl

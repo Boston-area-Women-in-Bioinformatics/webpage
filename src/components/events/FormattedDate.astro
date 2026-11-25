@@ -2,9 +2,11 @@
 interface Props {
   date: Date;
   endDate?: Date;
+  // Event has no times (bare 'YYYY-MM-DD' dateTime) — show dates only.
+  allDay?: boolean;
 }
 
-const { date, endDate } = Astro.props;
+const { date, endDate, allDay = false } = Astro.props;
 
 const startDate = new Date(date);
 
@@ -58,6 +60,8 @@ const getTimeZoneAbbr = (d: Date) =>
     <time datetime={startDate.toISOString()}>
       {formatDateOnly(startDate)} – {formatDateOnly(endDateObj!)}
     </time>
+  ) : allDay ? (
+    <time datetime={startDate.toISOString()}>{formatDateOnly(startDate)}</time>
   ) : isSameDayWithEnd ? (
     <time datetime={startDate.toISOString()}>
       {formatSingle(startDate)} – {formatTimeOnly(endDateObj!)}&nbsp;{getTimeZoneAbbr(endDateObj!)}
