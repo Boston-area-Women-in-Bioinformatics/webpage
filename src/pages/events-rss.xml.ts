@@ -30,8 +30,8 @@ export const GET = async () => {
           year: 'numeric',
           month: 'long',
           day: 'numeric',
-          hour: 'numeric',
-          minute: '2-digit',
+          ...(event.data.allDay ? {} : { hour: 'numeric', minute: '2-digit' }),
+          timeZone: 'America/New_York',
         })}</p>
 <p><strong>Where:</strong> ${event.data.location.join(', ')}</p>
 ${bodyHtml}`;

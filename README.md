@@ -162,7 +162,7 @@ The markdown file should follow a specific format. In between the top two `---` 
 **Required fields:**
 
 - `title`: name of the event
-- `dateTime`: start date and time of the event in New York time. Use `YYYY-MM-DDTHH:mm` (e.g., `2026-09-15T18:00`). The timezone is applied automatically — no offset needed.
+- `dateTime`: start date and time of the event in New York time. Use `YYYY-MM-DDTHH:mm` (e.g., `2026-09-15T18:00`). The timezone is applied automatically — no offset needed. If the times aren't known, use just the date, `YYYY-MM-DD`: the event then shows dates only, everywhere.
 - `location`: list of location strings (e.g., `["123 Main St", "Boston, MA"]`)
 - `locationUrl` (optional): link for the address, e.g. a venue or directions page. The address shows as a link with a map-pin icon on the event page, `/events` cards, and the homepage hero.
 - `image`: object with two fields:
@@ -172,11 +172,12 @@ The markdown file should follow a specific format. In between the top two `---` 
 
 **Optional fields:**
 
-- `endDate`: end date and time of the event, in the same `YYYY-MM-DDTHH:mm` format as `dateTime`. Required if the event spans multiple days or you want the end time to display.
+- `endDate`: end date and time of the event, in the same `YYYY-MM-DDTHH:mm` format as `dateTime`. Required if the event spans multiple days or you want the end time to display. A date-only `endDate` (`YYYY-MM-DD`) counts as the end of that day, so the event stays upcoming (with its Sign Up button) through its last day.
 - `url`: registration or event link (e.g., a Lu.ma URL)
 - `url-button-label`: overrides the registration button's text (defaults to "Sign Up"). Use this for events where `url` isn't a registration link (e.g., `'Learn More'` for a link to a partner org's event page).
 - `data_luma_event_id`: Lu.ma event ID, used to embed a registration button
 - `imgpos`: controls which part of the image is visible on the events listing page. Defaults to `object-top object-cover`. See [Tailwind object-position](https://tailwindcss.com/docs/object-position) for options.
+- `posterImage` (optional): a poster or flyer for the event's own page. When set, it replaces `image` there and shows full width below the event details; listing cards (/events, homepage, archive) keep using `image`. Same shape as `image` (`src` and `alt`). Because a flyer is mostly text, its `alt` should repeat the flyer's key details (date, place, who can join).
 - `cost`: ticket price in dollars as a number (e.g., `10`). Omit for free events.
 - `partnerEvent`: set to `true` if this event is hosted by a partner organization rather than BWIB directly. Defaults to `false`.
 - `partnerOrganization`: name of the partner organization hosting the event (only used when `partnerEvent: true`)
